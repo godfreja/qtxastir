@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.542 2004/11/12 17:03:13 we7u Exp $
+ * $Id: main.c,v 1.543 2004/11/17 17:57:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3316,6 +3316,10 @@ void refresh_image(Widget w) {
     // Draw grid if enabled
     draw_grid(w);
 
+    HandlePendingEvents(app_context);
+    if (interrupt_drawing_now)
+        return(0);
+ 
     /* display icons */
     display_file(w);
 
@@ -3355,6 +3359,10 @@ void redraw_symbols(Widget w) {
         (void)XCopyArea(XtDisplay(w),pixmap_alerts,pixmap_final,gc,0,0,screen_width,screen_height,0,0);
 
         draw_grid(w);           // draw grid if enabled
+
+        HandlePendingEvents(app_context);
+        if (interrupt_drawing_now)
+            return;
 
         display_file(w);        // display stations (symbols, info, trails)
 
