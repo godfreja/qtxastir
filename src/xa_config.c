@@ -1,5 +1,5 @@
-/*
- * $Id: xa_config.c,v 1.18 2002/05/04 16:55:00 we7u Exp $
+/* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
+ * $Id: xa_config.c,v 1.19 2002/05/09 22:29:09 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -328,9 +328,15 @@ void save_data(void)  {
 
         store_int (fout, "MAP_DRAW_FILLED_COLORS", map_color_fill);
 
-#if !defined(NO_GRAPHICS) && (defined(HAVE_IMAGEMAGICK) || defined(HAVE_GEOTIFF))
+#if !defined(NO_GRAPHICS)
+#if defined(HAVE_IMAGEMAGICK)
+        sprintf (name, "%f", imagemagick_gamma_adjust);
+        store_string(fout, "IMAGEMAGICK_GAMMA_ADJUST", name);
+#endif
+#if defined(HAVE_GEOTIFF)
         sprintf (name, "%f", geotiff_map_intensity);
         store_string(fout, "GEOTIFF_MAP_INTENSITY", name);
+#endif
 #endif
 
         store_int (fout, "MAP_LETTERSTYLE", letter_style);
@@ -640,11 +646,19 @@ void load_data_or_default(void) {
     if (!get_int ( "MAP_DRAW_FILLED_COLORS", &map_color_fill, 0, 1, 1) )
         map_color_fill = 1;
 
-#if !defined(NO_GRAPHICS) && (defined(HAVE_IMAGEMAGICK) || defined(HAVE_GEOTIFF))
+#if !defined(NO_GRAPHICS)
+#if defined(HAVE_IMAGEMAGICK)
+    if (!get_string("IMAGEMAGICK_GAMMA_ADJUST", name))
+        imagemagick_gamma_adjust = 0.0;
+    else
+        sscanf(name, "%f", &imagemagick_gamma_adjust);
+#endif
+#if defined(HAVE_GEOTIFF)
     if (!get_string("GEOTIFF_MAP_INTENSITY", name))
         geotiff_map_intensity = 1.0;
     else
-        sscanf( name, "%f", &geotiff_map_intensity);
+        sscanf(name, "%f", &geotiff_map_intensity);
+#endif
 #endif
 
     if (!get_int ("MAP_LETTERSTYLE", &letter_style, 0, 2, 1))

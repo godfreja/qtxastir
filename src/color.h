@@ -1,5 +1,5 @@
-/*
- * $Id: color.h,v 1.1 2002/02/02 03:16:56 kg4ijb Exp $
+/* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
+ * $Id: color.h,v 1.2 2002/05/09 22:29:09 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,10 +32,20 @@ typedef struct {
     XColor color;
 } color_load;
 
+typedef enum {
+    NOT_TRUE_NOR_DIRECT,
+    RGB_565,
+    RGB_555,
+    RGB_888,
+    RGB_OTHER
+} Pixel_Format;
+extern Pixel_Format visual_type;
+
 /* from color.c */
 extern int load_color_file(void);
 extern Pixel GetPixelByName(Widget w, char *colorname);
-
+extern void setup_visual_info(Display* dpy, int scr);
+extern void pack_pixel_bits(unsigned short r, unsigned short g, unsigned short b, unsigned long* pixel);
 
 #endif /* XASTIR_COLOR_H */
 
