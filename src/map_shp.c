@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.6 2003/07/22 20:13:41 we7u Exp $
+ * $Id: map_shp.c,v 1.7 2003/07/23 20:29:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2178,18 +2178,34 @@ void draw_shapefile_map (Widget w,
                             // below to determine how many of each
                             // identical label are skipped at each
                             // zoom level.
-                            if      (scale_y <= 2)
+
+// The goal here is to have one complete label visible on the screen
+// for each road.  We end up skipping labels based on zoom level,
+// which, if the road doesn't have very many segments, may end up
+// drawing one label almost entirely off-screen.  :-(
+
+// If we could check the first line segment to see if the label
+// would be drawn off-screen, perhaps we could start drawing at
+// segment #2?  We'd have to check whether there is a segment #2.
+// Another possibility would be to shift the label on-screen.  Would
+// this work for twisty/turny roads though?  I suppose, 'cuz they'd
+// end up with more line segments and we could just draw at segment
+// #2 in that case instead of shifting.
+
+                            if      (scale_y == 1)
+                                mod_number = 1;
+                            else if (scale_y <= 2)
                                 mod_number = 1;
                             else if (scale_y <= 4)
-                                mod_number = 3;
+                                mod_number = 2;
                             else if (scale_y <= 8)
-                                mod_number = 5;
+                                mod_number = 4;
                             else if (scale_y <= 16)
-                                mod_number = 10;
+                                mod_number = 8;
                             else if (scale_y <= 32)
-                                mod_number = 15;
+                                mod_number = 16;
                             else
-                                mod_number = 20;
+                                mod_number = (int)(scale_y);
 
                             // Check whether we've written out this string
                             // already:  Look for a match in our linked list
