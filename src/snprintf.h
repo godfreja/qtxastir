@@ -2,7 +2,7 @@
  * snprintf.h
  *   header file for snprintf.c
  *
- * $Id: snprintf.h,v 1.1 2002/02/02 03:19:43 kg4ijb Exp $
+ * $Id: snprintf.h,v 1.2 2002/03/05 21:28:24 we7u Exp $
  */
 /*
  * Copyright (C) 2000, 2001, 2002 Xastir Development Team
@@ -54,4 +54,4 @@ int xastir_snprintf();
 #  define xastir_snprintf snprintf
 #endif
 
-#endif	/* !XASTIR_COMPAT_SNPRINTF_H_ */
+#endif  /* !XASTIR_COMPAT_SNPRINTF_H_ */

@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Currently maintained by Chuck Byam (KG4IJB), cbyam@virginia.edu
 #
-# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.6 2002/02/25 20:43:46 francais1 Exp $
+# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.7 2002/03/05 21:28:20 we7u Exp $
 #
 # Xastir Configure Script
 #
@@ -202,7 +202,7 @@ echo
 echo
 echo Xastir will be installed in $prefix/bin.
 if test "x$xastirpath" != "x" ; then
-	echo Warning: You have an old copy of Xastir at $xastirpath.
+        echo Warning: You have an old copy of Xastir at $xastirpath.
 fi
 
 XASTIR_MSG_CONFIGURE_END

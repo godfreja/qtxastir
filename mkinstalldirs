@@ -4,7 +4,7 @@
 # Created: 1993-05-16
 # Public domain
 
-# $Id: mkinstalldirs,v 1.1 2002/02/02 03:15:52 kg4ijb Exp $
+# $Id: mkinstalldirs,v 1.2 2002/03/05 21:28:21 we7u Exp $
 
 errstatus=0
 
@@ -27,7 +27,7 @@ do
         mkdir "$pathcomp" || lasterr=$?
 
         if test ! -d "$pathcomp"; then
-  	  errstatus=$lasterr
+          errstatus=$lasterr
         fi
      fi
 

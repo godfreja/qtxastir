@@ -1,7 +1,7 @@
 /*
  * snprintf.c - a portable implementation of snprintf and vsnprintf
  *
- * $Id: snprintf.c,v 1.1 2002/02/02 03:19:45 kg4ijb Exp $
+ * $Id: snprintf.c,v 1.2 2002/03/05 21:28:24 we7u Exp $
  */
 /*
  * Portions Copyright (C) 2000, 2001, 2002 Xastir Development Team
@@ -105,7 +105,7 @@
 #  include <varargs.h>
 #  undef HAVE_STDARGS
 #  define VA_LOCAL_DECL va_list ap
-#  define VA_START(f) va_start(ap)	/* f is ignored! */
+#  define VA_START(f) va_start(ap)      /* f is ignored! */
 #  define VA_SHIFT(v,t) v = va_arg(ap,t)
 #  define VA_END va_end(ap)
 #endif
@@ -459,7 +459,7 @@ static void fmtint(char *buffer, size_t * currlen, size_t maxlen,
         if (value < 0) {
             signvalue = '-';
             uvalue = -value;
-        } else if (flags & DP_F_PLUS)	/* Do a sign (+/i) */
+        } else if (flags & DP_F_PLUS)   /* Do a sign (+/i) */
             signvalue = '+';
         else if (flags & DP_F_SPACE)
             signvalue = ' ';
@@ -589,7 +589,7 @@ static void fmtfp(char *buffer, size_t * currlen, size_t maxlen,
 
     if (fvalue < 0)
         signvalue = '-';
-    else if (flags & DP_F_PLUS)	/* Do a sign (+/i) */
+    else if (flags & DP_F_PLUS) /* Do a sign (+/i) */
         signvalue = '+';
     else if (flags & DP_F_SPACE)
         signvalue = ' ';

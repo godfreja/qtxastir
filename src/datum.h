@@ -23,7 +23,7 @@
    Thanks Chuck!
 
    N7TAP
-   $Id: datum.h,v 1.1 2002/02/02 03:16:59 kg4ijb Exp $
+   $Id: datum.h,v 1.2 2002/03/05 21:28:23 we7u Exp $
 */
 
 #define FROM_WGS_84 1
@@ -88,7 +88,7 @@ enum Common_Datum_Names { // Must match the indices of the Datums defined in dat
 };
 
 void ll_to_utm(short ellipsoidID, const double lat, const double lon,
-	     double *utmNorthing, double *utmEasting, char* utmZone, int utmZoneLength);
+             double *utmNorthing, double *utmEasting, char* utmZone, int utmZoneLength);
 void utm_to_ll(short ellipsoidID, const double utmNorthing, const double utmEasting,
-	       const char* utmZone, double *lat, double *lon);
+               const char* utmZone, double *lat, double *lon);
 char utm_letter_designator(double lat);

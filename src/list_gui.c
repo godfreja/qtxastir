@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.c,v 1.1 2002/02/02 03:18:08 kg4ijb Exp $
+ * $Id: list_gui.c,v 1.2 2002/03/05 21:28:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -400,7 +400,7 @@ void Station_List_fill(int type, int new_offset) {
         // check boundaries
         new_offset += cur_offset - last_offset[type];   // adjust for database changes
 
-	if (count == 0) count = 1;                      // empty
+        if (count == 0) count = 1;                      // empty
         if (count - new_offset < rows)                  // bottom
             new_offset = count - rows;                  // keep page filled, if possible
         if (new_offset < 0)                             // top

@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.2 2002/03/05 08:18:19 we7u Exp $
+ * $Id: interface.h,v 1.3 2002/03/05 21:28:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -130,8 +130,8 @@ typedef struct {
     int    transmit_data;                         /* Data transmit out of this port          */
     int    reconnect;                             /* reconnect on net failure                */
     int    connect_on_startup;                    /* connect to this device on startup       */
-	int    gps_retrieve;                          /* Character to cause SERIAL_TNC_AUX_GPS to spit out current GPS data */
-	int    set_time;							  /* Set System Time from GPS on this port   */
+        int    gps_retrieve;                          /* Character to cause SERIAL_TNC_AUX_GPS to spit out current GPS data */
+        int    set_time;                                                          /* Set System Time from GPS on this port   */
 } ioparam;
 
 

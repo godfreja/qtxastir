@@ -1,5 +1,5 @@
 
-// $Id: rotated.h,v 1.1 2002/02/02 03:19:21 kg4ijb Exp $
+// $Id: rotated.h,v 1.2 2002/03/05 21:28:24 we7u Exp $
 
 /* ************************************************************************ */
 
@@ -57,7 +57,7 @@ int     XRotDrawAlignedString(Display*, XFontStruct*, float,
 int     XRotDrawAlignedImageString(Display*, XFontStruct*, float,
                                    Drawable, GC, int, int, char*, int);
 XPoint *XRotTextExtents(Display*, XFontStruct*, float,
-			int, int, char*, int);
+                        int, int, char*, int);
 }
 
 #else

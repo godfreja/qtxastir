@@ -1,6 +1,6 @@
 // Modification for Xastir CVS purposes
 //
-// $Id: festival.c,v 1.1 2002/02/02 03:17:31 kg4ijb Exp $
+// $Id: festival.c,v 1.2 2002/03/05 21:28:23 we7u Exp $
 //
 // End of modification
 
@@ -192,25 +192,25 @@ void festivalStringToSpeech(char *text)
     */ 
     for (p=text; p && (*p != '\0'); p++)
       {
-    	if ((*p == '"') || (*p == '\\'))
-	  {
-	    (void)putc('\\',fd);
-	  } else {
-	    /* 
-	    ** Then convert any embedded '-' into the word 'dash'
-	    ** This could cause problems with spoken text from 
-	    ** Weather alerts or messages.  We'll deal with that 
-	    ** later if necessary.  Making this a separate function
+        if ((*p == '"') || (*p == '\\'))
+          {
+            (void)putc('\\',fd);
+          } else {
+            /* 
+            ** Then convert any embedded '-' into the word 'dash'
+            ** This could cause problems with spoken text from 
+            ** Weather alerts or messages.  We'll deal with that 
+            ** later if necessary.  Making this a separate function
             ** is probably the thing to do.
-	    */
-	    if (*p == '-' ) 
-	      {
-		fprintf(fd,",dash,");
-	      } else {
-		(void)putc(*p,fd);
-	      }
-	  }
-      }	
+            */
+            if (*p == '-' ) 
+              {
+                fprintf(fd,",dash,");
+              } else {
+                (void)putc(*p,fd);
+              }
+          }
+      } 
     /*
     ** Complete the command to xastir, close the quotes and 
     ** set the mode to 'fundamental'
@@ -235,18 +235,18 @@ void festivalStringToSpeech(char *text)
     */
     for (n=0; n < 3; ) {
       if ( ( tmp = read(info->server_fd,ack+n,3-n)) != -1 ) {
-	n = n + tmp;
+        n = n + tmp;
       } else {
         if (debug_level & 2)    
-	    fprintf(stderr,"Error reading festival ACK - %s\n",strerror(errno));
-	n = 3;
-	if (errno == ECONNRESET) {
-	  info = 0;
-	  festivalOpen();
-	} 
+            fprintf(stderr,"Error reading festival ACK - %s\n",strerror(errno));
+        n = 3;
+        if (errno == ECONNRESET) {
+          info = 0;
+          festivalOpen();
+        } 
       }
     }
-	
+        
     /*
     ** Null terminate the string
     */
