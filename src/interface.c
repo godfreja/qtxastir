@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.146 2003/12/07 20:23:28 we7u Exp $
+ * $Id: interface.c,v 1.147 2003/12/08 23:43:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3073,9 +3073,31 @@ int command_file_to_tnc_port(int port, char *filename) {
     int i;
     char cin;
     int error;
+    struct stat file_status;
+
 
     if (filename == NULL)
         return(-1);
+
+    // Check file status
+    if (stat(filename, &file_status) < 0) {
+        fprintf(stderr,
+            "Couldn't stat file: %s\n",
+            filename);
+        fprintf(stderr,
+            "Skipping send to TNC\n");
+        return(-1);
+    }
+
+    // Check that it is a regular file
+    if (!S_ISREG(file_status.st_mode)) {
+        fprintf(stderr,
+            "File is not a regular file: %s\n",
+            filename);
+        fprintf(stderr,
+            "Skipping send to TNC\n");
+        return(-1);
+    } 
 
     error = 0;
     i = 0;
