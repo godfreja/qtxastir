@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: xastir-migrate.sh,v 1.2 2003/07/02 21:48:14 we7u Exp $
+# $Id: xastir-migrate.sh,v 1.3 2003/07/04 22:17:50 we7u Exp $
 #
 # migrate from old xastir USER FILES to new directory structure.
 # Stuff that was under /usr/local/xastir is now under /usr/local/share/xastir/
@@ -29,7 +29,7 @@ if [ -d $OLD ]; then
 			rr=`expr $rr + $r`
 		    else
 			# clean up the source directory
-			rm -rf $NEW/$i
+			rm -rf $OLD/$i
 		    fi
 		else
 		    # hope they are in the same FS!
