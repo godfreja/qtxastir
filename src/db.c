@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.392 2004/10/05 17:11:08 we7u Exp $
+ * $Id: db.c,v 1.393 2004/10/07 03:28:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14767,7 +14767,20 @@ int Create_object_item_tx_string(DataRow *p_station, char *line, int line_length
         }
         xastir_snprintf(comment,sizeof(comment),comment2);
     }
-    
+
+
+    // Put RNG or PHG at the beginning of the comment
+    xastir_snprintf(comment2,
+        sizeof(comment2),
+        "%s%s",
+        p_station->power_gain,
+        comment);
+    xastir_snprintf(comment,
+        sizeof(comment),
+        "%s",
+        comment2);
+   
+ 
     (void)remove_trailing_spaces(comment);
 
 
