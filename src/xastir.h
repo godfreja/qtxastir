@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.30 2003/10/13 04:22:04 we7u Exp $
+ * $Id: xastir.h,v 1.31 2003/10/13 17:57:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -83,7 +83,6 @@ extern GC gc;
 extern Pixmap  pixmap;
 extern Pixmap  pixmap_final;
 extern Pixmap  pixmap_alerts;
-extern Pixmap  pixmap_snapshot;
 extern Pixmap  pixmap_50pct_stipple;
 extern Pixmap  pixmap_25pct_stipple;
 extern Pixmap  pixmap_13pct_stipple;
