@@ -1,3 +1,4 @@
+# $Id: Makefile.am,v 1.2 2003/02/18 20:50:26 kg4ijb Exp $
 bin_PROGRAMS = xastir
 
 xastir_SOURCES = \
@@ -17,7 +18,7 @@ xastir_SOURCES = \
     lang.c lang.h \
     list_gui.c list_gui.h \
     locate_gui.c \
-    location.c  \
+    location.c  \AUTOMAKE_OPTIONS = gnu
     location_gui.c \
     main.c main.h \
     maps.c maps.h \

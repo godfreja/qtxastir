@@ -1,3 +1,4 @@
+# $Id: Makefile.am,v 1.3 2003/02/18 20:49:46 kg4ijb Exp $
 helpdir = ${prefix}/xastir/help
 EXTRA_DIST = \
     help-Dutch.dat \

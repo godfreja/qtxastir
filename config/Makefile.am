@@ -1,3 +1,4 @@
+# $Id: Makefile.am,v 1.5 2003/02/18 20:49:28 kg4ijb Exp $
 configdir = ${prefix}/xastir/config
 
 EXTRA_DIST = \

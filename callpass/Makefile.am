@@ -1,6 +1,4 @@
-#
-# $Header: /cvsroot/xastir/xastir/callpass/Makefile.am,v 1.1 2002/02/10 00:56:23 kg4ijb Exp $
-#
+# $Id: Makefile.am,v 1.2 2003/02/18 20:49:05 kg4ijb Exp $
 
 MAINTAINERCLEANFILES=Makefile.in
 
