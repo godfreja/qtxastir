@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.3 2002/11/22 00:53:54 we7u Exp $
+ * $Id: popup_gui.c,v 1.4 2002/11/22 01:06:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -237,7 +237,7 @@ void popup_ID_message(char *banner, char *message) {
 
 
 #ifdef HAVE_FESTIVAL
-    if (ATV_speak_ID) {
+    if (festival_speak_ID) {
         SayText(message);
     }
 #endif
