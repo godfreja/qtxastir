@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.57 2003/02/19 22:40:20 we7u Exp $
+ * $Id: util.c,v 1.58 2003/02/20 01:13:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1567,7 +1567,11 @@ void disown_object_item(char *call_sign, char *new_owner) {
 
     // Copy to a temp file
     xastir_snprintf(command,
-        sizeof(command), "cp -f %s %s", file, file_temp);
+        sizeof(command),
+        "%s -f %s %s",
+        CP_PATH,
+        file,
+        file_temp);
 
     if ( debug_level & 512 )
         fprintf(stderr,"%s\n", command );
