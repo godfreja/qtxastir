@@ -1,5 +1,5 @@
 /*
- * $Id: sound.c,v 1.3 2003/02/04 04:08:39 jtwilley Exp $
+ * $Id: sound.c,v 1.4 2003/02/22 00:58:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,6 +35,7 @@
 #include "main.h"
 
 
+
 pid_t play_sound(char *sound_cmd, char *soundfile) {
     pid_t sound_pid;
     char command[600];
@@ -65,6 +66,10 @@ pid_t play_sound(char *sound_cmd, char *soundfile) {
     return(sound_pid);
 }
 
+
+
+
+
 int sound_done(void) {
     int done;
     int *status;
@@ -79,4 +84,5 @@ int sound_done(void) {
     }
     return(done);
 }
+
 
