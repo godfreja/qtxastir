@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.30 2004/11/30 20:24:45 we7u Exp $
+ * $Id: messages_gui.c,v 1.31 2004/12/01 19:45:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -565,8 +565,11 @@ void Send_message_call( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*
 
 
 
+// The main Send Message dialog.  db.c:update_messages() is the
+// function which fills in the message history information.
+//
 void Send_message( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPointer callData) {
-    Arg args[20];
+    Arg args[30];
     char temp[60];
     unsigned int n;
     int j,i;
@@ -667,7 +670,8 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message" 
         XtSetArg(args[n], XmNautoShowCursorPosition, FALSE); n++;
         XtSetArg(args[n], XmNforeground, MY_FG_COLOR); n++;
 
-// This one causes segfaults, why?
+// This one causes segfaults, why?  Answer: args[] was set to 20
+// (too small)
 //        XtSetArg(args[n], XmNbackground, MY_BG_COLOR); n++;
  
         mw[i].send_message_text = XmCreateScrolledText(mw[i].form,
