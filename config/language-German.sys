@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.98 2003/05/28 18:09:43 we7u Exp $
+# $Id: language-German.sys,v 1.99 2003/05/28 18:18:50 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -679,9 +679,9 @@ WPUPSTI056|Automatische Aktualisierung||
 WPUPSTI057|Omni-DF: %s||
 WPUPSTI058|DF Bearing:||
 WPUPSTI059|Status: %s||
-WPUPSTI060|Fuel Temp: %02.1f°C  ||
-WPUPSTI061|Fuel Temp: %s°F   ||
-WPUPSTI062|Fuel Feuchtigkeit: %s%%   ||
+WPUPSTI060|Brennstofftemp: %02.1f°C  ||
+WPUPSTI061|Brennstofftemp: %s°F   ||
+WPUPSTI062|Brennstofffeuchte: %s%%   ||
 WPUPSTI063|Baro: %0.2f in Hg||
 #
 # FCC-RAC Call Look up
