@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.519 2004/09/10 19:26:31 we7u Exp $
+ * $Id: main.c,v 1.520 2004/09/17 17:12:28 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10122,7 +10122,13 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
     // completed.  Note:  Setting this to a '1' or '0' can cause
     // some systems (RedHat/FreeBSD) to spin their wheels a lot,
     // using up great amounts of CPU time.
+#ifdef __CYGWIN__
+    // Cygwin performance is abysmal if nexttime is lower than 50, almost
+    // acceptable at 200.
+    nexttime = 200;
+#else
     nexttime = 2;
+#endif // __CYGWIN__
 
 
     if (last_updatetime > sec_now()) {
@@ -11017,15 +11023,6 @@ if (end_critical_section(&data_lock, "main.c:UpdateTime(2)" ) > 0)
 
         check_pointer_position();
     }
-
-
-#ifdef __CYGWIN__
-    // These are needed in order to keep Xastir from using too much
-    // CPU on Cygwin.
-    usleep(2);
-    usleep(2);
-#endif  // __CYGWIN__
-
 
     sched_yield();  // Yield the processor to another thread
 
