@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.135 2003/08/11 21:07:23 we7u Exp $
+ * $Id: interface.c,v 1.136 2003/08/11 22:08:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5013,10 +5013,12 @@ void port_read(int port) {
 // we wake up to check whether the socket has gone down.  Else, we
 // go back into the select to wait for more data or a timeout.
 
-           FD_ZERO(&rd);
+            sched_yield();  // Yield to other threads
+
+            FD_ZERO(&rd);
             FD_SET(port_data[port].channel, &rd);
             tmv.tv_sec = 0;
-            tmv.tv_usec = 1000;   // 1 ms
+            tmv.tv_usec = 20000;    // 20 ms
             (void)select(0,&rd,NULL,NULL,&tmv);
         }
     }
