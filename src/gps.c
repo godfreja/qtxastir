@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.38 2004/01/26 16:18:20 we7u Exp $
+ * $Id: gps.c,v 1.39 2004/03/25 16:35:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -504,7 +504,11 @@ int gps_data_find(char *gps_line_data, int port) {
                         (long)t, (int)getuid(), (int)getuid());
                 }
 #ifdef HAVE_SETTIMEOFDAY
+
+ENABLE_SETUID_PRIVILEGE;
                 settimeofday(&tv, &tz);
+DISABLE_SETUID_PRIVILEGE;
+
 #endif  // HAVE_SETTIMEOFDAY
             }
         }
