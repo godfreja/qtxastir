@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.98 2004/08/30 14:38:42 we7u Exp $
+$Id: README.win32,v 1.99 2004/09/07 17:15:48 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -527,11 +527,11 @@ findings on the Xastir mailing lists.  The libraries which have
 _not_ been made to work yet on Cygwin are:
 
     AX25
-    GPSMan
+    GPSMan/gpsmanshp
 
 The AX25 libraries will probably never work, as they are for Linux
-only.  GPSMan may work on Cygwin at some point if enough work is
-done to figure out and document the process.
+only.  GPSMan/gpsmanshp may work on Cygwin at some point if enough
+work is done to figure out and document the process.
 
 
 RECOMMENDED:  Adding Shapelib (tested with shapelib-1.2.10):
