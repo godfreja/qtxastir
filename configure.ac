@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.87 2004/05/21 18:49:54 jtwilley Exp $
+# $Id: configure.ac,v 1.88 2004/05/22 19:42:51 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -67,19 +67,22 @@ XASTIR_SET_SYSTEM
 # Check for binaries
 use_festival=yes
 use_gpsman=yes
-XASTIR_DETECT_BINARIES
 AC_ARG_WITH(festival,[  --without-festival       Disable festival features.],use_festival=$withval)
+
+
+AC_ARG_WITH(gpsman,[  --without-gpsman       Disable gpsman features.],use_gpsman=$withval)
+
+# Now that all the various "use_" variables are set, probe for binaries.
+XASTIR_DETECT_BINARIES
+
+# if the probes failed, then make sure the "use_" variables are set to no,
+# even if we requested them.
 if test "x${festival}" = "xno"; then
   use_festival=no
 fi
-
-
-#  echo GPSMAN is ${gpsman}
-AC_ARG_WITH(gpsman,[  --without-gpsman       Disable gpsman features.],use_gpsman=$withval)
 if test "x${gpsman}" = "xno"; then
   use_gpsman=no
 fi
-
 
 # JMT - XXX - what is this and why is it relevant?
 #AC_DEFINE(_REENTRANT, 1, [Use reentrant code if available.]) 

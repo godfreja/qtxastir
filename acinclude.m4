@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.14 2004/03/23 22:59:01 we7u Exp $
+# $Id: acinclude.m4,v 1.15 2004/05/22 19:42:51 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -174,17 +174,21 @@ if test "$cat" != "no"; then
   AC_DEFINE_UNQUOTED(HAVE_CAT, 1, [Define if you have cat])
   AC_DEFINE_UNQUOTED(CAT_PATH, "${cat}", [Path to cat])
 fi
- 
-AC_PATH_PROG(festival, [festival], no, $BINPATH)
-if test "$festival" != "no"; then
-  AC_DEFINE_UNQUOTED(HAVE_FESTIVAL, 1, [Define if you have festival])
-  AC_DEFINE_UNQUOTED(FESTIVAL_PATH, "${festival}", [Path to festival])
+
+if test "$use_festival" != "no"; then 
+ AC_PATH_PROG(festival, [festival], no, $BINPATH)
+ if test "$festival" != "no"; then
+   AC_DEFINE_UNQUOTED(HAVE_FESTIVAL, 1, [Define if you have festival])
+   AC_DEFINE_UNQUOTED(FESTIVAL_PATH, "${festival}", [Path to festival])
+ fi
 fi
 
-AC_PATH_PROG(gpsman, [gpsman haslib gpsmanshp], no, $BINPATH)
-if test "$gpsman" != "no"; then
-  AC_DEFINE_UNQUOTED(HAVE_GPSMAN, 1, [Define if you have gpsman])
-  AC_DEFINE_UNQUOTED(GPSMAN_PATH, "${gpsman}", [Path to gpsman])
+if test "$use_gpsman" != "no"; then
+ AC_PATH_PROG(gpsman, [gpsman haslib gpsmanshp], no, $BINPATH)
+ if test "$gpsman" != "no"; then
+   AC_DEFINE_UNQUOTED(HAVE_GPSMAN, 1, [Define if you have gpsman])
+   AC_DEFINE_UNQUOTED(GPSMAN_PATH, "${gpsman}", [Path to gpsman])
+ fi
 fi
 
 ])
