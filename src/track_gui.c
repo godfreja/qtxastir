@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.13 2003/02/06 19:45:38 we7u Exp $
+ * $Id: track_gui.c,v 1.14 2003/02/12 23:01:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -554,7 +554,7 @@ begin_critical_section(&download_findu_dialog_lock, "track_gui.c:Download_findu_
 			    XmNmaximum, 336,
 				XmNshowValue, TRUE,
 				XmNvalue, posit_start,
-				XtVaTypedArg, XmNtitleString, XmRString, "Start Trail (hrs ago)", 10,
+				XtVaTypedArg, XmNtitleString, XmRString, "Start Trail (hrs ago)", 22,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
 				NULL);
@@ -581,7 +581,7 @@ begin_critical_section(&download_findu_dialog_lock, "track_gui.c:Download_findu_
 			    XmNmaximum, 336,
 				XmNshowValue, TRUE,
 				XmNvalue, posit_length,
-				XtVaTypedArg, XmNtitleString, XmRString, "Trail Length (hrs)", 10,
+				XtVaTypedArg, XmNtitleString, XmRString, "Trail Length (hrs)", 19,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
 				NULL);
