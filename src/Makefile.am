@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.22 2004/12/17 12:15:32 tvrusso Exp $
+# $Id: Makefile.am,v 1.23 2004/12/18 21:06:07 tvrusso Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -6,7 +6,7 @@
 bin_PROGRAMS = xastir
 noinst_PROGRAMS = testawk
 
-SUBDIRS = rtree
+SUBDIRS = @SUBRTREE@
 
 xastir_SOURCES = \
     alert.c alert.h \
@@ -68,7 +68,7 @@ testawk_SOURCES = \
     awk.c \
     dbfawk.c
 
-xastir_LDADD=-Lrtree -lrtree
+xastir_LDADD=@LIBRTREE@
 
 xastir_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
