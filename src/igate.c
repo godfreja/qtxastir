@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.21 2003/04/17 21:32:29 we7u Exp $
+ * $Id: igate.c,v 1.22 2003/04/17 22:08:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1059,7 +1059,7 @@ void output_nws_igate_rf(char *from, char *path, char *line, int port, int third
             log_data(LOGFILE_IGATE,temp);
             fprintf(stderr,temp);
         }
-        return;
+        return; // Match for station not found in file
     }
 
     //fprintf(stderr,"SENDING NWS VIA TNC!!!!\n");
