@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.184 2002/12/27 00:33:48 we7u Exp $
+ * $Id: maps.c,v 1.185 2002/12/27 01:09:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11294,7 +11294,23 @@ void index_save_to_file() {
     current = map_index_head;
 
     while (current != NULL) {
+        int i;
 
+        // Make sure there aren't any weird characters in the
+        // filename that might cause problems later.  Look for
+        // control characters and convert them to string-end
+        // characters.
+        for ( i = 0; i < strlen(current->filename); i++ ) {
+            // Change any control characters to '\0' chars
+            if (current->filename[i] < 0x20) {
+
+                current->filename[i] = '\0';    // Terminate it here
+
+                printf("Found control characters while saving map index: %s\n",
+                    current->filename);
+            }
+        }
+ 
         // Save to file if we have something in the filename
         // and the record has been accessed at least once.
         if ( (current->filename[0] != '\0')
