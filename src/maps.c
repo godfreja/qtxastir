@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.225 2003/03/01 00:00:15 we7u Exp $
+ * $Id: maps.c,v 1.226 2003/03/01 00:20:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2466,11 +2466,24 @@ void draw_shapefile_map (Widget w,
 // where they happen to cross.
 
                     if (gps_flag) {
+                        int jj;
+                        int done = 0;
 
                         // Fill in the label we'll use later
                         xastir_snprintf(gps_label,
                             sizeof(gps_label),
                             filename);
+
+                        // Knock off the ".shp" portion of the label
+                        jj = strlen(gps_label);
+                        while ( !done && (jj > 0) ) {
+                            if (gps_label[jj] == '.') {
+                                gps_label[jj] = '\0';   // Terminate it here
+                                done++;
+                            }
+                            jj--;
+                        }
+
 
                         // Check for a color in the filename: i.e.
                         // "Team2TrackRed.shp"
