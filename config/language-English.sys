@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.128 2004/07/02 00:20:31 we7u Exp $
+# $Id: language-English.sys,v 1.129 2004/07/08 15:50:01 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -227,6 +227,7 @@ PULDNTNT01|Transmit Now!|T|
 PULDNTNT07|Fetch GPS Track|F|
 PULDNTNT08|Fetch GPS Routes|R|
 PULDNTNT09|Fetch GPS Waypoints|W|
+PULDNTNT10|Fetch Garmin RINO Waypoints|G|
 #
 # Menu "Help"
 PULDNHEL01|About|A|

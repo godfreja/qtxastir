@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.134 2004/07/02 00:20:19 we7u Exp $
+# $Id: language-Dutch.sys,v 1.135 2004/07/08 15:50:00 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -238,6 +238,7 @@ PULDNTNT01|Zend Nu!|Z|
 PULDNTNT07|Volg GPS Spoor|F|
 PULDNTNT08|Volg GPS Routes|R|
 PULDNTNT09|Volg GPS Routepunten|W|
+PULDNTNT10|Fetch Garmin RINO Waypoints|G|
 #
 # Menu "Help"
 PULDNHEL01|Informatie|A|

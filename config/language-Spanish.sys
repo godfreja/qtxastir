@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.138 2004/07/02 00:20:32 we7u Exp $
+# $Id: language-Spanish.sys,v 1.139 2004/07/08 15:50:01 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -230,6 +230,7 @@ PULDNTNT01|Transmitir Ahora..!|T|
 PULDNTNT07|Coger Huella de GPS|F|
 PULDNTNT08|Coger Rutas de GPS|R|
 PULDNTNT09|Coger VíaPuntos de GPS|W|
+PULDNTNT10|Fetch Garmin RINO Waypoints|G|
 #
 # Menú de Ayuda
 PULDNHEL01|Acerca de|A|
