@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.11 2002/06/10 23:46:10 we7u Exp $
+ * $Id: main.h,v 1.12 2002/06/13 22:53:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -143,6 +143,7 @@ extern int letter_style;
 extern int wx_alert_style;
 extern int show_phg;
 extern int show_DF;
+extern int show_last_heard;
 extern int show_phg_mobiles;
 extern int show_phg_default;
 extern int show_amb;

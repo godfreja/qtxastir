@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.22 2002/06/10 23:46:09 we7u Exp $
+# $Id: language-Italian.sys,v 1.23 2002/06/13 22:53:35 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -149,6 +149,7 @@ PULDNDP020|Potenza/Guadagno - stazioni mobili||
 PULDNDP013|Ambiguità di posizione|
 PULDNDP019|Visualizza dati scaduti||
 PULDNDP023|Visualizza i cerchi DF||
+PULDNDP024|Display Last Report Time||
 PULDNDP007|Percorsi delle stazioni|i|
 PULDNDP015|Elimina tutte le stazioni|C|
 PULDNDP016|Elimina tutti i percorsi|T|
