@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.18 2002/10/23 23:12:57 we7u Exp $
+ * $Id: draw_symbols.c,v 1.19 2002/10/30 19:08:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -740,7 +740,9 @@ void draw_wind_barb(long x_long, long y_lat, char *speed,
 
 
     // Convert from mph to knots for wind speed.
-    my_speed = my_speed * cvt_mi2len;
+    my_speed = my_speed * 0.8689607;
+
+    //printf("mph:%s, knots:%d\n",speed,my_speed);
 
     // Adjust so that it fits our screen angles.  We're off by
     // 90 degrees.
