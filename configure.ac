@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.64 2003/09/02 23:43:05 jtwilley Exp $
+# $Id: configure.ac,v 1.65 2003/09/03 15:19:08 n2ygk Exp $
 
 
 #########################################################################
@@ -201,7 +201,7 @@ break)])
 
 # use dbfawk
 use_dbfawk=no
-AC_ARG_WITH(dbfawk,[  --with-dbfawk       Enable experimental dbfawk features.],AC_DEFINE(DBFAWK, , Define to 1 to use experimental dbfawk features. )
+AC_ARG_WITH(dbfawk,[  --with-dbfawk       Enable experimental dbfawk features.],AC_DEFINE(WITH_DBFAWK, , Define to 1 to use experimental dbfawk features. )
 use_dbfawk=yes)
  
 # Set XASTIR_DATA_BASE in CPPFLAGS due to Gnu coding standard that requires

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.3 2003/08/29 16:50:13 n2ygk Exp $
+ * $Id: dbfawk.c,v 1.4 2003/09/03 15:19:09 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -189,13 +189,43 @@ void dbfawk_free_sigs(dbfawk_sig_info *list)
 
 /*
  * dbfawk_find_sig:  Given a DBF file's "signature", find the appropriate
- * awk program.  
+ * awk program.  If filename is not null, see if there's a per-file .dbfawk
+ * and load it.
  */
 
-dbfawk_sig_info *dbfawk_find_sig(dbfawk_sig_info *info, const char *sig)
+dbfawk_sig_info *dbfawk_find_sig(dbfawk_sig_info *info, 
+                                 const char *sig,
+                                 const char *file)
 {
     dbfawk_sig_info *result = NULL;
 
+    if (file) {
+        char *dot, *perfile = calloc(1,strlen(file)+7);
+        dbfawk_sig_info *info;
+
+        if (!perfile) {
+            fprintf(stderr,"failed to malloc in dbfawk_find_sig!\n");
+            return NULL;
+        }
+        strcpy(perfile,file);
+        dot = strrchr(perfile,'.');
+        if (dot)
+            *dot = '\0';
+        strcat(perfile,".dbfawk");
+        info = calloc(1,sizeof(*info));
+        if (!info) {
+            fprintf(stderr,"failed to malloc in dbfawk_find_sig!\n");
+            return NULL;
+        }
+        info->prog = awk_load_program_file(perfile);
+        /* N.B. info->sig is left uninitialized since it won't be searched */
+        free(perfile);
+        if (info->prog)
+            return info;
+        else
+            free(info);
+        /* fall through and do normal signature search */
+    }
     for (result = info; result; result = result->next) {
         if (strcmp(result->sig,sig) == 0)
             return result;
