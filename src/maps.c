@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.40 2002/04/24 16:54:59 we7u Exp $
+ * $Id: maps.c,v 1.41 2002/04/24 18:23:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7984,7 +7984,9 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
 
 /* moved these here and made them static so it will function on FREEBSD */
 #define MAX_ALERT 7000
-static alert_entry alert[MAX_ALERT];
+// Had to make "alert" non-static as we don't use it any more in
+// this file.  --we7u
+alert_entry alert[MAX_ALERT];
 static int alert_count;
 
 
