@@ -1,4 +1,4 @@
-# $Id: tgrwat.dbfawk,v 1.2 2003/09/09 13:56:57 n2ygk Exp $
+# $Id: tgrwat.dbfawk,v 1.3 2003/11/10 14:57:27 n2ygk Exp $
 # This dbfawk file is used to map arbitrary dbf data that accompanies
 # a shapefile into Xastir canoncical values of:
 #   key     - search key
@@ -6,6 +6,7 @@
 #   color   - color to draw the road
 #   name    - name of the road for labels
 #   filled  - whether a polygon is drawn filled or not
+#   fill_color - color to fill polygon with
 #   pattern - line pattern for road, river, etc.
 #   display_level - highest zoom level at which to display the feature
 #   label_level - highest zoom level at which to display the label
@@ -30,7 +31,7 @@ dbffields="CFCC:LANDNAME"}
 
 # BEGIN_RECORD is called once per dbf record which contains multiple fields.
 # Use this rule to re-initialize variables between records.
-BEGIN_RECORD {key=""; lanes=1; color=26; name=""; filled=1; pattern=1; display_level=8192; label_level=512; symbol=""}
+BEGIN_RECORD {key=""; lanes=1; color=26; fill_color=26; name=""; filled=1; pattern=1; display_level=8192; label_level=512; symbol=""}
 
 # name: name is just the county name.
 /^COUNTY=(.*)$/ {name="$1"; next}
