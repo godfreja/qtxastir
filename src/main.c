@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.340 2003/09/05 19:47:50 we7u Exp $
+ * $Id: main.c,v 1.341 2003/09/05 20:20:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3897,14 +3897,17 @@ void Mouse_button_handler (Widget w, Widget popup, XButtonEvent *event) {
     menu_y=input_y;
     if (right_menu_popup != NULL) { // If popup menu defined
 
-        // Bring up the popup menu
-        XmMenuPosition(right_menu_popup,(XButtonPressedEvent *)event);
-        XtManageChild(right_menu_popup);
+        if (!measuring_distance && !moving_object) {
 
-        // Check whether any modifiers are pressed.
-        // If so, pop up a warning message.
-        if ( (event->state != 0) && warn_about_mouse_modifiers) {
-            popup_message(langcode("POPUPMA023"),langcode("POPUPMA024"));
+            // Bring up the popup menu
+            XmMenuPosition(right_menu_popup,(XButtonPressedEvent *)event);
+            XtManageChild(right_menu_popup);
+
+            // Check whether any modifiers are pressed.
+            // If so, pop up a warning message.
+            if ( (event->state != 0) && warn_about_mouse_modifiers) {
+                popup_message(langcode("POPUPMA023"),langcode("POPUPMA024"));
+            }
         }
     }
 }
