@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.343 2003/10/16 21:39:38 we7u Exp $
+ * $Id: maps.c,v 1.344 2003/10/16 22:59:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -283,6 +283,41 @@ int utm_grid_clear(int do_alloc)
 
 void maps_init(void)
 {
+    fprintf(stderr,"\n\nBuilt-in map types:\n");
+    fprintf(stderr,"%10s   USGS GNIS Datapoints\n","gnis");
+    fprintf(stderr,"%10s   APRSdos Maps\n","map");
+    fprintf(stderr,"%10s   WinAPRS/MacAPRS/X-APRS Maps\n","map");
+    fprintf(stderr,"%10s   PocketAPRS Maps\n","pdb");
+
+    fprintf(stderr,"\nOptional map types for which support has been compiled in: \n");
+ 
+#ifdef HAVE_IMAGEMAGICK
+    fprintf(stderr,"%10s   Image Map (ImageMagick library, many formats allowed)\n","geo");
+#endif  // HAVE_IMAGEMAGICK
+
+#ifndef NO_GRAPHICS
+#ifdef HAVE_LIBCURL
+    fprintf(stderr,"%10s   URL (Internet maps via libcurl)\n","geo");
+#else
+#ifdef HAVE_WGET
+    fprintf(stderr,"%10s   URL (Internet maps via wget)\n","geo");
+#endif  // HAVE_WGET
+#endif  // HAVE_LIBCURL
+#endif  // NO_GRAPHICS
+
+
+#ifdef HAVE_LIBSHP
+    fprintf(stderr,"%10s   ESRI Shapefile Maps (Shapelib library)\n","shp");
+#endif  // HAVE_LIBSHP
+
+#ifdef HAVE_LIBGEOTIFF
+    fprintf(stderr,"%10s   USGS DRG Geotiff Topographic Maps (libgeotiff/libproj)\n","tif");
+#endif  // HAVE_LIBGEOTIFF
+
+#ifndef NO_XPM
+    fprintf(stderr,"%10s   X Pixmap Maps (XPM library)\n","xpm");
+#endif  // NO_XPM
+
     init_critical_section( &print_properties_dialog_lock );
     (void)utm_grid_clear(0);
 }
