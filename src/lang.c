@@ -1,5 +1,5 @@
 /*
- * $Id: lang.c,v 1.1 2002/02/02 03:18:01 kg4ijb Exp $
+ * $Id: lang.c,v 1.2 2002/03/05 08:18:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -178,7 +178,8 @@ int load_language_file(char *filename) {
                             printf("Too many Language codes error on line %d\n",line_num);
                         }
                         if (ok) {
-                            if (debug_level & 32) printf("Code #%d <%s> data <%s> hotkey <%c>\n",lang_code_number,
+                            if (debug_level & 32)
+                                printf("Code #%d <%s> data <%s> hotkey <%c>\n",lang_code_number,
                                     lang_code[lang_code_number],lang_code_ptr[lang_code_number],
                                     lang_hotkey[lang_code_number]);
                                 lang_code_number++;
