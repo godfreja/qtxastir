@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.119 2004/09/07 21:06:20 we7u Exp $
+ * $Id: util.c,v 1.120 2004/09/24 19:42:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1264,15 +1264,6 @@ char *compress_posit(const char *input_lat, const char group, const char *input_
     // the compressed posit has a fixed 13-character length
     // according to the spec!
     //
-    //if ( (c == ' ') && (s == ' ') && (t == ' ') )
-    //    xastir_snprintf(pos,
-    //    sizeof(pos),
-    //    "%c%s%s%c ",
-    //    group,
-    //    lat,
-    //    lon,
-    //    symbol);
-    //else
     xastir_snprintf(pos,
         sizeof(pos),
         "%c%s%s%c%c%c%c",
