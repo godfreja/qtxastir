@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.77 2003/03/22 00:02:54 jtwilley Exp $
+ * $Id: interface.c,v 1.78 2003/03/28 18:33:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -636,6 +636,11 @@ static void data_out_ax25(int port, unsigned char *string) {
 // bp       raw packet data
 // len      length of raw packet data
 // buffer   buffer to write readable packet data to
+//
+// Note that db.c:decode_ax25_header does much the same thing for
+// Serial KISS interface packets.  Consider combining the two
+// functions.  process_ax25_packet() would be the earlier and more
+// thought-out function.
 //***********************************************************
 
 char *process_ax25_packet(unsigned char *bp, unsigned int len, char *buffer) {
