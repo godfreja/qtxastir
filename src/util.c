@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.156 2005/03/30 17:12:59 we7u Exp $
+ * $Id: util.c,v 1.157 2005/03/31 20:43:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3667,8 +3667,12 @@ int valid_inet_name(char *name, char *info, char *origin, int origin_size) {
     // other acceptable internet names...
     // don't be too generous here, there is a lot of garbage on the internet
 
+    if (len == 6 && strcasecmp(info,"WHO-IS")) {
+        return(1);
+    }
+
+
     return(0);                          // ignore all other
-    
 }
 
 
