@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.213 2003/02/23 16:44:34 we7u Exp $
+ * $Id: maps.c,v 1.214 2003/02/24 18:25:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11962,25 +11962,15 @@ void load_alert_maps (Widget w, char *dir) {
 
         //fprintf(stderr,"Weather Alerts, alert_scan: %s\t\talert_status: %s\n", alert_scan, alert_status);
 
+        // Expire old alerts (zero the title string)
+        alert_expire();
+
         // Iterate through the weather alerts we currently have.
         for (ii = 0; ii < alert_max_count; ii++) {
 
             // Check whether alert slot is empty/filled
             if (alert_list[ii].title[0] == '\0') // It's empty
                 continue;
-
-            // Expire old alerts (zero the title string)
-            if (sec_now() >= alert_list[ii].expiration) {
-                if (debug_level & 2) {
-                    fprintf(stderr,"load_alert_maps: Expiring alert: %s:%lu, sec_now:%lu\n",
-                        alert_list[ii].title,
-                        alert_list[ii].expiration,
-                       sec_now());
-                }
-                alert_list[ii].title[0] = '\0'; // Clear this alert
-                alert_list_count--;
-                continue;   // Skip this alert (it's empty!)
-            }
 
             // The last parameter denotes loading into pixmap_alerts instead
             // of pixmap or pixmap_final.  Note that just calling map_search
