@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.79 2003/07/15 22:58:06 we7u Exp $
+ * $Id: util.c,v 1.80 2003/07/17 19:37:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -753,11 +753,12 @@ time_t time_from_aprsstring(char *aprs_time) {
     long zone;
 
 #ifndef HAVE_TM_GMTOFF
-#ifndef __CYGWIN__
-    extern time_t timezone;
-#endif  // __CYGWIN__
-    // Use "_timezone" instead in Cygwin
-#define timezone _timezone
+    #ifdef __CYGWIN__
+        // Use "_timezone" instead of timezone in Cygwin
+        #define timezone _timezone
+    #else // __CYGWIN__
+        extern time_t timezone;
+    #endif  // __CYGWIN__
 #endif  // HAVE_TM_GMTOFF
 
 
