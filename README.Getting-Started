@@ -1,5 +1,5 @@
 
-$Id: README.Getting-Started,v 1.8 2004/09/17 19:22:46 we7u Exp $
+$Id: README.Getting-Started,v 1.9 2004/12/09 20:27:44 we7u Exp $
 
 
 Hello new user, and welcome to Xastir!
@@ -236,7 +236,7 @@ are:
     --without-shapelib
     --without-pcre
     --without-dbfawk
-    --without-errorpopups
+    --with-errorpopups
 
 That said, you probably won't have to use any of these!  Type
 "./configure" all by itself and the script should eventually give

@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.54 2004/11/18 18:59:05 we7u Exp $
+$Id: INSTALL,v 1.55 2004/12/09 20:27:32 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -186,8 +186,8 @@ See below for instructions on installing all of these libraries. Once the
   compiling in support for the new features.
 
 
-If you wish to disable configure's testing of certain features, you
-can add any of the following flags to configure:
+If you wish to enable/disable configure's testing of certain
+features, you can add any of the following flags to configure:
 
     --without-ax25
     --without-festival
@@ -199,7 +199,7 @@ can add any of the following flags to configure:
     --without-gdal
     --without-pcre
     --without-dbfawk
-    --without-errorpopups
+    --with-errorpopups
 
 For example, "./configure --without-ax25" will disable the AX.25
 networking code in Xastir.

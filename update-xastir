@@ -1,7 +1,7 @@
 #! /bin/sh
 
 
-# $Id: update-xastir,v 1.6 2004/11/22 16:59:59 we7u Exp $
+# $Id: update-xastir,v 1.7 2004/12/09 20:27:45 we7u Exp $
 # Copyright (C) 2004 The Xastir Group
 
 # See README.CVS for instructions on setting up SUDO for
@@ -31,7 +31,7 @@ echo ""                                   | tee -a make.log
 echo ""                                   | tee -a make.log
 echo ""                                   | tee -a make.log
 (date 2>&1)                               | tee -a make.log
-(./configure --without-errorpopups 2>&1)  | tee -a make.log
+(./configure 2>&1)                        | tee -a make.log
 
 echo ""                                   | tee -a make.log
 echo ""                                   | tee -a make.log
