@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.81 2003/03/06 18:47:32 we7u Exp $
+# $Id: language-Italian.sys,v 1.82 2003/03/21 20:44:49 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -27,7 +27,6 @@ PULDNFI001|Configura|C|
 PULDNFI002|Apri file di registro|A|
 PULDNFI003|Test||
 PULDNFI004|Esci|x|
-PULDNFI005|Yes I'm Sure!|Y|
 PULDNFI007|Cambia il livello di Debug|D|
 PULDNFI010|Registro TNC|T|
 PULDNFI011|Registro Rete|e|

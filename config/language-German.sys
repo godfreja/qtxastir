@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.80 2003/03/06 18:47:32 we7u Exp $
+# $Id: language-German.sys,v 1.81 2003/03/21 20:44:49 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -32,7 +32,6 @@ PULDNFI001|Einstellungen|E|
 PULDNFI002|Protokolldatei laden|P|
 PULDNFI003|Test|T|
 PULDNFI004|Beenden|B|
-PULDNFI005|Yes I'm Sure!|Y|
 PULDNFI007|Debug Level ändern|D|
 PULDNFI010|TNC protokollieren||
 PULDNFI011|Netz protokollieren||

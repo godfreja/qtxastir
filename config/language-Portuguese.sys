@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.78 2003/03/06 18:47:32 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.79 2003/03/21 20:44:49 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -25,7 +25,6 @@ PULDNFI001|Configurar|C|
 PULDNFI002|Abrir o log|B|
 PULDNFI003|Testar|P|
 PULDNFI004|Sair|S|
-PULDNFI005|Sim, vou sair!|S|
 PULDNFI007|Muda nivel de Debug|D|
 PULDNFI010|Abre o log do TNC|T|
 PULDNFI011|Abre o log da Internet|I|
