@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.20 2003/10/28 01:40:02 rzg Exp $
+$Id: README.MAPS,v 1.21 2003/11/10 14:55:29 n2ygk Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -342,7 +342,8 @@ Getting Maps and other Data Files for Xastir:
         key:       search key (used for WX alerts to find the shape)
 	symbol:	   symbol for landmarks, etc.
 	filled:	   draw polygons filled.
-        fillstyle: style of fill (solid, stiple, etc.)
+        fill_style: style of fill (solid, stiple, etc.)
+	fill_color: color of fill
         pattern:   solid or dashed lines.
         display_level: at what zoom level to begin displaying the shape
         label_level: at what zoom level to begin displaying labels
