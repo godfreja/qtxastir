@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.130 2003/07/10 19:06:41 we7u Exp $
+ * $Id: interface.c,v 1.131 2003/07/15 19:34:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -748,7 +748,21 @@ void channel_data(int port, unsigned char *string, int length) {
                     strncpy(gpgga_save_string,string,MAX_LINE_SIZE);
                     gps_port_save = port;
                 }
-                else {  // Else drop the string on the floor.
+                else {
+                    // It's not one of the GPS strings we're looking
+                    // for.  It could be another GPS string, a
+                    // partial GPS string, or a full/partial TNC
+                    // string.  Drop the string on the floor unless
+                    // it's an HSP interface.
+                    //
+                    if (port_data[port].device_type == DEVICE_SERIAL_TNC_HSP_GPS) {
+                        // Decode the string normally.
+                        incoming_data = string;
+                        incoming_data_length = length;
+                        data_port = port;
+                        data_avail = 1;
+                        //fprintf(stderr,"data_avail\n");
+                    }
                 }
                 break;
 // We need to make sure that the variables stating that a string is
