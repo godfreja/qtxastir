@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.333 2003/10/09 20:09:49 we7u Exp $
+ * $Id: maps.c,v 1.334 2003/10/09 20:16:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -687,7 +687,7 @@ void draw_grid(Widget w) {
 
     /* Set the line width in the GC */
     (void)XSetLineAttributes (XtDisplay (w), gc_tint, 1, LineOnOffDash, CapButt,JoinMiter);
-    (void)XSetForeground (XtDisplay (w), gc_tint, colors[0x08]); // Black
+    (void)XSetForeground (XtDisplay (w), gc_tint, colors[0x27]);
     (void)(void)XSetFunction (XtDisplay (da), gc_tint, GXxor);
 
     if (coordinate_system == USE_UTM) {
