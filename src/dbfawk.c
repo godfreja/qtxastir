@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.11 2004/05/24 21:53:27 we7u Exp $
+ * $Id: dbfawk.c,v 1.12 2004/05/25 01:55:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -92,7 +92,6 @@ dbfawk_field_info *dbfawk_field_list(DBFHandle dbf, char *dbffields)
     int w,prec;
 
     fi = calloc(1,sizeof(dbfawk_field_info));
- 
     if (!fi)
         return NULL;
     if (prev) {
