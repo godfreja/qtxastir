@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.40 2004/12/07 19:39:42 we7u Exp $
+ * $Id: map_geo.c,v 1.41 2004/12/08 05:45:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -368,12 +368,21 @@ void draw_toporama_map (Widget w,
 
         curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30);
         curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+
+        // Added in libcurl 7.9.8
+#if (LIBCURL_VERSION_NUM >= 0x070908)
         curl_easy_setopt(curl, CURLOPT_NETRC, CURL_NETRC_OPTIONAL);
+#endif  // LIBCURL_VERSION_NUM
 
         // Added in libcurl 7.10.6
-//        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+#if (LIBCURL_VERSION_NUM >= 0x071006)
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+#endif  // LIBCURL_VERSION_NUM
+
         // Added in libcurl 7.10.7
-//        curl_easy_setopt(curl, CURLOPT_PROXYAUTH, CURLAUTH_ANY);
+#if (LIBCURL_VERSION_NUM >= 0x071007)
+        curl_easy_setopt(curl, CURLOPT_PROXYAUTH, CURLAUTH_ANY);
+#endif  // LIBCURL_VERSION_NUM
 
 // This is only available in later versions of libcurl?
 // curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
@@ -1245,12 +1254,21 @@ fprintf(stderr,"1 ");
 
             curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30);
             curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+
+            // Added in libcurl 7.9.8
+#if (LIBCURL_VERSION_NUM >= 0x070908)
             curl_easy_setopt(curl, CURLOPT_NETRC, CURL_NETRC_OPTIONAL);
+#endif  // LIBCURL_VERSION_NUM
 
             // Added in libcurl 7.10.6
-//            curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+#if (LIBCURL_VERSION_NUM >= 0x071006)
+            curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+#endif  // LIBCURL_VERSION_NUM
+
             // Added in libcurl 7.10.7
-//            curl_easy_setopt(curl, CURLOPT_PROXYAUTH, CURLAUTH_ANY);
+#if (LIBCURL_VERSION_NUM >= 0x071007)
+            curl_easy_setopt(curl, CURLOPT_PROXYAUTH, CURLAUTH_ANY);
+#endif  // LIBCURL_VERSION_NUM
 
 // This is only available in later versions of libcurl?
 // curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
