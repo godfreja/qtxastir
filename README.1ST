@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.35 2002/11/06 20:47:44 we7u Exp $
+$Id: README.1ST,v 1.36 2002/11/07 06:40:33 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -205,7 +205,9 @@ First Time Install:
      Usually,
      ./configure
      make
-     make install
+     su (root)
+     make install (as root)
+     exit (from root)
 
      then run ldconfig
 
@@ -282,6 +284,14 @@ First Time Install:
             /usr/local/lib/
             /usr/local/bin/
             /usr/local/share/proj/
+
+       You may need to do this (as root) if the "make install" portion fails
+       because it can't find "ginstall":
+
+       cd /usr/bin
+       ln -s install ginstall
+
+       Then retry the "make install" portion above.
 
 
        3c. Upgrade libtiff (Note: This is an entirely different package from LessTif!):
