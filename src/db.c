@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.197 2003/01/27 23:18:44 we7u Exp $
+ * $Id: db.c,v 1.198 2003/01/30 00:12:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10468,7 +10468,7 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
             clear_acked_message(call,addr,msg_id);  // got an ACK for me
             msg_record_ack(call,addr,msg_id,0);     // Record the ack for this message
         }
-        else {                                          // ACK for other station
+        else {  // ACK is for another station
             /* Now if I have Igate on and I allow to retransmit station data           */
             /* check if this message is to a person I have heard on my TNC within an X */
             /* time frame. If if is a station I heard and all the conditions are ok    */
@@ -10649,7 +10649,7 @@ else {
     if (debug_level & 1)
         printf("6b\n");
     //--------------------------------------------------------------------------
-    if (!done && strlen(msg_id) > 0) {          // other message with linenumber (msg from me?)
+    if (!done && strlen(msg_id) > 0) {          // other message with linenumber
         long dummy;
 
         if (debug_level & 2) printf("found Msg w line: |%s| |%s| |%s|\n",addr,message,msg_id);
