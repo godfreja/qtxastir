@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kpc2,v 1.2 2004/07/19 16:13:40 we7u Exp $
+# $Id: tnc-startup.kpc2,v 1.3 2004/07/26 17:04:58 we7u Exp $
 #
 # Copyright (C) 2004  The Xastir Group
 #
@@ -7,6 +7,7 @@
 #
 #
 HID off
+CWID off
 B E 0
 DIGI on
 ECho off

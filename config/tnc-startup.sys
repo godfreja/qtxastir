@@ -1,4 +1,4 @@
-# $Id: tnc-startup.sys,v 1.9 2004/07/19 16:13:40 we7u Exp $
+# $Id: tnc-startup.sys,v 1.10 2004/07/26 17:04:58 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -9,6 +9,7 @@ int terminal
 
 ECHO off
 HID off
+CWID off
 MYAlias RELAY
 B E 0
 DIGI on
