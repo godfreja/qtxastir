@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.16 2003/02/15 22:35:47 we7u Exp $
+# $Id: configure.ac,v 1.17 2003/02/16 09:35:01 we7u Exp $
 
 
 #
@@ -233,6 +233,10 @@ AC_CHECK_LIB(compat, main,
     [LIBCOMPAT="-lcompat"
     AC_SUBST(LIBCOMPAT)])
 AC_CHECK_LIB([pthread],[pthread_create]) 
+ 
+# Check for sched_yield in librt (needed for Solaris)
+AC_CHECK_LIB(rt,sched_yield,LIB_RT='-lrt',,)
+LIBS="$LIB_RT $LIBS"
  
 # Check for endian 
 AC_C_BIGENDIAN 
