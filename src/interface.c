@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.169 2004/06/17 19:28:59 we7u Exp $
+ * $Id: interface.c,v 1.170 2004/06/17 22:46:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2310,6 +2310,8 @@ fprintf(stderr,"Origin Call: %s\nOrigin SSID: %d\n",origin_call,origin_ssid);
         //        expect callsign to have ssid already or not
         // KJ5O
 
+        comment[0] = '\0';
+
         strncat(buffer,(char *)origin_call,10);
 
         strncat(buffer,">",1);
@@ -2426,7 +2428,7 @@ fprintf(stderr, "Decoded this position: %f %f\n", latitude, longitude);
 
                     if (strlen(displayname)) {
                         // Add displayname to the comment field
-                        strncpy(comment," ",1);
+                        strncat(comment," ",1);
                         strncat(comment,displayname,40);
                     }
                 }
