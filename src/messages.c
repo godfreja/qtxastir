@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.26 2004/01/26 16:18:23 we7u Exp $
+ * $Id: messages.c,v 1.27 2004/05/06 23:19:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -750,6 +750,8 @@ end_critical_section(&send_message_dialog_lock, "messages.c:clear_acked_message"
 
 
 
+// This routine is not currently used.
+//
 void send_queued(char *to) {
     int i;
 

@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.46 2004/05/06 21:40:50 we7u Exp $
+ * $Id: db.h,v 1.47 2004/05/06 23:19:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -42,7 +42,8 @@
 #define MAX_KILLED_OBJECT_RETRANSMIT 20
 
 // Check entire station list at this rate for objects/items that
-// might need to be transmitted via the decaying algorithm.
+// might need to be transmitted via the decaying algorithm.  This is
+// the start rate, which gets doubled on each transmit.
 #define OBJECT_CHECK_RATE 15
 
 // We should probably be using APRS_DF in extract_bearing_NRQ()
