@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.21 2003/03/20 22:29:23 jtwilley Exp $
+ * $Id: interface.h,v 1.22 2003/03/22 08:28:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -189,7 +189,7 @@ extern xastir_mutex connect_lock;       // Protects port_data[].thread_status an
 extern ioparam devices[];
 
 #if !HAVE_SOCKLEN_T
-typedef socklen_t unsigned int;
+typedef unsigned int socklen_t;
 #endif
 
 /* from interface_gui.c */
