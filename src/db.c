@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.342 2004/07/13 21:02:52 we7u Exp $
+ * $Id: db.c,v 1.343 2004/07/14 19:13:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6395,6 +6395,7 @@ void draw_trail(Widget w, DataRow *fill, int solid) {
     char flag1;
     TrackRow *ptr;
 
+
     if (!ok_to_draw_station(fill))
         return;
 
@@ -6478,7 +6479,27 @@ void draw_trail(Widget w, DataRow *fill, int solid) {
                         // label_all_trackpoints=1.
                         //
                         if (Display_.callsign && Display_.label_all_trackpoints) {
-                            if (lat0 != lat1 && lon0 != lon1) {
+
+                            // The last position already gets its
+                            // callsign string drawn, plus that gets
+                            // shifted based on other parameters.
+                            // Draw both points of all line segments
+                            // except that one.  This will result in
+                            // strings getting drawn twice at times,
+                            // but they overlay on top of each other
+                            // so no big deal.
+                            //
+                            if (ptr != fill->newest_trackpoint) {
+                                draw_nice_string(da,
+                                    pixmap_final,
+                                    letter_style,
+                                    lon0+10,
+                                    lat0,
+                                    fill->call_sign,
+                                    0x08,
+                                    0x0f,
+                                    strlen(fill->call_sign));
+
                                 draw_nice_string(da,
                                     pixmap_final,
                                     letter_style,
