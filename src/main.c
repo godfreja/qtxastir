@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.433 2004/01/08 21:34:57 we7u Exp $
+ * $Id: main.c,v 1.434 2004/01/08 21:38:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25564,7 +25564,7 @@ int main(int argc, char *argv[]) {
 // without setting width/height values first:
 // "Error: Shell widget xastir has zero width and/or height"
 // 
-//            XtRealizeWidget(Global.top);
+            XtRealizeWidget(Global.top);
 
 
 //fprintf(stderr,"***index_restore_from_file\n");
