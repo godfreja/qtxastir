@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.140 2005/01/12 01:30:05 we7u Exp $
+ * $Id: util.c,v 1.141 2005/01/23 20:49:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -140,7 +140,7 @@ void init_tactical_hash(int clobber) {
         }
     }
     else {
-//fprintf(stderr,"Creating has table from scratch\n");
+//fprintf(stderr,"Creating hash table from scratch\n");
         tactical_hash=create_hashtable(TACTICAL_HASH_SIZE,
             tactical_hash_from_key,
             tactical_keys_equal);

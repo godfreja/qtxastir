@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.430 2005/01/20 23:57:23 we7u Exp $
+ * $Id: db.c,v 1.431 2005/01/23 20:50:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1084,9 +1084,9 @@ time_t msg_data_add(char *call_sign, char *from_call, char *data,
 
 
 // alert_data_add:  Function which adds NWS weather alerts to the
-// alert_list.
+// alert hash.
 //
-// This function adds alerts directly to the alert_list, bypassing
+// This function adds alerts directly to the alert hash, bypassing
 // the message list and associated message-scan functions.
 //
 void alert_data_add(char *call_sign, char *from_call, char *data,
@@ -1144,7 +1144,7 @@ void alert_data_add(char *call_sign, char *from_call, char *data,
         "%s",
         get_time(time_data));
 
-    // Go try to add it to our alert_list.  alert_build_list() will
+    // Go try to add it to our alert hash.  alert_build_list() will
     // check for duplicates before adding it.
 
     alert_build_list(&m_fill);
