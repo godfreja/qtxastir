@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.91 2005/01/10 21:39:28 we7u Exp $
+ * $Id: map_shp.c,v 1.92 2005/01/13 04:02:52 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3754,6 +3754,9 @@ if (on_screen) {
                             && !skip_label ) {
                         int temp_ok;
 
+                        if (debug_level & 16) {
+                            fprintf(stderr,"I think I should display labels\n");
+                        }
                         ok = 1;
 
                         // Convert to Xastir coordinates:
@@ -3849,6 +3852,11 @@ if (on_screen) {
                                         colors[label_color],
                                         (char *)temp);
 #endif
+                                    if (debug_level & 16) {
+                                        fprintf(stderr,
+                                       "  displaying label %s with color %x\n",
+                                                temp,label_color);
+                                    }
                                     (void)draw_centered_label_text(w,
                                         -90,
                                         x,
