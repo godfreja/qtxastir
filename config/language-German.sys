@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.154 2004/12/22 05:08:23 we7u Exp $
+# $Id: language-German.sys,v 1.155 2004/12/29 16:40:49 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -951,6 +951,7 @@ POPEM00036|Hinweis||
 POPEM00037|HSP Interface vorhanden: GPS-Abfrageintervalle größer||
 POPEM00038|Name Conflicts With Existing Object/Item/Station||
 POPEM00039|Illegal characters found, substituting periods in their place||
+POPEM00040|Custom outgoing path was lost||
 #
 # Karten - Ausschnitt 
 JMLPO00001|Gespeicherte Kartenausschnitte||
