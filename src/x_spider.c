@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.14 2004/07/28 19:17:51 we7u Exp $
+ * $Id: x_spider.c,v 1.15 2004/08/09 18:32:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -749,6 +749,8 @@ void Server(void) {
     // Infinite loop
     //
     for ( ; ; ) {
+        int flag;
+
 
         // Look for a connection from a client process.  This is a
         // concurrent server (allows multiple concurrent
@@ -820,7 +822,15 @@ void Server(void) {
             close(newsockfd);
             goto finis;
         }
-        
+
+        flag = 1;
+
+        // Turn on the socket keepalive option
+        (void)setsockopt(newsockfd,  SOL_SOCKET, SO_KEEPALIVE, (char *) &flag, sizeof(int));
+
+        // Disable the Nagle algorithm (speeds things up)
+        (void)setsockopt(newsockfd, IPPROTO_TCP,  TCP_NODELAY, (char *) &flag, sizeof(int));
+
         if ( (childpid = fork()) < 0) {
             //
             // Problem forking.  Clean up and continue loop.
