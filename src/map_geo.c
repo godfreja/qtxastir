@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.25 2004/03/02 07:50:07 we7u Exp $
+ * $Id: map_geo.c,v 1.26 2004/03/02 08:10:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -298,7 +298,7 @@ void draw_toporama_map (Widget w,
         my_screen_height,
         my_zoom);
 
-fprintf(stderr,"%s\n", fileimg);
+//fprintf(stderr,"%s\n", fileimg);
 
     // Create a local filename that we'll save to.
     xastir_snprintf(local_filename,
