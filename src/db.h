@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.32 2003/02/20 09:45:16 we7u Exp $
+ * $Id: db.h,v 1.33 2003/02/26 01:55:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -420,6 +420,7 @@ extern void mdelete_messages_to(char *to);
 extern void init_message_data(void);
 extern void check_message_remove(void);
 extern int  new_message_data;
+extern time_t msg_data_add(char *call_sign, char *from_call, char *data, char *seq, char type, char from, long *record_out);
 
 // stations
 extern int st_direct_timeout;   // Interval that ST_DIRECT flag stays set
