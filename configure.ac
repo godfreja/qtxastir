@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.17 2003/02/16 09:35:01 we7u Exp $
+# $Id: configure.ac,v 1.18 2003/02/16 17:30:20 we7u Exp $
 
 
 #
@@ -756,6 +756,7 @@ else
   AC_CHECK_FILE(/sw/bin/Magick-config, use_imagemagick="yes") 
   if test "$use_imagemagick" = "yes"; then
     MAGIC_BIN="/sw/bin/Magick-config"
+    MAGIC_LIB_DIR="-L/sw/lib"
   else
     AC_MSG_WARN(*** Missing Magick-config (or it is not in the path).  Building w/o ImageMagick support. ***) 
   fi
@@ -777,7 +778,7 @@ if test "$use_imagemagick" = "yes"; then
   CPPFLAGS="$CPPFLAGS `${MAGIC_BIN} --cppflags`" 
   CXXFLAGS="$CXXFLAGS `${MAGIC_BIN} --cflags`" 
   LDFLAGS="$LDFLAGS `${MAGIC_BIN} --ldflags`" 
-  LIBS="`${MAGIC_BIN} --libs` $LIBS" 
+  LIBS="${MAGIC_LIB_DIR} `${MAGIC_BIN} --libs` $LIBS" 
 
 # 
 # For the case of apple-darwin, we don't want to check the
