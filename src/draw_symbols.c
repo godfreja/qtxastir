@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.11 2002/06/24 22:40:33 we7u Exp $
+ * $Id: draw_symbols.c,v 1.12 2002/07/08 22:43:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -315,7 +315,7 @@ void draw_phg_rng(long x_long, long y_lat, char *phg, time_t sec_heard, Pixmap w
                                         (int)(((y_lat-y_lat_offset)/scale_y)-(diameter/2)),
                                         (unsigned int)diameter,(unsigned int)diameter,0,64*360);
                             } else {    // Draw oval to depict beam heading
-//WE7U7
+
                             // If phg[6] != '0' we still draw a circle, but the center
                             // is offset in the indicated direction by 1/3 the radius.
                                 
@@ -712,7 +712,6 @@ void draw_bearing(long x_long, long y_lat, char *course,
     //    offy_miles,
     //    screen_miles);
 
-//WE7U
     /* max off screen values */
     max_x = screen_width+800l;
     max_y = screen_height+800l;
@@ -1597,7 +1596,6 @@ void Select_symbol_change_data(Widget widget, XtPointer clientData, XtPointer ca
     }
 
 /*
-    //WE7U
     // Small memory leak in below statement:
     //strcpy(altnet_call, XmTextGetString(altnet_text));
     // Change to:

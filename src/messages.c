@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.17 2002/06/20 21:01:13 we7u Exp $
+ * $Id: messages.c,v 1.18 2002/07/08 22:43:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -561,8 +561,6 @@ void check_and_transmit_messages(time_t time) {
 
                     transmit_message_data(message_pool[i].to_call_sign,temp);
 
-
-//WE7U
                     message_pool[i].active_time = time + message_pool[i].next_time;
 
                     //printf("%d\n",(int)message_pool[i].next_time);

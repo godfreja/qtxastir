@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.39 2002/07/02 21:30:14 we7u Exp $
+ * $Id: alert.c,v 1.40 2002/07/08 22:43:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1171,7 +1171,6 @@ static void alert_build_list(Message *fill) {
 /////////////////////////////////////////////////////////////////////
 // End of compressed weather alert special code
 /////////////////////////////////////////////////////////////////////
-//WE7U
 
         // Terminate the strings
         entry[0].activity[20] = entry[0].alert_tag[20] = '\0';
