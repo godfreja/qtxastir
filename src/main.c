@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.126 2002/08/06 20:42:37 we7u Exp $
+ * $Id: main.c,v 1.127 2002/08/14 15:49:17 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1846,7 +1846,7 @@ void Coordinate_calc_compute(Widget widget, XtPointer clientData, XtPointer call
     // display.
     if (have_utm) {
         // Process UTM values
-        utm_to_ll(gDatum[E_WGS_84].ellipsoid,
+        utm_to_ll(E_WGS_84,
             (double)northing,
             (double)easting,
             full_zone,
@@ -1865,7 +1865,7 @@ void Coordinate_calc_compute(Widget widget, XtPointer clientData, XtPointer call
         // Process lat/lon values
         double_northing = (double)northing;
         double_easting = (double)easting;
-        ll_to_utm(gDatum[E_WGS_84].ellipsoid,
+        ll_to_utm(E_WGS_84,
             (double)latitude,
             (double)longitude,
             &double_northing,
