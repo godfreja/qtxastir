@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.64 2002/04/30 00:02:15 we7u Exp $
+ * $Id: maps.c,v 1.65 2002/04/30 18:30:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3179,17 +3179,21 @@ void Snapshot(void) {
 
         // Convert it to a png file.  This depends on having the
         // ImageMagick command "convert" installed.
-        xastir_snprintf(command, sizeof(command), "convert -quality 100 %s %s",
+        xastir_snprintf(command, sizeof(command), "/usr/bin/convert -quality 100 %s %s",
                 xpm_filename, png_filename );
-        system( command );
 
-        chmod( png_filename, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH );
+        if ( system( command ) != 0 ) {
+            printf("/usr/bin/convert failed to convert snapshot from xpm to png\n");
+        }
+        else {
+            chmod( png_filename, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH );
 
-        // Delete temporary xpm file
-        unlink( xpm_filename );
+            // Delete temporary xpm file
+            unlink( xpm_filename );
 
-        if ( debug_level & 512 )
-            printf("  Done creating png.\n");
+            if ( debug_level & 512 )
+                printf("  Done creating png.\n");
+        }
     }
 
 #endif // NO_GRAPHICS
