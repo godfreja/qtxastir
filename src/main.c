@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.348 2003/09/27 14:18:28 n2ygk Exp $
+ * $Id: main.c,v 1.349 2003/10/02 14:09:40 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5111,7 +5111,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             MY_FOREGROUND_COLOR,
             MY_BACKGROUND_COLOR,
             NULL);
-    XtAddCallback(gamma_adjust_button, XmNactivateCallback, Map_font, NULL);
+    XtAddCallback(gamma_adjust_button, XmNactivateCallback, Gamma_adjust, NULL);
 #endif  // HAVE_IMAGEMAGICK
 #endif  // NO_GRAPHICS
 
