@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.59 2003/01/30 22:09:06 we7u Exp $
+ * $Id: interface.c,v 1.60 2003/01/30 22:48:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3260,7 +3260,8 @@ int add_device(int port_avail,int dev_type,char *dev_nm,char *passwd,int dev_sck
                     /* if connected now send password */
                     if (strlen(passwd)) {
 
-                        if (strlen(filter_string)) {    // Filter specified
+                        if (filter_string != NULL
+                                && strlen(filter_string) > 0) {    // Filter specified
 
                             // Please note that "filter" must be the 8th
                             // parameter on the line in order to be
