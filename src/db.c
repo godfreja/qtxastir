@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.330 2004/06/24 19:29:39 we7u Exp $
+ * $Id: db.c,v 1.331 2004/06/24 20:00:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4670,6 +4670,11 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
             XmNactivateCallback,
             Assign_Tactical_Call,
             (XtPointer)p_station);
+        if (p_station->flag & (ST_OBJECT|ST_ITEM)) {
+            // We don't allow setting tac-calls for objects/items,
+            // so make the button insensitive.
+            XtSetSensitive(button_tactical,FALSE);
+        }
  
         n=0;
         XtSetArg(args[n], XmNrows, 15); n++;
