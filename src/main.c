@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.79 2002/06/07 15:52:53 n0vh Exp $
+ * $Id: main.c,v 1.80 2002/06/07 16:48:00 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1881,12 +1881,6 @@ void create_image(Widget w) {
 
     statusline(langcode("BBARSTA003"),1);       // Loading Maps
 
-    if (display_up_first != 0) {
-        if (map_auto_maps && !disable_all_maps)
-            load_auto_maps(w,AUTO_MAP_DIR);
-        else if (!disable_all_maps)
-            load_maps(w);
-    }
 #ifdef HAVE_IMAGEMAGICK
     //
     //  If tigermaps are enabled, then load them.
@@ -1894,6 +1888,13 @@ void create_image(Widget w) {
     if (tiger_flag && !disable_all_maps)
         draw_tiger_map(w);
 #endif // HAVE_IMAGEMAGICK
+
+    if (display_up_first != 0) {
+        if (map_auto_maps && !disable_all_maps)
+            load_auto_maps(w,AUTO_MAP_DIR);
+        else if (!disable_all_maps)
+            load_maps(w);
+    }
 
     if (!wx_alert_style)
         statusline(langcode("BBARSTA034"),1);
