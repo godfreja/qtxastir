@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.195 2003/01/27 20:08:32 we7u Exp $
+ * $Id: db.c,v 1.196 2003/01/27 21:15:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1432,7 +1432,7 @@ void overlay_symbol(char symbol, char data, DataRow *fill) {
         fill->aprs_symbol.special_overlay = data;
     } else {
         fill->aprs_symbol.aprs_type = data;
-        fill->aprs_symbol.special_overlay=' ';
+        fill->aprs_symbol.special_overlay='\0';
     }
     fill->aprs_symbol.aprs_symbol = symbol;
 }
@@ -9471,7 +9471,7 @@ void my_station_add(char *my_callsign, char my_group, char my_symbol, char *my_l
         p_station->aprs_symbol.special_overlay = my_group;
     } else {                                    // normal symbol
         p_station->aprs_symbol.aprs_type = my_group;
-        p_station->aprs_symbol.special_overlay = ' ';
+        p_station->aprs_symbol.special_overlay = '\0';
     }
     p_station->aprs_symbol.aprs_symbol = my_symbol;
 
