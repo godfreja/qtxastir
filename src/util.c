@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.91 2003/11/03 18:59:42 we7u Exp $
+ * $Id: util.c,v 1.92 2003/11/03 19:04:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1286,6 +1286,12 @@ void convert_xastir_to_MGRS_str(char *str, int str_len, long x, long y, int nice
     else {  // UTM Area
         char E_W[25] = "ABCDEFGHJKLMNPQRSTUVWXYZ";
         char N_S[21] = "ABCDEFGHJKLMNPQRSTUV";
+
+
+        if (!nice_format) { 
+            space_string[0] = '\0';
+        }
+
  
         // Calculate the indexes into the 2-letter digraph arrays.
         start = atoi(utmZone);
