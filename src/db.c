@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.298 2004/02/26 23:19:57 we7u Exp $
+ * $Id: db.c,v 1.299 2004/02/27 22:58:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5601,18 +5601,26 @@ int store_trail_point(DataRow *p_station, long lon, long lat, time_t sec, char *
             flag |= TR_LOCAL;           // set "local" flag
 
     if (ptr->prev != NULL) {    // we have at least two points...
-        if (abs(lon - ptr->prev->trail_long_pos) > MAX_TRAIL_SEG_LEN*60*100 ||
-                abs(lat - ptr->prev->trail_lat_pos) > MAX_TRAIL_SEG_LEN*60*100) {
-            flag |= TR_NEWTRK;      // set "new track" flag for long segments
+        if (abs(lon - ptr->prev->trail_long_pos) > MAX_TRAIL_SEG_LEN*60*2*100 ||
+                abs(lat - ptr->prev->trail_lat_pos) > MAX_TRAIL_SEG_LEN*60*2*100) {
+
+            // Set "new track" flag if there's two degrees or more
+            // distance between points (used to be one degree, may
+            // bump it up a bit more soon).
+            flag |= TR_NEWTRK;
         }
         else {
             if (abs(sec - ptr->prev->sec) > 2700) {
-                flag |= TR_NEWTRK;  // set "new track" flag for long pauses
+
+                // Set "new track" flag if long delay (45 minutes or
+                // more) between reception of two points.
+                flag |= TR_NEWTRK;
             }
         }
     }
     else {
-        flag |= TR_NEWTRK;          // set "new track" flag for first point
+        // Set "new track" flag for first point received.
+        flag |= TR_NEWTRK;
     }
     ptr->flag = flag;
 
