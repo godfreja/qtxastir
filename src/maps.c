@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.353 2003/10/22 19:50:10 we7u Exp $
+ * $Id: maps.c,v 1.354 2003/10/22 20:50:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -893,6 +893,8 @@ void draw_grid(Widget w) {
 // It appears that the horizontal grid lines get messed up in cases
 // where the top horizontal line doesn't make it all the way across
 // the screen before it goes out of view.  That's a major clue!
+// Looks like the left end of it being above the current view is
+// what causes it.
 //
         n[0] += utm_grid_spacing_m;
 
