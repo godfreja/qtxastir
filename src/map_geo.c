@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.29 2004/03/04 23:12:34 we7u Exp $
+ * $Id: map_geo.c,v 1.30 2004/03/22 22:12:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -194,6 +194,8 @@ void draw_toporama_map (Widget w,
         int draw_filled,
         int toporama_flag) {    // 50 or 250
 
+#ifdef HAVE_IMAGEMAGICK
+
     char fileimg[MAX_FILENAME+1];   // Ascii name of image file, read from GEO file
     char map_it[MAX_FILENAME];
     char local_filename[MAX_FILENAME];
@@ -218,9 +220,6 @@ void draw_toporama_map (Widget w,
 
     //fprintf(stderr, "Found TOPORAMA in a .geo file, %dk scale\n", toporama_flag);
 
-
-#ifdef HAVE_IMAGEMAGICK
- 
     // Check whether we're indexing or drawing the map
     if ( (destination_pixmap == INDEX_CHECK_TIMESTAMPS)
             || (destination_pixmap == INDEX_NO_TIMESTAMPS) ) {
