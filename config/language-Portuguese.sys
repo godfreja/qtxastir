@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.23 2002/06/25 19:34:05 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.24 2002/06/26 00:12:08 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -701,6 +701,7 @@ LHPUPNI002|Estaçãos meteorológicas||
 LHPUPNI003|Estações locais (via TNC)||
 LHPUPNI004|Ultimas estações||
 LHPUPNI005|Objects & Items||
+LHPUPNI006|Own Objects & Items||
 LHPUPNI010| #||
 LHPUPNI011|Indicativo||
 LHPUPNI012|#Pack||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.30 2002/06/25 19:34:05 we7u Exp $
+# $Id: language-Spanish.sys,v 1.31 2002/06/26 00:12:08 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -703,6 +703,7 @@ LHPUPNI002|Estaciones Meteorológicas||
 LHPUPNI003|Estaciones locales (vía TNC)||
 LHPUPNI004|Ultimas Estaciones||
 LHPUPNI005|Objects & Items||
+LHPUPNI006|Own Objects & Items||
 LHPUPNI010| #||
 LHPUPNI011|Indicativo||
 LHPUPNI012|#Pack||
