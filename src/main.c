@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.479 2004/06/29 18:41:33 we7u Exp $
+ * $Id: main.c,v 1.480 2004/06/30 20:36:52 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4671,6 +4671,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             al,
             ac);
 
+    free(title);
 
     // Make at least one Motif call so that the next function won't
     // result in this problem:  'Error: atttempt to add non-widget

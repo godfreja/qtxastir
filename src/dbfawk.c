@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.21 2004/05/31 05:34:12 we7u Exp $
+ * $Id: dbfawk.c,v 1.22 2004/06/30 20:36:52 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -221,6 +221,8 @@ dbfawk_sig_info *dbfawk_load_sigs(const char *dir, /* directory path */
         }
         free(path);
     }
+
+    closedir(d);
 
     if (symtbl)
         awk_free_symtab(symtbl);

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: color.c,v 1.8 2004/03/04 23:12:34 we7u Exp $
+ * $Id: color.c,v 1.9 2004/06/30 20:36:52 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -232,6 +232,7 @@ void setup_visual_info(Display* dpy, int scr) {
             }
         }
     }
+    XFree(visual_list);
 }
 
 
