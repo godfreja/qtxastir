@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.20 2004/11/10 19:58:03 we7u Exp $
+# $Id: Makefile.am,v 1.21 2004/11/12 18:24:28 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -36,6 +36,7 @@ xastir_SOURCES = \
     location_gui.c \
     main.c main.h \
     maps.c maps.h \
+    map_cache.c map_cache.h \
     map_dos.c \
     map_geo.c \
     map_gdal.c \
