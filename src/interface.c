@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.22 2002/07/09 17:55:40 we7u Exp $
+ * $Id: interface.c,v 1.23 2002/07/09 20:00:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -227,6 +227,18 @@ void channel_data(int port, unsigned char *string) {
 
     if (string[0] == '\0')
         return;
+
+    // Check for excessively long packets.  These might be TCP/IP
+    // packets or concatenated APRS packets.  In any case it's some
+    // kind of garbage that we don't want to try to parse.
+    if (strlen(string) > MAX_LINE_SIZE) {   // Too long!
+        if (debug_level & 1) {
+            printf("\nchannel_data: LONG packet.  Dumping it:\n%s\n",string);
+        }
+
+        string[0] = '\0';   // Truncate it to zero length
+        return;
+    }
 
 // This protects channel_data from being run by more
 // than one thread at the same time
