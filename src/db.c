@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.27 2002/05/10 22:22:11 we7u Exp $
+ * $Id: db.c,v 1.28 2002/05/11 00:20:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -690,7 +690,8 @@ begin_critical_section(&send_message_dialog_lock, "db.c:update_messages" );
 // in and pressing "New Call" button.  First message is missing.
 
                                 // Label the message line with who sent it.
-                                xastir_snprintf(temp2, sizeof(temp2), "%s  %-9s>%s\n", stemp,
+                                xastir_snprintf(temp2, sizeof(temp2), "%s  %-9s>%s\n",
+                                    stemp,
                                     msg_data[msg_index[j]].from_call_sign,
                                     msg_data[msg_index[j]].message_line);
 
