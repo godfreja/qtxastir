@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.20 2002/09/10 22:14:26 we7u Exp $
+ * $Id: db.h,v 1.21 2002/09/24 06:48:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -234,6 +234,8 @@ typedef struct {                //                      strlen
     char    wx_prec_00[10];     // in hundredths inch       3
     char    wx_hum[5];          // in %                     3
     char    wx_baro[10];        // in hPa                   6
+    char    wx_fuel_temp[5];    // in °F                    3
+    char    wx_fuel_moisture[5];// in %                     2
     char    wx_type;
     char    wx_station[MAX_WXSTATION];
 } WeatherRow;

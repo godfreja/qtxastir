@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.39 2002/09/19 08:04:00 we7u Exp $
+# $Id: language-Italian.sys,v 1.40 2002/09/24 06:48:08 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -573,6 +573,9 @@ WPUPSTI056|Abilita Aggiornamento Automatico||
 WPUPSTI057|Omni-DF: %s||
 WPUPSTI058|Puntamento DF:||
 WPUPSTI059|Status: %s||
+WPUPSTI060|Fuel Temp: %02.1f°C  ||
+WPUPSTI061|Fuel Temp: %s°F   ||
+WPUPSTI062|Fuel Moisture: %s%%   ||
 #
 # FCC-RAC Call Look up
 STIFCC0001|Ricerca nel database FCC||
