@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.26 2003/10/21 15:22:35 n2ygk Exp $
+ * $Id: map_shp.c,v 1.27 2003/10/22 13:57:45 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1595,7 +1595,14 @@ void draw_shapefile_map (Widget w,
                             // Fine-tuned the location here so that
                             // the middle of the 'X' would be at the
                             // proper pixel.
+#ifdef WITH_DBFAWK
+                            if (*sym)
+                                symbol(w,0,sym[0],sym[1],sym[2],pixmap,1,x-10,y-10,' ');
+                            else
+                                symbol(w, 0, symbol_table, symbol_id, symbol_over, pixmap, 1, x-10, y-10, ' ');
+#else
                             symbol(w, 0, symbol_table, symbol_id, symbol_over, pixmap, 1, x-10, y-10, ' ');
+#endif /*!WITH_DBFAWK*/
 
                             // Fine-tuned this string so that it is
                             // to the right of the 'X' and aligned
