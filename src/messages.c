@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.45 2004/12/07 06:01:38 we7u Exp $
+ * $Id: messages.c,v 1.46 2004/12/21 01:58:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -312,22 +312,33 @@ begin_critical_section(&send_message_dialog_lock, "messages.c:check_popup_window
 end_critical_section(&send_message_dialog_lock, "messages.c:check_popup_window2" );
 
         if (i!=-1) {
-        if (group == 1) {
-        temp1[0] = '*';
-        temp1[1] = '\0';
-        } else
-            temp1[0] = '\0';
+
+            if (group == 1) {
+                temp1[0] = '*';
+                temp1[1] = '\0';
+            }
+            else {
+                temp1[0] = '\0';
+            }
+
             strncat(temp1,
                 from_call_sign,
                 sizeof(temp1) - strlen(temp1));
+
             Send_message(appshell, temp1, NULL);
+
             update_messages(1);
+
             ret=i;
-        } else
+        }
+        else {
             fprintf(stderr,"No open windows!\n");
-    } else
+        }
+    }
+    else {
         /* window open! */
         ret=found;
+    }
 
     return(ret);
 }

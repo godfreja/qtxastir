@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.157 2004/12/20 05:39:14 we7u Exp $
+# $Id: language-Spanish.sys,v 1.158 2004/12/21 01:58:43 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -223,8 +223,7 @@ PULDNMG005|Activar Auto contestación de Mensaje|A|
 PULDNMG006|Satélite Modo de Reconocimiento|M|
 #
 # Menú de Interfaces
-PULDNTNT04|Iniciar/Detener|I|
-PULDNTNT02|Propiedades|P|
+PULDNTNT04|Interface Control||
 PULDNTNT03|Desactivar Transmitir: TODOS||
 PULDNTNT05|Desactivar Transmitir: Mi Posición||
 PULDNTNT06|Desactivar Transmitir: Objetos/Artículos||

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.152 2004/12/20 05:39:14 we7u Exp $
+# $Id: language-German.sys,v 1.153 2004/12/21 01:58:43 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -226,8 +226,7 @@ PULDNMG005|Automatische Antwort|A|
 PULDNMG006|Satelliten ACK Modus|M|
 #
 # Menu "Schnittstellen"
-PULDNTNT04|Schnittstellen Ein/Aus|A|
-PULDNTNT02|Einstellungen|E|
+PULDNTNT04|Interface Control||
 PULDNTNT03|Nicht senden: ALLES||
 PULDNTNT05|Nicht senden: Meine Position||
 PULDNTNT06|Nicht senden: Objekte||

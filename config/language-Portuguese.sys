@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.147 2004/12/20 05:39:14 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.148 2004/12/21 01:58:43 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -224,8 +224,7 @@ PULDNMG005|Activar mensagem de resposta automatica|A|
 PULDNMG006|Modo de reconhecimento por satelite|M|
 #
 # Menu de interfaces
-PULDNTNT04|Iniciar/Parar|I|
-PULDNTNT02|Propriedades|P|
+PULDNTNT04|Interface Control||
 PULDNTNT03|Desactivar transmitir: TODOS||
 PULDNTNT05|Desactivar transmitir: A minha posicao||
 PULDNTNT06|Desactivar transmitir: Objectos/Artigos||

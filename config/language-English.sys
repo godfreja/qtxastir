@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.146 2004/12/20 05:39:13 we7u Exp $
+# $Id: language-English.sys,v 1.147 2004/12/21 01:58:43 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -220,8 +220,7 @@ PULDNMG005|Enable Auto Reply Message||
 PULDNMG006|Satellite Ack Mode|M|
 #
 # Menu "Interfaces"
-PULDNTNT04|Start/Stop|S|
-PULDNTNT02|Properties|P|
+PULDNTNT04|Interface Control|C|
 PULDNTNT03|Disable Transmit: ALL||
 PULDNTNT05|Disable Transmit: My Position||
 PULDNTNT06|Disable Transmit: Objects/Items||

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.156 2004/12/20 05:39:13 we7u Exp $
+# $Id: language-Dutch.sys,v 1.157 2004/12/21 01:58:43 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -230,8 +230,7 @@ PULDNMG005|Automatisch Beantwoorden|B|
 PULDNMG006|Sateliet Bevestigings Mode|M|
 #
 # Menu "Interfaces"
-PULDNTNT04|Interface besturing|I|
-PULDNTNT02|Interface bewerken|B|
+PULDNTNT04|Interface Control||
 PULDNTNT03|Zet verzenden van alle data uit||
 PULDNTNT05|Zet verzenden positie uit||
 PULDNTNT06|Zet verzenden van objecten uit||

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.150 2004/12/20 05:39:14 we7u Exp $
+# $Id: language-Italian.sys,v 1.151 2004/12/21 01:58:43 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -220,8 +220,7 @@ PULDNMG005|Risposta automatica ai messaggi in arrivo|R|
 PULDNMG006|Modalità Satellite Ack|M|
 #
 # Menu "Interfaces"
-PULDNTNT04|Avvia/Ferma|S|
-PULDNTNT02|Proprietà|P|
+PULDNTNT04|Interface Control||
 PULDNTNT03|Disabilita Trasmissioni: TUTTE||
 PULDNTNT05|Disabilita Trasmissioni: Mia Posizione||
 PULDNTNT06|Disabilita Trasmissioni: Oggetti/Entità||
