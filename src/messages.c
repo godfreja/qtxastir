@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.23 2003/05/20 17:34:11 we7u Exp $
+ * $Id: messages.c,v 1.24 2003/08/11 23:57:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -534,10 +534,19 @@ void transmit_message_data(char *to, char *message, char *path) {
 
 
 
+time_t last_check_and_transmit = (time_t)0l;
+
 void check_and_transmit_messages(time_t time) {
     int i;
     char temp[200];
     char to_call[40];
+
+
+    // Skip this function if we did it during this second already.
+    if (last_check_and_transmit == sec_now()) {
+        return;
+    }
+    last_check_and_transmit = sec_now();
 
     for (i=0; i<MAX_OUTGOING_MESSAGES;i++) {
         if (message_pool[i].active==MESSAGE_ACTIVE) {
