@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.16 2004/08/10 19:51:51 we7u Exp $
+ * $Id: x_spider.c,v 1.17 2004/08/10 19:59:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -942,6 +942,11 @@ void Server(int argc, char *argv[], char *envp[]) {
             set_proc_title("%s", "x-spider client (xastir)");
             //printf("DEBUG: %s\n", Argv[0]);
 #endif  // __linux__
+
+// It'd be very cool here to include the IP address of the remote
+// client on the "ps" line, and include the callsign of the
+// connecting client once the client authenticates.  Both of these
+// are do-able.
 
 
             // New naming system so that we don't have to remember
