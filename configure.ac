@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.72 2003/12/12 20:02:35 we7u Exp $
+# $Id: configure.ac,v 1.73 2004/01/07 16:42:56 we7u Exp $
 
 
 #########################################################################
@@ -84,7 +84,7 @@ AC_DEFINE_UNQUOTED(STIPPLE, 1, [Legacy stuff, use crowbar and lets keep going])
 # 
 AC_PATH_XTRA
 if test "$no_x" = "yes"; then
-  AC_MSG_ERROR(*** Cannot find X11 libraries:  Please Install X-Windows ***)
+  AC_MSG_ERROR(*** No X11!  Install X-Windows development headers/libraries! ***)
 fi
 
 CPPFLAGS="$CPPFLAGS $X_CFLAGS" 
@@ -112,7 +112,7 @@ AC_SUBST(LDFLAGS)
 AC_SUBST(LIBS) 
 
 # Checks for header files. 
-AC_CHECK_HEADERS([Xm/Xm.h],MOTIF_INC="yes", AC_MSG_ERROR(*** Cannot find Motif include files:  Please install Motif, OpenMotif, or Lesstif development package. ***))
+AC_CHECK_HEADERS([Xm/Xm.h],MOTIF_INC="yes", AC_MSG_ERROR(*** Cannot find Motif include files:  Please install one of Motif/OpenMotif/Lesstif development packages. ***))
 #
 AC_FUNC_ALLOCA 
 AC_HEADER_DIRENT 
