@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.337 2004/06/30 20:53:17 we7u Exp $
+ * $Id: db.c,v 1.338 2004/06/30 21:00:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -940,8 +940,10 @@ void alert_data_add(char *call_sign, char *from_call, char *data,
     m_fill.data_via=from;
     m_fill.active=RECORD_ACTIVE;
     m_fill.type=type;
-    if (m_fill.heard_via_tnc != VIA_TNC)
-        m_fill.heard_via_tnc = (from == 'T') ? VIA_TNC : NOT_VIA_TNC;
+
+    // We don't have a value filled in yet here!
+    //if (m_fill.heard_via_tnc != VIA_TNC)
+    m_fill.heard_via_tnc = (from == 'T') ? VIA_TNC : NOT_VIA_TNC;
 
     substr(m_fill.call_sign,call_sign,MAX_CALLSIGN);
     (void)remove_trailing_asterisk(m_fill.call_sign);
