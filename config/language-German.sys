@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.145 2004/08/27 14:16:18 we7u Exp $
+# $Id: language-German.sys,v 1.146 2004/09/24 19:30:30 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -728,6 +728,8 @@ WPUPSTI062|Brennstofffeuchte: %s%%   ||
 WPUPSTI063|Baro: %0.2f in Hg||
 WPUPSTI064|NWS Wetterwarnung holen||
 WPUPSTI065|Taktisches Call: %s||
+WPUPSTI066|Assign Tactical Call||
+WPUPSTI067|Current Range: %d miles||
 #
 # FCC-RAC Call Look up
 STIFCC0001|FCC Datenbank Abfrage||

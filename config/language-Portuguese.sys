@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.140 2004/08/31 16:52:47 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.141 2004/09/24 19:30:30 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -726,6 +726,8 @@ WPUPSTI062|Mistura do combustevel: %s%%   ||
 WPUPSTI063|Baro: %0.2f em Hg||
 WPUPSTI064|Procurar alerta de NWS||
 WPUPSTI065|Indicativo tactico: %s||
+WPUPSTI066|Assign Tactical Call||
+WPUPSTI067|Current Range: %d miles||
 #
 # FCC-RAC procurar indicativo
 STIFCC0001|Procurar FCC banco de datos||

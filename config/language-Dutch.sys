@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.149 2004/09/02 20:58:09 we7u Exp $
+# $Id: language-Dutch.sys,v 1.150 2004/09/24 19:30:29 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -733,6 +733,7 @@ WPUPSTI063|Baro: %0.2f in Hg||
 WPUPSTI064|Vraag NWS waarschuwing||
 WPUPSTI065|Gemarkeerde bijnaam: %s||
 WPUPSTI066|Geef station een bijnaam||
+WPUPSTI067|Current Range: %d miles||
 #
 #
 # FCC-RAC Call Look up
