@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.16 2004/06/01 22:49:23 we7u Exp $
+# $Id: Makefile.am,v 1.17 2004/06/02 03:28:51 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -6,7 +6,7 @@
 bin_PROGRAMS = xastir
 noinst_PROGRAMS = testawk x_spider
 
-SUBDIRS = Davis
+SUBDIRS =
 
 xastir_SOURCES = \
     alert.c alert.h \
