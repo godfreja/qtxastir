@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.7 2002/06/18 17:35:07 we7u Exp $
+ * $Id: draw_symbols.c,v 1.8 2002/06/18 18:55:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1392,26 +1392,26 @@ void draw_symbol(Widget w, char symbol_table, char symbol_id, char symbol_overla
                             minutes = (float)( (sec_now() - sec_heard) / 60.0);
                             hours = minutes / 60.0;
 
-                            // More than a day old?
-                            if (hours >= 24.0) {
-                                xastir_snprintf(age,sizeof(age),"%.1fday", hours / 24.0);
-                                fgcolor = 0x0f; // white
-                            }
-                            // More than an hour old?
-                            else if (hours >= 1.0) {
-                                xastir_snprintf(age,sizeof(age),"%.1fhr", hours);
-                                fgcolor = 0x4a; // red
-                            }
-                            // Less than an hour old
-                            else {
-                                xastir_snprintf(age,sizeof(age),"%dmin", (int)minutes);
-                                fgcolor = 0x40; // yellow
-                            }
-
                             // Heard from this station within the
                             // last 30 minutes?
                             if (minutes < 30.0) {
+                                xastir_snprintf(age,sizeof(age),"%dmin", (int)minutes);
                                 fgcolor = 0x52; // green
+                            }
+                            // 30 to 59 minutes?
+                            else if (minutes < 60.0) {
+                                xastir_snprintf(age,sizeof(age),"%dmin", (int)minutes);
+                                fgcolor = 0x40; // yellow
+                            }
+                            // 1 hour to 1 day old?
+                            else if (hours <= 24.0) {
+                                xastir_snprintf(age,sizeof(age),"%.1fhr", hours);
+                                fgcolor = 0x4a; // red
+                            }
+                            // More than a day old
+                            else {
+                                xastir_snprintf(age,sizeof(age),"%.1fday", hours / 24.0);
+                                fgcolor = 0x0f; // white
                             }
 
                             length = strlen(age);
