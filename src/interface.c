@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.198 2004/08/30 15:49:52 we7u Exp $
+ * $Id: interface.c,v 1.199 2004/09/17 20:44:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4602,7 +4602,7 @@ int net_init(int port) {
 
                     /* update display while waiting */
                     // XmUpdateDisplay(XtParent(da));
-                    usleep(20000);      // 20mS
+                    usleep(250000);      // 250mS
                     //sched_yield();    // Too fast!
                 }
 
