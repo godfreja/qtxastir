@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.365 2003/10/29 06:26:52 jtwilley Exp $
+ * $Id: main.c,v 1.366 2003/10/29 19:51:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12736,7 +12736,7 @@ void map_properties_max_zoom_change(Widget widget, XtPointer clientData, XtPoint
     new_max_zoom = atoi(temp);
     XtFree(temp);
 
-    fprintf(stderr,"New max_zoom selected is: %d\n", new_max_zoom);
+//    fprintf(stderr,"New max_zoom selected is: %d\n", new_max_zoom);
 
     // Get the list and the count from the dialog
     XtVaGetValues(map_properties_list,
