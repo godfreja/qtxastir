@@ -1,0 +1,20 @@
+# $Id: tnc-startup.thd7,v 1.1 2002/02/02 03:16:17 kg4ijb Exp $
+#
+# TNC Init file for KENWOOD TH-D7
+AWlen 8
+BBSMsgs ON
+B E 0
+LOC E 0
+Echo off
+FLow off
+AUTOLF off
+MCOM off
+MON ON
+MRPt on
+PACLen 128
+HBAUD 1200
+# Delete following lines if without GPS
+GBAUD 4800
+GPSTEXT $GPRMC
+LTMH OFF
+LTM 10
