@@ -1,5 +1,5 @@
 /*
- * $Id: rac_data.c,v 1.3 2003/01/24 00:34:51 we7u Exp $
+ * $Id: rac_data.c,v 1.4 2003/02/04 04:08:39 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -108,13 +108,13 @@ int build_rac_index(void) {
     /*                                    */
     fdb=fopen(get_data_base_dir("fcc/AMACALL.LST"),"rb");
     if (fdb==NULL) {
-        printf("Build:Could not open RAC data base: %s\n", get_data_base_dir("fcc/AMACALL.LST") );
+        fprintf(stderr,"Build:Could not open RAC data base: %s\n", get_data_base_dir("fcc/AMACALL.LST") );
         return(0);
     }
 
     fndx=fopen(get_user_base_dir("data/AMACALL.ndx"),"w");
     if (fndx==NULL) {
-        printf("Build:Could not open/create RAC data base index: %s\n", get_user_base_dir("data/AMACALL.ndx") );
+        fprintf(stderr,"Build:Could not open/create RAC data base index: %s\n", get_user_base_dir("data/AMACALL.ndx") );
         (void)fclose(fdb);
         return(0);
     }
@@ -124,10 +124,10 @@ int build_rac_index(void) {
     while (!feof(fdb) && strncmp(racdata,"VA",2)) {
         call_offset = (unsigned long)ftell(fdb);
         if (fgets(racdata, (int)sizeof(racdata), fdb)==NULL) {
-            printf("Build:header:Unable to read data base\n");
+            fprintf(stderr,"Build:header:Unable to read data base\n");
             (void)fclose(fdb);
             (void)fclose(fndx);
-            printf("rc=0\n");
+            fprintf(stderr,"rc=0\n");
             return (0);
         }
     }
@@ -166,7 +166,7 @@ int check_rac_data(void) {
         if (build_rac_index())
             rac_data_available=1;
         else {
-            printf("Check:Could not build ic data base index\n");
+            fprintf(stderr,"Check:Could not build ic data base index\n");
             rac_data_available=0;
         }
     }
@@ -207,7 +207,7 @@ int search_rac_data(char *callsign, rac_record *data) {
             rc = fgets(index,(int)sizeof(index),fndx);
         }
     } else {
-        printf("Search:Could not open RAC data base index: %s\n", get_user_base_dir("data/AMACALL.ndx") );
+        fprintf(stderr,"Search:Could not open RAC data base index: %s\n", get_user_base_dir("data/AMACALL.ndx") );
         return (0);
     }
     call_offset = atol(char_offset);
@@ -229,7 +229,7 @@ int search_rac_data(char *callsign, rac_record *data) {
             rc = fgets((char *)&racdata, sizeof(racdata)+8, fdb);
 
     } else
-        printf("Search:Could not open RAC data base: %s\n", get_data_base_dir("fcc/AMACALL.LST") );
+        fprintf(stderr,"Search:Could not open RAC data base: %s\n", get_data_base_dir("fcc/AMACALL.LST") );
 
     /*  || (callsign[5] == '-' && strncmp((char *)&racdata,callsign,5) < 0)) */
     (void)chomp(racdata.callsign,6);

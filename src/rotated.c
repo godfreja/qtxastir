@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.2 2002/03/05 21:28:24 we7u Exp $
+// $Id: rotated.c,v 1.3 2003/02/04 04:08:39 jtwilley Exp $
 //
 // Note that this version has been changed since xvertext 5.0 in order
 // to get rid of compiler warnings and such.  The original 5.0 notice
@@ -70,11 +70,11 @@ static int debug=1;
 static int debug=0;
 #endif /*DEBUG*/
 
-#define DEBUG_PRINT1(a) if (debug) printf (a)
-#define DEBUG_PRINT2(a, b) if (debug) printf (a, b)
-#define DEBUG_PRINT3(a, b, c) if (debug) printf (a, b, c)
-#define DEBUG_PRINT4(a, b, c, d) if (debug) printf (a, b, c, d)
-#define DEBUG_PRINT5(a, b, c, d, e) if (debug) printf (a, b, c, d, e)
+#define DEBUG_PRINT1(a) if (debug) fprintf(stderr, a)
+#define DEBUG_PRINT2(a, b) if (debug) fprintf(stderr, a, b)
+#define DEBUG_PRINT3(a, b, c) if (debug) fprintf(stderr, a, b, c)
+#define DEBUG_PRINT4(a, b, c, d) if (debug) fprintf(stderr, a, b, c, d)
+#define DEBUG_PRINT5(a, b, c, d, e) if (debug) fprintf(stderr, a, b, c, d, e)
 
 
 /* ---------------------------------------------------------------------- */

@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.10 2003/01/24 00:34:51 we7u Exp $
+ * $Id: track_gui.c,v 1.11 2003/02/04 04:08:39 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -413,10 +413,10 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
             fileimg);
 
     if (debug_level & 2)
-        printf("%s",tempfile);
+        fprintf(stderr,"%s",tempfile);
 
     if ( system(tempfile) ) {   // Go get the file
-        printf("Couldn't download the trail\n");
+        fprintf(stderr,"Couldn't download the trail\n");
         return;
     }
 
@@ -432,7 +432,7 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
     if (read_file_ptr != NULL)
         read_file = 1;
     else
-        printf("Couldn't open file: %s\n", log_filename);
+        fprintf(stderr,"Couldn't open file: %s\n", log_filename);
 
     display_zoom_status();
 

@@ -1,5 +1,5 @@
 /*
- * $Id: sound.c,v 1.2 2003/01/24 00:34:51 we7u Exp $
+ * $Id: sound.c,v 1.3 2003/02/04 04:08:39 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,16 +50,16 @@ pid_t play_sound(char *sound_cmd, char *soundfile) {
                     strcat(file,"/");
                     strcat(file,soundfile);
                     xastir_snprintf(command, sizeof(command), "%s %s", sound_cmd, file);
-                    /*printf("PS%d:%s\n",sound_pid,file);*/
+                    /*fprintf(stderr,"PS%d:%s\n",sound_pid,file);*/
                     (void)system(command);  // Note we're not caring about whether it succeeded or not
                     exit(0);
                 } else
                     last_sound_pid=sound_pid;
             } else
-                printf("Error! trying to play sound\n");
+                fprintf(stderr,"Error! trying to play sound\n");
         } else {
             sound_pid=last_sound_pid;
-            /*printf("Sound already running\n");*/
+            /*fprintf(stderr,"Sound already running\n");*/
         }
     }
     return(sound_pid);

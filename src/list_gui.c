@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.18 2003/01/26 04:09:37 we7u Exp $
+ * $Id: list_gui.c,v 1.19 2003/02/04 04:08:38 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -422,18 +422,18 @@ void Station_List_fill(int type, int new_offset) {
             // w, h    get width and height of scrollbar:
             XtVaGetValues(SL_scroll[type], XmNwidth,  &w, XmNheight, &h, NULL);
             rows  = (h+10) / 29;         // number of rows we can display, 29 pixel per row
-//            printf("fill: %d %d %d\n",wh, h, rows);
+//            fprintf(stderr,"fill: %d %d %d\n",wh, h, rows);
         } else {
             if (list_size_w[type] != -1 && list_size_h[type] != -1) {
                 wh = list_size_h[type];         // restore size
                 ww = list_size_w[type];
                 rows  = (wh -81+10) / 29;              // 81 ???
-//                printf("load: %d       %d\n",wh, rows);
+//                fprintf(stderr,"load: %d       %d\n",wh, rows);
             } else {
                 wh = 500;                       // start with this... ???
                 ww = 700;
                 rows  = (wh -81+10) / 29;              // 81 ???
-//                printf("set:  %d       %d\n",wh, rows);
+//                fprintf(stderr,"set:  %d       %d\n",wh, rows);
             }
             XtVaSetValues(station_list_dialog[type], XmNwidth, ww, NULL); // set widget width
         }

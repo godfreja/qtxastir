@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.8 2003/01/24 00:34:51 we7u Exp $
+ * $Id: popup_gui.c,v 1.9 2003/02/04 04:08:39 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -250,7 +250,7 @@ void popup_ID_message(char *banner, char *message) {
         if(!font) {
             font=(XFontStruct *)XLoadQueryFont (XtDisplay(da), fontname);
             if (font == NULL) {	// Couldn't get the font!!!
-                printf("popup_ID_message: Couldn't get font %s\n",
+                fprintf(stderr,"popup_ID_message: Couldn't get font %s\n",
                     fontname);
                 pending_ID_message = 0;
                 return;
@@ -259,7 +259,7 @@ void popup_ID_message(char *banner, char *message) {
  
         (void)XSetForeground (XtDisplay(da), gc, colors[0x08]);
 
-        //printf("%0.1f\t%s\n",my_rotation,label_text);
+        //fprintf(stderr,"%0.1f\t%s\n",my_rotation,label_text);
 
         if (       ( (my_rotation < -90.0) && (my_rotation > -270.0) )
                 || ( (my_rotation >  90.0) && (my_rotation <  270.0) ) ) {
