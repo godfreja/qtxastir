@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.72 2002/05/10 05:59:37 we7u Exp $
+ * $Id: main.c,v 1.73 2002/05/10 15:08:50 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2330,6 +2330,7 @@ void Change_Debug_Level(Widget w, XtPointer clientData, XtPointer callData) {
 
 
 
+#if !defined(NO_GRAPHICS) && defined(HAVE_IMAGEMAGICK)
 void Gamma_adjust_destroy_shell( /*@unused@*/ Widget widget, XtPointer clientData, /*@unused@*/ XtPointer callData) {
     Widget shell = (Widget) clientData;
     XtPopdown(shell);
@@ -2468,7 +2469,7 @@ void Gamma_adjust(Widget w, XtPointer clientData, XtPointer callData) {
     } else
         (void)XRaiseWindow(XtDisplay(gamma_adjust_dialog), XtWindow(gamma_adjust_dialog));
 }
-
+#endif
 
 
 
