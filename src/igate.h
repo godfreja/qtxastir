@@ -1,5 +1,5 @@
 /*
- * $Id: igate.h,v 1.1 2002/02/02 03:17:35 kg4ijb Exp $
+ * $Id: igate.h,v 1.2 2002/07/26 03:29:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,7 +30,8 @@ typedef struct {
     char call[12];
 } NWS_Data;
 
-
+extern void igate_init(void);
+extern void insert_into_heard_queue(int port, char *line);
 extern void output_igate_net(char *line, int port, int third_party);
 extern void output_igate_rf(char *from, char *call, char *path, char *line, int port, int third_party);
 extern void output_nws_igate_rf(char *from, char *path, char *line, int port, int third_party);

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.122 2002/07/19 08:06:32 we7u Exp $
+ * $Id: main.c,v 1.123 2002/07/26 03:29:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -78,6 +78,7 @@
 #include "bulletin_gui.h"
 #include "rotated.h"
 #include "datum.h"
+#include "igate.h"
 
 
 #include <Xm/XmAll.h>
@@ -16601,6 +16602,7 @@ int main(int argc, char *argv[], char *envp[]) {
     (void)track_gui_init();
     (void)view_message_gui_init();
     (void)wx_gui_init();
+    (void)igate_init();
 
     clear_all_port_data();                              // clear interface port data
 
