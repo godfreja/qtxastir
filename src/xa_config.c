@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.30 2002/06/14 22:28:31 we7u Exp $
+ * $Id: xa_config.c,v 1.31 2002/06/14 22:51:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -488,6 +488,14 @@ void save_data(void)  {
         store_int (fout, "COMPRESSED_OBJECTS_ITEMS", transmit_compressed_objects_items);
 
         store_int (fout, "SMART_BEACONING", smart_beaconing);
+        store_int (fout, "SB_TURN_MIN", sb_turn_min);
+        store_int (fout, "SB_TURN_SLOPE", sb_turn_slope);
+        store_int (fout, "SB_TURN_TIME", sb_turn_time);
+        store_int (fout, "SB_POSIT_FAST", sb_posit_fast);
+        store_int (fout, "SB_POSIT_SLOW", sb_posit_slow);
+        store_int (fout, "SB_LOW_SPEED_LIMIT", sb_low_speed_limit);
+        store_int (fout, "SB_HIGH_SPEED_LIMIT", sb_high_speed_limit);
+
 
         /* -dk7in- variable beacon interval */
         /*         mobile:   max  2 min */
@@ -986,7 +994,29 @@ void load_data_or_default(void) {
         transmit_compressed_objects_items = 0;
 
     if (!get_int ("SMART_BEACONING", &smart_beaconing,0,1,1))
-        smart_beaconing = 1;
+        smart_beaconing = 0;
+
+    if (!get_int ("SB_TURN_MIN", &sb_turn_min,0,1,1))
+        sb_turn_min = 20;
+
+    if (!get_int ("SB_TURN_SLOPE", &sb_turn_slope,0,1,1))
+        sb_turn_slope = 25;
+
+    if (!get_int ("SB_TURN_TIME", &sb_turn_time,0,1,1))
+        sb_turn_time = 5;
+
+    if (!get_int ("SB_POSIT_FAST", &sb_posit_fast,0,1,1))
+        sb_posit_fast = 60;
+
+    if (!get_int ("SB_POSIT_SLOW", &sb_posit_slow,0,1,1))
+        sb_posit_slow = 30;
+
+    if (!get_int ("SB_LOW_SPEED_LIMIT", &sb_low_speed_limit,0,1,1))
+        sb_low_speed_limit = 2;
+
+    if (!get_int ("SB_HIGH_SPEED_LIMIT", &sb_high_speed_limit,0,1,1))
+        sb_high_speed_limit = 60;
+
 
     /* Audio Alarms*/
     if (!get_string ("SOUND_COMMAND", sound_command))
