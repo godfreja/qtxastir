@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.66 2002/04/30 18:31:55 we7u Exp $
+ * $Id: maps.c,v 1.67 2002/04/30 18:57:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2542,7 +2542,7 @@ void Print_window( Widget widget, XtPointer clientData, XtPointer callData ) {
         // Bessel (no)
         // Sinc (not too bad)
 
-        xastir_snprintf(command, sizeof(command), "/usr/bin/convert -filter Point %s%s%s%s%s %s %s",
+        xastir_snprintf(command, sizeof(command), "convert -filter Point %s%s%s%s%s %s %s",
                 mono, invert, rotate, scale, density, xpm_filename, ps_filename );
         if ( debug_level & 512 )
             printf( "%s\n", command );
@@ -3179,11 +3179,11 @@ void Snapshot(void) {
 
         // Convert it to a png file.  This depends on having the
         // ImageMagick command "convert" installed.
-        xastir_snprintf(command, sizeof(command), "/usr/bin/convert -quality 100 %s %s",
+        xastir_snprintf(command, sizeof(command), "convert -quality 100 %s %s",
                 xpm_filename, png_filename );
 
         if ( system( command ) != 0 ) {
-            printf("/usr/bin/convert failed to convert snapshot from xpm to png\n");
+            printf("convert failed to convert snapshot from xpm to png\n");
         }
         else {
             chmod( png_filename, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH );
