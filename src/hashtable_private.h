@@ -1,14 +1,17 @@
 
 
-// $Id: hashtable_private.h,v 1.1 2004/10/27 16:58:58 we7u Exp $
+// $Id: hashtable_private.h,v 1.2 2004/11/02 20:37:06 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
+/* Modified by the Xastir Group */
 
 #ifndef __HASHTABLE_PRIVATE_CWC22_H__
 #define __HASHTABLE_PRIVATE_CWC22_H__
 
 #include "hashtable.h"
+#include "xastir.h" /* Defines GC_MALLOC/GC_FREE */
+
 
 /*****************************************************************************/
 struct entry

@@ -1,16 +1,20 @@
 
 
-// $Id: hashtable.c,v 1.1 2004/10/27 16:58:58 we7u Exp $
+// $Id: hashtable.c,v 1.2 2004/11/02 20:37:06 we7u Exp $
 
 
 /* Copyright (C) 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
+/* Modified by the Xastir Group */
 
-#include "hashtable.h"
-#include "hashtable_private.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+
+#include "xastir.h" /* defines GC_MALLOC/GC_FREE */
+#include "hashtable.h"
+#include "hashtable_private.h"
+
 
 /*
 Credit for primes table: Aaron Krowne
