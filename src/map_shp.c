@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.25 2003/10/21 15:21:47 n2ygk Exp $
+ * $Id: map_shp.c,v 1.26 2003/10/21 15:22:35 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -642,7 +642,7 @@ void draw_shapefile_map (Widget w,
     char            status_text[MAX_FILENAME];
 #ifdef WITH_DBFAWK
     /* these have to be static since I recycle Symtbl between calls */
-    static char     dbfsig[1024],dbffields[1024],name[64],key[64],sym[3];
+    static char     dbfsig[1024],dbffields[1024],name[64],key[64],sym[4];
     static int      color,lanes,filled,pattern,display_level,label_level;
     static int      fillstyle,fillcolor;
     //static int layer;
