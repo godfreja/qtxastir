@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.15 2002/06/06 21:45:33 we7u Exp $
+ * $Id: messages.c,v 1.16 2002/06/06 22:03:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -378,19 +378,6 @@ void output_message(char *from, char *to, char *message) {
                 // more range from the 2-character variable.
 
                 message_counter[2] = '\0';  // Terminate at 2 chars
-
-                // Check that chars are within the correct ranges
-                if (         (message_counter[0] < '0')
-                        ||   (message_counter[1] < '0')
-                        || ( (message_counter[0] > '9') && (message_counter[0] < 'A') )
-                        || ( (message_counter[1] > '9') && (message_counter[1] < 'A') )
-                        || ( (message_counter[0] > 'Z') && (message_counter[0] < 'a') )
-                        || ( (message_counter[1] > 'Z') && (message_counter[1] < 'a') )
-                        ||   (message_counter[0] > 'z')
-                        ||   (message_counter[1] > 'z') ) {
-                    message_counter[0] = '0';
-                    message_counter[1] = '0';
-                }
 
                 // Increment the least significant digit
                 message_counter[1]++;
