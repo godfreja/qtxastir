@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.135 2002/09/18 21:21:36 we7u Exp $
+ * $Id: main.c,v 1.136 2002/09/18 22:48:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8749,7 +8749,11 @@ void map_chooser_select_vector_maps(Widget widget, XtPointer clientData, XtPoint
             if(XmStringGetLtoR(list[(x-1)],XmFONTLIST_DEFAULT_TAG,&temp))
             {
                 ext = get_map_ext (temp);
-                if ( (ext != NULL) && (strcasecmp (ext, "map") == 0)) {
+                if ( (ext != NULL)
+                        && (   (strcasecmp(ext,"map") == 0)
+                            || (strcasecmp(ext,"shp") == 0)
+                            || (strcasecmp(ext,"pdb") == 0)
+                            || (strcasecmp(ext,"gnis") == 0) ) ) {
                     fprintf(f,"%s\n",temp);
                 }
                 XtFree(temp);

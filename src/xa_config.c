@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.45 2002/09/18 18:41:03 we7u Exp $
+ * $Id: xa_config.c,v 1.46 2002/09/18 22:48:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -757,7 +757,7 @@ void load_data_or_default(void) {
         strcpy (WIN_MAP_DIR, get_data_base_dir ("maps"));
 
     if (!get_string ("WIN_MAP_DATA", WIN_MAP_DATA))
-        strcpy (WIN_MAP_DATA, get_user_base_dir ("config/winmaps.sys"));
+        strcpy (WIN_MAP_DATA, get_user_base_dir ("config/selected_maps.sys"));
 
     if (!get_string ("MAP_INDEX_DATA", MAP_INDEX_DATA))
         strcpy (MAP_INDEX_DATA, get_user_base_dir ("config/map_index.sys"));
