@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.383 2004/09/15 17:08:41 we7u Exp $
+ * $Id: db.c,v 1.384 2004/09/15 19:59:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -191,10 +191,11 @@ int is_my_call(char *call, int exact) {
     // We need this next bit of code so that we don't run off the
     // end of the string when we compare the 2nd char position.
     //
-    if (call[0] == '\0' || my_callsign[0] == '\0') {
-        // One or both are empty strings
+    if (!call[0])   // Empty string
         return(0);
-    }
+
+    if (!my_callsign[0])    // Empty string
+        return(0);
 
 
     // Check first letter.  If a match, go on to strcmp() functions,
