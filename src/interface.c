@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.162 2004/06/11 02:26:50 we7u Exp $
+ * $Id: interface.c,v 1.163 2004/06/14 20:40:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3210,11 +3210,6 @@ int command_file_to_tnc_port(int port, char *filename) {
                                     "Unrecognized ##META command: %s\n",
                                     line);
                             }
-                        }
-                        else if (strstr(line, "META")) {
-                            fprintf(stderr,
-                                "Unrecognized ##META command: %s\n",
-                                line);
                         }
                     }
                 }
