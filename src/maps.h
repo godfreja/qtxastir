@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.40 2003/12/03 16:19:29 we7u Exp $
+ * $Id: maps.h,v 1.41 2003/12/03 20:51:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -97,6 +97,14 @@ void draw_vector(Widget w,
                  unsigned long y1,
                  unsigned long x2,
                  unsigned long y2,
+                 GC gc,
+                 Pixmap which_pixmap);
+
+void draw_vector_ll(Widget w,
+                 float y1,
+                 float x1,
+                 float y2,
+                 float x2,
                  GC gc,
                  Pixmap which_pixmap);
 
