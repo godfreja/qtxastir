@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.93 2003/11/03 21:22:11 we7u Exp $
+ * $Id: util.c,v 1.94 2003/11/25 07:42:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1171,6 +1171,34 @@ int position_defined(long lat, long lon, int strict) {
         if (lat == 90*60*60*100l && lon == 180*60*60*100l)      // 0N/0E
             return(0);          // undefined location
     return(1);
+}
+
+
+
+
+
+// Function to convert from screen (pixel) coordinates to the Xastir
+// coordinate system.
+//
+void convert_screen_to_xastir_coordinates(int x,
+        int y,
+        long *lat,
+        long *lon) {
+
+    *lon = (mid_x_long_offset - ((screen_width  * scale_x)/2) + (x * scale_x));
+    *lat = (mid_y_lat_offset  - ((screen_height * scale_y)/2) + (y * scale_y));
+
+    if (*lon < 0)
+    *lon = 0l;                 // 180°W
+
+    if (*lon > 129600000l)
+    *lon = 129600000l;         // 180°E
+
+    if (*lat < 0)
+    *lat = 0l;                 //  90°N
+
+    if (*lat > 64800000l)
+    *lat = 64800000l;          //  90°S
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.53 2003/11/24 21:55:36 we7u Exp $
+ * $Id: main.h,v 1.54 2003/11/25 07:42:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -322,6 +322,8 @@ extern Widget object_dialog;
 extern Widget object_group_data;
 extern Widget object_symbol_data;
 extern void updateObjectPictureCallback(Widget w,XtPointer clientData,XtPointer callData);
+
+extern void Draw_All_CAD_Objects(Widget w);
 
 
 // unit conversion

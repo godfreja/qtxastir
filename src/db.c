@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.291 2003/11/24 21:55:35 we7u Exp $
+ * $Id: db.c,v 1.292 2003/11/25 07:42:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -112,6 +112,8 @@ DataRow *t_last;                // pointer to last  element in time sorted stati
 time_t last_station_remove;     // last time we did a check for station removing
 time_t last_sec,curr_sec;       // for comparing if seconds in time have changed
 int next_time_sn;               // time serial number for unique time index
+
+CADRow *CAD_list_head = NULL;   // pointer to first element in CAD objects list
 
 void draw_trail(Widget w, DataRow *fill, int solid);
 void export_trail(DataRow *p_station);
@@ -2762,6 +2764,8 @@ void display_file(Widget w) {
     if (debug_level & 1)
         fprintf(stderr,"Display File Stop\n");
     draw_ruler(w);
+
+    Draw_All_CAD_Objects(w);        // Draw all CAD objects, duh.
 }
 
 
