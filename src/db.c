@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.97 2002/07/09 17:55:37 we7u Exp $
+ * $Id: db.c,v 1.98 2002/07/09 18:12:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9826,7 +9826,7 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
 
     if ( (line != NULL) && (strlen(line) > MAX_TNC_LINE_SIZE) ) { // Overly long message, throw it away.  We're done.
         if (debug_level & 1)
-            printf("decode_ax25_line: LONG packet.  Dumping it.\n");
+            printf("\ndecode_ax25_line: LONG packet.  Dumping it:\n%s\n",line);
         return(FALSE);
     }
 
