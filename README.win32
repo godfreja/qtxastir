@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.12 2003/03/24 02:46:33 we7u Exp $
+$Id: README.win32,v 1.13 2003/03/24 20:52:08 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -481,10 +481,19 @@ configure.
     make install
 
 
+These next few commands are required for now, but once libgeotiff is
+fixed so that it finds libproj properly on Cygwin, they'll be
+removed from the libproj instructions:
+
+    cd /usr/lib
+    ln -s /usr/local/lib/libproj.a
+    ln -s /usr/local/lib/libproj.la
+
 
 Adding libgeotiff (tested with libgeotiff-1.2.0):
 -------------------------------------------------
 
+    cd ~/src/libgeotiff
     tar xzvf libgeotiff-1.2.0.tar.gz
     cd libgeotiff-1.2.0
     ./configure
