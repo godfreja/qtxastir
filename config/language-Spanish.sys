@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.73 2003/01/16 21:39:12 francais1 Exp $
+# $Id: language-Spanish.sys,v 1.74 2003/01/23 01:18:22 francais1 Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -164,7 +164,9 @@ PULDNDP004|Mostrar Velocidad|V|
 PULDNDP017|- Mostrar Velocidad Corta||
 PULDNDP002|Mostrar Altura|A|
 PULDNDP009|Mostrar Informe del Tiempo|T|
-PULDNDP018|- Mostrar sólo la Temperatura||
+PULDNDP046|- Mostrar Texto||
+PULDNDP018|-- Sólo la Temperatura||
+PULDNDP047|- Mostrar Indicación de Viento||
 PULDNDP013|Mostrar Ambigüedad de Posición||
 PULDNDP008|Mostrar Potencia/Ganancia|P|
 PULDNDP021|- Usar Pot/Ganancia por Defecto||

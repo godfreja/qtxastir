@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.70 2003/01/16 21:39:12 francais1 Exp $
+# $Id: language-German.sys,v 1.71 2003/01/23 01:18:22 francais1 Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -169,7 +169,9 @@ PULDNDP004|Geschwindigkeit||
 PULDNDP017|- kurz||
 PULDNDP002|Höhe||
 PULDNDP009|Wetterdaten||
-PULDNDP018|- nur Temperatur||
+PULDNDP046|- Display Weather Text||
+PULDNDP018|-- nur Temperatur||
+PULDNDP047|- Display Wind Barb||
 PULDNDP013|Positionsverschleierung||
 PULDNDP008|Leistung/Gewinn||
 PULDNDP021|- mit Standardwert||

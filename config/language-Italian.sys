@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.71 2003/01/16 21:39:12 francais1 Exp $
+# $Id: language-Italian.sys,v 1.72 2003/01/23 01:18:22 francais1 Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -164,7 +164,9 @@ PULDNDP004|Velocità|S|
 PULDNDP017|- Visualizza basse velocità||
 PULDNDP002|Altitudine||A
 PULDNDP009|Informazioni Meteo|W|
-PULDNDP018|- Visualizza solo temperatura||
+PULDNDP046|- Display Weather Text||
+PULDNDP018|-- Visualizza solo temperatura||
+PULDNDP047|- Display Wind Barb||
 PULDNDP013|Ambiguità di posizione|
 PULDNDP008|Potenza/Guadagno|P|
 PULDNDP021|- Potenza/Guadagno - default||
