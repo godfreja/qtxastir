@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.11 2003/02/04 04:08:39 jtwilley Exp $
+ * $Id: track_gui.c,v 1.12 2003/02/06 07:57:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -408,7 +408,7 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
         download_trail_station_call,posit_start,posit_length);
 
     xastir_snprintf(tempfile, sizeof(tempfile),
-            "wget --server-response --timestamping --tries=1 --timeout=30 --output-document=%s %s 2> /dev/null\n",
+            "/usr/bin/wget --server-response --timestamping --tries=1 --timeout=30 --output-document=%s %s 2> /dev/null\n",
             log_filename,
             fileimg);
 
