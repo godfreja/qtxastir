@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.97 2002/06/03 16:18:36 francais1 Exp $
+ * $Id: maps.c,v 1.98 2002/06/03 16:21:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1978,12 +1978,12 @@ void draw_shapefile_map (Widget w,
                             temp = DBFReadStringAttribute( hDBF, structure, 8 );    // CFCC Field
                             switch (temp[1]) {
                                 case '1':   // A1? = Primary road or interstate highway
-                                    lanes = 2;
-                                    (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x01]); // purple
+                                    lanes = 4;
+                                    (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x04]); // brown
                                     break;
                                 case '2':   // A2? = Primary road w/o limited access, US highways
-                                    lanes = 2;
-                                    (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x0c]); // red
+                                    lanes = 3;
+                                    (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x08]); // black
                                     break;
                                 case '3':   // A3? = Secondary road & connecting road, state highways
                                     if (map_color_levels && scale_y > 256)
@@ -2673,7 +2673,7 @@ void draw_shapefile_map (Widget w,
                                 if (city_flag)
                                     (void)XSetForeground(XtDisplay(w), gc, GetPixelByName(w,"RosyBrown"));  // RosyBrown, duh
                                 else
-                                    (void)XSetForeground(XtDisplay(w), gc, colors[0x0e]); // grey
+                                    (void)XSetForeground(XtDisplay(w), gc, colors[0xff]); // grey
 
                                 (void)XFillPolygon(XtDisplay (w), pixmap, gc, points, i, Complex, CoordModeOrigin);
                                 (void)XSetForeground(XtDisplay(w), gc, colors[0x08]); // black for border
