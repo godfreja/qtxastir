@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.56 2002/11/22 00:50:05 we7u Exp $
+ * $Id: xa_config.c,v 1.57 2002/11/22 01:44:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -588,7 +588,6 @@ void save_data(void)  {
 
 #ifdef HAVE_FESTIVAL
             /* Festival speech settings */
-        store_int (fout, "SPEAK_ID",festival_speak_ID);
         store_int (fout, "SPEAK_NEW_STATION",festival_speak_new_station);
         store_int (fout, "SPEAK_PROXIMITY_ALERT",festival_speak_proximity_alert);
         store_int (fout, "SPEAK_TRACKED_ALERT",festival_speak_tracked_proximity_alert);
