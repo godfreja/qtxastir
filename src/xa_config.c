@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.33 2002/06/25 19:41:58 we7u Exp $
+ * $Id: xa_config.c,v 1.34 2002/06/26 00:13:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -564,7 +564,7 @@ void save_data(void)  {
 
 
         /* list attributes */
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 7; i++) {
             sprintf (name_temp, "LIST%0d_", i);
             strcpy (name, name_temp);
             strcat (name, "H");
@@ -1160,7 +1160,7 @@ void load_data_or_default(void) {
 
 
     /* list attributes */
-    for (i = 0; i < 6; i++) {
+    for (i = 0; i < 7; i++) {
         sprintf (name_temp, "LIST%0d_", i);
         strcpy (name, name_temp);
         strcat (name, "H");
