@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.81 2002/06/21 19:21:03 we7u Exp $
+ * $Id: db.c,v 1.82 2002/06/21 19:36:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10177,7 +10177,7 @@ int Create_object_item_tx_string(DataRow *p_station, char *line, int line_length
                         lon_str,
                         object_symbol,
                         course,
-                        speed,
+                        speed,  // In knots
                         ""));   // PHG, must be blank
             }
             else {
@@ -10207,7 +10207,7 @@ int Create_object_item_tx_string(DataRow *p_station, char *line, int line_length
                         lon_str,
                         object_symbol,
                         course,
-                        speed,
+                        speed,  // In knots
                         ""));   // PHG, must be blank
             }
             else {
