@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.28 2004/03/09 06:32:03 we7u Exp $
+ * $Id: interface.h,v 1.29 2005/01/04 17:06:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -208,6 +208,7 @@ extern int data_avail;
 extern void control_interface(Widget w, XtPointer clientData, XtPointer callData);
 extern void dtr_all_set(int dtr);
 extern void interface_status(Widget w);
+extern void update_interface_list(void);
 extern int WX_rain_gauge_type;
 
 /* interface.c */
