@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.124 2004/09/02 14:49:11 we7u Exp $
+ * $Id: xa_config.c,v 1.125 2004/09/16 14:47:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1705,7 +1705,7 @@ void load_data_or_default(void) {
     if (!get_string ("SOUND_COMMAND", sound_command, sizeof(sound_command)))
         xastir_snprintf(sound_command,
             sizeof(sound_command),
-            "vplay -q");
+            "play");
 
     if (!get_int ("SOUND_PLAY_ONS", &sound_play_new_station,0,1,0))
         sound_play_new_station = 0;
