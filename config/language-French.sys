@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.101 2003/07/15 20:46:58 we7u Exp $
+# $Id: language-French.sys,v 1.102 2003/09/26 17:06:26 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -726,6 +726,7 @@ UNIOP00028|mm Hg||
 UNIOP00029|Placez le temps de système du GPS||
 UNIOP00030|RELAY Digipeat?||
 UNIOP00031|m||
+UNIOP00032|Apply||
 #
 # PopUp "Station Chooser"
 STCHO00001|Choix de station||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.111 2003/07/15 20:46:59 we7u Exp $
+# $Id: language-Spanish.sys,v 1.112 2003/09/26 17:06:26 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -730,6 +730,7 @@ UNIOP00028|mm Hg||
 UNIOP00029|Fije el tiempo del sistema del GPS||
 UNIOP00030|RELEVO Digipeat?||
 UNIOP00031|m||
+UNIOP00032|Apply||
 #
 # Seleccionar Estación
 STCHO00001|Seleccionar Estación||
