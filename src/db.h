@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.48 2004/05/07 16:16:57 we7u Exp $
+ * $Id: db.h,v 1.49 2004/06/18 19:28:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -312,6 +312,7 @@ typedef struct _DataRow {
     struct _DataRow *t_next;    // pointer to next element in time ordered list (newer)
     struct _DataRow *t_prev;    // pointer to previous element in time ordered list (older)
     char call_sign[MAX_CALLSIGN+1]; // call sign or name index or object/item name
+    char tactical_call_sign[MAX_CALLSIGN+1]; // Like, tactical callsign, duh
     time_t sec_heard;           // time last heard, used also for time index
     int  time_sn;               // serial number for making time index unique
     short flag;                 // several flags, see below

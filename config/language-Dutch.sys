@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.130 2004/06/08 15:37:04 we7u Exp $
+# $Id: language-Dutch.sys,v 1.131 2004/06/18 19:28:21 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -713,7 +713,8 @@ WPUPSTI060|Ontbrandings Temp: %02.1føC  ||
 WPUPSTI061|Ontbrandings Temp: %søF   ||
 WPUPSTI062|Vochtigheids Gehalte in Brandstof: %s%%   ||
 WPUPSTI063|Baro: %0.2f in Hg||
-WPUPSTIO64|Vraag NWS waarschuwing||
+WPUPSTI064|Vraag NWS waarschuwing||
+WPUPSTI065|Tactical Call: %s||
 #
 # FCC-RAC Call Look up
 STIFCC0001|FCC Databank Doorzoeken||

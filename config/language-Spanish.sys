@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.134 2004/05/17 18:45:58 we7u Exp $
+# $Id: language-Spanish.sys,v 1.135 2004/06/18 19:28:21 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -706,6 +706,7 @@ WPUPSTI061|Incendio Temp: %s°F   ||
 WPUPSTI062|Humedad de Incendio: %s%%  ||
 WPUPSTI063|Baro: %0.2f en Hg||
 WPUPSTI064|Fetch NWS Alert||
+WPUPSTI065|Tactical Call: %s||
 #
 # FCC-RAC buscar Indicativo
 STIFCC0001|Buscar en Base de datos FCC||

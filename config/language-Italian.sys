@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.127 2004/06/03 21:11:38 we7u Exp $
+# $Id: language-Italian.sys,v 1.128 2004/06/18 19:28:21 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -702,6 +702,8 @@ WPUPSTI060|Temp Carburante: %02.1f°C  ||
 WPUPSTI061|Temp Carburante: %s°F   ||
 WPUPSTI062|Umidità Carburante: %s%%   ||
 WPUPSTI063|Pressione: %0.2f in Hg||
+WPUPSTI064|Fetch NWS Alert||
+WPUPSTI065|Tactical Call: %s||
 #
 # FCC-RAC Call Look up
 STIFCC0001|Ricerca nel database FCC||

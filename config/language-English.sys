@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.124 2004/05/17 18:45:57 we7u Exp $
+# $Id: language-English.sys,v 1.125 2004/06/18 19:28:21 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -703,6 +703,7 @@ WPUPSTI061|Fuel Temp: %s°F   ||
 WPUPSTI062|Fuel Moisture: %s%%   ||
 WPUPSTI063|Baro: %0.2f in Hg||
 WPUPSTI064|Fetch NWS Alert||
+WPUPSTI065|Tactical Call: %s||
 #
 #
 # FCC-RAC Call Look up
