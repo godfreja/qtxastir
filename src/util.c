@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.13 2002/04/01 23:42:49 we7u Exp $
+ * $Id: util.c,v 1.14 2002/04/10 20:03:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -627,7 +627,7 @@ time_t time_from_aprsstring(char *aprs_time) {
 #ifdef __FreeBSD__
     zone = (time_now->tm_gmtoff) - 3600 * (int)(time_now->tm_isdst);
 #else
-    zone = timezone - 3600 * (int)(time_now->tm_isdst > 0);
+    zone = (int)timezone - 3600 * (int)(time_now->tm_isdst > 0);
 #endif
     tz[0] = tz[1] = '\0';
     switch (sscanf(aprs_time, "%2d%2d%2d%19s", &day, &hour, &minute, tz)) {
