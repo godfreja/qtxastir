@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kam,v 1.7 2004/06/04 19:43:04 we7u Exp $
+# $Id: tnc-startup.kam,v 1.8 2004/07/26 18:16:52 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -29,6 +29,7 @@ CT APRS Network no connected messages supported!
 ECHO OFF
 FLOW OFF
 HID OFF/OFF
+CWID OFF/OFF
 MSTAMP OFF
 PASSALL OFF
 #
