@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.14 2002/04/09 07:51:17 we7u Exp $
+ * $Id: db.c,v 1.15 2002/04/10 21:35:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7043,7 +7043,7 @@ int decode_Mic_E(char *call_sign,char *path,char *info,char from,int port,int th
     // Check for valid symbol table character.  Should be '/' or '\' only.
     if (info[7] != '/' && info[7] != '\\') {
         if (info[6] == '/' || info[6] == '\\') {
-            printf("decode_Mic_E: Symbol table (%c) and symbol (%c) reversed?  Call=%s\n",
+            printf("decode_Mic_E: Symbol table (%c) and symbol (%c) reversed or corrupted packet?  Call=%s\n",
                 info[7],
                 info[6],
                 call_sign);
@@ -7721,7 +7721,7 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
         printf("5\n");
     //--------------------------------------------------------------------------
     if (!done && strncmp(addr,"NWS-",4) == 0) {             // NWS weather alert
-        // printf("found NWS: |%s| |%s| |%s|\n",addr,message,msg_id);      // could have sort of line number
+        //printf("found NWS: |%s| |%s| |%s|\n",addr,message,msg_id);      // could have sort of line number
         msg_data_add(addr,call,message,"",MESSAGE_NWS,from);
         (void)alert_message_scan();
         done = 1;
