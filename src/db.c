@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.313 2004/05/09 01:55:19 we7u Exp $
+ * $Id: db.c,v 1.314 2004/05/09 02:54:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13589,10 +13589,10 @@ void check_and_transmit_objects_items(time_t time) {
 
 
     // Time to re-transmit objects/items?
-    // Check every OBJECT_CHECK_RATE seconds.  No faster else we'll
-    // be running through the station list too often and wasting
-    // cycles.
-    if (sec_now() < (last_object_check + OBJECT_CHECK_RATE) )
+    // Check every OBJECT_CHECK_RATE seconds - 20%.  No faster else
+    // we'll be running through the station list too often and
+    // wasting cycles.
+    if (sec_now() < (last_object_check + (int)(4 * OBJECT_CHECK_RATE/5) ) )
         return;
 
     // Set up timer for next go-around

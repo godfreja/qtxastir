@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.452 2004/05/06 21:40:55 we7u Exp $
+ * $Id: main.c,v 1.453 2004/05/09 02:54:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -19978,6 +19978,7 @@ void Object_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
         // Set up the timer properly for the decaying algorithm
         if (p_station != NULL) {
             p_station->transmit_time_increment = OBJECT_CHECK_RATE;
+            p_station->last_transmit_time = sec_now();
 //fprintf(stderr,"Object_change_data_set(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
 
@@ -20018,6 +20019,7 @@ void Item_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
         // Set up the timer properly for the decaying algorithm
         if (p_station != NULL) {
             p_station->transmit_time_increment = OBJECT_CHECK_RATE;
+            p_station->last_transmit_time = sec_now();
 //fprintf(stderr,"Item_change_data_set(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
  
@@ -20061,6 +20063,7 @@ void Object_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
         // Set up the timer properly for the decaying algorithm
         if (p_station != NULL) {
             p_station->transmit_time_increment = OBJECT_CHECK_RATE;
+            p_station->last_transmit_time = sec_now();
 //fprintf(stderr,"Object_change_data_del(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
 
@@ -20105,6 +20108,7 @@ void Item_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
         // Set up the timer properly for the decaying algorithm
         if (p_station != NULL) {
             p_station->transmit_time_increment = OBJECT_CHECK_RATE;
+            p_station->last_transmit_time = sec_now();
 //fprintf(stderr,"Item_change_data_del(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
 
