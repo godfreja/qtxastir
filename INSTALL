@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.39 2004/05/04 17:59:23 we7u Exp $
+$Id: INSTALL,v 1.40 2004/05/19 23:08:05 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -183,6 +183,23 @@ See below for instructions on installing all of these libraries. Once the
   libraries are installed, ./configure should find the libraries and allow
   compiling in support for the new features.
 
+
+If you wish to disable configure's testing of certain features, you
+can add any of the following flags to configure:
+
+    --without-ax25
+    --without-festival
+    --without-gpsman
+    --without-shapelib
+    --without-imagemagick
+    --without-libproj
+    --without-geotiff
+    --without-gdal
+    --without-pcre
+    --without-dbfawk
+
+For example, "./configure --without-ax25" will disable the AX.25
+networking code in Xastir.
 
 If you have installed Xastir before, read the "UPGRADE" file for
 information on changes in file location and permissions.
@@ -632,15 +649,15 @@ First Time Install:
      wish to install and use Xastir from your home directory.  There are
      probably many other uses as well.
 
-     If you want to enable optional "dbfawk" support (see README.MAPS) then
-     add "--with-dbfawk" to your "./configure", i.e.
+     If you want to disable optional "dbfawk" support (see README.MAPS) then
+     add "--without-dbfawk" to your "./configure", i.e.
 
-     "./configure --with-dbfawk"
+     "./configure --without-dbfawk"
 
-     Note that dbfawk is still being beta-tested and may not work correctly
-     for you.  If you have problems with it, simply rerun "./configure"
-     without the "--with-dbfawk" option and rebuild.  You'll also need the
-     "pcre" package installed in order to compile in dbfawk support.
+     Most people will want the capability though.
+
+     You'll need the "pcre" package installed in order to compile in
+     dbfawk support.
 
      If you see some errors, they be because you are missing
      GNU msgfmt or GNU gettext/xgettext?  These packages are required
