@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.7 2003/07/02 21:03:09 n2ygk Exp $
+# $Id: Makefile.am,v 1.8 2003/07/02 21:19:44 n2ygk Exp $
 EXTRA_DIST = \
     Coordinate.pm \
     coord-convert.pl \
@@ -12,7 +12,7 @@ EXTRA_DIST = \
     update_langfile.pl \
     waypoint-get.pl
 
-bin_SCRIPTS = \
+pkglib_SCRIPTS = \
     Coordinate.pm \
     coord-convert.pl \
     fcc-get \

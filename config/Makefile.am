@@ -1,5 +1,5 @@
-# $Id: Makefile.am,v 1.5 2003/02/18 20:49:28 kg4ijb Exp $
-configdir = ${prefix}/xastir/config
+# $Id: Makefile.am,v 1.6 2003/07/02 21:19:44 n2ygk Exp $
+configdir = ${pkgdatadir}/config
 
 EXTRA_DIST = \
     language-Dutch.sys \

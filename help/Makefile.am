@@ -1,5 +1,5 @@
-# $Id: Makefile.am,v 1.3 2003/02/18 20:49:46 kg4ijb Exp $
-helpdir = ${prefix}/xastir/help
+# $Id: Makefile.am,v 1.4 2003/07/02 21:19:44 n2ygk Exp $
+helpdir = ${pkgdatadir}/help
 EXTRA_DIST = \
     help-Dutch.dat \
     help-English.dat \
