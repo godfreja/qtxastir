@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.11 2002/03/11 07:39:34 we7u Exp $
+ * $Id: interface.c,v 1.12 2002/03/11 09:17:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1685,6 +1685,9 @@ void port_write_string(int port, char *data) {
 
     erd = 0;
 
+    if (debug_level & 2)
+        printf("CMD:%s\n",data);
+
     if (begin_critical_section(&port_data[port].write_lock, "interface.c:port_write_string(1)" ) > 0)
         printf("write_lock, Port = %d\n", port);
 
@@ -2109,7 +2112,7 @@ void port_write(int port) {
                     case DEVICE_SERIAL_TNC_HSP_GPS:
                     case DEVICE_SERIAL_TNC_AUX_GPS:
                     case DEVICE_SERIAL_TNC:
-                        usleep(5000); // character pacing, 5ms per
+                        usleep(25000); // character pacing, 25ms per char.  20ms doesn't work for PicoPacket.
                         break;
                     default:
                         break;
