@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.26 2003/08/14 16:12:06 we7u Exp $
+ * $Id: xastir.h,v 1.27 2003/09/16 17:46:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,6 +26,24 @@
 
 #ifndef _XASTIR_H
 #define _XASTIR_H
+
+
+
+// Defines for including the libgc garbage collection library.
+// Remember to add "-lgc" to the LIBS line in src/Makefile as well.
+// This enables automatic garbage collection of unused memory,
+// similar to the garbage collection in Java.
+//
+//#define WITH_LIBGC
+#ifdef WITH_LIBGC
+  #include <malloc.h>
+  #include <gc.h>
+  #define malloc(x) GC_malloc(x)
+  #define calloc(n,x) GC_malloc((n)*(x))
+  #define realloc(p,x) GC_realloc((p),(x))
+  #define free(x) (x) = NULL
+#endif  // WITH_LIBGC
+
 
 
 #define SERIAL_KISS_RELAY_DIGI
