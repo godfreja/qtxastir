@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.360 2003/10/18 05:55:29 we7u Exp $
+ * $Id: main.c,v 1.361 2003/10/19 22:31:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9010,6 +9010,15 @@ void Zoom_level( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPoi
                 break;
 
             case(7):
+
+//WE7U
+// Here it'd be good to calculate what zoom level the entire world
+// would best fit in, instead of fixing the scale to a particular
+// amount.  Figure out which zoom level would fit in the X and the Y
+// direction, and then pick the higher zoom level of the two (to
+// make sure the world fits in both).  We should probably center at
+// 0.0N/0.0W as well.
+
                 new_scale_y = 262144;
                 break;
 
