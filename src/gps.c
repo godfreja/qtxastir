@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.13 2002/06/20 17:36:30 we7u Exp $
+ * $Id: gps.c,v 1.14 2002/06/20 17:44:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -484,6 +484,23 @@ char *nmea_checksum(char *nmea_sentence) {
 // 01131.000,E  Longitude
 // WPTNME       Waypoint Name (stick to 6 chars for compatibility?)
 // *31          Checksum, always begins with '*'
+//
+//
+// Future implementation ideas:
+//
+// Create linked list of waypoints/location.
+// Use the list to prevent multiple writes of the same waypoint if
+// nothing has changed.
+//
+// Use the list to check distance of previously-written waypoints.
+// If we're out of range, delete the waypoint and remove it from the
+// list.
+//
+// Perhaps write the list to disk also.  As we shut down, delete the
+// waypoints (self-cleaning).  As we come up, load them in again?
+// We could also just continue cleaning out waypoints that are
+// out-of-range since the last time we ran the program.  That's
+// probably a better solution.
 //
 void create_garmin_waypoint(long latitude,long longitude,char *call_sign) {
     char short_callsign[10];
