@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.44 2002/04/24 21:23:12 we7u Exp $
+ * $Id: maps.c,v 1.45 2002/04/24 22:09:02 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2776,10 +2776,6 @@ void draw_gnis_map (Widget w, char *dir, char *filenm)
     int ok;
     long x,y;
 
-
-    // Skip the file if map labels are disabled
-    if (!map_labels)
-        return;
 
     // Screen view
     min_lat = y_lat_offset + (long)(screen_height * scale_y);
@@ -8062,7 +8058,7 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
 // Take out the "static" and we get a segfault when we zoom out too
 // far with the lakes or counties shapefile loaded.  No idea why
 // yet.  --we7u
-//static alert_entry alert[MAX_ALERT];
+static alert_entry alert[MAX_ALERT];
 static int alert_count;
 
 
