@@ -1,5 +1,5 @@
 
-$Id: README.CVS,v 1.2 2003/05/14 22:50:24 we7u Exp $
+$Id: README.CVS,v 1.3 2003/05/20 03:28:35 rzg Exp $
 
 
 CVS Instructions:
@@ -96,4 +96,8 @@ CVS Instructions:
      of use to the developers than the users.  The above should be enough
      for most people to keep their copies in sync with the latest CVS
      development sources.
+
+  ------------------------------------------------------------------------
+(c) 1999 Frank Giannandrea
+(c) 2000-2003 The Xastir Group
 

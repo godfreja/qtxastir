@@ -1,5 +1,5 @@
 
-$Id: UPGRADE,v 1.2 2003/05/14 22:50:24 we7u Exp $
+$Id: UPGRADE,v 1.3 2003/05/20 03:28:35 rzg Exp $
 
 
 Previous Install Notes:
@@ -33,3 +33,7 @@ Previous Install Notes:
      problems. Fix these files by "chmod 644 filename" where filename is the
      problem file.
  
+  ------------------------------------------------------------------------
+(c) 1999 Frank Giannandrea
+(c) 2000-2003 The Xastir Group
+

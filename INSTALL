@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.6 2003/05/19 17:35:03 we7u Exp $
+$Id: INSTALL,v 1.7 2003/05/20 03:28:34 rzg Exp $
 
 General steps to configure/compile/install Xastir:
 (See detailed steps and library installation instructions below)
@@ -744,3 +744,8 @@ First Time Install:
 
 You probably want to download some maps and additional data files. The
 instructions for this are in the README.MAPS.
+
+  ------------------------------------------------------------------------
+(c) 1999 Frank Giannandrea
+(c) 2000-2003 The Xastir Group
+
