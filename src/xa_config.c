@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.106 2004/01/15 21:09:59 we7u Exp $
+ * $Id: xa_config.c,v 1.107 2004/01/15 21:28:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -326,6 +326,9 @@ void save_data(void)  {
                 "Couldn't rename %s to %s, cancelling save_data()\n",
                 config_file_bak2,
                 config_file_bak3);
+
+            // Attempt to restore to previous state
+            // Nothing to do here!  bak3 was deleted.
             return;
         }
     }
@@ -346,6 +349,9 @@ void save_data(void)  {
                 "Couldn't rename %s to %s, cancelling save_data()\n",
                 config_file_bak1,
                 config_file_bak2);
+
+            // Attempt to restore to previous state
+            rename (config_file_bak3, config_file_bak2);
             return;
         }
     }
@@ -366,6 +372,10 @@ void save_data(void)  {
                 "Couldn't rename %s to %s, cancelling save_data()\n",
                 config_file,
                 config_file_bak1);
+
+            // Attempt to restore to previous state
+            rename (config_file_bak2, config_file_bak1);
+            rename (config_file_bak3, config_file_bak2);
             return;
         }
     }
