@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.73 2004/01/07 16:42:56 we7u Exp $
+# $Id: configure.ac,v 1.74 2004/01/14 20:07:24 we7u Exp $
 
 
 #########################################################################
@@ -245,7 +245,9 @@ fi
 # dupe-check portion will take out the later ones that might be in 
 # the wrong order.  If they're in the wrong order, we can get 
 # "Error: Shell widget xastir has zero width and/or height" when 
-# Xastir is started up. 
+# Xastir is started up.   Can also get "Error: attempt to add
+# non-widget child "DropSiteManager" to parent", but that can also
+# be caused by other problems with libraries.
 # 
 LIBS=" -lXm -lXt -lX11 $LIBS" 
   
