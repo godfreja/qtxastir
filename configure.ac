@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.31 2003/02/19 21:55:55 we7u Exp $
+# $Id: configure.ac,v 1.32 2003/02/19 22:40:18 we7u Exp $
 
 
 #########################################################################
@@ -293,6 +293,18 @@ AC_TYPE_SIZE_T
 AC_HEADER_TIME 
 AC_STRUCT_TM 
 AC_TYPE_SIGNAL 
+
+# Check for tm_gmtoff in tm (borrowed from the KAME project)
+echo -n "Checking for tm_gmtoff..."
+AC_TRY_COMPILE([#include <sys/types.h>
+  #include <$ac_cv_struct_tm>], [struct tm tm; tm.tm_gmtoff;],
+  ac_cv_struct_tm_gmtoff=yes, ac_cv_struct_tm_gmtoff=no)
+if test "$ac_cv_struct_tm_gmtoff" = "yes"; then
+  AC_DEFINE_UNQUOTED(HAVE_GMTOFF, 1, [Define if you have tm->tm_gmtoff]) 
+  echo "yes"
+else
+  echo "no"
+fi 
 
 
  
