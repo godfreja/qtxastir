@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.3 2002/06/25 22:03:01 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.4 2002/07/03 18:10:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -358,14 +358,14 @@ begin_critical_section(&display_bulletins_dialog_lock, "bulletin_gui.c:Bulletins
 
 end_critical_section(&display_bulletins_dialog_lock, "bulletin_gui.c:Bulletins" );
 
-
         scan_bulletin_file();
 
-        // Move focus to the Close button.  This appears to highlight th
-        // button fine, but we're not able to hit the <Enter> key to
-        // have that default function happen.  Note:  We _can_ hit the
-        // <SPACE> key, and that activates the option.
-//        XmUpdateDisplay(Display_bulletins_dialog);
+        // Move focus to the Close button.  This appears to
+        // highlight the button fine, but we're not able to hit the
+        // <Enter> key to have that default function happen.  Note:
+        // We _can_ hit the <SPACE> key, and that activates the
+        // option.
+        //XmUpdateDisplay(Display_bulletins_dialog);
         XmProcessTraversal(button_close, XmTRAVERSE_CURRENT);
 
     }  else {
