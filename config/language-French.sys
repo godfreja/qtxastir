@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.51 2002/10/29 06:34:01 we7u Exp $
+# $Id: language-French.sys,v 1.52 2002/11/13 20:43:45 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -263,6 +263,7 @@ BBARSTA037|GPS météo décodées||
 BBARSTA038|Placez le changement sur ma station||
 BBARSTA039|Indexing %s||
 BBARSTA040|This is Amateur Radio Station %s||
+BBARSTA041|Waiting for GPS data..||
 #
 # PopUp "View - Incoming Packet Data"
 WPUPDPD001|Affichage de données paquet||

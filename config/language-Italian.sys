@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.52 2002/10/29 06:34:01 we7u Exp $
+# $Id: language-Italian.sys,v 1.53 2002/11/13 20:43:45 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -264,6 +264,7 @@ BBARSTA037|Dati GPS rilevati||
 BBARSTA038|Posizionare il cambiamento sulla mia stazione||
 BBARSTA039|Indexing %s||
 BBARSTA040|This is Amateur Radio Station %s||
+BBARSTA041|Waiting for GPS data..||
 #
 #Visualizzazione dati packet
 WPUPDPD001|Visualizzazione dati packet||

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.51 2002/10/29 06:34:01 we7u Exp $
+# $Id: language-English.sys,v 1.52 2002/11/13 20:43:45 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -263,6 +263,7 @@ BBARSTA037|GPS Data Complete||
 BBARSTA038|Position change on my station||
 BBARSTA039|Indexing %s||
 BBARSTA040|This is Amateur Radio Station %s||
+BBARSTA041|Waiting for GPS data..||
 #
 # PopUp "View - Incoming Packet Data"
 WPUPDPD001|Display Packet Data||
