@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.c,v 1.4 2002/03/28 19:28:09 we7u Exp $
+ * $Id: list_gui.c,v 1.5 2002/04/01 20:52:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1206,7 +1206,7 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List" );
                                  XmNtraversalOn,         FALSE,
                                  XmNsensitive, STIPPLE,
                                  XmNshadowThickness, 0,
-                                 XmNcolumns, 23,
+                                 XmNcolumns, 25,
                                  XmNtopAttachment, XmATTACH_FORM,
                                  XmNtopOffset,2,
                                  XmNbottomAttachment, XmATTACH_NONE,
@@ -1761,7 +1761,7 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List" );
                                         XmNtraversalOn, FALSE,
                                         XmNsensitive, STIPPLE,
                                         XmNshadowThickness, 0,
-                                        XmNcolumns, 23,
+                                        XmNcolumns, 25,
                                         XmNbackground, colors[0x0f],
                                         XmNalignment, XmALIGNMENT_END,
                                         XmNleftAttachment,XmATTACH_WIDGET,
