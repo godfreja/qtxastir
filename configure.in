@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Currently maintained by Chuck Byam (KG4IJB), cbyam@virginia.edu
 #
-# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.2 2002/02/09 14:14:38 kg4ijb Exp $
+# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.3 2002/02/09 14:48:47 kg4ijb Exp $
 #
 # Xastir Configure Script
 #
@@ -138,6 +138,7 @@ dnl Go back and check for Xp
 dnl This one is driving me nuts! Force it for now
 LIBS="$LIBS $XPM_LIBS"
 AC_CHECK_LIB(Xp, XpGetDocumentData)
+AC_CHECK_LIB(Xpm, XpmWriteFileFromPixmap)
 
 XASTIR_CHECK_GEOTIFF_LIBS
 XASTIR_CHECK_FESTIVAL
