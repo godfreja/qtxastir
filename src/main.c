@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.311 2003/07/15 20:46:59 we7u Exp $
+ * $Id: main.c,v 1.312 2003/07/15 22:42:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7112,6 +7112,8 @@ void da_resize_execute(Widget w) {
     Dimension width, height;
 
 
+    busy_cursor(appshell);
+
     // Reset the flags that may have brought us here.
     interrupt_drawing_now = 0;
     request_resize = 0;
@@ -8432,6 +8434,9 @@ void check_range(void) {
 
 // Called by UpdateTime() when request_new_image flag is set.
 void new_image(Widget da) {
+
+
+    busy_cursor(appshell);
 
     // Reset flags
     interrupt_drawing_now = 0;
