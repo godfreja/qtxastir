@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.80 2004/04/02 16:03:23 we7u Exp $
+# $Id: configure.ac,v 1.81 2004/04/12 21:21:00 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -70,8 +70,9 @@ XASTIR_DETECT_BINARIES
 if test "x${festival}" != "xno"; then
   use_festival=yes
 fi
+
+#  echo GPSMAN is ${gpsman}
 if test "x${gpsman}" != "xno"; then
-  echo GPSMAN is ${gpsman}
   use_gpsman=yes
 fi
 
