@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.14 2004/05/25 04:11:20 we7u Exp $
+ * $Id: awk.c,v 1.15 2004/05/25 20:02:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -737,7 +737,10 @@ awk_program *awk_load_program_file(const char *file) { /* rules filename */
             }
             if (*cp != '\0')    /* zap end of pattern */
                 *cp++ = '\0';
+//WE7U
+// strdup allocates memory
             r->pattern = strdup(p);
+
             break;
         case 'B':               /* BEGIN? */
             if (strncmp(cp,"BEGIN_RECORD",12) == 0) {
@@ -791,7 +794,11 @@ awk_program *awk_load_program_file(const char *file) { /* rules filename */
             }
             if (*cp != '\0')    /* zap end of act */
                 *cp++ = '\0';
+
+//WE7U
+// strdup allocates memory
             r->act = strdup(p);
+
             r->flags |= AR_MALLOC;
             /* make sure there's no extraneous junk on the line */
             while (*cp && isspace(*cp)) ++cp;
