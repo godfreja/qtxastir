@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.446 2004/02/29 20:31:02 we7u Exp $
+ * $Id: main.c,v 1.447 2004/03/08 21:13:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9707,6 +9707,7 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
 
                         /* TNC Devices */
                         case DEVICE_SERIAL_KISS_TNC:
+                        case DEVICE_SERIAL_MKISS_TNC:
 
                             // Try to decode header and checksum.  If
                             // bad, break, else continue through to

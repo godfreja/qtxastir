@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.26 2004/02/12 22:18:46 we7u Exp $
+ * $Id: interface.h,v 1.27 2004/03/08 21:13:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -61,7 +61,7 @@
 
 
 
-#define MAX_IFACE_DEVICE_TYPES 13
+#define MAX_IFACE_DEVICE_TYPES 14
 
 /* Define Device Types */
 enum Device_Types {
@@ -77,7 +77,8 @@ enum Device_Types {
     DEVICE_SERIAL_TNC_AUX_GPS,  // KB6MER -> KAM XL or other TNC w/GPS on AUX port
     DEVICE_SERIAL_KISS_TNC,     // KISS TNC on serial port (not ax.25 kernel device)
     DEVICE_NET_DATABASE,
-    DEVICE_NET_AGWPE
+    DEVICE_NET_AGWPE,
+    DEVICE_SERIAL_MKISS_TNC     // Multi-port KISS TNC, like the Kantronics KAM
 };
 
 enum Device_Active {

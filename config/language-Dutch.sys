@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.122 2004/03/01 02:40:11 we7u Exp $
+# $Id: language-Dutch.sys,v 1.123 2004/03/08 21:13:10 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -450,6 +450,7 @@ WPUPCFT036|Persistence (0 tot 255)||
 WPUPCFT037|SlotTime (10 ms stappen)||
 WPUPCFT038|TxTail (10 ms stappen)||
 WPUPCFT039|Vol Duplex||
+WPUPCFT040|Configureer MKISS TNC||
 #
 # PopUp "Configure WX Port"
 WPUPCFWX01|WX Poort Instelling||
@@ -787,6 +788,7 @@ IFDNL00009|Serieele TNC met GPS op een AUX kabel||
 IFDNL00010|Serieele KISS TNC||
 IFDNL00011|Database Via Netwerk (Nog Niet Geimplementeerd)||
 IFDNL00012|AGWPE Via Netwerk||
+IFDNL00013|Serieele MKISS TNC||
 #
 # Interface device info
 IFDIN00000|%s %2d %s via serieel device %s||
