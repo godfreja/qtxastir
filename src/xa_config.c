@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.84 2003/06/06 23:57:17 we7u Exp $
+ * $Id: xa_config.c,v 1.85 2003/06/17 19:48:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -248,6 +248,8 @@ char *get_data_base_dir(char *dir) {
     static char base[MAX_VALUE];
     char *env_ptr;
 
+    // Snag this variable from the environment if it exists there,
+    // else grab it from the define in config.h
     strcpy (base, ((env_ptr = getenv ("XASTIR_DATA_BASE")) != NULL) ? env_ptr : XASTIR_DATA_BASE);
     if (base[strlen (base) - 1] != '/')
         strcat (base, "/");
