@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.49 2003/01/24 00:34:51 we7u Exp $
+ * $Id: util.c,v 1.50 2003/01/29 20:14:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2651,6 +2651,47 @@ void spell_it_out(char *text) {
     // Only use the new string if it kind'a looks like a callsign
     if (number_found_before_dash)
         strcpy(text,buffer);
+}
+
+
+
+
+
+#define kKey 0x73e2 // This is the seed for the key
+#define true 1
+
+
+
+
+
+static short doHash(char *theCall) {
+    char rootCall[10]; // need to copy call to remove ssid from parse
+    char *p1 = rootCall;
+    short hash;
+    short i,len;
+    char *ptr = rootCall;
+
+    while ((*theCall != '-') && (*theCall != '\0')) *p1++ = toupper((int)(*theCall++));
+        *p1 = '\0';
+
+    hash = kKey; // Initialize with the key value
+    i = 0;
+    len = (short)strlen(rootCall);
+
+    while (i<len) {// Loop through the string two bytes at a time
+        hash ^= (unsigned char)(*ptr++)<<8; // xor high byte with accumulated hash
+        hash ^= (*ptr++); // xor low byte with accumulated hash
+        i += 2;
+    }
+    return (short)(hash & 0x7fff); // mask off the high bit so number is always positive
+}
+
+
+
+
+
+short checkHash(char *theCall, short theHash) {
+    return (short)(doHash(theCall) == theHash);
 }
 
 

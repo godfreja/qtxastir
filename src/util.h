@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.14 2003/01/24 00:34:51 we7u Exp $
+ * $Id: util.h,v 1.15 2003/01/29 20:14:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -109,5 +109,7 @@ void time_mark(int start);
 
 // dl9sau
 extern char *sec_to_loc(long longitude, long latitude);
+
+extern short checkHash(char *theCall, short theHash);
 
 #endif // __XASTIR_UTIL_H
