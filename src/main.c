@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.470 2004/06/23 19:25:09 we7u Exp $
+ * $Id: main.c,v 1.471 2004/06/23 19:54:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -191,6 +191,22 @@
 // If next line uncommented, Xastir will use a large font for the
 // station text in the drawing area.
 //#define USE_LARGE_STATION_FONT
+
+
+// Enable this next line to set all flags properly for a 640x480
+// touch-screen:  Makes the main window smaller due to the reduced
+// font sizes, makes all dialogs come up at the upper-left of the
+// main Xastir screen, and reverses buttons 1 and 3 so that the more
+// important mouse menus are accessible via the touch-screen.
+//
+//#define LCD640x480TOUCH
+//
+#ifdef LCD640x480TOUCH
+  #define USE_SMALL_SYSTEM_FONT
+  #define FIXED_DIALOG_STARTUP
+  #define SWAP_MOUSE_BUTTONS
+#endif
+
 
 #define LINE_WIDTH 1
 
