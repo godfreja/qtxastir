@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.20 2004/12/15 21:58:06 tvrusso Exp $
+# $Id: Makefile.am,v 1.21 2005/01/08 09:19:31 we7u Exp $
 #
-# Copyright (C) 2000-2004  The Xastir Group
+# Copyright (C) 2000-2005  The Xastir Group
 #
 
 configdir = ${pkgdatadir}/config
