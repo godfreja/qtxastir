@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.14 2003/11/28 22:55:38 kd6zwr Exp $
+ * $Id: map_gdal.c,v 1.15 2003/11/29 06:26:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -394,6 +394,16 @@ void draw_gdal_map(Widget w,
 
 
 
+
+
+void draw_ogr_map(Widget w,
+                   char *dir,
+                   char *filenm,
+                   alert_entry *alert,
+                   u_char alert_color,
+                   int destination_pixmap,
+                   int draw_filled) {
+}
 
 
 #endif // HAVE_LIBGDAL

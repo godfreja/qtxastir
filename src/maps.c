@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.381 2003/11/28 22:55:39 kd6zwr Exp $
+ * $Id: maps.c,v 1.382 2003/11/29 06:26:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3364,6 +3364,14 @@ extern void draw_gnis_map(Widget w,
 
 #ifdef HAVE_LIBGDAL
 extern void draw_gdal_map(Widget w,
+                   char *dir,
+                   char *filenm,
+                   alert_entry *alert,
+                   u_char alert_color,
+                   int destination_pixmap,
+                   int draw_filled);
+
+extern void draw_ogr_map(Widget w,
                    char *dir,
                    char *filenm,
                    alert_entry *alert,
