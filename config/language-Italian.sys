@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.23 2002/06/13 22:53:35 we7u Exp $
+# $Id: language-Italian.sys,v 1.24 2002/06/14 22:28:31 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -289,7 +289,8 @@ WPUPCFD022|Posizione stazione, Data e ora UTC, dati meteo||
 WPUPCFD023|Devo trasmettere i dati Meteo?||
 WPUPCFD024|Compress object/item data when transmitting?||
 WPUPCFD025|Attivare rete alternativa?|A|
-WPUPCFD026|Intervallo per invio rapporti posizione|||
+WPUPCFD026|Intervallo per invio rapporti posizione||
+WPUPCFD027|Enable SmartBeaconing||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||

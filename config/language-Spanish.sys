@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.24 2002/06/13 22:53:35 we7u Exp $
+# $Id: language-Spanish.sys,v 1.25 2002/06/14 22:28:31 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -290,6 +290,7 @@ WPUPCFD023|Transmitir datos WX en Raw?||
 WPUPCFD024|Compress object/item data when transmitting?||
 WPUPCFD025|Activar Red Alternada?|A|
 WPUPCFD026|Enviar reportes de posición en qué intervalos?||
+WPUPCFD027|Enable SmartBeaconing||
 #
 # Configurar Sistema de Coordenada"
 WPUPCFC001|Configurar Sistema de Coordenada||

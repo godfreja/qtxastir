@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.29 2002/06/13 22:53:38 we7u Exp $
+ * $Id: xa_config.c,v 1.30 2002/06/14 22:28:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -486,6 +486,8 @@ void save_data(void)  {
         store_int (fout, "BST_COMPRESSED_POSIT", transmit_compressed_posit);
 
         store_int (fout, "COMPRESSED_OBJECTS_ITEMS", transmit_compressed_objects_items);
+
+        store_int (fout, "SMART_BEACONING", smart_beaconing);
 
         /* -dk7in- variable beacon interval */
         /*         mobile:   max  2 min */
@@ -982,6 +984,9 @@ void load_data_or_default(void) {
     /* compressed objects/items transmit */
     if (!get_int ("COMPRESSED_OBJECTS_ITEMS", &transmit_compressed_objects_items,0,1,0))
         transmit_compressed_objects_items = 0;
+
+    if (!get_int ("SMART_BEACONING", &smart_beaconing,0,1,1))
+        smart_beaconing = 1;
 
     /* Audio Alarms*/
     if (!get_string ("SOUND_COMMAND", sound_command))
