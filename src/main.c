@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.338 2003/09/05 06:37:57 we7u Exp $
+ * $Id: main.c,v 1.339 2003/09/05 19:07:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6186,13 +6186,45 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
 
 #ifdef ARROWS
+    zoom_in_menu=XtVaCreateManagedWidget(langcode("POPUPMA002"),
+            xmPushButtonWidgetClass,
+            toolbar,
+            XmNtopAttachment, XmATTACH_FORM,
+            XmNbottomAttachment, XmATTACH_FORM,
+            XmNleftAttachment, XmATTACH_WIDGET,
+            XmNleftWidget, move_frame,
+            XmNleftOffset, 0,
+            XmNrightAttachment, XmATTACH_NONE,
+            XmNnavigationType, XmTAB_GROUP,
+            XmNtraversalOn, FALSE,
+            MY_FOREGROUND_COLOR,
+            MY_BACKGROUND_COLOR,
+            NULL);
+    XtAddCallback(zoom_in_menu,XmNactivateCallback,Zoom_in_no_pan,NULL);
+
+    zoom_out_menu=XtVaCreateManagedWidget(langcode("POPUPMA003"),
+            xmPushButtonWidgetClass,
+            toolbar,
+            XmNtopAttachment, XmATTACH_FORM,
+            XmNbottomAttachment, XmATTACH_FORM,
+            XmNleftAttachment, XmATTACH_WIDGET,
+            XmNleftWidget, zoom_in_menu,
+            XmNleftOffset, 0,
+            XmNrightAttachment, XmATTACH_NONE,
+            XmNnavigationType, XmTAB_GROUP,
+            XmNtraversalOn, FALSE,
+            MY_FOREGROUND_COLOR,
+            MY_BACKGROUND_COLOR,
+            NULL);
+    XtAddCallback(zoom_out_menu,XmNactivateCallback,Zoom_out_no_pan,NULL);
+
     pan_left_menu=XtVaCreateManagedWidget("create_appshell arrow1_menu",
             xmArrowButtonGadgetClass,
             toolbar,
             XmNtopAttachment, XmATTACH_FORM,
             XmNbottomAttachment, XmATTACH_FORM,
             XmNleftAttachment, XmATTACH_WIDGET,
-            XmNleftWidget, move_frame,
+            XmNleftWidget, zoom_out_menu,
             XmNleftOffset, 0,
             XmNrightAttachment, XmATTACH_NONE,
             XmNarrowDirection,  XmARROW_LEFT,
@@ -6245,38 +6277,6 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             XmNtraversalOn, FALSE,
             NULL);
     XtAddCallback(pan_right_menu,XmNactivateCallback,Pan_right,NULL);
-
-    zoom_in_menu=XtVaCreateManagedWidget(langcode("POPUPMA002"),
-            xmPushButtonWidgetClass,
-            toolbar,
-            XmNtopAttachment, XmATTACH_FORM,
-            XmNbottomAttachment, XmATTACH_FORM,
-            XmNleftAttachment, XmATTACH_WIDGET,
-            XmNleftWidget, pan_right_menu,
-            XmNleftOffset, 0,
-            XmNrightAttachment, XmATTACH_NONE,
-            XmNnavigationType, XmTAB_GROUP,
-            XmNtraversalOn, FALSE,
-            MY_FOREGROUND_COLOR,
-            MY_BACKGROUND_COLOR,
-            NULL);
-    XtAddCallback(zoom_in_menu,XmNactivateCallback,Zoom_in_no_pan,NULL);
-
-    zoom_out_menu=XtVaCreateManagedWidget(langcode("POPUPMA003"),
-            xmPushButtonWidgetClass,
-            toolbar,
-            XmNtopAttachment, XmATTACH_FORM,
-            XmNbottomAttachment, XmATTACH_FORM,
-            XmNleftAttachment, XmATTACH_WIDGET,
-            XmNleftWidget, zoom_in_menu,
-            XmNleftOffset, 0,
-            XmNrightAttachment, XmATTACH_NONE,
-            XmNnavigationType, XmTAB_GROUP,
-            XmNtraversalOn, FALSE,
-            MY_FOREGROUND_COLOR,
-            MY_BACKGROUND_COLOR,
-            NULL);
-    XtAddCallback(zoom_out_menu,XmNactivateCallback,Zoom_out_no_pan,NULL);
 #endif // ARROWS
 
 
