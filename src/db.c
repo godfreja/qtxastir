@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.327 2004/06/22 17:20:14 we7u Exp $
+ * $Id: db.c,v 1.328 2004/06/22 17:41:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6158,48 +6158,48 @@ void expire_trail_points(DataRow *p_station, time_t sec) {
  */
 int delete_comments_and_status(DataRow *fill) {
 
-    if ( (fill->comment_data == NULL)
-            && (fill->comment_data != NULL) ) {
+    // If the pointers are empty, we're done
+    if (       (fill->comment_data == NULL)
+            && (fill->status_data  == NULL) ) {
         return(0);
     }
-    else {
-        if (fill->comment_data != NULL) {   // We have comment records
-            CommentRow *ptr;
-            CommentRow *ptr_next;
 
-            ptr = fill->comment_data;
-            ptr_next = ptr->next;
-            while (ptr != NULL) {
-                // Free the actual text string that we malloc'ed
-                if (ptr->text_ptr != NULL) {
-                    free(ptr->text_ptr);
-                }
-                free(ptr);
-                ptr = ptr_next; // Advance to next record
-                if (ptr != NULL)
-                    ptr_next = ptr->next;
-                else
-                    ptr_next = NULL;
+    if (fill->comment_data != NULL) {   // We have comment records
+        CommentRow *ptr;
+        CommentRow *ptr_next;
+
+        ptr = fill->comment_data;
+        ptr_next = ptr->next;
+        while (ptr != NULL) {
+            // Free the actual text string that we malloc'ed
+            if (ptr->text_ptr != NULL) {
+                free(ptr->text_ptr);
             }
+            free(ptr);
+            ptr = ptr_next; // Advance to next record
+            if (ptr != NULL)
+                ptr_next = ptr->next;
+            else
+                ptr_next = NULL;
         }
-        if (fill->status_data != NULL) {   // We have status records
-            CommentRow *ptr;
-            CommentRow *ptr_next;
+    }
+    if (fill->status_data != NULL) {   // We have status records
+        CommentRow *ptr;
+        CommentRow *ptr_next;
 
-            ptr = fill->status_data;
-            ptr_next = ptr->next;
-            while (ptr != NULL) {
-                // Free the actual text string that we malloc'ed
-                if (ptr->text_ptr != NULL) {
-                    free(ptr->text_ptr);
-                }
-                free(ptr);
-                ptr = ptr_next; // Advance to next record
-                if (ptr != NULL)
-                    ptr_next = ptr->next;
-                else
-                    ptr_next = NULL;
+        ptr = fill->status_data;
+        ptr_next = ptr->next;
+        while (ptr != NULL) {
+            // Free the actual text string that we malloc'ed
+            if (ptr->text_ptr != NULL) {
+                free(ptr->text_ptr);
             }
+            free(ptr);
+            ptr = ptr_next; // Advance to next record
+            if (ptr != NULL)
+                ptr_next = ptr->next;
+            else
+                ptr_next = NULL;
         }
     }
     return(1);
@@ -7536,7 +7536,6 @@ void check_station_remove(void) {
             p_station_t_next = p_station->t_next;
 
             if (p_station->sec_heard < t_rem) {
-//fprintf(stderr,"found old station: %s\t\t",p_station->call_sign);
 
                 if ( (is_my_call(p_station->call_sign,1))                   // It's my station or
                         || ( (is_my_call(p_station->origin,1))              // Station is owned by me
@@ -7544,13 +7543,17 @@ void check_station_remove(void) {
                             || ((p_station->flag & ST_ITEM  ) != 0) ) ) ) { // or an item
 
                     // It's one of mine, leave it alone!
+//fprintf(stderr,"found old station: %s\t\t",p_station->call_sign);
 //fprintf(stderr,"mine\n");
                 }
+
                 else if (p_station->tactical_call_sign[0] != '\0') {
                     // Station has a tactical callsign assigned,
                     // don't delete it.
+//fprintf(stderr,"found old station: %s\t\t",p_station->call_sign);
 //fprintf(stderr,"tactical\n");
                 }
+
                 else {  // Not one of mine, doesn't have a tactical
                         // callsign assigned, so start deleting
  
@@ -7559,6 +7562,7 @@ void check_station_remove(void) {
                     //(void)delete_trail(p_station);              // Free track storage if it exists.
                     //(void)delete_weather(p_station);            // free weather memory, if allocated
                     //delete_station_memory(p_station);           // free memory
+//fprintf(stderr,"found old station: %s\t\t",p_station->call_sign);
 //fprintf(stderr,"deleting\n");
                 }
             } else {
