@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.283 2003/06/02 09:49:47 jtwilley Exp $
+ * $Id: maps.c,v 1.284 2003/06/02 23:23:21 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -67,7 +67,15 @@
 #define XASTIR_PACKAGE_VERSION PACKAGE_VERSION
 #undef PACKAGE_VERSION
 #include <magick/api.h>
-#include <magick/xwindow.h>
+#ifdef HAVE_MAGICK_XWINDOW_H
+#include <magick/xwindow.h> 
+#else 
+#ifdef HAVE_MAGICK_XWINDOWS_H
+#include <magick/xwindows.h> 
+#else
+#error ImageMagick include file for XImportImage() not found
+#endif 
+#endif
 #undef PACKAGE_BUGREPORT
 #define PACKAGE_BUGREPORT XASTIR_PACKAGE_BUGREPORT
 #undef XASTIR_PACKAGE_BUGREPORT
