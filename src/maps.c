@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.228 2003/03/01 01:48:49 we7u Exp $
+ * $Id: maps.c,v 1.229 2003/03/04 18:51:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2491,13 +2491,16 @@ void draw_shapefile_map (Widget w,
                             gps_color = 0x0c; // Red
                         }
                         else if (strstr(filenm,"Orange.shp")) {
-                            gps_color = 0x19; // orange2
+//                            gps_color = 0x06; // orange
+//                            gps_color = 0x19; // orange2
+//                            gps_color = 0x41; // DarkOrange3 (good medium orange)
+                            gps_color = 0x62; // orange3 (brighter)
                         }
                         else if (strstr(filenm,"White.shp")) {
                             gps_color = 0x0f; // white
                         }
                         else if (strstr(filenm,"Green.shp")) {
-                            gps_color = 0xfd; // PaleGreen
+                            gps_color = 0x64; // ForestGreen
                         }
 //                        else if (strstr(filenm,".shp")) {
 //                            gps_color = 0x41;   // DarkOrange3
