@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.70 2003/09/19 23:34:40 we7u Exp $
+$Id: README.win32,v 1.71 2003/09/19 23:41:35 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -206,6 +206,9 @@ before you can change the properties on the shortcut.
 
 
 [ ] Step 3)  Test Cygwin and create startup shortcuts:
+
+Note:  With Win2000, I had to do a reboot before I could proceed
+further.
 
 Double-click on the shortcut you just made.  You should get a shell
 window that looks very much like a DOS window.  It's a BASH shell
