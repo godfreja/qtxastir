@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.9 2005/01/08 10:06:54 we7u Exp $
+ * $Id: shp_hash.c,v 1.10 2005/01/09 23:06:59 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -251,7 +251,13 @@ void build_rtree (struct Node **root, SHPHandle sHP) {
         bbox_shape.boundary[2]=(RectReal) psCShape->dfXMax;
         bbox_shape.boundary[3]=(RectReal) psCShape->dfYMax;
         SHPDestroyObject ( psCShape );
-        RTreeInsertRect(&bbox_shape,i+1,root,0);
+        // Only insert the rect if it will not fail the assertion in 
+        // RTreeInsertRect --- this will cause us to ignore any shapes that
+        // have invalid bboxes (or that return invalid bboxes from shapelib
+        // for whatever reason
+        if (bbox_shape.boundary[0] <= bbox_shape.boundary[2] &&
+            bbox_shape.boundary[1] <= bbox_shape.boundary[3])
+            RTreeInsertRect(&bbox_shape,i+1,root,0);
     }
 }
 
