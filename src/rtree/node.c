@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: node.c,v 1.2 2004/12/20 22:14:43 tvrusso Exp $
+ * $Id: node.c,v 1.3 2004/12/22 06:22:57 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -271,7 +271,7 @@ void RTreeDisconnectBranch(struct Node *n, int i)
 void RTreeDestroyNode (struct Node *n)
 {
     int i;
-    
+    fprintf(stderr,"  Freeing node %lx\n",(unsigned long int) n);
     if (n->level > 0) {  //it is not leaf -> destroy childs 
         for ( i = 0; i < NODECARD; i++) {
             if ( n->branch[i].child ) {

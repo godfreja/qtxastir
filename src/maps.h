@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.48 2004/12/17 12:15:34 tvrusso Exp $
+ * $Id: maps.h,v 1.49 2004/12/22 06:22:57 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -150,6 +150,10 @@ extern int map_visible_lat_lon (double f_bottom_map_boundary,
                                 double f_left_map_boundary,
                                 double f_right_map_boundary,
                                 char *error_message);
+extern int map_inside_viewport_lat_lon(double map_min_y,
+                                       double map_max_y,
+                                       double map_min_x,
+                                       double map_max_x);
 extern void draw_label_text (Widget w, int x, int y, int label_length, int color, char *label_text);
 extern void draw_rotated_label_text (Widget w, int rotation, int x, int y, int label_length, int color, char *label_text, int fontsize);
 extern void draw_centered_label_text (Widget w, int rotation, int x, int y, int label_length, int color, char *label_text, int fontsize);
