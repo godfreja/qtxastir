@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.72 2004/07/13 14:54:14 we7u Exp $
+ * $Id: alert.c,v 1.73 2004/07/15 19:58:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -554,6 +554,10 @@ int alert_expire(void) {
 //fprintf(stderr, "        Max Alert Array: %d\n", alert_max_count);
 
         }
+        else {
+            fprintf(stderr,"Couldn't realloc alert_list\n");
+        }
+
         if (debug_level & 2) {
             fprintf(stderr,"Allocated 25 more slots for alerts, Max=%d\n",
                 alert_max_count);

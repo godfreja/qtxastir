@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.28 2004/04/23 17:35:51 we7u Exp $
+ * $Id: igate.c,v 1.29 2004/07/15 19:58:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -936,6 +936,9 @@ void add_NWS_stations(void) {
         if ((tmp_ptr = realloc(NWS_station_data, sizeof(NWS_Data)*(max_NWS_stations+11)))) {
             NWS_station_data = tmp_ptr;
             max_NWS_stations += 10;
+        }
+        else {
+            fprintf(stderr,"Unable to allocate more space for NWS_station_data\n");
         }
     }
 }

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.345 2004/07/15 17:09:06 we7u Exp $
+ * $Id: db.c,v 1.346 2004/07/15 19:58:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -525,10 +525,10 @@ void msg_input_database(Message *m_fill) {
 //fprintf(stderr, "Max Message Array: %ld\n", msg_index_max);
 
             } else {
-                XtWarning("Unable to allocate message index.\n");
+                XtWarning("Unable to allocate more space for message index.\n");
             }
         } else {
-            XtWarning("Unable to allocate message database.\n");
+            XtWarning("Unable to allocate more space for message database.\n");
         }
     }
     if (msg_index_end < msg_index_max) {
