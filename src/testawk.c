@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testawk.c,v 1.17 2004/10/10 19:01:15 tvrusso Exp $
+ * $Id: testawk.c,v 1.18 2004/10/10 19:16:56 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -226,8 +226,8 @@ int main(int argc, char *argv[]) {
 	fprintf(stderr,"filled=%d, ",filled);
 	fprintf(stderr,"pattern=%d, ",pattern);
 	fprintf(stderr,"display_level=%d, ",display_level);
-	fprintf(stderr,"label_level=%d\n",label_level);
 	fprintf(stderr,"font_size=%d, ", font_size);
+	fprintf(stderr,"label_level=%d\n",label_level);
 	//	print_symtbl(symtbl);
       }
       DBFClose(dbf);
