@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.80 2002/06/07 16:48:00 n0vh Exp $
+ * $Id: main.c,v 1.81 2002/06/08 01:34:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3841,13 +3841,17 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     ac = 0;
     XtSetArg(al[ac], XmNbackground, colors[0xff]); ac++;
     XtSetArg(al[ac], XmNmenuPost, "<Btn3Down>"); ac++;  // Set for popup menu on button 3
+    XtSetArg(al[ac], XmNnavigationType, XmTAB_GROUP); ac++;
+    XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
 
-    // Left menu popup (left mouse button or button 1)
+    // Right menu popup (right mouse button or button 3)
     right_menu_popup = XmCreatePopupMenu(da,"create_appshell Menu Popup",al,ac);
-    //XtVaSetValues(right_menu_popup, XmNwhichButton, 1, NULL);
+    //XtVaSetValues(right_menu_popup, XmNwhichButton, 3, NULL);
 
     ac = 0;
     XtSetArg(al[ac], XmNbackground, colors[0xff]); ac++;
+    XtSetArg(al[ac], XmNnavigationType, XmTAB_GROUP); ac++;
+    XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
 
     // "Options"
     (void)XtCreateManagedWidget(langcode("POPUPMA001"),xmLabelWidgetClass,right_menu_popup,al,ac);
@@ -10557,15 +10561,31 @@ int Setup_object_data(char *line, int line_length) {
                 altitude);
         }
     } else {  // Else it's a normal object
-        xastir_snprintf(line, line_length, ";%-9s*%s%s%c%s%c%s%s",
-            last_object,
-            time,
-            lat_str,
-            last_obj_grp,
-            lon_str,
-            last_obj_sym,
-            speed_course,
-            altitude);
+        if (transmit_compressed_posit) {
+//WE7U
+// Need to compute "csT" at some point and add it to the object
+            xastir_snprintf(line, line_length, ";%-9s*%s%s",
+                last_object,
+                time,
+                compress_posit(lat_str,
+                    last_obj_grp,
+                    lon_str,
+                    last_obj_sym,
+                    0,  // Course
+                    0,  // Speed
+                    ""));    // PHG, must be blank
+        }
+        else {
+            xastir_snprintf(line, line_length, ";%-9s*%s%s%c%s%c%s%s",
+                last_object,
+                time,
+                lat_str,
+                last_obj_grp,
+                lon_str,
+                last_obj_sym,
+                speed_course,
+                altitude);
+        }
     }
 
     // We need to tack the comment on the end, but need to make
@@ -10579,7 +10599,7 @@ int Setup_object_data(char *line, int line_length) {
             line[strlen(line)] = comment[temp++];
         }
     }
-    //printf("line: %s\n",line);
+printf("line: %s\n",line);
 
 // NOTE:  Compressed mode will be shorter still.  Account
 // for that when compressed mode is implemented for objects.
@@ -10850,14 +10870,29 @@ int Setup_item_data(char *line, int line_length) {
                 altitude);
         }
     } else {  // Else it's a normal item
-        xastir_snprintf(line, line_length, ")%s!%s%c%s%c%s%s",
-            last_object,
-            lat_str,
-            last_obj_grp,
-            lon_str,
-            last_obj_sym,
-            speed_course,
-            altitude);
+        if (transmit_compressed_posit) {
+//WE7U
+// Need to compute "csT" at some point and add it to the item
+            xastir_snprintf(line, line_length, ")%s!%s",
+                last_object,
+                compress_posit(lat_str,
+                    last_obj_grp,
+                    lon_str,
+                    last_obj_sym,
+                    0,  // Course
+                    0,  // Speed
+                    ""));    // PHG, must be blank
+        }
+        else {
+            xastir_snprintf(line, line_length, ")%s!%s%c%s%c%s%s",
+                last_object,
+                lat_str,
+                last_obj_grp,
+                lon_str,
+                last_obj_sym,
+                speed_course,
+                altitude);
+        }
     }
 
     // We need to tack the comment on the end, but need to make
@@ -10871,7 +10906,7 @@ int Setup_item_data(char *line, int line_length) {
             line[strlen(line)] = comment[temp++];
         }
     }
-    //printf("line: %s\n",line);
+printf("line: %s\n",line);
 
 // NOTE:  Compressed mode will be shorter still.  Account
 // for that when compressed mode is implemented for items.
