@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.239 2003/04/03 19:52:35 we7u Exp $
+ * $Id: maps.c,v 1.240 2003/04/10 19:49:19 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,6 +50,9 @@
 
 #ifdef HAVE_X11_XPM_H
 #include <X11/xpm.h>
+#ifdef HAVE_LIBXPM // if we have both, prefer the extra library
+#undef HAVE_XM_XPMI_H
+#endif // HAVE_LIBXPM
 #endif // HAVE_X11_XPM_H
 
 #ifdef HAVE_XM_XPMI_H
