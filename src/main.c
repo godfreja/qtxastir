@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.430 2003/12/19 20:58:50 we7u Exp $
+ * $Id: main.c,v 1.431 2003/12/21 00:18:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8124,15 +8124,19 @@ void Restore_CAD_Objects_from_file(void) {
     char line[MAX_FILENAME];
 
 
+#ifdef CAD_DEBUG
     fprintf(stderr,"Restoring CAD objects from file\n");
+#endif
 
     // Restore from ~/.xastir/config/CAD_object.log
     file = get_user_base_dir("config/CAD_object.log");
     f = fopen(file,"r");
 
     if (f == NULL) {
+#ifdef CAD_DEBUG
         fprintf(stderr,
             "Couldn't open config/CAD_object.log file for reading!\n");
+#endif
         return;
     }
 
@@ -8468,6 +8472,7 @@ void Draw_CAD_Objects_close_polygon( /*@unused@*/ Widget widget,
         popup_message(langcode("POPUPMA020"),temp);
     }
 
+    // Also write the area to stderr
     fprintf(stderr,"%s\n",temp);
 
     // Tell the code that we're starting a new polygon by wiping out
