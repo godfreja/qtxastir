@@ -23,7 +23,7 @@
    Thanks Chuck!
 
    N7TAP
-   $Id: datum.h,v 1.1 2002/02/02 03:16:59 kg4ijb Exp $
+   $Id: datum.h,v 1.1.1.1 2002/02/02 03:16:59 kg4ijb Exp $
 */
 
 #define FROM_WGS_84 1

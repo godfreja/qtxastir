@@ -1,6 +1,6 @@
 // Modification for Xastir CVS purposes
 //
-// $Id: festival.h,v 1.1 2002/02/02 03:17:31 kg4ijb Exp $
+// $Id: festival.h,v 1.1.1.1 2002/02/02 03:17:31 kg4ijb Exp $
 //
 // End of modification
 

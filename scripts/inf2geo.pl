@@ -3,7 +3,7 @@
 # Copyright (C) 2001 Curt Mills, WE7U
 # Released to the public domain.
 #
-# $Id: inf2geo.pl,v 1.1 2002/02/02 03:16:52 kg4ijb Exp $
+# $Id: inf2geo.pl,v 1.1.1.1 2002/02/02 03:16:52 kg4ijb Exp $
 #
 # Read in .inf file (from Ui-View)
 # Convert the lat/long coordinates into dd.dddd format

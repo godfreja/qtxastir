@@ -2,7 +2,7 @@
  * snprintf.h
  *   header file for snprintf.c
  *
- * $Id: snprintf.h,v 1.1 2002/02/02 03:19:43 kg4ijb Exp $
+ * $Id: snprintf.h,v 1.1.1.1 2002/02/02 03:19:43 kg4ijb Exp $
  */
 /*
  * Copyright (C) 2000, 2001, 2002 Xastir Development Team

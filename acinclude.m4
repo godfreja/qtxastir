@@ -29,7 +29,7 @@ dnl
 dnl  acinclude.m4
 dnl     macros autoconf uses when building configure from configure.in
 dnl
-dnl  $Id: acinclude.m4,v 1.1 2002/02/02 03:15:32 kg4ijb Exp $
+dnl  $Id: acinclude.m4,v 1.1.1.1 2002/02/02 03:15:32 kg4ijb Exp $
 dnl
 dnl    aclocal.m4 -> acinclude.m4
 dnl    Make changes to the configure scripts here and not to aclocal.m4
@@ -960,7 +960,7 @@ dnl The link_motif and include_motif variables should be fit to put on
 dnl your application's link line in your Makefile.
 dnl
 dnl Oleo CVS Id: motif.m4,v 1.9 1999/04/09 11:46:49 danny
-dnl LessTif CVS $Id: acinclude.m4,v 1.1 2002/02/02 03:15:32 kg4ijb Exp $
+dnl LessTif CVS $Id: acinclude.m4,v 1.1.1.1 2002/02/02 03:15:32 kg4ijb Exp $
 dnl
 AC_DEFUN(AC_FIND_MOTIF,
 [

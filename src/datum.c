@@ -1,7 +1,7 @@
 /*
    See the top of datum.h for information on this code.
    N7TAP
-   $Id: datum.c,v 1.1 2002/02/02 03:16:59 kg4ijb Exp $
+   $Id: datum.c,v 1.1.1.1 2002/02/02 03:16:59 kg4ijb Exp $
 */
 
 #include "config.h"

@@ -1,5 +1,5 @@
 #
-# $Header: /cvsroot/xastir/xastir/src/callpass/Attic/Makefile.am,v 1.1 2002/02/02 03:19:45 kg4ijb Exp $
+# $Header: /cvsroot/xastir/xastir/src/callpass/Attic/Makefile.am,v 1.1.1.1 2002/02/02 03:19:45 kg4ijb Exp $
 #
 
 MAINTAINERCLEANFILES=Makefile.in

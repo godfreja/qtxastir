@@ -1,7 +1,7 @@
 /*
  * snprintf.c - a portable implementation of snprintf and vsnprintf
  *
- * $Id: snprintf.c,v 1.1 2002/02/02 03:19:45 kg4ijb Exp $
+ * $Id: snprintf.c,v 1.1.1.1 2002/02/02 03:19:45 kg4ijb Exp $
  */
 /*
  * Portions Copyright (C) 2000, 2001, 2002 Xastir Development Team

@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.1 2002/02/02 03:19:21 kg4ijb Exp $
+// $Id: rotated.c,v 1.1.1.1 2002/02/02 03:19:21 kg4ijb Exp $
 //
 // Note that this version has been changed since xvertext 5.0 in order
 // to get rid of compiler warnings and such.  The original 5.0 notice

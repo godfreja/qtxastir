@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $Id: icontable.pl,v 1.1 2002/02/02 03:16:51 kg4ijb Exp $
+# $Id: icontable.pl,v 1.1.1.1 2002/02/02 03:16:51 kg4ijb Exp $
 
 # XASTIR icon table overview generator                        20.02.01
 #  Copyright (C) 2001 Rolf Bleher <Rolf@dk7in.de>  http://www.dk7in.de

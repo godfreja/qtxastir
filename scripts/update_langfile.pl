@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: update_langfile.pl,v 1.1 2002/02/02 03:16:52 kg4ijb Exp $
+# $Id: update_langfile.pl,v 1.1.1.1 2002/02/02 03:16:52 kg4ijb Exp $
 
 # Update utility for XASTIR language files                  17.04.2001
 #  Copyright (C) 2001 Rolf Bleher <Rolf@dk7in.de>  http://www.dk7in.de

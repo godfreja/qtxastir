@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kpc3,v 1.1 2002/02/02 03:16:17 kg4ijb Exp $
+# $Id: tnc-startup.kpc3,v 1.1.1.1 2002/02/02 03:16:17 kg4ijb Exp $
 # This is the TNC Startup file for Kantronics TNC.
 # lines that begin with a pound sign are comments.
 

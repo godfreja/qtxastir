@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.h,v 1.1 2002/02/02 03:18:09 kg4ijb Exp $
+ * $Id: list_gui.h,v 1.1.1.1 2002/02/02 03:18:09 kg4ijb Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
