@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.114 2003/04/28 21:50:02 we7u Exp $
+ * $Id: interface.c,v 1.115 2003/04/29 05:59:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5742,7 +5742,6 @@ end_critical_section(&devices_lock, "interface.c:output_waypoint_data" );
 // which is currently set to 4096.
 //
 void tnc_data_clean(char *buf) {
-    register int i;
 
     if (debug_level & 1) {
         char filtered_data[MAX_LINE_SIZE+1];
