@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.12 2003/10/13 21:30:55 we7u Exp $
+ * $Id: map_geo.c,v 1.13 2003/10/14 20:49:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -338,7 +338,9 @@ void draw_geo_image_map (Widget w,
             if (strncasecmp (line, "TOPOSERVER", 10) == 0) {
                 // Set to max brightness as it looks weird when the
                 // intensity variable comes into play.
+#ifdef HAVE_IMAGEMAGICK
                 xastir_snprintf(imagemagick_options.modulate,32,"100 100 100");
+#endif  // HAVE_IMAGEMAGICK
                 toposerver_flag = 1;
             }
 
