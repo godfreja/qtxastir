@@ -1,5 +1,5 @@
 
-$Id: README,v 1.1 2004/01/16 18:58:39 we7u Exp $
+$Id: README,v 1.2 2004/01/16 20:58:50 we7u Exp $
 
 Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
 (Modified for the Xastir project under GPL license)
@@ -182,6 +182,11 @@ cc -I. -I<mysql.h path> -L<libmysqlclient path> -lmysqlclient
     -o db2APRS db2APRS.c
 
 (all on one line)
+
+This compile line works for SuSE 9.0 linux:
+
+cc -I. -I/usr/include/mysql  -lmysqlclient -o db2APRS db2APRS.c
+
 
 Copy the resulting db2APRS to Your Favorite Location.
 
