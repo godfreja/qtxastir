@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.64 2003/03/20 22:29:45 jtwilley Exp $
+ * $Id: util.c,v 1.65 2003/03/22 00:28:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -744,7 +744,9 @@ time_t time_from_aprsstring(char *aprs_time) {
     long zone;
 
 #ifndef HAVE_TM_GMTOFF
+#ifndef __CYGWIN__
     extern time_t timezone;
+#endif  // __CYGWIN__
 #endif  // HAVE_TM_GMTOFF
 
 
