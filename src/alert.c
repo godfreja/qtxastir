@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.31 2002/04/20 04:16:57 we7u Exp $
+ * $Id: alert.c,v 1.32 2002/04/20 22:13:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -562,6 +562,12 @@ static alert_entry *alert_match(alert_entry *alert, alert_match_level match_leve
             return (&alert_list[i]);
         }
 
+
+/*
+// I've been told by Dale Huguely that this might occur could be a new
+// alert that shouldn't match the cancelled alert.  Tabling this
+// ammendment for now.  ;-)
+
         // Now check whether a new alert passed to us might match a
         // cancelled existing alert.  We use a much looser match for
         // this.
@@ -585,6 +591,8 @@ static alert_entry *alert_match(alert_entry *alert, alert_match_level match_leve
 
             return (&alert_list[i]);
         }
+*/
+
     }
     return (NULL);
 }
