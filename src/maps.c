@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.317 2003/08/16 01:40:30 we7u Exp $
+ * $Id: maps.c,v 1.318 2003/08/18 17:40:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2814,10 +2814,10 @@ static void free_map_index(map_index_record *index_list_head) {
 
     while (current != NULL) {
         temp = current;
-        current = current->next;
         if (current->XmStringPtr != NULL) {
             XmStringFree(current->XmStringPtr);
         }
+        current = current->next;
         free(temp);
     }
 
