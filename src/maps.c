@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.422 2004/11/17 16:11:34 we7u Exp $
+ * $Id: maps.c,v 1.423 2004/12/17 12:15:32 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1825,8 +1825,19 @@ int map_visible (unsigned long map_max_y,   // bottom_map_boundary
 
 
 
+/////////////////////////////////////////////////////////////////////
+// get_viewport_lat_lon(double *xmin, double *ymin, double* xmax, double *ymax)
+// Simply returns the viewport variables used by map_visible_lat_lon
+void get_viewport_lat_lon(double *xmin, 
+                          double *ymin, 
+                          double* xmax, 
+                          double *ymax) {
 
-
+    *xmin=view_min_x;
+    *ymin=view_min_y;
+    *xmax=view_max_x;
+    *ymax=view_max_y;
+}
 /////////////////////////////////////////////////////////////////////
 // map_visible_lat_lon()
 //
