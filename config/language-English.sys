@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.44 2002/09/26 19:39:11 we7u Exp $
+# $Id: language-English.sys,v 1.45 2002/10/02 23:39:04 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -75,6 +75,7 @@ PULDNMP006|Station Text Style|T|
 PULDNMP011|Mouse Pointer Menu|P|
 PULDNMP008|Map Intensity|I|
 PULDNMP020|Enable/Configure Tigermap||
+PULDNMP021|Auto Map - Disable Raster Maps||
 #
 #
 # PopUp "Configure Tigermap"
@@ -250,6 +251,7 @@ BBARSTA035|Waiting for GPS data via AUX..||
 BBARSTA036|Clearing AUX getting TNC data..||
 BBARSTA037|GPS Data Complete||
 BBARSTA038|Position change on my station||
+BBARSTA039|Indexing %s||
 #
 # PopUp "View - Incoming Packet Data"
 WPUPDPD001|Display Packet Data||

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.44 2002/09/26 19:39:11 we7u Exp $
+# $Id: language-French.sys,v 1.45 2002/10/02 23:39:04 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -74,6 +74,7 @@ PULDNMP006|Style du texte de station|S|
 PULDNMP011|Menu souris|e|
 PULDNMP008|Intensité des cartes|I|                                             
 PULDNMP020|Enable/Configure Tigermap||
+PULDNMP021|Auto Map - Disable Raster Maps||
 #
 #
 # PopUp "Configure Tigermap"
@@ -250,6 +251,7 @@ BBARSTA035|Attente de donées du GPS par AUX||
 BBARSTA036|Fermeture port GPS réception donnée TNC..||
 BBARSTA037|GPS météo décodées||
 BBARSTA038|Placez le changement sur ma station||
+BBARSTA039|Indexing %s||
 #
 # PopUp "View - Incoming Packet Data"
 WPUPDPD001|Affichage de données paquet||

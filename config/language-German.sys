@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.44 2002/09/26 19:39:11 we7u Exp $
+# $Id: language-German.sys,v 1.45 2002/10/02 23:39:04 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -80,6 +80,7 @@ PULDNMP006|Textdarstellung|T|
 PULDNMP011|Mauszeiger-Menu|M|
 PULDNMP008|Intensität|I|                                                       
 PULDNMP020|Enable/Configure Tigermap||
+PULDNMP021|Auto Map - Disable Raster Maps||
 #
 #
 # PopUp "Configure Tigermap"
@@ -256,6 +257,7 @@ BBARSTA035|Warte auf GPS Daten via AUX..||
 BBARSTA036|Setze AUX auf TNC Daten..||
 BBARSTA037|Dekodiere GPS daten||
 BBARSTA038|Bringen Sie Änderung auf meine Station in Position||
+BBARSTA039|Indexing %s||
 #
 # PopUp "Zeige - Packet Radio"
 WPUPDPD001|Packet Radio Daten||

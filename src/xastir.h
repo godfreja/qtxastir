@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.15 2002/09/19 19:28:23 we7u Exp $
+ * $Id: xastir.h,v 1.16 2002/10/02 23:39:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -109,6 +109,7 @@ extern int long_lat_grid;
 extern int map_color_levels;
 extern int map_labels;
 extern int map_auto_maps;
+extern int auto_maps_skip_raster;
 extern time_t sec_remove;
 extern Widget da;
 extern Widget text;

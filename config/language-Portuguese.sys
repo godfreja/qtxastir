@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.39 2002/09/26 19:39:11 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.40 2002/10/02 23:39:04 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -73,6 +73,7 @@ PULDNMP006|Estilo de texto da estação|E|
 PULDNMP011|Menú indicador do rato|r|
 PULDNMP008|Intensidade do mapa|I|
 PULDNMP020|Activar/Configurar tigermap||
+PULDNMP021|Auto Map - Disable Raster Maps||
 #
 #
 # PopUp "Configurar tigermap"
@@ -249,6 +250,7 @@ BBARSTA035|Esperando por dados do GPS via AUX..||
 BBARSTA036|Limpando AUX para obter dados do TNC..||
 BBARSTA037|Dados do GPS completos||
 BBARSTA038|Posição alterada na minha estação||
+BBARSTA039|Indexing %s||
 #
 # Visualização do tráfego de packet
 WPUPDPD001|Visualização do tráfego||
