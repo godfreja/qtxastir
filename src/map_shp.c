@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.50 2004/05/18 20:26:58 we7u Exp $
+ * $Id: map_shp.c,v 1.51 2004/05/20 21:46:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -703,12 +703,16 @@ void draw_shapefile_map (Widget w,
 #ifdef WITH_DBFAWK
     if (Dbf_sigs == NULL)
         Dbf_sigs = dbfawk_load_sigs(get_data_base_dir("config"),".dbfawk");
+
     if (debug_level & 16)
         fprintf(stderr,"DBFAWK signatures %sfound in %s.\n",
                 (Dbf_sigs)?" ":"NOT ",get_data_base_dir("config"));
-    /* set up default dbfawk when no sig matches */
-    dbfawk_default_sig = calloc(1,sizeof(dbfawk_sig_info));
-    dbfawk_default_sig->prog = awk_load_program_array(dbfawk_default_rules,dbfawk_default_nrules);
+
+    if (dbfawk_default_sig == NULL) {
+        /* set up default dbfawk when no sig matches */
+        dbfawk_default_sig = calloc(1,sizeof(dbfawk_sig_info));
+        dbfawk_default_sig->prog = awk_load_program_array(dbfawk_default_rules,dbfawk_default_nrules);
+    }
 #endif
 
     //fprintf(stderr,"*** Alert color: %d ***\n",alert_color);
