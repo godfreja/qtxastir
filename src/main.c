@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.237 2003/02/28 20:48:18 we7u Exp $
+ * $Id: main.c,v 1.238 2003/02/28 21:19:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,7 +22,7 @@
  * Look at the README for more information on the program.
  */
 
-#define WE7U 1
+//#define WE7U 1
 
 #include "config.h"
 #include "snprintf.h"
@@ -8645,7 +8645,7 @@ void GPS_operations( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /
 
             xastir_snprintf(filename,
                 sizeof(filename),
-                "GpsTrack.shp");
+                "Team1TrackOrange.shp");
  
             xastir_snprintf(temp,
                 sizeof(temp),
@@ -8671,7 +8671,7 @@ void GPS_operations( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /
 
             xastir_snprintf(filename,
                 sizeof(filename),
-                "GpsRoutes.shp");
+                "Team2RoutesGreen.shp");
  
             xastir_snprintf(temp,
                 sizeof(temp),
@@ -8697,7 +8697,7 @@ void GPS_operations( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /
 
             xastir_snprintf(filename,
                 sizeof(filename),
-                "GpsWaypoints.shp");
+                "Team3Waypoints.shp");
  
             xastir_snprintf(temp,
                 sizeof(temp),
