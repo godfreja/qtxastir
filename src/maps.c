@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.396 2003/12/30 15:38:20 we7u Exp $
+ * $Id: maps.c,v 1.397 2004/01/09 18:57:34 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5215,7 +5215,7 @@ void index_restore_from_file(void) {
                     //fprintf(stderr,"Assigning min_zoom of 0\n");
                 }
 
-                if ( (temp_record->map_layer < 0)
+                if ( (temp_record->map_layer < -99999)
                         || (temp_record->map_layer > 99999) ) {
                     processed = 0;  // Reject this record
                     fprintf(stderr,"\nindex_restore_from_file: map_layer field incorrect %d in map name:\n%s\n",
