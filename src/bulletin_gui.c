@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.1 2002/02/02 03:16:55 kg4ijb Exp $
+ * $Id: bulletin_gui.c,v 1.2 2002/06/20 22:23:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -114,6 +114,23 @@ void  bulletin_message(/*@unused@*/ char from, char *call_sign, char *tag, char 
 
 begin_critical_section(&display_bulletins_dialog_lock, "bulletin_gui.c:bulletin_message" );
 
+        // Display a popup of the bulletin if it's in range.
+        // Actually this gets way too annoying!  Instead have
+        // decided to bring up the View->Bulletins dialog if it's
+        // within range.
+        //popup(langcode("BULMW00001"),temp);
+
+        if ((Display_bulletins_dialog == NULL)) {   // Dialog not up
+
+end_critical_section(&display_bulletins_dialog_lock, "bulletin_gui.c:bulletin_message" );
+
+            // Bring up the dialog
+            Bulletins( (Widget)NULL, (XtPointer)NULL, (XtPointer)NULL );
+
+begin_critical_section(&display_bulletins_dialog_lock, "bulletin_gui.c:bulletin_message" );
+
+        }
+ 
         if ((Display_bulletins_dialog != NULL)) {
             strncpy(temp_text, temp, 14);
             temp_text[14] = '\0';
