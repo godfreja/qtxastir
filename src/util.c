@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.108 2004/07/24 22:49:39 we7u Exp $
+ * $Id: util.c,v 1.109 2004/07/26 20:57:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3473,7 +3473,6 @@ void spell_it_out(char *text) {
 
 
 #define kKey 0x73e2 // This is the seed for the key
-#define true 1
 
 
 
