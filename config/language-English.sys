@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.77 2003/02/13 21:40:41 we7u Exp $
+# $Id: language-English.sys,v 1.78 2003/02/22 01:16:26 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -183,6 +183,7 @@ PULDNDP024|Display Last Report Age||
 PULDNDP015|Clear All Stations!!!|A|
 PULDNDP016|Clear All Trails!!!|C|
 PULDNDP025|Clear Object/Item History||
+PULDNDP048|Reload Object/Item History||
 #
 # Units
 PULDNUT001|Enable English Units|E|

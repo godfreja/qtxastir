@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.78 2003/02/13 21:40:41 we7u Exp $
+# $Id: language-French.sys,v 1.79 2003/02/22 01:16:26 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -183,6 +183,7 @@ PULDNDP024|Afficher âge du dernier rapport||
 PULDNDP015|Effacer toutes stations!!!|E|
 PULDNDP016|Effacer toutes pistes!!!|f|
 PULDNDP025|Effacer histoire des objets/articles||
+PULDNDP048|Reload Object/Item History||
 #
 # Units
 PULDNUT001|Activer mesures anglaises||

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.78 2003/02/13 21:40:41 we7u Exp $
+# $Id: language-Dutch.sys,v 1.79 2003/02/22 01:16:25 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -188,6 +188,7 @@ PULDNDP024|Geeft Tijd Laatste Rapport||
 PULDNDP015|Wis alle Stations|W|
 PULDNDP016|Wis alle Sporen|S|
 PULDNDP025|Wis Object/Item Geschiedenis||
+PULDNDP048|Reload Object/Item History||
 #
 # Units
 PULDNUT001|Engels||

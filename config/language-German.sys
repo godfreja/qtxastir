@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.77 2003/02/13 21:40:41 we7u Exp $
+# $Id: language-German.sys,v 1.78 2003/02/22 01:16:27 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -189,6 +189,7 @@ PULDNDP024|Display Last Report Age||
 PULDNDP015|Stationen löschen|l|
 PULDNDP016|Spuren löschen|S|
 PULDNDP025|Clear Object/Item History||
+PULDNDP048|Reload Object/Item History||
 #
 # Maßeinheiten
 PULDNUT001|Englische Maße||
