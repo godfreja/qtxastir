@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.50 2002/06/06 21:43:31 we7u Exp $
+ * $Id: db.c,v 1.51 2002/06/07 00:02:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7776,6 +7776,7 @@ int decode_Mic_E(char *call_sign,char *path,char *info,char from,int port,int th
 
             case 7:
                 strcat(new_info,"Emergency");
+popup_message("Emergency!",call_sign);
                 break;
 
             default:
