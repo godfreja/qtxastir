@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.50 2002/04/06 17:53:59 we7u Exp $
+ * $Id: main.c,v 1.51 2002/04/06 18:09:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14802,6 +14802,9 @@ int main(int argc, char *argv[], char *envp[]) {
 
     xastir_snprintf(temp, sizeof(temp), "help/help-%s.dat", lang_to_use);
     (void)unlink(get_user_base_dir("config/help.dat"));
+
+    // Note that this symlink will probably not fail.  It's easy to
+    // create a symlink that points to nowhere.
     if (symlink(get_data_base_dir(temp),get_user_base_dir("config/help.dat")) == -1) {
         printf("Error creating database link\n");
         exit(0);
@@ -14809,6 +14812,9 @@ int main(int argc, char *argv[], char *envp[]) {
 
     xastir_snprintf(temp, sizeof(temp), "config/language-%s.sys", lang_to_use);
     (void)unlink(get_user_base_dir("config/language.sys"));
+
+    // Note that this symlink will probably not fail.  It's easy to
+    // create a symlink that points to nowhere.
     if (symlink(get_data_base_dir(temp),get_user_base_dir("config/language.sys")) == -1) {
         printf("Error creating database link\n");
         exit(0);
