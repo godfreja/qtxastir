@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.427 2003/12/05 19:14:19 we7u Exp $
+ * $Id: main.c,v 1.428 2003/12/07 17:16:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10259,12 +10259,15 @@ void Zoom_level( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPoi
                 new_scale_y = 262144;
                 break;
 
-            case(8):
+            case(8):    // 10% out
                 new_scale_y = (int)(scale_y * 1.1);
                 break;
 
-            case(9):
+            case(9):    // 10% in
                 new_scale_y = (int)(scale_y * 0.9);
+                // Don't allow the user to go in further than zoom 1
+                if (new_scale_y < 1)
+                    new_scale_y = 1;
                 break;
 
             default:

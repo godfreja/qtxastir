@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.103 2003/12/05 22:07:05 we7u Exp $
+ * $Id: xa_config.c,v 1.104 2003/12/07 17:16:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -324,7 +324,7 @@ void save_data(void)  {
         if (scale_y > 0)
             store_long (fout, "SCREEN_ZOOM", scale_y);
         else
-            store_long (fout, "SCREEN_ZOOM", 327680);
+            store_long (fout, "SCREEN_ZOOM", 1);
 
         store_int (fout, "MAP_BGCOLOR", map_background_color);
 
@@ -788,7 +788,7 @@ void load_data_or_default(void) {
     if (!get_int ("COORDINATE_SYSTEM", &coordinate_system, 0, 5, USE_DDMMMM))
         coordinate_system = USE_DDMMMM;
 
-    if (!get_long ("SCREEN_ZOOM", &scale_y, 1l, 300000l, 327680l))
+    if (!get_long ("SCREEN_ZOOM", &scale_y, 1l, 327680l, 327680l))
         scale_y = 327680;
     scale_x = get_x_scale(mid_x_long_offset,mid_y_lat_offset,scale_y);
 
