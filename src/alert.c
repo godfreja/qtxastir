@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.11 2002/04/11 19:46:33 we7u Exp $
+ * $Id: alert.c,v 1.12 2002/04/11 19:52:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -21,6 +21,35 @@
  *
  * Look at the README for more information on the program.
  */
+
+
+//
+// In the alert structure:
+// flags[0] ?  Initial state or ready-to-recompute state
+//          -   Expired between 1 sec and 1 hour
+//          Y   Active alert within viewport
+//          N   Active alert outside viewport
+//
+// flags[1] DATA_VIA_TNC
+//          DATA_VIA_LOCAL
+//
+// alert_tag    alert_level
+//  CANCL       C
+//  TEST        T
+//  WARN        R
+//  WATCH       Y
+//  ADVIS       B
+//  Other       G
+//  Unset       ?
+//
+//
+//
+// Global alert_tag string contains three characters for each alert.
+// These contain the first two characters of the title, and then 0
+// or 1 for the source of the alert (DATA_VIA_TNC or
+// DATA_VIA_LOCAL).
+//
+
 
 #include "config.h"
 
