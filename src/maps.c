@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.96 2002/06/03 14:23:42 we7u Exp $
+ * $Id: maps.c,v 1.97 2002/06/03 16:18:36 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5515,12 +5515,6 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm) {
  **********************************************************/
 #ifdef HAVE_IMAGEMAGICK
 void draw_tiger_map (Widget w) {
-
-#ifdef NO_GRAPHICS
-    printf("No XPM or ImageMagick support compiled into Xastir!\n");
-    return;
-#else   // NO_GRAPHICS
-
     uid_t user_id;
     struct passwd *user_info;
     char username[20];
@@ -6206,8 +6200,6 @@ void draw_tiger_map (Widget w) {
        DestroyImage(image);
     if (image_info)
        DestroyImageInfo(image_info);
-
-#endif // NO_GRAPHICS
 }
 #endif //HAVE_IMAGEMAGICK
 
