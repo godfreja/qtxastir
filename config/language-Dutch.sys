@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.162 2005/02/15 00:32:42 we7u Exp $
+# $Id: language-Dutch.sys,v 1.163 2005/02/15 19:42:03 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -958,6 +958,7 @@ POPEM00037|HSP interface aanwezig: GPS timing is verhoogd||
 POPEM00038|Naam komt overeen met bestaand Object/Item/Station||
 POPEM00039|Niet toegestane tekens gevonden, deze worden door punten vervangen||
 POPEM00040|Handmatig ingestelde uitgaande route is verloren gegaan||
+POPEM00041|Processing another file.  Wait a bit, then try again||
 #
 # Jump Location
 JMLPO00001|Kaart lokatie||

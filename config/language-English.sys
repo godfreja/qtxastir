@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.151 2005/02/01 16:15:22 we7u Exp $
+# $Id: language-English.sys,v 1.152 2005/02/15 19:42:06 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -948,6 +948,7 @@ POPEM00037|HSP interface present: GPS timing has been increased||
 POPEM00038|Name Conflicts With Existing Object/Item/Station||
 POPEM00039|Illegal characters found, substituting periods in their place||
 POPEM00040|Custom outgoing path was lost||
+POPEM00041|Processing another file.  Wait a bit, then try again||
 #
 # Jump Location 
 JMLPO00001|Map Display Bookmarks||
