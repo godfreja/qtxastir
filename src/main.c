@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.467 2004/06/22 20:44:45 we7u Exp $
+ * $Id: main.c,v 1.468 2004/06/23 17:30:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10012,7 +10012,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                     devices[i].gps_retrieve);
 
                                 if (debug_level & 1) {
-                                    fprintf(stderr,"Using %d %d to retrieve GPS\n",
+                                    fprintf(stderr,"Using 0x%02x 0x%02x to retrieve GPS\n",
                                         '\3',
                                         devices[i].gps_retrieve);
                                 }
