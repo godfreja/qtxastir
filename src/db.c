@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.324 2004/06/21 16:08:35 we7u Exp $
+ * $Id: db.c,v 1.325 2004/06/21 18:03:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7522,7 +7522,12 @@ void check_station_remove(void) {
 
                     // It's one of mine, leave it alone!
                 }
-                else {  // Not one of mine, so start deleting
+                else if (p_station->tactical_call_sign) {
+                    // Station has a tactical callsign assigned,
+                    // don't delete it.
+                }
+                else {  // Not one of mine, doesn't have a tactical
+                        // callsign assigned, so start deleting
  
                     mdelete_messages(p_station->call_sign);     // delete messages
                     station_del_ptr(p_station);
