@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.154 2004/11/02 15:20:16 we7u Exp $
+# $Id: language-Dutch.sys,v 1.155 2004/11/30 20:24:35 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -662,6 +662,7 @@ WPUPMSB008|Bericht:||
 WPUPMSB009|Stuur nu!||
 WPUPMSB010|Pad:||
 WPUPMSB011|Breek alle openstaande berichten af||
+WPUPMSB012|Kick Timer||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Automatich antwoord bericht||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.155 2004/11/02 15:20:16 we7u Exp $
+# $Id: language-Spanish.sys,v 1.156 2004/11/30 20:24:45 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -655,6 +655,7 @@ WPUPMSB008|Mensaje:||
 WPUPMSB009|Enviar ahora!||
 WPUPMSB010|Ruta:||
 WPUPMSB011|Cancel Pending Msgs||
+WPUPMSB012|Kick Timer||
 #
 # Auto Contestación
 WPUPARM001|Cambiar auto Contestación||

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.150 2004/11/02 15:20:16 we7u Exp $
+# $Id: language-German.sys,v 1.151 2004/11/30 20:24:44 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -658,6 +658,7 @@ WPUPMSB008|Nachricht:||
 WPUPMSB009|Sende jetzt!||
 WPUPMSB010|Pfad:||
 WPUPMSB011|Wartende Nachrichten zurücknehmen||
+WPUPMSB012|Kick Timer||
 #
 # PopUp "Automatische Antwort"
 WPUPARM001|Automatische Antwort ändern||
