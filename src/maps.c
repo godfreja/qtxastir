@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.42 2002/04/24 18:28:38 francais1 Exp $
+ * $Id: maps.c,v 1.43 2002/04/24 20:06:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8035,9 +8035,11 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
 
 /* moved these here and made them static so it will function on FREEBSD */
 #define MAX_ALERT 7000
-// Had to make "alert" non-static as we don't use it any more in
-// this file.  --we7u
-alert_entry alert[MAX_ALERT];
+// If we comment this out, we link, but get a segfault at runtime.
+// Take out the "static" and we get a segfault when we zoom out too
+// far with the lakes or counties shapefile loaded.  No idea why
+// yet.  --we7u
+static alert_entry alert[MAX_ALERT];
 static int alert_count;
 
 
