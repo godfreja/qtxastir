@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.239 2003/04/28 23:08:32 we7u Exp $
+ * $Id: db.c,v 1.240 2003/04/28 23:17:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7864,8 +7864,6 @@ int extract_RMC(DataRow *p_station, char *data, char *call_sign, char *path) {
  *
  */
 int extract_GGA(DataRow *p_station,char *data,char *call_sign, char *path) {
-    char *temp_ptr;
-    char *temp_ptr2;
     char temp_data[40];         // short term string storage, MAX_CALL, ...  ???
     char lat_s[20];
     char long_s[20];
