@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.341 2003/10/13 20:22:06 we7u Exp $
+ * $Id: maps.c,v 1.342 2003/10/13 21:30:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -171,7 +171,7 @@ int mag;
 int npoints;    /* number of points in a line */
 
 
-float geotiff_map_intensity = 0.65;    // Geotiff map color intensity, set from Maps->Geotiff Map Intensity
+float raster_map_intensity = 0.65;    // Raster map color intensity, set from Maps->Map Intensity
 float imagemagick_gamma_adjust = 0.0;  // Additional imagemagick map gamma correction, set from Maps->Adjust Gamma
 
 
