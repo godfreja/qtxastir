@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.295 2003/06/14 01:47:53 kd6zwr Exp $
+ * $Id: main.c,v 1.296 2003/06/18 00:24:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6878,7 +6878,7 @@ void create_gc(Widget w) {
     colors[0x60] = (int)GetPixelByName(w,"HotPink");
     colors[0x61] = (int)GetPixelByName(w,"RoyalBlue");
     colors[0x62] = (int)GetPixelByName(w,"orange3");
-    colors[0x63] = (int)GetPixelByName(w,"yellow2");
+    colors[0x63] = (int)GetPixelByName(w,"yellow3");
     colors[0x64] = (int)GetPixelByName(w,"ForestGreen");
     colors[0x65] = (int)GetPixelByName(w,"DodgerBlue");
     colors[0x66] = (int)GetPixelByName(w,"cyan2");
