@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.4 2003/11/29 19:12:33 we7u Exp $
+ * $Id: x_spider.c,v 1.5 2003/12/01 21:13:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -120,6 +120,7 @@
 #include <setjmp.h>
 #include <sys/socket.h>
 #include <fcntl.h>
+#include <string.h>
 
 #include <netinet/in.h>     // Moved ahead of inet.h as reports of some *BSD's not
                             // including this as they should.
