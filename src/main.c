@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.485 2004/07/08 19:07:13 we7u Exp $
+ * $Id: main.c,v 1.486 2004/07/08 19:38:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12184,12 +12184,12 @@ void process_RINO_waypoints(void) {
                     lon_dir,    // E/W
                     '[');       // Hiker symbol
 
-                fprintf(stderr,
-                    "%-9s\t%f\t%f\t\t\t\t\t\t",
-                    name,
-                    atof(lat_c),
-                    atof(lon_c));
-                fprintf(stderr,"%s\n",line2);
+//                fprintf(stderr,
+//                    "%-9s\t%f\t%f\t\t\t\t\t\t",
+//                    name,
+//                    atof(lat_c),
+//                    atof(lon_c));
+//                fprintf(stderr,"%s\n",line2);
 
                 // Update this object in our save file
                 log_object_item(line2,0,name);
@@ -12202,7 +12202,7 @@ void process_RINO_waypoints(void) {
         }
     }
 
-fprintf(stderr,"\n");
+//fprintf(stderr,"\n");
 
     (void)fclose(f);
 }
