@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.4 2004/03/30 20:44:06 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.5 2004/04/01 15:25:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,6 +26,7 @@
 #include "snprintf.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include <Xm/XmAll.h>
 #ifdef HAVE_XBAE_MATRIX_H
