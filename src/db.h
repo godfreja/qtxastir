@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.57 2004/08/18 04:59:16 we7u Exp $
+ * $Id: db.h,v 1.58 2004/09/15 19:43:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,7 +50,7 @@
 // Check entire station list at this rate for objects/items that
 // might need to be transmitted via the decaying algorithm.  This is
 // the start rate, which gets doubled on each transmit.
-#define OBJECT_CHECK_RATE 15
+#define OBJECT_CHECK_RATE 20
 
 // We should probably be using APRS_DF in extract_bearing_NRQ()
 // and extract_omnidf() functions.  We aren't currently.
