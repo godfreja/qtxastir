@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.39 2005/01/04 01:28:05 we7u Exp $
+ * $Id: messages_gui.c,v 1.40 2005/01/04 17:20:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -314,7 +314,7 @@ void get_send_message_path(char *callsign, char *path, int path_size) {
         path_size,
         "%s",
         temp1);
-fprintf(stderr,"Found custom path: %s\n", path);
+//fprintf(stderr,"Found custom path: %s\n", path);
 }
 
 
