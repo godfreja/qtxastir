@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.14 2004/01/26 16:18:19 we7u Exp $
+# $Id: Makefile.am,v 1.15 2004/03/29 23:40:55 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -17,11 +17,14 @@ xastir_SOURCES = \
     draw_symbols.c draw_symbols.h \
     fcc_data.c fcc_data.h \
     festival.c festival.h \
+    geo-find.c geo.h \
+    geocoder_gui.c \
     gps.c gps.h \
     hostname.c hostname.h \
     igate.c igate.h \
     interface.c interface.h \
     interface_gui.c \
+    io-common.c io-mmap.c io.h \
     lang.c lang.h \
     list_gui.c list_gui.h \
     locate_gui.c \
