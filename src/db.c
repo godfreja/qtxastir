@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.246 2003/05/06 20:19:17 we7u Exp $
+ * $Id: db.c,v 1.247 2003/05/06 20:33:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5044,6 +5044,10 @@ int extract_weather(DataRow *p_station, char *data, int compr) {
 // "/TS" = Tropical Storm
 // "/HC" = Hurricane
 // "/TD" = Tropical Depression
+// "/TY" = Typhoon
+// "/ST" = Super Typhoon
+// "/SC" = Severe Cyclone
+
 // The symbol will be either "\@" for current position, or "/@" for
 // predicted position.
 //
@@ -5069,6 +5073,18 @@ int extract_storm(DataRow *p_station, char *data, int compr) {
     }
     else if ((p = strstr(data, "/HC")) != NULL) {
         // We have a Hurricane
+//fprintf(stderr,"Hurricane! %s\n",data);
+    }
+    else if ((p = strstr(data, "/TY")) != NULL) {
+        // We have a Typhoon
+//fprintf(stderr,"Hurricane! %s\n",data);
+    }
+    else if ((p = strstr(data, "/ST")) != NULL) {
+        // We have a Super Typhoon
+//fprintf(stderr,"Hurricane! %s\n",data);
+    }
+    else if ((p = strstr(data, "/SC")) != NULL) {
+        // We have a Severe Cyclone
 //fprintf(stderr,"Hurricane! %s\n",data);
     }
     else {  // Not one of the three we're trying to decode
@@ -5128,7 +5144,8 @@ int extract_storm(DataRow *p_station, char *data, int compr) {
 //        strcpy(weather->wx_speed, speed);
 //        strcpy(weather->wx_course,course);
 
-        p2++;   // Skip the description text, "/TS", "/HC", or "/TD"
+        p2++;   // Skip the description text, "/TS", "/HC", "/TD", "/TY", "/ST", or "/SC"
+
 
 	// Extract the sustained wind speed in knots
         (void)extract_weather_item(p2,'/',3,weather->wx_speed);
