@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.95 2003/05/28 17:33:48 we7u Exp $
+# $Id: language-English.sys,v 1.96 2003/06/18 18:40:59 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -103,13 +103,14 @@ MPUPTGR018|Enable Tiger Maps||
 #
 # PopUp "Map Chooser"
 WPUPMCP001|Map Chooser||
-PULDNMMC01|Clear|N|
+PULDNMMC01|Clear|C|
 PULDNMMC02|Vector|V|
 PULDNMMC03|250k Topo|2|
 PULDNMMC04|100k Topo|1|
 PULDNMMC05|24k Topo|4|
 PULDNMMC06|Expand Dirs||
 PULDNMMC07|Dirs/Maps Selected:||
+PULDNMMC08|Clear Dirs|C
 #
 # PullDown "Map Background Color"
 PULDNMBC01|Gray||
