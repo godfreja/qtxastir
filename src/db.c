@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.297 2004/02/26 20:07:14 we7u Exp $
+ * $Id: db.c,v 1.298 2004/02/26 23:19:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13304,9 +13304,11 @@ int Create_object_item_tx_string(DataRow *p_station, char *line, int line_length
         if (p_station->object_retransmit == 0) {
             // We shouldn't be transmitting this killed object/item
             // anymore.  We're already done transmitting it.
+
 //fprintf(stderr, "Done transmitting this object: %s,  %d\n",
 //p_station->call_sign,
 //p_station->object_retransmit);
+
             return(0);
         }
 
@@ -13315,9 +13317,12 @@ int Create_object_item_tx_string(DataRow *p_station, char *line, int line_length
         // transmit of non-killed objects) to
         // MAX_KILLED_OBJECT_RETRANSMIT.
         if (p_station->object_retransmit <= -1) {
-//fprintf(stderr, "Killed object %s, setting retries.  %d\n",
+
+//fprintf(stderr, "Killed object %s, setting retries, %d -> %d\n",
 //p_station->call_sign,
-//p_station->object_retransmit);
+//p_station->object_retransmit,
+//MAX_KILLED_OBJECT_RETRANSMIT - 1);
+
                 if ((MAX_KILLED_OBJECT_RETRANSMIT - 1) < 0) {
                     p_station->object_retransmit = 0;
                     return(0);  // No retransmits desired
@@ -13329,9 +13334,13 @@ int Create_object_item_tx_string(DataRow *p_station, char *line, int line_length
         else {
             // Decrement the timeout if it is a positive number.
             if (p_station->object_retransmit > 0) {
-//fprintf(stderr, "Killed object %s, decrementing retries.  %d\n",
+
+//fprintf(stderr, "Killed object %s, decrementing retries, %d -> %d\n",
 //p_station->call_sign,
-//p_station->object_retransmit); p_station->object_retransmit--;
+//p_station->object_retransmit,
+//p_station->object_retransmit - 1);
+
+                p_station->object_retransmit--;
             }
         }
     }
