@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.117 2004/06/21 21:10:44 we7u Exp $
+ * $Id: xa_config.c,v 1.118 2004/07/01 21:33:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1316,7 +1316,7 @@ void load_data_or_default(void) {
     if (!get_int ("LOG_IGATE", &log_igate,0,1,0))
         log_igate = 0;
 
-    if (!get_int ("NETWORK_WAITTIME", &NETWORK_WAITTIME,0,120,10))
+    if (!get_int ("NETWORK_WAITTIME", &NETWORK_WAITTIME,10,120,10))
         NETWORK_WAITTIME = 10;
 
     // LOGGING
@@ -1337,7 +1337,7 @@ void load_data_or_default(void) {
         snapshots_enabled = 0;
 
     /* WX ALERTS */
-    if (!get_long ("WX_ALERTS_REFRESH_TIME", (long *)&WX_ALERTS_REFRESH_TIME, 1l, 86400l, 60l))
+    if (!get_long ("WX_ALERTS_REFRESH_TIME", (long *)&WX_ALERTS_REFRESH_TIME, 10l, 86400l, 60l))
         WX_ALERTS_REFRESH_TIME = (time_t)60l;
 
     /* gps */
