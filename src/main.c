@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.553 2004/12/22 22:56:45 we7u Exp $
+ * $Id: main.c,v 1.554 2004/12/26 09:10:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10733,6 +10733,9 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 
             // is it time to spit out messages?
             check_and_transmit_messages(sec_now());
+
+            // Is it time to spit out any delayed ack's?
+            check_delayed_transmit_queue();
 
             // Is it time to spit out objects/items?
             check_and_transmit_objects_items(sec_now());
