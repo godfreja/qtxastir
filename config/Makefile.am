@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.17 2004/06/25 23:24:03 we7u Exp $
+# $Id: Makefile.am,v 1.18 2004/09/19 22:50:15 tvrusso Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -14,6 +14,7 @@ EXTRA_DIST = \
     language-Portuguese.sys \
     language-Spanish.sys \
     xastir.rgb \
+    gps_wpt.dbfawk \
     tgr2shp.dbfawk \
     tgrcty.dbfawk \
     tgrkgl.dbfawk \
