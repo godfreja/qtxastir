@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.26 2002/07/09 17:55:40 we7u Exp $
+ * $Id: util.c,v 1.27 2002/07/11 22:07:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1547,7 +1547,9 @@ int valid_path(char *path) {
                 ast++;                  // count asterisks in call
                 allast++;               // count asterisks in path
             } else
-                if ((ch <'A' || ch > 'Z') && (ch <'0' || ch > '9') && ch != '-')
+                if ((ch <'A' || ch > 'Z') && (ch <'0' || ch > '9')
+                        && ch != '-'
+                        && ch != 'q')   // New anti-loop stuff from aprsd
                     return(0);          // wrong character in path
         }
     }
