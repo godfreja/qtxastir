@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.138 2004/07/23 02:31:38 we7u Exp $
+# $Id: language-German.sys,v 1.139 2004/07/29 05:42:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -172,6 +172,7 @@ PULDNDP044|Stationen||
 PULDNDP028|- Feste Stationen||
 PULDNDP029|- Bewegte Stationen||
 PULDNDP030|- Wetterstationen||
+PULDNDP053|  - Select CWOP WX Stations||
 PULDNDP045|Objekte||
 PULDNDP026|- Wetter Objekte||
 PULDNDP039|- Regenmengen Objekte||

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.133 2004/07/23 02:31:38 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.134 2004/07/29 05:42:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -166,6 +166,7 @@ PULDNDP044|Mostrar estações||
 PULDNDP028|- Mostrar estações fixas||
 PULDNDP029|- Mostrar estações móveis||
 PULDNDP030|- Mostrar estações de tempo||
+PULDNDP053|  - Select CWOP WX Stations||
 PULDNDP045|Mostrar objectos/items||
 PULDNDP026|- Mostrar objectos/items metereológicos||
 PULDNDP039|- Mostrar objectos de medida de água/Items||

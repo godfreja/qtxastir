@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.66 2004/07/23 02:31:39 we7u Exp $
+ * $Id: main.h,v 1.67 2004/07/29 05:42:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -157,6 +157,7 @@ typedef struct _selections {
     int fixed_stations;
     int moving_stations;
     int weather_stations;
+    int CWOP_wx_stations;
     int objects;
     int weather_objects;
     int gauge_objects;

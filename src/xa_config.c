@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.121 2004/07/23 02:31:39 we7u Exp $
+ * $Id: xa_config.c,v 1.122 2004/07/29 05:42:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -498,6 +498,7 @@ void save_data(void)  {
         store_int (fout, "DISPLAY_FIXED_STATIONS",        Select_.fixed_stations);
         store_int (fout, "DISPLAY_MOVING_STATIONS",       Select_.moving_stations);
         store_int (fout, "DISPLAY_WEATHER_STATIONS",      Select_.weather_stations);
+        store_int (fout, "DISPLAY_CWOP_WX_STATIONS",      Select_.CWOP_wx_stations);
         store_int (fout, "DISPLAY_OBJECTS",               Select_.objects);
         store_int (fout, "DISPLAY_STATION_WX_OBJ",        Select_.weather_objects);
         store_int (fout, "DISPLAY_WATER_GAGE_OBJ",        Select_.gauge_objects);
@@ -1088,6 +1089,8 @@ void load_data_or_default(void) {
         Select_.moving_stations = 1;
     if (!get_int ("DISPLAY_WEATHER_STATIONS", &Select_.weather_stations, 0, 1, 1))
         Select_.weather_stations = 1;
+    if (!get_int ("DISPLAY_CWOP_WX_STATIONS", &Select_.CWOP_wx_stations, 0, 1, 1))
+        Select_.CWOP_wx_stations = 1;
     if (!get_int ("DISPLAY_OBJECTS", &Select_.objects, 0, 1, 1))
         Select_.objects = 1;
     if (!get_int ("DISPLAY_STATION_WX_OBJ", &Select_.weather_objects, 0, 1, 1))
