@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.61 2004/06/21 21:10:44 we7u Exp $
+ * $Id: main.h,v 1.62 2004/07/08 19:07:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -256,6 +256,7 @@ extern time_t sec_old;
 extern time_t sec_clear;
 extern int trail_segment_time;
 extern int trail_segment_distance;
+extern int RINO_download_interval;
 extern int dead_reckoning_timeout;
 extern char bando_min[];
 extern char bando_max[];

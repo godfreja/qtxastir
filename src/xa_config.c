@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.118 2004/07/01 21:33:24 we7u Exp $
+ * $Id: xa_config.c,v 1.119 2004/07/08 19:07:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -796,6 +796,7 @@ void save_data(void)  {
         store_int (fout, "SERIAL_CHAR_PACING", serial_char_pacing);
         store_int (fout, "TRAIL_SEGMENT_TIME", trail_segment_time);
         store_int (fout, "TRAIL_SEGMENT_DISTANCE", trail_segment_distance);
+        store_int (fout, "RINO_DOWNLOAD_INTERVAL", RINO_download_interval);
 
 
         if (debug_level & 1)
@@ -1589,6 +1590,8 @@ void load_data_or_default(void) {
     if (!get_int ("TRAIL_SEGMENT_DISTANCE", &trail_segment_distance,0,45,1))
         trail_segment_distance = 1; // 1 degrees default
 
+    if (!get_int ("RINO_DOWNLOAD_INTERVAL", &RINO_download_interval,0,30,0))
+        RINO_download_interval = 0; // 0 minutes default (function disabled)
 
     input_close();
 }
