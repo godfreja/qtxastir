@@ -1,6 +1,6 @@
                   XASTIR Frequently Asked Questions
 
-$Id: FAQ,v 1.40 2004/11/16 20:04:25 we7u Exp $
+$Id: FAQ,v 1.41 2004/11/16 20:09:11 we7u Exp $
 
 The latest version of this FAQ is always available from the Xastir web site, at
 <http://www.xastir.org/docs/FAQ.html>, soon to be available also at:
@@ -701,9 +701,9 @@ The Answers
     Linux.  On SuSE the docs for it are in
     /usr/share/doc/packages/netcat.  Try a command line like this:
 
-        cat /dev/ttyS0 | nc -l -p 3000 localhost
+        cat /dev/ttyS0 | nc -l -p 3000
     or
-        cat /dev/ttyS0 | netcat -l -p 3000 localhost
+        cat /dev/ttyS0 | netcat -l -p 3000
 
     That should make a listening socket at port 3000 which listens
     to the /dev/ttyS0 serial port.  "telnet localhost 3000" should
