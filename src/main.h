@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.45 2003/06/14 01:47:54 kd6zwr Exp $
+ * $Id: main.h,v 1.46 2003/07/03 19:13:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -47,7 +47,9 @@ extern char altnet_call[];
 extern int altnet;
 extern Widget iface_da;
 extern FILE *read_file_ptr;
+extern int interrupt_drawing_now;
 
+ 
 #define VERSIONFRM  (!altnet?XASTIR_TOCALL:altnet_call) /* Packet version info */
 
 
