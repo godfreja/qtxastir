@@ -1,5 +1,5 @@
 /*
- * $Id: main.c,v 1.9 2002/03/06 06:42:19 we7u Exp $
+ * $Id: main.c,v 1.10 2002/03/06 08:25:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3510,9 +3510,9 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                         case DEVICE_SERIAL_TNC_AUX_GPS:
                             tnc_data_clean((char *)data);
                             data_type=tnc_get_data_type((char *)data, data_port);
-                            if (data_type)
+                            if (data_type)  // GPS Data
                                 gps_data_find((char *)data, data_port);
-                            else {
+                            else {          // APRS Data
                                 if (log_tnc_data)
                                     log_data(LOGFILE_TNC, (char *)data);
 
