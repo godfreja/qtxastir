@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.341 2003/09/05 20:20:52 we7u Exp $
+ * $Id: main.c,v 1.342 2003/09/05 21:12:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3897,7 +3897,14 @@ void Mouse_button_handler (Widget w, Widget popup, XButtonEvent *event) {
     menu_y=input_y;
     if (right_menu_popup != NULL) { // If popup menu defined
 
+#ifdef SWAP_MOUSE_BUTTONS
+        // This gets the menus out of the way that are on pointer
+        // button1 if SWAP_MOUSE_BUTTONS is enabled.  If it's not
+        // enabled, the don't interfere with each other anyway.
         if (!measuring_distance && !moving_object) {
+#else   // SWAP_MOUSE_BUTTONS
+        if (1) {    // Always bring up the menu if SWAP is disabled
+#endif  // SWAP_MOUSE_BUTTONS
 
             // Bring up the popup menu
             XmMenuPosition(right_menu_popup,(XButtonPressedEvent *)event);
