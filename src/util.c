@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.151 2005/03/18 21:20:36 we7u Exp $
+ * $Id: util.c,v 1.152 2005/03/22 23:10:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2327,6 +2327,11 @@ double convert_lon_l2r(long lon) {
 
 /*
  *  Calculate distance in meters between two locations
+ *
+ *  What type of calculation is this?  Rhumb-line?  Great-Circle?
+ *  Planar Geometry?
+ *  Answer:  "Law of Cosines for Spherical Trigonometry"
+ *
  */
 double calc_distance(long lat1, long lon1, long lat2, long lon2) {
     double r_lat1,r_lat2;
@@ -2347,6 +2352,11 @@ double calc_distance(long lat1, long lon1, long lat2, long lon2) {
 
 /*
  *  Calculate distance between two locations in nautical miles and course from loc2 to loc1
+ *
+ *  What type of calculation is this?  Rhumb-line?  Great-Circle?
+ *  Planar Geometry?
+ *  Answer:  "Law of Cosines for Spherical Trigonometry"
+ *
  */
 double calc_distance_course(long lat1, long lon1, long lat2, long lon2, char *course_deg, int course_deg_length) {
     float ret;
