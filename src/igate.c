@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.46 2005/03/02 19:41:52 we7u Exp $
+ * $Id: igate.c,v 1.47 2005/03/16 21:36:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1060,7 +1060,9 @@ void load_NWS_stations(char *file) {
                         // add data
                         // Note:  Size of string variable is 12
                         // bytes, defined in igate.h
-                        (void)sscanf(line,"%11s",NWS_station_data[NWS_stations-1].call);
+                        if (1 != sscanf(line,"%11s",NWS_station_data[NWS_stations-1].call)) {
+                            fprintf(stderr,"load_NWS_stations: sscanf parsing error\n");
+                        }
                         if (debug_level & 1024)
                             fprintf(stderr,"LINE:%s\n",line);
                     }

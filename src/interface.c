@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.215 2005/01/29 17:32:48 we7u Exp $
+ * $Id: interface.c,v 1.216 2005/03/16 21:36:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4114,6 +4114,11 @@ int serial_init (int port) {
 #endif // HAVE_GETPGRP
 
             }
+            else {
+                // fscanf parsed the wrong number of items.
+                // Lockfile is different, perhaps created by some
+                // other program.
+            }
 
             (void)fclose(lock);
 
@@ -4579,7 +4584,9 @@ int net_init(int port) {
         if (strcmp(ip_addrs,"NOHOST") != 0) {
             if (strcmp(ip_addrs,"TIMEOUT") != 0) {    // We found an IP address
                 /* get the first ip */
-                (void)sscanf(ip_addrs,"%39s",ip_addr);
+                if (1 != sscanf(ip_addrs,"%39s",ip_addr)) {
+                    fprintf(stderr,"net_init: sscanf parsing error\n");
+                }
                 if (debug_level & 2)
                     fprintf(stderr,"IP Address: %s\n",ip_addr);
                 /* set address for connection */

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.430 2005/01/29 01:16:36 we7u Exp $
+ * $Id: maps.c,v 1.431 2005/03/16 21:36:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5541,6 +5541,7 @@ void index_restore_from_file(void) {
 // Remember to free the XmString pointer if necessary.
 
                     free(temp_record);
+//                    fprintf(stderr,"index_restore_from_file:sscanf parsing error\n");
                 }
             }
         }

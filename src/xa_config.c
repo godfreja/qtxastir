@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.130 2005/02/04 19:36:13 we7u Exp $
+ * $Id: xa_config.c,v 1.131 2005/03/16 21:36:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1056,12 +1056,16 @@ void load_data_or_default(void) {
     if (!get_string("IMAGEMAGICK_GAMMA_ADJUST", name, sizeof(name)))
         imagemagick_gamma_adjust = 0.0;
     else
-        sscanf(name, "%f", &imagemagick_gamma_adjust);
+        if (1 != sscanf(name, "%f", &imagemagick_gamma_adjust)) {
+            fprintf(stderr,"load_data_or_default:sscanf parsing error\n");
+        }
 #endif  // HAVE_IMAGEMAGICK
     if (!get_string("RASTER_MAP_INTENSITY", name, sizeof(name)))
         raster_map_intensity = 1.0;
     else
-        sscanf(name, "%f", &raster_map_intensity);
+        if (1 != sscanf(name, "%f", &raster_map_intensity)) {
+            fprintf(stderr,"load_data_or_default:sscanf parsing error\n");
+        }
 #endif  // NO_GRAPHICS
 
     if (!get_int ("MAP_LETTERSTYLE", &letter_style, 0, 2, 1))
