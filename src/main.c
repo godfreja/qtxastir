@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.495 2004/07/15 21:32:43 we7u Exp $
+ * $Id: main.c,v 1.496 2004/07/16 18:27:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10380,6 +10380,13 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 
                 /*fprintf(stderr,"Checking for reconnects\n");*/
                 check_ports();
+
+#ifdef USING_LIBGC
+                // Check for memory leaks once per minute as well
+//fprintf(stderr,"Checking for leaks\n");
+                CHECK_LEAKS();
+#endif  // USING LIBGC
+
             }
 
             /* Check to see if it is time to spit out data */
@@ -10727,6 +10734,10 @@ void quit(int sig) {
 #ifdef HAVE_LIBCURL
     curl_global_cleanup();
 #endif
+
+#ifdef USING_LIBGC
+    CHECK_LEAKS();
+#endif  // USING LIBGC
 
     exit(sig);  // Main exit from the program
 }
@@ -27325,6 +27336,10 @@ int main(int argc, char *argv[]) {
     extern char *optarg;
 #endif  // optarg
 
+#ifdef USING_LIBGC
+    GC_find_leak = 1;
+    GC_INIT();
+#endif  // USING_LIBGC
 
     // Define some overriding resources for the widgets.
     // Look at files in /usr/X11/lib/X11/app-defaults for ideas.

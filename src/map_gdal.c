@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.82 2004/07/15 21:32:44 we7u Exp $
+ * $Id: map_gdal.c,v 1.83 2004/07/16 18:27:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -66,7 +66,6 @@
 
 //#include <math.h>
 
-#include "xastir.h"
 #include "maps.h"
 #include "alert.h"
 //#include "util.h"
@@ -128,6 +127,9 @@
 #endif  // HAVE_LIBGDAL
 
 
+// Needs to be down here so that the LIB_GC stuff will compile in
+// ok.
+#include "xastir.h"
 
 
 

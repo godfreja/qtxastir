@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.347 2004/07/15 21:32:42 we7u Exp $
+ * $Id: db.c,v 1.348 2004/07/16 18:27:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -480,7 +480,7 @@ int msg_comp_data(const void *a, const void *b) {
 
 
 void msg_input_database(Message *m_fill) {
-#define MSG_INCREMENT 10
+#define MSG_INCREMENT 25
     void *m_ptr;
     long i;
 
@@ -9372,7 +9372,9 @@ void add_status(DataRow *p_station, char *status_string) {
                     ptr2 = ptr2->next;
                 }
                 // At this point, we have a pointer to the last
-                // record in ptr2->next.  Free it.
+                // record in ptr2->next.  Free it and the text
+                // string in it.
+                free(ptr2->next->text_ptr);
                 free(ptr2->next);
                 ptr2->next = NULL;
             } 
@@ -9474,7 +9476,9 @@ void add_comment(DataRow *p_station, char *comment_string) {
                     ptr2 = ptr2->next;
                 }
                 // At this point, we have a pointer to the last
-                // record in ptr2->next.  Free it.
+                // record in ptr2->next.  Free it and the text
+                // string in it.
+                free(ptr2->next->text_ptr);
                 free(ptr2->next);
                 ptr2->next = NULL;
             } 
