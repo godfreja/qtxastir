@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.43 2003/07/09 22:26:36 we7u Exp $
+ * $Id: draw_symbols.c,v 1.44 2003/07/10 19:00:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2029,7 +2029,14 @@ void draw_multipoints(long x_long, long y_lat, int numpoints, long mypoints[][2]
     // if there are points to draw, and the object has not been cleared (or 
     // we're supposed to show old data).
 
-    ghost = (int)(((sec_old+sec_heard)) < sec_now());
+
+    // Per Dale Huguley in e-mail 07/10/2003, a good interval for
+    // the severe weather polygons to disappear is 10 minutes.  We
+    // hard-code it here so the user can't mess it up too badly with
+    // the ghosting interval.
+//    ghost = (int)(((sec_old+sec_heard)) < sec_now());
+    ghost = (int)( ( sec_heard + (10 * 60) ) < sec_now() );
+
 
     // We don't want to draw them if the ghost interval is up, not
     // matter whether Include Expired Data is checked.
