@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.42 2003/02/04 04:08:36 jtwilley Exp $
+ * $Id: alert.c,v 1.43 2003/02/20 07:56:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -458,8 +458,10 @@ void alert_print_list(void) {
         }
     }
 
+    // Clear out expired alerts (zero the title string)
     if (entry->expiration < time(NULL)) {
         //fprintf(stderr,"Expired, current: %lu, alert: %lu\n", time(NULL), entry->expiration );
+        entry->title[0] = '\0'; // Clear this alert
     }
 
     // Check for non-zero alert title, non-expired alert time
