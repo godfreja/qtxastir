@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.107 2004/01/15 21:28:38 we7u Exp $
+ * $Id: xa_config.c,v 1.108 2004/01/21 16:47:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1533,7 +1533,7 @@ void load_data_or_default(void) {
     if (!get_int ("TRACK_ME", &track_me,0,1,0))
         track_me = 0;    // No tracking
 
-    if (!get_int ("MAP_CHOOSER_EXPAND_DIRS", &map_chooser_expand_dirs,0,1,0))
+    if (!get_int ("MAP_CHOOSER_EXPAND_DIRS", &map_chooser_expand_dirs,0,1,1))
         map_chooser_expand_dirs = 1;
 
     if (!get_int ("ST_DIRECT_TIMEOUT", &st_direct_timeout,1,60*60*24*30,60*60))
