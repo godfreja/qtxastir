@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.94 2003/05/28 17:14:12 we7u Exp $
+# $Id: language-English.sys,v 1.95 2003/05/28 17:33:48 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -726,6 +726,7 @@ UNIOP00027|in Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Set System Clock from GPS Data?||
 UNIOP00030|RELAY Digipeat?||
+UNIOP00031|m||
 #
 # PopUp "Station Chooser"
 STCHO00001|Station Chooser||

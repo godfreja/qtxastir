@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.291 2003/05/28 17:14:13 we7u Exp $
+ * $Id: main.c,v 1.292 2003/05/28 17:33:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3134,7 +3134,7 @@ static void TrackMouse( /*@unused@*/ Widget w, XtPointer clientData, XEvent *eve
                     sizeof(temp_my_distance),
                     "%d %s",
                     (int)(value*1.852*1000),
-                    langcode("SPCHSTR002"));    // meters
+                    langcode("UNIOP00031"));    // 'm' as in meters
             }
             else {
                 xastir_snprintf(temp_my_distance,

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.253 2003/05/28 17:14:12 we7u Exp $
+ * $Id: db.c,v 1.254 2003/05/28 17:33:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3513,7 +3513,7 @@ end_critical_section(&db_station_info_lock, "db.c:Station_data" );
                     sizeof(temp_my_distance),
                     "%d %s",
                     (int)(value*1.852*1000),
-                    langcode("SPCHSTR002"));    // meters
+                    langcode("UNIOP00031"));    // 'm' as in meters
             }
             else {
                 xastir_snprintf(temp_my_distance,
