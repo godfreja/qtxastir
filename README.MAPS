@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.54 2005/03/03 19:39:32 we7u Exp $
+$Id: README.MAPS,v 1.55 2005/03/03 19:41:04 we7u Exp $
 
 
 Recommended Configurations for:
@@ -184,6 +184,10 @@ Getting Maps and other Data Files for Xastir:
       links to download-able maps on it:
 
         http://wiki.findewe.com/nwaprs/XastirMaps
+
+      That page is down at present, so it is temporarily here:
+
+        http://nwp.ampr2.net/nwaprs/XastirMaps
 
 
      Dos/Win/MacAPRS style vector/fill maps:
