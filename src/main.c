@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.498 2004/07/23 02:31:39 we7u Exp $
+ * $Id: main.c,v 1.499 2004/07/23 16:31:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,7 +41,8 @@
 #include <pthread.h>
 #include <locale.h>
 #include <strings.h>
-#include <wait.h>
+#include <sys/wait.h>
+#include <errno.h>
 
 #if TIME_WITH_SYS_TIME
 # include <sys/time.h>
