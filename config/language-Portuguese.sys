@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.71 2003/01/30 21:34:08 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.72 2003/02/01 10:14:56 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -283,6 +283,7 @@ BBARSTA038|Posição alterada na minha estação||
 BBARSTA039|Indexando %s||
 BBARSTA040|Estação de radioamador de APRS %s||
 BBARSTA041|Esperando pela data do GPS..||
+BBARSTA042|Transmitting objects/items||
 #
 # Visualização do tráfego de packet
 WPUPDPD001|Visualização do tráfego||

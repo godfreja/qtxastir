@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.74 2003/01/30 21:34:05 we7u Exp $
+# $Id: language-Dutch.sys,v 1.75 2003/02/01 10:14:56 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -289,6 +289,7 @@ BBARSTA038|Positie verandering bij mijn station||
 BBARSTA039|Indexing %s||
 BBARSTA040|Amateur APRS Station %s||
 BBARSTA041|Waiting for GPS data..||
+BBARSTA042|Transmitting objects/items||
 #
 # PopUp "View - Incoming Packet Data"
 WPUPDPD001|Ontvangen Packets Bekijken||

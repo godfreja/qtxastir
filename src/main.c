@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.209 2003/01/30 19:48:37 kd6zwr Exp $
+ * $Id: main.c,v 1.210 2003/02/01 10:14:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2559,7 +2559,7 @@ void create_image(Widget w) {
 
     // If we're in the middle of ID'ing, wait a bit.
     if (pending_ID_message)
-        usleep(2000000);
+        usleep(2000000);    // 2 seconds
 
     /* First get the various dimensions */
     XtVaGetValues(w,
@@ -2757,7 +2757,7 @@ void refresh_image(Widget w) {
 
     // If we're in the middle of ID'ing, wait a bit.
     if (pending_ID_message)
-        usleep(2000000);
+        usleep(2000000);    // 2 seconds
 
     /* First get the various dimensions */
     XtVaGetValues(w,
@@ -2860,7 +2860,7 @@ void redraw_symbols(Widget w) {
 
     // If we're in the middle of ID'ing, wait a bit.
     if (pending_ID_message)
-        usleep(2000000);
+        usleep(2000000);    // 2 seconds
 
     /* copy over map and alert data to final pixmap */
     if(!wait_to_redraw) {
@@ -21417,7 +21417,6 @@ int main(int argc, char *argv[], char *envp[]) {
             // Reload saved objects and items from previous runs.
             // This implements persistent objects.
             reload_object_item();
-
 
             XtAppMainLoop(app_context);
 

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.76 2003/01/30 21:34:08 we7u Exp $
+# $Id: language-Spanish.sys,v 1.77 2003/02/01 10:14:56 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -285,6 +285,7 @@ BBARSTA038|Coloque el cambio en mi estación||
 BBARSTA039|Indexing %s||
 BBARSTA040|Amateur APRS Station %s||
 BBARSTA041|Waiting for GPS data..||
+BBARSTA042|Transmitting objects/items||
 #
 # Despliegue Paquete de Datos
 WPUPDPD001|Despligue de Datos||

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.50 2003/01/29 20:14:13 we7u Exp $
+ * $Id: util.c,v 1.51 2003/02/01 10:14:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1717,6 +1717,10 @@ void reload_object_item(void) {
 
     file = get_user_base_dir("config/object.log");
 
+    // Prevent transmission of objects until sometime after we're
+    // done with our initial load.
+    last_object_check = sec_now();
+
     f=fopen(file,"r");
     if (f!=NULL) {
         while (fgets(line, 300, f) != NULL) {
@@ -1742,6 +1746,9 @@ void reload_object_item(void) {
         if (debug_level & 1)
             printf("Couldn't open file for reading: %s\n", file);
     }
+
+    // Start transmitting these objects in about 30 seconds.
+    last_object_check = sec_now() + 30 - POSIT_rate;
 }
 
 
