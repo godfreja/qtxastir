@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.41 2003/11/25 07:42:33 we7u Exp $
+ * $Id: db.h,v 1.42 2003/11/25 18:32:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -380,7 +380,7 @@ typedef struct _CADRow {
     int line_color;             // Border color
     int line_type;              // Border linetype
     int line_width;             // Border line width
-    int computed_area;          // Area in square kilometers
+    float computed_area;        // Area in square kilometers
     float raw_probability;      // Probability of area (POA) or probability of detection (POD)
     long label_latitude;        // Latitude for label placement
     long label_longitude;       // Longitude for label placement
