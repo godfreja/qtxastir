@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.85 2003/06/17 19:48:44 we7u Exp $
+ * $Id: xa_config.c,v 1.86 2003/07/09 22:02:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -866,8 +866,8 @@ void load_data_or_default(void) {
         Select_.via_digi = 1;
     if (!get_int ("DISPLAY_NET_STATIONS", &Select_.net, 0, 1, 1))
         Select_.net = 1;
-    if (!get_int ("DISPLAY_OLD_STATION_DATA", &Select_.old_data, 0, 1, 1))
-        Select_.old_data = 1;
+    if (!get_int ("DISPLAY_OLD_STATION_DATA", &Select_.old_data, 0, 1, 0))
+        Select_.old_data = 0;
     if (!get_int ("DISPLAY_STATIONS", &Select_.stations, 0, 1, 1))
         Select_.stations = 1;
     if (!get_int ("DISPLAY_FIXED_STATIONS", &Select_.fixed_stations, 0, 1, 1))
