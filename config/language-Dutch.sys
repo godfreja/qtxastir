@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.58 2002/11/23 08:40:42 we7u Exp $
+# $Id: language-Dutch.sys,v 1.59 2002/11/25 21:19:50 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -317,6 +317,7 @@ WPUPCFD025|Activeer Alternatief net?||
 WPUPCFD026|Met welk interval positie gegevens verzenden?||
 WPUPCFD027|Nieuwe berichten weergeven||
 WPUPCFD028|Warn if Modifier Keys||
+WPUPCFD029|View zero-distance bulletins||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configureer Coordinaten Stelsel||

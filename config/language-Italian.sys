@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.58 2002/11/23 08:40:42 we7u Exp $
+# $Id: language-Italian.sys,v 1.59 2002/11/25 21:19:55 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -313,6 +313,7 @@ WPUPCFD025|Attivare rete alternativa?|A|
 WPUPCFD026|Intervallo per invio rapporti posizione||
 WPUPCFD027|Pop up new bulletins||
 WPUPCFD028|Warn if Modifier Keys||
+WPUPCFD029|View zero-distance bulletins||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||

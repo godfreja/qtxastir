@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.57 2002/11/23 08:40:42 we7u Exp $
+# $Id: language-German.sys,v 1.58 2002/11/25 21:19:54 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -318,6 +318,7 @@ WPUPCFD025|Alternatives Netz?||
 WPUPCFD026|Sende Positionsmeldung in folgenden Intervallen||
 WPUPCFD027|Pop up new bulletins||
 WPUPCFD028|Warn if Modifier Keys||
+WPUPCFD029|View zero-distance bulletins||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||
