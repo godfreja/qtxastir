@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.173 2002/11/14 22:07:11 we7u Exp $
+ * $Id: db.c,v 1.174 2002/11/14 23:50:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8388,6 +8388,16 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                 }
                 p_station->flag |= ST_OBJECT;                           // Set "Object" flag
                 if (ok) {
+
+                    // If object was owned by me but another station
+                    // is transmitting it now, write entries into
+                    // the object.log file showing that we don't own
+                    // this object anymore.
+                    if ( (is_my_call(p_station->origin,1))  // If station was owned by me
+                            && (!is_my_call(origin,1)) ) {  // But isn't now
+                        disown_object_item(call_sign,origin);
+                    }
+ 
                     // Create a timestamp from the current time
                     strcpy(p_station->pos_time,get_time(temp_data));
 
@@ -8407,6 +8417,7 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                     p_station->record_type = NORMAL_APRS;
                     p_station->flag &= (~ST_MSGCAP);            // clear "message capable" flag
                 }
+
                 break;
 
             case (APRS_ITEM):
@@ -8419,6 +8430,16 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                 }
                 p_station->flag |= ST_ITEM;                             // Set "Item" flag
                 if (ok) {
+
+                    // If item was owned by me but another station
+                    // is transmitting it now, write entries into
+                    // the object.log file showing that we don't own
+                    // this item anymore.
+                    if ( (is_my_call(p_station->origin,1))  // If station was owned by me
+                            && (!is_my_call(origin,1)) ) {  // But isn't now
+                        disown_object_item(call_sign,origin);
+                    }
+ 
                     // Create a timestamp from the current time
                     strcpy(p_station->pos_time,get_time(temp_data));
                     strcpy(p_station->origin,origin);                   // define it as item

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.37 2002/10/10 20:05:53 francais1 Exp $
+ * $Id: util.c,v 1.38 2002/11/14 23:50:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1454,6 +1454,29 @@ void log_data(char *file, char *line) {
             printf("Couldn't open file for appending: %s\n", file);
         }
     }
+}
+
+
+
+
+
+//
+// Disown function called by object/item decode routines.
+// If an object/item is received that matches something in our
+// object.log file, we immediately cease to transmit that object and
+// we mark each line containing that object in our log file with a
+// hash mark ('#').  This comments out that object so that the next
+// time we reboot, we won't start transmitting it again.
+
+// Note that the length of "line" can be up to MAX_DEVICE_BUFFER,
+// which is currently set to 4096.
+//
+void disown_object_item(char *call_sign, char *new_owner) {
+
+    // TBD
+
+    printf("(Not implemented yet) Disowning '%s': '%s' is taking over control.\n",
+        call_sign, new_owner);
 }
 
 
