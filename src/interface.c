@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.68 2003/02/15 22:30:34 we7u Exp $
+ * $Id: interface.c,v 1.69 2003/02/19 23:43:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -960,7 +960,6 @@ void port_dtr(int port, int dtr) {
 // CYGWIN, getting rid of the entire procedure contents, and getting
 // rid of the TIO* code.  One method or the other should work to get
 // it compiled.  We shouldn't need both.
-#ifndef __CYGWIN__
     int sg;
 
     /* check for 1 or 0 */
@@ -1007,8 +1006,6 @@ void port_dtr(int port, int dtr) {
 
     if (end_critical_section(&port_data_lock, "interface.c:port_dtr(2)" ) > 0)
         fprintf(stderr,"port_data_lock, Port = %d\n", port);
-
-#endif  // __CYGWIN__
 }
 
 
