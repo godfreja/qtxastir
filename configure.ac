@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.20 2003/02/18 16:23:38 we7u Exp $
+# $Id: configure.ac,v 1.21 2003/02/18 19:36:54 we7u Exp $
 
 
 #
@@ -965,7 +965,6 @@ AC_CONFIG_FILES([Makefile \
     callpass/Makefile \
     config/Makefile \
     help/Makefile \
-    intl/Makefile \
     m4/Makefile \
     scripts/Makefile \
     src/Makefile \
