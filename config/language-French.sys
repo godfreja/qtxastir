@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.123 2004/04/21 21:59:20 we7u Exp $
+# $Id: language-French.sys,v 1.124 2004/05/17 18:45:57 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -701,6 +701,7 @@ WPUPSTI060|Temp combustible: %02.1f°C  ||
 WPUPSTI061|Temp combustible: %s°F   ||
 WPUPSTI062|Humidité combustible: %s%%   ||
 WPUPSTI063|Baro: %0.2f in Hg||
+WPUPSTI064|Fetch NWS Alert||
 #
 # FCC-RAC Call Look up
 STIFCC0001|Chercher le fichier FCC||
