@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.17 2003/02/04 03:52:40 jtwilley Exp $
+ * $Id: igate.c,v 1.18 2003/04/11 20:49:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -776,6 +776,8 @@ void output_igate_rf(char *from, char *call, char *path, char *line, int port, i
 
                 case DEVICE_SERIAL_KISS_TNC:
 
+                case DEVICE_NET_AGWPE:
+
 begin_critical_section(&devices_lock, "igate.c:output_igate_rf" );
 
                     if (devices[x].igate_options>1 && port_data[x].status==DEVICE_UP) {
@@ -1063,6 +1065,8 @@ void output_nws_igate_rf(char *from, char *path, char *line, int port, int third
                 case DEVICE_AX25_TNC:
 
                 case DEVICE_SERIAL_KISS_TNC:
+
+                case DEVICE_NET_AGWPE:
 
 begin_critical_section(&devices_lock, "igate.c:output_nws_igate_rf" );
 
