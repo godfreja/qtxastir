@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.h,v 1.6 2002/10/23 20:28:27 we7u Exp $
+ * $Id: draw_symbols.h,v 1.7 2002/11/14 19:30:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -71,7 +71,7 @@ extern int symbol_change_requested_from;
 extern Widget select_symbol_dialog;
 extern void Select_symbol_destroy_shell( Widget widget, XtPointer clientData, XtPointer callData);
 extern void draw_symbols_init(void);
-
+extern void draw_deadreckoning_features(DataRow *p_station, Pixmap where, Widget w);
 #endif
 
 

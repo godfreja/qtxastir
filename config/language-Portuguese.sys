@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.49 2002/11/13 20:43:45 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.50 2002/11/14 19:30:24 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -162,6 +162,7 @@ PULDNDP031|Mostrar Objectos/Items||
 PULDNDP032|Simbolos filtrados||
 PULDNDP033|Info filtrada||
 PULDNDP034|Mostrar estações não locais||
+PULDNDP035|Enable Dead-Reckoning||
 #
 # Inglesa/métrica
 PULDNUT001|Activar unidades Inglesas||

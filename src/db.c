@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.170 2002/11/13 20:40:44 we7u Exp $
+ * $Id: db.c,v 1.171 2002/11/14 19:30:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2204,6 +2204,19 @@ void display_station(Widget w, DataRow *p_station, int single) {
                     XtWindow(da));
         }
 
+        // Check whether to draw dead-reckoning data by KJ5O
+        if (show_DR
+                && (p_station->newest_trackpoint!=0
+                && course_ok
+                && atof(temp_speed)>0
+                && speed_ok) ) {
+            if ( (sec_now()-temp_sec_heard) < sec_old ) {
+                draw_deadreckoning_features(p_station,
+                    XtWindow(da),
+                    w);
+            }
+        }
+
         if (p_station->aprs_symbol.area_object.type != AREA_NONE)
             draw_area(p_station->coord_lon, p_station->coord_lat,
                 p_station->aprs_symbol.area_object.type,
@@ -2369,6 +2382,18 @@ void display_station(Widget w, DataRow *p_station, int single) {
                     pixmap_final);
         }
 
+        // Check whether to draw dead-reckoning data by KJ5O
+        if (show_DR
+                && (p_station->newest_trackpoint!=0
+                && course_ok
+                && atof(temp_speed)>0
+                && speed_ok) ) {
+            if ( (sec_now()-temp_sec_heard) < sec_old ) {
+                draw_deadreckoning_features(p_station,
+                    pixmap_final,
+                    w);
+            }
+        }
 
         if (p_station->aprs_symbol.area_object.type != AREA_NONE)
                 draw_area(p_station->coord_lon, p_station->coord_lat,

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.25 2002/11/13 20:40:47 we7u Exp $
+ * $Id: main.h,v 1.26 2002/11/14 19:30:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -179,6 +179,7 @@ extern int show_phg_mobiles;
 extern int show_phg_default;
 extern int show_amb;
 extern int show_old_data;
+extern int show_DR;
 extern char sound_command[];
 extern pid_t last_sound_pid;
 extern int sound_play_new_station;

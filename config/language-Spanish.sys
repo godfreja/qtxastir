@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.54 2002/11/13 20:43:45 we7u Exp $
+# $Id: language-Spanish.sys,v 1.55 2002/11/14 19:30:24 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -164,6 +164,7 @@ PULDNDP031|Display Objects/Items||
 PULDNDP032|Filter Symbols||
 PULDNDP033|Filter Info||
 PULDNDP034|Display Non-Local Stations||
+PULDNDP035|Enable Dead-Reckoning||
 #
 # Inglesa/Metrica
 PULDNUT001|Activar Unidades Inglesa||
