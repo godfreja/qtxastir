@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
 
-# $Id: toporama250k.pl,v 1.2 2004/10/08 18:31:44 we7u Exp $
+# $Id: toporama250k.pl,v 1.3 2004/10/08 18:33:26 we7u Exp $
 #
-# Copyright (C) 2004 Adi Linden, VA3ADI.
+# Copyright (C) 2004 The Xastir Group.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
