@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.300 2003/06/21 02:06:40 we7u Exp $
+ * $Id: main.c,v 1.301 2003/06/25 19:00:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -20382,6 +20382,13 @@ void Configure_station_change_data(Widget widget, XtPointer clientData, XtPointe
         // Check whether we changed our callsign
         if (strcasecmp(old_callsign,my_callsign) != 0) {
             station_del(old_callsign);  // move to new sort location...
+
+            // If TrackMe is enabled, copy the new callsign into the
+            // track_station_call variable.  If we don't do this, we
+            // will still be tracking our old callsign.
+            if (track_me) {
+                strcpy(tracking_station_call, my_callsign);
+            }
         }
 
         // Update our parameters
