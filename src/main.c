@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.335 2003/09/04 17:11:12 we7u Exp $
+ * $Id: main.c,v 1.336 2003/09/04 18:00:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -148,6 +148,13 @@
 // USE_SMALL_SYSTEM_FONT.
 //
 //#define USE_SMALL_SYSTEM_FONT
+
+// This one goes right along with the smaller system fonts on
+// fixed-size LCD screens.  Fix new dialogs to the upper left of the
+// main window, don't have them cycle through multiple possible
+// positions as each new dialog is drawn.
+//
+//#define FIXED_DIALOG_STARTUP
 
 
 
@@ -4058,8 +4065,8 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
     /*set args for color */
     ac = 0;
-    XtSetArg(al[ac], XmNforeground, MY_FG_COLOR); ac++;
-    XtSetArg(al[ac], XmNbackground, MY_BG_COLOR); ac++;
+    XtSetArg(al[ac], XmNforeground, MY_FG_COLOR);          ac++;
+    XtSetArg(al[ac], XmNbackground, MY_BG_COLOR);          ac++;
     XtSetArg(al[ac], XmNtearOffModel, XmTEAR_OFF_ENABLED); ac++;
 
     /* menu bar */
@@ -8407,7 +8414,12 @@ void pos_dialog(Widget w) {
         last_popup_x = x + 20;  // Go to initial position again
         last_popup_y = y + 30;  // Go to initial position again
     }
+
+#ifdef FIXED_DIALOG_STARTUP
+    XtVaSetValues(w,XmNx,x,XmNy,y,NULL);
+#else
     XtVaSetValues(w,XmNx,last_popup_x,XmNy,last_popup_y,NULL);
+#endif // FIXED_DIALOG_STARTUP
 
     //fprintf(stderr,"max_x:%d max_y:%d x:%d y:%d wd:%d ht:%d last_x:%d last_y:%d\n",
         //max_x,max_y,x,y,wd,ht,last_popup_x,last_popup_y);
