@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.80 2003/04/01 21:13:00 we7u Exp $
+ * $Id: interface.c,v 1.81 2003/04/02 21:01:07 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -468,12 +468,14 @@ int ui_connect( int port, char *to[]) {
     /*
      * Set our AX.25 callsign and AX.25 port callsign accordingly.
      */
-
+    ENABLE_SETUID_PRIVILEGE;
     if (bind(s, (struct sockaddr *)&axbind, addrlen) != 0) {
+	DISABLE_SETUID_PRIVILEGE;
         xastir_snprintf(temp, sizeof(temp), langcode("POPEM00010"), strerror(errno));
         popup_message(langcode("POPEM00004"),temp);
         return -1;
     }
+    DISABLE_SETUID_PRIVILEGE;
 
     if (devices[port].relay_digipeat)
 	sockopt = 1;
