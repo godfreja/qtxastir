@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.38 2003/12/04 01:08:04 n2ygk Exp $
+ * $Id: map_shp.c,v 1.39 2003/12/04 07:23:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -670,11 +670,12 @@ void draw_shapefile_map (Widget w,
     /* these have to be static since I recycle Symtbl between calls */
     static char     dbfsig[1024],dbffields[1024],name[64],key[64],sym[4];
     static int      color,lanes,filled,pattern,display_level,label_level;
-    static int      fill_style,fill_color,font_size;
+    static int      fill_style,fill_color;
     //static int layer;
     dbfawk_sig_info *sig_info = NULL;
     dbfawk_field_info *fld_info = NULL;
 #endif
+    static int font_size = FONT_MEDIUM; // set by dbfawk, else this default
     static int label_color = 8; /* set by dbfawk.  Otherwise it's black. */
 
     typedef struct _label_string {
