@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.14 2004/10/08 18:20:32 we7u Exp $
+# $Id: Makefile.am,v 1.15 2004/10/21 08:51:50 tvrusso Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -24,7 +24,8 @@ pkglib_SCRIPTS = \
     xastir-migrate.sh \
     kiss-off.pl \
     toporama50k.pl \
-    toporama250k.pl
+    toporama250k.pl\
+    Xastir_tigerpoly.py
 
 
 EXTRA_DIST = $(pkglib_SCRIPTS)
