@@ -1,5 +1,5 @@
 /*
- * $Id: lang.c,v 1.8 2003/05/20 17:34:10 we7u Exp $
+ * $Id: lang.c,v 1.9 2003/08/06 23:18:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -163,8 +163,10 @@ int load_language_file(char *filename) {
                                         if(strlen(temp_ptr)<=MAX_LANG_CODE) {
                                             lcok=1;
                                             for (lt=0; lt <lang_code_number && lcok; lt++) {
-                                                if(strcmp(lang_code[lt],temp_ptr)==0)
+                                                if(strcmp(lang_code[lt],temp_ptr)==0) {
                                                     lcok=0;
+                                                    break;
+                                                }
                                             }
                                             if(lcok) {
                                                 strcpy(lang_code[lang_code_number],temp_ptr);
