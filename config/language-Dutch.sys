@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.150 2004/09/24 19:30:29 we7u Exp $
+# $Id: language-Dutch.sys,v 1.151 2004/10/08 02:15:47 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -949,6 +949,7 @@ POPEM00034|Zet Mijn Positie TX uit totdat geldige GPS gegevens beschikbaar zijn!
 POPEM00035|Waarschuwing||
 POPEM00036|Let op||
 POPEM00037|HSP interface aanwezig: GPS timing is verhoogd||
+POPEM00038|Name Conflicts With Existing Object/Item/Station||
 #
 # Jump Location
 JMLPO00001|Kaart lokatie||

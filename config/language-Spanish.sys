@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.151 2004/09/24 19:30:30 we7u Exp $
+# $Id: language-Spanish.sys,v 1.152 2004/10/08 02:15:48 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -941,6 +941,7 @@ POPEM00034|Disactivando TX de Mi Posición Hasta ver Data de GPS Válido!||
 POPEM00035|Warning||
 POPEM00036|Notice||
 POPEM00037|HSP interface present: GPS timing has been increased||
+POPEM00038|Name Conflicts With Existing Object/Item/Station||
 #
 # Salto de Locación
 JMLPO00001|Localización de Mapa||
