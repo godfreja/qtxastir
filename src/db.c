@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.237 2003/04/15 19:52:21 we7u Exp $
+ * $Id: db.c,v 1.238 2003/04/22 17:34:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2884,6 +2884,11 @@ void Station_data_store_track(Widget w, XtPointer clientData, /*@unused@*/ XtPoi
 
     // Store trail to file
     export_trail(p_station);
+
+#ifdef HAVE_LIBSHP
+    // Save trail as a Shapefile map
+    create_map_from_trail(p_station->call_sign);
+#endif  // HAVE_LIBSHP
 }
 
 

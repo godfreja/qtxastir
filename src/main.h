@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.43 2003/04/12 01:32:44 we7u Exp $
+ * $Id: main.h,v 1.44 2003/04/22 17:34:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -337,6 +337,11 @@ seteuid(euid); \
 setegid(egid); \
 if (debug_level & 4) { fprintf(stderr, "Changing euid to %d and egid to %d\n", (int)euid, (int)egid); } \
 } while(0)
+
+#ifdef HAVE_LIBSHP
+extern void create_map_from_trail(char *call_sign);
+#endif  // HAVE_LIBSHP
+
 
 #endif /* XASTIR_MAIN_H */
 
