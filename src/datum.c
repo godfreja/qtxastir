@@ -1,7 +1,7 @@
 /*
    See the top of datum.h for information on this code.
    N7TAP
-   $Id: datum.c,v 1.9 2003/10/19 22:26:12 we7u Exp $
+   $Id: datum.c,v 1.10 2003/10/29 21:03:24 we7u Exp $
 */
 
 
@@ -15,6 +15,11 @@
 #include "datum.h"
 
 
+
+// Default.  Change to non-zero if we're using the MGRS UTM grid
+// which has special UTM zone boundaries near Svalbard and SW
+// Norway.
+int MGRS_grid = 0;
 
 
 
@@ -470,23 +475,27 @@ void ll_to_utm_ups(short ellipsoidID, const double lat, const double lon,
 
     ZoneNumber = (int)((LongTemp + 180)/6) + 1;
 
-    // Special zone for southern Norway.
-// Used for military version of UTM (MGRS) only?
-    if ( lat >= 56.0 && lat < 64.0 && LongTemp >= 3.0 && LongTemp < 12.0 )
-        ZoneNumber = 32;
+    if (MGRS_grid) {
 
-    // Special zones for Svalbard.
-// Used for military version of UTM (MGRS) only?
-    if (lat >= 72.0 && lat < 84.0) {
-        if (LongTemp >= 0.0  && LongTemp <  9.0)
-            ZoneNumber = 31;
-        else if (LongTemp >= 9.0  && LongTemp < 21.0)
-            ZoneNumber = 33;
-        else if (LongTemp >= 21.0 && LongTemp < 33.0)
-            ZoneNumber = 35;
-        else if (LongTemp >= 33.0 && LongTemp < 42.0)
-            ZoneNumber = 37;
+        // Special zone for southern Norway.  Used for military
+        // version of UTM (MGRS) only.
+        if ( lat >= 56.0 && lat < 64.0 && LongTemp >= 3.0 && LongTemp < 12.0 )
+            ZoneNumber = 32;
+
+        // Handle the special zones for Svalbard.  Used for military
+        // version of UTM (MGRS) only.
+        if (lat >= 72.0 && lat < 84.0) {
+            if (LongTemp >= 0.0  && LongTemp <  9.0)
+                ZoneNumber = 31;
+            else if (LongTemp >= 9.0  && LongTemp < 21.0)
+                ZoneNumber = 33;
+            else if (LongTemp >= 21.0 && LongTemp < 33.0)
+                ZoneNumber = 35;
+            else if (LongTemp >= 33.0 && LongTemp < 42.0)
+                ZoneNumber = 37;
+        }
     }
+
     LongOrigin = (ZoneNumber - 1)*6 - 180 + 3;  //+3 puts origin in middle of zone
     LongOriginRad = LongOrigin * deg2rad;
 

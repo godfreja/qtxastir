@@ -23,13 +23,15 @@
    Thanks Chuck!
 
    N7TAP
-   $Id: datum.h,v 1.6 2003/10/18 05:55:29 we7u Exp $
+   $Id: datum.h,v 1.7 2003/10/29 21:03:24 we7u Exp $
 */
 
 #define FROM_WGS_84 1
 #define TO_WGS_84   0
 void wgs84_datum_shift(short fromWGS84, double *latitude, double *longitude, short datumID);
 void datum_shift(double *latitude, double *longitude, short fromDatumID, short toDatumID);
+
+extern int MGRS_grid;
 
 typedef struct {
     char  *name;    // name of ellipsoid

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.368 2003/10/29 20:50:22 we7u Exp $
+ * $Id: maps.c,v 1.369 2003/10/29 21:03:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -628,12 +628,6 @@ void draw_vector_ll(Widget w,
 }
 
 
-
-
-
-// If non-zero, draw irregular UTM grids in Svalbard and SW Norway
-// areas.
-int MGRS_grid = 0;
 
 
 
