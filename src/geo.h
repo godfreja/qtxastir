@@ -1,5 +1,5 @@
 
-// $Id: geo.h,v 1.2 2004/03/30 20:21:08 we7u Exp $
+// $Id: geo.h,v 1.3 2004/03/30 20:44:06 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -16,6 +16,7 @@
 extern long destination_coord_lat;
 extern long destination_coord_lon;
 extern int mark_destination;
+extern int show_destination_mark;
 
 extern char geocoder_map_filename[200];
 

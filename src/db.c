@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.305 2004/03/30 20:21:07 we7u Exp $
+ * $Id: db.c,v 1.306 2004/03/30 20:44:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2768,7 +2768,7 @@ void display_file(Widget w) {
     Draw_All_CAD_Objects(w);        // Draw all CAD objects, duh.
 
     // Check if we should mark where we found an address
-    if (mark_destination) {
+    if (mark_destination && show_destination_mark) {
         draw_pod_circle(destination_coord_lon,
                         destination_coord_lat,
                         0.0020 * scale_y,
