@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.94 2002/06/18 22:21:14 we7u Exp $
+ * $Id: main.c,v 1.95 2002/06/18 23:19:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13550,9 +13550,10 @@ else if (DF_object_enabled) {
             // We only check the first possible comment string in
             // the record
             //if (strlen(p_station->comments) > 0)
-            if (p_station->comment_data != NULL) {
+            if ( (p_station->comment_data != NULL)
+                    && (p_station->comment_data->text_ptr != NULL) ) {
                 //XmTextFieldSetString(object_comment_data,p_station->comments);
-                XmTextFieldSetString(object_comment_data,p_station->comment_data->text);
+                XmTextFieldSetString(object_comment_data,p_station->comment_data->text_ptr);
             }
             else {
                 XmTextFieldSetString(object_comment_data,"");

@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.7 2002/06/18 22:21:14 we7u Exp $
+ * $Id: db.h,v 1.8 2002/06/18 23:19:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -270,7 +270,7 @@ typedef struct {
 // allocated list of text.  Every different comment field will be
 // stored in a separate line.
 typedef struct _CommentRow{
-    char    text[MAX_COMMENTS+1];   // Holds the comment text
+    char   *text_ptr;               // Ptr to the comment text
     struct _CommentRow *next;       // Ptr to next record or NULL
 } CommentRow;
 
