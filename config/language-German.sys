@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.32 2002/07/12 21:09:32 we7u Exp $
+# $Id: language-German.sys,v 1.33 2002/07/13 17:38:19 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -505,6 +505,7 @@ WPUPMSB006|Neue Gruppe||
 WPUPMSB007|Lösche Nachrichten||
 WPUPMSB008|Nachricht:||
 WPUPMSB009|Sende jetzt!||
+WPUPMSB010|Path:||
 #
 # PopUp "Automatische Antwort"
 WPUPARM001|Automatische Antwort ändern||

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.32 2002/07/12 21:09:32 we7u Exp $
+# $Id: language-French.sys,v 1.33 2002/07/13 17:38:19 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -499,6 +499,7 @@ WPUPMSB006|Nouveau groupe||
 WPUPMSB007|Effacer tous les messages||
 WPUPMSB008|Message:||
 WPUPMSB009|Transmettre maintenant!||
+WPUPMSB010|Path:||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Modifier réponse automatique||

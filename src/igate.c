@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.6 2002/07/12 21:09:32 we7u Exp $
+ * $Id: igate.c,v 1.7 2002/07/13 17:38:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -132,7 +132,7 @@ begin_critical_section(&devices_lock, "igate.c:output_igate_net" );
 end_critical_section(&devices_lock, "igate.c:output_igate_net" );
                                         // The "1" means raw format, the last digit
                                         // says to _not_ use the unproto_igate path
-                                        output_my_data(data_txt,x,1,0,0);
+                                        output_my_data(data_txt,x,1,0,0,NULL);
 begin_critical_section(&devices_lock, "igate.c:output_igate_net" );
 
                                     }
@@ -248,7 +248,7 @@ end_critical_section(&devices_lock, "igate.c:output_igate_rf" );
                                     // First "0" means "cooked"
                                     // format, last digit: use
                                     // unproto_igate path
-                                    output_my_data(line,x,0,0,1);
+                                    output_my_data(line,x,0,0,1,NULL);
 begin_critical_section(&devices_lock, "igate.c:output_igate_rf" );
                                 }
                                 else {
@@ -469,7 +469,7 @@ end_critical_section(&devices_lock, "igate.c:output_nws_igate_rf" );
                                         // First "0" means "cooked"
                                         // format, last digit: use
                                         // unproto_igate path
-                                        output_my_data(line,x,0,0,1);
+                                        output_my_data(line,x,0,0,1,NULL);
 begin_critical_section(&devices_lock, "igate.c:output_nws_igate_rf" );
                                     }
                                     else {

@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.7 2002/07/12 21:09:33 we7u Exp $
+ * $Id: interface.h,v 1.8 2002/07/13 17:38:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -182,7 +182,7 @@ extern char aprs_station_message_type;
 extern void port_dtr(int port, int dtr);
 void port_write_string(int port, char *data);
 extern void init_device_names(void);
-extern void output_my_data(char *message, int port, int type, int loopback_only, int use_igate_path);
+extern void output_my_data(char *message, int port, int type, int loopback_only, int use_igate_path, char *path);
 int tnc_get_data_type(char *buf, int port);
 void tnc_data_clean(char *buf);
 extern void output_waypoint_data(char *message);

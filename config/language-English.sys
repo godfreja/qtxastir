@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.32 2002/07/12 21:09:32 we7u Exp $
+# $Id: language-English.sys,v 1.33 2002/07/13 17:38:19 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -499,6 +499,7 @@ WPUPMSB006|New Group||
 WPUPMSB007|Clear Messages||
 WPUPMSB008|Message:||
 WPUPMSB009|Send Now!||
+WPUPMSB010|Path:||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Change Auto Reply||

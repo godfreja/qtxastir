@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.32 2002/07/12 21:09:32 we7u Exp $
+# $Id: language-Dutch.sys,v 1.33 2002/07/13 17:38:19 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -503,6 +503,7 @@ WPUPMSB006|Nieuwe Groep||
 WPUPMSB007|Wis Berichten||
 WPUPMSB008|Bericht:||
 WPUPMSB009|Stuur Nu!||
+WPUPMSB010|Path:||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Automatich Antwoord Bericht||

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.11 2002/07/02 18:10:10 n0vh Exp $
+ * $Id: xastir.h,v 1.12 2002/07/13 17:38:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -140,7 +140,7 @@ extern char auto_reply_message[100];
 extern int  satellite_ack_mode;
 extern void clear_outgoing_messages(void);
 extern void reset_outgoing_messages(void);
-extern void output_message(char *from, char *to, char *message);
+extern void output_message(char *from, char *to, char *message, char *path);
 extern void check_and_transmit_messages(time_t time);
 extern Message_Window mw[MAX_MESSAGE_WINDOWS+1];
 extern void clear_message_windows(void);

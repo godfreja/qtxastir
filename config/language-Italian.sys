@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.33 2002/07/12 21:09:32 we7u Exp $
+# $Id: language-Italian.sys,v 1.34 2002/07/13 17:38:19 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -500,6 +500,7 @@ WPUPMSB006|Nuovo gruppo||
 WPUPMSB007|Elimina messaggi||
 WPUPMSB008|Messaggio:||
 WPUPMSB009|Invia ora!||
+WPUPMSB010|Path:||
 #
 #Auto Reply
 WPUPARM001|Cambia risposta automatica||

@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.16 2002/07/12 21:09:33 we7u Exp $
+ * $Id: wx.c,v 1.17 2002/07/13 17:38:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2267,7 +2267,7 @@ time_t wx_tx_data1(char *st) {
 void tx_raw_wx_data(void) {
 
     if (strlen(raw_wx_string)>10) {
-        output_my_data(raw_wx_string,-1,0,0,0);
+        output_my_data(raw_wx_string,-1,0,0,0,NULL);
         if (debug_level & 1)
             printf("Sending Raw WX data <%s>\n",raw_wx_string);
     }
