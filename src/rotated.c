@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.5 2003/04/12 01:32:44 we7u Exp $
+// $Id: rotated.c,v 1.6 2003/05/30 18:54:45 we7u Exp $
 //
 // Note that this version has been changed since xvertext 5.0 in order
 // to get rid of compiler warnings and such.  The original 5.0 notice
@@ -459,9 +459,16 @@ static int XRotPaintAlignedString( Display *dpy, XFontStruct *font, float angle,
 
         XSetStipple(dpy, my_gc, empty_stipple);
         XSetFillStyle(dpy, my_gc, FillOpaqueStippled);
-        
-        XFillPolygon(dpy, drawable, my_gc, xpoints, 4*item->nl, Nonconvex,
+
+        if (item->nl >= 1) {
+            XFillPolygon(dpy, drawable, my_gc, xpoints, 4*item->nl, Nonconvex,
                      CoordModeOrigin);
+        }
+        else {
+            fprintf(stderr,
+                "XRotPaintAlignedString: Points too few:%d, skipping XFillPolygon",
+                item->nl);
+        }
         
         /* free our resources */
         free((char *)xpoints);
