@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.212 2003/02/23 09:52:07 we7u Exp $
+ * $Id: maps.c,v 1.213 2003/02/23 16:44:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11972,12 +11972,13 @@ void load_alert_maps (Widget w, char *dir) {
             // Expire old alerts (zero the title string)
             if (sec_now() >= alert_list[ii].expiration) {
                 if (debug_level & 2) {
-                    fprintf(stderr,"Expiring alert: %s:%lu, sec_now:%lu\n",
+                    fprintf(stderr,"load_alert_maps: Expiring alert: %s:%lu, sec_now:%lu\n",
                         alert_list[ii].title,
                         alert_list[ii].expiration,
                        sec_now());
                 }
                 alert_list[ii].title[0] = '\0'; // Clear this alert
+                alert_list_count--;
                 continue;   // Skip this alert (it's empty!)
             }
 
