@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.136 2002/09/18 22:48:04 we7u Exp $
+ * $Id: maps.c,v 1.137 2002/09/19 16:32:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10426,7 +10426,7 @@ void index_save_to_file() {
     char out_string[500];
 
 
-    printf("Saving map index to file\n");
+    //printf("Saving map index to file\n");
 
     f = fopen(MAP_INDEX_DATA,"w");
 
@@ -10478,7 +10478,7 @@ void index_restore_from_file(void) {
     char in_string[500];
 
 
-    printf("Restoring map index from file\n");
+    //printf("Restoring map index from file\n");
 
     f = fopen(MAP_INDEX_DATA,"r");
     if (f == NULL)  // No file yet
