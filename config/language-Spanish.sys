@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.11 2002/04/05 19:14:57 we7u Exp $
+# $Id: language-Spanish.sys,v 1.12 2002/04/06 19:11:55 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -25,6 +25,10 @@ MENUTB0009|Ayuda|y|
 # Menú archivo
 PULDNFI001|Configurar|C|
 PULDNFI002|Abrir Bitácora|B|
+PULDNFI003|Prueba|P|
+PULDNFI004|Salir|S|
+PULDNFI005|Yes I'm Sure!|Y|
+PULDNFI007|Cambia nivel Debug|D|
 PULDNFI010|Bitácora del TNC|T|
 PULDNFI011|Bitácora de Internet|I|
 PULDNFI012|Bitácora del I-Gate|G|
