@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.12 2002/05/17 23:52:31 we7u Exp $
+ * $Id: interface_gui.c,v 1.13 2002/05/22 21:05:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -44,7 +44,6 @@
 #ifdef HAVE_DMALLOC
 #include <dmalloc.h>
 #endif
-
 
 Widget configure_interface_dialog = NULL;
 Widget interface_list = NULL;
@@ -197,7 +196,7 @@ void set_port_speed(int port) {
             break;
 
         case(10):
-#ifdef CYGWIN
+#ifdef __CYGWIN__
             devices[port].sp=B115200;
 #else
             devices[port].sp=B230400;
@@ -978,7 +977,7 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC" );
                     device_speed=9;
                     break;
 
-#ifndef CYGWIN
+#ifndef __CYGWIN__
                 case(B230400):
                     XmToggleButtonSetState(speed_230400,TRUE,FALSE);
                     device_speed=10;
@@ -1468,7 +1467,7 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_GPS" );
                     device_speed=9;
                     break;
 
-#ifndef CYGWIN
+#ifndef __CYGWIN__
                 case(B230400):
                     XmToggleButtonSetState(speed_230400,TRUE,FALSE);
                     device_speed=10;
@@ -2003,7 +2002,7 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_WX" );
                     device_speed=9;
                     break;
 
-#ifndef CYGWIN
+#ifndef __CYGWIN__
                 case(B230400):
                     XmToggleButtonSetState(speed_230400,TRUE,FALSE);
                     device_speed=10;
