@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.10 2002/04/04 07:33:47 we7u Exp $
+# $Id: language-French.sys,v 1.11 2002/04/05 19:14:57 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -33,7 +33,7 @@ PULDNFI015|Imprimer carte|p|
 PULDNFI003|Test|e|
 PULDNFI007|Changer niveau de débogage|d|
 PULDNFI004|Quitter|Q|
-PULDNFI005|Exit Now!||
+PULDNFI005|Yes I'm Sure!|Y|
 #
 # Menu "View"
 PULDNVI001|Bulletins|B|

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.10 2002/04/04 07:33:47 we7u Exp $
+# $Id: language-English.sys,v 1.11 2002/04/05 19:14:57 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -27,7 +27,7 @@ PULDNFI001|Configure|C|
 PULDNFI002|Open Log File|O|
 PULDNFI003|Test|T|
 PULDNFI004|Exit|x|
-PULDNFI005|Exit Now!|x|
+PULDNFI005|Yes I'm Sure!|Y|
 PULDNFI007|Change Debug Level|D|
 PULDNFI010|Enable TNC Logging||
 PULDNFI011|Enable Net Logging||
