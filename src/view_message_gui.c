@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.21 2004/08/20 04:06:31 we7u Exp $
+ * $Id: view_message_gui.c,v 1.22 2004/08/21 06:35:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -174,19 +174,35 @@ void all_messages(char from, char *call_sign, char *from_call, char *message) {
 
         if (strncmp(call_sign, "java",4) == 0) {
             xastir_snprintf(call_sign,
-                MAX_CALLSIGN,
+                MAX_CALLSIGN+1,
                 "Broadcast");
-            xastir_snprintf(temp, my_size, "%s %s\n%s\n%s\n", from_call, call_sign,
-                    data1, data2);
+            xastir_snprintf(temp,
+                my_size,
+                "%s %s\n%s\n%s\n",
+                from_call,
+                call_sign,
+                data1,
+                data2);
         } else if (strncmp(call_sign, "USER", 4) == 0) {
             xastir_snprintf(call_sign,
-                MAX_CALLSIGN,
+                MAX_CALLSIGN+1,
                 "Broadcast");
-            xastir_snprintf(temp, my_size, "%s %s\n%s\n%s\n", from_call, call_sign,
-                    data1, data2);
+            xastir_snprintf(temp,
+                my_size,
+                "%s %s\n%s\n%s\n",
+                from_call,
+                call_sign,
+                data1,
+                data2);
         } else
-            xastir_snprintf(temp, my_size, "%s to %s via:%c\n%s\n%s\n", from_call,
-                    call_sign, from, data1, data2);
+            xastir_snprintf(temp,
+                my_size,
+                "%s to %s via:%c\n%s\n%s\n",
+                from_call,
+                call_sign,
+                from,
+                data1,
+                data2);
 
         if ((All_messages_dialog != NULL)) {
 

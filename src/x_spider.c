@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.23 2004/08/20 04:06:31 we7u Exp $
+ * $Id: x_spider.c,v 1.24 2004/08/21 06:35:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -574,7 +574,10 @@ int pipe_check(char *client_address) {
                     //    "x_spider: Authenticated user %s\n",
                     //    callsign);
                     p->authenticated = 1;
-                    xastir_snprintf(p->callsign, 20, "%s", callsign);
+                    xastir_snprintf(p->callsign,
+                        sizeof(p->callsign),
+                        "%s",
+                        callsign);
                     p->callsign[19] = '\0';
                 }
                 else {
