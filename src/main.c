@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.214 2003/02/03 20:56:36 we7u Exp $
+ * $Id: main.c,v 1.215 2003/02/03 21:12:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12720,7 +12720,7 @@ void Configure_defaults( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientDat
                 XmNorientation, XmHORIZONTAL,
                 XmNborderWidth, 1,
                 XmNminimum, 5,          // 0.5 = Thirty seconds
-                XmNmaximum, 45*10,      // 45 minutes
+                XmNmaximum, 60*10,      // 60 minutes
                 XmNdecimalPoints, 1,    // Move decimal point over one
                 XmNshowValue, TRUE,
                 XmNvalue, (int)((POSIT_rate * 10) / 60),  // Minutes * 10
