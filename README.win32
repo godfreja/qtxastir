@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.54 2003/07/14 20:24:42 we7u Exp $
+$Id: README.win32,v 1.55 2003/07/14 21:26:05 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -176,8 +176,13 @@ things going.
 This will create a Black/Green Cygwin icon on the desktop and a menu
 entry so that you can start Cygwin through the menu system as well.
 
-[ ] Step 1f) Click "Finish".  Cygwin is now installed.  The
-Black/Green Cygwin icon will start up a BASH window, without
+[ ] Step 1f) Click "Finish".  Cygwin is now installed.  One more
+popup informs you Cygwin has been installed.  Sometimes this last
+dialog gets hidden behind other windows, and it does seem to need OK
+clicked to complete the installation.  Click the OK button on that
+last dialog to _really_ complete the installation.
+
+The Black/Green Cygwin icon will start up a BASH window, without
 starting up Xwindows.  Think of it as being similar to a DOS window,
 but with a lot more power.  It understands Unix commands though, not
 DOS commands.
