@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.89 2005/01/09 23:10:52 tvrusso Exp $
+ * $Id: map_shp.c,v 1.90 2005/01/10 00:09:49 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1452,6 +1452,10 @@ void draw_shapefile_map (Widget w,
             sType = "Point";
             break;
 
+        case SHPT_POINTZ:
+            sType = "3D Point";
+            break;
+
         case SHPT_ARC:
             sType = "Polyline";
             break;
@@ -1462,6 +1466,10 @@ void draw_shapefile_map (Widget w,
 
         case SHPT_POLYGON:
             sType = "Polygon";
+            break;
+
+        case SHPT_POLYGONZ:
+            sType = "3D Polygon";
             break;
 
         case SHPT_MULTIPOINT:
@@ -1856,6 +1864,7 @@ void draw_shapefile_map (Widget w,
 
 
                 case SHPT_POINT:
+                case SHPT_POINTZ:
                     // We hit this case once for each point shape in
                     // the file, iff that shape is within our
                     // viewport.
@@ -2852,6 +2861,7 @@ void draw_shapefile_map (Widget w,
 
 
                 case SHPT_POLYGON:
+                case SHPT_POLYGONZ:
 
                     if (debug_level & 16)
                         fprintf(stderr,"Found Polygons\n");
@@ -3846,6 +3856,7 @@ if (on_screen) {
                     break;
 
                 case SHPT_MULTIPOINT:
+                case SHPT_MULTIPOINTZ:
                         // Not implemented.
                         fprintf(stderr,"Shapefile Multi-Point format files aren't supported!\n");
                     break;
