@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.427 2005/01/12 01:30:03 we7u Exp $
+ * $Id: db.c,v 1.428 2005/01/18 17:06:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2307,11 +2307,6 @@ void display_station(Widget w, DataRow *p_station, int single) {
 
     if (!ok_to_draw_station(p_station))
         return;
-
-    // Update the count if we're displaying all selected stations
-    // (not just one)
-    if (!single)
-        currently_selected_stations++;
 
     // Set up call string for display
     if (Display_.callsign) {
