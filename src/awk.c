@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.8 2003/08/29 16:50:13 n2ygk Exp $
+ * $Id: awk.c,v 1.9 2003/08/30 20:41:03 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -43,6 +43,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <sys/types.h>
 #include "awk.h"
 
 #define min(a,b) ((a)<(b)?(a):(b))
