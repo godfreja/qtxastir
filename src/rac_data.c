@@ -1,5 +1,5 @@
 /*
- * $Id: rac_data.c,v 1.9 2004/08/19 06:38:21 we7u Exp $
+ * $Id: rac_data.c,v 1.10 2004/09/17 19:56:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -349,7 +349,7 @@ int search_rac_data(char *callsign, rac_record *data) {
     (void)fclose(fdb);
 
     if (!found) {
-        popup_message("Callsign Search", "Callsign Not Found!");
+        popup_message_always("Callsign Search", "Callsign Not Found!");
     }
 
     return(found);

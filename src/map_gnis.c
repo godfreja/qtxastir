@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.11 2004/09/16 14:00:40 tvrusso Exp $
+ * $Id: map_gnis.c,v 1.12 2004/09/17 19:56:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1169,7 +1169,7 @@ int locate_place( Widget w, char *name_in, char *state_in, char *county_in,
                         if (debug_level & 16)
                             fprintf(stderr,"Match: %s,%s,%s,%s\n",name,state,county,type);
 
-                        popup_message( langcode("POPEM00029"), name );
+                        popup_message_always( langcode("POPEM00029"), name );
 
                         lat_dd[0] = latitude[0];
                         lat_dd[1] = latitude[1];
@@ -1222,7 +1222,7 @@ int locate_place( Widget w, char *name_in, char *state_in, char *county_in,
             }
         }
     } else {
-        popup_message( langcode("POPEM00028"), filename_in );
+        popup_message_always( langcode("POPEM00028"), filename_in );
     }
 
     return(0);  // We didn't find a match
