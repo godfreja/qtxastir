@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.60 2004/05/10 20:51:37 we7u Exp $
+ * $Id: main.h,v 1.61 2004/06/21 21:10:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -148,6 +148,7 @@ typedef struct _selections {
     int direct;
     int via_digi;
     int net;
+    int tactical;
     int old_data;
 
     int stations;

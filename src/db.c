@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.325 2004/06/21 18:03:55 we7u Exp $
+ * $Id: db.c,v 1.326 2004/06/21 21:10:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1855,6 +1855,11 @@ int is_altnet(DataRow *p_station) {
 int ok_to_draw_station(DataRow *p_station) {
     // Check overall flag
     if (Select_.none)
+        return 0;
+
+    // Check tactical flag
+    if (Select_.tactical
+            && p_station->tactical_call_sign[0] == '\0')
         return 0;
 
     // Check for my station and my objects/items
