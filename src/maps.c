@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.273 2003/05/17 00:03:13 we7u Exp $
+ * $Id: maps.c,v 1.274 2003/05/17 00:07:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2684,7 +2684,7 @@ void draw_shapefile_map (Widget w,
                                 // type of file and the lanes are
                                 // really out of bounds:
                                 if (lanes < 1 || lanes > 10) {
-                                    fprintf(stderr,"lanes = %d\n",lanes);
+                                    //fprintf(stderr,"lanes = %d\n",lanes);
                                     lanes = 1;
                                 }
                             }
