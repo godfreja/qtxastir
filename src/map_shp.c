@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.46 2004/03/19 20:34:52 we7u Exp $
+ * $Id: map_shp.c,v 1.47 2004/03/19 20:37:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1387,8 +1387,13 @@ void draw_shapefile_map (Widget w,
             //
             //exit(1);
         }
+        else {
+            // We successfully loaded the bitmap, so set the stipple
+            // properly to use it.  Skip this part if we were
+            // unsuccessful at loading the bitmap.
+            (void)XSetStipple(XtDisplay(w), gc_tint, pixmap_wx_stipple);
+        }
 
-        (void)XSetStipple(XtDisplay(w), gc_tint, pixmap_wx_stipple);
     } /* ...end if (weather_alert_flag) */
     else { /* !weather_alert_flag */
 // Are these actually used anymore by the code?  Colors get set later
