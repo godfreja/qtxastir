@@ -6,7 +6,7 @@
 # Released to the public domain.
 #
 #
-# $Id: coord-convert.pl,v 1.3 2002/08/13 22:34:00 we7u Exp $
+# $Id: coord-convert.pl,v 1.4 2002/08/13 23:51:21 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
@@ -66,6 +66,11 @@ while (1) {
         $zone =~ s/^(\d\d[a-zA-Z])\s+\w+\s+\w+\s*$/$1/;
         $easting =~ s/^\d\d[a-zA-Z]\s+(\w+)\s+\w+\s*$/$1/;
         $northing =~ s/^\d\d[a-zA-Z]\s+\w+\s+(\w+)\s*$/$1/;
+
+        if ($easting > 999999) {
+            printf("Easting value is too high!\n");
+            next;
+        }
 
         $position->zone($zone);
         $position->easting($easting);
