@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.179 2002/11/26 01:10:18 we7u Exp $
+ * $Id: db.c,v 1.180 2002/11/26 07:05:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -939,7 +939,7 @@ time_t msg_data_add(char *call_sign, char *from_call, char *data,
         //printf("Position known: %s\n",from_call);
     }
     else {
-//printf("Position not known: %s\n",from_call);
+        //printf("Position not known: %s\n",from_call);
     }
 
     substr(m_fill.call_sign,call_sign,MAX_CALLSIGN);
