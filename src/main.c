@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.152 2002/10/21 04:30:19 francais1 Exp $
+ * $Id: main.c,v 1.153 2002/10/23 20:28:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10474,6 +10474,36 @@ void Test(Widget w, XtPointer clientData, XtPointer callData) {
     mdisplay_file(0);
     //mem_display();
     alert_print_list();
+
+    draw_wind_barb(50000000l,   // long x_long,
+        32000000l,              // long y_lat,
+        "169",                  // char *speed,
+        "005",                  // char *course,
+        sec_now(),              // time_t sec_heard,
+        pixmap_final);          // Pixmap where);
+
+    draw_wind_barb(60000000l,   // long x_long,
+        32000000l,              // long y_lat,
+        "009",                  // char *speed,
+        "123",                  // char *course,
+        sec_now(),              // time_t sec_heard,
+        pixmap_final);          // Pixmap where);
+
+    draw_wind_barb(70000000l,   // long x_long,
+        32000000l,              // long y_lat,
+        "109",                  // char *speed,
+        "185",                  // char *course,
+        sec_now(),              // time_t sec_heard,
+        pixmap_final);          // Pixmap where);
+
+    draw_wind_barb(80000000l,   // long x_long,
+        32000000l,              // long y_lat,
+        "079",                  // char *speed,
+        "275",                  // char *course,
+        sec_now(),              // time_t sec_heard,
+        pixmap_final);          // Pixmap where);
+
+    (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
 }
 
 

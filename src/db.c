@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.161 2002/10/21 05:53:41 francais1 Exp $
+ * $Id: db.c,v 1.162 2002/10/23 20:28:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2296,6 +2296,17 @@ void display_station(Widget w, DataRow *p_station, int single) {
         }
 
 
+        // Draw wind barbs if we have wind
+        if (weather != NULL && atoi(weather->wx_speed) >= 5) {
+            draw_wind_barb(p_station->coord_lon,
+                p_station->coord_lat,
+                weather->wx_speed,
+                weather->wx_course,
+                temp_sec_heard,
+                pixmap_final);
+        }
+
+
         // Draw other points associated with the station, if any.
         // KG4NBB
 	
@@ -2439,6 +2450,17 @@ void display_station(Widget w, DataRow *p_station, int single) {
                     colors[0x0a],   // Green
                     pixmap_final);
             }
+        }
+
+
+        // Draw wind barbs if we have wind
+        if (weather != NULL && atoi(weather->wx_speed) >= 5) {
+            draw_wind_barb(p_station->coord_lon,
+                p_station->coord_lat,
+                weather->wx_speed,
+                weather->wx_course,
+                temp_sec_heard,
+                pixmap_final);
         }
 
 
