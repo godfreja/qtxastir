@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.81 2003/03/20 22:29:59 jtwilley Exp $
+ * $Id: xa_config.c,v 1.82 2003/04/05 00:55:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -954,7 +954,7 @@ void load_data_or_default(void) {
         sprintf (name_temp, "DEVICE%0d_", i);
         strcpy (name, name_temp);
         strcat (name, "TYPE");
-        if (!get_int (name, &devices[i].device_type,0,10,DEVICE_NONE)) {
+        if (!get_int (name, &devices[i].device_type,0,MAX_IFACE_DEVICE_TYPES,DEVICE_NONE)) {
             devices[i].device_type = DEVICE_NONE;
         }
         strcpy (name, name_temp);
