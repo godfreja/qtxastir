@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.309 2003/07/18 21:05:02 we7u Exp $
+ * $Id: maps.c,v 1.310 2003/07/23 19:17:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -137,6 +137,11 @@ struct FtpFile {
 #if !(defined(HAVE_LIBXPM) || defined(HAVE_LIBXPM_IN_XM) || defined(HAVE_IMAGEMAGICK))
   #define NO_GRAPHICS 1
 #endif  // !(HAVE_LIBXPM || HAVE_LIBXPM_IN_XM || HAVE_IMAGEMAGICK)
+
+#if !(defined(HAVE_LIBXPM) || defined(HAVE_LIBXPM_IN_XM))
+  #define NO_XPM 1
+#endif  // !(HAVE_LIBXPM || HAVE_LIBXPM_IN_XM)
+
 
 
 // Print options
@@ -826,7 +831,7 @@ end_critical_section(&print_properties_dialog_lock, "maps.c:Print_properties_des
 //
 static void Print_window( Widget widget, XtPointer clientData, XtPointer callData ) {
 
-#ifdef NO_GRAPHICS
+#ifdef NO_XPM
     fprintf(stderr,"XPM or ImageMagick support not compiled into Xastir!\n");
 #else   // NO_GRAPHICS
 
@@ -835,7 +840,7 @@ static void Print_window( Widget widget, XtPointer clientData, XtPointer callDat
 #else   // HAVE_GV
 
 
-   char xpm_filename[MAX_FILENAME];
+    char xpm_filename[MAX_FILENAME];
     char ps_filename[MAX_FILENAME];
     char mono[50] = "";
     char invert[50] = "";
@@ -869,7 +874,8 @@ static void Print_window( Widget widget, XtPointer clientData, XtPointer callDat
     xastir_snprintf(temp, sizeof(temp), langcode("PRINT0012") );
     statusline(temp,1);       // Dumping image to file...
 
-    if ( !XpmWriteFileFromPixmap(XtDisplay(appshell),  // Display *display
+
+    if ( !XpmWriteFileFromPixmap(XtDisplay(appshell),   // Display *display
             xpm_filename,                               // char *filename
             pixmap_final,                               // Pixmap pixmap
             (Pixmap)NULL,                               // Pixmap shapemask
@@ -1049,7 +1055,7 @@ static void Print_window( Widget widget, XtPointer clientData, XtPointer callDat
     //popup_message( langcode("PRINT0015"), langcode("PRINT0014") );
 
 #endif  // HAVE_GV
-#endif // NO_GRAPHICS
+#endif // NO_XPM
 
 }
 
@@ -1601,7 +1607,7 @@ end_critical_section(&print_properties_dialog_lock, "maps.c:Print_properties" );
 //
 static void* snapshot_thread(void *arg) {
 
-#ifndef NO_GRAPHICS
+#ifndef NO_XPM
     char xpm_filename[MAX_FILENAME];
     char png_filename[MAX_FILENAME];
 #ifdef HAVE_CONVERT
@@ -1680,7 +1686,7 @@ static void* snapshot_thread(void *arg) {
 #endif  // HAVE_CONVERT
     }
 
-#endif // NO_GRAPHICS
+#endif // NO_XPM
   
     // Signify that we're all done and that another snapshot can
     // occur.

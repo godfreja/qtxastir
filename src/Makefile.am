@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.6 2003/07/18 02:29:37 n2ygk Exp $
+# $Id: Makefile.am,v 1.7 2003/07/23 19:17:08 we7u Exp $
 
 bin_PROGRAMS = xastir
 
@@ -23,14 +23,21 @@ xastir_SOURCES = \
     location.c \
     location_gui.c \
     main.c main.h \
-    maps.c maps.h map_shp.c map_dos.c map_pdb.c map_tif.c map_geo.c \
-    map_tiger.c map_gnis.c \
+    maps.c maps.h \
+    map_dos.c \
+    map_geo.c \
+    map_gnis.c \
+    map_pdb.c \
+    map_shp.c \
+    map_tif.c \
+    map_tiger.c \
     messages.c messages.h \
     messages_gui.c \
     popup.h \
     popup_gui.c \
     rac_data.c rac_data.h \
     rotated.c rotated.h \
+    snprintf.c snprintf.h \
     sound.c symbols.h \
     track_gui.c track_gui.h \
     util.c util.h \
@@ -38,8 +45,7 @@ xastir_SOURCES = \
     wx.c wx.h \
     wx_gui.c \
     xa_config.c xa_config.h \
-    xastir.h \
-    snprintf.c snprintf.h
+    xastir.h
 
 xastir_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
