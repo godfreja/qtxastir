@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.295 2004/02/10 22:18:06 we7u Exp $
+ * $Id: db.c,v 1.296 2004/02/10 22:18:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8022,7 +8022,7 @@ int extract_time(DataRow *p_station, char *data, int type) {
         if (len > 6) {
             // Status messages only with optional zulu format
             // DK7IN: APRS ref says one of 'z' '/' 'h', but I found 'c' at HB9TJM-8   ???
-            if (toupper(data[6])=='Z' || data[6]=='/' || toupper(data[6])=='h')
+            if (toupper(data[6])=='Z' || data[6]=='/' || toupper(data[6])=='H')
                 ok = 1;
             for (i=0;ok && i<6;i++)
                 if (!isdigit((int)data[i]))
