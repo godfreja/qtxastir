@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.447 2005/03/17 20:27:38 we7u Exp $
+ * $Id: db.c,v 1.448 2005/03/17 21:07:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15584,18 +15584,6 @@ void track_station(Widget w, char *call_tracked, DataRow *p_station) {
 //    constant in this case so that dead-reckoning can continue to
 //    move the object consistently, plus we won't compound errors as
 //    we go.
-//
-// *) Looks like direction is slightly off from dead-reckoning local
-//    display.  Due to screen angle vs. lat/lon angle differences?
-//    Update to the new code (this routine) for the screen stuff.
-//
-// *) At 225 degrees, object went at 180 degrees for a bit.  At 315
-//    degrees, object changes direction slightly with each segment.
-//    Need higher accuracy for the angle?  Problem caused by APRS
-//    vs. Compressed position accuracy/rounding plus incremental
-//    errors building up?  Base-91 compression gives more accurate
-//    position but less accurate angle.  Normal APRS gives less
-//    accurate position but more accurate angle.
 //
 // *) A server Xastir sees empty strings on it's server port when
 //    these objects are transmitted to it.  Investigate.  It
