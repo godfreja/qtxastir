@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.111 2002/07/08 22:43:19 we7u Exp $
+ * $Id: maps.c,v 1.112 2002/07/09 01:02:29 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4129,6 +4129,8 @@ void draw_gnis_map (Widget w, char *dir, char *filenm)
                                 ok = 0;
                         }
                         else if (strcasecmp(type,"park") == 0) {
+                            symbol_table = '\\';
+                            symbol_id = ';';
                             if (scale_y > 50)
                                 ok = 0;
                         }
