@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.7 2003/05/22 19:22:39 we7u Exp $
+$Id: README.MAPS,v 1.8 2003/05/22 19:33:57 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -18,6 +18,16 @@ Getting Maps and other Data Files for Xastir:
       You can repeat these commands at anytime, to fix up errant map
       permissions that are created by downloading/installing new
       maps.
+
+      Currently the maps/GPS directory needs to be writable by normal users
+      in order to support downloading GPS data using GPSMan.  This will be
+      changed at some future date, moving this directory into the user's
+      home directory instead.
+
+      cd /usr/local/xastir/maps
+      chmod 777 GPS
+      find GPS -type d -exec chmod 777 {} \;
+      find GPS -type f -exec chmod 777 {} \;
 
 
     Download some maps:
