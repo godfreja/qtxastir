@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.126 2004/10/29 15:53:00 we7u Exp $
+ * $Id: map_gdal.c,v 1.127 2004/11/04 18:53:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -39,7 +39,7 @@
 #include "snprintf.h"
 
 //#include <stdio.h>
-//#include <stdlib.h>
+#include <stdlib.h>
 //#include <unistd.h>
 //#include <sys/stat.h>
 //#include <ctype.h>
@@ -4137,8 +4137,9 @@ fprintf(stderr,"Combine Hashes, Create/Draw Polygon ");
 
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_advance(iterator));
+
+            free(iterator);
         }
-        free(iterator);
 
 
 stop_timer(); print_timer_results(); start_timer();
@@ -4174,8 +4175,9 @@ fprintf(stderr,"               Free'ing hash memory ");
 
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_remove(iterator));
+
+            free(iterator);
         }
-        free(iterator);
         // polyid_hash should be empty at this point.
 
 
@@ -4197,8 +4199,9 @@ fprintf(stderr,"               Free'ing hash memory ");
 
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_remove(iterator));
+
+            free(iterator);
         }
-        free(iterator);
         // tlid_hash should be empty at this point.
 
 
@@ -4213,8 +4216,9 @@ fprintf(stderr,"               Free'ing hash memory ");
             do {
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_remove(iterator));
+
+            free(iterator);
         }
-        free(iterator);
         // landmark_hash should be empty at this point.
 
 
