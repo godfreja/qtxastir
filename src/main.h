@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.41 2003/02/20 09:45:17 we7u Exp $
+ * $Id: main.h,v 1.42 2003/02/21 04:31:46 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -293,6 +293,7 @@ extern Widget Display_data_dialog;
 extern Widget Display_data_text;
 extern Widget text3;
 extern Widget text4;
+extern Widget log_indicator;
 extern void display_zoom_status(void);
 extern void statusline(char *status_text,int update);
 extern int SayTextInit();
