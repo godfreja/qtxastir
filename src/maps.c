@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.284 2003/06/02 23:23:21 jtwilley Exp $
+ * $Id: maps.c,v 1.285 2003/06/02 23:58:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5171,6 +5171,10 @@ end_critical_section(&print_properties_dialog_lock, "maps.c:Print_properties" );
 static void* snapshot_thread(void *arg) {
 
 #ifndef NO_GRAPHICS
+
+// Temporary
+#ifdef HAVE_IMAGEMAGICK
+
     char png_filename[MAX_FILENAME];
     Image *snapshot_image;
     ImageInfo *snapshot_info;
@@ -5213,6 +5217,10 @@ static void* snapshot_thread(void *arg) {
     }
     DestroyImageInfo(snapshot_info);
     DestroyExceptionInfo(&exception);
+
+// Temporary
+#endif  // HAVE_IMAGEMAGICK
+
 #endif // NO_GRAPHICS
   
     // Signify that we're all done and that another snapshot can
