@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.163 2004/06/14 20:40:41 we7u Exp $
+ * $Id: interface.c,v 1.164 2004/06/15 06:23:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2287,6 +2287,15 @@ char *process_OpenTrac_packet( unsigned char *data,
         // out of the OpenTrac packet, as there may be several entity
         // ID's or other types of info that can't fit into one APRS
         // packet.
+
+//WE7U
+// Change this so that it constructs a Base-91 compressed packet out
+// of the OpenTrac packet, to represent more of the position
+// resolution that we can obtain with OpenTrac.  Later we'll change
+// this so that we don't create an APRS packet out of the OpenTrac
+// packet at all, but instead decode and use the OpenTrac
+// information directly.
+
         //
         // Note that if we got an Origination Station element, the path
         // here is not representative of the entire path the packet
