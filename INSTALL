@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.49 2004/09/14 02:50:28 we7u Exp $
+$Id: INSTALL,v 1.50 2004/09/17 19:22:31 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -197,6 +197,7 @@ can add any of the following flags to configure:
     --without-gdal
     --without-pcre
     --without-dbfawk
+    --without-errorpopups
 
 For example, "./configure --without-ax25" will disable the AX.25
 networking code in Xastir.

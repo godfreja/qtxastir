@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.16 2004/07/14 21:07:36 we7u Exp $
+# $Id: acinclude.m4,v 1.17 2004/09/17 19:22:46 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -189,6 +189,10 @@ if test "$use_gpsman" != "no"; then
    AC_DEFINE_UNQUOTED(HAVE_GPSMAN, 1, [Define if you have gpsman])
    AC_DEFINE_UNQUOTED(GPSMAN_PATH, "${gpsman}", [Path to gpsman])
  fi
+fi
+
+if test "$use_err_popups" != "no"; then
+ AC_DEFINE_UNQUOTED(HAVE_ERROR_POPUPS, 1, [Define if you have error popups enabled])
 fi
 
 ])
