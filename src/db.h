@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.54 2004/07/19 21:17:19 we7u Exp $
+ * $Id: db.h,v 1.55 2004/07/20 02:42:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -301,8 +301,9 @@ typedef struct _TrackRow{
 // allocated list of text.  Every different comment field will be
 // stored in a separate line.
 typedef struct _CommentRow{
-    char   *text_ptr;               // Ptr to the comment text
-    struct _CommentRow *next;       // Ptr to next record or NULL
+    char   *text_ptr;           // Ptr to the comment text
+    time_t sec_heard;           // Latest timestamp for this comment/status
+    struct _CommentRow *next;   // Ptr to next record or NULL
 } CommentRow;
 
 
