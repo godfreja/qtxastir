@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.127 2004/11/04 18:53:23 we7u Exp $
+ * $Id: map_gdal.c,v 1.128 2004/11/17 16:11:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -3018,7 +3018,8 @@ clear_dangerous();
                             file_MinY,  // Bottom
                             file_MaxY,  // Top
                             file_MinX,  // Left
-                            file_MaxX); // Right
+                            file_MaxX,  // Right
+                            1000);      // Default Map Layer
 #endif  // WE7U
                     }
                 }
@@ -3101,10 +3102,11 @@ clear_dangerous();
 // with datum translation and such.
 #ifndef WE7U
                         index_update_ll(filenm, // Filename only
-                            y[0],  // Bottom
-                            y[1],  // Top
-                            x[0],  // Left
-                            x[1]); // Right
+                            y[0],   // Bottom
+                            y[1],   // Top
+                            x[0],   // Left
+                            x[1],   // Right
+                            1000);  // Default Map Layer
 #endif  // WE7U
                     }
                 }
@@ -3129,7 +3131,8 @@ clear_dangerous();
 //             -90.0,  // Bottom
 //              90.0,  // Top
 //            -180.0,  // Left
-//             180.0); // Right
+//             180.0,  // Right
+//              1000); // Default Map Layer
 
         if (wgs84_spatialH != NULL) {
             OSRDestroySpatialReference(wgs84_spatialH);

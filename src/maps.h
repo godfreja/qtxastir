@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.46 2004/03/04 23:12:34 we7u Exp $
+ * $Id: maps.h,v 1.47 2004/11/17 16:11:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -126,8 +126,8 @@ void load_auto_maps(Widget w, char *dir);
 void load_maps(Widget w);
 void fill_in_new_alert_entries(Widget w, char *dir);
 void load_alert_maps(Widget w, char *dir);
-void  index_update_xastir(char *filename, unsigned long bottom, unsigned long top, unsigned long left, unsigned long right);
-void  index_update_ll(char *filename, double bottom, double top, double left, double right);
+void  index_update_xastir(char *filename, unsigned long bottom, unsigned long top, unsigned long left, unsigned long right, int default_map_layer);
+void  index_update_ll(char *filename, double bottom, double top, double left, double right, int default_map_layer);
 void draw_grid (Widget w);
 void Snapshot(void);
 extern int index_retrieve(char *filename, unsigned long *bottom,

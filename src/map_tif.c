@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.14 2004/10/11 19:15:26 tvrusso Exp $
+ * $Id: map_tif.c,v 1.15 2004/11/17 16:11:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1064,7 +1064,8 @@ void draw_geotiff_image_map (Widget w,
             south_bounding_wgs84,   // Bottom
             north_bounding_wgs84,   // Top
             west_bounding_wgs84,    // Left
-            east_bounding_wgs84);   // Right
+            east_bounding_wgs84,    // Right
+            0);                     // Default Map Level
 
         //Free any memory used and return
         /* We're finished with the geoTIFF key parser, so get rid of it */

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_pdb.c,v 1.8 2004/09/18 20:25:47 we7u Exp $
+ * $Id: map_pdb.c,v 1.9 2004/11/17 16:11:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -275,7 +275,8 @@ void draw_palm_image_map(Widget w,
                 map_bottom, // Bottom
                 map_top,    // Top
                 map_left,   // Left
-                map_right); // Right
+                map_right,  // Right
+                1000);      // Default Map Level
 
             fclose(fn);
 

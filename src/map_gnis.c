@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.13 2004/09/18 20:25:47 we7u Exp $
+ * $Id: map_gnis.c,v 1.14 2004/11/17 16:11:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -842,10 +842,11 @@ Cell Name
 
             // We're indexing only.  Save the extents in the index.
             index_update_xastir(filenm, // Filename only
-                bottom_extent, // Bottom
-                top_extent,    // Top
-                left_extent,   // Left
-                right_extent); // Right
+                bottom_extent,  // Bottom
+                top_extent,     // Top
+                left_extent,    // Left
+                right_extent,   // Right
+                99999);         // Default Map Level
         }
     }
     else {

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.77 2004/10/03 04:58:02 we7u Exp $
+ * $Id: map_shp.c,v 1.78 2004/11/17 16:11:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1346,7 +1346,8 @@ void draw_shapefile_map (Widget w,
             adfBndsMin[1],  // Bottom
             adfBndsMax[1],  // Top
             adfBndsMin[0],  // Left
-            adfBndsMax[0]); // Right
+            adfBndsMax[0],  // Right
+            1000);          // Default Map Level
 
         DBFClose( hDBF );   // Clean up open file descriptors
         SHPClose( hSHP );

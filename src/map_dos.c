@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.13 2004/09/18 20:25:47 we7u Exp $
+ * $Id: map_dos.c,v 1.14 2004/11/17 16:11:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -574,10 +574,11 @@ void draw_dos_map(Widget w,
       
       // We're indexing only.  Save the extents in the index.
       index_update_xastir(filenm, // Filename only
-                          bottom_boundary,        // Bottom
-                          top_boundary,           // Top
-                          left_boundary,          // Left
-                          right_boundary);        // Right
+                          bottom_boundary,  // Bottom
+                          top_boundary,     // Top
+                          left_boundary,    // Left
+                          right_boundary,   // Right
+                          1000);            // Default Map Level
       
       (void)fclose (f);
 
