@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.75 2003/01/30 19:45:14 kd6zwr Exp $
+# $Id: language-Spanish.sys,v 1.76 2003/01/30 21:34:08 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -495,7 +495,8 @@ WPUPCFI010|Dejar en blanco si nada||
 WPUPCFI011|Reconectar en fallo de la RED?||
 WPUPCFI012|Correr como un I-Gate?||
 WPUPCFI013|Disfundir mensajes vía TNC cuando un I-Gate?||
-WPUPCFI014|Bitácora de Transacciones del I-Gate?||
+WPUPCFI014|Bitácora de Transacciones del I-Gate?|||
+WPUPCFI015|Filter Parameters||
 #
 # Configurar Alarmas de Audio
 WPUPCFA001|Configurar Alarma de Audio||

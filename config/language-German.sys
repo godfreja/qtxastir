@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.72 2003/01/30 19:45:14 kd6zwr Exp $
+# $Id: language-German.sys,v 1.73 2003/01/30 21:34:07 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -500,7 +500,8 @@ WPUPCFI010|(Freilassen falls keines)||
 WPUPCFI011|Wiederverbinden bei NET Fehler?||
 WPUPCFI012|Als I-Gate verwenden?||
 WPUPCFI013|Nachrichten aus Internet via TNC aussenden wenn I-Gate?||
-WPUPCFI014|I-Gate Transaktionen protokollieren?||
+WPUPCFI014|I-Gate Transaktionen protokollieren?|||
+WPUPCFI015|Filter Parameters||
 #
 # PopUp "Einstellungen für Audio Alarm"
 WPUPCFA001|Einstellungen für Audio Alarm||

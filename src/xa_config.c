@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.70 2003/01/30 19:45:16 kd6zwr Exp $
+ * $Id: xa_config.c,v 1.71 2003/01/30 21:34:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -446,6 +446,10 @@ void save_data(void)  {
             strcpy (name, name_temp);
             strcat (name, "PASSWD");
             store_string (fout, name, devices[i].device_host_pswd);
+
+            strcpy (name, name_temp);
+            strcat (name, "FILTER_PARAMS");
+            store_string (fout, name, devices[i].device_host_filter_string);
 
             strcpy (name, name_temp);
             strcat (name, "UNPROTO1");
@@ -968,6 +972,11 @@ void load_data_or_default(void) {
         strcat (name, "PASSWD");
         if (!get_string (name, devices[i].device_host_pswd))
             strcpy (devices[i].device_host_pswd, "");
+
+        strcpy (name, name_temp);
+        strcat (name, "FILTER_PARAMS");
+        if (!get_string (name, devices[i].device_host_filter_string))
+            strcpy (devices[i].device_host_filter_string, "");
 
         strcpy (name, name_temp);
         strcat (name, "UNPROTO1");

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.73 2003/01/30 19:45:13 kd6zwr Exp $
+# $Id: language-French.sys,v 1.74 2003/01/30 21:34:06 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -494,7 +494,8 @@ WPUPCFI010|(Laisser vide si nul)||
 WPUPCFI011|Reconnexion sur erreur réseau?||
 WPUPCFI012|Fonction IGate?||
 WPUPCFI013|Diffusion de messages par le TNC lorsqu'en IGate?||
-WPUPCFI014|Archivage des transactions IGate?||
+WPUPCFI014|Archivage des transactions IGate?|||
+WPUPCFI015|Filter Parameters||
 #
 # PopUp "Configure Audio Alarms"
 WPUPCFA001|Configurer alarmes sonores||
