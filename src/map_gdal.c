@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.93 2004/10/15 14:22:53 we7u Exp $
+ * $Id: map_gdal.c,v 1.94 2004/10/15 14:44:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -652,6 +652,26 @@ void Draw_OGR_Labels( Widget w,
     char extra[100] = "";
     float angle = 0.0;  // Angle for the beginning of this polyline
     int my_color = color;
+
+
+    // Recursively call this routine if we have a lot of points, so
+    // that we draw labels at multiple points along the line.  The
+    // number of points skipped should probably be tied to the zoom
+    // level so that we get an appropriate number of labels at each
+    // scale.  The goal should probably be two or three labels max
+    // per object.
+    //
+    if (num_points > 15) {
+        int skip = 10 * scale_y;
+
+        Draw_OGR_Labels(w,
+            pixmap,
+            featureH,
+            geometryH,
+            &xpoints[skip],
+            num_points - skip,
+            color);
+    }
 
 
     if (num_points > 1) {
