@@ -1,5 +1,5 @@
 
-// $Id: io-mmap.c,v 1.1 2004/03/29 23:40:32 we7u Exp $
+// $Id: io-mmap.c,v 1.2 2004/03/29 23:57:59 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -14,6 +14,7 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 #include <sys/types.h>
+#include <string.h>
 
 struct io_file {
 	int fd;
