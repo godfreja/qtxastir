@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.147 2003/12/08 23:43:08 we7u Exp $
+ * $Id: interface.c,v 1.148 2003/12/15 17:19:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -694,7 +694,8 @@ void channel_data(int port, unsigned char *string, int length) {
     // the last message received.
     xastir_snprintf(incoming_data_copy,
         MAX_LINE_SIZE,
-        "%s",
+        "Port%d:%s",
+        port,
         string);
 
     max = 0;
