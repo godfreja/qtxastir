@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.10 2004/07/26 20:59:20 we7u Exp $
+ * $Id: x_spider.c,v 1.11 2004/07/26 21:02:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -551,11 +551,16 @@ int pipe_check(void) {
                 if (checkHash(callsign, passcode)) {
                     // Authenticate the pipe.  It is now allowed to send
                     // to the upstream server.
-fprintf(stderr,"x_spider: Authenticated user %s\n", callsign);
+                    //fprintf(stderr,
+                    //    "x_spider: Authenticated user %s\n",
+                    //    callsign);
                     p->authenticated = 1;
                 }
                 else {
-fprintf(stderr,"x_spider: Bad authentication, user %s\n", callsign);
+                    fprintf(stderr,
+                        "x_spider: Bad authentication, user %s, pass %d\n",
+                        callsign,
+                        passcode);
                 }
             }
 
