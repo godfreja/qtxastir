@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.120 2004/02/28 02:00:33 we7u Exp $
+# $Id: language-Dutch.sys,v 1.121 2004/02/29 20:31:02 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -372,6 +372,8 @@ WPUPCFTM06|GPS Status Controle Interval (sec)||
 WPUPCFTM07|Tijd Tot Wissen Station (dagen)||
 WPUPCFTM08|Timeout Berekening Geschatte Waarden (min)||
 WPUPCFTM09|Serial Inter-Char Delay (ms)||
+WPUPCFTM10|New Track Time (min)||
+WPUPCFTM11|New Track Interval (degrees)||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configureer Coordinaten Stelsel||

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.116 2004/02/28 02:00:34 we7u Exp $
+# $Id: language-English.sys,v 1.117 2004/02/29 20:31:02 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -362,6 +362,8 @@ WPUPCFTM06|GPS Check Interval (sec)||
 WPUPCFTM07|Station Delete Time (days)||
 WPUPCFTM08|Dead-Reckoning Timeout (min)||
 WPUPCFTM09|Serial Inter-Char Delay (ms)||
+WPUPCFTM10|New Track Time (min)||
+WPUPCFTM11|New Track Interval (degrees)||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.126 2004/02/28 02:00:34 we7u Exp $
+# $Id: language-Spanish.sys,v 1.127 2004/02/29 20:31:02 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -365,6 +365,8 @@ WPUPCFTM06|Chequeo Intérvalo del GPS (segundos)||
 WPUPCFTM07|Borrar Tiempo de la Estación (días)||
 WPUPCFTM08|Descanso Conteo-Muerto (minutos)||
 WPUPCFTM09|Serial Inter-Char Delay (ms)||
+WPUPCFTM10|New Track Time (min)||
+WPUPCFTM11|New Track Interval (degrees)||
 #
 # Configurar Sistema de Coordenada"
 WPUPCFC001|Configurar Sistema de Coordenada||

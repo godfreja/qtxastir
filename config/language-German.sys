@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.120 2004/02/28 02:00:34 we7u Exp $
+# $Id: language-German.sys,v 1.121 2004/02/29 20:31:02 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -368,6 +368,8 @@ WPUPCFTM06|GPS Abfrage alle [Sek]||
 WPUPCFTM07|Station löschen nach [Tage]||
 WPUPCFTM08|Timeout Pos-Voraussage [Min]||
 WPUPCFTM09|Abstand zw. seriellen Zeichen (ms)||
+WPUPCFTM10|New Track Time (min)||
+WPUPCFTM11|New Track Interval (degrees)||
 #
 # PopUp "Koordinatensystem"
 WPUPCFC001|Koordinatensystem||

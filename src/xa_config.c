@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.111 2004/02/28 02:00:35 we7u Exp $
+ * $Id: xa_config.c,v 1.112 2004/02/29 20:31:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -782,6 +782,9 @@ void save_data(void)  {
         store_int (fout, "ST_DIRECT_TIMEOUT", st_direct_timeout);
         store_int (fout, "DEAD_RECKONING_TIMEOUT", dead_reckoning_timeout);
         store_int (fout, "SERIAL_CHAR_PACING", serial_char_pacing);
+        store_int (fout, "TRAIL_SEGMENT_TIME", trail_segment_time);
+        store_int (fout, "TRAIL_SEGMENT_DISTANCE", trail_segment_distance);
+
 
         if (debug_level & 1)
             fprintf(stderr,"Save Data Stop\n");
@@ -1550,6 +1553,11 @@ void load_data_or_default(void) {
     if (!get_int ("SERIAL_CHAR_PACING", &serial_char_pacing,0,50,1))
         serial_char_pacing = 1; // 1ms default
 
+    if (!get_int ("TRAIL_SEGMENT_TIME", &trail_segment_time,0,12*60,45))
+        trail_segment_time = 45; // 45 minutes default, 12 hours max
+
+    if (!get_int ("TRAIL_SEGMENT_DISTANCE", &trail_segment_distance,0,45,1))
+        trail_segment_distance = 1; // 1 degrees default
 
 
     input_close();
