@@ -1,9 +1,10 @@
-# $Id: Makefile.am,v 1.5 2003/06/26 15:37:21 n2ygk Exp $
+# $Id: Makefile.am,v 1.6 2003/07/18 02:29:37 n2ygk Exp $
 
 bin_PROGRAMS = xastir
 
 xastir_SOURCES = \
     alert.c alert.h \
+    awk.c awk.h \
     bulletin_gui.c bulletin_gui.h \
     color.c color.h \
     datum.c datum.h \
