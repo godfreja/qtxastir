@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.8 2002/09/18 19:17:48 we7u Exp $
+ * $Id: maps.h,v 1.9 2002/10/03 18:25:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -63,6 +63,16 @@ typedef struct {
   unsigned char text_color;
   char label_text[30];
 } symbol_label;
+
+typedef struct _map_index_record{
+    char filename[400];
+    unsigned long bottom;
+    unsigned long top;
+    unsigned long left;
+    unsigned long right;
+    struct _map_index_record *next;
+} map_index_record;
+extern map_index_record *map_index_head;
 
 char *get_map_ext (char *filename);
 void load_auto_maps(Widget w, char *dir);
