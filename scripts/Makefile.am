@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.10 2004/01/26 16:14:21 we7u Exp $
+# $Id: Makefile.am,v 1.11 2004/05/10 16:39:39 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -11,12 +11,17 @@ pkglib_SCRIPTS = \
     inf2geo.pl \
     mapblast2geo.pl \
     mapfgd.pl \
+    ozi2geo.pl \
     permutations.pl \
+    split_gnis.bash \
+    split_gnis.pl \
+    test_coord.pl \
     track-get.pl \
     update_langfile.pl \
     waypoint-get.pl \
-    xastir-migrate.sh \
-    xastir-fixcfg.sh
+    xastir-fixcfg.sh \
+    xastir-migrate.sh
+
 
 EXTRA_DIST = $(pkglib_SCRIPTS)
 
