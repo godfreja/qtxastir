@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.426 2005/01/03 18:28:59 we7u Exp $
+ * $Id: maps.c,v 1.427 2005/01/03 19:30:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2118,9 +2118,9 @@ static void Print_window( Widget widget, XtPointer clientData, XtPointer callDat
     xastir_snprintf(temp, sizeof(temp), langcode("PRINT0012") );
     statusline(temp,1);       // Dumping image to file...
 
-
+    chdir(get_user_base_dir("tmp"));
     xpmretval=XpmWriteFileFromPixmap(XtDisplay(appshell),// Display *display
-            xpm_filename,                                // char *filename
+            "print.xpm",                                 // char *filename
             pixmap_final,                                // Pixmap pixmap
             (Pixmap)NULL,                                // Pixmap shapemask
             NULL );
@@ -3037,8 +3037,9 @@ void Snapshot(void) {
         fprintf(stderr,"Creating %s\n", xpm_filename );
 
     // Create an XPM file from pixmap_final.
+    chdir(get_user_base_dir("tmp"));
     xpmretval=XpmWriteFileFromPixmap(XtDisplay(appshell),   // Display *display
-            xpm_filename,                               // char *filename
+            "snapshot.xpm",                             // char *filename
             pixmap_final,                               // Pixmap pixmap
             (Pixmap)NULL,                               // Pixmap shapemask
             NULL );
