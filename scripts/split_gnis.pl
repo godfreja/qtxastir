@@ -1,4 +1,7 @@
 #!/usr/bin/perl -w
+#
+# $Id: split_gnis.pl,v 1.2 2004/03/19 17:52:44 we7u Exp $
+#
 # split_gnis.pl -- 2004 Mar 15 -- jmt@twilley.org
 
 # This script is designed to break large GNIS datapoint files
@@ -32,3 +35,4 @@ foreach $elem (keys %county) {
   }
   close(OUT);
 }
+
