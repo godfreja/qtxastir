@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.99 2004/09/17 19:22:46 we7u Exp $
+# $Id: configure.ac,v 1.100 2004/10/03 19:46:49 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -231,7 +231,7 @@ AC_ARG_WITH(libproj,[  --without-libproj       Disable libproj features.],use_pr
 if test "${use_proj}" = "yes"; then
   use_proj=no
   AC_CHECK_LIB(proj, pj_init, use_proj=yes LIBS="$LIBS -lproj"
-    AC_DEFINE(HAVE_LIBPROJ, , Define to 1 if you have the `libproj' library (-lproj). )
+    AC_DEFINE(HAVE_PROJ, , Define to 1 if you have the `libproj' library (-lproj). )
   )
 fi
 
