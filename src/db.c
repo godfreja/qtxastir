@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.95 2002/07/08 22:43:19 we7u Exp $
+ * $Id: db.c,v 1.96 2002/07/09 03:17:53 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9909,10 +9909,10 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
         if (debug_level & 1) {
             char filtered_data[MAX_LINE_SIZE+80];
             sprintf(filtered_data,
-                "Registering data %s %s %s %s %c %d %d\n",
+                "Registering data %s %s %s %s %c %d %d",
                 call, path, info, origin, from, port, third_party);
             makePrintable(filtered_data);
-            printf("c/p/i/o fr pt tp: %s", filtered_data);
+            printf("c/p/i/o fr pt tp: %s\n", filtered_data);
         }
         decode_info_field(call,path,info,origin,from,port,third_party);
     }
