@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.31 2004/12/17 04:36:46 we7u Exp $
+ * $Id: x_spider.c,v 1.32 2004/12/18 01:58:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -365,13 +365,13 @@ void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
                 //fprintf(stderr,"EAGAIN or EWOULDBLOCK\n");
             }
             else {  // Non-normal error.  Report it.
-                fprintf(stderr,"str_echo2: Readline error: %d\n",errno);
+                fprintf(stderr,"str_echo2: Readline error socket: %d\n",errno);
             }
         }
         else {  // We received some data.  Send it down the pipe.
 //            fprintf(stderr,"str_echo2: %s\n",line);
             if (writen(pipe_to_parent, line, n) != n) {
-                fprintf(stderr,"str_echo2: Writen error: %d\n",errno);
+                fprintf(stderr,"str_echo2: Writen error socket: %d\n",errno);
             }
         }
 
@@ -393,14 +393,14 @@ void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
                 //fprintf(stderr,"EAGAIN or EWOULDBLOCK\n");
             }
             else {  // Non-normal error.  Report it.
-                fprintf(stderr,"str_echo2: Readline error: %d\n",errno);
+                fprintf(stderr,"str_echo2: Readline error pipe: %d\n",errno);
             }
         }
         else {  // We received some data.  Send it down the socket.
 //            fprintf(stderr,"str_echo2: %s\n",line);
 
             if (writen(sockfd, line, n) != n) {
-                fprintf(stderr,"str_echo2: Writen error: %d\n",errno);
+                fprintf(stderr,"str_echo2: Writen error pipe: %d\n",errno);
             }
         }
 
