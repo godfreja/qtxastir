@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.157 2005/03/31 20:43:10 we7u Exp $
+ * $Id: util.c,v 1.158 2005/04/06 17:03:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4405,6 +4405,18 @@ int check_unproto_path ( char *data ) {
             if (ii != 0) {
                 // RELAY should not appear after the first item in a
                 // path!
+                bad_path = 1;
+                break;
+            }
+        }
+
+        // Check whether WIDE1-1 appears later in the path (the new
+        // "RELAY")
+        else if (!strncmp(ViaCalls[ii], "WIDE1-1", 7)) {
+            have_relay++;
+            if (ii != 0) {
+                // WIDE1-1 should not appear after the first item in
+                // a path!
                 bad_path = 1;
                 break;
             }
