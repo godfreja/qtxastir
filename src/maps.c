@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.209 2003/02/20 09:51:38 we7u Exp $
+ * $Id: maps.c,v 1.210 2003/02/20 19:32:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9671,8 +9671,9 @@ void draw_map (Widget w, char *dir, char *filenm, alert_entry * alert,
             map_type[4] = '\0';
             dos_labels = FALSE;
             points_per_degree = 300;
+
+            // DOS-type map header portion of the code.
             if (strtod (map_type, &ptr) > 0.01 && (*ptr == '\0' || *ptr == ' ' || *ptr == ',')) {
-                /* DOS-type map header portion of the code */
                 int j;
 
                 if (debug_level & 512)
@@ -9738,7 +9739,9 @@ void draw_map (Widget w, char *dir, char *filenm, alert_entry * alert,
                             j++;
                     }
                 }   // End of DOS-type map header portion
-            } else {    // Windows-type map header portion
+
+            } else {
+                // Windows-type map header portion
 
                 if (debug_level & 512)
                     fprintf(stderr,"Windows map\n");
@@ -9795,7 +9798,14 @@ void draw_map (Widget w, char *dir, char *filenm, alert_entry * alert,
                 (void)fread (&temp, 4, 1, f);
                 total_labels = (long)ntohl (temp);
                 (void)fread (map_reserved2, 140, 1, f);
+
             }   // End of Windows-type map header portion
+
+
+            // Done processing map header info.  The rest of this
+            // function performs the actual drawing of both DOS-type
+            // and Windows-type maps to the screen.
+
 
             if (debug_level & 16) {
                 fprintf(stderr,"Map Type %s, Version: %s, Filename %s\n", map_type,map_version, file_name);
