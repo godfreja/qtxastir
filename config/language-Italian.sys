@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.130 2004/07/01 21:16:09 we7u Exp $
+# $Id: language-Italian.sys,v 1.131 2004/07/02 00:20:32 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -50,6 +50,7 @@ PULDNVI007|Allarmi Meteo|A|
 PULDNVI011|Traffico Messaggi|T|
 PULDNVI013|Tempo trascorso dall'avvio|d|
 PULDNVI014|Uptime del programma||
+PULDNVI015|GPS Status||
 #
 # Menu' di Configurazione
 PULDNCF004|Dati Stazione|S|

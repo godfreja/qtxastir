@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.128 2004/07/01 21:16:09 we7u Exp $
+# $Id: language-French.sys,v 1.129 2004/07/02 00:20:32 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -50,6 +50,7 @@ PULDNVI007|Alertes météo|A|
 PULDNVI011|Trafic des messages|i|
 PULDNVI013|Durée de fonctionnement|f|
 PULDNVI014|Durée de fonctionnement du logiciel||
+PULDNVI015|GPS Status||
 #
 # Menu "Configure"
 PULDNCF004|Station|S|

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.133 2004/07/01 21:16:09 we7u Exp $
+# $Id: language-Dutch.sys,v 1.134 2004/07/02 00:20:19 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -59,6 +59,7 @@ PULDNVI007|Weer Waarschuwingen|W|
 PULDNVI011|Berichten Verkeer|V|
 PULDNVI013|Tijdsduur Aktief|U|
 PULDNVI014|Tijdsduur Programma Beschikbaar||
+PULDNVI015|GPS Status||
 #
 # Menu "Configure"
 PULDNCF001|Standaard|S|
