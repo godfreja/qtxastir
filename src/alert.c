@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.70 2004/06/07 18:11:52 we7u Exp $
+ * $Id: alert.c,v 1.71 2004/07/09 15:19:01 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1448,7 +1448,8 @@ void alert_build_list(Message *fill) {
                 }
                 // Skip past '-' character, if any, so that we can
                 // get to the next prefix
-                if (ptr[0] == '-') {
+                // RZG:Added the ptr check, so we don't read a byte off the end
+                if ( (ptr < (compressed_wx + strlen(compressed_wx))) && (ptr[0] == '-') ) {
                     ptr++;
                 }
             }
