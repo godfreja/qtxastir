@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.46 2002/09/18 22:48:04 we7u Exp $
+ * $Id: xa_config.c,v 1.47 2002/09/19 07:56:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -51,6 +51,7 @@
 #include "messages.h"
 #include "draw_symbols.h"
 #include "maps.h"
+#include "track_gui.h"
 
 #define CONFIG_FILE "config/xastir.cnf"
 #define CONFIG_FILE_BAK "config/xastir.bak"
@@ -621,6 +622,8 @@ void save_data(void)  {
             strcat (name, "W");
             store_int (fout, name, list_size_w[i]);
         }
+
+	store_int (fout, "TRACK_ME", track_me);
 
         if (debug_level & 1)
             printf ("Save Data Stop\n");
@@ -1265,6 +1268,10 @@ void load_data_or_default(void) {
             list_size_w[i] = -1;
 
     }
+
+    if (!get_int ("TRACK_ME", &track_me,0,1,0))
+        track_me = 0;	// No tracking
+
     input_close();
 }
 

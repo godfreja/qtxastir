@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.5 2002/08/05 20:48:43 we7u Exp $
+ * $Id: track_gui.c,v 1.6 2002/09/19 07:56:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -56,6 +56,7 @@ Widget posit_length_value;
 
 
 int track_station_on;           /* used for tracking stations */
+int track_me;
 int track_case;                 /* used for tracking stations */
 int track_match;                /* used for tracking stations */
 char tracking_station_call[30]; /* Tracking station callsign */
