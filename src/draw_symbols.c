@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.25 2002/12/08 04:57:01 we7u Exp $
+ * $Id: draw_symbols.c,v 1.26 2002/12/25 15:32:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1489,8 +1489,11 @@ void load_pixmap_symbol_file(char *filename) {
                 }
             }
         }
-    } else
+    } else {
         printf("Error opening symbol file %s\n",filen);
+        popup_message("Error opening symbol file","Error opening symbol file");
+    }
+
     if (f != NULL)
         (void)fclose(f);
 }
