@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.87 2003/04/15 22:14:41 we7u Exp $
+# $Id: language-French.sys,v 1.88 2003/04/25 22:29:10 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -207,8 +207,7 @@ PULDNTNT02|Propriétés|P|
 PULDNTNT03|Désactiver transmission: Tout||
 PULDNTNT05|Désactiver transmission: Ma position||
 PULDNTNT06|Désactiver transmission: Objets/Articles||
-PULDNTNC01|Transmettre maintenant!|T|
-PULDNTNT01|Transmit Now!|T|
+PULDNTNT01|Transmettre maintenant!|T|
 PULDNTNT07|Fetch GPS Track|F|
 PULDNTNT08|Fetch GPS Routes|R|
 PULDNTNT09|Fetch GPS Waypoints|W|
