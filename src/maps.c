@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.245 2003/04/23 06:08:14 we7u Exp $
+ * $Id: maps.c,v 1.246 2003/04/24 22:25:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1306,8 +1306,6 @@ void create_map_from_trail(char *call_sign) {
     else {  // Couldn't find the station of interest
     }
 }
-
-
 
 
 
