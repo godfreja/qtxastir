@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.24 2004/07/01 03:55:44 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.25 2004/07/01 16:26:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -127,10 +127,11 @@ void bulletin_message(char *call_sign, char *tag, char *packet_message, time_t s
     struct tm *tmp;
     time_t timehd;
     char time_str[20];
-    timehd=sec_heard;
-    tmp = localtime(&timehd);
     char *temp_ptr;
 
+
+    timehd=sec_heard;
+    tmp = localtime(&timehd);
 
     if ( (packet_message != NULL) && (strlen(packet_message) > MAX_MESSAGE_LENGTH) ) {
         if (debug_level & 1)
