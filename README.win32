@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.64 2003/09/02 17:50:11 we7u Exp $
+$Id: README.win32,v 1.65 2003/09/03 19:37:32 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -258,6 +258,7 @@ shown.  Hit <ENTER> when asked for a password after typing line
 four (the "login" command):
 
   cd ~
+  touch .cvspass
   mkdir src
   cd src
   cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/xastir login 
