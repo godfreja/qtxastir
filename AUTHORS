@@ -1,14 +1,16 @@
 
-$Id: AUTHORS,v 1.10 2004/01/26 16:09:40 we7u Exp $
+$Id: AUTHORS,v 1.11 2004/01/28 18:42:13 we7u Exp $
 
                         Developers and Contributors
      _________________________________________________________________
 
-   Here we attempt to list the majority of the Xastir developers and
-   contributors who have devoted time to making Xastir one of the best
-   APRS clients ever.
+   Here we attempt to list most of the Xastir developers and contributors
+   who have devoted large amounts of time to making Xastir one of the best
+   APRS clients ever.  Unfortunately we can't devote much time to keeping
+   this list current or adding new contributors.
 
-   Xastir was originally written by Frank Giannandrea, KC2GJS was KC0DGE.
+   Xastir was originally written by Frank Giannandrea, KC2GJS (was KC0DGE).
+
    APRS is trademarked by Bob Bruninga.
 
    Developers and Contributors (in alphabetical order):
@@ -41,8 +43,7 @@ $Id: AUTHORS,v 1.10 2004/01/26 16:09:40 we7u Exp $
 
    Thanks go to all the people who have made individual contributions to
    the Xastir project by sending bug-reports, patches, or who have
-   otherwise supported the project. Patch contributors are listed in the
-   UPDATES file.
+   otherwise supported the project.  There are too many to list.
 
    If you think that you are missing from this list contact the Xastir
    Development Team at <http://sourceforge.net/projects/xastir/> or at
