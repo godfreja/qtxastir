@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.5 2003/07/24 13:33:11 n2ygk Exp $
+ * $Id: awk.c,v 1.6 2003/08/05 14:34:25 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27,8 +27,6 @@
  * canonicalizing DBF attributes for shapefiles into internal Xastir
  * values when rendering shapefile maps, or rewriting labels
  * (e.g. callsigns into tactical calls), etc.
- *
- * #define TEST to build a simple test program.
  *
  * Uses Philip Hazel's Perl-compatible regular expression library (pcre).  
  * See www.pcre.org.
