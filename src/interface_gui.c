@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.31 2002/09/30 23:50:59 we7u Exp $
+ * $Id: interface_gui.c,v 1.32 2002/10/21 01:06:02 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3232,8 +3232,12 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_AX25_change_data" 
         devices[AX25_port].transmit_data=1;
 
 // Use the TRUE option once we get AX.25 digipeating working
-//        XtSetSensitive(AX25_relay_digipeat, TRUE);
+//#define I_WANT_TO_TRY_AX25_RELAY_DIGIPEAT 1
+#ifdef I_WANT_TO_TRY_AX25_RELAY_DIGIPEAT
+        XtSetSensitive(AX25_relay_digipeat, TRUE);
+#else
         XtSetSensitive(AX25_relay_digipeat, FALSE);
+#endif
     }
     else {
         devices[AX25_port].transmit_data=0;
@@ -3346,7 +3350,9 @@ void Config_AX25( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNbackground, colors[0xff],
                                       NULL);
 
-XtSetSensitive(AX25_relay_digipeat, FALSE);
+#ifndef I_WANT_TO_TRY_AX25_RELAY_DIGIPEAT
+	XtSetSensitive(AX25_relay_digipeat, FALSE);
+#endif
 
         devn = XtVaCreateManagedWidget(langcode("WPUPCAX002"),xmLabelWidgetClass, form,
                                       XmNtopAttachment, XmATTACH_WIDGET,
