@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.121 2003/06/13 23:08:27 we7u Exp $
+ * $Id: interface.c,v 1.122 2003/06/13 23:34:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1604,7 +1604,8 @@ char symbol_translate[9,100] = {
     "C0000000","//",    // A dot
     "D0000000","//",    // A dot
     "E0000000","//",    // A dot
-    "F0000000","//"};   // A dot
+    "F0000000","//",    // A dot
+    "",        ""};
 
 
 
