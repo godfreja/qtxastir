@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.13 2004/08/25 01:59:18 we7u Exp $
+# $Id: Makefile.am,v 1.14 2004/10/08 18:20:32 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -22,7 +22,9 @@ pkglib_SCRIPTS = \
     waypoint-get.pl \
     xastir-fixcfg.sh \
     xastir-migrate.sh \
-    kiss-off.pl
+    kiss-off.pl \
+    toporama50k.pl \
+    toporama250k.pl
 
 
 EXTRA_DIST = $(pkglib_SCRIPTS)
