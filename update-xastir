@@ -1,0 +1,14 @@
+#! /bin/sh
+
+
+# $Id: update-xastir,v 1.1 2004/11/18 18:59:05 we7u Exp $
+# Copyright (C) 2004 The Xastir Group
+
+
+cvs update
+./bootstrap.sh
+./configure --without-errorpopups
+sudo make clean
+sudo make install
+sudo chmod 4755 /usr/local/bin/xastir
+

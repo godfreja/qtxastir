@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.103 2004/11/16 18:15:14 we7u Exp $
+$Id: README.win32,v 1.104 2004/11/18 18:59:05 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -550,6 +550,11 @@ updated.
 
 Repeat step 6) above to recompile/reinstall the latest Xastir.
 
+A very good option is to read the SUDO instructions in the
+README.CVS file, setting up the /etc/sudoers file and creating an
+update-xastir script as shown.  Then you can type "./update-xastir"
+at any time to snag down the latest Xastir changes, compile, and
+install it.
 
 
 -----

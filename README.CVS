@@ -1,5 +1,5 @@
 
-$Id: README.CVS,v 1.13 2004/10/04 17:16:56 we7u Exp $
+$Id: README.CVS,v 1.14 2004/11/18 18:59:05 we7u Exp $
 
 
 CVS Instructions:
@@ -206,7 +206,7 @@ SUDO Instructions:
         ./bootstrap.sh
         ./configure
         sudo make clean
-        sudo make install-strip
+        sudo make install
         sudo chmod 4755 /usr/local/bin/xastir
     -----------------cut here--------------------
 
