@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.116 2003/12/05 19:14:14 we7u Exp $
+# $Id: language-German.sys,v 1.117 2004/01/16 18:14:02 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -831,6 +831,7 @@ WXPUPSI022|3 Std. Druck||
 WXPUPSI023|Höchsttemp.||
 WXPUPSI024|Tiefsttemp.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
+WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 #
 # Stationslisten
 LHPUPNI000|Stationsliste||

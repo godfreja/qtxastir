@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.113 2003/12/05 19:14:13 we7u Exp $
+# $Id: language-English.sys,v 1.114 2004/01/16 18:14:01 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -826,6 +826,7 @@ WXPUPSI022|3-Hr Baro||
 WXPUPSI023|High Temp.||
 WXPUPSI024|Low Temp.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
+WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 #
 # Station Lists
 LHPUPNI000|All Stations||

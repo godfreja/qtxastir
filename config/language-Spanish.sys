@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.123 2003/12/05 19:14:18 we7u Exp $
+# $Id: language-Spanish.sys,v 1.124 2004/01/16 18:14:02 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -828,6 +828,7 @@ WXPUPSI022|3-Hr Baro||
 WXPUPSI023|Alta Temperat.||
 WXPUPSI024|Baja Temperat.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
+WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 #
 # Listas de Estaciones
 LHPUPNI000|Todas las estaciones||

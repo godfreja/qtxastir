@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.113 2003/12/05 19:14:16 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.114 2004/01/16 18:14:02 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -828,6 +828,7 @@ WXPUPSI022|3-Hr Baro||
 WXPUPSI023|Alta temperat.||
 WXPUPSI024|Baixa temperat.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
+WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 #
 # Listas das estações
 LHPUPNI000|Todas as estações||

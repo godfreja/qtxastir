@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.113 2003/12/05 19:14:14 we7u Exp $
+# $Id: language-French.sys,v 1.114 2004/01/16 18:14:01 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -824,6 +824,7 @@ WXPUPSI022|Baro 3 heures||
 WXPUPSI023|Température max.||
 WXPUPSI024|Température min.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
+WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 #
 # Station Lists
 LHPUPNI000|Toutes stations||

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.115 2003/12/05 19:14:15 we7u Exp $
+# $Id: language-Italian.sys,v 1.116 2004/01/16 18:14:02 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -826,6 +826,7 @@ WXPUPSI022|Pressione ultime 3 Ore||
 WXPUPSI023|Temp. Massima||
 WXPUPSI024|Temp. Minima||
 WXPUPSI025|Radio Shack Meteo-200/Oregon Scientific WM-918||
+WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 #
 # Stn Lists
 LHPUPNI000|Lista stazioni||
