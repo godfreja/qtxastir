@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.22 2003/12/04 08:25:22 we7u Exp $
+ * $Id: map_gdal.c,v 1.23 2003/12/04 18:08:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -518,6 +518,13 @@ void draw_ogr_map(Widget w,
         OGRFeatureH feature;
         OGRFeatureDefnH layerDefn;
 
+
+        if (interrupt_drawing_now) {
+            // Close data source
+            OGR_DS_Destroy( datasource );
+            return;
+        }
+
         layer = OGR_DS_GetLayer( datasource, i );
         if (layer == NULL)
         {
@@ -525,6 +532,9 @@ void draw_ogr_map(Widget w,
                 "Unable to open layer %d of %s\n",
                 i,
                 full_filename);
+
+            // Close data source
+            OGR_DS_Destroy( datasource );
             return;
         }
 
