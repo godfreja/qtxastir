@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.86 2003/04/15 22:04:04 we7u Exp $
+# $Id: language-German.sys,v 1.87 2003/04/15 22:14:41 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -342,7 +342,14 @@ WPUPCFD028|Warnung bei Modifikationstasten||
 WPUPCFD029|Anzeige von Nachrichten mi Entfernung Null||
 #
 # PopUp "Zeitverhalten"
-WPUPCFTM01|Zeitverhalten Einstellungen||
+WPUPCFTM01|Zeitverhalten Einstellungen|||
+WPUPCFTM02|Posit TX Interval (min)||
+WPUPCFTM03|Station Ghosting Time (min)||
+WPUPCFTM04|Object/Item TX Interval (min)||
+WPUPCFTM05|Station Clear Time (hours)||
+WPUPCFTM06|GPS Check Interval (sec)||
+WPUPCFTM07|Station Delete Time (days)||
+WPUPCFTM08|Dead-Reckoning Timeout (min)||
 #
 # PopUp "Koordinatensystem"
 WPUPCFC001|Koordinatensystem Einstellungen||

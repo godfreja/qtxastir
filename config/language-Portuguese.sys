@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.86 2003/04/15 22:04:05 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.87 2003/04/15 22:14:41 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -340,7 +340,14 @@ WPUPCFD028|Avisar se teclas foram modificadas||
 WPUPCFD029|Ver boletins de distância zero||
 #
 # PopUp "Configurar - momento certo"
-WPUPCFTM01|Configurar momento certo||
+WPUPCFTM01|Configurar momento certo|||
+WPUPCFTM02|Posit TX Interval (min)||
+WPUPCFTM03|Station Ghosting Time (min)||
+WPUPCFTM04|Object/Item TX Interval (min)||
+WPUPCFTM05|Station Clear Time (hours)||
+WPUPCFTM06|GPS Check Interval (sec)||
+WPUPCFTM07|Station Delete Time (days)||
+WPUPCFTM08|Dead-Reckoning Timeout (min)||
 #
 # PopUp "Sistema de configuração de coordenadas"
 WPUPCFC001|Sistema de configuração de coordenadas||
