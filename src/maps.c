@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.274 2003/05/17 00:07:11 we7u Exp $
+ * $Id: maps.c,v 1.275 2003/05/20 17:34:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -44,7 +44,16 @@
 #include <strings.h>
 
 #ifdef HAVE_IMAGEMAGICK
-#include <time.h>
+#if TIME_WITH_SYS_TIME
+# include <sys/time.h>
+# include <time.h>
+#else   // TIME_WITH_SYS_TIME
+# if HAVE_SYS_TIME_H
+#  include <sys/time.h>
+# else  // HAVE_SYS_TIME_H
+#  include <time.h>
+# endif // HAVE_SYS_TIME_H
+#endif  // TIME_WITH_SYS_TIME
 #undef RETSIGTYPE
 /* JMT - stupid ImageMagick */
 #define XASTIR_PACKAGE_BUGREPORT PACKAGE_BUGREPORT

@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.32 2003/04/12 01:32:45 we7u Exp $
+ * $Id: wx.c,v 1.33 2003/05/20 17:34:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -56,7 +56,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include <time.h>
+
+#if TIME_WITH_SYS_TIME
+# include <sys/time.h>
+# include <time.h>
+#else   // TIME_WITH_SYS_TIME
+# if HAVE_SYS_TIME_H
+#  include <sys/time.h>
+# else  // HAVE_SYS_TIME_H
+#  include <time.h>
+# endif // HAVE_SYS_TIME_H
+#endif  // TIME_WITH_SYS_TIME
+
 #include <string.h>
 
 #include <Xm/XmAll.h>

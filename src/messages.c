@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.22 2003/02/04 04:08:39 jtwilley Exp $
+ * $Id: messages.c,v 1.23 2003/05/20 17:34:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -39,7 +39,17 @@
 #include <ctype.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <sys/time.h>
+
+#if TIME_WITH_SYS_TIME
+# include <sys/time.h>
+# include <time.h>
+#else   // TIME_WITH_SYS_TIME
+# if HAVE_SYS_TIME_H
+#  include <sys/time.h>
+# else  // HAVE_SYS_TIME_H
+#  include <time.h>
+# endif // HAVE_SYS_TIME_H
+#endif  // TIME_WITH_SYS_TIME
 
 #include "xastir.h"
 #include "main.h"

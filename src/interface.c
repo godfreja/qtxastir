@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.116 2003/05/12 23:56:37 we7u Exp $
+ * $Id: interface.c,v 1.117 2003/05/20 17:34:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -57,7 +57,18 @@
 
 #include <sys/types.h>
 #include <sys/ioctl.h>
-#include <sys/time.h>
+
+#if TIME_WITH_SYS_TIME
+# include <sys/time.h>
+# include <time.h>
+#else   // TIME_WITH_SYS_TIME
+# if HAVE_SYS_TIME_H
+#  include <sys/time.h>
+# else  // HAVE_SYS_TIME_H
+#  include <time.h>
+# endif // HAVE_SYS_TIME_H
+#endif  // TIME_WITH_SYS_TIME
+
 #include <errno.h>
 
 #ifdef  HAVE_LOCALE_H

@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.15 2003/02/26 18:09:55 we7u Exp $
+ * $Id: alert.h,v 1.16 2003/05/20 17:35:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25,7 +25,19 @@
 #ifndef __XASTIR_ALERT_H
 #define __XASTIR_ALERT_H
 
-#include <time.h>
+
+#if TIME_WITH_SYS_TIME
+# include <sys/time.h>
+# include <time.h>
+#else
+# if HAVE_SYS_TIME_H
+#  include <sys/time.h>
+# else
+#  include <time.h>
+# endif
+#endif
+
+
 #include "db.h"
 #include "maps.h"
 
