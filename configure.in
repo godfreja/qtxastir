@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Currently maintained by Chuck Byam (KG4IJB), cbyam@virginia.edu
 #
-# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.12 2003/02/10 21:17:39 we7u Exp $
+# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.13 2003/02/10 21:28:06 we7u Exp $
 #
 # Xastir Configure Script
 #
@@ -82,7 +82,7 @@ case $host in
       AC_DEFINE(XASTIR_SYSTEM, "Cygwin")
       ac_tnc_port='"com1"'
       ac_gps_port='"com2"'
-      AC_MSG_WARN(*** Cygwin support is not fully implemented yet! ***)
+      AC_MSG_WARN(*** Cygwin support is still preliminary! ***)
       ;;
     * )
       AC_MSG_WARN(Host type is not recognized)
