@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.126 2004/06/29 18:41:32 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.127 2004/07/01 21:16:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -334,6 +334,7 @@ WPUPLSP003|Maíscula/minúscula|M|
 WPUPLSP004|Exacta|E|
 WPUPLSP005|Localizar agora!|A|
 WPUPLSP006|Localizar emergência!||
+WPUPLSP007|FCC/RAC Lookup||
 #
 # Configurar predefinidos
 WPUPCFD001|Configurar valores pré-definidos||

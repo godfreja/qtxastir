@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.126 2004/06/29 18:41:32 we7u Exp $
+# $Id: language-English.sys,v 1.127 2004/07/01 21:16:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -331,6 +331,7 @@ WPUPLSP003|Match Case|C|
 WPUPLSP004|Match Exact|E|
 WPUPLSP005|Locate Now!|N|
 WPUPLSP006|Emergency Locate!||
+WPUPLSP007|FCC/RAC Lookup||
 #
 # PopUp "Configure - Defaults"
 WPUPCFD001|Configure Defaults||

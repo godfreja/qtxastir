@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.136 2004/06/29 18:41:32 we7u Exp $
+# $Id: language-Spanish.sys,v 1.137 2004/07/01 21:16:10 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -334,6 +334,7 @@ WPUPLSP003|Macheo Sensible|S|
 WPUPLSP004|Macheo Exacto|E|
 WPUPLSP005|Localizar ahora!|A|
 WPUPLSP006|Localizar Emergencia!||
+WPUPLSP007|FCC/RAC Lookup||
 #
 # Configurar predefinidos
 WPUPCFD001|Configurar valores predefinidos||

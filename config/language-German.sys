@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.131 2004/06/29 18:41:32 we7u Exp $
+# $Id: language-German.sys,v 1.132 2004/07/01 21:16:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -337,6 +337,7 @@ WPUPLSP003|Groﬂ/Klein||# ???
 WPUPLSP004|Exakt||# ???
 WPUPLSP005|Finde jetzt!||
 WPUPLSP006|Notfall-Suche!||
+WPUPLSP007|FCC/RAC Lookup||
 #
 # PopUp "Einstellungen - Grundeinstellungen"
 WPUPCFD001|Grundeinstellungen||

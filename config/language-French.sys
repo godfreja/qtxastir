@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.127 2004/06/29 18:41:32 we7u Exp $
+# $Id: language-French.sys,v 1.128 2004/07/01 21:16:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -330,6 +330,7 @@ WPUPLSP003|Casse exacte|C|
 WPUPLSP004|Correspondance exacte|E|
 WPUPLSP005|Localiser maintenant!|L|
 WPUPLSP006|Localiser détresse!||
+WPUPLSP007|FCC/RAC Lookup||
 #
 # PopUp "Configure - Defaults"
 WPUPCFD001|Configurer défauts||
