@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.28 2002/07/23 21:27:06 we7u Exp $
+ * $Id: interface_gui.c,v 1.29 2002/07/23 22:04:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1197,7 +1197,7 @@ XtSetSensitive(TNC_relay_digipeat, FALSE);
                 XmTextFieldSetString(TNC_txdelay,"40");
                 XmTextFieldSetString(TNC_persistence,"63");
                 XmTextFieldSetString(TNC_slottime,"20");
-                XmTextFieldSetString(TNC_txtail,"10");
+                XmTextFieldSetString(TNC_txtail,"30");
             }
             else {
                 XmTextFieldSetString(TNC_up_file_data,"tnc-startup.sys");
