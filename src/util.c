@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.65 2003/03/22 00:28:52 we7u Exp $
+ * $Id: util.c,v 1.66 2003/04/12 00:07:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1495,7 +1495,7 @@ char *convert_bearing_to_name(char *bearing, int opposite) {
         if (deg > 180) deg -= 180.0;
         else if (deg <= 180) deg += 180.0;
     }
-    for (i = 0; i < sizeof(directions)/sizeof(directions[0]); i++) {
+    for (i = 0; i < (int)( sizeof(directions)/sizeof(directions[0]) ); i++) {
         if (deg >= directions[i].low && deg < directions[i].high)
             return langcode(directions[i].lang);
     }

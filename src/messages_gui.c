@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.17 2003/02/04 04:08:39 jtwilley Exp $
+ * $Id: messages_gui.c,v 1.18 2003/04/12 00:07:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -99,7 +99,7 @@ void reverse_path(char *input_string) {
 
     // Find each comma 
     j = 0; 
-    for (i = 0; i < strlen(input_string); i++) {
+    for (i = 0; i < (int)strlen(input_string); i++) {
         if (input_string[i] == ',') {
             indexes[j++] = i;
             //fprintf(stderr,"%d\n",i);     // Debug code
