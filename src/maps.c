@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.32 2002/04/19 23:27:28 we7u Exp $
+ * $Id: maps.c,v 1.33 2002/04/20 04:16:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8113,12 +8113,17 @@ void load_alert_maps (Widget w, char *dir) {
             //printf("Title4:%s\n",alert_list[i].title);
 
 
-            draw_map (w,
-                dir,
-                alert_list[i].filename,
-                &alert_list[i],
-                fill_color[level],
-                DRAW_TO_PIXMAP_ALERTS);
+            if (alert_list[i].alert_level != 'C') {
+                draw_map (w,
+                    dir,
+                    alert_list[i].filename,
+                    &alert_list[i],
+                    fill_color[level],
+                    DRAW_TO_PIXMAP_ALERTS);
+            }
+            else {
+                // Cancelled alert, don't draw it!
+            }
         }
     }
 
