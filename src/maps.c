@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.106 2002/06/28 21:03:47 we7u Exp $
+ * $Id: maps.c,v 1.107 2002/07/02 18:10:09 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5750,7 +5750,7 @@ void draw_tiger_map (Widget w) {
     xastir_snprintf(local_filename, sizeof(local_filename), "/var/tmp/xastir_%s_map.%s", username,"gif");
 
     xastir_snprintf(tempfile, sizeof(tempfile),
-        "wget -S -N -t 1 -T 30 -O %s %s 2> /dev/null\n", local_filename, fileimg);
+        "wget -S -N -t 1 -T %d -O %s %s 2> /dev/null\n", tigermap_timeout, local_filename, fileimg);
 
     if (debug_level & 512)
        printf("%s",tempfile);
