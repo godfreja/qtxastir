@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.14 2002/04/11 19:58:00 we7u Exp $
+ * $Id: alert.c,v 1.15 2002/04/11 19:58:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,7 +50,7 @@
 // DATA_VIA_LOCAL).  The first two characters are used to add on to
 // the end of the path ("/usr/local/xastir/Counties/") to come up
 // with the State subdirectory to search for this map file
-// ("/usr/local/xastir/Counties/MS").
+// ("/usr/local/xastir/Counties/MS").  See maps.c:load_alert_maps().
 //
 
 
