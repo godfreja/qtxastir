@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.43 2003/12/10 01:03:16 we7u Exp $
+ * $Id: map_gdal.c,v 1.44 2003/12/10 07:13:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -460,6 +460,10 @@ void draw_ogr_map(Widget w,
         fprintf(stderr,"Opening datasource\n");
 
     // Open data source
+//
+// Home system segfaults here if a .proj file is present with a
+// shapefile.
+//
     datasource = OGROpen(full_filename,
         0 /* bUpdate */,
         &driver);
@@ -670,6 +674,7 @@ void draw_ogr_map(Widget w,
                     // Convert to WGS84.
                 OGRSpatialReferenceH wgs84_spatial = NULL;
                 OGRCoordinateTransformationH transformH = NULL;
+
 
                 if (geographic) {
                     fprintf(stderr,
