@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.382 2003/11/29 06:26:07 we7u Exp $
+ * $Id: maps.c,v 1.383 2003/12/02 22:16:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1096,7 +1096,9 @@ void draw_grid(Widget w) {
                     puts("Screen boundary!");
 #endif
 
-#warning 'I suspect that I should not use just col for the following'
+//#warning
+//#warning I suspect that I should not use just col for the following.
+//#warning
                 if (col-2 >= 0)
                     slope = (float)(yy - utm_grid.zone[zone].col[col-2].point[col_point].y) /
                         (float)(xx - utm_grid.zone[zone].col[col-2].point[col_point].x + 0.001);

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.16 2003/12/02 22:02:10 we7u Exp $
+ * $Id: map_gdal.c,v 1.17 2003/12/02 22:16:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -74,9 +74,9 @@
 
 #ifdef HAVE_LIBGDAL
 
-#warning******************************************
-#warning GDAL library support not implemented yet.
-#warning******************************************
+#warning
+#warning GDAL/OGR library support not implemented yet!
+#warning
 
 // WE7U - Getting rid of stupid compiler warnings in GDAL
 #define XASTIR_PACKAGE_BUGREPORT PACKAGE_BUGREPORT
