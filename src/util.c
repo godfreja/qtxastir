@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.105 2004/06/21 18:03:57 we7u Exp $
+ * $Id: util.c,v 1.106 2004/06/24 19:29:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2368,7 +2368,12 @@ void log_tactical_call(char *call_sign, char *tactical_call_sign) {
 
     f=fopen(file,"a");
     if (f!=NULL) {
-        fprintf(f,"%s,%s\n",call_sign,tactical_call_sign);
+
+        if (tactical_call_sign == NULL)
+            fprintf(f,"%s,\n",call_sign);
+        else
+            fprintf(f,"%s,%s\n",call_sign,tactical_call_sign);
+
         (void)fclose(f);
 
         if (debug_level & 1) {
@@ -2473,10 +2478,29 @@ void reload_tactical_calls(void) {
                         if (debug_level & 1)
                             fprintf(stderr,"Found callsign to add tactical call to: %s\n",line);
 
-                        xastir_snprintf(p_station->tactical_call_sign,
-                            MAX_CALLSIGN,
-                            "%s",
-                            ptr);
+                        if (p_station->tactical_call_sign == NULL) {
+                            // Malloc some memory to hold it.
+                            p_station->tactical_call_sign = (char *)malloc(MAX_CALLSIGN+1);
+                        }
+
+                        if (p_station->tactical_call_sign != NULL) {
+
+                            // Check for blank tactical call.  If so, free the space.
+                            if (ptr[0] == '\0') {
+                                free(p_station->tactical_call_sign);
+                                p_station->tactical_call_sign = NULL;
+                            }
+                            else {
+                                xastir_snprintf(p_station->tactical_call_sign,
+                                    MAX_CALLSIGN,
+                                    "%s",
+                                    ptr);
+                            }
+                        }
+                        else {
+                            fprintf(stderr,
+                                "Couldn't malloc space for tactical callsign\n");
+                        }
                     }
                     else {
                         fprintf(stderr,
