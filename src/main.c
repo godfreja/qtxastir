@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.356 2003/10/14 20:44:03 we7u Exp $
+ * $Id: main.c,v 1.357 2003/10/16 16:07:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -23547,6 +23547,7 @@ int main(int argc, char *argv[]) {
     (void)locate_gui_init();
     (void)location_gui_init();
     (void)maps_init();
+    (void)map_gdal_init();
     (void)messages_gui_init();
     (void)popup_gui_init();
     (void)track_gui_init();
