@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.2 2002/04/17 19:58:35 we7u Exp $
+ * $Id: alert.h,v 1.3 2002/04/19 06:42:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -54,6 +54,7 @@ typedef struct {
     char flags[16];
     char filename[64];
     char seq[10];
+    char issue_date_time[10];
 } alert_entry;
 
 extern alert_entry *alert_list;
