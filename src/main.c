@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.73 2002/05/10 15:08:50 francais1 Exp $
+ * $Id: main.c,v 1.74 2002/05/17 22:56:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14821,7 +14821,8 @@ int main(int argc, char *argv[], char *envp[]) {
         <Key>space:     Select(children)\n",
  
         "*XmTextField.translations: #override \
-        <Key>Return:    activate()\n",
+        <Key>Return:    activate()\n\
+        <Key>Enter:     activate()\n",
 
         "*.Text.Translations: #override\n\
         Ctrl<Key>S:     no-op(RingBell)\n\
