@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.12 2002/04/06 19:11:55 we7u Exp $
+# $Id: language-French.sys,v 1.13 2002/04/09 06:13:01 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -737,6 +737,8 @@ POPEM00026|Suivi commencera quand elle apparaîtra||
 POPEM00027|Mauvaise info.  Certains champs vides?||
 POPEM00028|Ne peut ouvrier fichier||
 POPEM00029|Trouvé!||
+POPEM00030|Weather Station Symbol||
+POPEM00031|Changed to WX symbol '/_', other option is '\_'||
 #
 # Jump Location 
 JMLPO00001|Lieu de la carte||

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.12 2002/04/06 19:11:55 we7u Exp $
+# $Id: language-German.sys,v 1.13 2002/04/09 06:13:01 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -743,6 +743,8 @@ POPEM00026|Tracking will commence when it appears||
 POPEM00027|Falsche Eingabe.  Einige Felder leer?||
 POPEM00028|Kann Datei nicht öffnen||
 POPEM00029|Gefunden!||
+POPEM00030|Weather Station Symbol||
+POPEM00031|Changed to WX symbol '/_', other option is '\_'||
 #
 # Karten - Ausschnitt 
 JMLPO00001|Gespeicherte Kartenausschnitte||

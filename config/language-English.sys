@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.12 2002/04/06 17:53:59 we7u Exp $
+# $Id: language-English.sys,v 1.13 2002/04/09 06:13:01 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -738,6 +738,8 @@ POPEM00026|Tracking will commence when it appears||
 POPEM00027|Improper info.  Some fields empty?||
 POPEM00028|Can't open file||
 POPEM00029|Found It!||
+POPEM00030|Weather Station Symbol||
+POPEM00031|Changed to WX symbol '/_', other option is '\_'||
 #
 # Jump Location 
 JMLPO00001|Map Display Bookmarks||

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.3 2002/04/06 18:56:54 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.4 2002/04/09 06:13:02 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -736,6 +736,8 @@ POPEM00026|O rastreamento começará quando ele aparecer||
 POPEM00027|Info imprópia. Alguns campos vazios?||
 POPEM00028|Não se pode abrir o ficheiro||
 POPEM00029|Encontrado!||
+POPEM00030|Weather Station Symbol||
+POPEM00031|Changed to WX symbol '/_', other option is '\_'||
 #
 # Salto de localização
 JMLPO00001|Localização de mapa||
