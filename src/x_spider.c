@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.30 2004/11/29 19:37:50 we7u Exp $
+ * $Id: x_spider.c,v 1.31 2004/12/17 04:36:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -351,6 +351,8 @@ void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
         //
         // Read data from socket, write to pipe (parent)
         //
+        if (!sockfd)    // Socket is closed
+            return; // Connection terminated
  
         n = readline(sockfd, line, MAXLINE);
         if (n == 0) {
@@ -377,6 +379,8 @@ void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
         //
         // Read data from pipe (parent), write to socket
         //
+        if (!pipe_from_parent)
+            exit(0);
  
         n = readline(pipe_from_parent, line, MAXLINE);
         if (n == 0) {
