@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.8 2003/01/24 00:37:40 we7u Exp $
+ * $Id: alert.h,v 1.9 2003/02/21 23:53:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -63,7 +63,7 @@ typedef struct {
 } alert_entry;
 
 extern alert_entry *alert_list;
-extern int alert_list_count;
+extern int alert_max_count;
 extern char *alert_status;
 
 extern void alert_update_list(alert_entry * alert, alert_match_level match_level);

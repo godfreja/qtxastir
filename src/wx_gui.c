@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.22 2003/02/20 09:51:42 we7u Exp $
+ * $Id: wx_gui.c,v 1.23 2003/02/21 23:53:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -306,8 +306,12 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
 
         // Step through the alert list.  Create a string for each
         // non-expired/non-blank entry.
-        for (nn = 0; nn < alert_list_count; nn++) {
+        for (nn = 0; nn < alert_max_count; nn++) {
             char status[10];
+
+            // Check whether alert slot is empty/filled
+            if (alert_list[nn].title[0] == '\0')    // It's empty
+                continue;
 
             // AFGNPW      NWS-WARN    Until: 191500z   AK_Z213   WIND               P7IAA
             // TSATOR      NWS-ADVIS   Until: 190315z   OK_C127   TORNDO             H2VAA
