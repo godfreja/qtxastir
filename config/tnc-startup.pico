@@ -1,4 +1,4 @@
-# $Id: tnc-startup.pico,v 1.2 2002/03/07 18:56:29 we7u Exp $
+# $Id: tnc-startup.pico,v 1.3 2002/03/07 20:49:59 we7u Exp $
 # This is the TNC Startup file for a dual-port Paccomm PicoPacket TNC.
 # lines that begin with a pound sign are comments.
 
@@ -12,11 +12,11 @@ DIGIPEAT 7
 FLOW off
 FULL off
 GPS off
-GPSTEXT $GPGGA
+GPSTEXT $GPRMC
 HEADERLI off
 LFADD off
 LGETCHAR $05
-LG1TEXT $GPRMC
+LG1TEXT $GPGGA
 #LG2TEXT $GPVTG
 #LG3TEXT $PGRME
 MCOM off
