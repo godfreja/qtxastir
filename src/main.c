@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.439 2004/01/26 16:18:21 we7u Exp $
+ * $Id: main.c,v 1.440 2004/02/02 20:58:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12769,7 +12769,13 @@ void Help_About( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@un
     float version;
     char string1[100];
     char string2[100];
-#define ABOUT_MSG "X Amateur Station Tracking and Information Reporting\n\nhttp://www.xastir.org\n\n1999-2003, The Xastir Group"
+
+// Copyright 2004.
+// Added the above "Copyright" just so that grep would find these
+// lines and we could update the years in the Help->About message
+// each time.  Otherwise it often gets missed when we're updating
+// the years.
+#define ABOUT_MSG "X Amateur Station Tracking and Information Reporting\n\nhttp://www.xastir.org\n\n1999-2004, The Xastir Group"
 
 
     xb = XmStringCreateLtoR("\nXastir V" VERSION "\n\n" ABOUT_MSG, XmFONTLIST_DEFAULT_TAG);
