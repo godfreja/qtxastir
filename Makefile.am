@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.23 2004/03/02 07:50:07 we7u Exp $
+# $Id: Makefile.am,v 1.24 2004/03/26 18:17:44 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -35,7 +35,9 @@ gnisdir=${pkgdatadir}/GNIS
 gnis_DATA=placeholder
 
 mapdir=${pkgdatadir}/maps
-map_DATA=placeholder terraserver.geo toposerver.geo tigermap.geo \
+
+onlinedir=${pkgdatadir}/maps/Online
+online_DATA=terraserver.geo toposerver.geo tigermap.geo \
         USRadar.geo CanadaTopo250k.geo CanadaTopo50k.geo
 
 gpsdir=${pkgdatadir}/maps/GPS
