@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.223 2003/03/27 23:33:05 we7u Exp $
+ * $Id: db.c,v 1.224 2003/03/27 23:46:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11427,7 +11427,6 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 
 
 
-// WE7U2
 // Function which receives raw AX.25 packets from a KISS interface and
 // converts them to a printable TAPR-2 (more or less) style string.
 // We receive the packet with a KISS Frame End character at the
@@ -11435,6 +11434,12 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 // multiple asterisks, one for each callsign that the packet was
 // digipeated through.  A few other TNC's put out this same sort of
 // format.
+//
+//
+// WE7U
+// Compare this function with interface.c:process_ax25_packet() to
+// see if we're missing anything important.
+//
 //
 // Inputs:  incoming_data       Raw string
 //          length              Length of raw string
