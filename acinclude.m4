@@ -1,5 +1,8 @@
 # acinclude.m4 for Xastir
-# $Id: acinclude.m4,v 1.11 2003/07/18 20:52:59 jtwilley Exp $
+#
+# Copyright (C) 2000-2004  The Xastir Group
+#
+# $Id: acinclude.m4,v 1.12 2004/01/26 16:09:49 we7u Exp $
 
 # test for devices
 AC_DEFUN([XASTIR_DETECT_DEVICES],

@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.26 2004/01/07 16:42:05 we7u Exp $
+$Id: INSTALL,v 1.27 2004/01/26 16:09:49 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -879,5 +879,5 @@ instructions for this are in the README.MAPS.
 
   ------------------------------------------------------------------------
 Copyright (C) 1999 Frank Giannandrea
-Copyright (C) 2000-2003 The Xastir Group
+Copyright (C) 2000-2004 The Xastir Group
 

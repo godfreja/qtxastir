@@ -1,5 +1,5 @@
 
-$Id: DEBUG_LEVELS,v 1.5 2003/05/22 19:02:03 we7u Exp $
+$Id: DEBUG_LEVELS,v 1.6 2004/01/26 16:09:49 we7u Exp $
 
 This file has two parts.  The first part describes the new structure
 for debug levels.  The second part describes the debug_level
@@ -53,5 +53,5 @@ wx.c >2 &1
 xa_config.c &1 &2
 
 
-Copyright (C) 2002-2003 The Xastir Group
+Copyright (C) 2002-2004 The Xastir Group
 
