@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.19 2004/11/12 17:09:11 we7u Exp $
+ * $Id: map_tiger.c,v 1.20 2004/11/12 18:47:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -207,6 +207,12 @@ void draw_tiger_map (Widget w,
     int geo_image_width;        // Image width  from GEO file
     int geo_image_height;       // Image height from GEO file
 
+#ifdef USE_MAP_CACHE 
+	int map_cache_return; 
+#endif  // USE_MAP_CACHE
+
+
+
 
     xastir_snprintf(map_it,
         sizeof(map_it),
@@ -391,22 +397,20 @@ void draw_tiger_map (Widget w,
 
 #ifdef USE_MAP_CACHE 
 
-	int map_cache_return ; 
-
 	map_cache_return = map_cache_get(fileimg,local_filename); 
 	if (debug_level & 512) {
 		fprintf(stderr,"map_cache_return: %d\n", map_cache_return);
 	}
    		   
    
-if (map_cache_return != 0 ){
+    if (map_cache_return != 0 ) {
 
-    xastir_snprintf(local_filename,
-        sizeof(local_filename),
-        "%s/map_%s.%s",
-        get_user_base_dir("map_cache"),
-        map_cache_fileid(),
-        "gif");
+        xastir_snprintf(local_filename,
+            sizeof(local_filename),
+            "%s/map_%s.%s",
+            get_user_base_dir("map_cache"),
+            map_cache_fileid(),
+            "gif");
 
 #else
 
