@@ -1,9 +1,26 @@
-# $Id: tnc-startup.kpc3,v 1.3 2002/03/11 23:36:11 we7u Exp $
+# $Id: tnc-startup.kpc3,v 1.4 2002/03/19 05:07:42 we7u Exp $
 # This is the TNC Startup file for Kantronics TNC.
 # lines that begin with a pound sign are comments.
 
 int terminal
 
+# Clear out the LT buffers so we don't have old data in there:
+LT 1
+LT 2
+LT 3
+LT 4
+# Clear out the buffer regularly to prevent stale data:
+BLT 1 00:01:30 CLEAR
+BLT 2 00:20:00 CLEAR
+BLT 3 00:00:00
+BLT 4 00:00:00
+# Set up the NMEA strings to capture:
+GPSHEAD 1 $GPRMC
+GPSHEAD 2 $GPGGA
+#
+GPSPORT 4800 NORMAL CHECKSUM
+LGETCHAR $05
+#
 MYAlias RELAY
 B E 0
 DIGI on
