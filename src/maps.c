@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.248 2003/04/25 22:30:42 we7u Exp $
+ * $Id: maps.c,v 1.249 2003/04/25 22:45:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -554,7 +554,7 @@ void map_plot (Widget w, long max_x, long max_y, long x_long_cord,
 
                     case DRAW_TO_PIXMAP_FINAL:
                         // We must be drawing symbols/tracks 'cuz this is the pixmap we use for it.
-                        (void)XFillPolygon (XtDisplay (w), pixmap_final, gc, points, npoints, Complex,CoordModeOrigin);
+                        (void)XFillPolygon (XtDisplay (w), pixmap_final, gc, points, npoints, Nonconvex,CoordModeOrigin);
                         break;
                     }
 
