@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.1 2002/02/02 03:19:40 kg4ijb Exp $
+ * $Id: wx_gui.c,v 1.2 2002/04/02 07:43:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -66,11 +66,15 @@ static xastir_mutex wx_station_dialog_lock;
 
 
 
+
+
 void wx_gui_init(void)
 {
     init_critical_section( &wx_alert_shell_lock );
     init_critical_section( &wx_station_dialog_lock );
 }
+
+
 
 
 
@@ -87,6 +91,8 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_destroy_shell" )
 end_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_destroy_shell" );
 
 }
+
+
 
 
 
@@ -127,6 +133,8 @@ end_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
 
     }
 }
+
+
 
 
 
@@ -239,6 +247,8 @@ end_critical_section(&wx_alert_shell_lock, "wx_gui.c:Display_Wx_Alert" );
 
 
 
+
+
 /**** WX Station *******/
 Widget wx_station_dialog=(Widget)NULL;
 Widget WX_type_data;
@@ -278,6 +288,8 @@ Widget WX_high_wind_label;
 
 
 
+
+
 void WX_station_destroy_shell( /*@unused@*/ Widget widget, XtPointer clientData, /*@unused@*/ XtPointer callData) {
 
     Widget shell = (Widget) clientData;
@@ -294,10 +306,14 @@ end_critical_section(&wx_station_dialog_lock, "wx_gui.c:WX_station_destroy_shell
 
 
 
+
+
 void WX_station_change_data(Widget widget, XtPointer clientData, XtPointer callData) {
 
     WX_station_destroy_shell(widget,clientData,callData);
 }
+
+
 
 
 
@@ -1217,6 +1233,8 @@ end_critical_section(&wx_station_dialog_lock, "wx_gui.c:WX_station" );
         (void)XRaiseWindow(XtDisplay(wx_station_dialog), XtWindow(wx_station_dialog));
     }
 }
+
+
 
 
 
