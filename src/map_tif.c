@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.12 2004/09/19 23:39:04 tvrusso Exp $
+ * $Id: map_tif.c,v 1.13 2004/10/03 04:58:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2332,8 +2332,8 @@ right_crop = width - 1;
 
 //WE7U:  This comparison is always false:  current_left is unsigned
 //therefore always positive!
-if (current_left < 0)
-    current_left = 0;
+//if (current_left < 0)
+//    current_left = 0;
 
 if (current_right >= width)
     current_right = width - 1;
@@ -2440,7 +2440,9 @@ if (current_right >= width)
                             || (xastir_current_x > (SE_x_bounding_wgs84 - 25) ) )
                         {
 //WE7U: column is unsigned so "column >= 0" is always true
-                            if ((int)column < bytesPerRow && column >= 0) {
+//                            if ((int)column < bytesPerRow && column >= 0) {
+                            if ((int)column < bytesPerRow) {
+ 
                                 *(imageMemory + column) = 0x01; // Change to White
                             }
                             else {

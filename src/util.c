@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.120 2004/09/24 19:42:12 we7u Exp $
+ * $Id: util.c,v 1.121 2004/10/03 04:58:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -203,7 +203,10 @@ void get_timestamp(char *timestring) {
 
     secs_now=sec_now();
     time_now = localtime(&secs_now);
-    (void)strftime(timestring,100,"%a %b %e %H:%M:%S %Z %Y",time_now);
+
+// %e is not implemented on all systems, but %d should be
+//    (void)strftime(timestring,100,"%a %b %e %H:%M:%S %Z %Y",time_now);
+    (void)strftime(timestring,100,"%a %b %d %H:%M:%S %Z %Y",time_now);
 }
 
 

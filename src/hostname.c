@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.15 2004/08/21 06:13:58 we7u Exp $
+ * $Id: hostname.c,v 1.16 2004/10/03 04:58:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -192,7 +192,7 @@ char *host_lookup(char *host, char *ip, int ip_size, int time) {
                 // Turn off the alarm
                 (void)alarm(0);
                 // Reset the SIGALRM handler to its previous value
-                (void)signal(SIGALRM,previous_loc);
+                (void)signal(SIGALRM, previous_loc);
 
                 if (hostinfo) {
                     names = hostinfo -> h_aliases;
