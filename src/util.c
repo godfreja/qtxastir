@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.142 2005/01/26 21:27:23 we7u Exp $
+ * $Id: util.c,v 1.143 2005/01/26 21:36:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2626,12 +2626,7 @@ void disown_object_item(char *call_sign, char *new_owner) {
             name[9] = '\0';
             remove_trailing_spaces(name);
         }
-        else if (line[1] == ';') {  // Commented out Object
-            substr(name,&line[2],10);
-            name[9] = '\0';
-            remove_trailing_spaces(name);
- 
-        }
+
         else if (line[0] == ')') {  // Item
             int i;
 
@@ -2648,6 +2643,14 @@ void disown_object_item(char *call_sign, char *new_owner) {
             // Don't remove trailing spaces for Items, else we won't
             // get a match.
         }
+
+        else if (line[1] == ';') {  // Commented out Object
+            substr(name,&line[2],10);
+            name[9] = '\0';
+            remove_trailing_spaces(name);
+ 
+        }
+
         else if (line[1] == ')') {  // Commented out Item
             int i;
 
