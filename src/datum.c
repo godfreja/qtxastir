@@ -1,7 +1,7 @@
 /*
    See the top of datum.h for information on this code.
    N7TAP
-   $Id: datum.c,v 1.14 2003/11/03 17:19:08 we7u Exp $
+   $Id: datum.c,v 1.15 2003/11/03 18:59:41 we7u Exp $
 */
 
 
@@ -494,10 +494,10 @@ void ll_to_utm_ups(short ellipsoidID, const double lat, const double lon,
 
     if (lat > 84.0 || lat < -80.0) {
         // We're in the UPS areas (near the poles).  ZoneNumber
-        // should be "00" in all cases.
+        // should not be printed in this case.
         xastir_snprintf(utmZone,
             utmZoneLength,
-            "00%c",
+            "%c",
             utm_letter_designator(lat, lon));
     }
     else {  // We're in the UTM areas (not near the poles).
