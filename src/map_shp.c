@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.63 2004/05/28 18:09:23 we7u Exp $
+ * $Id: map_shp.c,v 1.64 2004/05/28 18:34:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1163,7 +1163,8 @@ void draw_shapefile_map (Widget w,
                             i,key);
                 }
                 if (strncmp(alert->title,key,keylen) == 0) {
-                    // keylen could be zero, so check again
+                    // keylen was zero, so check again using length
+                    // of title instead
                     int titlelen;
 
                     titlelen = strlen(alert->title);
