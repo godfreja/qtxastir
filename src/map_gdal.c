@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.116 2004/10/21 19:28:00 we7u Exp $
+ * $Id: map_gdal.c,v 1.117 2004/10/21 19:45:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -3295,10 +3295,10 @@ clear_dangerous();
 //    lines that match "TLID" fields found above.
 // *) Once we've processed the CompleteChain layer, turn those 
 //    geometries into real polygons using BuildPolygonFromEdges() 
-//    and draw them.  Perhaps only draw them if the "WATER" field
-//    was set to 1 or 2?
-// *) Draw non-polygon vectors:  If "TLID" matches one from a 
-//    polygon, don't draw the vector or its label.
+//    and draw them.  Decide whether to draw any particular polygon
+//    based on the WATER field and/or the CFCC field (if
+//    AreaLandmarks and Landmarks were present for that polygon).
+// *) Draw non-polygon vectors.
 //
     //
     numLayers = OGR_DS_GetLayerCount(datasourceH);
