@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.289 2003/05/27 20:40:34 we7u Exp $
+ * $Id: main.c,v 1.290 2003/05/27 20:43:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -144,7 +144,7 @@
 
 // If next line uncommented, Xastir will use a large font for the
 // station text in the drawing area.
-#define USE_LARGE_STATION_FONT
+//#define USE_LARGE_STATION_FONT
 
 #define LINE_WIDTH 1
 
