@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.22 2002/08/09 23:33:02 we7u Exp $
+$Id: README.1ST,v 1.23 2002/08/11 16:57:05 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -444,10 +444,10 @@ First Time Install:
      -----------------------------------------------------------------------
 MAC OS X NOTES:
 
-     See http://homepage.mac.com/opzeeland1/ for installation instructions.
-     Versions of Xastir starting at 1.0.6 have more support built-in for
-     Mac OS X.  You may be able to follow the normal compile method instead
-     of editing Xastir source files.
+     See http://members.chello.nl/~m.vanopzeeland/xastir.html for
+     installation instructions.  Versions of Xastir starting at 1.0.6 have
+     more support built-in for Mac OS X.  You may be able to follow the
+     normal compile method instead of editing Xastir source files.
 
      Current changes required to src/Makefile after running "./configure":
 
