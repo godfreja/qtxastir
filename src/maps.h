@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.24 2003/05/01 16:48:04 kd6zwr Exp $
+ * $Id: maps.h,v 1.25 2003/05/09 06:39:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -94,7 +94,7 @@ int index_retrieve(char *filename, unsigned long *bottom,
     int *map_layer, int *draw_filled, int *automaps);
 void index_restore_from_file(void);
 void index_save_to_file(void);
-void map_indexer(void);
+void map_indexer(int parameter);
 void index_sort(void);
 
 extern int print_rotated;
