@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.40 2002/07/18 01:01:45 we7u Exp $
+ * $Id: xa_config.c,v 1.41 2002/07/18 21:40:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -468,6 +468,10 @@ void save_data(void)  {
             strcpy (name, name_temp);
             strcat (name, "TXMT");
             store_int (fout, name, devices[i].transmit_data);
+
+            strcpy (name, name_temp);
+            strcat (name, "RELAY_DIGIPEAT");
+            store_int (fout, name, devices[i].relay_digipeat);
 
             strcpy (name, name_temp);
             strcat (name, "RECONN");
@@ -970,6 +974,11 @@ void load_data_or_default(void) {
         strcat (name, "TXMT");
         if (!get_int (name, &devices[i].transmit_data,0,1,0))
             devices[i].transmit_data = 0;
+
+        strcpy (name, name_temp);
+        strcat (name, "RELAY_DIGIPEAT");
+        if (!get_int (name, &devices[i].relay_digipeat,0,1,1))
+            devices[i].relay_digipeat = 1;
 
         strcpy (name, name_temp);
         strcat (name, "RECONN");

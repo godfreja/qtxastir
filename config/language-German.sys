@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.35 2002/07/16 21:32:20 we7u Exp $
+# $Id: language-German.sys,v 1.36 2002/07/18 21:40:51 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -623,6 +623,7 @@ UNIOP00026|%||
 UNIOP00027|Inch Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Stellen Sie Systemzeit von GPS ein||
+UNIOP00030|RELAY Digipeat?||
 #
 # popUp "Stationsauswahl"
 STCHO00001|Stationsauswahl||

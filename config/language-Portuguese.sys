@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.30 2002/07/16 21:32:20 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.31 2002/07/18 21:40:51 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -616,6 +616,7 @@ UNIOP00026|%||
 UNIOP00027|inHg||
 UNIOP00028|mm Hg||
 UNIOP00029|Definir o relógio do sistema desde o GPS?||
+UNIOP00030|RELAY Digipeat?||
 #
 # Seleccionar estação
 STCHO00001|Seleccionar estação||

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.36 2002/07/16 21:32:20 we7u Exp $
+# $Id: language-Italian.sys,v 1.37 2002/07/18 21:40:51 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -618,6 +618,7 @@ UNIOP00026|%||
 UNIOP00027|in Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Regolare il tempo del sistema dal GPS||
+UNIOP00030|RELAY Digipeat?||
 #
 # PopUp "Station Chooser"
 STCHO00001|Scelta Stazione||

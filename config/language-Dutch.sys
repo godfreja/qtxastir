@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.35 2002/07/16 21:32:19 we7u Exp $
+# $Id: language-Dutch.sys,v 1.36 2002/07/18 21:40:51 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -621,6 +621,7 @@ UNIOP00026|%||
 UNIOP00027|in Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Set System Clock from GPS Data?||
+UNIOP00030|RELAY Digipeat?||
 #
 # PopUp "Station Chooser"
 STCHO00001|Station Kiezer||
