@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.398 2004/01/19 21:33:02 we7u Exp $
+ * $Id: maps.c,v 1.399 2004/01/19 23:02:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3782,7 +3782,10 @@ static void map_search (Widget w, char *dir, alert_entry * alert, int *alert_cou
                             /*fprintf(stderr,"FILE %s\n",dl->d_name); */
 
                             // Get the last-modified timestamp for the map file
-                            map_timestamp = (time_t)nfile.st_mtime;
+                            //map_timestamp = (time_t)nfile.st_mtime;
+                            map_timestamp =
+                                (time_t)( (nfile.st_mtime>nfile.st_ctime) ? nfile.st_mtime : nfile.st_ctime );
+
 
                             // Check whether we're doing indexing or
                             // map drawing.  If indexing, we only
