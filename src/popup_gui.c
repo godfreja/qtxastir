@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.14 2004/01/26 16:18:23 we7u Exp $
+ * $Id: popup_gui.c,v 1.15 2004/08/19 06:38:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,8 +32,8 @@
 
 #include <Xm/XmAll.h>
 
-#include "main.h"
 #include "xastir.h"
+#include "main.h"
 #include "popup.h"
 #include "main.h"
 #include "lang.h"

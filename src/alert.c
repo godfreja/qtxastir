@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.76 2004/08/18 20:35:42 we7u Exp $
+ * $Id: alert.c,v 1.77 2004/08/19 06:38:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -308,8 +308,8 @@
 
 #include <Xm/XmAll.h>
 
-#include "alert.h"
 #include "xastir.h"
+#include "alert.h"
 #include "util.h"
 #include "snprintf.h"
 #include "wx.h"

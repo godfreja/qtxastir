@@ -2,7 +2,7 @@
 //
 // Portions Copyright (C) 2000-2004  The Xastir Group
 //
-// $Id: festival.c,v 1.11 2004/08/05 20:02:24 we7u Exp $
+// $Id: festival.c,v 1.12 2004/08/19 06:38:23 we7u Exp $
 //
 // End of modification
 
@@ -78,6 +78,7 @@
 /*                  N7IPB    04/08/2001                                  */
 /*                                                                       */
 /*=======================================================================*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -88,10 +89,13 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <fcntl.h>
-#include "festival.h"
 #include <errno.h>
+
+
 #include "xastir.h"
+#include "festival.h"
 #include "snprintf.h"
+
 
 FT_Info *info = NULL;
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.32 2004/08/18 04:59:16 we7u Exp $
+ * $Id: list_gui.c,v 1.33 2004/08/19 06:38:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -47,8 +47,8 @@
 #include <Xbae/Matrix.h>
 #endif  // HAVE_XBAE_MATRIX_H
 
-#include "main.h"
 #include "xastir.h"
+#include "main.h"
 #include "messages.h"
 #include "draw_symbols.h"
 #include "list_gui.h"

@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.40 2004/07/02 00:20:32 we7u Exp $
+ * $Id: gps.c,v 1.41 2004/08/19 06:38:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -52,7 +52,6 @@
 
 #include "gps.h"
 #include "main.h"
-#include "xastir.h"
 #include "interface.h"
 #include "lang.h"
 #include "util.h"

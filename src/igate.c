@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.35 2004/08/18 20:35:42 we7u Exp $
+ * $Id: igate.c,v 1.36 2004/08/19 06:38:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -38,9 +38,9 @@
 #include <X11/Xatom.h>
 #include <X11/Shell.h>
 
+#include "xastir.h"
 #include "igate.h"
 #include "main.h"
-#include "xastir.h"
 #include "interface.h"
 #include "xa_config.h"
 #include "util.h"

@@ -1,5 +1,5 @@
 /*
- * $Id: location_gui.c,v 1.9 2004/07/30 04:02:42 we7u Exp $
+ * $Id: location_gui.c,v 1.10 2004/08/19 06:38:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,8 +30,8 @@
 
 #include <Xm/XmAll.h>
 
-#include "main.h"
 #include "xastir.h"
+#include "main.h"
 #include "xa_config.h"
 #include "util.h"
 #include "lang.h"

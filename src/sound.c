@@ -1,5 +1,5 @@
 /*
- * $Id: sound.c,v 1.9 2004/08/11 02:16:03 we7u Exp $
+ * $Id: sound.c,v 1.10 2004/08/19 06:38:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,6 +32,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "xastir.h"
 #include "main.h"
 
 

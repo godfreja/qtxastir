@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.8 2004/07/30 03:57:57 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.9 2004/08/19 06:38:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -33,8 +33,9 @@
 #include <Xbae/Matrix.h>
 #endif  // HAVE_XBAE_MATRIX_H
 
-#include "main.h"
+
 #include "xastir.h"
+#include "main.h"
 #include "lang.h"
 #include "maps.h"
 #include "io.h"
@@ -50,7 +51,7 @@ char geocoder_zip_name[50];
 char geocoder_state_name[50];
 char geocoder_locality_name[255];
 char geocoder_address_name[255];
-char geocoder_map_filename[255];
+char geocoder_map_filename[400];
 static xastir_mutex geocoder_place_dialog_lock;
 
 long destination_coord_lat = 0;

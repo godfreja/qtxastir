@@ -4,7 +4,7 @@
 
    Portions Copyright (C) 2002-2004  The Xastir Group
 
-   $Id: datum.c,v 1.18 2004/01/26 16:18:19 we7u Exp $
+   $Id: datum.c,v 1.19 2004/08/19 06:38:23 we7u Exp $
 */
 
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include "xastir.h"
 #include "datum.h"
 #include "main.h"
 #include "util.h"
