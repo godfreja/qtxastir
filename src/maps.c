@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.288 2003/06/05 20:55:25 we7u Exp $
+ * $Id: maps.c,v 1.289 2003/06/06 19:50:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5223,6 +5223,12 @@ static void* snapshot_thread(void *arg) {
                 fprintf(stderr, "%s\n", strerror(errno));
                 fprintf(stderr,
                     "Failed to convert snapshot: %s -> %s\n",
+                    xpm_filename,
+                    png_filename);
+            }
+            else {
+                fprintf(stderr,
+                    "System call return error: convert: %s -> %s\n",
                     xpm_filename,
                     png_filename);
             }
