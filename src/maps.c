@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.419 2004/10/18 18:58:08 we7u Exp $
+ * $Id: maps.c,v 1.420 2004/10/18 20:17:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,7 +22,7 @@
  * Look at the README for more information on the program.
  */
 
-#define GDAL_SHAPEFILES
+//#define GDAL_SHAPEFILES
 //#define MAP_SCALE_CHECK
 
 
