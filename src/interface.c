@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.12 2002/03/11 09:17:51 we7u Exp $
+ * $Id: interface.c,v 1.13 2002/05/16 23:29:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3022,7 +3022,7 @@ void check_ports(void) {
 //***********************************************************
 // output_my_aprs_data
 // This is the function responsible for sending out my own
-// posits.  The next function below this one handles object
+// posits.  The next function below this one handles objects,
 // messages and the like (output_my_data).
 //***********************************************************
 void output_my_aprs_data(void) {
