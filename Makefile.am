@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.16 2003/05/15 05:07:09 jtwilley Exp $
+# $Id: Makefile.am,v 1.17 2003/05/15 14:47:51 we7u Exp $
 AUTOMAKE_OPTIONS = gnu dist-bzip2
 ACLOCAL_AMFLAGS = -I m4
 
@@ -11,7 +11,8 @@ SUBDIRS = src m4 config help scripts symbols callpass
 
 EXTRA_DIST = xastir.spec.in xastir.spec config.guess config.sub install-sh \
         missing mkinstalldirs placeholder FAQ LICENSE README \
-        DEBUG_LEVELS bootstrap.sh xastir.1
+        README.CVS README.MAPS README.win32 DEBUG_LEVELS \
+        bootstrap.sh INSTALL UPGRADE xastir.1
 
 MAINTAINERCLEANFILES = configure aclocal.m4 Makefile.in Makefile \
         config.guess config.sub install-sh missing mkinstalldirs \
@@ -36,7 +37,8 @@ sounddir=${prefix}/xastir/sounds
 sound_DATA=placeholder
 
 docdir=${prefix}/xastir/doc
-doc_DATA=AUTHORS FAQ ChangeLog LICENSE README.1ST COPYING
+doc_DATA=AUTHORS FAQ ChangeLog LICENSE README README.CVS \
+        README.MAPS README.win32 COPYING INSTALL UPGRADE
 
 mandir=${prefix}/man
 man_MANS=xastir.1
