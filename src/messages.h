@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.6 2004/07/13 14:54:15 we7u Exp $
+ * $Id: messages.h,v 1.7 2004/08/19 06:31:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -73,7 +73,7 @@ extern Widget auto_msg_on, auto_msg_off;
 
 extern int auto_reply;
 extern char auto_reply_message[100];
-extern char group_data_file[];
+extern char group_data_file[400];
 
 extern void clear_acked_message(char *from, char *to, char *seq);
 extern void transmit_message_data(char *to, char *message, char *path);

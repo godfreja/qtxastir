@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.37 2004/07/16 18:27:32 we7u Exp $
+ * $Id: xastir.h,v 1.38 2004/08/19 06:31:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -89,6 +89,9 @@
 #include "messages.h"
 #include "fcc_data.h"
 #include "rac_data.h"
+
+
+#define MAX_CALLSIGN 9       // Objects are up to 9 chars
 
 
 // black
