@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.536 2004/10/07 16:29:43 we7u Exp $
+ * $Id: main.c,v 1.537 2004/10/07 17:16:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5324,7 +5324,6 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
 //    geocode_place_button = XtVaCreateManagedWidget(langcode("PULDNMP014"),
     geocode_place_button = XtVaCreateManagedWidget("Find Address",
- 
             xmPushButtonGadgetClass,
             mappane,
             XmNmnemonic,langcode_hotkey("PULDNMP014"),
@@ -11387,7 +11386,7 @@ void check_range(void) {
     Dimension width, height;
 
 
-    XtVaGetValues(da,XmNwidth, &width,XmNheight, &height,0);
+    XtVaGetValues(da,XmNwidth, &width,XmNheight, &height, NULL);
 
     // Check the window itself to see if our new y-scale fits it
     //
