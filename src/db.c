@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.113 2002/07/17 20:01:30 we7u Exp $
+ * $Id: db.c,v 1.114 2002/07/17 20:05:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10131,7 +10131,7 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 //                              1 if it is good
 //          incoming_data       Processed string
 //
-int decode_ax25_header(char *incoming_data) {
+int decode_ax25_header(unsigned char *incoming_data) {
     char temp[20];
     char result[4096+100];
     char dest[15];
