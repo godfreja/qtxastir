@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.79 2002/06/19 17:53:44 we7u Exp $
+ * $Id: db.c,v 1.80 2002/06/20 00:17:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -43,6 +43,7 @@
 #include "util.h"
 #include "bulletin_gui.h"
 #include "fcc_data.h"
+#include "gps.h"
 #include "rac_data.h"
 #include "interface.h"
 #include "wx.h"
@@ -7322,6 +7323,11 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                 statusline(station_id,0);
                 play_sound(sound_command,sound_prox_message);
                 /*printf("%s> PROX distance %f\n",p_station->call_sign, distance);*/
+
+//WE7U
+            //printf("Station within proximity circle, creating waypoint\n");
+            create_garmin_waypoint(p_station->coord_lat,p_station->coord_lon,p_station->call_sign);
+
             }
 #ifdef HAVE_FESTIVAL
             if ((distance > atof(prox_min)) && (distance < atof(prox_max)) && festival_speak_proximity_alert) {
