@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.56 2002/04/26 18:27:34 we7u Exp $
+ * $Id: maps.c,v 1.57 2002/04/26 23:51:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1892,7 +1892,39 @@ void draw_shapefile_map (Widget w,
                     if (road_flag) {
                         int lanes = 0;
 
-                        if (fieldcount >= 7) {  // Need at least 7 fields if we're snagging #6, else segfault
+                        if ( mapshots_labels_flag && (fieldcount >= 9) ) {
+                            const char *temp;
+
+                            temp = DBFReadStringAttribute( hDBF, structure, 8 );    // CFCC Field
+                            switch (temp[1]) {
+                                case '1':
+                                    lanes = 4;
+                                    break;
+                                case '2':
+                                    lanes = 3;
+                                    break;
+                                case '3':
+                                    lanes = 2;
+                                    break;
+                                case '4':
+                                    lanes = 1;
+                                    break;
+                                case '5':
+                                    lanes = 1;
+                                    break;
+                                case '6':
+                                    lanes = 1;
+                                    break;
+                                case '7':
+                                    lanes = 1;
+                                    break;
+                                    break;
+                                default:
+                                    lanes = 1;
+                                    break;
+                            }
+                        }
+                        else if (fieldcount >= 7) {  // Need at least 7 fields if we're snagging #6, else segfault
                             lanes = DBFReadIntegerAttribute( hDBF, structure, 6 );
                         }
 
