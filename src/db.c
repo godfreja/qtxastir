@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.121 2002/07/20 07:44:36 we7u Exp $
+ * $Id: db.c,v 1.122 2002/07/22 17:41:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10430,7 +10430,7 @@ void relay_digipeat(char *call, char *path, char *info, int port) {
 
     }
     else if (devices[port].device_type == DEVICE_AX25_TNC) {
-        printf("AX25 RELAY: Coming soon to an Xastir near you: %s\n", short_path);
+//        printf("AX25 RELAY: Coming soon to an Xastir near you: %s\n", short_path);
     }
 
 // Example packet:
