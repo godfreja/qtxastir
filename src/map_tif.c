@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.9 2004/01/26 16:18:23 we7u Exp $
+ * $Id: map_tif.c,v 1.10 2004/07/30 04:02:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -194,7 +194,10 @@ int read_fgd_file ( char* tif_filename,
 
 
     /* Read the .fgd file to find corners of the map neat-line */
-    strcpy( fgd_file, tif_filename);
+    xastir_snprintf(fgd_file,
+        sizeof(fgd_file),
+        "%s",
+        tif_filename);
     length = strlen(fgd_file);
 
     /* Change the extension to ".fgd" */

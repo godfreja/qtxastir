@@ -1,5 +1,5 @@
 /*
- * $Id: locate_gui.c,v 1.10 2004/07/02 20:19:28 we7u Exp $
+ * $Id: locate_gui.c,v 1.11 2004/07/30 04:02:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -73,12 +73,12 @@ void locate_gui_init(void)
 {
     init_critical_section( &locate_station_dialog_lock );
     init_critical_section( &locate_place_dialog_lock );
-    strcpy(locate_station_call,"");
-    strcpy(locate_place_name,"");
-    strcpy(locate_state_name,"");
-    strcpy(locate_county_name,"");
-    strcpy(locate_quad_name,"");
-    strcpy(locate_type_name,"");
+    locate_station_call[0] = '\0';
+    locate_place_name[0] = '\0';
+    locate_state_name[0] = '\0';
+    locate_county_name[0] = '\0';
+    locate_quad_name[0] = '\0';
+    locate_type_name[0] = '\0';
 }
 
 

@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.9 2004/07/15 21:32:44 we7u Exp $
+// $Id: rotated.c,v 1.10 2004/07/30 04:02:43 we7u Exp $
 //
 // Portions Copyright (C) 2000-2004  The Xastir Group
 //
@@ -41,6 +41,7 @@
 #include <math.h>
 #include <string.h>
 #include "rotated.h"
+#include "snprintf.h"
 
 
 /* ---------------------------------------------------------------------- */
@@ -176,10 +177,16 @@ static char *my_strdup(char *str) {
         return NULL;
     
     s=(char *)malloc((unsigned)(strlen(str)+1));
-    if(s!=NULL) 
-        strcpy(s, str);
-    else
+
+    if(s!=NULL) {
+        xastir_snprintf(s,
+            strlen(str)+1,
+            "%s",
+            str);
+    }
+    else {
         fprintf(stderr,"Couldn't allocate memory in my_strdup()\n");
+    }
     
     return s;
 }

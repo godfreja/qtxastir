@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.14 2004/02/26 20:30:55 we7u Exp $
+ * $Id: map_tiger.c,v 1.15 2004/07/30 04:02:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -124,6 +124,9 @@ struct FtpFile {
 
 extern int npoints;		/* tsk tsk tsk -- globals */
 extern int mag;
+
+
+
 
 
 /**********************************************************
@@ -444,12 +447,17 @@ void draw_tiger_map (Widget w,
     // Set permissions on the file so that any user can overwrite it.
     chmod(local_filename, 0666);
 
-    strcpy(file,local_filename);  // Tell ImageMagick where to find it
+    // Tell ImageMagick where to find it
+    xastir_snprintf(file,
+        sizeof(file),
+        "%s",
+        local_filename);
 
     GetExceptionInfo(&exception);
 
     image_info=CloneImageInfo((ImageInfo *) NULL);
-    (void) strcpy(image_info->filename, file);
+
+    (void) strncpy(image_info->filename, file, sizeof(file));
 
     if (debug_level & 512) {
            fprintf(stderr,"Copied %s into image info.\n", file);

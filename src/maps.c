@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.407 2004/07/15 21:32:44 we7u Exp $
+ * $Id: maps.c,v 1.408 2004/07/30 04:02:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1888,7 +1888,10 @@ static void draw_rotated_label_text_common (Widget w, float my_rotation, int x, 
         strcmp(rotated_label_fontname[fontsize],current_rotated_label_fontname[fontsize]) != 0) {
         XFreeFont(XtDisplay(w),rotated_label_font[fontsize]);
         rotated_label_font[fontsize] = NULL;
-        strcpy(current_rotated_label_fontname[fontsize],rotated_label_fontname[fontsize]);
+        xastir_snprintf(current_rotated_label_fontname[fontsize],
+            sizeof(rotated_label_fontname),
+            "%s",
+            rotated_label_fontname[fontsize]);
     }
     /* load font */
     if(!rotated_label_font[fontsize]) {
