@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.h,v 1.1 2004/11/12 17:09:11 we7u Exp $
+ * $Id: map_cache.h,v 1.2 2004/11/12 18:52:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,10 +35,10 @@ extern int map_cache_expired( char * mc_filename, time_t mc_max_age );
 extern char * map_cache_fileid();
 
 // about 6mo
-//#define MC_MAX_FILE_AGE 6*30*24*60*60
+#define MC_MAX_FILE_AGE 6*30*24*60*60
 
 // 1 hr
-#define MC_MAX_FILE_AGE 60*60
+//#define MC_MAX_FILE_AGE 60*60
 
 // 5 seconds -- don't do this except for testing 
 //#define MC_MAX_FILE_AGE 5
