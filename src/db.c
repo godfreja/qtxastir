@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.432 2005/01/26 21:30:27 we7u Exp $
+ * $Id: db.c,v 1.433 2005/02/28 17:11:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2703,7 +2703,8 @@ _do_the_drawing:
                 p_station->aprs_symbol.area_object.type,
                 p_station->signpost,
                 p_station->probability_min,
-                p_station->probability_max);
+                p_station->probability_max,
+                1); // Increment "currently_selected_stations"
 
 
     // Draw other points associated with the station, if any.
