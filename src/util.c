@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.77 2003/07/15 14:17:27 n2ygk Exp $
+ * $Id: util.c,v 1.78 2003/07/15 18:13:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1878,7 +1878,9 @@ void reload_object_item(void) {
 
         // Update the screen
         redraw_symbols(da);
-        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+        if (!interrupt_drawing_now) {
+            (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+        }
     }
     else {
         if (debug_level & 1)
