@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.32 2002/08/14 15:49:49 francais1 Exp $
+ * $Id: util.c,v 1.33 2002/08/27 22:43:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27,6 +27,7 @@
 #include "snprintf.h"
 
 #include <time.h>
+#include <sys/time.h>
 #include <unistd.h>
 #include <signal.h>
 #include <string.h>
@@ -61,6 +62,39 @@ int position_amb_chars;
 char echo_digis[6][9+1];
 
 #define ACCEPT_0N_0E    /* set this to see stations at 0N/0E on the map */
+
+struct timeval timer_start;
+struct timeval timer_stop;
+struct timezone tz;
+
+
+
+
+
+// Save the current time, used for timing code sections.
+void start_timer(void) {
+    gettimeofday(&timer_start,&tz);
+}
+
+
+
+
+
+// Save the current time, used for timing code sections.
+void stop_timer(void) {
+    gettimeofday(&timer_stop,&tz);
+}
+
+
+
+
+
+// Print the difference in the two times saved above.
+void print_timer_results(void) {
+printf("Total: %f sec\n",
+    (float)(timer_stop.tv_sec - timer_start.tv_sec +
+    ((timer_stop.tv_usec - timer_start.tv_usec) / 1000000.0) ));
+}
 
 
 

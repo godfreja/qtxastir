@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.9 2002/08/09 06:33:45 we7u Exp $
+ * $Id: util.h,v 1.10 2002/08/27 22:43:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,6 +30,9 @@
 #include <pthread.h>
 
 extern int  position_amb_chars;
+extern void start_timer(void);
+extern void stop_timer(void);
+extern void print_timer_results(void);
 extern void get_timestamp(char *timestring);
 extern int get_hours(void);
 extern int get_minutes(void);
