@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.23 2002/07/18 21:47:16 we7u Exp $
+ * $Id: interface_gui.c,v 1.24 2002/07/18 21:55:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4333,7 +4333,8 @@ end_critical_section(&devices_lock, "interface_gui.c:interface_setup" );
 
                     case DEVICE_NET_STREAM:
                         /* configure this port */
-                        printf("ADD NET STREAM\n");
+                        if (debug_level & 1)
+                            printf("ADD NET STREAM\n");
                         Config_Inet(w, 0, port);
                         break;
 
