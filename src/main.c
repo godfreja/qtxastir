@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.514 2004/08/27 20:09:20 we7u Exp $
+ * $Id: main.c,v 1.515 2004/09/02 14:49:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -17953,7 +17953,7 @@ void Config_tiger( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@
                 XmNorientation, XmHORIZONTAL,
                 XmNborderWidth, 1,
                 XmNminimum, 10,
-                XmNmaximum, 120,
+                XmNmaximum, 180,
                 XmNshowValue, TRUE,
                 XmNvalue, tigermap_timeout,
                 XtVaTypedArg, XmNtitleString, XmRString, langcode("MPUPTGR017"), timeout_length,
