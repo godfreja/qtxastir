@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.108 2003/11/06 17:13:07 we7u Exp $
+# $Id: language-French.sys,v 1.109 2003/11/24 05:50:32 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -79,6 +79,8 @@ PULDNMP021|Cartographie automatique - désactiver cartes tramées||
 PULDNMP022|Indexer nouvelles cartes au démarrage||
 PULDNMP023|Index: Ajouter nouvelles cartes|R|
 PULDNMP024|Index: Re-indexer toutes cartes|A|
+PULDNMP025|Map labels font||
+PULDNMP015|Xfontsel||
 #
 #
 # PopUp "Configure Tigermap"

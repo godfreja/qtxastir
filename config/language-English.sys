@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.108 2003/11/06 17:13:07 we7u Exp $
+# $Id: language-English.sys,v 1.109 2003/11/24 05:50:32 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -81,6 +81,7 @@ PULDNMP022|Index New Maps on Startup||
 PULDNMP023|Index: Add New Maps|N|
 PULDNMP024|Index: Reindex ALL Maps|R|
 PULDNMP025|Map labels font||
+PULDNMP015|Xfontsel||
 #
 #
 # PopUp "Configure Tigermap"

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.108 2003/11/04 17:17:34 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.109 2003/11/24 05:50:32 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -78,6 +78,8 @@ PULDNMP021|Auto Map - Desactivar raster mapas||
 PULDNMP022|Indexar mapas no começo||
 PULDNMP023|Index: Acrescentar mapas novos|A|
 PULDNMP024|Index: Reindexar os mapas TODOS|R|
+PULDNMP025|Map labels font||
+PULDNMP015|Xfontsel||
 #
 # PopUp "Configurar tigermap"
 MPUPTGR001|Grelha||
