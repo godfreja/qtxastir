@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.532 2004/10/07 05:17:07 we7u Exp $
+ * $Id: main.c,v 1.533 2004/10/07 05:45:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12002,6 +12002,7 @@ void Center_Zoom( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@u
             char temp_course[10];
             double scale_factor;
             long my_scale_y;
+            int fell_off = 0;
 
 
 //fprintf(stderr,"Map View Object: %s\n",p_station->call_sign);
@@ -12044,10 +12045,24 @@ void Center_Zoom( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@u
 
             // X
             x = mid_x_long_offset  - ((width *scale_x)/2);
+
+            // Check for the edge of the earth
+            if (x < 0) {
+                x = 0;
+                fell_off++; // Fell off the edge of the earth
+            }
+
             x0 = mid_x_long_offset; // Center of screen
 
             // Y
             y = mid_y_lat_offset   - ((height*scale_y)/2);
+
+            // Check for the edge of the earth
+            if (y < 0) {
+                y = 0;
+                fell_off++; // Fell off the edge of the earth
+            }
+
             y0 = mid_y_lat_offset;  // Center of screen
 
             // Compute distance from center to each edge
