@@ -1,13 +1,17 @@
 #!/bin/sh
 #
-# $Id: xastir-fixcfg.sh,v 1.2 2003/07/02 21:48:13 we7u Exp $
+# $Id: xastir-fixcfg.sh,v 1.3 2003/07/07 18:09:34 we7u Exp $
 #
 # fix up a user's .xastir/config/xastir.cnf to rewrite /usr/local/xastir
 # to /usr/local/share/xastir.  NOTE: This only works when -prefix=/usr/local!
 CNF=.xastir/config/xastir.cnf
+INDEX=.xastir/config/map_index.sys
+SELECT=.xastir/config/selected_maps.sys
 cd
 if [ -f $CNF ]; then
+    rm $INDEX
     mv $CNF $CNF.backup
+    mv $SELECT $SELECT.backup
     if [ $? -ne 0 ]; then
 	echo "$CNF: unable to rename!"
 	exit 1
