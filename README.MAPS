@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.8 2003/05/22 19:33:57 we7u Exp $
+$Id: README.MAPS,v 1.9 2003/05/22 20:20:41 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -386,11 +386,11 @@ Getting Maps and other Data Files for Xastir:
       These are what I currently have loaded:
 
             hz02oc01.shp
-            w_25ap02.shp
-            oz18jn02.shp
-            c_30au02.shp
-            z_30au02.shp
-            mz10se02.shp
+            w_10de02.shp
+            oz11ap03.shp
+            c_12my03.shp
+            z_16ap03.shp
+            mz06my03.shp
            
        Note that you can also use the county file as the background polygon
        filled map for drawing county lands and borders.  Either make a link
