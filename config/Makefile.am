@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.11 2004/01/26 16:12:51 we7u Exp $
+# $Id: Makefile.am,v 1.12 2004/04/08 16:14:15 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -16,6 +16,7 @@ EXTRA_DIST = \
     tnc-startup.sys \
     tnc-stop.sys \
     xastir.rgb \
+    tgr2shp.dbfawk \
     tgrcty.dbfawk \
     tgrkgl.dbfawk \
     tgrlk.dbfawk \
