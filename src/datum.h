@@ -25,8 +25,12 @@
    Thanks Chuck!
 
    N7TAP
-   $Id: datum.h,v 1.10 2005/01/08 09:46:48 we7u Exp $
+   $Id: datum.h,v 1.11 2005/03/24 20:25:51 we7u Exp $
 */
+
+#define EARTH_RADIUS_METERS     6378138.0
+#define EARTH_RADIUS_KILOMETERS 6378.138
+#define EARTH_RADIUS_MILES      3963.1836
 
 #define FROM_WGS_84 1
 #define TO_WGS_84   0
