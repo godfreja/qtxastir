@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.68 2003/10/16 21:44:29 we7u Exp $
+# $Id: configure.ac,v 1.69 2003/11/09 01:42:10 jtwilley Exp $
 
 
 #########################################################################
@@ -168,6 +168,8 @@ AC_CHECK_LIB(intl, gettext, LIBS="-lintl ${LIBS}")
 use_shapelib=no
 AC_CHECK_HEADERS(shapefil.h libshp/shapefil.h, [AC_CHECK_LIB(shp, DBFOpen, use_shapelib=yes
 LIBS="$LIBS -lshp"
+AC_CHECK_LIB(shp,DBFGetFieldIndex,
+  AC_DEFINE(HAVE_DBFGETFIELDINDEX, , Define to 1 if your `shp' library has DBFGetFieldIndex. ) )
 AC_DEFINE(HAVE_LIBSHP, , Define to 1 if you have the `shp' library (-lshp). )
 break)])
  
