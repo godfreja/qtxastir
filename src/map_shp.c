@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.62 2004/05/27 02:11:00 we7u Exp $
+ * $Id: map_shp.c,v 1.63 2004/05/28 18:09:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1163,10 +1163,17 @@ void draw_shapefile_map (Widget w,
                             i,key);
                 }
                 if (strncmp(alert->title,key,keylen) == 0) {
-                    found_shape = i;
-                    done++;
-                    if (debug_level & 16) {
-                        fprintf(stderr,"dbfawk alert found it: %d \n",i);
+                    // keylen could be zero, so check again
+                    int titlelen;
+
+                    titlelen = strlen(alert->title);
+                    if (strncmp(alert->title,key,titlelen) == 0) {
+                        found_shape = i;
+                        done++;
+                        if (debug_level & 16) {
+                            fprintf(stderr,"dbfawk alert found it: %d \n",i);
+                            fprintf(stderr,"Title %s, key %s\n",alert->title,key);
+                        }
                     }
                 }
             }
