@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.358 2003/10/22 23:06:44 we7u Exp $
+ * $Id: maps.c,v 1.359 2003/10/22 23:19:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1174,7 +1174,11 @@ void draw_grid(Widget w) {
                         nbp++;
                     else if (nbp > 0) { // We had a boundary point, but not anymore
                         fp = utm_grid.zone[zone].col[i].firstpoint = j - 1;
+//fprintf(stderr,"np:%d, j:%d\n",np,j);
                         np = utm_grid.zone[zone].col[i].npoints    = np - j + 1;
+//fprintf(stderr,"new np:%d\n",np);
+                        if (np < 0)
+                            np = 0;
                         break;
                     }
                     if (nbp == np) { // All points are boundary points
@@ -1197,8 +1201,8 @@ void draw_grid(Widget w) {
                         fp = utm_grid.zone[zone].col[i].firstpoint = 0;
                     }
                     else {
-fprintf(stderr,"draw_grid: i:%d, np:%d, size:%d\n",i,np,sizeof(XPoint));
-fprintf(stderr,"Problem: in draw_grid() memmove, np was %d.  Skipping memmove.\n",np);
+//fprintf(stderr,"draw_grid: i:%d, np:%d, size:%d\n",i,np,sizeof(XPoint));
+//fprintf(stderr,"Problem: in draw_grid() memmove, np was %d.  Skipping memmove.\n",np);
                     }
                 }
 
