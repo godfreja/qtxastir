@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.283 2003/05/21 19:22:43 we7u Exp $
+ * $Id: main.c,v 1.284 2003/05/21 23:16:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -18241,7 +18241,7 @@ else if (Area_object_enabled) {
         XtAddCallback(toption1,XmNvalueChangedCallback,Area_type_toggle,"0");
 
         // "Line-Right '/'"
-        toption2 = XtVaCreateManagedWidget(langcode("POPUPOB012"),
+        toption2 = XtVaCreateManagedWidget(langcode("POPUPOB013"),
                 xmToggleButtonGadgetClass,
                 shape_box,
                 MY_FOREGROUND_COLOR,
@@ -18250,7 +18250,7 @@ else if (Area_object_enabled) {
         XtAddCallback(toption2,XmNvalueChangedCallback,Area_type_toggle,"1");
 
         // "Line-Left '\'
-        toption3 = XtVaCreateManagedWidget(langcode("POPUPOB013"),
+        toption3 = XtVaCreateManagedWidget(langcode("POPUPOB012"),
                 xmToggleButtonGadgetClass,
                 shape_box,
                 MY_FOREGROUND_COLOR,

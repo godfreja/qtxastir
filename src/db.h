@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.36 2003/05/21 22:40:10 francais1 Exp $
+ * $Id: db.h,v 1.37 2003/05/21 23:16:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -170,12 +170,12 @@ extern int message_update_time(void);
 
 enum AreaObjectTypes {
     AREA_OPEN_CIRCLE     = 0x0,
-    AREA_LINE_RIGHT      = 0x1,
+    AREA_LINE_LEFT       = 0x1,
     AREA_OPEN_ELLIPSE    = 0x2,
     AREA_OPEN_TRIANGLE   = 0x3,
     AREA_OPEN_BOX        = 0x4,
     AREA_FILLED_CIRCLE   = 0x5,
-    AREA_LINE_LEFT       = 0x6,
+    AREA_LINE_RIGHT      = 0x6,
     AREA_FILLED_ELLIPSE  = 0x7,
     AREA_FILLED_TRIANGLE = 0x8,
     AREA_FILLED_BOX      = 0x9,
