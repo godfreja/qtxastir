@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.130 2002/08/14 22:04:02 we7u Exp $
+ * $Id: db.c,v 1.131 2002/08/21 18:17:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -984,8 +984,8 @@ time_t msg_data_add(char *call_sign, char *from_call, char *data,
     // within our range.
     if (bring_up_bulletins && pop_up_new_bulletins) {
         popup_bulletins();
-        //printf("%05d:%9s:%c:%c:%9s:%s:%s\n",
-        //    distance, call_sign, type, from, from_call, data, seq);
+printf("%05d:%9s:%c:%c:%9s:%s:%s\n",
+    distance, call_sign, type, from, from_call, data, seq);
     }
  
     // Return the important variables we'll need
