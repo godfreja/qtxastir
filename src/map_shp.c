@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.5 2003/07/15 14:17:27 n2ygk Exp $
+ * $Id: map_shp.c,v 1.6 2003/07/22 20:13:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -657,7 +657,8 @@ void draw_shapefile_map (Widget w,
 
     // Check for ~/.xastir/tracklogs directory.  We set up the
     // labels and colors differently for these types of files.
-    if (strstr(filenm,".xastir/tracklogs")) { // We're in the ~/.xastir/tracklogs directory
+//    if (strstr(filenm,".xastir/tracklogs")) { // We're in the ~/.xastir/tracklogs directory
+    if (strstr(filenm,"GPS")) { // We're in the maps/GPS directory
         gps_flag++;
     }
 
