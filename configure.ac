@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.108 2004/12/10 02:32:35 we7u Exp $
+# $Id: configure.ac,v 1.109 2004/12/10 02:35:28 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -418,7 +418,7 @@ changequote([,])
 #
 # Change the compiler optimization if using Windows/Cygwin in order
 # to reduce memory usage and speed up the compile.  Here we change
-# "-O2" to "-O1" in CFLAGS/CPPFLAGS to reduce the level of
+# "-O2" to "-O1" or " " in CFLAGS/CPPFLAGS to reduce the level of
 # optimization.
 #
 case "$host_os" in
