@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.4 2002/11/22 01:06:09 we7u Exp $
+ * $Id: popup_gui.c,v 1.5 2002/11/22 01:56:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -228,7 +228,8 @@ void popup_ID_message(char *banner, char *message) {
         //"-*-times-bold-r-*-*-13-*-*-*-*-80-*-*";
         //"-*-helvetica-bold-r-*-*-14-*-*-*-*-80-*-*";
         //"-*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*";
-        "-*-helvetica-*-*-*-*-*-240-100-100-*-*-*-*";
+        //"-*-helvetica-*-*-*-*-*-240-100-100-*-*-*-*";
+        "-*-helvetica-*-*-*-*-*-240-75-75-*-*-*-*";
         //"-*-fixed-*-r-*-*-*-*-*-*-*-200-*-*";
     static XFontStruct *font=NULL;
     float my_rotation = 0.0;
