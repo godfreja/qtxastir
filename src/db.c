@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.214 2003/02/24 23:40:18 we7u Exp $
+ * $Id: db.c,v 1.215 2003/02/25 00:26:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10708,6 +10708,7 @@ else {
 
 
 
+//WE7U
 // NOTE:  This sequence is stupid!  We throw the alert into the
 // message database, and then scan the whole message database for
 // alerts so that we can fill in new entries in our alert_list.
@@ -10716,6 +10717,8 @@ else {
 // that we'll do a display update soon.
         (void)msg_data_add(addr,call,message,msg_id,MESSAGE_NWS,from,&dummy);
         (void)alert_message_scan();
+        // This function fills in the Shapefile filename and index
+        // so that we can later draw it.
         fill_in_new_alert_entries(da, ALERT_MAP_DIR);
 
 
@@ -10746,6 +10749,7 @@ else {
 
 
 
+//WE7U
 // NOTE:  This sequence is stupid!  We throw the alert into the
 // message database, and then scan the whole message database for
 // alerts so that we can fill in new entries in our alert_list.
@@ -10754,6 +10758,8 @@ else {
 // that we'll do a display update soon.
         (void)msg_data_add(addr,call,message,msg_id,MESSAGE_NWS,from,&dummy);
         (void)alert_message_scan();
+        // This function fills in the Shapefile filename and index
+        // so that we can later draw it.
         fill_in_new_alert_entries(da, ALERT_MAP_DIR);
 
 
