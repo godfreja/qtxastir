@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.33 2002/05/17 18:37:00 we7u Exp $
+ * $Id: db.c,v 1.34 2002/05/17 21:14:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -534,8 +534,12 @@ void msg_record_ack(char *to_call_sign, char *my_call, char *seq) {
                 seq,
                 record);
         }
+        // Only cause an update if this is the first ack.  This
+        // reduces dialog "flashing" a great deal
+        if ( msg_data[msg_index[record]].acked == 0 ) {
+            do_update++;
+        }
         msg_data[msg_index[record]].acked = 1;
-        do_update++;
         if (debug_level & 1) {
             printf("Found in msg db, updating acked field %d -> 1, seq %s, record %ld\n\n",
                 msg_data[msg_index[record]].acked,
