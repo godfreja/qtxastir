@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.118 2002/07/18 16:31:46 we7u Exp $
+ * $Id: main.c,v 1.119 2002/07/18 23:36:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5643,8 +5643,13 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                             // Try to decode header and checksum.  If
                             // bad, break, else continue through to
                             // ASCII logging & decode routines.
-                            if ( !decode_ax25_header( (char *)incoming_data, incoming_data_length ) )
+                            if ( !decode_ax25_header( (char *)incoming_data, incoming_data_length ) ) {
                                 break;
+                            }
+                            else {
+                                // Drop through to the next block to
+                                // log and decode the packet.
+                            }
 
                         case DEVICE_SERIAL_TNC:
 
