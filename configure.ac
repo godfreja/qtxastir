@@ -1,15 +1,20 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.63 2003/08/29 16:50:12 n2ygk Exp $
+# $Id: configure.ac,v 1.64 2003/09/02 23:43:05 jtwilley Exp $
 
 
 #########################################################################
 # SET VERSION HERE!
 #
+# AC_INIT():
 # It should look something like this:  (xastir, 1.2.1, xastir@xastir.org)
+# The revision number must contain at least one '.' and two digits.
+# AM_INIT_AUTOMAKE():
+# It should look something like this:  (xastir, 1.2.1)
 # The revision number must contain at least one '.' and two digits.
 #
 AC_INIT(xastir, 1.2.1, xastir@xastir.org)
+AM_INIT_AUTOMAKE(xastir, 1.2.1)
 #########################################################################
 
 
@@ -17,7 +22,6 @@ AC_PREREQ(2.53)
 
 AC_CONFIG_SRCDIR([src/xastir.h])
 AM_CONFIG_HEADER(config.h)
-AM_INIT_AUTOMAKE
 
 echo ""
 echo "Configuring AC_PACKAGE_NAME AC_PACKAGE_VERSION"
