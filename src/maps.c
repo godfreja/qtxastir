@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.350 2003/10/22 16:32:55 we7u Exp $
+ * $Id: maps.c,v 1.351 2003/10/22 16:33:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,6 +26,7 @@
  * SHPRingDir_2d() function in this file.
  *
  */
+
 
 //#define MAP_SCALE_CHECK
 //#define FUZZYRASTER
