@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.35 2004/04/07 04:13:19 we7u Exp $
+$Id: INSTALL,v 1.36 2004/04/26 18:14:16 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -145,8 +145,7 @@ For speech support via the festival speech synthesis software you need:
 
 For ESRI Shapefile format maps/weather alert maps:
     Shapelib:
-        http://shapelib.maptools.org
-        http://gdal.velocet.ca/projects/shapelib/index.html
+        http://shapelib.maptools.org/
         http://wetnet.net/~we7u/xastir/
     pcre:
         http://www.pcre.org
