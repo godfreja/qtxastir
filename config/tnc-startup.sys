@@ -1,4 +1,4 @@
-# $Id: tnc-startup.sys,v 1.1 2002/02/02 03:16:17 kg4ijb Exp $
+# $Id: tnc-startup.sys,v 1.2 2002/03/11 18:06:56 we7u Exp $
 # This is the TNC Startup file for Kantronics TNC.
 # lines that begin with a pound sign are comments.
 
@@ -12,11 +12,12 @@ FLow off
 FUll off
 HEA off
 LFadd off
-LFSup ON
+LFSup on
 AUTOLF off
 MCOM off
-MON ON
-MResp OFF
+MFILT off
+MON on
+MResp off
 MRPt on
 MSTamp off
 MXMit off
