@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.417 2004/10/03 04:58:02 we7u Exp $
+ * $Id: maps.c,v 1.418 2004/10/14 05:57:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -653,6 +653,7 @@ void draw_vector(Widget w,
                  Pixmap which_pixmap) {
 
     int x1i, x2i, y1i, y2i;
+    unsigned long B, T, L, R;
 
 
     // Check whether the two bounding boxes intersect.  If not, skip
@@ -660,9 +661,31 @@ void draw_vector(Widget w,
     // special-case code here to handle vertical/horizontal lines
     // (width or length of zero)?
     //
-    if (!map_visible(y1, y2, x1, x2)) {
+    // Here the order of the parameters is extremely important due
+    // to the way that map_visible() has been coded.  We need the
+    // parameters in this order: bottom/top/left/right.
+    //
+    if (y1 > y2) {
+        B = y1;
+        T = y2;
+    }
+    else {
+        B = y2;
+        T = y1;
+    }
+
+    if (x1 < x2) {
+        L = x1;
+        R = x2;
+    }
+    else {
+        L = x2;
+        R = x1;
+    }
+
+    if (!map_visible(B, T, L, R)) {
         // Skip this vector
-//fprintf(stderr,"Line not visible\n");
+        //fprintf(stderr,"Line not visible\n");
         return;
     }
 
