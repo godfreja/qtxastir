@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.12 2005/03/15 01:58:44 we7u Exp $
+ * $Id: database.h,v 1.13 2005/03/17 15:21:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -382,7 +382,7 @@ typedef struct _DataRow {
     unsigned int  num_packets;
     char *node_path_ptr;        // Pointer to path string
     char altitude[MAX_ALTITUDE]; // in meters (feet gives better resolution ??)
-    char speed[MAX_SPEED+1];    // in knots
+    char speed[MAX_SPEED+1];    // in knots (same as nautical miles/hour)
     char course[MAX_COURSE+1];
     char bearing[MAX_COURSE+1];
     char NRQ[MAX_COURSE+1];
