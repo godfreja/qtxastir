@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.41 2005/01/08 10:06:54 we7u Exp $
+ * $Id: messages_gui.c,v 1.42 2005/01/29 17:32:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -249,7 +249,7 @@ void get_path_data(char *callsign, char *path, int max_length) {
 
 
 // Find a custom path set in a Send Message dialog, using the remote
-// callsign as the key.  If no custom path set sets path to '\0'.
+// callsign as the key.  If no custom path, sets path to '\0'.
 //
 void get_send_message_path(char *callsign, char *path, int path_size) {
     int ii;

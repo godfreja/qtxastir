@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.214 2005/01/26 21:11:08 we7u Exp $
+ * $Id: interface.c,v 1.215 2005/01/29 17:32:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8223,7 +8223,7 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
                     data_txt);
                 makePrintable(temp);
                 packet_data_add("TX ", temp, port);
-
+//fprintf(stderr,"%s\n", temp);
 
             }
             else {
@@ -8298,6 +8298,7 @@ end_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
 // type: 0 for my data, 1 for raw data (Cooked/Raw)
 // loopback_only: 0 for transmit/loopback, 1 for loopback only
 // use_igate_path: 0 for standard unproto paths, 1 for igate path
+// path: Set to non-NULL if special path selected for messaging
 //
 // This function sends out messages/objects/bulletins/etc.
 // This one currently tries to do local logging even if
@@ -8648,16 +8649,30 @@ begin_critical_section(&devices_lock, "interface.c:output_my_data" );
                 // For packets that we're igating we end up with a CR or
                 // LF on the end of them.  Remove that so the display
                 // looks nice.
-                xastir_snprintf(temp,
-                    sizeof(temp),
-                    "%s>%s,%s:%s",
-                    my_callsign,
-                    VERSIONFRM,
-                    unproto_path,
-                    message);
+                //
+                // Check whether a path was passed to us as a
+                // parameter:
+                if ( (path != NULL) && (strlen(path) != 0) ) {
+                    xastir_snprintf(temp,
+                        sizeof(temp),
+                        "%s>%s,%s:%s",
+                        my_callsign,
+                        VERSIONFRM,
+                        path,
+                        message);
+                }
+                else {
+                    xastir_snprintf(temp,
+                        sizeof(temp),
+                        "%s>%s,%s:%s",
+                        my_callsign,
+                        VERSIONFRM,
+                        unproto_path,
+                        message);
+                }
                 makePrintable(temp);
                 packet_data_add("TX ", temp, port);
-
+//fprintf(stderr,"%s\n", temp);
 
             }
 
