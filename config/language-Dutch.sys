@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.27 2002/06/21 19:18:57 we7u Exp $
+# $Id: language-Dutch.sys,v 1.28 2002/06/25 19:33:58 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -705,6 +705,7 @@ LHPUPNI001|Mobiele Stations||
 LHPUPNI002|Weer Stations||
 LHPUPNI003|Lokale Stations (via TNC)||
 LHPUPNI004|Laatste Stations||
+LHPUPNI005|Objects & Items||
 LHPUPNI010|#||
 LHPUPNI011|Roepnaam||
 LHPUPNI012|#Pack||

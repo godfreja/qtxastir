@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.27 2002/06/21 19:18:57 we7u Exp $
+# $Id: language-German.sys,v 1.28 2002/06/25 19:34:05 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -707,6 +707,7 @@ LHPUPNI001|Mobile Stationen||
 LHPUPNI002|Wetterstationen||
 LHPUPNI003|Lokale Stationen (via TNC)||
 LHPUPNI004|Letzte Stationen||
+LHPUPNI005|Objects & Items||
 LHPUPNI010|#||
 LHPUPNI011|Call||
 LHPUPNI012|Pakete||

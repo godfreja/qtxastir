@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.28 2002/06/21 19:18:57 we7u Exp $
+# $Id: language-Italian.sys,v 1.29 2002/06/25 19:34:05 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -701,6 +701,7 @@ LHPUPNI001|Lista stazioni mobili||
 LHPUPNI002|Lista stazioni meteo||
 LHPUPNI003|Lista stazioni locali||
 LHPUPNI004|Lista ultime stazioni||
+LHPUPNI005|Objects & Items||
 LHPUPNI010|#||
 LHPUPNI011|Sigla||
 LHPUPNI012|#Pack||
