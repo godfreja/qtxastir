@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.19 2003/04/25 00:24:25 jtwilley Exp $
+ * $Id: track_gui.c,v 1.20 2003/05/15 18:12:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -430,7 +430,7 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
         return;
     }
 #else   // HAVE_WGET
-    fprintf(stderr,"libcurl and 'wget' not installed.  Can't download trail\n");
+    fprintf(stderr,"libcurl or 'wget' not installed.  Can't download trail\n");
 #endif  // HAVE_WGET
 #endif
 
