@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.12 2003/02/20 09:51:33 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.13 2003/02/20 20:00:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -385,7 +385,7 @@ void check_for_new_bulletins() {
     last_bulletin_check = sec_now();
 
     // Enough time passed since most recent bulletin?
-    if ( (last_new_bulletin_time + 15) > sec_now() ) {
+    if ( (last_new_bulletin_time + 60) > sec_now() ) {
 
         //fprintf(stderr,"Not enough time has passed\n");
 
@@ -394,7 +394,7 @@ void check_for_new_bulletins() {
 
     // If we get to here, then we think we may have at least one new
     // bulletin, and the latest arrived more than XX seconds ago
-    // (currently 15 seconds).  Check for bulletins which have
+    // (currently 60 seconds).  Check for bulletins which have
     // timestamps equal to or newer than first_new_bulletin_time and
     // fit within our range.
 
