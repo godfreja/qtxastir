@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.105 2002/06/28 18:18:09 we7u Exp $
+ * $Id: maps.c,v 1.106 2002/06/28 21:03:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8042,7 +8042,10 @@ Samples Per Pixel: 1
                             || (xastir_current_x < (SW_x_bounding_wgs84 + 25) )
                             || (xastir_current_x > (SE_x_bounding_wgs84 - 25) ) )
                         {
-                            *(imageMemory + column) = 0x01;     // Change to White
+                            if (column < bytesPerRow)
+                                *(imageMemory + column) = 0x01; // Change to White
+                            else
+                                printf("draw_geotiff_image_map: Bad fgd file for map?: %s\n", filenm);
                         }
                     }
                 }
