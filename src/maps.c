@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.390 2003/12/09 08:22:53 we7u Exp $
+ * $Id: maps.c,v 1.391 2003/12/10 18:16:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3534,6 +3534,8 @@ struct {
 //  {"rtt",tiger,draw_ogr_map},
 //  {"rtz",tiger,draw_ogr_map},
   {"tab",mapinfo,draw_ogr_map},
+  {"mid",mapinfo,draw_ogr_map},
+  {"mif",mapinfo,draw_ogr_map},
 #endif  // HAVE_LIBGDAL
 
   {NULL,none,NULL}
