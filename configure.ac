@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.7 2003/02/14 21:39:51 we7u Exp $
+# $Id: configure.ac,v 1.8 2003/02/14 21:55:32 we7u Exp $
 
 
 #
@@ -779,7 +779,8 @@ if test "$use_imagemagick" = "yes"; then
   esac 
 
   if test "$magickold" = "yes"; then 
-    AC_MSG_WARN(*** Old ImageMagick ($magickversion) found.  Please upgrade to 5.4.9 or newer. ***) 
+    AC_MSG_WARN(*** Old ImageMagick version ($magickversion) found. ***)
+    AC_MSG_WARN(*** Please upgrade to 5.4.9 or newer for full functionality. ***) 
   fi 
 fi
 
