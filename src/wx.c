@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.13 2002/04/10 17:21:24 we7u Exp $
+ * $Id: wx.c,v 1.14 2002/04/12 22:49:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -73,7 +73,7 @@ char wx_station_type[100];
 char raw_wx_string[800];
 
 #define MAX_WX_STRING 300
-#define WX_TYPE 'z'
+#define WX_TYPE 'X'
 
 /* rain totals */
 float rain_minute[60];              // Total rain for each min. of last hour, hundredths of an inch
