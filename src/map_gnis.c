@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.6 2004/01/26 16:18:23 we7u Exp $
+ * $Id: map_gnis.c,v 1.7 2004/03/19 22:38:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -177,6 +177,11 @@ void draw_gnis_map (Widget w,
         while (!feof (f)) {     // Loop through entire file
 
             if ( get_line (f, line, MAX_FILENAME) ) {  // Snag one line of data
+
+                // It is common for these lines to have incredible
+                // numbers of spaces at the end, so trim them here.
+                (void)remove_trailing_spaces(line);
+
                 if (strlen(line) > 0) {
 
                     //NOTE:  We handle running off the end of "line"
