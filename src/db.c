@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.393 2004/10/07 03:28:17 we7u Exp $
+ * $Id: db.c,v 1.394 2004/10/07 15:14:07 shadow Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2701,7 +2701,7 @@ void draw_range_scale(Widget w) {
 
 
     // Find out the screen values
-    XtVaGetValues(da,XmNwidth, &width, XmNheight, &height, 0);
+    XtVaGetValues(da,XmNwidth, &width, XmNheight, &height, NULL);
 
     // Convert points to Xastir coordinate system
 
