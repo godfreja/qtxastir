@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.142 2002/09/26 20:29:35 we7u Exp $
+ * $Id: main.c,v 1.143 2002/09/30 23:06:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5226,7 +5226,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     iface_da = XtVaCreateWidget("create_appshell iface", 
             xmDrawingAreaWidgetClass,
             form,
-            XmNwidth,               20*(MAX_IFACE_DEVICES/2),
+            XmNwidth,               22*(MAX_IFACE_DEVICES/2),
             XmNheight,              20,
             XmNunitType,            XmPIXELS,
             XmNtopAttachment,       XmATTACH_NONE,

@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.15 2002/07/23 21:27:06 we7u Exp $
+ * $Id: interface.h,v 1.16 2002/09/30 23:06:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,7 +35,7 @@
 #define MAX_DEVICE_HOSTNM 40
 #define MAX_DEVICE_HOSTPW 40
 
-#define MAX_IFACE_DEVICES 10
+#define MAX_IFACE_DEVICES 15
 
 #define NET_CONNECT_TIMEOUT 20
 
