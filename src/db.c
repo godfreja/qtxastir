@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.146 2002/09/26 19:30:48 we7u Exp $
+ * $Id: db.c,v 1.147 2002/09/26 20:29:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2013,19 +2013,19 @@ void display_station(Widget w, DataRow *p_station, int single) {
         strcpy(temp_my_course,"");
     }
 
+    // Check whether it's a weather objects, and whether we wish
+    // to display it
+    if (!wx_obj_display_enable) {   // We _don't_ want to display WX objects
+        if ( ((p_station->flag & ST_OBJECT) != 0)       // And it's an object
+                || ((p_station->flag & ST_ITEM  ) != 0) ) { // or an item
+            return;
+        }
+    }
+ 
     // Set up weather strings for display
     strcpy(temp_wx_temp,"");
     strcpy(temp_wx_wind,"");
     if (symbol_weather_display && p_station->weather_data != NULL) {
-        // Check whether it's a weather objects, and wether we wish
-        // to display it
-        if (!wx_obj_display_enable) {   // We _don't_ want to display WX objects
-            if ( ((p_station->flag & ST_OBJECT) != 0)       // And it's an object
-                    || ((p_station->flag & ST_ITEM  ) != 0) ) { // or an item
-                return;
-            }
- 
-        }
         weather = p_station->weather_data;
         if (strlen(weather->wx_temp) > 0) {
             strcpy(tmp,"T:");
