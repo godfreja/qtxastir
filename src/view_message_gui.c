@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.3 2002/05/21 16:18:37 we7u Exp $
+ * $Id: view_message_gui.c,v 1.4 2002/05/21 17:19:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -78,10 +78,11 @@ void view_message_print_record(Message *m_fill) {
     int my_size = 200;
     char temp_my_course[10];
     XmTextPosition drop_ptr;
+    int distance;
 
     // Make sure it's within our distance range we have set
-    if ((vm_range == 0)
-            || ((int)distance_from_my_station(m_fill->from_call_sign,temp_my_course) <= vm_range)) {
+    distance = (int)distance_from_my_station(m_fill->from_call_sign,temp_my_course);
+    if ((vm_range == 0) || (distance <= vm_range)) {
  
         if ((temp = malloc((size_t)my_size)) == NULL)
             return;
