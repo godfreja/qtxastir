@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.198 2003/01/30 00:12:01 we7u Exp $
+ * $Id: db.c,v 1.199 2003/01/31 01:17:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2755,6 +2755,13 @@ void display_file(Widget w) {
 
             temp_sec_heard = (is_my_call(p_station->call_sign,1))? sec_now(): p_station->sec_heard;
 
+            // Check for my objects/items as well
+            if ( (is_my_call(p_station->origin, 1)        // If station is owned by me
+                    && (   p_station->flag & ST_OBJECT      // And it's an object
+                        || p_station->flag & ST_ITEM) ) ) { // or an item
+                temp_sec_heard = sec_now();
+            }
+ 
             if ((p_station->flag & ST_INVIEW) != 0) {  // skip far away stations...
                 // we make better use of the In View flag in the future
                 if ( !altnet || is_altnet(p_station) ) {
@@ -6756,7 +6763,15 @@ void check_station_remove(void) {
         p_station = t_first;    // Oldest station in our list
         while (p_station != NULL && !done) {
             if (p_station->sec_heard < t_rem) {
-                if (!is_my_call(p_station->call_sign,1)) {
+                if ( (is_my_call(p_station->call_sign,1))                   // It's my station or
+                        || ( (is_my_call(p_station->origin,1))              // Station is owned by me
+                          && ( ((p_station->flag & ST_OBJECT) != 0)         // and it's an object
+                            || ((p_station->flag & ST_ITEM  ) != 0) ) ) ) { // or an item
+
+                    // It's one of mine, leave it alone!
+                }
+                else {  // Not one of mine, so start deleting
+ 
                     mdelete_messages(p_station->call_sign);     // delete messages
                     station_del_ptr(p_station);
                     //(void)delete_trail(p_station);              // Free track storage if it exists.
