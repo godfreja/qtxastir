@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.73 2004/07/30 03:57:57 we7u Exp $
+ * $Id: interface_gui.c,v 1.74 2004/08/04 18:54:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6029,7 +6029,7 @@ void Config_AGWPE( /*@unused@*/ Widget w, int config_type, int port) {
             XmTextFieldSetString(AGWPE_unproto2_data,"");
             XmTextFieldSetString(AGWPE_unproto3_data,"");
             XmTextFieldSetString(AGWPE_igate_data,"");
-            XmTextFieldSetString(AGWPE_radioport_data,"0");
+            XmTextFieldSetString(AGWPE_radioport_data,"1");
 
 //WE7U
 // Keep this statement until we get relay digipeating functional for
