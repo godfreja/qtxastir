@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.46 2003/02/23 09:52:07 we7u Exp $
+ * $Id: alert.c,v 1.47 2003/02/23 16:48:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -477,7 +477,7 @@ void alert_print_list(void) {
                 && (alert_list[i].expiration < time(NULL)) ) {
             if (debug_level & 2) {
                 fprintf(stderr,
-                    "Expired Alert->Clearing slot %d, current: %lu, alert: %lu\n",
+                    "alert_add_entry: Expired Alert->Clearing slot %d, current: %lu, alert: %lu\n",
                     i,
                     time(NULL),
                     alert_list[i].expiration );
