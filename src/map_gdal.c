@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.77 2003/12/24 01:49:43 we7u Exp $
+ * $Id: map_gdal.c,v 1.78 2004/01/04 21:37:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -2088,10 +2088,10 @@ clear_dangerous();
                     "Geographic coordinate system, %s, adding to index\n",
                     geogcs);
 
-                if (   file_MinY >=  -90.0 && file_MinY <  90.0
-                    && file_MaxY >=  -90.0 && file_MaxY <  90.0
-                    && file_MinX >= -180.0 && file_MinX < 180.0
-                    && file_MaxX >= -180.0 && file_MaxX < 180.0) {
+                if (   file_MinY >=  -90.0 && file_MinY <=  90.0
+                    && file_MaxY >=  -90.0 && file_MaxY <=  90.0
+                    && file_MinX >= -180.0 && file_MinX <= 180.0
+                    && file_MaxX >= -180.0 && file_MaxX <= 180.0) {
 
 // Debug:  Don't add them to the index so that we can experiment
 // with datum translation and such.
