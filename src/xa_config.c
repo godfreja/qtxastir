@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.c,v 1.13 2002/04/24 16:58:43 we7u Exp $
+ * $Id: xa_config.c,v 1.14 2002/04/26 15:53:38 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -269,7 +269,7 @@ void save_data(void)  {
 
         store_int (fout, "MAP_DRAW_FILLED_COLORS", map_color_fill);
 
-#ifdef HAVE_GEOTIFF
+#if !defined(NO_GRAPHICS) && (defined(HAVE_IMAGEMAGICK) || defined(HAVE_GEOTIFF))
         sprintf (name, "%f", geotiff_map_intensity);
         store_string(fout, "GEOTIFF_MAP_INTENSITY", name);
 #endif
@@ -576,7 +576,7 @@ void load_data_or_default(void) {
     if (!get_int ( "MAP_DRAW_FILLED_COLORS", &map_color_fill) )
         map_color_fill = 1;
 
-#ifdef HAVE_GEOTIFF
+#if !defined(NO_GRAPHICS) && (defined(HAVE_IMAGEMAGICK) || defined(HAVE_GEOTIFF))
     if (!get_string("GEOTIFF_MAP_INTENSITY", name))
         geotiff_map_intensity = 1.0;
     else

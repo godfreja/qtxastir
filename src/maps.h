@@ -1,5 +1,5 @@
 /*
- * $Id: maps.h,v 1.3 2002/04/25 07:00:05 we7u Exp $
+ * $Id: maps.h,v 1.4 2002/04/26 15:53:38 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -77,9 +77,9 @@ extern int  locate_place(Widget w, char *name, char *state, char *county, char *
 extern void maps_init(void);
 
 
-#ifdef HAVE_GEOTIFF
+#if !defined(NO_GRAPHICS) && (defined(HAVE_IMAGEMAGICK) || defined(HAVE_GEOTIFF))
 extern float geotiff_map_intensity;
-#endif /* HAVE_GEOTIFF */
+#endif
 
 extern void Print_properties(Widget widget, XtPointer clientData, XtPointer callData);
 
