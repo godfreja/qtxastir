@@ -1,5 +1,5 @@
 /*
- * $Id: util.c,v 1.5 2002/03/05 21:28:24 we7u Exp $
+ * $Id: util.c,v 1.6 2002/03/26 23:36:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -60,6 +60,61 @@ int position_amb_chars;
 char echo_digis[6][9+1];
 
 #define ACCEPT_0N_0E    /* set this to see stations at 0N/0E on the map */
+
+
+
+
+
+/***********************************************************/
+/* returns the hour (00..23), localtime                    */
+/***********************************************************/
+int get_hours(void) {
+    struct tm *time_now;
+    time_t secs_now;
+    char shour[5];
+
+    secs_now=sec_now();
+    time_now = localtime(&secs_now);
+    (void)strftime(shour,4,"%H",time_now);
+    return(atoi(shour));
+}
+
+
+
+
+
+/***********************************************************/
+/* returns the minute (00..59), localtime                  */
+/***********************************************************/
+int get_minutes(void) {
+    struct tm *time_now;
+    time_t secs_now;
+    char sminute[5];
+
+    secs_now=sec_now();
+    time_now = localtime(&secs_now);
+    (void)strftime(sminute,4,"%M",time_now);
+    return(atoi(sminute));
+}
+
+
+
+
+
+/***********************************************************/
+/* returns the second (00..61), localtime                  */
+/***********************************************************/
+int get_seconds(void) {
+    struct tm *time_now;
+    time_t secs_now;
+    char sminute[5];
+
+    secs_now=sec_now();
+    time_now = localtime(&secs_now);
+    (void)strftime(sminute,4,"%S",time_now);
+    return(atoi(sminute));
+}
+
 
 
 

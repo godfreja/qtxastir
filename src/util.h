@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.2 2002/02/14 17:33:12 we7u Exp $
+ * $Id: util.h,v 1.3 2002/03/26 23:36:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,6 +30,9 @@
 #include <pthread.h>
 
 extern int  position_amb_chars;
+extern int get_hours(void);
+extern int get_minutes(void);
+extern int get_seconds(void);
 extern char *output_lat(char *in_lat, int comp_pos);
 extern char *output_long(char *in_long, int comp_pos);
 extern double phg_range(char p, char h, char g);
