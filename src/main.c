@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.202 2003/01/23 01:21:24 francais1 Exp $
+ * $Id: main.c,v 1.203 2003/01/23 19:17:57 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8428,7 +8428,10 @@ void set_sensitive_select_sources(int sensitive)
         XtSetSensitive(select_via_digi_button, sensitive);
     }
     XtSetSensitive(select_net_button,      sensitive);
-    XtSetSensitive(select_old_data_button, sensitive);
+    if (no_data_selected())
+        XtSetSensitive(select_old_data_button, FALSE);
+    else
+        XtSetSensitive(select_old_data_button, sensitive);
 }
 
 void set_sensitive_select_types(int sensitive)
@@ -8556,18 +8559,16 @@ void Select_mine_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPointer 
 
     if (state->set) {
         Select_.mine = atoi(which);
+        XtSetSensitive(select_old_data_button, TRUE);
         set_sensitive_select_types(TRUE);
         set_sensitive_display(TRUE);
     }
     else {
         Select_.mine = 0;
         if (no_data_selected()) {
+            XtSetSensitive(select_old_data_button, FALSE);
             set_sensitive_select_types(FALSE);
             set_sensitive_display(FALSE);
-        }
-        else {
-            set_sensitive_select_types(TRUE);
-            set_sensitive_display(TRUE);
         }
     }
 
@@ -8586,20 +8587,21 @@ void Select_tnc_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPointer c
         Select_.tnc = atoi(which);
         XtSetSensitive(select_direct_button,   TRUE);
         XtSetSensitive(select_via_digi_button, TRUE);
-        set_sensitive_select_types(TRUE);
-        set_sensitive_display(TRUE);
+
+        if (!no_data_selected()) {
+            XtSetSensitive(select_old_data_button, TRUE);
+            set_sensitive_select_types(TRUE);
+            set_sensitive_display(TRUE);
+        }
     }
     else {
         Select_.tnc = 0;
         XtSetSensitive(select_direct_button,   FALSE);
         XtSetSensitive(select_via_digi_button, FALSE);
         if (no_data_selected()) {
+            XtSetSensitive(select_old_data_button, FALSE);
             set_sensitive_select_types(FALSE);
             set_sensitive_display(FALSE);
-        }
-        else {
-            set_sensitive_select_types(TRUE);
-            set_sensitive_display(TRUE);
         }
     }
 
@@ -8616,18 +8618,16 @@ void Select_direct_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPointe
 
     if (state->set) {
         Select_.direct = atoi(which);
+        XtSetSensitive(select_old_data_button, TRUE);
         set_sensitive_select_types(TRUE);
         set_sensitive_display(TRUE);
     }
     else {
         Select_.direct = 0;
         if (no_data_selected()) {
+            XtSetSensitive(select_old_data_button, FALSE);
             set_sensitive_select_types(FALSE);
             set_sensitive_display(FALSE);
-        }
-        else {
-            set_sensitive_select_types(TRUE);
-            set_sensitive_display(TRUE);
         }
     }
 
@@ -8644,18 +8644,16 @@ void Select_via_digi_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPoin
 
     if (state->set) {
         Select_.via_digi = atoi(which);
+        XtSetSensitive(select_old_data_button, TRUE);
         set_sensitive_select_types(TRUE);
         set_sensitive_display(TRUE);
     }
     else {
         Select_.via_digi = 0;
         if (no_data_selected()) {
+            XtSetSensitive(select_old_data_button, FALSE);
             set_sensitive_select_types(FALSE);
             set_sensitive_display(FALSE);
-        }
-        else {
-            set_sensitive_select_types(TRUE);
-            set_sensitive_display(TRUE);
         }
     }
 
@@ -8672,18 +8670,16 @@ void Select_net_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPointer c
 
     if (state->set) {
         Select_.net = atoi(which);
+        XtSetSensitive(select_old_data_button, TRUE);
         set_sensitive_select_types(TRUE);
         set_sensitive_display(TRUE);
     }
     else {
         Select_.net = 0;
         if (no_data_selected()) {
+            XtSetSensitive(select_old_data_button, FALSE);
             set_sensitive_select_types(FALSE);
             set_sensitive_display(FALSE);
-        }
-        else {
-            set_sensitive_select_types(TRUE);
-            set_sensitive_display(TRUE);
         }
     }
     redraw_on_new_data = 2;     // Immediate screen update
