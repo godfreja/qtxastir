@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.61 2002/04/23 23:39:40 francais1 Exp $
+ * $Id: main.c,v 1.62 2002/04/24 06:03:47 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -502,6 +502,8 @@ Pixmap  pixmap_stipple;            // These are for setting up a simple 1 on, 1 
 static  char Stipple[] = { 2, 1 }; // stipple to approximate real transparency
 #define STIPPLE_WIDTH  2
 #define STIPPLE_HEIGHT 2
+
+Pixmap  pixmap_wx_stipple;      // Used for weather alerts
 
 XastirGlobal Global;
 
@@ -3782,6 +3784,8 @@ void create_gc(Widget w) {
     Display *my_display = XtDisplay(w);
     int mask = 0;
     Pixmap pix;
+    int _w, _h, _xh, _yh;
+    char xbm_path[500];
 
     if (debug_level & 8)
         printf("Create gc start\n");
@@ -3938,6 +3942,10 @@ void create_gc(Widget w) {
 
     pixmap_stipple=XCreateBitmapFromData(XtDisplay(w), DefaultRootWindow(XtDisplay(w)),
                                          Stipple, STIPPLE_WIDTH, STIPPLE_HEIGHT);
+
+    xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "alert.xbm");
+    XReadBitmapFile(XtDisplay(w), DefaultRootWindow(XtDisplay(w)),
+                    xbm_path, &_w, &_h, &pixmap_wx_stipple, &_xh, &_yh);
 
     display_up=1;
 

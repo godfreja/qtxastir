@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.3 2002/04/18 22:28:12 we7u Exp $
+ * $Id: xastir.h,v 1.4 2002/04/24 06:03:47 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -53,6 +53,7 @@ extern Pixmap  pixmap;
 extern Pixmap  pixmap_final;
 extern Pixmap  pixmap_alerts;
 extern Pixmap  pixmap_stipple;
+extern Pixmap  pixmap_wx_stipple;
 
 
 typedef struct XastirGlobal {
