@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.62 2002/12/07 08:00:53 we7u Exp $
+# $Id: language-Spanish.sys,v 1.63 2002/12/10 21:52:09 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -57,6 +57,7 @@ PULDNCF002|Sistema de Coordenada|C|
 PULDNCF006|Audio Alarmas|A|
 PULDNCF007|Sintetizador de Voz|S|
 PULDNCF008|Guardar Configuración!|G|
+PULDNCF003|Re-Index Maps|R|
 # (Unidades ver PULDNDP006)
 #
 # Menú de Mapas

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.58 2002/12/07 08:00:51 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.59 2002/12/10 21:52:09 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -55,6 +55,7 @@ PULDNCF002|Sistema de coordenadas|S|
 PULDNCF006|Audio dos alarmes|A|
 PULDNCF007|Sintetizador de voz|S|
 PULDNCF008|Guardar configuração!|G|
+PULDNCF003|Re-Index Maps|R|
 # (Unidades ver PULDNDP006)
 #
 # Menú de mapas

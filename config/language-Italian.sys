@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.61 2002/12/07 08:00:49 we7u Exp $
+# $Id: language-Italian.sys,v 1.62 2002/12/10 21:52:09 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -57,6 +57,7 @@ PULDNCF002|Coordinate System|C|
 PULDNCF006|Allarmi Audio|A|
 PULDNCF007|Annunci Vocali|p|
 PULDNCF008|Save Config Now!|C|
+PULDNCF003|Re-Index Maps|R|
 # (per unità vedere PULDNDP006)
 #
 # Menù Mappe

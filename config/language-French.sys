@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.60 2002/12/07 08:00:46 we7u Exp $
+# $Id: language-French.sys,v 1.61 2002/12/10 21:52:09 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -56,6 +56,7 @@ PULDNCF002|Coordinate System|C|
 PULDNCF006|Alertes sonores|A|
 PULDNCF007|Parole|P|
 PULDNCF008|Sauver configuration maintenant!|a|
+PULDNCF003|Re-Index Maps|R|
 # (Units see PULDNDP006)
 #
 # Menu "Maps"

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.60 2002/12/07 08:00:48 we7u Exp $
+# $Id: language-German.sys,v 1.61 2002/12/10 21:52:09 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -62,6 +62,7 @@ PULDNCF002|Coordinate System|C|
 PULDNCF006|Audio Alarm|A|
 PULDNCF007|Sprachausgabe|S|
 PULDNCF008|Einstellungen sichern|E|
+PULDNCF003|Re-Index Maps|R|
 # (Einheiten siehe PULDNDP006)
 #
 # Menu "Karten"
