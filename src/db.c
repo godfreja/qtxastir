@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.285 2003/10/09 16:03:19 we7u Exp $
+ * $Id: db.c,v 1.286 2003/10/31 23:35:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3555,6 +3555,12 @@ end_critical_section(&db_station_info_lock, "db.c:Station_data" );
         XmTextInsert(si_text,pos,temp);
         pos += strlen(temp);
     }
+    else if (coordinate_system == USE_MGRS) {
+        convert_xastir_to_MGRS_str(temp, sizeof(temp),
+            p_station->coord_lon, p_station->coord_lat);
+        XmTextInsert(si_text,pos,temp);
+        pos += strlen(temp);
+    }
     else {
         if (coordinate_system == USE_DDDDDD) {
             convert_lat_l2s(p_station->coord_lat, temp, sizeof(temp), CONVERT_DEC_DEG);
@@ -3652,6 +3658,13 @@ end_critical_section(&db_station_info_lock, "db.c:Station_data" );
 
             if (coordinate_system == USE_UTM) {
                 convert_xastir_to_UTM_str(temp, sizeof(temp),
+                    ptr->trail_long_pos,
+                    ptr->trail_lat_pos);
+                XmTextInsert(si_text,pos,temp);
+                pos += strlen(temp);
+            }
+            else if (coordinate_system == USE_MGRS) {
+                convert_xastir_to_MGRS_str(temp, sizeof(temp),
                     ptr->trail_long_pos,
                     ptr->trail_lat_pos);
                 XmTextInsert(si_text,pos,temp);

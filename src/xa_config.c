@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.94 2003/10/30 18:50:29 we7u Exp $
+ * $Id: xa_config.c,v 1.95 2003/10/31 23:35:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -767,7 +767,7 @@ void load_data_or_default(void) {
     if (!get_long ("SCREEN_LONG", &mid_x_long_offset, 0l, 129600000l, 64800000l))
         mid_x_long_offset = 64800000l;
 
-    if (!get_int ("COORDINATE_SYSTEM", &coordinate_system, 0, 3, USE_DDMMMM))
+    if (!get_int ("COORDINATE_SYSTEM", &coordinate_system, 0, 4, USE_DDMMMM))
         coordinate_system = USE_DDMMMM;
 
     if (!get_long ("SCREEN_ZOOM", &scale_y, 1l, 300000l, 327680l))

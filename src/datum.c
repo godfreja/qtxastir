@@ -1,7 +1,7 @@
 /*
    See the top of datum.h for information on this code.
    N7TAP
-   $Id: datum.c,v 1.10 2003/10/29 21:03:24 we7u Exp $
+   $Id: datum.c,v 1.11 2003/10/31 23:35:24 we7u Exp $
 */
 
 
@@ -13,14 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "datum.h"
-
-
-
-// Default.  Change to non-zero if we're using the MGRS UTM grid
-// which has special UTM zone boundaries near Svalbard and SW
-// Norway.
-int MGRS_grid = 0;
-
+#include "main.h"
 
 
 //  ellipsoid: index into the gEllipsoid[] array, in which
@@ -475,7 +468,7 @@ void ll_to_utm_ups(short ellipsoidID, const double lat, const double lon,
 
     ZoneNumber = (int)((LongTemp + 180)/6) + 1;
 
-    if (MGRS_grid) {
+    if (coordinate_system == USE_MGRS) {
 
         // Special zone for southern Norway.  Used for military
         // version of UTM (MGRS) only.
