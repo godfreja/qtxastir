@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.27 2003/06/26 15:37:21 n2ygk Exp $
+ * $Id: maps.h,v 1.28 2003/06/30 16:53:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -88,6 +88,7 @@ typedef struct {
 } tiepoint;
 
 char *get_map_ext (char *filename);
+char *get_map_dir (char *fullpath);
 void load_auto_maps(Widget w, char *dir);
 void load_maps(Widget w);
 void fill_in_new_alert_entries(Widget w, char *dir);
@@ -128,6 +129,7 @@ extern int convert_to_xastir_coordinates (unsigned long* x,
 					  float f_longitude,
 					  float f_latitude);
 enum map_onscreen_enum {MAP_NOT_VIS=0,MAP_IS_VIS,MAP_NOT_INDEXED};
+extern enum map_onscreen_enum map_onscreen(long left, long right, long top, long bottom, int checkpercentage);
 extern enum map_onscreen_enum map_onscreen_index(char *filename);
 extern time_t last_snapshot;
 
@@ -143,6 +145,8 @@ extern int grid_size;
 #endif  // NO_GRAPHICS
 
 extern void Print_properties(Widget widget, XtPointer clientData, XtPointer callData);
+
+extern void map_plot (Widget w, long max_x, long max_y, long x_long_cord, long y_lat_cord, unsigned char color, long object_behavior, int destination_pixmap, int draw_filled); 
 
 
 #endif /* __XASTIR_MAPS_H */
