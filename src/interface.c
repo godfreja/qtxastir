@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.160 2004/05/12 18:45:59 we7u Exp $
+ * $Id: interface.c,v 1.161 2004/05/12 18:56:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -311,6 +311,11 @@ fprintf(stderr,"%s %s %s\n",
         // use here.  strncpy stops at the first null byte though.
         // Proper for a binary output routine?
         strncpy(path_string, Path, sizeof(path_string));
+
+        // Convert path_string to upper-case
+        to_upper(path_string);
+
+//fprintf(stderr,"path_string: %s\n", path_string);
 
         split_string(path_string, ViaCall, 10);
 
