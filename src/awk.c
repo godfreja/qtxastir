@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.2 2003/07/20 17:44:08 n2ygk Exp $
+ * $Id: awk.c,v 1.3 2003/07/21 16:51:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -718,7 +718,7 @@ awk_program *awk_load_program_file(awk_symtab *this, /* symtab for this program 
  */
 int awk_compile_program(awk_program *rs)
 {
-    pcre *re;
+    pcre *re = NULL;
     pcre_extra *pe;
     const unsigned char *tables;
     const char *error;
