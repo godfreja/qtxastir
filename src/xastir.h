@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.12 2002/07/13 17:38:20 we7u Exp $
+ * $Id: xastir.h,v 1.13 2002/08/05 20:48:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -34,6 +34,15 @@
 #include "messages.h"
 #include "fcc_data.h"
 #include "rac_data.h"
+
+
+// black
+#define MY_FG_COLOR             colors[0x08]
+#define MY_FOREGROUND_COLOR     XmNforeground,colors[0x08]
+// gray73
+#define MY_BG_COLOR             colors[0xff]
+#define MY_BACKGROUND_COLOR     XmNbackground,colors[0xff]
+
 
 #define CONVERT_HP_NORMAL       0
 #define CONVERT_HP_NOSP         1
