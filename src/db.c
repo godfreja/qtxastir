@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.303 2004/03/08 21:13:10 we7u Exp $
+ * $Id: db.c,v 1.304 2004/03/09 06:42:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12243,7 +12243,7 @@ void relay_digipeat(char *call, char *path, char *info, int port) {
         return;
     }
 
-    // Check for the only three types of interfaces where we might
+    // Check for the only four types of interfaces where we might
     // want to do RELAY digipeating.  If not one of these, go
     // bye-bye.
     if (       (devices[port].device_type != DEVICE_SERIAL_KISS_TNC)

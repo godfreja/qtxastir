@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.112 2004/02/29 20:31:03 we7u Exp $
+ * $Id: xa_config.c,v 1.113 2004/03/09 06:42:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -545,6 +545,14 @@ void save_data(void)  {
             strcpy (name, name_temp);
             strcat (name, "NAME");
             store_string (fout, name, devices[i].device_name);
+
+            strcpy (name, name_temp);
+            strcat (name, "RADIO_PORT");
+            store_string (fout, name, devices[i].radio_port);
+
+            strcpy (name, name_temp);
+            strcat (name, "INTERFACE_COMMENT");
+            store_string (fout, name, devices[i].comment);
 
             strcpy (name, name_temp);
             strcat (name, "HOST");
@@ -1152,6 +1160,16 @@ void load_data_or_default(void) {
         strcat (name, "NAME");
         if (!get_string (name, devices[i].device_name))
             strcpy (devices[i].device_name, "");
+
+        strcpy (name, name_temp);
+        strcat (name, "RADIO_PORT");
+        if (!get_string (name, devices[i].radio_port))
+            strcpy (devices[i].radio_port, "0");
+
+        strcpy (name, name_temp);
+        strcat (name, "INTERFACE_COMMENT");
+        if (!get_string (name, devices[i].comment))
+            strcpy (devices[i].comment, "");
 
         strcpy (name, name_temp);
         strcat (name, "HOST");
