@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.154 2002/10/15 21:28:59 we7u Exp $
+ * $Id: db.c,v 1.155 2002/10/16 21:10:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1850,6 +1850,61 @@ int is_altnet(DataRow *p_station) {
 
 
 
+// Function which checks various filtering criteria then decides
+// whether to call draw_symbol() for each station.
+//
+void draw_symbol_filtered(Widget w,
+        char symbol_table,
+        char symbol_id,
+        char symbol_overlay,
+        long x_long,
+        long y_lat,
+        char *callsign_text,
+        char *alt_text,
+        char *course_text,
+        char *speed_text,
+        char *my_distance,
+        char *my_course,
+        char *wx_temp,
+        char* wx_wind,
+        time_t sec_heard,
+        int temp_show_last_heard,
+        Pixmap where,
+        char orient,
+        char area_type) {
+
+    // Here we decide whether to/how to draw each symbol based on
+    // user preferences.
+
+//WE7U
+// Right now we just draw everything.  The selection code still
+// needs to be written.
+
+    draw_symbol(w,
+        symbol_table,
+        symbol_id,
+        symbol_overlay,
+        x_long,
+        y_lat,
+        callsign_text,
+        alt_text,
+        course_text,
+        speed_text,
+        my_distance,
+        my_course,
+        wx_temp,
+        wx_wind,
+        sec_heard,
+        temp_show_last_heard,
+        where,
+        orient,
+        area_type);
+}
+
+
+
+
+
 // display_station
 //
 // single is 1 if the calling station wants to update only a
@@ -2133,7 +2188,7 @@ void display_station(Widget w, DataRow *p_station, int single) {
                 temp_sec_heard,
                 XtWindow(da));
 
-        draw_symbol(w,
+        draw_symbol_filtered(w,
             p_station->aprs_symbol.aprs_type,
             p_station->aprs_symbol.aprs_symbol,
             p_station->aprs_symbol.special_overlay,
@@ -2277,7 +2332,7 @@ void display_station(Widget w, DataRow *p_station, int single) {
             temp_sec_heard,
             pixmap_final);
 
-    draw_symbol(w,
+    draw_symbol_filtered(w,
         p_station->aprs_symbol.aprs_type,
         p_station->aprs_symbol.aprs_symbol,
         p_station->aprs_symbol.special_overlay,
