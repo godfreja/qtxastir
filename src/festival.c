@@ -2,7 +2,7 @@
 //
 // Portions Copyright (C) 2000-2004  The Xastir Group
 //
-// $Id: festival.c,v 1.13 2004/09/07 15:39:52 we7u Exp $
+// $Id: festival.c,v 1.14 2004/11/05 23:07:08 we7u Exp $
 //
 // End of modification
 
@@ -171,6 +171,7 @@ static int festival_socket_open(const char *host, int port) {
 
     if (connect(fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) != 0) {
         fprintf(stderr,"festival_client: connect to server failed\n");
+        (void)close(fd);    // Close the socket
         return(-1);
     }
     return(fd);
