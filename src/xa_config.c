@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.96 2003/11/03 21:22:12 we7u Exp $
+ * $Id: xa_config.c,v 1.97 2003/11/04 16:46:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -364,7 +364,6 @@ void save_data(void)  {
         store_string (fout, "MAPS_LABEL_FONT", rotated_label_fontname);
 //N0VH
 #if defined(HAVE_IMAGEMAGICK)
-        store_int (fout, "USE_TIGERMAPS", tiger_flag);
         store_int (fout, "TIGERMAP_INTENSITY", tigermap_intensity);
         store_int (fout, "TIGERMAP_TIMEOUT", tigermap_timeout);
 #endif //HAVE_IMAGEMAGICK
@@ -857,9 +856,6 @@ void load_data_or_default(void) {
         strcpy(rotated_label_fontname,"-adobe-helvetica-medium-o-normal--24-240-75-75-p-130-iso8859-1");
 //N0VH
 #if defined(HAVE_IMAGEMAGICK)
-    if (!get_int ("USE_TIGERMAPS", &tiger_flag, 0, 1, 0))
-        tiger_flag = 0;
-
     if (!get_int ("TIGERMAP_INTENSITY", &tigermap_intensity, 0, 100, 100))
         tigermap_intensity = 100;
 
