@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.15 2002/07/18 16:31:45 we7u Exp $
+ * $Id: db.h,v 1.16 2002/07/19 00:02:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -396,6 +396,7 @@ extern void clear_sort_file(char *filename);
 extern int  packet_data_display;
 extern void display_packet_data(void);
 extern int  redraw_on_new_packet_data;
+extern void relay_digipeat(char *line, int port);
 extern int decode_ax25_header(unsigned char *incoming_data, int length);
 extern int decode_ax25_line(char *line, char from, int port, int dbadd);
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.117 2002/07/18 23:49:32 we7u Exp $
+ * $Id: db.c,v 1.118 2002/07/19 00:02:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10240,7 +10240,7 @@ int decode_ax25_header(unsigned char *incoming_data, int length) {
 // receives the packet.  There we'd have access to every digipeated
 // bit directly instead of parsing asterisks out of a string.
 //
-void relay_digipeat(char *line, char from, int port) {
+void relay_digipeat(char *line, int port) {
 
     if ( (devices[port].device_type != DEVICE_SERIAL_KISS_TNC)
             && (devices[port].device_type != DEVICE_AX25_TNC)) {
@@ -10291,10 +10291,6 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
     int ok;
     int third_party;
     char backup[MAX_LINE_SIZE+1];
-
-    // Relay the packet if we're supposed to on the port it was
-    // received on
-    relay_digipeat(line, from, port);
 
     strcpy(backup, line);
 
