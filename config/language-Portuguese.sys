@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.90 2003/05/15 00:08:23 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.91 2003/05/20 19:09:32 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -293,6 +293,7 @@ BBARSTA039|Indexando %s||
 BBARSTA040|Estação de radioamador de APRS %s||
 BBARSTA041|Esperando pela data do GPS..||
 BBARSTA042|Transmitindo objectos/items||
+BBARSTA043|Logging||
 #
 # Visualização do tráfego de packet
 WPUPDPD001|Visualização do tráfego||
@@ -995,5 +996,14 @@ GPS010|Amarelo||
 GPS011|Violeta||
 #
 #
-
-
+# Map Properties Dialog
+MAPP001|Map Properties||
+MAPP002| Map     Draw||
+MAPP003|Layer   Filled   AutoMap   Path/Filename||
+MAPP004|Change Layer->||
+MAPP005|Filled->||
+MAPP006|Yes||
+MAPP007|No||
+MAPP008|Automaps->||
+#
+#

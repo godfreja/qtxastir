@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.99 2003/05/15 04:02:37 we7u Exp $
+# $Id: language-Spanish.sys,v 1.100 2003/05/20 19:09:33 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -292,6 +292,7 @@ BBARSTA039|Indezando %s||
 BBARSTA040|Estación de Aficionado APRS %s||
 BBARSTA041|Esperando por GPS data..||
 BBARSTA042|Transmitiendo objetos/articulos||
+BBARSTA043|Logging||
 #
 # Despliegue Paquete de Datos
 WPUPDPD001|Despligue de Datos||
@@ -986,4 +987,16 @@ GPS008|Naranja||
 GPS009|Azul||
 GPS010|Amarillo||
 GPS011|Violeta||
+#
+#
+# Map Properties Dialog
+MAPP001|Map Properties||
+MAPP002| Map     Draw||
+MAPP003|Layer   Filled   AutoMap   Path/Filename||
+MAPP004|Change Layer->||
+MAPP005|Filled->||
+MAPP006|Yes||
+MAPP007|No||
+MAPP008|Automaps->||
+#
 #
