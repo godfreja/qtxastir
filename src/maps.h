@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.31 2003/08/15 23:11:54 we7u Exp $
+ * $Id: maps.h,v 1.32 2003/09/03 07:28:38 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -154,6 +154,7 @@ extern void Print_properties(Widget widget, XtPointer clientData, XtPointer call
 
 extern void map_plot (Widget w, long max_x, long max_y, long x_long_cord, long y_lat_cord, unsigned char color, long object_behavior, int destination_pixmap, int draw_filled); 
 
+extern int check_trans ( XColor c );
 
 #endif /* __XASTIR_MAPS_H */
 
