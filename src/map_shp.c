@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.32 2003/11/13 15:27:22 n2ygk Exp $
+ * $Id: map_shp.c,v 1.33 2003/11/25 15:05:51 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -28,7 +28,11 @@
  * DBFAWK TODO:
  *  - reload .dbfawk's when they've changed (or maps are reindexed)
  *  - scale line widths based on zoom level (see city_flag, for example)
- *  - center area polygon labels
+ *  - allow multiple font sizes (font_size=small|medium|large|huge)
+ *  - allow multiple font faces?
+ *  - allow setting of map layer for individual shapes
+ *  - transparency
+ *  - allow setting fill_style (solid, stippled, etc.)
  *  - do more config/ *.dbfawk files!
  *
  */
