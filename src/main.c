@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.157 2002/11/10 02:04:00 kd6zwr Exp $
+ * $Id: main.c,v 1.158 2002/11/12 22:15:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5909,8 +5909,6 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     XtAddCallback (da, XmNinputCallback,  da_input,NULL);
     XtAddCallback (da, XmNresizeCallback, da_resize,NULL);
     XtAddCallback (da, XmNexposeCallback, da_expose,(XtPointer)text);
-
-    UpdateTime( (XtPointer) da , (XtIntervalId) NULL );
 
     if (track_me)
         XmToggleButtonSetState(trackme_button,TRUE,TRUE);
@@ -19371,11 +19369,18 @@ int main(int argc, char *argv[], char *envp[]) {
             (void)check_fcc_data();
             (void)check_rac_data();
 
+            // Find the extents of every map we have
+            map_indexer();
+
+            // Start UpdateTime().  It schedules itself to be run
+            // again each time.  This is also the process that
+            // starts up the interfaces.
+            UpdateTime( (XtPointer) da , (XtIntervalId) NULL );
+
             // Reload saved objects and items from previous runs.
             // This implements persistent objects.
             reload_object_item();
 
-            map_indexer();
 
             XtAppMainLoop(app_context);
 
