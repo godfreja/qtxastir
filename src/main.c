@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.476 2004/06/24 20:49:24 we7u Exp $
+ * $Id: main.c,v 1.477 2004/06/28 00:15:48 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4569,7 +4569,7 @@ inline int no_data_selected(void)
 
 void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*/ int app_argc, char ** app_argv) {
     Atom WM_DELETE_WINDOW;
-    Widget children[8];         /* Children to manage */
+    Widget children[9];         /* Children to manage */
     Arg al[64];                 /* Arg List */
     register unsigned int ac;   /* Arg Count */
     /*popup menu widgets */
