@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.191 2002/12/21 08:08:07 we7u Exp $
+ * $Id: main.c,v 1.192 2002/12/21 08:27:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9518,6 +9518,7 @@ void map_properties_destroy_shell( /*@unused@*/ Widget widget, XtPointer clientD
     XtPopdown(shell);
     XtDestroyWidget(shell);
     map_properties_dialog = (Widget)NULL;
+    re_sort_maps = 1;
 }
 
 
