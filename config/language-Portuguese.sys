@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.115 2004/01/26 16:12:51 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.116 2004/02/28 02:00:34 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -353,6 +353,7 @@ WPUPCFD026|Enviar reportes de posição em que intervalos?||
 WPUPCFD027|Pop up de novos boletins||
 WPUPCFD028|Avisar se teclas foram modificadas||
 WPUPCFD029|Ver boletins de distância zero||
+WPUPCFD030|Disable Posit Dupe-Checks||
 #
 # PopUp "Configurar - momento certo"
 WPUPCFTM01|Configurar momento certo|||

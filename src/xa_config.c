@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.110 2004/01/26 16:18:24 we7u Exp $
+ * $Id: xa_config.c,v 1.111 2004/02/28 02:00:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -438,6 +438,7 @@ void save_data(void)  {
         store_int (fout, "MAP_WX_ALERT_STYLE", wx_alert_style);
         store_string(fout, "ALTNET_CALL", altnet_call);
         store_int(fout, "ALTNET", altnet);
+        store_int(fout, "SKIP_DUPE_CHECK", skip_dupe_checking);
         store_string (fout, "AUTO_MAP_DIR", AUTO_MAP_DIR);
         store_string (fout, "ALERT_MAP_DIR", ALERT_MAP_DIR);
         store_string (fout, "SELECTED_MAP_DIR", SELECTED_MAP_DIR);
@@ -928,6 +929,9 @@ void load_data_or_default(void) {
 
     if (!get_int("ALTNET", &altnet, 0, 1, 0))
         altnet=0;
+
+    if (!get_int("SKIP_DUPE_CHECK", &skip_dupe_checking, 0, 1, 0))
+        skip_dupe_checking=0;
 
     if (!get_string ("AUTO_MAP_DIR", AUTO_MAP_DIR))
         strcpy (AUTO_MAP_DIR, get_data_base_dir ("maps"));

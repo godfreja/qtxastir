@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.119 2004/01/26 16:12:51 we7u Exp $
+# $Id: language-Dutch.sys,v 1.120 2004/02/28 02:00:33 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -360,6 +360,7 @@ WPUPCFD026|Met welk Interval Positie Gegevens Verzenden?||
 WPUPCFD027|Nieuwe Berichten Weergeven||
 WPUPCFD028|Waarschuw als Speciale Functie Toetsen Aanstaan||
 WPUPCFD029|Geef Bulletins Zonder Afstand Weer||
+WPUPCFD030|Disable Posit Dupe-Checks||
 #
 # PopUp "Configure - Timing"
 WPUPCFTM01|Configureer Tijdsinstelling|||
