@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.24 2004/03/26 18:17:44 we7u Exp $
+# $Id: Makefile.am,v 1.25 2004/06/02 16:40:14 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -9,7 +9,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 D=      `date +%G%m%d.%H%M%S`
 
-SUBDIRS = src m4 config help scripts symbols callpass 
+SUBDIRS = src m4 config help scripts symbols callpass
 
 # Remove this file here (it is created via configure), not from within intl.
 # DISTCLEANFILES = intl/libintl.h
@@ -19,7 +19,8 @@ EXTRA_DIST = xastir.spec.in xastir.spec config.guess config.sub install-sh \
         README.CVS README.MAPS README.win32 DEBUG_LEVELS \
         bootstrap.sh INSTALL UPGRADE xastir.1 terraserver.geo \
         toposerver.geo tigermap.geo USRadar.geo \
-        CanadaTopo250k.geo CanadaTopo50k.geo
+        CanadaTopo250k.geo CanadaTopo50k.geo \
+        Davis
 
 MAINTAINERCLEANFILES = configure aclocal.m4 Makefile.in Makefile \
         config.guess config.sub install-sh missing mkinstalldirs \
