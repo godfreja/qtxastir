@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.512 2004/08/25 01:53:20 we7u Exp $
+ * $Id: main.c,v 1.513 2004/08/25 19:39:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10741,6 +10741,8 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                             // Try to decode header and checksum.  If
                             // bad, break, else continue through to
                             // ASCII logging & decode routines.
+                            // Note that the length of incoming_data
+                            // can increase within decode_ax25_header().
                             if ( !decode_ax25_header( (char *)incoming_data,
                                     incoming_data_length ) ) {
                                 // Had a problem decoding it.  Drop
