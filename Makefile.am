@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.21 2004/01/26 16:09:49 we7u Exp $
+# $Id: Makefile.am,v 1.22 2004/02/11 18:24:50 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -18,7 +18,7 @@ EXTRA_DIST = xastir.spec.in xastir.spec config.guess config.sub install-sh \
         missing mkinstalldirs placeholder FAQ LICENSE README \
         README.CVS README.MAPS README.win32 DEBUG_LEVELS \
         bootstrap.sh INSTALL UPGRADE xastir.1 terraserver.geo \
-        toposerver.geo tigermap.geo
+        toposerver.geo tigermap.geo USRadar.geo
 
 MAINTAINERCLEANFILES = configure aclocal.m4 Makefile.in Makefile \
         config.guess config.sub install-sh missing mkinstalldirs \
@@ -34,7 +34,8 @@ gnisdir=${pkgdatadir}/GNIS
 gnis_DATA=placeholder
 
 mapdir=${pkgdatadir}/maps
-map_DATA=placeholder terraserver.geo toposerver.geo tigermap.geo
+map_DATA=placeholder terraserver.geo toposerver.geo tigermap.geo \
+        USRadar.geo
 
 gpsdir=${pkgdatadir}/maps/GPS
 gps_DATA=placeholder
