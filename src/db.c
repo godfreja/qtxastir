@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.232 2003/04/01 07:16:25 we7u Exp $
+ * $Id: db.c,v 1.233 2003/04/01 09:09:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11835,7 +11835,7 @@ strcat(big_string,small_string);
 sprintf(small_string,"relay_digipeat: outputs:\n\tport: %d\n\tcall: %s\n\tdest: %s\n\tpath: %s\n\tinfo: %s\n",
     port, call, destination, new_path, info);
 strcat(big_string,small_string);
-fprintf(stderr,"%s",big_string);
+//fprintf(stderr,"%s",big_string);
 
 
 // Example packet:
