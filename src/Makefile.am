@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.3 2003/02/18 21:33:32 we7u Exp $
+# $Id: Makefile.am,v 1.4 2003/02/18 22:05:30 kg4ijb Exp $
 
 bin_PROGRAMS = xastir
 
@@ -19,7 +19,7 @@ xastir_SOURCES = \
     lang.c lang.h \
     list_gui.c list_gui.h \
     locate_gui.c \
-    location.c AUTOMAKE_OPTIONS = gnu \
+    location.c \
     location_gui.c \
     main.c main.h \
     maps.c maps.h \
