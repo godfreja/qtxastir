@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.369 2004/08/20 17:19:00 kd6zwr Exp $
+ * $Id: db.c,v 1.370 2004/08/20 17:22:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14116,7 +14116,6 @@ void  read_file_line(FILE *f) {
     char line[MAX_LINE_SIZE+1];
     char cin;
     int pos;
-    char *ptr;
 
     pos = 0;
     line[0] = '\0';
@@ -14128,6 +14127,8 @@ void  read_file_line(FILE *f) {
                  }
             } else {                                    // CR or LF
                 if (cin == (char)10) {                  // Found LF as EOL char
+                    char *ptr;
+
                     line[pos] = '\0';                   // Always add a terminating zero after last char
                     pos = 0;                            // start next line
 
