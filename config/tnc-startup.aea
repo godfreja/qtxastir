@@ -1,4 +1,4 @@
-# $Id: tnc-startup.aea,v 1.6 2004/06/04 19:42:57 we7u Exp $
+# $Id: tnc-startup.aea,v 1.7 2004/06/04 20:39:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -35,7 +35,6 @@ MXMit off
 NEWmode off
 #PACLen 128
 PASSALL off
-#PID off
 #SCR 0
 # B E 0 must be set to 0 or both APRS and your TNC will send BCNS
 # Which will alternate in everyones L and A lists and fill up

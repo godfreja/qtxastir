@@ -1,4 +1,4 @@
-# $Id: tnc-startup.paccomm,v 1.4 2004/06/04 19:43:05 we7u Exp $
+# $Id: tnc-startup.paccomm,v 1.5 2004/06/04 20:39:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -36,7 +36,7 @@ SCR 0
 MON 1
 #
 # Important!  Monitor only PID 0xf0 packets:
-#PIDCHECK off
+PIDCHECK on
 #
 # End of tnc-startup.pac
 #

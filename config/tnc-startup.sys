@@ -1,4 +1,4 @@
-# $Id: tnc-startup.sys,v 1.7 2004/06/04 19:43:05 we7u Exp $
+# $Id: tnc-startup.sys,v 1.8 2004/06/04 20:39:09 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -37,7 +37,7 @@ PID off
 # *TAPR2*
 MNOAX25 off
 # *Paccomm*
-#PIDCHECK
+PIDCHECK on
 # *AEA*
 MPROTO OFF
 # End of monitor only PID 0xf0 packets section
