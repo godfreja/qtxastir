@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.46 2002/10/02 23:39:04 we7u Exp $
+# $Id: language-Dutch.sys,v 1.47 2002/10/09 04:32:47 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -212,6 +212,8 @@ POPUPMA014|Schuif naar rechts|r|
 POPUPMA020|Afstand meten||
 POPUPMA021|Verplaatsen||
 POPUPMA022|TrackMe||
+POPUPMA023|Modifiers Found!||
+POPUPMA024|Please turn OFF CapsLock/NumLock/ScrollLock/other modifiers||
 #
 # Status line labels
 BBARZM0001|Zoom %s||
