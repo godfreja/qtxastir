@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.133 2002/09/18 18:41:02 we7u Exp $
+ * $Id: main.c,v 1.134 2002/09/18 19:17:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -18776,6 +18776,11 @@ int main(int argc, char *argv[], char *envp[]) {
             }
 
             XtRealizeWidget(Global.top);
+
+//WE7U
+            // Read the current map index file into the index linked list
+            index_restore_from_file();
+
             create_appshell(display, argv[0], argc, argv);      // does the init
 
             /* reset language attribs for numeric, program needs decimal in US for all data! */
