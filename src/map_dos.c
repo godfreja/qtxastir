@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.3 2003/07/02 06:10:43 we7u Exp $
+ * $Id: map_dos.c,v 1.4 2003/07/02 14:11:03 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -422,7 +422,7 @@ draw_dos_map(Widget w,
       total_vector_points = 200000;
       total_labels = 2000;
 
-      for (j = 0; j < DOS_HDR_LINES; j++) {
+      for (j = 0; j < DOS_HDR_LINES; strlen(Buffer) ? 1 : j++) {
         
 	  (void)fgets (&Buffer[strlen (Buffer)],(int)sizeof (Buffer) - (strlen (Buffer)), f);
 
