@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.216 2003/02/25 00:29:34 we7u Exp $
+ * $Id: db.c,v 1.217 2003/02/25 06:30:05 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9533,6 +9533,9 @@ void my_station_gps_change(char *pos_long, char *pos_lat, char *course, char *sp
     /* get my last speed in knots */
     my_last_speed=(int)(atof(speed));
     strcpy(p_station->sats_visible,sats);
+
+    // Update "heard" time for our new position
+    p_station->sec_heard = sec_now();
 
     //if (   p_station->coord_lon != last_lon
     //    || p_station->coord_lat != last_lat ) {
