@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.10 2003/05/23 20:16:37 we7u Exp $
+$Id: README.MAPS,v 1.11 2003/05/27 17:56:39 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -296,6 +296,11 @@ Getting Maps and other Data Files for Xastir:
       shell...)
 
           for a in srb_*; do echo "IMAGESIZE 620 620" >> $a; done
+
+      For .geo files with an ftp or http address for fetching the image,
+      IMAGESIZE is currently a REQUIRED parameter in the .geo file.  For
+      .geo files where the image is resident on your hard drive, the
+      IMAGESIZE tag is optional.
 
       Please also note that the coordinates in the .GEO files are expressed
       in decimal degrees, and are listed with longitude first then latitude
