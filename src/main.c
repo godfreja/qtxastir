@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.131 2002/09/10 17:04:36 we7u Exp $
+ * $Id: main.c,v 1.132 2002/09/12 17:48:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7614,6 +7614,7 @@ void Symbols_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPointer call
         XtSetSensitive(station_amb_button,TRUE);
         XtSetSensitive(station_old_data_button,TRUE);
         XtSetSensitive(station_DF_button,TRUE);
+        XtSetSensitive(station_last_heard_button,TRUE);
     }
     else {
         symbol_display_enable = 0;
@@ -7632,6 +7633,7 @@ void Symbols_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPointer call
         XtSetSensitive(station_amb_button,FALSE);
         XtSetSensitive(station_old_data_button,FALSE);
         XtSetSensitive(station_DF_button,FALSE);
+        XtSetSensitive(station_last_heard_button,FALSE);
    }
 
     symbol_display = symbol_display_enable;
