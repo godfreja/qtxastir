@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.206 2003/02/03 19:38:56 we7u Exp $
+ * $Id: db.c,v 1.207 2003/02/03 20:21:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12646,7 +12646,7 @@ void check_and_transmit_objects_items(time_t time) {
 
 
     // Time to re-transmit objects/items?
-    if (sec_now() < (last_object_check + POSIT_rate) ) // Check every POSIT_rate seconds
+    if (sec_now() < (last_object_check + OBJECT_rate) ) // Check every OBJECT_rate seconds
         return;
 
     if (debug_level & 1)

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.39 2003/02/03 19:38:58 we7u Exp $
+ * $Id: main.h,v 1.40 2003/02/03 20:21:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -102,6 +102,7 @@ extern time_t remove_ID_message_time;
 extern int pending_ID_message;
 extern time_t gps_time;
 extern time_t POSIT_rate;
+extern time_t OBJECT_rate;
 extern time_t update_DR_rate;
 
 extern time_t posit_last_time;

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.51 2003/02/01 10:14:57 we7u Exp $
+ * $Id: util.c,v 1.52 2003/02/03 20:21:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1748,7 +1748,7 @@ void reload_object_item(void) {
     }
 
     // Start transmitting these objects in about 30 seconds.
-    last_object_check = sec_now() + 30 - POSIT_rate;
+    last_object_check = sec_now() + 30 - OBJECT_rate;
 }
 
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.73 2003/02/03 05:49:29 we7u Exp $
+ * $Id: xa_config.c,v 1.74 2003/02/03 20:21:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -559,6 +559,9 @@ void save_data(void)  {
 
         /* POSIT RATE */
         store_long (fout, "POSIT_RATE", (long)POSIT_rate);
+
+        /* OBJECT RATE */
+        store_long (fout, "OBJECT_RATE", (long)OBJECT_rate);
 
         /* UPDATE DR RATE */
         store_long (fout, "UPDATE_DR_RATE", (long)update_DR_rate);
@@ -1129,6 +1132,10 @@ void load_data_or_default(void) {
     /* POSIT RATE */
     if (!get_long ("POSIT_RATE", (long *)&POSIT_rate, 1l, 86400l, 1800l))
         POSIT_rate = (time_t)30*60l;
+
+    /* OBJECT RATE */
+    if (!get_long ("OBJECT_RATE", (long *)&OBJECT_rate, 1l, 86400l, 1800l))
+        OBJECT_rate = (time_t)30*60l;
 
     /* UPDATE DR RATE */
     if (!get_long ("UPDATE_DR_RATE", (long *)&update_DR_rate, 1l, 86400l, 30l))
