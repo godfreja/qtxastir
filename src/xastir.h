@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.31 2003/10/13 17:57:39 we7u Exp $
+ * $Id: xastir.h,v 1.32 2003/11/04 17:17:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -162,7 +162,6 @@ extern int tiger_show_statehwy;
 extern int tiger_show_water;
 extern int tiger_show_lakes;
 extern int tiger_show_misc;
-extern int tigermap_intensity;
 extern int tigermap_timeout;
 #endif  // HAVE_IMAGEMAGICK
 

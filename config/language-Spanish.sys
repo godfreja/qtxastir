@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.116 2003/10/31 23:34:35 we7u Exp $
+# $Id: language-Spanish.sys,v 1.117 2003/11/04 17:17:34 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -74,7 +74,7 @@ PULDNMP006|Etiquetas de estiones|E|
 PULDNMP026|Icon Outline Style|O|
 PULDNMP011|Menú Indicador del Ratón|R|
 PULDNMP008|Intensidad del Mapa|I|
-PULDNMP020|Activar/Configurar Tigermapa||
+PULDNMP020|Configurar Tigermapa||
 PULDNMP021|Auto Mapa - Desactivar Mapas de Trama||
 PULDNMP022|Indezar Mapas en Inicio||
 PULDNMP023|Indice: Agregar Nuevos Mapas|A|

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.8 2003/11/04 16:46:29 we7u Exp $
+ * $Id: map_tiger.c,v 1.9 2003/11/04 17:17:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -491,13 +491,17 @@ void draw_tiger_map (Widget w,
     height = image->rows;
 
     //  Code to mute the image so it's not as bright.
-    if (tigermap_intensity != 100) {
+    if (raster_map_intensity < 1.0) {
         char tempstr[30];
 
         if (debug_level & 512)
             fprintf(stderr,"level=%s\n", tempstr);
 
-        xastir_snprintf(tempstr, sizeof(tempstr), "%d, 100, 100", tigermap_intensity);
+        xastir_snprintf(tempstr,
+            sizeof(tempstr),
+            "%d, 100, 100",
+            (int)(raster_map_intensity * 100.0));
+
         ModulateImage(image, tempstr);
     }
 

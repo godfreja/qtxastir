@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.110 2003/10/31 23:34:35 we7u Exp $
+# $Id: language-Dutch.sys,v 1.111 2003/11/04 17:17:34 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -82,7 +82,7 @@ PULDNMP006|Station Tekst Stijl|S|
 PULDNMP026|Icon Omranding Stijl|O|
 PULDNMP011|Muis Menu|M|
 PULDNMP008|Kaart Intensiteit|I|
-PULDNMP020|Aanzetten/Configureren Tigermap||
+PULDNMP020|Configureren Tigermap||
 PULDNMP021|Automatische Kaartkeuze - Zet Raster Kaarten Uit||
 PULDNMP022|Indexeer Kaarten bij het Starten||
 PULDNMP023|Index: Voeg nieuwe kaarten toe|n|
