@@ -1,7 +1,7 @@
-# $Id: Makefile.am,v 1.12 2003/10/16 15:30:22 we7u Exp $
+# $Id: Makefile.am,v 1.13 2003/11/29 06:34:20 we7u Exp $
 
 bin_PROGRAMS = xastir
-noinst_PROGRAMS = testawk
+noinst_PROGRAMS = testawk x_spider
 
 xastir_SOURCES = \
     alert.c alert.h \
@@ -55,8 +55,14 @@ testawk_SOURCES = \
     awk.c \
     dbfawk.c
 
+x_spider_SOURCES = \
+    x_spider.c x_spider.h
+ 
+
 
 xastir_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
 testawk_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+
+x_spider_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
