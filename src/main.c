@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.525 2004/09/24 03:29:49 we7u Exp $
+ * $Id: main.c,v 1.526 2004/09/24 19:42:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12065,7 +12065,7 @@ void Center_Zoom( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@u
             if (distance < range) {
 //fprintf(stderr,"Zooming out\n");
                 scale_factor = (range * 1.0)/distance;
-                fprintf(stderr,"Scale Factor: %f\n", scale_factor);
+//                fprintf(stderr,"Scale Factor: %f\n", scale_factor);
                 my_scale_y = (long)(scale_y * scale_factor);
             }
             else {  // distance > range
