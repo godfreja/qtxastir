@@ -1,4 +1,4 @@
-# $Id: tnc-startup.aea,v 1.9 2004/07/26 17:04:58 we7u Exp $
+# $Id: tnc-startup.aea,v 1.10 2004/07/26 23:55:54 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -10,7 +10,7 @@
 # Thanks.
 #
 HID off
-CWID off
+#CWID off
 EXP on
 ECHO off
 MYAlias RELAY
