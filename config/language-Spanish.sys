@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.26 2002/06/18 18:13:41 we7u Exp $
+# $Id: language-Spanish.sys,v 1.27 2002/06/21 14:35:18 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -836,5 +836,18 @@ COORD001|Calcula Coordenada||
 COORD002|Calc||
 COORD003|Calcular||
 COORD004|Limpiar||
+#
+#
+# Smart Beaconing Dialog
+SMARTB001|Smart Beaconing||
+SMARTB002|High Rate (secs):||
+SMARTB003|High Speed (mph):||
+SMARTB004|High Speed (kph):||
+SMARTB005|Low Rate (mins):||
+SMARTB006|Low Speed (mph):||
+SMARTB007|Low Speed (kph):||
+SMARTB008|Minimum Turn (deg):||
+SMARTB009|Turn Slope:||
+SMARTB010|Wait Time (secs):||
 #
 #

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.24 2002/06/18 18:13:41 we7u Exp $
+# $Id: language-English.sys,v 1.25 2002/06/21 14:35:18 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -835,5 +835,18 @@ COORD001|Coordinate Calc||
 COORD002|Calc||
 COORD003|Calculate||
 COORD004|Clear||
+#
+#
+# Smart Beaconing Dialog
+SMARTB001|Smart Beaconing||
+SMARTB002|High Rate (secs):||
+SMARTB003|High Speed (mph):||
+SMARTB004|High Speed (kph):||
+SMARTB005|Low Rate (mins):||
+SMARTB006|Low Speed (mph):||
+SMARTB007|Low Speed (kph):||
+SMARTB008|Minimum Turn (deg):||
+SMARTB009|Turn Slope:||
+SMARTB010|Wait Time (secs):||
 #
 #
