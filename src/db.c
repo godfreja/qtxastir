@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.181 2002/11/26 23:56:09 we7u Exp $
+ * $Id: db.c,v 1.182 2002/12/07 08:00:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9884,8 +9884,6 @@ int decode_Mic_E(char *call_sign,char *path,char *info,char from,int port,int th
                         "%s",
                         call_sign);
 
-                    popup_message("Emergency!",call_sign);
-
                     // Bring up the Find Station dialog so that the
                     // operator can go to the location quickly
                     xastir_snprintf(locate_station_call,
@@ -9893,7 +9891,7 @@ int decode_Mic_E(char *call_sign,char *path,char *info,char from,int port,int th
                         "%s",
                         call_sign);
 
-                    Locate_station( (Widget)NULL, (XtPointer)NULL, (XtPointer)NULL );
+                    Locate_station( (Widget)NULL, (XtPointer)NULL, (XtPointer)1 );
                 }
                 break;
 

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.59 2002/11/26 23:56:08 we7u Exp $
+# $Id: language-French.sys,v 1.60 2002/12/07 08:00:46 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -284,6 +284,7 @@ WPUPLSP002|Localiser l'indicatif||
 WPUPLSP003|Casse exacte|C|
 WPUPLSP004|Correspondance exacte|E|
 WPUPLSP005|Localiser maintenant!|L|
+WPUPLSP006|Emergency Locate!||
 #
 # PopUp "Configure - Defaults"
 WPUPCFD001|Configurer défauts||

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.57 2002/11/26 23:56:08 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.58 2002/12/07 08:00:51 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -283,6 +283,7 @@ WPUPLSP002|Localizar Indicativo||
 WPUPLSP003|Maíscula/minúscula|M|
 WPUPLSP004|Exacta|E|
 WPUPLSP005|Localizar agora!|A|
+WPUPLSP006|Emergency Locate!||
 #
 # Configurar predefinidos
 WPUPCFD001|Configurar valores pré-definidos||

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.60 2002/11/26 23:56:08 we7u Exp $
+# $Id: language-Dutch.sys,v 1.61 2002/12/07 08:00:43 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -289,6 +289,7 @@ WPUPLSP002|Lokaliseer Roepnaam||
 WPUPLSP003|Hoofdlettergevoelig||
 WPUPLSP004|Zoek Exact||
 WPUPLSP005|Lokaliseer Nu!||
+WPUPLSP006|Emergency Locate!||
 #
 # PopUp "Configure - Defaults"
 WPUPCFD001|Standaardinstellingen Aanpassen||

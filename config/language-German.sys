@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.59 2002/11/26 23:56:08 we7u Exp $
+# $Id: language-German.sys,v 1.60 2002/12/07 08:00:48 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -290,6 +290,7 @@ WPUPLSP002|Rufzeichen||
 WPUPLSP003|Groß/Klein||# ???
 WPUPLSP004|Exakt||# ???
 WPUPLSP005|Finde jetzt!||
+WPUPLSP006|Emergency Locate!||
 #
 # PopUp "Einstellungen - Grundeinstellungen"
 WPUPCFD001|Grundeinstellungen||
