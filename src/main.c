@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.350 2003/10/09 16:03:20 we7u Exp $
+ * $Id: main.c,v 1.351 2003/10/13 04:22:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -762,6 +762,7 @@ GC gc_bigfont=0;
 Pixmap  pixmap;
 Pixmap  pixmap_alerts;
 Pixmap  pixmap_final;
+Pixmap  pixmap_snapshot;
 
 Pixmap  pixmap_50pct_stipple; // 50% pixels used for position ambiguity, DF circle, etc.
 Pixmap  pixmap_25pct_stipple; // 25% pixels used for large position ambiguity
@@ -7289,6 +7290,11 @@ void create_gc(Widget w) {
                         screen_width,screen_height,
                         DefaultDepthOfScreen(XtScreen(w)));
 
+    pixmap_snapshot=XCreatePixmap(XtDisplay(w),
+                        DefaultRootWindow(XtDisplay(w)),
+                        screen_width,screen_height,
+                        DefaultDepthOfScreen(XtScreen(w)));
+
     xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "2x2.xbm");
     ret_val = XReadBitmapFile(XtDisplay(w), DefaultRootWindow(XtDisplay(w)),
                     xbm_path, &_w, &_h, &pixmap_50pct_stipple, &_xh, &_yh);
@@ -7410,6 +7416,9 @@ void da_resize_execute(Widget w) {
         if(pixmap_alerts)
             (void)XFreePixmap(XtDisplay(w),pixmap_alerts);
 
+        if(pixmap_snapshot)
+            (void)XFreePixmap(XtDisplay(w),pixmap_snapshot);
+
         pixmap=XCreatePixmap(XtDisplay(w),
                 DefaultRootWindow(XtDisplay(w)),
                 width,height,
@@ -7421,6 +7430,11 @@ void da_resize_execute(Widget w) {
                 DefaultDepthOfScreen(XtScreen(w)));
 
         pixmap_alerts=XCreatePixmap(XtDisplay(w),
+                DefaultRootWindow(XtDisplay(w)),
+                width,height,
+                DefaultDepthOfScreen(XtScreen(w)));
+
+        pixmap_snapshot=XCreatePixmap(XtDisplay(w),
                 DefaultRootWindow(XtDisplay(w)),
                 width,height,
                 DefaultDepthOfScreen(XtScreen(w)));
