@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.13 2003/02/15 17:59:07 we7u Exp $
+# $Id: configure.ac,v 1.14 2003/02/15 19:39:04 we7u Exp $
 
 
 #
@@ -284,11 +284,12 @@ AC_FUNC_MMAP
 AC_FUNC_STAT 
 AC_FUNC_STRFTIME 
 AC_FUNC_STRTOD 
-AC_CHECK_FUNCS([__argz_count __argz_next __argz_stringify alarm dcgettext getcwd getpgrp]) 
-AC_CHECK_FUNCS([gethostbyname gethostname gettimeofday getwd inet_ntoa memmove mempcpy]) 
-AC_CHECK_FUNCS([memset mkdir munmap pow putenv select setenv setlocale snprintf socket sqrt stpcpy]) 
-AC_CHECK_FUNCS([strcasecmp strchr strdup strerror strncasecmp strpbrk strrchr strstr strtol]) 
-AC_CHECK_FUNCS([strtoul tzset vsnprintf]) 
+AC_CHECK_FUNCS([__argz_count __argz_next __argz_stringify alarm dcgettext])
+AC_CHECK_FUNCS([getcwd getpgrp gethostbyname gethostname gettimeofday])
+AC_CHECK_FUNCS([getwd inet_ntoa memmove mempcpy memset mkdir munmap pow])
+AC_CHECK_FUNCS([putenv select setenv setlocale snprintf socket sqrt stpcpy]) 
+AC_CHECK_FUNCS([strcasecmp strchr strdup strerror strncasecmp strpbrk])
+AC_CHECK_FUNCS([strptime strrchr strstr strtol strtoul tzset vsnprintf])
  
  
  

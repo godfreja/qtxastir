@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.21 2003/02/15 18:45:00 we7u Exp $
+ * $Id: gps.c,v 1.22 2003/02/15 19:39:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -157,10 +157,7 @@ int decode_gps_rmc( char *data,
                                                         xastir_snprintf(unit, unit_length, "%c", speed_unit);
                                                         strcpy(cse,course);
 
-// MacOS X doesn't have the strptime call
-#ifndef MACOSX
-// Same for __CYGWIN__
-#ifndef __CYGWIN__
+#ifdef HAVE_STRPTIME
                                                         /* Translate date/time into time_t */
                                                         /* GPS time is in UTC.
                                                          * First, save existing TZ
@@ -177,8 +174,7 @@ int decode_gps_rmc( char *data,
                                                         *stim=mktime(&stm);
                                                         putenv(tzn);
                                                         tzset();
-#endif  // __CYGWIN__
-#endif  // #ifndef MACOSX
+#endif  // HAVE_STRPTIME
                                                     }
                                                 }
                                             }
