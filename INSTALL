@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.31 2004/02/22 06:32:58 we7u Exp $
+$Id: INSTALL,v 1.32 2004/02/26 21:48:51 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -567,6 +567,14 @@ First Time Install:
       Edit /usr/share/festival/voices.scm and put "ked_diphone" at the first of
       the "defvar default-voice-priority-list". This will change the default
       voice to "ked_diphone".
+
+      Note that you can start up the festival server and test it out manually
+      by typing these commands:
+
+        telnet localhost 1314
+        (SayText "Hello")
+
+      To exit, press control-] and then type "quit".
 
    9. OPTIONAL:  Install GDAL/OGR for support of many more map formats.
       NOTE:  This is currently being added to Xastir:  Some support is there
