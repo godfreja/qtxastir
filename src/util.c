@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.143 2005/01/26 21:36:10 we7u Exp $
+ * $Id: util.c,v 1.144 2005/02/16 21:38:39 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4212,17 +4212,18 @@ int check_unproto_path ( char *data ) {
                         break;
                     }
                     else {
-                        if (ViaCalls[ii][4] != ViaCalls[ii][6]) {
-                            // Whoa, n != n
-                            bad_path = 1;
-                            break;
-                        }
-
                         if (atoi(ViaCalls[ii]+=6) > MAX_WIDES) {
                             // Greater than WIDEn-3
                             bad_path = 1;
                             break;
                         }
+
+                        if (atoi(ViaCalls[ii][4]) < atoi(ViaCalls[ii][6])) {
+                            // Whoa, N < n
+                            bad_path = 1;
+                            break;
+                        }
+
                     }
                 }
 
@@ -4239,17 +4240,18 @@ int check_unproto_path ( char *data ) {
                         break;
                     }
                     else {
-                        if (ViaCalls[ii][5] != ViaCalls[ii][7]) {
-                            // Whoa, n != n
-                            bad_path = 1;
-                            break;
-                        }
-
                         // Valid TRACEn-n, check for > 3
                         if (atoi(ViaCalls[ii]+=7) > MAX_WIDES) {
                             bad_path = 1;
                             break;
                         }
+
+                        if (atoi(ViaCalls[ii][5]) < atoi(ViaCalls[ii][7])) {
+                            // Whoa, N < n
+                            bad_path = 1;
+                            break;
+                        }
+
                     }
                 }
 
