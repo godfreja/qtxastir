@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.17 2002/07/19 08:06:32 we7u Exp $
+ * $Id: db.h,v 1.18 2002/08/13 18:39:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -307,6 +307,8 @@ typedef struct _CommentRow{
 
 // todo: check the string length!
 
+#define MAX_MULTIPOINTS 35
+
 typedef struct _DataRow {
     struct _DataRow *n_next;            // pointer to next element in name ordered list
     struct _DataRow *n_prev;            // pointer to previous element in name ordered list
@@ -354,6 +356,19 @@ typedef struct _DataRow {
     CommentRow *status_data;
     CommentRow *comment_data;           // Ptr to comment records or NULL
     int  df_color;
+    
+    // When the station is an object, it can include coordinates
+    // of related points. Currently these are being used to draw
+    // outlines of NWS severe weather watches and warnings, and
+    // storm regions. The coordinates are stored here in Xastir
+    // coordinate form. Element [x][0] is the latitude, and 
+    // element [x][1] is the longitude.
+    // KG4NBB
+    
+    int num_multipoints;
+    char type;      // from '0' to '9'
+    char style;     // from 'a' to 'z'
+    long multipoints[MAX_MULTIPOINTS][2];
 } DataRow;
 
 
