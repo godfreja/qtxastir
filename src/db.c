@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.226 2003/03/28 18:33:48 we7u Exp $
+ * $Id: db.c,v 1.227 2003/03/29 00:34:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11435,8 +11435,25 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 // digipeated through.  A few other TNC's put out this same sort of
 // format.
 //
+//WE7U
+// Some versions of KISS can encode the radio channel (for
+// multi-port TNC's) in the command byte.  How do we know we're
+// running those versions of KISS though?  Here are the KISS
+// variants that I've been able to discover to date:
 //
-// WE7U
+// KISS                 No CRC, no flow control
+// SMACK                16-bit CRC
+// KISS-CRC
+// 6-PACK
+// Multi-Drop KISS      8-bit XOR Checksum -,
+// G8BPQ KISS           8-bit XOR Checksum -|-- All the same!
+// XKISS (Kantronics)   8-bit XOR Checksum -'
+// MKISS
+// FlexKISS             -,
+// FlexCRC              -|-- These are all the same!
+// CRC-RMNC             -'
+// 
+// 
 // Compare this function with interface.c:process_ax25_packet() to
 // see if we're missing anything important.
 //
@@ -11516,12 +11533,6 @@ int decode_ax25_header(unsigned char *incoming_data, int length) {
     // Control byte should be 0x03 (UI Frame).  Strip the poll-bit
     // from the PID byte before doing the comparison.
     if ( (incoming_data[ptr++] & (~0x10)) != 0x03) {
-
-//WE7U
-        // An MKISS tnc (2-ports or more) can encode the channel in
-        // the control byte, so we don't really want to throw
-        // packets out because of this.  How do we know we're
-        // running MKISS though?
         return(0);
     }
 
