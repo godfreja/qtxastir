@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.323 2004/06/19 05:24:20 we7u Exp $
+ * $Id: db.c,v 1.324 2004/06/21 16:08:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3116,6 +3116,10 @@ void Change_tactical_change_data(Widget widget, XtPointer clientData, XtPointer 
         "Assigned tactical call \"%s\" to %s\n",
         temp,
         tactical_pointer->call_sign);
+
+    // Log the change in the tactical_calls.log file
+    log_tactical_call(tactical_pointer->call_sign,
+        tactical_pointer->tactical_call_sign);
 
     XtFree(temp);
 

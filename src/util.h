@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.24 2004/01/26 16:18:24 we7u Exp $
+ * $Id: util.h,v 1.25 2004/06/21 16:08:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -76,6 +76,8 @@ extern void log_data(char *file, char *line);
 extern void disown_object_item(char *call_sign,char *new_owner);
 extern void log_object_item(char *line, int disable_object, char *object_name);
 extern void reload_object_item(void);
+extern void log_tactical_call(char *call_sign, char *tactical_call_sign);
+extern void reload_tactical_calls(void);
 extern time_t sec_now(void);
 extern char *get_time(char *time_here);
 
