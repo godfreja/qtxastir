@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.46 2002/10/09 04:32:47 we7u Exp $
+# $Id: language-English.sys,v 1.47 2002/10/18 05:30:34 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -154,7 +154,12 @@ PULDNDP007|Display Station Trails||
 PULDNDP015|Clear All Stations!!!|A|
 PULDNDP016|Clear All Trails!!!|C|
 PULDNDP025|Clear Object/Item History||
-PULDNDP026|Display Weather Objects/Items||
+PULDNDP026|Display WX Objects/Items||
+PULDNDP027|Display Stations||
+PULDNDP028|Display Non-Moving Stations||
+PULDNDP029|Display Moving Stations||
+PULDNDP030|Display WX Stations||
+PULDNDP031|Display Objects/Items||
 #
 # Units
 PULDNUT001|Enable English Units|E|
