@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.35 2004/01/26 16:18:25 we7u Exp $
+ * $Id: xastir.h,v 1.36 2004/06/17 17:46:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -73,6 +73,7 @@
 #define CONVERT_DEC_DEG         4
 #define CONVERT_UP_TRK          5
 #define CONVERT_DMS_NORMAL      6
+#define CONVERT_VHP_NOSP        7
 
 #ifndef M_PI                      /* if not defined in math.h */
 #define M_PI 3.14159265358979323846
