@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.227 2003/03/01 00:30:17 we7u Exp $
+ * $Id: maps.c,v 1.228 2003/03/01 01:48:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2511,7 +2511,9 @@ void draw_shapefile_map (Widget w,
  
                         // Make the track nice and wide: Easy to
                         // see.
-                        (void)XSetLineAttributes (XtDisplay (w), gc, 3, LineSolid, CapButt,JoinMiter);
+//                        (void)XSetLineAttributes (XtDisplay (w), gc, 3, LineSolid, CapButt,JoinMiter);
+                        (void)XSetLineAttributes (XtDisplay (w), gc, 3, LineOnOffDash, CapButt,JoinMiter);
+//                        (void)XSetLineAttributes (XtDisplay (w), gc, 3, LineDoubleDash, CapButt,JoinMiter);
                     }
 
 
