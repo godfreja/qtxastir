@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.133 2002/09/18 19:30:12 we7u Exp $
+ * $Id: maps.c,v 1.134 2002/09/18 19:35:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10529,7 +10529,7 @@ void map_indexer(void) {
     if (stat (MAP_INDEX_DATA, &nfile) != 0) {
 
         // File doesn't exist yet.  Create it.
-        f = fopen(MAP_INDEX_DATA,"w+");
+        f = fopen(MAP_INDEX_DATA,"w");
         if (f != NULL)
             (void)fclose(f);
         else
