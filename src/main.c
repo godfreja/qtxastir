@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.261 2003/04/03 20:57:14 we7u Exp $
+ * $Id: main.c,v 1.262 2003/04/06 20:25:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7730,6 +7730,8 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                         case DEVICE_AX25_TNC:
 
                         case DEVICE_SERIAL_TNC:
+
+                        case DEVICE_NET_AGWPE:
                             if (log_tnc_data)
                                 log_data(LOGFILE_TNC,(char *)incoming_data);
 
