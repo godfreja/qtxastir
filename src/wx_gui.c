@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.21 2003/02/20 07:56:44 we7u Exp $
+ * $Id: wx_gui.c,v 1.22 2003/02/20 09:51:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,18 +30,18 @@
 
 #ifdef  HAVE_LOCALE_H
 #include <locale.h>
-#endif
+#endif  // HAVE_LOCALE_H
 
 #ifdef  HAVE_LIBINTL_H
 #include <libintl.h>
 #define _(x)        gettext(x)
-#else
+#else   // HAVE_LIBINTL_H
 #define _(x)        (x)
-#endif
+#endif  // HAVE_LIBINTL_H
 
 #ifdef HAVE_LIBM
 #include <math.h>
-#endif
+#endif  // HAVE_LIBM
 
 #include "xastir.h"
 #include "wx.h"
@@ -52,7 +52,7 @@
 #include <Xm/XmAll.h>
 #ifdef HAVE_XBAE_MATRIX_H
 #include <Xbae/Matrix.h>
-#endif
+#endif  // HAVE_XBAE_MATRIX_H
 #include <X11/cursorfont.h>
 
 

@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.11 2003/02/04 04:08:36 jtwilley Exp $
+ * $Id: bulletin_gui.c,v 1.12 2003/02/20 09:51:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,7 +41,7 @@
 
 #ifdef HAVE_XBAE_MATRIX_H
 #include <Xbae/Matrix.h>
-#endif
+#endif  // HAVE_XBAE_MATRIX_H
 
 #include <X11/Xatom.h>
 #include <X11/Shell.h>
@@ -49,9 +49,9 @@
 #ifdef    HAVE_LIBINTL_H
 #include <libintl.h>
 #define    _(x)    gettext(x)
-#else
+#else   // HAVE_LIBINTL_H
 #define    _(x)    (x)
-#endif
+#endif  // HAVE_LIBINTL_H
 
 #include "xastir.h"
 #include "main.h"

@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.6 2003/02/15 22:30:34 we7u Exp $
+ * $Id: hostname.c,v 1.7 2003/02/20 09:51:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,9 +50,9 @@
 #ifndef __LCLINT__
   #ifndef sigjmp_buf
     jmp_buf ret_place;
-  #else
+  #else // sigjmp_buf
     static  sigjmp_buf ret_place;       /* Jump address if alarm */
-  #endif
+  #endif    // sigjmp_buf
 #endif // __LCLINT__
 
 
@@ -96,9 +96,9 @@ char *host_lookup(char *host, char *ip, int time) {
 
 #ifdef __linux__
     sighandler_t previous_loc;
-#else
+#else   // __linux__
     void *previous_loc;
-#endif
+#endif  // __linux__
 
     pid_t host_pid;
     int status;

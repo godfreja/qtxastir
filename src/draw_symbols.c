@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.32 2003/02/04 04:08:37 jtwilley Exp $
+ * $Id: draw_symbols.c,v 1.33 2003/02/20 09:51:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1994,7 +1994,7 @@ void draw_multipoints(long x_long, long y_lat, int numpoints, long mypoints[][2]
         }
 
         if (onscreen(mostWest, mostEast, mostNorth, mostSouth))
-#else
+#else   // 0
 
         // See if the station icon is on the screen. If so, draw the associated
         // points. The drawback to this approach is that if the station icon is
@@ -2003,7 +2003,7 @@ void draw_multipoints(long x_long, long y_lat, int numpoints, long mypoints[][2]
 
         if((x_long > x_long_offset) && (x_long < (x_long_offset + (long)(screen_width * scale_x)))
             && (y_lat > y_lat_offset) && (y_lat < (y_lat_offset + (long)(screen_height * scale_y))))
-#endif
+#endif  // 0
         {
             //x_offset = (x_long - x_long_offset) / scale_x;
             //y_offset = (y_lat - y_lat_offset) / scale_y;

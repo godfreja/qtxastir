@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.43 2003/02/20 07:56:44 we7u Exp $
+ * $Id: alert.c,v 1.44 2003/02/20 09:51:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -298,7 +298,7 @@
 
 #ifdef  WITH_DMALLOC
 #include <dmalloc.h>
-#endif
+#endif  // WITH_DMALLOC
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -307,14 +307,14 @@
 
 #ifdef  HAVE_LOCALE_H
 #include <locale.h>
-#endif
+#endif  // HAVE_LOCALE_H
 
 #ifdef  HAVE_LIBINTL_H
 #include <libintl.h>
 #define _(x)        gettext(x)
-#else
+#else   // HAVE_LIBINTL_H
 #define _(x)        (x)
-#endif
+#endif  // HAVE_LIBINTL_H
 
 #include <Xm/XmAll.h>
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.19 2003/02/04 04:08:38 jtwilley Exp $
+ * $Id: list_gui.c,v 1.20 2003/02/20 09:51:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,20 +32,20 @@
 
 #ifdef  HAVE_LOCALE_H
 #include <locale.h>
-#endif
+#endif  // HAVE_LOCALE_H
 
 #ifdef  HAVE_LIBINTL_H
 #include <libintl.h>
 #define _(x)        gettext(x)
-#else
+#else   // HAVE_LIBINTL_H
 #define _(x)        (x)
-#endif
+#endif  // HAVE_LIBINTL_H
 
 #include <Xm/XmAll.h>
 
 #ifdef HAVE_XBAE_MATRIX_H
 #include <Xbae/Matrix.h>
-#endif
+#endif  // HAVE_XBAE_MATRIX_H
 
 #include "main.h"
 #include "xastir.h"

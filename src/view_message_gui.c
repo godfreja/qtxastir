@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.10 2003/01/24 00:34:51 we7u Exp $
+ * $Id: view_message_gui.c,v 1.11 2003/02/20 09:51:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -47,7 +47,7 @@
 
 #ifdef HAVE_DMALLOC
 #include <dmalloc.h>
-#endif
+#endif  // HAVE_DMALLOC
 
 Widget All_messages_dialog = NULL;
 Widget view_messages_text = NULL;

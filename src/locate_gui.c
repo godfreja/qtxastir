@@ -1,5 +1,5 @@
 /*
- * $Id: locate_gui.c,v 1.4 2003/02/04 04:08:38 jtwilley Exp $
+ * $Id: locate_gui.c,v 1.5 2003/02/20 09:51:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,7 +30,7 @@
 #include <Xm/XmAll.h>
 #ifdef HAVE_XBAE_MATRIX_H
 #include <Xbae/Matrix.h>
-#endif
+#endif  // HAVE_XBAE_MATRIX_H
 
 #include "main.h"
 #include "xastir.h"

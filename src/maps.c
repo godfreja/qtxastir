@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.208 2003/02/20 09:00:08 we7u Exp $
+ * $Id: maps.c,v 1.209 2003/02/20 09:51:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -52,7 +52,7 @@
   #ifndef NO_XPM
     #include <Xm/XpmI.h>
   #endif    // NO_XPM
-#else
+#else   // HAVE_XPMI
 #include <X11/xpm.h>
 #endif  // HAVE_XPMI
 
@@ -9691,7 +9691,7 @@ void draw_map (Widget w, char *dir, char *filenm, alert_entry * alert,
 // Lclint can't handle this structure for some reason.
 #ifndef __LCLINT__
                 for (j = 0; j < DOS_HDR_LINES; strlen (Buffer) ? 1: j++) {
-#else
+#else   // __LCLINT__
 // So we do it this way for Lclint:
                 for (j = 0; j < DOS_HDR_LINES;) {
                     if (!strlen(Buffer))
