@@ -1,5 +1,5 @@
 
-// $Id: geo-find.c,v 1.3 2004/07/30 03:57:57 we7u Exp $
+// $Id: geo-find.c,v 1.4 2004/08/20 04:06:31 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -239,7 +239,8 @@ D(printf("    Buffer is now: '%.*s'\n",s->buffer_end - s->buffer,s->buffer));
 	s->next = last;
 D(printf(">>> '%c' \"%.*s\" found\n",type,len - 1,n + 1));
 	if (NULL != f && f(s)) {
-		char *out = NULL;
+        char *out = NULL;
+
 		switch (type) {
 		case 'E':
 		case 'O':

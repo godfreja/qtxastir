@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.22 2004/08/19 06:45:33 we7u Exp $
+ * $Id: x_spider.c,v 1.23 2004/08/20 04:06:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -704,7 +704,10 @@ void init_set_proc_title(int argc, char *argv[], char *envp[]) {
 
     for(i = 0; envp[i] != NULL; i++) {
         if((environ[i] = malloc(strlen(envp[i]) + 1)) != NULL)
-            strcpy(environ[i], envp[i]);
+            xastir_snprintf(environ[i],
+                sizeof(environ[i]),
+                "%s",
+                envp[i]);
         }
     
         environ[i] = NULL;

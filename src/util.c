@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.116 2004/08/19 06:38:23 we7u Exp $
+ * $Id: util.c,v 1.117 2004/08/20 04:06:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -788,39 +788,6 @@ char *get_line(FILE *f, char *linedata, int maxline) {
 
     return(linedata);
 }
-
-
-
-
-
-/*
-char *new_get_line(FILE *f, char *linedata, int maxline) {
-    char *ptr;
-    int pos;
-    static char Buffer[4097];
-
-    pos=0;
-    *linedata = '\0';
-    while((ptr = strpbrk(Buffer, "\r\n")) == NULL && !feof(f) && strlen(Buffer) <= 4096)
-        (void)fread(&Buffer[strlen(Buffer)], sizeof(char), sizeof(Buffer)-strlen(Buffer)-1, f);
-
-    if (ptr)
-        *ptr = '\0';
-
-    xastir_snprintf(linedata, maxline, "%s", Buffer);
-    if ((pos = (int)strlen(Buffer)) > maxline)
-        fprintf(stderr, "Line length overflow: get_line\n");
-    else if (pos < maxline)
-        linedata[pos] = '\0';
-
-    if (ptr) {
-        for (ptr++; *ptr == '\r' || *ptr == '\n'; ptr++);
-// The below statement makes no sense
-//            strcpy(Buffer, ptr);
-    }
-    return(linedata);
-}
-*/
 
 
 

@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.20 2004/08/19 19:38:17 we7u Exp $
+ * $Id: view_message_gui.c,v 1.21 2004/08/20 04:06:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -155,9 +155,15 @@ void all_messages(char from, char *call_sign, char *from_call, char *message) {
 
     if ((vm_range == 0) || ((int)distance_from_my_station(call_sign,temp_my_course) <= vm_range)) {
         if (strlen(message)>95) {
-            strncpy(data1, message, 95);
+            xastir_snprintf(data1,
+                sizeof(data1),
+                "%s",
+                message);
             data1[95]='\0';
-            strncpy(data2, message+95, 95);
+            xastir_snprintf(data2,
+                sizeof(data2),
+                "%s",
+                message+95);
         } else {
             xastir_snprintf(data1,
                 sizeof(data1),

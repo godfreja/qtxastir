@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.26 2004/08/19 19:38:16 we7u Exp $
+ * $Id: messages_gui.c,v 1.27 2004/08/20 04:06:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -132,7 +132,10 @@ void reverse_path(char *input_string) {
                 && (strncasecmp(&input_string[indexes[i]+1],"TCPIP",5) != 0) ) {
 
             // Snag each callsign into temp:
-            strncpy(temp, &input_string[indexes[i]+1], indexes[i+1] - indexes[i]);
+            xastir_snprintf(temp,
+                sizeof(temp),
+                "%s",
+                &input_string[indexes[i]+1]);
 
             // Massage temp until it resembles something we want to
             // use.
