@@ -1,5 +1,5 @@
 #
-# $Id: configure.ac,v 1.1 2004/02/04 20:18:24 we7u Exp $
+# $Id: configure.ac,v 1.2 2004/02/05 00:17:03 we7u Exp $
 #
 # Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
 # Portions Copyright (C) 2004  The Xastir Group
@@ -9,11 +9,11 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ(2.57)
+AC_PREREQ(2.53)
 AC_INIT(db2APRS, 0.1.1, bruts@adelphia.net)
 AM_INIT_AUTOMAKE(db2APRS, 0.1.1)
 AC_CONFIG_SRCDIR([src/db2APRS.c])
-AC_CONFIG_HEADER([config.h])
+AM_CONFIG_HEADER([config.h])
 
 # Checks for programs.
 AC_PROG_INSTALL
