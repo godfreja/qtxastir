@@ -6,7 +6,7 @@
 # Released to the public domain.
 #
 #
-# $Id: permutations.pl,v 1.4 2002/08/14 18:15:44 we7u Exp $
+# $Id: permutations.pl,v 1.5 2002/08/14 18:21:03 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
@@ -339,6 +339,8 @@ else {
     # three lat/lon formats it's in.
 
     # 48  07228N   122 07228W
+
+    $input =~ s/^(\w+)\s+(\d)(\w)\s+(\w+)\s+(\d)(\w)\s*$/$1 0$2$3 $4 0$5$6\n/;
 
     # DD.DDD
     $input2 = $input;
