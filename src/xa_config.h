@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.h,v 1.2 2002/02/25 20:43:46 francais1 Exp $
+ * $Id: xa_config.h,v 1.3 2002/04/30 22:53:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27,14 +27,6 @@
 
 extern time_t next_time;
 
-void store_string(FILE *fout,char *option, char *value);
-void store_char(FILE *fout,char *option, char value);
-void store_int(FILE *fout,char *option, int value);
-void store_long(FILE *fout,char *option, long value);
-int get_string(char *option, char *value);
-int get_char(char *option, char *value);
-int get_int(char *option, int *value);
-int get_long(char *option, long *value);
 char *get_user_base_dir(char *dir);
 char *get_data_base_dir(char *dir);
 void save_data(void);

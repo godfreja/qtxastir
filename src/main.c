@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.66 2002/04/26 17:16:19 we7u Exp $
+ * $Id: main.c,v 1.67 2002/04/30 22:53:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1811,9 +1811,9 @@ void create_image(Widget w) {
             colors[0xfd] = (int)GetPixelByName(w,"white");
             break;
 
-                case 11 :
-                        colors[0xfd] = (int)GetPixelByName(w, "black");
-                        break;
+        case 11 :
+            colors[0xfd] = (int)GetPixelByName(w, "black");
+            break;
 
         default:
             colors[0xfd] = (int)GetPixelByName(appshell,"gray73");
