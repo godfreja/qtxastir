@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.13 2002/06/14 21:15:04 we7u Exp $
+ * $Id: main.h,v 1.14 2002/06/21 19:18:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -196,7 +196,7 @@ extern int menu_y;
 extern long my_last_altitude;
 extern time_t my_last_altitude_time;
 extern int my_last_course;
-extern int my_last_speed;
+extern int my_last_speed;   // in knots
 extern unsigned igate_msgs_tx;
 extern int symbols_loaded;
 extern GC gc2;

@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.8 2002/06/18 18:55:23 we7u Exp $
+ * $Id: draw_symbols.c,v 1.9 2002/06/21 19:15:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1288,6 +1288,7 @@ void symbol(Widget w, int ghost, char symbol_table, char symbol_id, char symbol_
 
 
 
+// Speed is in converted units by this point (kph or mph)
 void draw_symbol(Widget w, char symbol_table, char symbol_id, char symbol_overlay, long x_long,long y_lat,
                  char *callsign_text, char *alt_text, char *course_text, char *speed_text, char *my_distance,
                  char *my_course, char *wx_temp, char* wx_wind, time_t sec_heard, int temp_show_last_heard,
