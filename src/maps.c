@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.128 2002/09/09 23:29:47 we7u Exp $
+ * $Id: maps.c,v 1.129 2002/09/10 23:35:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1990,6 +1990,10 @@ void draw_shapefile_map (Widget w,
 
 // Draw the PolyLines themselves:
 
+                    // Default in case we forget to set the line
+                    // width later:
+                    (void)XSetLineAttributes (XtDisplay (w), gc, 0, LineSolid, CapButt,JoinMiter);
+ 
                     index = 0;  // Index into our own points array.
                                 // Tells how many points we've
                                 // collected so far.
