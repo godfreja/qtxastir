@@ -1,5 +1,5 @@
 /*
- * $Id: main.c,v 1.8 2002/03/05 21:28:23 we7u Exp $
+ * $Id: main.c,v 1.9 2002/03/06 06:42:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1138,7 +1138,7 @@ void Change_Debug_Level(Widget w, XtPointer clientData, XtPointer callData) {
     char temp_string[10];
 
     if (!change_debug_level_dialog) {
-            change_debug_level_dialog = XtVaCreatePopupShell(langcode("PULDNFI007"),xmDialogShellWidgetClass,Global.top,
+        change_debug_level_dialog = XtVaCreatePopupShell(langcode("PULDNFI007"),xmDialogShellWidgetClass,Global.top,
                                     XmNdeleteResponse,XmDESTROY,
                                     XmNdefaultPosition, FALSE,
                                     NULL);
@@ -1166,7 +1166,7 @@ void Change_Debug_Level(Widget w, XtPointer clientData, XtPointer callData) {
                             XmNshadowThickness,    1,
                             XmNcolumns, 4,
                             XmNwidth, ((5*7)+2),
-                            XmNmaxLength, 3,
+                            XmNmaxLength, 4,
                             XmNbackground, colors[0x0f],
                             XmNtopOffset, 5,
                             XmNtopAttachment,XmATTACH_FORM,
