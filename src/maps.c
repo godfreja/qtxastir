@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.11 2002/04/05 22:50:05 we7u Exp $
+ * $Id: maps.c,v 1.12 2002/04/08 20:29:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -206,29 +206,6 @@ long get_x_scale(long x, long y, long ysc) {
     return(xsc);
 }
 
-
-/*
- *  Calculate y map scaling for current location
- *  With that we could have equal distance scaling or a better
- *  view for pixel maps
- */
-long get_y_scale(long x, long y, long xsc) {
-    long   ysc;
-    double sc_x;
-    double sc_y;
-    
-    sc_x = calc_dscale_x(x,y);          // meter per Xastir unit
-    sc_y = calc_dscale_y(x,y);
-    if (sc_y < 0.01 || xsc > 50000)
-        // keep it near the poles (>88 deg) or if big parts of world seen
-        ysc = xsc;
-    else
-        // adjust x scale, so that the distance is identical in both directions:
-        ysc = (long)(xsc * sc_x / sc_y +0.4999);
-    
-    //printf("Scale: x %5.3fkm/deg, y %5.3fkm/deg, x %ld y %ld\n",sc_x*360,sc_y*360,xsc,ysc);
-    return(ysc);
-}
 
 
 

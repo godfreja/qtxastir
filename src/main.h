@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.6 2002/04/05 22:50:05 we7u Exp $
+ * $Id: main.h,v 1.7 2002/04/08 20:29:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -204,7 +204,6 @@ extern void location_gui_init(void);
 extern void view_message_gui_init(void);
 extern void wx_gui_init(void);
 extern long get_x_scale(long x, long y, long ysc);
-extern long get_y_scale(long x, long y, long xsc);
 
 extern Widget Display_data_dialog;
 extern Widget Display_data_text;
