@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.469 2004/06/23 18:05:10 we7u Exp $
+ * $Id: main.c,v 1.470 2004/06/23 19:25:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10018,24 +10018,12 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                 }
                                 port_write_string(i, tmp);
 
-                                // Process the GPS strings saved by
-                                // the channel_data() function.
-                                if (gprmc_save_string[0] != '\0')
-                                    ret1 = gps_data_find(gprmc_save_string, gps_port_save);
-                                if (gpgga_save_string[0] != '\0')
-                                    ret2 = gps_data_find(gpgga_save_string, gps_port_save);
-
-                                // Blank out the global variables
-                                // (we just processed them).
-                                gprmc_save_string[0] = '\0';
-                                gpgga_save_string[0] = '\0';
-
-                                if (ret1 && ret2)
-                                    statusline("GPS:  $GPRMC, $GPGGA", 0);
-                                else if (ret1)
-                                    statusline("GPS:  $GPRMC", 0);
-                                else if (ret2)
-                                    statusline("GPS:  $GPGGA", 0);
+                                // GPS strings are processed in
+                                // UpdateTime() function via
+                                // gps_data_find(), if the incoming
+                                // data is GPS data instead of TNC
+                                // data.  We need to do nothing
+                                // further here.
 
                                 break;
 
@@ -10049,6 +10037,16 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                     popup_message(langcode("POPEM00036"),
                                         langcode("POPEM00037"));
                                 }
+
+                                // GPS strings are processed in
+                                // UpdateTime() function via
+                                // gps_data_find(), if the incoming
+                                // data is GPS data instead of TNC
+                                // data.  We need to do nothing
+                                // further here.
+
+                                break;
+
                             case DEVICE_SERIAL_GPS:
                             case DEVICE_NET_GPSD:
 
