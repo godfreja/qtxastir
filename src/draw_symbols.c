@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.34 2003/02/24 21:58:34 we7u Exp $
+ * $Id: draw_symbols.c,v 1.35 2003/05/21 21:18:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1261,12 +1261,14 @@ void draw_area(long x_long, long y_lat, char type, char color,
        the zoom level being used.  The more the extents of the area go beyond the edges of the screen,
        the more this will happen. N7TAP */
     case AREA_OPEN_CIRCLE:
+    case AREA_OPEN_ELLIPSE:
         right  += xoff;
         bottom += yoff;
         if (onscreen(left, right, top, bottom))
             (void)XDrawArc(XtDisplay(da), where, gc, l16(left), l16(top), l16(2*xoff), l16(2*yoff), 0, 64 * 360);
         break;
     case AREA_FILLED_CIRCLE:
+    case AREA_FILLED_ELLIPSE:
         right  += xoff;
         bottom += yoff;
         if (onscreen(left, right, top, bottom)) {
@@ -1339,9 +1341,7 @@ void draw_area(long x_long, long y_lat, char type, char color,
             (void)XFillPolygon(XtDisplay(da), where, gc, points, 3, Convex, CoordModeOrigin);
         }
         break;
-    // Not implemented yet, because no guidance on how (no response from aprsspec list)
-    case AREA_OPEN_ELLIPSE:
-    case AREA_FILLED_ELLIPSE:
+    default:
         break;
     }
     (void)XSetFillStyle(XtDisplay(da), gc, FillSolid);
