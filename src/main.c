@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.275 2003/05/12 23:59:45 we7u Exp $
+ * $Id: main.c,v 1.276 2003/05/15 03:59:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,9 +41,9 @@
 #include <pthread.h>
 #include <locale.h>
 #include <strings.h>
+#include <time.h>
 
 #ifdef HAVE_IMAGEMAGICK
-#include <time.h>
 #include <sys/types.h>
 #undef RETSIGTYPE
 /* JMT - stupid ImageMagick */
