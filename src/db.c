@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.235 2003/04/11 23:59:07 we7u Exp $
+ * $Id: db.c,v 1.236 2003/04/12 01:32:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -484,7 +484,7 @@ void msg_copy_data(Message *to, Message *from) {
 
 
 // Returns 1 if it's time to update the messages again
-int message_update_time () {
+int message_update_time (void) {
     if ( sec_now() > (last_message_update + message_update_delay) )
         return(1);
     else

@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.28 2003/03/20 22:29:49 jtwilley Exp $
+ * $Id: wx_gui.c,v 1.29 2003/04/12 01:32:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -111,7 +111,7 @@ void wx_alert_double_click_action( Widget widget, XtPointer clientData, XtPointe
     char temp[1024];
     XmString item;
     register FILE *pp;
-    extern FILE *popen();
+    extern FILE *popen(const char *, const char *);
 
 
     XmStringGetLtoR(selection->item, XmFONTLIST_DEFAULT_TAG, &choice);

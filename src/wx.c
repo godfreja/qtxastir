@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.31 2003/02/04 04:08:39 jtwilley Exp $
+ * $Id: wx.c,v 1.32 2003/04/12 01:32:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea

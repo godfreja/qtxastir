@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.33 2003/02/26 01:55:05 we7u Exp $
+ * $Id: db.h,v 1.34 2003/04/12 01:32:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -165,7 +165,7 @@ extern void msg_copy_data(Message *to, Message *from);
 #define msg_copy_data(to, from) memmove((Message *)to, (Message *)from, sizeof(Message))
 #endif /* MSG_DEBUG */
 
-extern int message_update_time ();
+extern int message_update_time(void);
 
 
 enum AreaObjectTypes {
