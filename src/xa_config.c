@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.102 2003/12/05 19:39:25 we7u Exp $
+ * $Id: xa_config.c,v 1.103 2003/12/05 22:07:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1440,8 +1440,8 @@ void load_data_or_default(void) {
     if (!get_int ("DEAD_RECKONING_TIMEOUT", &dead_reckoning_timeout,1,60*60*24*30,60*10))
         dead_reckoning_timeout = 60*10;     // Ten minute default
 
-    if (!get_int ("SERIAL_CHAR_PACING", &serial_char_pacing,0,50,25))
-        serial_char_pacing = 25;    // 25ms default
+    if (!get_int ("SERIAL_CHAR_PACING", &serial_char_pacing,0,50,1))
+        serial_char_pacing = 1; // 1ms default
 
 
 
