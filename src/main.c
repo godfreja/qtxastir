@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.49 2002/04/06 03:31:04 we7u Exp $
+ * $Id: main.c,v 1.50 2002/04/06 17:53:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14728,6 +14728,8 @@ int main(int argc, char *argv[], char *envp[]) {
                         strcpy(lang_to_use_or,"Spanish");
                     } else if (strcasecmp(optarg,"ITALIAN") == 0) {
                         strcpy(lang_to_use_or,"Italian");
+                    } else if (strcasecmp(optarg,"PORTUGUESE") == 0) {
+                        strcpy(lang_to_use_or,"Portuguese");
                     } else {
                         ag_error++;
                         printf(" INVALID");
@@ -14747,13 +14749,14 @@ int main(int argc, char *argv[], char *envp[]) {
 
     if (ag_error){
         printf("\nXastir Command line Options\n\n");
-        printf("-v level    Set the debug level\n\n");
-        printf("-lEnglish   Set English as the Language to use\n");
-        printf("-lDutch     Set Dutch as the Language to use\n");
-        printf("-lFrench    Set French as the Language to use\n");
-        printf("-lGerman    Set German as the Language to use\n");
-        printf("-lSpanish   Set Spanish as the Language to use\n");
-        printf("-lItalian   Set Italian as the Language to use\n");
+        printf("-v level      Set the debug level\n\n");
+        printf("-lEnglish     Set the language to English\n");
+        printf("-lDutch       Set the language to Dutch\n");
+        printf("-lFrench      Set the language to French\n");
+        printf("-lGerman      Set the language to German\n");
+        printf("-lSpanish     Set the language to Spanish\n");
+        printf("-lItalian     Set the language to Italian\n");
+        printf("-lPortuguese  Set the language to Portuguese\n");
         printf("\n");
         exit(0);
     }
