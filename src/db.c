@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.182 2002/12/07 08:00:55 we7u Exp $
+ * $Id: db.c,v 1.183 2002/12/10 22:51:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6992,6 +6992,13 @@ int extract_comp_position(DataRow *p_station, char **info, /*@unused@*/ int type
                 if ((T & 0x18) == 0x10) {   // check for GGA (with altitude)
                     xastir_snprintf(p_station->altitude, sizeof(p_station->altitude), "%06.0f",pow(1.002,(double)(c*91+s))*0.3048);
                 } else { // Found compressed course/speed bytes
+
+                    // Convert 0 degrees to 360 degrees so that
+                    // Xastir will see it as a valid course and do
+                    // dead-reckoning properly on this station
+                    if (c == 0) {
+                        c = 90;
+                    }
 
                     // Compute course in degrees
                     xastir_snprintf(p_station->course,
