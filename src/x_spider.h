@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.h,v 1.4 2004/07/22 01:56:07 we7u Exp $
+ * $Id: x_spider.h,v 1.5 2004/08/10 19:51:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -37,7 +37,7 @@ extern int pipe_server_to_xastir;
 
 extern int writen(register int fd, register char *ptr, register int nbytes);
 extern int readline(register int fd, register char *ptr, register int maxlen);
-extern int Fork_server(void);
+extern int Fork_server(int argc, char *argv[], char *envp[]);
 
 #endif /* XASTIR_SERVER_H */
 
