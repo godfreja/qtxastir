@@ -1,4 +1,4 @@
-# $Id: tnc-startup.d700,v 1.2 2004/06/16 23:27:05 we7u Exp $
+# $Id: tnc-startup.d700,v 1.3 2004/07/19 16:13:40 we7u Exp $
 #
 # Copyright (C) 2004  The Xastir Group
 #
@@ -41,6 +41,7 @@ TC 0
 ##META <delay>
 ##META <delay>
 ##META <delay>
+HID off
 AWlen 8
 BBSMsgs ON
 B E 0

@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kpc3,v 1.9 2004/06/04 19:43:05 we7u Exp $
+# $Id: tnc-startup.kpc3,v 1.10 2004/07/19 16:13:40 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -40,6 +40,7 @@ GPSHEAD 2 $GPGGA
 GPSPORT 4800 NORMAL CHECKSUM
 LGETCHAR $05
 #
+HID off
 MYAlias RELAY
 B E 0
 DIGI on
