@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.29 2002/08/06 20:00:30 we7u Exp $
+ * $Id: util.c,v 1.30 2002/08/06 23:14:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1469,7 +1469,8 @@ void reload_object_item(void) {
         (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
     }
     else {
-        printf("Couldn't open file for reading: %s\n", file);
+        if (debug_level & 1)
+            printf("Couldn't open file for reading: %s\n", file);
     }
 }
 
