@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.448 2005/03/17 21:07:55 we7u Exp $
+ * $Id: db.c,v 1.449 2005/03/17 21:16:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15014,13 +15014,13 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
 
 // This is a good one to enable for debugging without getting too
 // many other types of messages to the xterm.  It will enable the
-// block below (if the particular compiler can handle the variable
-// define here outside a block).
+// block below.
 //#define WE7U_DEBUG
 
 #ifndef WE7U_DEBUG
-    if (debug_level & 1) {
+    if (debug_level & 1)
 #endif
+    {
         char filtered_data[MAX_LINE_SIZE+1];
 
         xastir_snprintf(filtered_data,
@@ -15031,9 +15031,7 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
 
         makePrintable(filtered_data);
         fprintf(stderr,"decode_ax25_line: start parsing %s\n", filtered_data);
-#ifndef WE7U_DEBUG
     }
-#endif
 
     if (line == NULL) {
         fprintf(stderr,"decode_ax25_line: line == NULL.\n");
