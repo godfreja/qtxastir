@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.113 2004/08/03 20:04:22 we7u Exp $
+ * $Id: util.c,v 1.114 2004/08/05 20:02:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3472,7 +3472,7 @@ void time_mark(int start)
 // If we find a number in the text before a dash is found, we
 // consider it to be a normal callsign.  We don't add commas to the
 // SSID portion of a call.
-void spell_it_out(char *text) {
+void spell_it_out(char *text, int max_length) {
     char buffer[2000];
     int i = 0;
     int j = 0;
@@ -3498,7 +3498,7 @@ void spell_it_out(char *text) {
 
     // Only use the new string if it kind'a looks like a callsign
     if (number_found_before_dash)
-        strncpy(text, buffer, 2000);
+        strncpy(text, buffer, max_length);
 }
 
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.361 2004/08/03 21:21:04 we7u Exp $
+ * $Id: db.c,v 1.362 2004/08/05 20:02:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10572,7 +10572,7 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                 char speech_callsign[50];
 
                 strcpy(speech_callsign,p_station->call_sign);
-                spell_it_out(speech_callsign);
+                spell_it_out(speech_callsign, 50);
 
                 xastir_snprintf(station_id,
                     sizeof(station_id),
@@ -10616,7 +10616,7 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                 char speech_callsign[50];
 
                 strcpy(speech_callsign,p_station->call_sign);
-                spell_it_out(speech_callsign);
+                spell_it_out(speech_callsign, 50);
 
                 if (units_english_metric) {
                     if (distance < 1.0)
@@ -10657,7 +10657,7 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                 char speech_callsign[50];
 
                 strcpy(speech_callsign,p_station->call_sign);
-                spell_it_out(speech_callsign);
+                spell_it_out(speech_callsign, 50);
 
                 xastir_snprintf(station_id,
                     sizeof(station_id),
@@ -10671,6 +10671,7 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
         } // end found_pos
 
     }   // valid data into database
+
     return(ok);
 }   // End of data_add() function
 
@@ -13545,6 +13546,9 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
 
     if (!dbadd)
     {
+        if (debug_level & 1)
+            fprintf(stderr,"decode_ax25_line: exiting\n");
+
         return(ok);
     }
 

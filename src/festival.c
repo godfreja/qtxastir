@@ -2,7 +2,7 @@
 //
 // Portions Copyright (C) 2000-2004  The Xastir Group
 //
-// $Id: festival.c,v 1.10 2004/01/26 16:18:20 we7u Exp $
+// $Id: festival.c,v 1.11 2004/08/05 20:02:24 we7u Exp $
 //
 // End of modification
 
@@ -417,9 +417,12 @@ int SayText(char *text) {
     if ( (strcmp(last_speech_text,text) == 0) // Strings match
             && (last_speech_time + 30 > sec_now()) ) {
 
-    //fprintf(stderr,"Same text, skipping speech: %d seconds, %s\n",
-    //    (int)(sec_now() - last_speech_time),
-    //    text);
+/*
+    fprintf(stderr,
+        "Same text, skipping speech: %d seconds, %s\n",
+        (int)(sec_now() - last_speech_time),
+        text);
+*/
 
         return(1);
     }
@@ -433,6 +436,7 @@ int SayText(char *text) {
     last_speech_time = sec_now();
 
     festivalStringToSpeech(text);
+
     return(0);
 }
 

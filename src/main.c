@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.502 2004/08/04 20:04:37 we7u Exp $
+ * $Id: main.c,v 1.503 2004/08/05 20:02:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3738,7 +3738,7 @@ void check_statusline_timeout(void) {
                 char my_speech_callsign[100];
 
                 strcpy(my_speech_callsign,my_callsign);
-                spell_it_out(my_speech_callsign);
+                spell_it_out(my_speech_callsign, 100);
                 xastir_snprintf(status_text,
                     sizeof(status_text),
                     langcode ("BBARSTA040"),
