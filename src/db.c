@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.277 2003/08/18 22:46:06 we7u Exp $
+ * $Id: db.c,v 1.278 2003/08/18 23:16:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6559,7 +6559,7 @@ void delete_station_memory(DataRow *p_del) {
 
 //if (p_new->n_prev != NULL) {
 //    fprintf(stderr,"\tprev: %s",
-//        p_new->n_prev->call_sign);\
+//        p_new->n_prev->call_sign);
 //}
 
 //if (p_new->n_next != NULL) {
