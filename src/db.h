@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.24 2002/11/26 01:10:18 we7u Exp $
+ * $Id: db.h,v 1.25 2003/01/16 17:22:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -365,7 +365,7 @@ typedef struct _DataRow {
 #define ST_ITEM         0x02    // station is an item
 #define ST_ACTIVE       0x04    // station is active (deleted objects are inactive)
 #define ST_MOVING       0x08    // station is moving
-#define ST_LOCAL        0x10    // heard direct (not via digis)
+#define ST_DIRECT       0x10    // heard direct (not via digis)
 #define ST_VIATNC       0x20    // station heard via TNC
 #define ST_3RD_PT       0x40    // third party traffic (not used yet)
 #define ST_MSGCAP       0x80    // message capable (not used yet)
