@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.6 2003/09/12 14:48:55 n2ygk Exp $
+ * $Id: dbfawk.c,v 1.7 2003/09/27 14:18:28 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -265,7 +265,8 @@ void dbfawk_parse_record(awk_program *rs,
 	    sprintf(qbuf,"%s=??",finfo->name);
 	    break;
         }
-        awk_exec_program(rs,qbuf,strlen(qbuf));
+        if (awk_exec_program(rs,qbuf,strlen(qbuf)) == 2)
+            break;
     }
     awk_exec_end_record(rs); /* execute an END_RECORD rule if any */
 }

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.27 2003/09/16 17:46:34 we7u Exp $
+ * $Id: xastir.h,v 1.28 2003/09/27 14:18:29 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -144,6 +144,8 @@ extern int redraw_on_new_data;
 //extern Widget hidden_shell;
 extern int tiger_flag;
 extern int index_maps_on_startup;
+#define MAX_LABEL_FONTNAME 256
+extern char rotated_label_fontname[];
 
 #ifdef HAVE_IMAGEMAGICK  //N0VH
 extern int tiger_show_grid;

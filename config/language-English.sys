@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.100 2003/09/26 17:06:26 we7u Exp $
+# $Id: language-English.sys,v 1.101 2003/09/27 14:18:28 n2ygk Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -79,6 +79,7 @@ PULDNMP021|Auto Map - Disable Raster Maps||
 PULDNMP022|Index New Maps on Startup||
 PULDNMP023|Index: Add New Maps|N|
 PULDNMP024|Index: Reindex ALL Maps|R|
+PULDNMP025|Map labels font||
 #
 #
 # PopUp "Configure Tigermap"
@@ -991,6 +992,13 @@ SMARTB011|Enable SmartBeaconing(tm)||
 # Gamma Adjust Dialog
 GAMMA001|Adjust Gamma Correction||
 GAMMA002|Gamma Correction||
+#
+#
+# 
+# Map labels font Dialog
+MAPFONT001|Change Map Labels Font||
+MAPFONT002|Map Labels Font||
+MAPFONT003|Font name:||
 #
 #
 #

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.h,v 1.5 2003/08/29 16:50:13 n2ygk Exp $
+ * $Id: awk.h,v 1.6 2003/09/27 14:18:28 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -53,7 +53,7 @@ typedef struct awk_symtab_ {	/* symbol table anchor */
 
 typedef struct awk_action_ {	/* a program statement */
     struct awk_action_ *next_act;
-    enum {NOOP=0, NEXT, ASSIGN} opcode;
+    enum {NOOP=0, NEXT, SKIP, ASSIGN} opcode;
     awk_symbol *dest;		/* destination of assignment */
     const char *expr;           /* value setting expression */
     int exprlen;                /* length of expression */
