@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.23 2004/09/10 15:49:46 we7u Exp $
+ * $Id: awk.c,v 1.24 2004/10/06 05:17:41 shadow Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -513,7 +513,7 @@ void awk_eval_expr(awk_symtab *this,
                     --exprlen;
                 }
                 /* make sure src and dest of string copy don't overlap */
-                if (src->type == STRING 
+                if (src && src->type == STRING 
                     && dp >= (char *)src->val 
                     && dp <= &((char *)src->val)[src->size]) {
                     char *sp;
