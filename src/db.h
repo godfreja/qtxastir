@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.23 2002/10/10 08:48:23 we7u Exp $
+ * $Id: db.h,v 1.24 2002/11/26 01:10:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -130,6 +130,8 @@ extern char my_callsign[MAX_CALLSIGN+1];
 extern char my_lat[MAX_LAT];
 extern char my_long[MAX_LONG];
 
+
+// Used for messages and bulletins
 typedef struct {
     char active;
     char data_via;
@@ -143,6 +145,7 @@ typedef struct {
     char message_line[MAX_MESSAGE_LENGTH+1];
     char seq[MAX_MESSAGE_ORDER+1];
     char acked;
+    char position_known;
 } Message;
 
 
