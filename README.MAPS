@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.42 2004/09/19 23:52:37 tvrusso Exp $
+$Id: README.MAPS,v 1.43 2004/09/29 07:10:23 tvrusso Exp $
 
 
 Recommended Configurations for:
@@ -438,8 +438,10 @@ Getting Maps and other Data Files for Xastir:
         key:       search key (used for WX alerts to find the shape)
 	symbol:	   symbol for landmarks, etc.
 	filled:	   draw polygons filled.
-        fill_style: style of fill (solid, stiple, etc.)
+        fill_style: style of fill (0=solid, 1=FillTiled, 2=FillStippled, etc.)
 	fill_color: color of fill
+        fill_stipple: stipple pattern if fill_style=2 ("FillStipple")
+                      0=13 percent, 1=25 percent, 2=50 percent.
         pattern:   solid or dashed lines.
         display_level: at what zoom level to begin displaying the shape
         label_level: at what zoom level to begin displaying labels
