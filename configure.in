@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Currently maintained by Chuck Byam (KG4IJB), cbyam@virginia.edu
 #
-# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.4 2002/02/10 00:56:23 kg4ijb Exp $
+# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.5 2002/02/13 17:36:40 we7u Exp $
 #
 # Xastir Configure Script
 #
@@ -17,7 +17,7 @@ XASTIR_MSG_CONFIGURE_START
 # Set version
 MAJOR_VERSION=1
 MINOR_VERSION=1
-MICRO_VERSION=0
+MICRO_VERSION=1
 
 # quess the system
 AC_CANONICAL_SYSTEM
