@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.4 2003/02/18 22:05:30 kg4ijb Exp $
+# $Id: Makefile.am,v 1.5 2003/06/26 15:37:21 n2ygk Exp $
 
 bin_PROGRAMS = xastir
 
@@ -22,7 +22,8 @@ xastir_SOURCES = \
     location.c \
     location_gui.c \
     main.c main.h \
-    maps.c maps.h \
+    maps.c maps.h map_shp.c map_dos.c map_pdb.c map_tif.c map_geo.c \
+    map_tiger.c map_gnis.c \
     messages.c messages.h \
     messages_gui.c \
     popup.h \
