@@ -1,6 +1,6 @@
 // Modification for Xastir CVS purposes
 //
-// $Id: festival.c,v 1.4 2002/12/16 02:28:54 we7u Exp $
+// $Id: festival.c,v 1.5 2002/12/16 05:41:08 we7u Exp $
 //
 // End of modification
 
@@ -285,11 +285,15 @@ int SayText(char *text)
     // enough time between them (30 seconds).
     if ( (strcmp(last_speech_text,text) == 0) // Strings match
             && (last_speech_time + 30 > sec_now()) ) {
-//printf("Same text, skipping speech: %s\n",text);
+
+    //printf("Same text, skipping speech: %d seconds, %s\n",
+    //    (int)(sec_now() - last_speech_time),
+    //    text);
+
         return 1;
     }
 
-//printf("Speaking: %s\n",text);
+    //printf("Speaking: %s\n",text);
 
     xastir_snprintf(last_speech_text,
         sizeof(last_speech_text),
