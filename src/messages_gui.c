@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.10 2002/07/23 20:07:14 we7u Exp $
+ * $Id: messages_gui.c,v 1.11 2002/07/26 05:24:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -140,7 +140,7 @@ void reverse_path(char *input_string) {
             //  "TRACE" -> "WIDE,"
             if (strncasecmp(temp,"WIDE",4) == 0) {
                 if ( (temp[4] != ',') && is_num_chr(temp[4]) ) {
-printf("Found a WIDEn-N\n");
+//printf("Found a WIDEn-N\n");
                     xastir_snprintf(temp,
                         sizeof(temp),
                         "WIDE%c-%c",
@@ -148,13 +148,13 @@ printf("Found a WIDEn-N\n");
                         temp[4]);
                 }
                 else {
-printf("Found a WIDE\n");
+//printf("Found a WIDE\n");
                     // Leave temp alone, it's just a WIDE
                 }
             }
             else if (strncasecmp(temp,"TRACE",5) == 0) {
                 if ( (temp[5] != ',') && is_num_chr(temp[5]) ) {
-printf("Found a TRACEn-N\n");
+//printf("Found a TRACEn-N\n");
                     xastir_snprintf(temp,
                         sizeof(temp),
                         "WIDE%c-%c",
@@ -162,7 +162,7 @@ printf("Found a TRACEn-N\n");
                         temp[5]);
                 }
                 else {
-printf("Found a TRACE\n");
+//printf("Found a TRACE\n");
                     // Convert it from TRACE to WIDE
                     xastir_snprintf(temp,
                         sizeof(temp),
