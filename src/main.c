@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.323 2003/08/11 22:40:23 we7u Exp $
+ * $Id: main.c,v 1.324 2003/08/11 23:15:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7855,6 +7855,11 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 
             if (Display_.dr_data
                     && ((sec_now() - sec_last_dr_update) > update_DR_rate) ) {
+
+//WE7U:  Possible slow-down here w.r.t. dead-reckoning?  If
+//update_DR_rate is too quick, we end up looking through all of the
+//stations in station list much too often and using a lot of CPU.
+
                 redraw_on_new_data = 1;
                 sec_last_dr_update = sec_now();
             }
