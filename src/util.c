@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.35 2002/08/29 15:49:43 we7u Exp $
+ * $Id: util.c,v 1.36 2002/09/23 17:38:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -624,11 +624,12 @@ char *get_line(FILE *f, char *linedata, int maxline) {
     strcpy(linedata, "");
     (void)fgets(linedata, 32767, f);
     size_line = (int)strlen(linedata);
-    if (size_line > maxline)
-        linedata[maxline] = '\0';
-    else
-        linedata[size_line-1] = '\0';
-
+    if (size_line >0) {
+        if (size_line > maxline)
+            linedata[maxline] = '\0';
+        else
+            linedata[size_line-1] = '\0';
+    }
     return(linedata);
 }
 
