@@ -1,6 +1,6 @@
 // Modification for Xastir CVS purposes
 //
-// $Id: festival.h,v 1.1 2002/02/02 03:17:31 kg4ijb Exp $
+// $Id: festival.h,v 1.2 2003/01/14 21:08:08 we7u Exp $
 //
 // End of modification
 
@@ -91,7 +91,7 @@ void delete_FT_Info(FT_Info *info);
 /*****************************************************************/
 
 /* If called with NULL will attempt to access using defaults */
-void festivalOpen();
+int festivalOpen();
 void festivalStringToWave(char *text);
 int festivalClose();
 
