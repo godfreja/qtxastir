@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.493 2004/07/14 16:31:25 we7u Exp $
+ * $Id: main.c,v 1.494 2004/07/15 17:26:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -18757,8 +18757,10 @@ void Configure_timing_change_data(Widget widget, XtPointer clientData, XtPointer
     XmScaleGetValue(trail_segment_distance_max, &value); // Degrees
     trail_segment_distance = (int)value;
 
+#ifdef HAVE_GPSMAN
     XmScaleGetValue(RINO_download_timeout, &value); // Degrees
     RINO_download_interval = (int)value;
+#endif  // HAVE_GPSMAN
 
     redraw_on_new_data=2;
     Configure_timing_destroy_shell(widget,clientData,callData);
