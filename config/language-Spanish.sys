@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.14 2002/04/09 06:13:02 we7u Exp $
+# $Id: language-Spanish.sys,v 1.15 2002/04/09 09:25:13 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -336,10 +336,9 @@ WPUPCFT029|Configurar el TNC c/MAL ENUM||
 WPUPCFWX01|Configurar el Puerto de la Estación Meteorológica||
 WPUPCFWX02|Dispositivo de la Estación Meteorológica||
 WPUPCFWX03|Rain Gauge Type (Global Setting)||
-WPUPCFWX04|1/10 inch||
-WPUPCFWX05|2.54 mm||
-WPUPCFWX06|1/100 inch||
-WPUPCFWX07|0.254 mm||
+WPUPCFWX04|0.1 in / 2.5 mm||
+WPUPCFWX05|0.01 in / 0.25 mm||
+WPUPCFWX06|0.1 mm||
 #
 # Configurar la Estación
 WPUPCFS001|Configurar la estación||
