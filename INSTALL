@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.16 2003/09/04 00:01:23 we7u Exp $
+$Id: INSTALL,v 1.17 2003/09/04 21:22:03 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -340,6 +340,13 @@ First Time Install:
        Some of these files may already be present in /usr/local/.  If so,
        they should be exact duplicates.  "diff filename1 filename2" will
        tell you if there are any differences between two files.
+
+       If you'd rather not mess with the /usr/include directory,
+       you can drop the four files into the
+       libgeotiff-1.1.5/libtiff_private/ directory instead.  Libgeotiff
+       will pick up the files there, issue a warning to you that you're
+       using private include files, yet still compile in support for your
+       particular version of libtiff.
 
        With libgeotiff-1.2.0/libtiff-3.6.0-beta or newer you shouldn't
        need to copy these files across.  The newer libtiff and libgeotiff
