@@ -1,4 +1,4 @@
-# $Id: tgrkgl.dbfawk,v 1.1 2003/07/24 13:33:11 n2ygk Exp $
+# $Id: tgrkgl.dbfawk,v 1.1 2003/08/29 16:50:13 n2ygk Exp $
 # This dbfawk file is used to map arbitrary dbf data that accompanies
 # a shapefile into Xastir canoncical values of:
 #   key     - search key

@@ -1,13 +1,15 @@
-# $Id: Makefile.am,v 1.9 2003/08/07 17:01:24 we7u Exp $
+# $Id: Makefile.am,v 1.10 2003/08/29 16:50:13 n2ygk Exp $
 
 bin_PROGRAMS = xastir
 
 xastir_SOURCES = \
     alert.c alert.h \
+    awk.c awk.h \
     bulletin_gui.c bulletin_gui.h \
     color.c color.h \
     datum.c datum.h \
     db.c db.h \
+    dbfawk.c dbfawk.h \
     draw_symbols.c draw_symbols.h \
     fcc_data.c fcc_data.h \
     festival.c festival.h \

@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.6 2003/07/02 21:19:44 n2ygk Exp $
+# $Id: Makefile.am,v 1.7 2003/08/29 16:50:13 n2ygk Exp $
 configdir = ${pkgdatadir}/config
 
 EXTRA_DIST = \
@@ -12,26 +12,15 @@ EXTRA_DIST = \
     tnc-startup.sys \
     tnc-stop.sys \
     xastir.rgb \
+    tgrcty.dbfawk \
+    tgrkgl.dbfawk \
+    tgrlk.dbfawk \
+    tgrwat.dbfawk \
     tnc-startup.kpc3 \
     tnc-startup.thd7 \
     tnc-startup.kam \
     tnc-startup.pico \
     tnc-startup.aea
 
-config_DATA = \
-    language-Dutch.sys \
-    language-English.sys \
-    language-French.sys \
-    language-German.sys \
-    language-Italian.sys \
-    language-Portuguese.sys \
-    language-Spanish.sys \
-    tnc-startup.sys \
-    tnc-stop.sys \
-    xastir.rgb \
-    tnc-startup.kpc3 \
-    tnc-startup.thd7 \
-    tnc-startup.kam \
-    tnc-startup.pico \
-    tnc-startup.aea
+config_DATA = ${EXTRA_DIST}
 

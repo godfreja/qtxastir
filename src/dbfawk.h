@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.h,v 1.2 2003/08/11 14:04:38 n2ygk Exp $
+ * $Id: dbfawk.h,v 1.3 2003/08/29 16:50:13 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -56,5 +56,8 @@ extern dbfawk_sig_info *dbfawk_load_sigs(const char *dir, const char *ftype);
 extern dbfawk_sig_info *dbfawk_find_sig(dbfawk_sig_info *info, const char *sig);
 extern void dbfawk_free_sig(dbfawk_sig_info *sig);
 extern void dbfawk_free_sigs(dbfawk_sig_info *list);
-
+extern void dbfawk_parse_record(awk_program *rs,
+                                DBFHandle dbf,
+                                dbfawk_field_info *fi,
+                                int i);
 #endif /* !DBFAWK_H*/

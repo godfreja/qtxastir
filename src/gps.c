@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.35 2003/07/25 18:18:53 we7u Exp $
+ * $Id: gps.c,v 1.36 2003/08/29 16:50:13 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -33,7 +33,9 @@
 #if TIME_WITH_SYS_TIME
   // Define needed by some versions of Linux in order to define
   // strptime()
+#ifndef __USE_XOPEN
 # define __USE_XOPEN
+#endif
 # include <sys/time.h>
 # include <time.h>
 #else   // TIME_WITH_SYS_TIME
