@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.68 2003/01/24 04:49:50 we7u Exp $
+ * $Id: xa_config.c,v 1.69 2003/01/24 04:57:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -198,7 +198,7 @@ int get_int(char *option, int *value, int low, int high, int def) {
         *value = atoi (value_o);
     else {
         printf("Found out-of-range or non-existent value (%d) for %s in config file, changing to %d\n",
-            *value,
+            atoi(value_o),
             option,
             def);
         *value = def;
@@ -221,7 +221,7 @@ int get_long(char *option, long *value, long low, long high, long def) {
         *value = atol (value_o);
     else {
         printf("Found out-of-range or non-existent value (%ld) for %s in config file, changing to %ld\n",
-            *value,
+            atol(value_o),
             option,
             def);
         *value = def;
