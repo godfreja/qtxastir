@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.11 2002/07/26 05:24:26 we7u Exp $
+ * $Id: messages_gui.c,v 1.12 2002/07/26 16:30:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -212,9 +212,10 @@ void get_path_data(char *callsign, char *path) {
 
         reverse_path(new_path);
 
-        printf("  Path to %s: %s\n",
-            callsign,
-            new_path);
+        if (debug_level & 2)
+            printf("  Path to %s: %s\n",
+                callsign,
+                new_path);
 
         strcpy(path,new_path);
     }
