@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.14 2002/08/06 20:00:30 we7u Exp $
+ * $Id: xastir.h,v 1.15 2002/09/19 19:28:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -184,7 +184,10 @@ extern void Jump_location(Widget w, XtPointer clientData, XtPointer callData);
 extern void map_pos(long mid_y, long mid_x, long sz);
 extern char locate_gnis_filename[200];
 
-#define MAX_LINE_SIZE 300
+// This needs to be quite long for some of the weather station
+// serial data to get through ok (Peet Bros U2k Complete Record Mode
+// for one).
+#define MAX_LINE_SIZE 512
 
 // from map.c
 extern double calc_dscale_x(long x, long y);
