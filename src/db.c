@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.234 2003/04/11 21:07:46 we7u Exp $
+ * $Id: db.c,v 1.235 2003/04/11 23:59:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -253,7 +253,7 @@ char *remove_leading_spaces(char *data) {
 
     count = 0;
     // Count the leading space characters
-    for (i = 0; i < strlen(data); i++) {
+    for (i = 0; i < (int)strlen(data); i++) {
         if (data[i] == ' ') {
             count++;
         }
@@ -263,13 +263,13 @@ char *remove_leading_spaces(char *data) {
     }
 
     // Check whether entire string was spaces
-    if (count == strlen(data)) {
+    if (count == (int)strlen(data)) {
         // Empty the string
         data[0] = '\0';
     }
     else if (count > 0) {  // Found some spaces
         i = 0;
-        for( j = count; j < strlen(data); j++ ) {
+        for( j = count; j < (int)strlen(data); j++ ) {
             data[i++] = data[j];    // Move string left
         }
         data[i] = '\0'; // Terminate the new string
@@ -5300,7 +5300,7 @@ static void extract_multipoints(DataRow *p_station, char* data, int type) {
 
                     // Filter the string so we don't send strange
                     // chars to the xterm
-                    for (i = 0; i < strlen(data); i++) {
+                    for (i = 0; i < (int)strlen(data); i++) {
                         temp[i] = data[i] & 0x7f;
                         if ( (temp[i] < 0x20) || (temp[i] > 0x7e) )
                             temp[i] = ' ';

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.262 2003/04/06 20:25:40 we7u Exp $
+ * $Id: main.c,v 1.263 2003/04/11 23:59:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8682,7 +8682,7 @@ void GPS_operations_change_data(Widget widget, XtPointer clientData, XtPointer c
 
         // Change spaces to underlines
         // Wed Mar  5 15:24:48 PST 2003
-        for (ii = 0; ii < strlen(short_filename); ii++) {
+        for (ii = 0; ii < (int)strlen(short_filename); ii++) {
             if (short_filename[ii] == ' ')
                 short_filename[ii] = '_';
         }

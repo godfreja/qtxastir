@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.28 2003/03/18 22:28:03 we7u Exp $
+ * $Id: gps.c,v 1.29 2003/04/11 23:59:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -485,7 +485,7 @@ char *nmea_checksum(char *nmea_sentence) {
     char convert[17] = "0123456789ABCDEF";
 
 
-    for (i = 1; i < (strlen(nmea_sentence) - 1); i++) {
+    for (i = 1; i < ((int)strlen(nmea_sentence) - 1); i++) {
         sum = sum ^ nmea_sentence[i];
     }
   
