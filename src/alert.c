@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.47 2003/02/23 16:48:59 we7u Exp $
+ * $Id: alert.c,v 1.48 2003/02/23 16:58:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -326,7 +326,7 @@
 
 
 alert_entry *alert_list = NULL;
-static int alert_list_count = 0;           // Count of active alerts
+int alert_list_count = 0;           // Count of active alerts
 int alert_max_count = 0;     // Alerts we've allocated space for
 char *alert_status = NULL;
 static int alert_status_size = 0;
