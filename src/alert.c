@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.6 2002/04/10 23:59:40 we7u Exp $
+ * $Id: alert.c,v 1.7 2002/04/11 17:13:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -72,20 +72,25 @@ void normal_title(char *incoming_title, char *outgoing_title) {
     strncpy(outgoing_title, incoming_title, 32);
     outgoing_title[32] = '\0';
     if ((c_ptr = strstr(outgoing_title, "County Warning Area ")) && c_ptr == outgoing_title) {
-        c_ptr = &outgoing_title[strlen("County Warning Area ")];
-        strcpy(outgoing_title, "CWA");
-        strncat(outgoing_title, c_ptr, 32-3); // total max length - strlen("CWA")
-        outgoing_title[32] = '\0';
+        c_ptr = &outgoing_title[strlen("County Warning Area ")]; // Find end of text
+        strcpy(outgoing_title, "CWA");  // Add "CWA" to output string instead
+        // Copy remaining portion of input string to the output string
+        strncat(outgoing_title, c_ptr, 32-strlen("County Warning Area "));
+        outgoing_title[32] = '\0';  // Make sure string is terminated
     }
+    // Remove ". " strings ( .<space> )
     while ((c_ptr = strstr(outgoing_title, ". ")))
         memmove(c_ptr, c_ptr+2, strlen(c_ptr)+1);
 
+    // Terminate string at '>' character
     if ((c_ptr = strpbrk(outgoing_title, " >")))
         *c_ptr = '\0';
 
+    // Remove these characters from the string
     while ((c_ptr = strpbrk(outgoing_title, "_.-}!")))
         memmove(c_ptr, c_ptr+1, strlen(c_ptr)+1);
 
+    // Truncate the string to eight characters always
     outgoing_title[8] = '\0';
 }
 
