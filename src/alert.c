@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.36 2002/04/23 07:31:19 we7u Exp $
+ * $Id: alert.c,v 1.37 2002/04/24 08:06:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1386,6 +1386,7 @@ printf("Zone:%s%s\n",prefix,suffix);
                     // cancelled alert active again if we did.
                 }
             } else {    // No similar alert, add a new one to the list
+                entry[i].index = -1;    // Haven't found it in a file yet
                 (void)alert_add_entry(&entry[i]);
             }
 
