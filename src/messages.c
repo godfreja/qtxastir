@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.3 2002/03/05 21:28:24 we7u Exp $
+ * $Id: messages.c,v 1.4 2002/05/10 05:59:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -232,7 +232,7 @@ end_critical_section(&send_message_dialog_lock, "messages.c:check_popup_window" 
 
 begin_critical_section(&send_message_dialog_lock, "messages.c:check_popup_window2" );
 
-       i=-1;
+        i=-1;
         for (j=0; j<MAX_MESSAGE_WINDOWS; j++) {
             if (!mw[j].send_message_dialog) {
                 i=j;
@@ -248,9 +248,9 @@ end_critical_section(&send_message_dialog_lock, "messages.c:check_popup_window2"
         temp1[1] = '\0';
         } else
             temp1[0] = '\0';
-
-        strcat(temp1, from_call_sign);
+            strcat(temp1, from_call_sign);
             Send_message(appshell, temp1, NULL);
+            update_messages(1);
             ret=i;
         } else
             printf("No open windows!\n");

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.71 2002/05/09 22:29:09 francais1 Exp $
+ * $Id: main.c,v 1.72 2002/05/10 05:59:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4655,7 +4655,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
             check_message_remove();             // remove old messages
 
             //if ( (new_message_data > 0) && ( (delay_time % 2) == 0) )
-            update_messages(0);                 // Check Messages, no forced update
+            //update_messages(0);                 // Check Messages, no forced update
 
             /* check on Redraw requests */
             if (         ( (redraw_on_new_data > 1)
