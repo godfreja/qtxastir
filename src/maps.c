@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.424 2004/12/22 06:22:57 tvrusso Exp $
+ * $Id: maps.c,v 1.425 2004/12/26 18:57:26 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3298,6 +3298,9 @@ extern void draw_shapefile_map (Widget w,
                                 u_char alert_color, 
                                 int destination_pixmap,
                                 int draw_filled);
+#ifdef WITH_DBFAWK
+extern void clear_dbfawk_sigs();
+#endif /* WITH_DBFAWK */
 #endif /* HAVE_LIBSHP */
 #ifdef HAVE_LIBGEOTIFF
 extern void draw_geotiff_image_map(Widget w,
@@ -5595,6 +5598,12 @@ void map_indexer(int parameter) {
     if (debug_level & 16)
         fprintf(stderr,"map_indexer() start\n");
 
+#ifdef HAVE_LIBSHP
+#ifdef WITH_DBFAWK
+    // get rid of stored dbfawk signatues and force reload.
+    clear_dbfawk_sigs();
+#endif
+#endif
 
     // Find the timestamp on the index file first.  Save it away so
     // that the timestamp for each map file can be compared to it.

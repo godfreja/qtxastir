@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.84 2004/12/23 15:57:37 tvrusso Exp $
+ * $Id: map_shp.c,v 1.85 2004/12/26 18:57:26 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3891,6 +3891,18 @@ if (on_screen) {
     XSetFillStyle(XtDisplay(w), gc, FillSolid);
 }
 // End of draw_shapefile_map()
+#ifdef WITH_DBFAWK
+// This function will delete any pre-loaded dbfawk sigs and clear Dbf_sigs
+// This will trigger a  reload the first time a shapfile is redisplayed
+void clear_dbfawk_sigs() {
+    //    fprintf(stderr,"Clearing signatures.\n");
+    if (Dbf_sigs ) {
+        dbfawk_free_sigs(Dbf_sigs);
+        Dbf_sigs = NULL;
+    }
+}
+        
+#endif 
 
 #endif  // HAVE_LIBSHP
 
