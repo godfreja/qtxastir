@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.80 2004/01/26 16:18:22 we7u Exp $
+ * $Id: map_gdal.c,v 1.81 2004/06/02 19:43:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -2100,7 +2100,7 @@ clear_dangerous();
                             && file_MaxX == 0.0 ) {
                         fprintf(stderr,
                             "Geographic coordinates are all zero, skipping indexing\n");
-                        fprintf(stderr,"MinY:%f  MinY:%f  MaxX:%f MaxY:%f\n",
+                        fprintf(stderr,"MinX:%f  MinY:%f  MaxX:%f MaxY:%f\n",
                             file_MinX,
                             file_MinY,
                             file_MaxX,
@@ -2123,7 +2123,7 @@ clear_dangerous();
                 else {
                     fprintf(stderr,
                         "Geographic coordinates out of bounds, skipping indexing\n");
-                    fprintf(stderr,"MinY:%f  MinY:%f  MaxX:%f MaxY:%f\n",
+                    fprintf(stderr,"MinX:%f  MinY:%f  MaxX:%f MaxY:%f\n",
                         file_MinX,
                         file_MinY,
                         file_MaxX,
@@ -2169,10 +2169,10 @@ clear_dangerous();
                     }
                 }
 
-                if (       file_MinY >=  -90.0 && file_MinY <=  90.0
-                        && file_MaxY >=  -90.0 && file_MaxY <=  90.0
-                        && file_MinX >= -180.0 && file_MinX <= 180.0
-                        && file_MaxX >= -180.0 && file_MaxX <= 180.0) {
+                if (       y[0] >=  -90.0 && y[0] <=  90.0
+                        && y[1] >=  -90.0 && y[1] <=  90.0
+                        && x[0] >= -180.0 && x[0] <= 180.0
+                        && x[1] >= -180.0 && x[1] <= 180.0) {
 
                     // Check for all-zero entries
                     if (       file_MinY == 0.0
@@ -2181,7 +2181,7 @@ clear_dangerous();
                             && file_MaxX == 0.0 ) {
                         fprintf(stderr,
                             "Coordinates are all zero, skipping indexing\n");
-                        fprintf(stderr,"MinY:%f  MinY:%f  MaxX:%f MaxY:%f\n",
+                        fprintf(stderr,"MinX:%f  MinY:%f  MaxX:%f MaxY:%f\n",
                             file_MinX,
                             file_MinY,
                             file_MaxX,
@@ -2203,7 +2203,7 @@ clear_dangerous();
                 else {
                     fprintf(stderr,
                         "Coordinates out of bounds, skipping indexing\n");
-                    fprintf(stderr,"MinY:%f  MinY:%f  MaxX:%f MaxY:%f\n",
+                    fprintf(stderr,"MinX:%f  MinY:%f  MaxX:%f MaxY:%f\n",
                         file_MinX,
                         file_MinY,
                         file_MaxX,
