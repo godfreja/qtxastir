@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.6 2002/04/24 08:06:13 we7u Exp $
+ * $Id: alert.h,v 1.7 2002/04/24 16:54:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -39,7 +39,7 @@ typedef enum {
 #define ALERT_ALL ALERT_FROM
 
 typedef struct {
-//    unsigned long top_boundary, left_boundary, bottom_boundary, right_boundary;
+    double top_boundary, left_boundary, bottom_boundary, right_boundary;
     time_t expiration;
     char activity[21];
     char alert_tag[21];
