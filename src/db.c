@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.162 2002/10/23 20:28:26 we7u Exp $
+ * $Id: db.c,v 1.163 2002/10/29 22:26:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4691,10 +4691,14 @@ int extract_weather(DataRow *p_station, char *data, int compr) {
 
             (void)extract_speed_course(data,speed,course);
 
-            // Also try to get speed/course from 's' and 'c' fields
-            // (another wx format)
-            (void)extract_weather_item(data,'c',3,course); // wind direction (in degress)
-            (void)extract_weather_item(data,'s',3,speed);  // sustained one-minute wind speed (in mph)
+            // Not found yet?  Try again.
+            if ( (speed[0] == '\0') || (course[0] == '\0') ) {
+
+                // Try to get speed/course from 's' and 'c' fields
+                // (another wx format)
+                (void)extract_weather_item(data,'c',3,course); // wind direction (in degress)
+                (void)extract_weather_item(data,'s',3,speed);  // sustained one-minute wind speed (in mph)
+            }
 
             //printf("Found Complete Weather Report\n");
         }
@@ -4708,10 +4712,14 @@ int extract_weather(DataRow *p_station, char *data, int compr) {
             // Try to snag speed/course out of first 7 bytes
             (void)extract_speed_course(data,speed,course);
 
-            // Also try to get speed/course from 's' and 'c' fields
-            // (another wx format)
-            (void)extract_weather_item(data,'c',3,course); // wind direction (in degress)
-            (void)extract_weather_item(data,'s',3,speed);  // sustained one-minute wind speed (in mph)
+            // Not found yet?  Try again.
+            if ( (speed[0] == '\0') || (course[0] == '\0') ) {
+
+                // Also try to get speed/course from 's' and 'c' fields
+                // (another wx format)
+                (void)extract_weather_item(data,'c',3,course); // wind direction (in degress)
+                (void)extract_weather_item(data,'s',3,speed);  // sustained one-minute wind speed (in mph)
+            }
 
             //printf("Found weather\n");
         }
@@ -4725,10 +4733,14 @@ int extract_weather(DataRow *p_station, char *data, int compr) {
             // Try to snag speed/course out of first 7 bytes
             (void)extract_speed_course(data,speed,course);
 
-            // Also try to get speed/course from 's' and 'c' fields
-            // (another wx format)
-            (void)extract_weather_item(data,'c',3,course); // wind direction (in degress)
-            (void)extract_weather_item(data,'s',3,speed);  // sustained one-minute wind speed (in mph)
+            // Not found yet?  Try again.
+            if ( (speed[0] == '\0') || (course[0] == '\0') ) {
+
+                // Also try to get speed/course from 's' and 'c' fields
+                // (another wx format)
+                (void)extract_weather_item(data,'c',3,course); // wind direction (in degress)
+                (void)extract_weather_item(data,'s',3,speed);  // sustained one-minute wind speed (in mph)
+            }
  
             //printf("Found WX in non-fixed locations!  %s:%s\n",
             //    p_station->call_sign,data);
@@ -4745,6 +4757,7 @@ int extract_weather(DataRow *p_station, char *data, int compr) {
     }
     if (ok) {
         weather = p_station->weather_data;
+
         strcpy(weather->wx_speed, speed);
         strcpy(weather->wx_course,course);
         if (compr) {        // course/speed was taken from normal data, delete that
