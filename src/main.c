@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.376 2003/11/04 21:46:30 we7u Exp $
+ * $Id: main.c,v 1.377 2003/11/04 23:00:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4287,6 +4287,14 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             Global.top,
             al,
             ac);
+
+
+    // Make at least one Motif call so that the next function won't
+    // result in this problem:  'Error: atttempt to add non-widget
+    // child "DropSiteManager" to parent "xastir"'.
+    //
+    XmStringFree(XmStringCreateSimple(""));
+
 
     form = XtVaCreateWidget("create_appshell form",
             xmFormWidgetClass,
