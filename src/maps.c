@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.23 2002/04/16 21:16:15 we7u Exp $
+ * $Id: maps.c,v 1.24 2002/04/16 23:17:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1181,11 +1181,16 @@ void draw_shapefile_map (Widget w,
         printf ("\n---------------------------------------------\nInfo for %s\n",filenm);
 
     fieldcount = DBFGetFieldCount(hDBF);
-    if (fieldcount == (int)NULL)
+    if (fieldcount == (int)NULL) {
+        DBFClose( hDBF );   // Clean up open file descriptors
         return;     // Should have at least one field
+        
+    }
     recordcount = DBFGetRecordCount(hDBF);
-    if (recordcount == (int)NULL)
+    if (recordcount == (int)NULL) {
+        DBFClose( hDBF );   // Clean up open file descriptors
         return;     // Should have at least one record
+    }
     if (debug_level & 16)
         printf ("%d Columns,  %d Records in file\n", fieldcount, recordcount);
 
@@ -1436,6 +1441,8 @@ void draw_shapefile_map (Widget w,
             break;
 
         default:
+            DBFClose( hDBF );   // Clean up open file descriptors
+            SHPClose( hSHP );
             return; // Unknown type.  Don't know how to process it.
             break;
     }
@@ -7784,7 +7791,7 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
                     break;
                 default:
                     // Unknown type
-                    printf("%c:Can't match weather warning to a Shapefile:%s\n",alert->title[3],alert->title);
+//printf("%c:Can't match weather warning to a Shapefile:%s\n",alert->title[3],alert->title);
                     break;
             }
 //            printf("%s\t%s\t%s\n",alert->activity,alert->alert_tag,alert->title);
