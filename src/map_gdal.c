@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.63 2003/12/17 15:14:33 we7u Exp $
+ * $Id: map_gdal.c,v 1.64 2003/12/17 15:42:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -675,7 +675,10 @@ void Draw_OGR_Lines(OGRGeometryH geometryH,
 // 
 // This can get complicated for Shapefiles:  Polygons are composed
 // of rings.  If a ring goes in one direction, it's a fill, if the
-// other direction, it's a hole in the polygon.
+// other direction, it's a hole in the polygon.  Can test the
+// operation using Shapefiles for Island County, WA, Camano Island,
+// where there's an Island in Puget Sound that has a lake with an
+// island in it (48.15569N/122.48953W).
 //
 void Draw_OGR_Polygons(OGRGeometryH geometryH,
         int level,
@@ -762,7 +765,8 @@ void Draw_OGR_Polygons(OGRGeometryH geometryH,
                     // needs to.
             }
 
-            polygon_points = OGR_G_GetPointCount(geometryH);
+            polygon_points = OGR_G_GetPointCount(child_geometryH);
+            //fprintf(stderr, "Vertices: %d\n", polygon_points);
 
             if (polygon_points > 3) {
                 int mm;
@@ -779,7 +783,7 @@ void Draw_OGR_Polygons(OGRGeometryH geometryH,
                 // Get the points, fill in the vectors
                 for ( mm = 0; mm < polygon_points; mm++ ) {
 
-                    OGR_G_GetPoint(geometryH,
+                    OGR_G_GetPoint(child_geometryH,
                         mm,
                         &vectorX[mm],
                         &vectorY[mm],
