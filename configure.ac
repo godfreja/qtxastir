@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.112 2005/01/08 10:19:33 we7u Exp $
+# $Id: configure.ac,v 1.113 2005/01/20 17:38:56 tvrusso Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -512,6 +512,10 @@ AC_SUBST(X_CFLAGS)
 #AC_SUBST(X_PRE_LIBS) 
 #AC_SUBST(X_LIBS) 
 #AC_SUBST(X_EXTRA_LIBS) 
+
+AH_BOTTOM([#ifndef HAVE_SOCKLEN_T
+#define socklen_t int
+#endif])
 
 AC_CONFIG_FILES([Makefile \
     callpass/Makefile \
