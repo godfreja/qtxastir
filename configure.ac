@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.10 2003/02/15 00:11:29 we7u Exp $
+# $Id: configure.ac,v 1.11 2003/02/15 01:15:52 we7u Exp $
 
 
 #
@@ -241,6 +241,7 @@ AC_CHECK_HEADERS([Xm/Xm.h],MOTIF_INC="yes",)
 if test "$MOTIF_INC" != "yes"; then
   # Check special Mac OSX paths
   AC_CHECK_FILE(/sw/include/Xm/Xm.h,MOTIF_INC="yes") 
+  AC_CHECK_FILE(/usr/dt/share/include/Xm/Xm.h,MOTIF_INC="yes")
   if test "$MOTIF_INC" != "yes"; then
     AC_MSG_ERROR(*** Motif/Lesstif include files not found.  Please install them first. ***)
   fi
