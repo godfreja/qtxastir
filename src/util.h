@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.32 2005/01/08 09:46:48 we7u Exp $
+ * $Id: util.h,v 1.33 2005/01/12 01:30:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -28,10 +28,14 @@
 
 #include "database.h"
 #include <pthread.h>
+#include "hashtable.h"
 
 // Max number of WIDE digipeaters allowed
 #define MAX_WIDES 3
 
+
+extern char *get_tactical_from_hash(char *callsign);
+extern void destroy_tactical_hash(void);
 extern void xastir_debug(int my_debug_level, char *debug_string);
 extern char *remove_leading_spaces(char *data);
 extern char *remove_trailing_spaces(char *data);
