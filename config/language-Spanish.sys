@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.161 2005/01/08 09:19:32 we7u Exp $
+# $Id: language-Spanish.sys,v 1.162 2005/02/01 16:15:23 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -318,7 +318,7 @@ BBARSTA036|Limpiando el AUX datos obtenido del TNC..||
 BBARSTA037|Datos de GPS Decondificado||
 BBARSTA038|Coloque el cambio en mi estación||
 BBARSTA039|Indezando %s||
-BBARSTA040|Estación de Aficionado APRS %s||
+BBARSTA040|Estación de Aficionado APRS(tm) %s||
 BBARSTA041|Esperando por GPS data..||
 BBARSTA042|Transmitiendo objetos/articulos||
 BBARSTA043|Anotando||

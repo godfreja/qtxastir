@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.150 2005/01/08 09:19:31 we7u Exp $
+# $Id: language-English.sys,v 1.151 2005/02/01 16:15:22 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -315,7 +315,7 @@ BBARSTA036|Clearing AUX getting TNC data..||
 BBARSTA037|GPS Data Complete||
 BBARSTA038|Position change on my station||
 BBARSTA039|Indexing %s||
-BBARSTA040|Amateur APRS Station %s||
+BBARSTA040|Amateur APRS(tm) Station %s||
 BBARSTA041|Waiting for GPS data..||
 BBARSTA042|Transmitting objects/items||
 BBARSTA043|Logging||
