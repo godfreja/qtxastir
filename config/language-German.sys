@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.100 2003/05/28 18:49:14 we7u Exp $
+# $Id: language-German.sys,v 1.101 2003/05/28 20:24:48 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -677,7 +677,7 @@ WPUPSTI054|Spur speichern||
 WPUPSTI055|Echo gehört von:||
 WPUPSTI056|Automatische Aktualisierung||
 WPUPSTI057|Omni-DF: %s||
-WPUPSTI058|DF Bearing:||
+WPUPSTI058|Peil-Richtung:||
 WPUPSTI059|Status: %s||
 WPUPSTI060|Brennstofftemp.: %02.1f°C  ||
 WPUPSTI061|Brennstofftemp.: %s°F   ||
