@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.8 2004/07/22 01:56:07 we7u Exp $
+ * $Id: x_spider.c,v 1.9 2004/07/23 02:31:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -848,11 +848,11 @@ int Fork_server(void) {
         // listening process whenever it dies.
         //
 //        while (1) {
-            fprintf(stderr,"Starting Server...\n");
+//            fprintf(stderr,"Starting Server...\n");
 
             Server();
  
-            fprintf(stderr,"Server process died.\n");
+//            fprintf(stderr,"Server process died.\n");
 //        }
     }
     //

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.142 2004/07/20 02:42:58 we7u Exp $
+# $Id: language-Spanish.sys,v 1.143 2004/07/23 02:31:38 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -227,6 +227,7 @@ PULDNTNT02|Propiedades|P|
 PULDNTNT03|Desactivar Transmitir: TODOS||
 PULDNTNT05|Desactivar Transmitir: Mi Posición||
 PULDNTNT06|Desactivar Transmitir: Objetos/Artículos||
+PULDNTNT11|Enable Server Port||
 PULDNTNT01|Transmitir Ahora..!|T|
 PULDNTNT07|Coger Huella de GPS|F|
 PULDNTNT08|Coger Rutas de GPS|R|

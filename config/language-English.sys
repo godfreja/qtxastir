@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.132 2004/07/20 02:42:58 we7u Exp $
+# $Id: language-English.sys,v 1.133 2004/07/23 02:31:38 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -224,6 +224,7 @@ PULDNTNT02|Properties|P|
 PULDNTNT03|Disable Transmit: ALL||
 PULDNTNT05|Disable Transmit: My Position||
 PULDNTNT06|Disable Transmit: Objects/Items||
+PULDNTNT11|Enable Server Port|P|
 PULDNTNT01|Transmit Now!|T|
 PULDNTNT07|Fetch GPS Track|F|
 PULDNTNT08|Fetch GPS Routes|R|

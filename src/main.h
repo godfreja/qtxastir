@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.65 2004/07/22 01:56:07 we7u Exp $
+ * $Id: main.h,v 1.66 2004/07/23 02:31:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -49,7 +49,7 @@
 //#define TRANSMIT_RAW_WX
 
 
-extern int enable_local_server_port;
+extern int enable_server_port;
 
 
 extern char altnet_call[];

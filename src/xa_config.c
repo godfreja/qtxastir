@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.120 2004/07/13 19:21:35 we7u Exp $
+ * $Id: xa_config.c,v 1.121 2004/07/23 02:31:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -535,9 +535,10 @@ void save_data(void)  {
 
 
         // Interface values
-        store_int (fout, "DISABLE_TRANSMIT",      transmit_disable);
-        store_int (fout, "DISABLE_POSIT_TX",      posit_tx_disable);
-        store_int (fout, "DISABLE_OBJECT_TX",     object_tx_disable);
+        store_int (fout, "DISABLE_TRANSMIT",   transmit_disable);
+        store_int (fout, "DISABLE_POSIT_TX",   posit_tx_disable);
+        store_int (fout, "DISABLE_OBJECT_TX",  object_tx_disable);
+        store_int (fout, "ENABLE_SERVER_PORT", enable_server_port);
 
 
         for (i = 0; i < MAX_IFACE_DEVICES; i++) {
@@ -1162,6 +1163,9 @@ void load_data_or_default(void) {
 
     if (!get_int ("DISABLE_OBJECT_TX", &object_tx_disable, 0, 1, 0))
         object_tx_disable = 0;
+
+    if (!get_int ("ENABLE_SERVER_PORT", &enable_server_port, 0, 1, 0))
+        enable_server_port = 0;
 
 
     for (i = 0; i < MAX_IFACE_DEVICES; i++) {

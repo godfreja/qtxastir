@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.133 2004/07/20 02:42:58 we7u Exp $
+# $Id: language-French.sys,v 1.134 2004/07/23 02:31:38 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -223,6 +223,7 @@ PULDNTNT02|Propriétés|P|
 PULDNTNT03|Désactiver transmission: Tout||
 PULDNTNT05|Désactiver transmission: Ma position||
 PULDNTNT06|Désactiver transmission: Objets/Articles||
+PULDNTNT11|Enable Server Port||
 PULDNTNT01|Transmettre maintenant!|T|
 PULDNTNT07|Extraire piste GPS|F|
 PULDNTNT08|Extraire routes GPS|R|
