@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.124 2004/11/01 17:11:48 tvrusso Exp $
+ * $Id: util.c,v 1.125 2004/11/01 20:34:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3956,7 +3956,7 @@ int check_unproto_path ( char *data ) {
             }
 
             if (strstr(ViaCalls[i], "-")) {
-                if (have_wide || have_widen || have_trace || have_tracen) {
+                if (have_widen || have_tracen) {
                     // Already have a large area via
                     bad_path = 1;
                     break;
@@ -4028,8 +4028,8 @@ int check_unproto_path ( char *data ) {
                     bad_path = 1;
                     break;
                 }
-                else if (have_widen || have_tracen || have_trace) {
-                    // WIDE after something other than RELAY
+                else if (have_widen || have_tracen) {
+                    // WIDE after something other than RELAY/TRACE
                     bad_path = 1;
                     break;
                 }
@@ -4053,7 +4053,7 @@ int check_unproto_path ( char *data ) {
                 // for a digit preceding the dash
                 if (atoi(ViaCalls[i]+=(strlen(ViaCalls[i]) - 3)) > 0) {
                     // We have a n-n */
-                    if (have_wide || have_widen || have_trace || have_tracen) {
+                    if (have_widen || have_tracen) {
                         // Already have a previous wide path
                         bad_path = 1;
                         break;
