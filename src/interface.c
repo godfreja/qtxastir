@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.202 2004/10/30 19:06:31 we7u Exp $
+ * $Id: interface.c,v 1.203 2004/10/30 21:13:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8276,6 +8276,14 @@ begin_critical_section(&devices_lock, "interface.c:output_my_data" );
 // in the path?  Also:  Output_my_aprs_data() has nearly identical
 // path selection code.  Fix it in one place, fix it in the other.
 
+                        // Check whether igate path is socially
+                        // acceptable.  Output warning if not, but
+                        // still allow the transmit.
+                        if(check_unproto_path(devices[port].unproto_igate)) {
+                            popup_message_always(langcode("WPUPCFT044"),
+                                langcode("WPUPCFT043"));
+                        }
+
                         xastir_snprintf(data_txt,
                             sizeof(data_txt),
                             "%c%s %s VIA %s\r",
@@ -8428,6 +8436,14 @@ begin_critical_section(&devices_lock, "interface.c:output_my_data" );
                     // isn't empty, skip the rest of the path selection:
                     if ( (use_igate_path)
                             && (strlen(devices[port].unproto_igate) > 0) ) {
+
+                        // Check whether igate path is socially
+                        // acceptable.  Output warning if not, but
+                        // still allow the transmit.
+                        if(check_unproto_path(devices[port].unproto_igate)) {
+                            popup_message_always(langcode("WPUPCFT044"),
+                                langcode("WPUPCFT043"));
+                        }
 
                         xastir_snprintf(path_txt,
                             sizeof(path_txt),
