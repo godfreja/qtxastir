@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.127 2002/08/30 00:44:14 we7u Exp $
+ * $Id: maps.c,v 1.128 2002/09/09 23:29:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6328,7 +6328,8 @@ int read_fgd_file ( char* tif_filename,
 
             if (*f_west_bounding == 0.0)
             {
-                if ( (ptr = strstr(line, "WEST BOUNDING COORDINATE:") ) != NULL)
+                if ( ( (ptr = strstr(line, "WEST BOUNDING COORDINATE:") ) != NULL)
+                        || ( (ptr = strstr(line, "West_Bounding_Coordinate:") ) != NULL) )
                 {
                     sscanf (ptr + 25, " %f", f_west_bounding);
                     if (debug_level & 512)
@@ -6339,7 +6340,8 @@ int read_fgd_file ( char* tif_filename,
 
             else if (*f_east_bounding == 0.0)
             {
-                if ( (ptr = strstr(line, "EAST BOUNDING COORDINATE:") ) != NULL)
+                if ( ( (ptr = strstr(line, "EAST BOUNDING COORDINATE:") ) != NULL)
+                        || ( (ptr = strstr(line, "East_Bounding_Coordinate:") ) != NULL) )
                 {
                     sscanf (ptr + 25, " %f", f_east_bounding);
                     if (debug_level & 512)
@@ -6350,7 +6352,8 @@ int read_fgd_file ( char* tif_filename,
 
             else if (*f_north_bounding == 0.0)
             {
-                if ( (ptr = strstr(line, "NORTH BOUNDING COORDINATE:") ) != NULL)
+                if ( ( (ptr = strstr(line, "NORTH BOUNDING COORDINATE:") ) != NULL)
+                        || ( (ptr = strstr(line, "North_Bounding_Coordinate:") ) != NULL) )
                 {
                     sscanf (ptr + 26, " %f", f_north_bounding);
                     if (debug_level & 512)
@@ -6361,7 +6364,8 @@ int read_fgd_file ( char* tif_filename,
 
             else if (*f_south_bounding == 0.0)
             {
-                if ( (ptr = strstr(line, "SOUTH BOUNDING COORDINATE:") ) != NULL)
+                if ( ( (ptr = strstr(line, "SOUTH BOUNDING COORDINATE:") ) != NULL)
+                        || ( (ptr = strstr(line, "South_Bounding_Coordinate:") ) != NULL) )
                 {
                     sscanf (ptr + 26, " %f", f_south_bounding);
                     if (debug_level & 512)
