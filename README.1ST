@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.19 2002/07/03 18:14:02 we7u Exp $
+$Id: README.1ST,v 1.20 2002/07/08 01:30:00 rzg Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -1130,7 +1130,10 @@ Getting Data Files for Xastir:
 
       Shapefile style:
        The shapefile format weather maps may be found here:
-       http://isl715.nws.noaa.gov/mapdata/newcat/
+         http://isl715.nws.noaa.gov/mapdata/newcat/
+       The site seems to be in a state of flux, and files missing from the
+       above location can be found here instead:
+         http://www.nws.noaa.gov/geodata/
 
         The files of interest are:
 
