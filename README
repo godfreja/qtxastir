@@ -1,5 +1,5 @@
 
-$Id: README,v 1.14 2004/11/17 18:48:19 we7u Exp $
+$Id: README,v 1.15 2005/01/08 10:19:33 we7u Exp $
 
 README
   ------------------------------------------------------------------------
@@ -423,7 +423,7 @@ README
 
           As of Xastir 0.4.0 all changes made by the Xastir
           development team to the Xastir source code and any related
-          files are Copyright © 2001-2004 by The Xastir Group. The source
+          files are Copyright © 2001-2005 by The Xastir Group. The source
           code will still be distributed according to the GNU General
           Public License as Frank Giannandrea did in the past.
 
@@ -484,5 +484,5 @@ README
 
   ------------------------------------------------------------------------
 Copyright (C) 1999 Frank Giannandrea
-Copyright (C) 2000-2004 The Xastir Group
+Copyright (C) 2000-2005 The Xastir Group
 

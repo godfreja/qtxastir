@@ -1,8 +1,8 @@
 # acinclude.m4 for Xastir
 #
-# Copyright (C) 2000-2004  The Xastir Group
+# Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.27 2004/11/28 18:03:23 tvrusso Exp $
+# $Id: acinclude.m4,v 1.28 2005/01/08 10:19:33 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -645,7 +645,7 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.27 2004/11/28 18:03:23 tvrusso Exp $
+dnl $Id: acinclude.m4,v 1.28 2005/01/08 10:19:33 we7u Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.

@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.55 2004/12/09 20:27:32 we7u Exp $
+$Id: INSTALL,v 1.56 2005/01/08 10:19:33 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -1110,5 +1110,5 @@ for the purpose of finding and patching memory leaks).
 
   ------------------------------------------------------------------------
 Copyright (C) 1999 Frank Giannandrea
-Copyright (C) 2000-2004 The Xastir Group
+Copyright (C) 2000-2005 The Xastir Group
 
