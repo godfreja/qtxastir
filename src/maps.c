@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.178 2002/12/23 08:16:10 we7u Exp $
+ * $Id: maps.c,v 1.179 2002/12/24 16:24:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11446,6 +11446,15 @@ void index_restore_from_file(void) {
                 int i;
 
 //printf("%s\n",in_string);
+
+                for (i = 0; i < strlen(in_string); i++) {
+                    if ( (in_string[i] != '\n')
+                            && (in_string[i] < 0x20) ) {
+                        printf("Found control character 0x%2x in map_index.sys\n",
+                            in_string[i]);
+                        printf("Line was: %s\n",in_string);
+                    }
+                }
 
                 // Malloc an index record.  We'll add it to the list
                 // only if the data looks reasonable.
