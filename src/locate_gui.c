@@ -1,5 +1,5 @@
 /*
- * $Id: locate_gui.c,v 1.9 2004/07/01 21:16:11 we7u Exp $
+ * $Id: locate_gui.c,v 1.10 2004/07/02 20:19:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -195,7 +195,7 @@ void fcc_rac_lookup(Widget w, XtPointer clientData, XtPointer callData) {
                     if (strlen(my_rac_data.club_name) > 1) {
                         xastir_snprintf(temp2,
                             sizeof(temp2),
-                            "%s\n%s\n%s\n%s, %s\n%s\n",
+                            "%s\n%s\n%s, %s\n%s\n",
                             my_rac_data.club_name,
                             my_rac_data.club_address,
                             my_rac_data.club_city,
