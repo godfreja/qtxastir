@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $Id: icontable.pl,v 1.3 2002/03/05 21:28:23 we7u Exp $
+# $Id: icontable.pl,v 1.4 2003/07/07 17:17:54 we7u Exp $
 
 # XASTIR icon table overview generator                        20.02.01
 #  Copyright (C) 2001 Rolf Bleher                  http://www.dk7in.de
@@ -28,8 +28,8 @@
 
 #--------------------------------------------------------------------------
                                             
-# symbols file from XASTIR V1.1, change the path for your environment
-$SYMBFILE = "/usr/local/xastir/symbols/symbols.dat";
+# symbols file from XASTIR V2.1, change the path for your environment
+$SYMBFILE = "/usr/local/share/xastir/symbols/symbols.dat";
 
 #--------------------------------------------------------------------------
 %sympix = ();
