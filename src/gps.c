@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.18 2003/02/04 04:08:37 jtwilley Exp $
+ * $Id: gps.c,v 1.19 2003/02/05 01:02:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -82,10 +82,14 @@ int decode_gps_rmc( char *data,
     char speed_unit;
     char course[7];
     char sampledate[7];
+
+#ifndef __CYGWIN__
     char sampledatime[15];
     char *tzp;
     char tzn[512];
     struct tm stm;
+#endif // __CYGWIN__
+ 
     int ok;
 
 // We should check for a minimum line length before parsing,
