@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.206 2003/02/20 01:13:27 we7u Exp $
+ * $Id: maps.c,v 1.207 2003/02/20 08:33:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3281,7 +3281,7 @@ void Print_window( Widget widget, XtPointer clientData, XtPointer callData ) {
         xastir_snprintf(command,
             sizeof(command),
             "%s -filter Point %s%s%s%s%s %s %s",
-            CONVERT_PATH,
+            (HAVE_CONVERT) ? CONVERT_PATH : "echo",
             mono,
             invert,
             rotate,
@@ -3316,7 +3316,7 @@ void Print_window( Widget widget, XtPointer clientData, XtPointer callData ) {
         xastir_snprintf(command,
             sizeof(command),
             "%s -Plp %s",
-            LPR_PATH,
+            (HAVE_LPR) ? LPR_PATH : "echo",
             ps_filename );
         if ( debug_level & 512 )
             fprintf(stderr,"%s\n", command);
@@ -3333,7 +3333,7 @@ void Print_window( Widget widget, XtPointer clientData, XtPointer callData ) {
             sizeof(command),
 //            "%s %s-scale -2 -media Letter %s &",
             "%s %s-scale -2 %s &",
-            GV_PATH,
+            (HAVE_GV) ? GV_PATH : "echo",
             format,
             ps_filename );
 
@@ -3965,7 +3965,7 @@ void Snapshot(void) {
         xastir_snprintf(command,
             sizeof(command),
             "%s -quality 100 %s %s",
-            CONVERT_PATH,
+            (HAVE_CONVERT) ? CONVERT_PATH : "echo",
             xpm_filename,
             png_filename );
 
@@ -5621,7 +5621,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm, int destination_pixm
 
         xastir_snprintf(tempfile, sizeof(tempfile),
                 "%s --server-response --timestamping --tries=1 --timeout=30 --output-document=%s %s 2> /dev/null\n",
-                WGET_PATH,
+                (HAVE_WGET) ? WGET_PATH : "echo",
                 local_filename,
                 fileimg);
 
@@ -6324,7 +6324,7 @@ void draw_tiger_map (Widget w) {
 
     xastir_snprintf(tempfile, sizeof(tempfile),
         "%s --server-response --timestamping --tries=1 --timeout=%d --output-document=%s %s 2> /dev/null\n",
-        WGET_PATH,
+        (HAVE_WGET) ? WGET_PATH : "echo",
         tigermap_timeout,
         local_filename,
         fileimg);
