@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.56 2003/02/06 01:13:09 we7u Exp $
+$Id: README.1ST,v 1.57 2003/02/06 17:36:30 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -1190,11 +1190,11 @@ WINDOWS/CYGWIN NOTES:
             XFree86/lesstif
             XFree86/XFree86-prog
 
-     So far "wget" from the Cygwin distribution doesn't appear to work.
-     CVS has not been tested yet.  Extra map libraries such as ImageMagick,
-     Shapelib, libgeotiff, libproj have not been tested yet under Cygwin.
-     Anyone doing so is encouraged to share their findings with the Xastir
-     mailing lists.
+     So far "wget" from the Cygwin distribution doesn't appear to work.  CVS
+     has been tested on Cygwin and it works!  Extra map libraries such as
+     ImageMagick, Shapelib, libgeotiff, libproj have not been tested yet
+     under Cygwin.  Anyone doing so is encouraged to share their findings
+     with the Xastir mailing lists.
 
      As far as what Xastir paths look like from within Windows (in case
      you're moving maps around with Explorer):  Just prefix them all with
