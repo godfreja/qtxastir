@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.38 2004/11/20 02:49:31 we7u Exp $
+ * $Id: map_geo.c,v 1.39 2004/12/07 17:32:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -368,6 +368,7 @@ void draw_toporama_map (Widget w,
 
         curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30);
         curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+        curl_easy_setopt(curl, CURLOPT_NETRC, CURL_NETRC_OPTIONAL);
 
 // This is only available in later versions of libcurl?
 // curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
@@ -1239,6 +1240,7 @@ fprintf(stderr,"1 ");
 
             curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30);
             curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+            curl_easy_setopt(curl, CURLOPT_NETRC, CURL_NETRC_OPTIONAL);
 
 // This is only available in later versions of libcurl?
 // curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
