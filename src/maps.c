@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.109 2002/07/03 16:09:45 francais1 Exp $
+ * $Id: maps.c,v 1.110 2002/07/03 19:16:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7143,7 +7143,7 @@ Samples Per Pixel: 1
     if (debug_level & 16) {
         printf ("            Width: %ld\n", width);
         printf ("           Height: %ld\n", height);
-        printf ("      Photometric: %ld\n", photometric);
+        printf ("      Photometric: %d\n", photometric);
         printf ("   Rows Per Strip: %ld\n", rowsPerStrip);
         printf ("  Bits Per Sample: %d\n", bitsPerSample);
         printf ("Samples Per Pixel: %d\n", samplesPerPixel);

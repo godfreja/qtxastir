@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.30 2002/06/28 20:44:39 we7u Exp $
+# $Id: language-English.sys,v 1.31 2002/07/03 19:16:20 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -289,7 +289,7 @@ WPUPCFD023|Transmit Raw WX data?|R|
 WPUPCFD024|Compress object/item data when transmitting?|C|
 WPUPCFD025|Activate Alternate net?|A|
 WPUPCFD026|Send position reports at what intervals?||
-WPUPCFD027|Enable SmartBeaconing(tm)||
+WPUPCFD027|Pop up new bulletins||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||
@@ -858,6 +858,8 @@ SMARTB007|Low Speed (kph):||
 SMARTB008|Minimum Turn (deg):||
 SMARTB009|Turn Slope:||
 SMARTB010|Wait Time (secs):||
+SMARTB011|Enable SmartBeaconing(tm)||
+#
 #
 #
 # Gamma Adjust Dialog

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.14 2002/06/21 19:18:06 we7u Exp $
+ * $Id: main.h,v 1.15 2002/07/03 19:16:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -112,6 +112,8 @@ extern int sb_posit_fast;
 extern int sb_posit_slow;
 extern int sb_low_speed_limit;
 extern int sb_high_speed_limit;
+
+extern int pop_up_new_bulletins;
 
 extern int output_station_type;
 extern int symbol_display_enable;
