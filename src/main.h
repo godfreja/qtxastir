@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.73 2004/12/22 18:07:40 we7u Exp $
+ * $Id: main.h,v 1.74 2004/12/22 22:56:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -223,7 +223,6 @@ typedef struct _what_to_display {
 } What_to_display;
 extern What_to_display Display_;
 
-extern int stations_old;
 extern int currently_selected_stations;
 extern int currently_selected_stations_save;
 extern int colors[256];

@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.6 2004/12/21 20:29:54 we7u Exp $
+ * $Id: database.h,v 1.7 2004/12/22 22:56:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -541,7 +541,8 @@ extern time_t msg_data_add(char *call_sign, char *from_call, char *data,
 
 // stations
 extern int st_direct_timeout;   // Interval that ST_DIRECT flag stays set
-extern long stations;
+extern int station_count;       // Count of stations in the database
+extern int station_count_save;  // Old copy of the above
 extern DataRow *n_first;  // pointer to first element in name ordered station
                           // list
 extern DataRow *n_last;   // pointer to last element in name ordered station

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.552 2004/12/22 18:07:40 we7u Exp $
+ * $Id: main.c,v 1.553 2004/12/22 22:56:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10163,9 +10163,6 @@ void check_pointer_position(void) {
 
 
 
-// Used to determine when to update the station number on the status
-// line:
-int stations_old = 0;
 time_t stations_status_time = 0;
 
 
@@ -11092,18 +11089,18 @@ if (end_critical_section(&data_lock, "main.c:UpdateTime(2)" ) > 0)
 
         // If number of stations has changed, update the status
         // line, but only once per second max.
-        if (stations != stations_old
+        if (station_count != station_count_save
                 && stations_status_time != sec_now()) {
             // show number of stations in status line
             xastir_snprintf(station_num,
                 sizeof(station_num),
                 langcode("BBARSTH001"),
                 currently_selected_stations,
-                stations);
+                station_count);
             XmTextFieldSetString(text3, station_num);
 
             // Set up for next time
-            stations_old = stations;
+            station_count_save = station_count;
             stations_status_time = sec_now();
         }
 
