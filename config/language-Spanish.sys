@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.1 2002/02/02 03:16:17 kg4ijb Exp $
+# $Id: language-Spanish.sys,v 1.2 2002/02/14 17:08:59 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -431,6 +431,7 @@ WPUPCFSP05|<- Anuncia Cuerpo de Nuevo Mensaje||
 WPUPCFSP06|<- Anuncia la Proximidad de estaciones||
 WPUPCFSP07|<- Anuncia DX condición de Banda Abierta||
 WPUPCFSP08|<- Anuncia Alerta sobre condiciones del Tiempo||
+WPUPCFSP09|Tracked Station Proximity Alert||
 #
 # Rastreo de Estación
 WPUPTSP001|Rastreo estación|| 
@@ -734,6 +735,17 @@ SPCHSTR003|millas||
 SPCHSTR004|yardas||
 SPCHSTR005|%s, distancia es %d %s.||
 SPCHSTR006|%s, distancia es %.1f %s.||
+SPCHSTR007|%s, distance is %d %s %s %s.||
+SPCHSTR008|%s, distance is %.1f %s %s %s.||
+#
+SPCHDIRN00|north of||
+SPCHDIRS00|south of||
+SPCHDIRE00|east of||
+SPCHDIRW00|west of||
+SPCHDIRNE0|northeast of||
+SPCHDIRNW0|northwest of||
+SPCHDIRSE0|southeast of||
+SPCHDIRSW0|southwest of||
 #
 # Diálogo de seleción de Símbolo
 SYMSEL0001|Seleccione Símbolo||

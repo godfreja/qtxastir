@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.1 2002/02/02 03:16:14 kg4ijb Exp $
+# $Id: language-German.sys,v 1.2 2002/02/14 17:08:59 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -436,6 +436,7 @@ WPUPCFSP05|Neuer Text in Nachricht||
 WPUPCFSP06|Annäherungswarnung||
 WPUPCFSP07|Bandöffnung||
 WPUPCFSP08|Neue Wetterwarnung||
+WPUPCFSP09|Tracked Station Proximity Alert||
 #
 # PopUp "Verfolge Station"
 WPUPTSP001|Verfolge Station|| 
@@ -739,6 +740,17 @@ SPCHSTR003|meilen||
 SPCHSTR004|yards||
 SPCHSTR005|%s, entfernung ist %d %s.||
 SPCHSTR006|%s, entfernung ist %.1f %s.||
+SPCHSTR007|%s, distance is %d %s %s %s.||
+SPCHSTR008|%s, distance is %.1f %s %s %s.||
+#
+SPCHDIRN00|north of||
+SPCHDIRS00|south of||
+SPCHDIRE00|east of||
+SPCHDIRW00|west of||
+SPCHDIRNE0|northeast of||
+SPCHDIRNW0|northwest of||
+SPCHDIRSE0|southeast of||
+SPCHDIRSW0|southwest of||
 #
 # Symbolauswahl Dialog
 SYMSEL0001|Symbol-Auswahl||
