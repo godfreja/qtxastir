@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.375 2004/08/25 01:53:21 we7u Exp $
+ * $Id: db.c,v 1.376 2004/08/25 19:45:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13608,13 +13608,17 @@ int decode_ax25_header(unsigned char *incoming_data, int length) {
         &incoming_data[ptr],
         sizeof(result) - strlen(result));
 
-//    fprintf(stderr,"%s\n",result);
-
-    // Copy the result onto the top of the input data
+    // Copy the result onto the top of the input data.  Note that
+    // the length can sometimes be longer than the input string, so
+    // we can't just use the "length" variable here or we'll
+    // truncate our string.
+    //
     xastir_snprintf(incoming_data,
-        length,
+        MAX_LINE_SIZE,
         "%s",
         result);
+
+//fprintf(stderr,"%s\n",incoming_data);
 
     return(1);
 }
