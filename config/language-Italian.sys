@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.114 2003/12/04 01:05:43 n2ygk Exp $
+# $Id: language-Italian.sys,v 1.115 2003/12/05 19:14:15 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -358,6 +358,7 @@ WPUPCFTM05|Clear Time della stazione (ore)||
 WPUPCFTM06|Intervallo controllo GPS (sec)||
 WPUPCFTM07|Tempo eliminazione stazione (giorni)||
 WPUPCFTM08|Fuori tempo Ricalcolo Assoluto (min)||
+WPUPCFTM09|Serial Inter-Char Delay (ms)||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configura Sistema Coordinate||

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.112 2003/12/04 01:05:43 n2ygk Exp $
+# $Id: language-Portuguese.sys,v 1.113 2003/12/05 19:14:16 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -360,6 +360,7 @@ WPUPCFTM05|Tempo para limpar estacao (horas)||
 WPUPCFTM06|Intervalo para verificar GPS (seg)||
 WPUPCFTM07|Tempo para apagar estacao (dias)||
 WPUPCFTM08|Tempo limite para Dead-Reckoning (min)||
+WPUPCFTM09|Serial Inter-Char Delay (ms)||
 #
 # PopUp "Sistema de configuração de coordenadas"
 WPUPCFC001|Sistema de configuração de coordenadas||

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.112 2003/12/04 01:05:43 n2ygk Exp $
+# $Id: language-English.sys,v 1.113 2003/12/05 19:14:13 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -357,6 +357,7 @@ WPUPCFTM05|Station Clear Time (hours)||
 WPUPCFTM06|GPS Check Interval (sec)||
 WPUPCFTM07|Station Delete Time (days)||
 WPUPCFTM08|Dead-Reckoning Timeout (min)||
+WPUPCFTM09|Serial Inter-Char Delay (ms)||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||

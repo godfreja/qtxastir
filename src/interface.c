@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.143 2003/11/26 16:01:19 we7u Exp $
+ * $Id: interface.c,v 1.144 2003/12/05 19:14:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5180,7 +5180,14 @@ void port_write(int port) {
                             }
                         }
 //fprintf(stderr,"Char pacing ");
-                        usleep(25000); // character pacing, 25ms per char.  20ms doesn't work for PicoPacket.
+//                        usleep(25000); // character pacing, 25ms per char.  20ms doesn't work for PicoPacket.
+                        if (serial_char_pacing > 0) {
+                            // Character pacing.  Delay in between
+                            // each character in milliseconds.
+                            // Convert to microseconds for this
+                            // usleep() call .
+                          usleep(serial_char_pacing * 1000);
+                        }
                         break;
 
                     // Use this block for all other interfaces where

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.115 2003/12/04 01:05:43 n2ygk Exp $
+# $Id: language-German.sys,v 1.116 2003/12/05 19:14:14 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -363,6 +363,7 @@ WPUPCFTM05|Alte Station anzeigen für [Std]||
 WPUPCFTM06|GPS Abfrage alle [Sek]||
 WPUPCFTM07|Station löschen nach [Tage]||
 WPUPCFTM08|Timeout Pos-Voraussage [Min]||
+WPUPCFTM09|Serial Inter-Char Delay (ms)||
 #
 # PopUp "Koordinatensystem"
 WPUPCFC001|Koordinatensystem||

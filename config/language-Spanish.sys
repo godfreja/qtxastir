@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.122 2003/12/04 01:05:43 n2ygk Exp $
+# $Id: language-Spanish.sys,v 1.123 2003/12/05 19:14:18 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -360,6 +360,7 @@ WPUPCFTM05|Limpiar Tiempo de la Estación (horas)||
 WPUPCFTM06|Chequeo Intérvalo del GPS (segundos)||
 WPUPCFTM07|Borrar Tiempo de la Estación (días)||
 WPUPCFTM08|Descanso Conteo-Muerto (minutos)||
+WPUPCFTM09|Serial Inter-Char Delay (ms)||
 #
 # Configurar Sistema de Coordenada"
 WPUPCFC001|Configurar Sistema de Coordenada||

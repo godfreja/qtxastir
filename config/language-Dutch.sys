@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.116 2003/12/04 01:05:43 n2ygk Exp $
+# $Id: language-Dutch.sys,v 1.117 2003/12/05 19:14:12 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -367,6 +367,7 @@ WPUPCFTM05|Tijd Tot Verdwijnen Van Kaart (uren)||
 WPUPCFTM06|GPS Status Controle Interval (sec)||
 WPUPCFTM07|Tijd Tot Wissen Station (dagen)||
 WPUPCFTM08|Timeout Berekening Geschatte Waarden (min)||
+WPUPCFTM09|Serial Inter-Char Delay (ms)||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configureer Coordinaten Stelsel||
