@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.64 2004/05/28 18:34:16 we7u Exp $
+ * $Id: map_shp.c,v 1.65 2004/05/28 19:03:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -827,7 +827,8 @@ void draw_shapefile_map (Widget w,
 
         } else {                /* should never be reached anymore! */
             fprintf(stderr,"No DBFAWK signature for %s and no default!\n",filenm);
-            exit(1);
+            //exit(1);  // Debug
+            return;
         }
     }
 #endif /* WITH_DBFAWK */
