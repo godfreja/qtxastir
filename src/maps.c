@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.235 2003/03/28 19:13:00 we7u Exp $
+ * $Id: maps.c,v 1.236 2003/04/01 23:25:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1063,9 +1063,9 @@ void draw_rotated_label_text (Widget w, int rotation, int x, int y, int label_le
  * type = SHPT_POINT, SHPT_ARC, SHPT_POLYGON,
  * SHPT_MULTIPOINT, etc.
  *
- * quantity equals the number of vertices.
+ * quantity equals the number of vertices we have.
  *
- * padfx/padfy/padfz are the vertices themselves.
+ * padfx/padfy/padfz are the vertices themselves, in double format.
  *******************************************************************/
 void create_shapefile_map(char *shapefile_name, int type,
         int quantity, double *padfx, double *padfy, double *padfz) {
