@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.3 2002/05/16 21:47:19 we7u Exp $
+ * $Id: db.h,v 1.4 2002/05/25 00:07:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -137,6 +137,7 @@ typedef struct {
     char type;
     char heard_via_tnc;
     time_t sec_heard;
+    time_t last_ack_sent;
     char packet_time[MAX_TIME];
     char call_sign[MAX_CALLSIGN+1];
     char from_call_sign[MAX_CALLSIGN+1];
