@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.8 2003/07/23 21:34:41 we7u Exp $
+ * $Id: map_shp.c,v 1.9 2003/08/13 22:49:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1458,8 +1458,8 @@ void draw_shapefile_map (Widget w,
                             // lines will get you into trouble.
                             x = my_long - x_long_offset;
                             y = my_lat - y_lat_offset;
-                            x = x / scale_x;
-                            y = y / scale_y;
+                            x = (unsigned long)((float)x / (float)scale_x);
+                            y = (unsigned long)((float)y / (float)scale_y);
 
                             if (x >  16000) ok = 0;     // Skip this point
                             if (x < -16000) ok = 0;     // Skip this point
@@ -1536,8 +1536,8 @@ void draw_shapefile_map (Widget w,
                             // lines will get you into trouble.
                             x = my_long - x_long_offset;
                             y = my_lat - y_lat_offset;
-                            x = x / scale_x;
-                            y = y / scale_y;
+                            x = (unsigned long)((float)x / (float)scale_x);
+                            y = (unsigned long)((float)y / (float)scale_y);
 
 
                             // Save the endpoints of the first line
@@ -2163,8 +2163,9 @@ void draw_shapefile_map (Widget w,
                             // lines will get you into trouble.
                             x = my_long - x_long_offset;
                             y = my_lat - y_lat_offset;
-                            x = x / scale_x;
-                            y = y / scale_y;
+                            x = (unsigned long)((float)x / (float)scale_x);
+                            y = (unsigned long)((float)y / (float)scale_y);
+
 
                             if (x >  16000) ok = 0;     // Skip this point
                             if (x < -16000) ok = 0;     // Skip this point
@@ -2540,8 +2541,9 @@ void draw_shapefile_map (Widget w,
                             // lines will get you into trouble.
                             x = my_long - x_long_offset;
                             y = my_lat - y_lat_offset;
-                            x = x / scale_x;
-                            y = y / scale_y;
+                            x = (unsigned long)((float)x / (float)scale_x);
+                            y = (unsigned long)((float)y / (float)scale_y);
+
 
                             // Here we check for really wacko points that will cause problems
                             // with the X drawing routines, and fix them.
@@ -2571,8 +2573,8 @@ void draw_shapefile_map (Widget w,
                             // lines will get you into trouble.
                             width = my_long - x_long_offset;
                             height = my_lat - y_lat_offset;
-                            width = width / scale_x;
-                            height = height / scale_y;
+                            width = (long)((float)width / (float)scale_x);
+                            height = (long)((float)height / (float)scale_y);
 
                             // Here we check for really wacko points that will cause problems
                             // with the X drawing routines, and fix them.
@@ -2674,8 +2676,9 @@ void draw_shapefile_map (Widget w,
                                         // lines will get you into trouble.
                                         x = my_long - x_long_offset;
                                         y = my_lat - y_lat_offset;
-                                        x = x / scale_x;
-                                        y = y / scale_y;
+                                        x = (unsigned long)((float)x / (float)scale_x);
+                                        y = (unsigned long)((float)y / (float)scale_y);
+
         
                                         //fprintf(stderr,"%ld %ld\t\t", x, y);
 
@@ -2862,8 +2865,9 @@ if (on_screen) {
                                 // lines will get you into trouble.
                                 x = my_long - x_long_offset;
                                 y = my_lat - y_lat_offset;
-                                x = x / scale_x;
-                                y = y / scale_y;
+                                x = (unsigned long)((float)x / (float)scale_x);
+                                y = (unsigned long)((float)y / (float)scale_y);
+
 
                                 //fprintf(stderr,"%ld %ld\t\t", x, y);
 
@@ -3260,8 +3264,9 @@ if (on_screen) {
                             // lines will get you into trouble.
                             x = my_long - x_long_offset;
                             y = my_lat - y_lat_offset;
-                            x = x / scale_x;
-                            y = y / scale_y;
+                            x = (unsigned long)((float)x / (float)scale_x);
+                            y = (unsigned long)((float)y / (float)scale_y);
+
 
                             if (x >  16000) ok = 0;     // Skip this point
                             if (x < -16000) ok = 0;     // Skip this point
