@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.334 2003/10/09 20:16:29 we7u Exp $
+ * $Id: maps.c,v 1.335 2003/10/10 01:41:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -685,8 +685,9 @@ void draw_grid(Widget w) {
 
     i=j=done=zone_changed=z1=z2=zone=col=col_point=row=row_point=row_point_start = 0;
 
-    /* Set the line width in the GC */
-    (void)XSetLineAttributes (XtDisplay (w), gc_tint, 1, LineOnOffDash, CapButt,JoinMiter);
+    // Set the line width in the GC to 2 pixels wide for the larger
+    // UTM grid and the complete Lat/Long grid.
+    (void)XSetLineAttributes (XtDisplay (w), gc_tint, 2, LineOnOffDash, CapButt,JoinMiter);
     (void)XSetForeground (XtDisplay (w), gc_tint, colors[0x27]);
     (void)(void)XSetFunction (XtDisplay (da), gc_tint, GXxor);
 
@@ -732,8 +733,10 @@ void draw_grid(Widget w) {
         draw_vector_ll(w,  84.0, -180.0, 84.0, 180.0, gc_tint, pixmap_final);
 
 
-
-
+        // Set the line width in the GC to 1 pixel wide for drawing
+        // the smaller grid
+        (void)XSetLineAttributes (XtDisplay (w), gc_tint, 1, LineOnOffDash, CapButt,JoinMiter);
+ 
 //WE7U
 // The below code does NOT handle the irregular zones properly.  It
 // assumes regular 6 degree zones everywhere.  The irregular zones
