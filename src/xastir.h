@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.13 2002/08/05 20:48:43 we7u Exp $
+ * $Id: xastir.h,v 1.14 2002/08/06 20:00:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -137,6 +137,7 @@ extern int tigermap_timeout;
 #endif
 
 extern void sort_list(char *filename,int size, Widget list, int *item);
+extern void redraw_symbols(Widget w);
 
 extern Colormap cmap;
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.124 2002/08/05 20:48:42 we7u Exp $
+ * $Id: main.c,v 1.125 2002/08/06 20:00:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13142,6 +13142,9 @@ void Object_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
 
     if (Setup_object_data(line, sizeof(line))) {
 
+        // Update this object in our save file
+        log_object_item(line);
+
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
         else
@@ -13169,6 +13172,9 @@ void Item_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
     
     if (Setup_item_data(line,sizeof(line))) {
 
+        // Update this item in our save file
+        log_object_item(line);
+
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
         else
@@ -13195,7 +13201,11 @@ void Object_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
     char line[43+1+40];                 // ???
     
     if (Setup_object_data(line, sizeof(line))) {
+
         line[10] = '_';                         // mark as deleted object
+
+        // Update this object in our save file
+        log_object_item(line);
 
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
@@ -13218,6 +13228,7 @@ void Item_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
     int i, done;
     
     if (Setup_item_data(line,sizeof(line))) {
+
         done = 0;
         i = 0;
         while ( (!done) && (i < 11) ) {
@@ -13227,6 +13238,9 @@ void Item_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
             }
             i++;
         }
+
+        // Update this item in our save file
+        log_object_item(line);
 
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
@@ -18722,6 +18736,10 @@ int main(int argc, char *argv[], char *envp[]) {
             /* check for ham databases */
             (void)check_fcc_data();
             (void)check_rac_data();
+
+            // Reload saved objects and items from previous runs.
+            // This implements persistent objects.
+            reload_object_item();
 
             XtAppMainLoop(app_context);
 

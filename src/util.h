@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.7 2002/07/02 23:25:33 we7u Exp $
+ * $Id: util.h,v 1.8 2002/08/06 20:00:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -64,6 +64,8 @@ extern int  filethere(char *fn);
 extern int  filecreate(char *fn);
 extern time_t file_time(char *fn);
 extern void log_data(char *file, char *line);
+extern void log_object_item(char *line);
+extern void reload_object_item(void);
 extern time_t sec_now(void);
 extern char *get_time(char *time_here);
 
