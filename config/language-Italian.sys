@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.85 2003/04/11 20:42:18 we7u Exp $
+# $Id: language-Italian.sys,v 1.86 2003/04/15 22:04:05 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -97,6 +97,8 @@ MPUPTGR013|Rivers||
 MPUPTGR014|Lakes||
 MPUPTGR015|Airports, Parks, etc||
 MPUPTGR016|Map Intensity||
+MPUPTGR017|Timeout (sec)||
+MPUPTGR018|Enable Tiger Maps||
 #
 #
 # Finestra di dialogo mappe

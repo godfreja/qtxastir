@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.85 2003/04/15 16:04:10 we7u Exp $
+# $Id: language-German.sys,v 1.86 2003/04/15 22:04:04 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -102,6 +102,8 @@ MPUPTGR013|Flüsse||
 MPUPTGR014|Seen||
 MPUPTGR015|Flughäfen, parks, etc||
 MPUPTGR016|Karten Intensität||
+MPUPTGR017|Timeout (sec)||
+MPUPTGR018|Enable Tiger Maps||
 #
 #
 # PopUp "Kartenauswahl"

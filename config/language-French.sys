@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.85 2003/04/11 20:42:17 we7u Exp $
+# $Id: language-French.sys,v 1.86 2003/04/15 22:04:04 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -96,6 +96,8 @@ MPUPTGR013|Rivers||
 MPUPTGR014|Lakes||
 MPUPTGR015|Airports, Parks, etc||
 MPUPTGR016|Map Intensity||
+MPUPTGR017|Timeout (sec)||
+MPUPTGR018|Enable Tiger Maps||
 #
 #
 # PopUp "Map Chooser"

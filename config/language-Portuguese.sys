@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.85 2003/04/11 23:58:25 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.86 2003/04/15 22:04:05 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -95,6 +95,8 @@ MPUPTGR013|Rios||
 MPUPTGR014|Lagos||
 MPUPTGR015|Aeroportos, parques, etc||
 MPUPTGR016|Intensidade do mapa||
+MPUPTGR017|Timeout (sec)||
+MPUPTGR018|Enable Tiger Maps||
 #
 #
 # Seleção de mapas
