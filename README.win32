@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.60 2003/07/22 18:15:16 we7u Exp $
+$Id: README.win32,v 1.61 2003/07/23 16:20:52 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -14,6 +14,12 @@ home directory.  If you don't do this, you'll be referred to as
 there won't be a good place to put your Xastir startup files.  Of
 course, log in as the same user each time in order for Cygwin to use
 the proper home directory for you.
+
+Cygwin specifically, and Unix boxes in general, don't much like
+spaces in filenames, directories, or login names.  Any of these may
+cause you headaches while playing with Cygwin.  Create a new login
+that doesn't have spaces and log in as that user before installing
+Cygwin, and whenever you intend to run Cygwin/Xastir.
 
 Explanation of this login box for those that don't see it:  If you
 have the option of running networking, you'll have a login box show
