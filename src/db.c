@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.244 2003/05/02 08:44:38 we7u Exp $
+ * $Id: db.c,v 1.245 2003/05/03 00:31:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10507,6 +10507,7 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
     // :BLNnxxxxx:____0-67____           + Group Bulletin
     // :BLNX     :____0-67____             Announcement
     // :NWS-xxxxx:____0-67____             NWS Service Bulletin
+    // :NWS_xxxxx:____0-67____             NWS Service Bulletin
     // :xxxxxxxxx:ackn1-5n               + ack
     // :xxxxxxxxx:rejn1-5n               + rej
     // :xxxxxxxxx:____0-67____{n1-5n     + message
@@ -10754,7 +10755,9 @@ else {
     if (debug_level & 1)
         fprintf(stderr,"5\n");
     //--------------------------------------------------------------------------
-    if (!done && strncmp(addr,"NWS-",4) == 0) {             // NWS weather alert
+    if (!done
+            && ( (strncmp(addr,"NWS-",4) == 0)
+              || (strncmp(addr,"NWS_",4) == 0) ) ) {    // NWS weather alert
 
         //fprintf(stderr,"found NWS: |%s| |%s| |%s|\n",addr,message,msg_id);      // could have sort of line number
 
