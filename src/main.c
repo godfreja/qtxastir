@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.127 2002/08/14 15:49:17 francais1 Exp $
+ * $Id: main.c,v 1.128 2002/08/20 22:07:51 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2907,7 +2907,7 @@ void Change_debug_level_change_data(Widget widget, XtPointer clientData, XtPoint
     temp = XmTextGetString(debug_level_text);
 
     debug_level = atoi(temp);
-    if ( (debug_level < 0) || (debug_level > 2047) )
+    if ( (debug_level < 0) || (debug_level > 32767) )
         debug_level = 0;
 
     XtFree(temp);
