@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.18 2004/09/18 20:25:47 we7u Exp $
+ * $Id: map_tiger.c,v 1.19 2004/11/12 17:09:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -67,6 +67,8 @@
 #include "rotated.h"
 #include "color.h"
 #include "xa_config.h"
+
+#include "map_cache.h"
 
 #define CHECKMALLOC(m)  if (!m) { fprintf(stderr, "***** Malloc Failed *****\n"); exit(0); }
 
@@ -231,6 +233,9 @@ void draw_tiger_map (Widget w,
             filenm);
     }
 
+
+
+        
     // Check whether we're indexing or drawing the map
     if ( (destination_pixmap == INDEX_CHECK_TIMESTAMPS)
             || (destination_pixmap == INDEX_NO_TIMESTAMPS) ) {
@@ -383,15 +388,40 @@ void draw_tiger_map (Widget w,
           fprintf(stderr,"ftp or http file: %s\n", fileimg);
     }
 
+
+#ifdef USE_MAP_CACHE 
+
+	int map_cache_return ; 
+
+	map_cache_return = map_cache_get(fileimg,local_filename); 
+	if (debug_level & 512) {
+		fprintf(stderr,"map_cache_return: %d\n", map_cache_return);
+	}
+   		   
+   
+if (map_cache_return != 0 ){
+
+    xastir_snprintf(local_filename,
+        sizeof(local_filename),
+        "%s/map_%s.%s",
+        get_user_base_dir("map_cache"),
+        map_cache_fileid(),
+        "gif");
+
+#else
+
     xastir_snprintf(local_filename,
         sizeof(local_filename),
         "%s/map.%s",
-        get_user_base_dir("tmp"),
+         get_user_base_dir("tmp"),
         "gif");
+
+#endif
 
     // Erase any previously existing local file by the same name.
     // This avoids the problem of having an old map image here and
     // the code trying to display it when the download fails.
+
     unlink( local_filename );
 
     HandlePendingEvents(app_context);
@@ -400,7 +430,6 @@ void draw_tiger_map (Widget w,
         (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
         return;
     }
-
 
 #ifdef HAVE_LIBCURL
     curl = curl_easy_init();
@@ -468,6 +497,12 @@ void draw_tiger_map (Widget w,
     // For debugging the MagickError/MagickWarning segfaults.
     //system("cat /dev/null >/var/tmp/xastir_hacker_map.gif");
 
+#ifdef USE_MAP_CACHE
+
+	map_cache_put(fileimg,local_filename); 
+
+        } // end if is cached  DHBROWN
+#endif // MAP_CACHE
 
     // Set permissions on the file so that any user can overwrite it.
     chmod(local_filename, 0666);
@@ -826,6 +861,3 @@ void draw_tiger_map (Widget w,
 }
 #endif //HAVE_IMAGEMAGICK
 ///////////////////////////////////////////// End of Tigermap code ///////////////////////////////////////
-
-
-
