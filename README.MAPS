@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.32 2004/04/01 04:16:55 shadow Exp $
+$Id: README.MAPS,v 1.33 2004/04/02 21:30:03 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -92,6 +92,11 @@ Getting Maps and other Data Files for Xastir:
       A few maps of various types are available from:
 
         http://wetnet.net/~we7u/xastir/maps/
+
+      Here's a page that we'll try to keep up-to-date which will have lots of
+      links to downloadable maps on it:
+
+        http://www.findewe.com/nwaprs/XastirMaps
 
 
      Dos/Win/MacAPRS style vector/fill maps:
