@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.23 2002/06/14 22:28:31 we7u Exp $
+# $Id: language-French.sys,v 1.24 2002/06/18 18:13:41 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -289,7 +289,7 @@ WPUPCFD023|Données météo non traités?||
 WPUPCFD024|Compress object/item data when transmitting?||
 WPUPCFD025|Activer réseau alterne?|A|
 WPUPCFD026|Transmettre position à quel intervalle?||
-WPUPCFD027|Enable SmartBeaconing||
+WPUPCFD027|Enable SmartBeaconing(tm)||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||
