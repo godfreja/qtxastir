@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.5 2003/09/11 22:04:21 jtwilley Exp $
+ * $Id: dbfawk.c,v 1.6 2003/09/12 14:48:55 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,7 +30,7 @@
  *
  */
 #include "config.h"
-#if defined(DBFAWK) && defined(HAVE_LIBSHP) && defined(HAVE_LIBPCRE)
+#if defined(WITH_DBFAWK) && defined(HAVE_LIBSHP) && defined(HAVE_LIBPCRE)
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>

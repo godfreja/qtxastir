@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.65 2003/09/03 15:19:08 n2ygk Exp $
+# $Id: configure.ac,v 1.66 2003/09/12 14:48:55 n2ygk Exp $
 
 
 #########################################################################
@@ -201,8 +201,17 @@ break)])
 
 # use dbfawk
 use_dbfawk=no
-AC_ARG_WITH(dbfawk,[  --with-dbfawk       Enable experimental dbfawk features.],AC_DEFINE(WITH_DBFAWK, , Define to 1 to use experimental dbfawk features. )
-use_dbfawk=yes)
+AC_ARG_WITH(dbfawk,[  --with-dbfawk       Enable experimental dbfawk features.],use_dbfawk=yes)
+# dbfawk requires shapelib and pcre.  Make sure:
+if test "${use_dbfawk}" = "yes"; then
+  if test "${use_pcre}" = "yes" -a "${use_shapelib}" = "yes"; then
+    AC_DEFINE(WITH_DBFAWK, , Define to 1 to use experimental dbfawk features. )
+  else
+    echo "Warning: dbfawk requires both pcre and shapelib."
+    use_dbfawk=no
+  fi
+fi
+
  
 # Set XASTIR_DATA_BASE in CPPFLAGS due to Gnu coding standard that requires
 # datadir expansion to be deferred until make time.
