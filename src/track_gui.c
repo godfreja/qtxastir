@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.7 2002/10/03 18:35:28 we7u Exp $
+ * $Id: track_gui.c,v 1.8 2002/10/09 05:52:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -95,10 +95,15 @@ end_critical_section(&track_station_dialog_lock, "track_gui.c:track_station_dest
 
 
 void Track_station_clear(Widget w, XtPointer clientData, XtPointer callData) {
+
     /* clear station */
     track_station_on=0;
     //track_station_data=NULL;
     //strcpy(tracking_station_call,"");
+
+    // Clear the TrackMe button as well
+    XmToggleButtonSetState(trackme_button,FALSE,TRUE);
+
     track_station_destroy_shell(w, clientData, callData);
     display_zoom_status();
 }
