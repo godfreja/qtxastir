@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.5 2004/12/14 20:17:16 we7u Exp $
+ * $Id: database.h,v 1.6 2004/12/21 20:29:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -378,7 +378,6 @@ typedef struct _DataRow {
 
 // Change to char's to save space?
     int  heard_via_tnc_port;
-    int  last_heard_via_tnc;
     int  last_port_heard;
     unsigned int  num_packets;
     char *node_path_ptr;        // Pointer to path string
