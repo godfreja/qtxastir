@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.34 2004/12/24 18:55:58 tvrusso Exp $
+ * $Id: messages_gui.c,v 1.35 2004/12/24 20:16:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -608,6 +608,9 @@ void Send_message( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtP
     int box_len;
     Atom delw;
 //    DataRow *p_station;
+
+
+//fprintf(stderr,"Send_message\n");
 
     groupon=0;
     box_len=90;
