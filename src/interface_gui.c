@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.30 2002/09/30 23:06:22 we7u Exp $
+ * $Id: interface_gui.c,v 1.31 2002/09/30 23:50:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4474,7 +4474,7 @@ void interface_option(Widget w, XtPointer clientData,  /*@unused@*/ XtPointer ca
                 /*set args for color */
                 ac=0;
                 XtSetArg(al[ac], XmNbackground, colors[0xff]); ac++;
-                XtSetArg(al[ac], XmNvisibleItemCount, MAX_IFACE_DEVICES); ac++;
+                XtSetArg(al[ac], XmNvisibleItemCount, MAX_IFACE_DEVICE_TYPES); ac++;
                 XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
                 XtSetArg(al[ac], XmNshadowThickness, 3); ac++;
                 XtSetArg(al[ac], XmNselectionPolicy, XmSINGLE_SELECT); ac++;
