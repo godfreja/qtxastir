@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.h,v 1.2 2002/03/28 23:31:49 we7u Exp $
+ * $Id: list_gui.h,v 1.3 2002/06/26 15:50:07 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25,6 +25,16 @@
 
 #ifndef __XASTIR_LIST_GUI_H
 #define __XASTIR_LIST_GUI_H
+
+// different list types:
+#define LST_ALL 0
+#define LST_MOB 1
+#define LST_WX  2
+#define LST_TNC 3
+#define LST_TIM 4
+#define LST_OBJ 5
+#define LST_MYOBJ 6
+#define LST_NUM 7
 
 extern int list_size_h[];
 extern int list_size_w[];
