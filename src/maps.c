@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.344 2003/10/16 22:59:07 we7u Exp $
+ * $Id: maps.c,v 1.345 2003/10/16 23:09:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -289,7 +289,7 @@ void maps_init(void)
     fprintf(stderr,"%10s   WinAPRS/MacAPRS/X-APRS Maps\n","map");
     fprintf(stderr,"%10s   PocketAPRS Maps\n","pdb");
 
-    fprintf(stderr,"\nOptional map types for which support has been compiled in: \n");
+    fprintf(stderr,"\nSupport for these additional map types has been compiled in: \n");
  
 #ifdef HAVE_IMAGEMAGICK
     fprintf(stderr,"%10s   Image Map (ImageMagick library, many formats allowed)\n","geo");
@@ -297,7 +297,7 @@ void maps_init(void)
 
 #ifndef NO_GRAPHICS
 #ifdef HAVE_LIBCURL
-    fprintf(stderr,"%10s   URL (Internet maps via libcurl)\n","geo");
+    fprintf(stderr,"%10s   URL (Internet maps via libcurl library)\n","geo");
 #else
 #ifdef HAVE_WGET
     fprintf(stderr,"%10s   URL (Internet maps via wget)\n","geo");
