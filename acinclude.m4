@@ -2,19 +2,17 @@
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.13 2004/03/22 21:52:45 we7u Exp $
+# $Id: acinclude.m4,v 1.14 2004/03/23 22:59:01 we7u Exp $
 
-# test for devices.  Avoid the test for "com1" as it hangs on some
-# WinXP boxes and perhaps on some Win2k boxes as well.  "com1" and
-# "/dev/com1" aren't guaranteed to be present in the Cygwin /dev
-# directory, although Cygwin makes "/dev/com1" available for use.
+# test for devices.  Avoid the tests on Cygwin as they hang on some
+# WinXP boxes.
 #
 AC_DEFUN([XASTIR_DETECT_DEVICES],
 [
 AC_MSG_CHECKING([for devices])
 if test -d /proc/registry ; then
-ac_tnc_port=/dev/com1
-ac_gps_port=/dev/com2
+ac_tnc_port=/dev/ttyS0
+ac_gps_port=/dev/ttyS1
 elif test -c /dev/cuaa0 ; then
 ac_tnc_port=/dev/cuaa0
 ac_gps_port=/dev/cuaa1
