@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.422 2004/12/28 20:29:58 we7u Exp $
+ * $Id: db.c,v 1.423 2004/12/29 20:31:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12117,7 +12117,7 @@ void display_packet_data(void) {
 // which is currently set to 4096.
 //
 // data_port == -1 for x_spider port, normal interface number
-// otherwise.
+// otherwise.  -99 should give a "**" display, meaning all ports.
 //
 void packet_data_add(char *from, char *line, int data_port) {
     int i;
@@ -12125,10 +12125,15 @@ void packet_data_add(char *from, char *line, int data_port) {
     char prefix[3] = "";
 
 
-    if (data_port == -1)    // x_spider port (server port)
+    if (data_port == -1) {  // x_spider port (server port)
         xastir_snprintf(prefix,sizeof(prefix),"sp");
-    else
+    }
+    else if (data_port == -99){ // All ports, used for transmitting
+        xastir_snprintf(prefix,sizeof(prefix),"**");
+    }
+    else {
         xastir_snprintf(prefix,sizeof(prefix),"%2d",data_port);
+    }
 
 
     offset=0;
