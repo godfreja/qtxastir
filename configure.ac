@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.42 2003/02/25 07:03:33 we7u Exp $
+# $Id: configure.ac,v 1.43 2003/02/26 17:38:25 we7u Exp $
 
 
 #########################################################################
@@ -149,7 +149,6 @@ else
         ac_tnc_port='"/dev/ttyS0"' 
         ac_gps_port='"/dev/ttyS1"' 
         CFLAGS="-g -O2 -Wall -pipe -pthread $CFLAGS" 
-        X_CFLAGS="-I/usr/X11R6/include $X_CFLAGS"
 		AC_MSG_RESULT(LINUX - added -g -O2 -Wall -pipe -pthread) 
 		AC_DEFINE(SYS_LINUX, 1, Compiling for Linux OS) 
 		;; 
