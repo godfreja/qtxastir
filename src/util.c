@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.25 2002/07/02 23:25:33 we7u Exp $
+ * $Id: util.c,v 1.26 2002/07/09 17:55:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1363,6 +1363,10 @@ time_t file_time(char *fn) {
 
 
 
+//
+// Note that the length of "line" can be up to MAX_DEVICE_BUFFER,
+// which is currently set to 4096.
+//
 void log_data(char *file, char *line) {
     FILE *f;
 
