@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.45 2002/07/20 06:48:12 we7u Exp $
+ * $Id: interface.c,v 1.46 2002/07/20 06:50:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2299,7 +2299,7 @@ void port_read(int port) {
                                 // Compute length of string in
                                 // circular queue
 
-printf("%d\t%d\n",port_data[port].read_in_pos,port_data[port].read_out_pos);
+                                //printf("%d\t%d\n",port_data[port].read_in_pos,port_data[port].read_out_pos);
 
                                 // KISS TNC sends binary data
                                 if (port_data[port].device_type == DEVICE_SERIAL_KISS_TNC) {
