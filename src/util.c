@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.155 2005/03/24 20:25:59 we7u Exp $
+ * $Id: util.c,v 1.156 2005/03/30 17:12:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4257,7 +4257,7 @@ int curl_getfile(char *fileimg, char *local_filename) {
 
         if (CURLE_OK != res) {
             fprintf(stderr, "curl told us %d\n", res);
-            fprintf(stderr, "curlerr is %s\n", curlerr);
+            fprintf(stderr, "curlerr: %s\n", curlerr);
         }
 
         if (ftpfile.stream)

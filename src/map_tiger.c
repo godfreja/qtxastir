@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.29 2005/01/08 10:06:53 we7u Exp $
+ * $Id: map_tiger.c,v 1.30 2005/03/30 17:12:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -486,7 +486,7 @@ void draw_tiger_map (Widget w,
 
         if (CURLE_OK != res) {
             fprintf(stderr, "curl told us %d\n", res);
-            fprintf(stderr, "curlerr is %s\n", curlerr);
+            fprintf(stderr, "curlerr: %s\n", curlerr);
         }
 
         if (ftpfile.stream)

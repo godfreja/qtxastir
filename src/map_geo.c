@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.43 2005/03/16 21:36:13 we7u Exp $
+ * $Id: map_geo.c,v 1.44 2005/03/30 17:12:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -404,7 +404,7 @@ void draw_toporama_map (Widget w,
 
         if (CURLE_OK != res) {
             fprintf(stderr, "curl told us %d\n", res);
-            fprintf(stderr, "curlerr is %s\n", curlerr);
+            fprintf(stderr, "curlerr: %s\n", curlerr);
         }
 
         if (ftpfile.stream)
@@ -1324,7 +1324,7 @@ fprintf(stderr,"1 ");
 
             if (CURLE_OK != res) {
                 fprintf(stderr, "curl told us %d\n", res);
-                fprintf(stderr, "curlerr is %s\n", curlerr);
+                fprintf(stderr, "curlerr: %s\n", curlerr);
             }
 
             if (ftpfile.stream)
