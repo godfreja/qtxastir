@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.411 2004/08/19 06:45:33 we7u Exp $
+ * $Id: maps.c,v 1.412 2004/08/20 17:27:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3019,7 +3019,8 @@ void clean_string(char *input) {
         if (j != NULL) {    // Found two quote characters
             j[0] = '\0';    // Terminate the string at the 2nd quote
             // Can't use strcpy here because it can't work with
-            // overlapping strings.
+            // overlapping strings.  strcpy is a dangerous function
+            // anyway and shouldn't be used.
             memmove(input, i+1, j-i);
         }
         else {  // We only found one quote character.  What to do?
