@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.279 2003/08/21 19:31:20 we7u Exp $
+ * $Id: db.c,v 1.280 2003/08/21 22:01:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -338,7 +338,11 @@ char *remove_trailing_asterisk(char *data) {
 static long *msg_index;
 static long msg_index_end;
 static long msg_index_max;
-static Message *msg_data;       // All messages, including ones we've transmitted (via loopback in the code)
+
+static Message *msg_data; // Array containing all messages,
+                          // including ones we've transmitted (via
+                          // loopback in the code)
+
 time_t last_message_update = 0;
 ack_record *ack_list_head = NULL;  // Head of linked list storing most recent ack's
 int satellite_ack_mode;
