@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.1 2002/02/02 03:15:28 kg4ijb Exp $
+$Id: README.1ST,v 1.2 2002/02/06 00:22:29 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -17,6 +17,12 @@ it the best supported platform at the moment.
 More information on Xastir can be found at:
 
         http://www.xastir.org
+
+or the up and coming new websites:
+
+        http://xastir.sourceforge.net (not up yet)
+and
+        http://sourceforge.net/projects/xastir/
 
 including the latest releases, the anonymous CVS access (lets you
 download the latest developers' code), and information on how to join
