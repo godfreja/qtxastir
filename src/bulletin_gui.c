@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.19 2003/07/31 13:00:18 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.20 2003/08/11 18:31:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -425,8 +425,8 @@ time_t last_bulletin_check = 0;
 void check_for_new_bulletins() {
 
 
-    // Check every two seconds max
-    if ( (last_bulletin_check + 2) > sec_now() ) {
+    // Check every fifteen seconds max
+    if ( (last_bulletin_check + 15) > sec_now() ) {
         return;
     }
 
