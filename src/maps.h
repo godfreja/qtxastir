@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.6 2002/05/09 22:29:09 francais1 Exp $
+ * $Id: maps.h,v 1.7 2002/09/18 18:41:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -33,6 +33,8 @@
 #define DRAW_TO_PIXMAP          0
 #define DRAW_TO_PIXMAP_FINAL    1
 #define DRAW_TO_PIXMAP_ALERTS   2
+#define INDEX_CHECK_TIMESTAMPS  9998
+#define INDEX_NO_TIMESTAMPS     9999
 
 
 /* memory structs */
@@ -66,8 +68,12 @@ char *get_map_ext (char *filename);
 void load_auto_maps(Widget w, char *dir);
 void load_maps(Widget w);
 void load_alert_maps(Widget w, char *dir);
+void  index_update_xastir(char *filename, unsigned long bottom, unsigned long top, unsigned long left, unsigned long right);
+void  index_update_ll(char *filename, double bottom, double top, double left, double right);
 void draw_grid (Widget w);
 void Snapshot(void);
+void map_indexer(void);
+
 extern int print_rotated;
 extern int print_auto_rotation;
 extern int print_auto_scale;
@@ -76,8 +82,6 @@ extern int print_invert;
 extern int  locate_place(Widget w, char *name, char *state, char *county, char *quad, char* type, char *filename, int follow_case, int get_match);
 extern void maps_init(void);
 extern time_t last_snapshot;
-
-
 
 #if !defined(NO_GRAPHICS)
 #if defined(HAVE_IMAGEMAGICK)

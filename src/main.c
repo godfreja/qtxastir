@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.132 2002/09/12 17:48:02 we7u Exp $
+ * $Id: main.c,v 1.133 2002/09/18 18:41:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -718,6 +718,7 @@ char AUTO_MAP_DIR[400];
 char ALERT_MAP_DIR[400];
 char WIN_MAP_DIR[400];
 char WIN_MAP_DATA[400];
+char MAP_INDEX_DATA[400];
 char SYMBOLS_DIR[400];
 char HELP_FILE[400];
 char SOUND_DIR[400];
@@ -18788,6 +18789,9 @@ int main(int argc, char *argv[], char *envp[]) {
             // Reload saved objects and items from previous runs.
             // This implements persistent objects.
             reload_object_item();
+
+//WE7U
+            map_indexer();
 
             XtAppMainLoop(app_context);
 
