@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.6 2003/02/18 20:50:26 kg4ijb Exp $
+# $Id: Makefile.am,v 1.7 2003/07/02 21:03:09 n2ygk Exp $
 EXTRA_DIST = \
     Coordinate.pm \
     coord-convert.pl \
@@ -23,5 +23,9 @@ bin_SCRIPTS = \
     permutations.pl \
     track-get.pl \
     update_langfile.pl \
-    waypoint-get.pl
+    waypoint-get.pl \
+    xastir-migrate.sh \
+    xastir-fixcfg.sh
+
+
 
