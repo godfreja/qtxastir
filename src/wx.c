@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.38 2004/06/29 19:42:44 we7u Exp $
+ * $Id: wx.c,v 1.39 2004/08/17 16:41:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1639,7 +1639,10 @@ void wx_fill_data(int from, int type, unsigned char *data, DataRow *fill) {
             if (data[36]!='-') {
                 substr(temp_data1,(char *)(data+36),4);
                 xastir_snprintf(wx_three_hour_baro, sizeof(wx_three_hour_baro), "%0.2f",
-                        (float)((strtol(temp_data1,&temp_conv,16)<<16)/65536)/100.0/3.38639);
+//                        (float)((strtol(temp_data1,&temp_conv,16)<<16)/65536)/100.0/3.38639);
+// Fix by Matt Werner, kb0kqa.  Testing it.
+                          (float)((strtol(temp_data1,&temp_conv,16)<<16)/65536)/10.0);
+ 
                 wx_three_hour_baro_on = 1;
             }
 
