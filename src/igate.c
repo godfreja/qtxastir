@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.11 2002/12/08 04:57:01 we7u Exp $
+ * $Id: igate.c,v 1.12 2003/01/23 19:42:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -480,8 +480,15 @@ void output_igate_net(char *line, int port, int third_party) {
     // gate this into the internet again, it's already been gated to
     // RF, which means it's already been on the 'net.  No looping
     // allowed here...
+    //
+    // We also now support NOGATE and RFONLY options.  If these are
+    // seen in the path, do _not_ gate those packets into the
+    // internet.
+    //
     if ( (strstr(path,"TCPXX") != NULL)
-            || (strstr(path,"TCPIP") != NULL) ) {
+            || (strstr(path,"TCPIP") != NULL)
+            || (strstr(path,"NOGATE") != NULL)
+            || (strstr(path,"RFONLY") != NULL) ) {
  
             if (log_igate && (debug_level & 1024) ) {
 
