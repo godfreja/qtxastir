@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.11 2003/09/03 15:19:09 n2ygk Exp $
+# $Id: Makefile.am,v 1.12 2003/10/16 15:30:22 we7u Exp $
 
 bin_PROGRAMS = xastir
 noinst_PROGRAMS = testawk
@@ -28,6 +28,7 @@ xastir_SOURCES = \
     maps.c maps.h \
     map_dos.c \
     map_geo.c \
+    map_gdal.c \
     map_gnis.c \
     map_pdb.c \
     map_shp.c \
