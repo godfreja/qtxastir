@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.205 2003/02/03 05:49:29 we7u Exp $
+ * $Id: db.c,v 1.206 2003/02/03 19:38:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -124,7 +124,6 @@ time_t last_object_check = 0;   // Used to determine when to re-transmit objects
 time_t last_emergency_time = 0;
 char last_emergency_callsign[MAX_CALLSIGN+1];
 int st_direct_timeout = 60 * 60;        // 60 minutes.
-int dead_reckoning_timeout = 60 * 10;   // 10 minutes;
 
 
 
