@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.21 2002/06/02 21:59:57 n0vh Exp $
+# $Id: language-Spanish.sys,v 1.22 2002/06/06 18:00:27 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -166,6 +166,7 @@ PULDQUS002|Pregunta a Estns I-Gate|I|
 PULDQUS003|Pregunta a Estns WX|W|
 PULDNMG004|Fijar Mensaje en Contestación Automática|F|
 PULDNMG005|Activar Auto contestación de Mensaje|A|
+PULDNMG006|Satellite Ack Mode|M|
 #
 # Menú de Interfaces
 PULDNTNT04|Iniciar/Detener|I|

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.19 2002/06/02 21:59:57 n0vh Exp $
+# $Id: language-English.sys,v 1.20 2002/06/06 18:00:27 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -165,6 +165,7 @@ PULDQUS002|IGate Stations Query|I|
 PULDQUS003|WX Stations Query|W|
 PULDNMG004|Modify Auto Reply Message|A|
 PULDNMG005|Enable Auto Reply Message||
+PULDNMG006|Satellite Ack Mode|M|
 #
 # Menu "Interfaces"
 PULDNTNT04|Start/Stop|S|

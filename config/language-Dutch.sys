@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.19 2002/06/02 21:54:12 n0vh Exp $
+# $Id: language-Dutch.sys,v 1.20 2002/06/06 18:00:26 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -169,6 +169,7 @@ PULDQUS002|IGate Stations Aanvraag|I|
 PULDQUS003|WX Stations Aanvraag|t|
 PULDNMG004|Automatisch Antwoord Bericht|A|
 PULDNMG005|Automatisch Beantwoorden|B|
+PULDNMG006|Satellite Ack Mode|M|
 #
 # Menu "Interfaces"
 PULDNTNT04|Interface besturing|I|

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.20 2002/06/02 21:59:57 n0vh Exp $
+# $Id: language-Italian.sys,v 1.21 2002/06/06 18:00:27 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -166,6 +166,7 @@ PULDQUS002|Cerca le stazioni Gateway|I|
 PULDQUS003|Cerca le stazioni meteo|W|
 PULDNMG004|Imposta risposta automatica ai messaggi in arrivo|S|
 PULDNMG005|Risposta automatica ai messaggi in arrivo|R|
+PULDNMG006|Satellite Ack Mode|M|
 #
 # Menu "Interfaces"
 PULDNTNT04|Avvia/Ferma|S|

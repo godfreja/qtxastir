@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.13 2002/06/02 21:59:57 n0vh Exp $
+# $Id: language-Portuguese.sys,v 1.14 2002/06/06 18:00:27 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -164,6 +164,7 @@ PULDQUS002|Pergunta a estações I-Gate|I|
 PULDQUS003|Pergunta a estações WX|W|
 PULDNMG004|Modificar mensagem de resposta automática|f|
 PULDNMG005|Activar mensagem de resposta automática|A|
+PULDNMG006|Satellite Ack Mode|M|
 #
 # Menú de interfaces
 PULDNTNT04|Iniciar/Parar|I|

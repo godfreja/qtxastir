@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.19 2002/06/02 21:59:57 n0vh Exp $
+# $Id: language-German.sys,v 1.20 2002/06/06 18:00:27 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -171,6 +171,7 @@ PULDQUS002|IGate Stationen|I|
 PULDQUS003|Wetter Stationen|W|
 PULDNMG004|Setze automatische Antwort|S|
 PULDNMG005|Automatische Antwort|A|
+PULDNMG006|Satellite Ack Mode|M|
 #
 # Menu "Schnittstellen"
 PULDNTNT04|Schnittstellen Ein/Aus|t|
