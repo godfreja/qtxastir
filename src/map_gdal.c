@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.85 2004/10/11 19:56:21 we7u Exp $
+ * $Id: map_gdal.c,v 1.86 2004/10/11 20:06:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -762,6 +762,9 @@ guess_vector_attributes(w,
         // Draw the points
         for ( ii = 0; ii < num_points; ii++ ) {
             double X1, Y1, Z1;
+            XPoint xpoint;
+
+
 
 
             // Get the point!
@@ -789,6 +792,17 @@ guess_vector_attributes(w,
                 (float)X1,
                 gc,
                 pixmap);
+
+            xpoint.x = (short)X1;
+            xpoint.y = (short)Y1;
+
+            // Draw the corresponding label
+            Draw_OGR_Labels(w,
+                pixmap,
+                featureH,
+                geometryH,
+                &xpoint,
+                1); // Number of points
         }
     }
 }
