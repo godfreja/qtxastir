@@ -1,4 +1,5 @@
-AUTOMAKE_OPTIONS = no-dependencies dist-shar dist-zip
+# $Id: Makefile.am,v 1.12 2003/02/18 20:43:29 kg4ijb Exp $
+AUTOMAKE_OPTIONS = gnu
 ACLOCAL_AMFLAGS = -I m4
 
 D=      `date +%G%m%d.%H%M%S`
