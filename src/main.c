@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.83 2002/06/10 23:46:09 we7u Exp $
+ * $Id: main.c,v 1.84 2002/06/11 00:08:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15434,33 +15434,33 @@ void Configure_station( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData
             XtSetSensitive(posamb2,TRUE);
             XtSetSensitive(posamb3,TRUE);
             XtSetSensitive(posamb4,TRUE);
+        }
  
-            Configure_station_pos_amb = position_amb_chars;
-            switch (Configure_station_pos_amb) {
-                case(0):
-                    XmToggleButtonSetState(posamb0,TRUE,FALSE);
-                    break;
+        Configure_station_pos_amb = position_amb_chars;
+        switch (Configure_station_pos_amb) {
+            case(0):
+                XmToggleButtonSetState(posamb0,TRUE,FALSE);
+                break;
 
-                case(1):
-                    XmToggleButtonSetState(posamb1,TRUE,FALSE);
-                    break;
+            case(1):
+                XmToggleButtonSetState(posamb1,TRUE,FALSE);
+                break;
 
-                case(2):
-                    XmToggleButtonSetState(posamb2,TRUE,FALSE);
-                    break;
+            case(2):
+                XmToggleButtonSetState(posamb2,TRUE,FALSE);
+                break;
 
-                case(3):
-                    XmToggleButtonSetState(posamb3,TRUE,FALSE);
-                    break;
+            case(3):
+                XmToggleButtonSetState(posamb3,TRUE,FALSE);
+                break;
 
-                case(4):
-                    XmToggleButtonSetState(posamb4,TRUE,FALSE);
-                    break;
+            case(4):
+                XmToggleButtonSetState(posamb4,TRUE,FALSE);
+                break;
 
-                default:
-                    XmToggleButtonSetState(posamb0,TRUE,FALSE);
-                    break;
-            }
+            default:
+                XmToggleButtonSetState(posamb0,TRUE,FALSE);
+                break;
         }
 
         pos_dialog(configure_station_dialog);
