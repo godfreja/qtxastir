@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.26 2002/06/21 14:49:14 we7u Exp $
+# $Id: language-German.sys,v 1.27 2002/06/21 19:18:57 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -860,5 +860,10 @@ SMARTB007|Low Speed (kph):||
 SMARTB008|Minimum Turn (deg):||
 SMARTB009|Turn Slope:||
 SMARTB010|Wait Time (secs):||
+#
+#
+# Gamma Adjust Dialog
+GAMMA001|Adjust Gamma Correction||
+GAMMA002|Gamma Correction||
 #
 #
