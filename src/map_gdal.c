@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.20 2003/12/03 20:52:32 we7u Exp $
+ * $Id: map_gdal.c,v 1.21 2003/12/03 21:08:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -449,6 +449,11 @@ void draw_ogr_map(Widget w,
         return;
     }
 
+
+// Optimization:  Get the envelope for each layer, skip the layer if
+// it's completely outside our viewport.
+
+
     /* Loop through layers and dump their contents */
 
     numLayers = OGR_DS_GetLayerCount(datasource);
@@ -513,6 +518,10 @@ fprintf(stderr,"4\n");
     }
 */
 
+
+
+// Optimization:  Get the envelope for each feature, skip the
+// feature if it's completely outside our viewport.
 
 
         // Dump each feature individually
