@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.50 2002/10/02 23:39:05 we7u Exp $
+ * $Id: xa_config.c,v 1.51 2002/10/29 06:34:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -548,6 +548,8 @@ void save_data(void)  {
         store_int (fout, "SB_HIGH_SPEED_LIMIT", sb_high_speed_limit);
 
         store_int (fout, "POP_UP_NEW_BULLETINS", pop_up_new_bulletins);
+
+        store_int (fout, "WARN_ABOUT_MOUSE_MODIFIERS", warn_about_mouse_modifiers);
 
         /* -dk7in- variable beacon interval */
         /*         mobile:   max  2 min */
@@ -1119,6 +1121,9 @@ void load_data_or_default(void) {
 
     if (!get_int ("POP_UP_NEW_BULLETINS", &pop_up_new_bulletins,0,1,1))
         pop_up_new_bulletins = 1;
+
+    if (!get_int ("WARN_ABOUT_MOUSE_MODIFIERS", &warn_about_mouse_modifiers,0,1,1))
+        warn_about_mouse_modifiers = 1;
 
 
     /* Audio Alarms*/

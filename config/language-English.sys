@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.50 2002/10/21 03:15:34 francais1 Exp $
+# $Id: language-English.sys,v 1.51 2002/10/29 06:34:01 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -306,6 +306,7 @@ WPUPCFD024|Compress object/item data when transmitting?|C|
 WPUPCFD025|Activate Alternate net?|A|
 WPUPCFD026|Send position reports at what intervals?||
 WPUPCFD027|Pop up new bulletins||
+WPUPCFD028|Warn if Modifier Keys||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||
