@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.104 2002/06/28 17:47:17 we7u Exp $
+ * $Id: maps.c,v 1.105 2002/06/28 18:18:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1890,8 +1890,22 @@ void draw_shapefile_map (Widget w,
                         if (y < -16000) ok = 0;     // Skip this point
 
                         if (ok == 1) {
+                            char symbol_table = '/';
+                            char symbol_id = '.'; /* small x */
+                            char symbol_over = ' ';
+
+                            // Fine-tuned the location here so that
+                            // the middle of the 'X' would be at the
+                            // proper pixel.
+                            symbol(w, 0, symbol_table, symbol_id, symbol_over, pixmap, 1, x-10, y-10, ' ');
+
+                            // Fine-tuned this string so that it is
+                            // to the right of the 'X' and aligned
+                            // nicely.
+                            draw_nice_string(w, pixmap, 0, x+10, y+5, (char*)temp, 0xf, 0x10, strlen(temp));
+
                             //(void)draw_label_text ( w, x, y, strlen(temp), colors[0x08], (char *)temp);
-                            (void)draw_rotated_label_text (w, 90, x, y, strlen(temp), colors[0x08], (char *)temp);
+                            //(void)draw_rotated_label_text (w, 90, x+10, y, strlen(temp), colors[0x08], (char *)temp);
                         }
                     }
                     break;
