@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.9 2003/02/21 23:53:37 we7u Exp $
+ * $Id: alert.h,v 1.10 2003/02/23 09:52:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,7 +40,7 @@ typedef enum {
 
 typedef struct {
     double top_boundary, left_boundary, bottom_boundary, right_boundary;
-    time_t expiration;
+    time_t expiration;  // In local time (secs since epoch)
     char activity[21];
     char alert_tag[21];
     char title[33];
