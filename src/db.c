@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.280 2003/08/21 22:01:11 we7u Exp $
+ * $Id: db.c,v 1.281 2003/09/18 00:24:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2358,7 +2358,9 @@ _do_the_drawing:
                 drawing_target,
                 orient,
                 p_station->aprs_symbol.area_object.type,
-                p_station->signpost);
+                p_station->signpost,
+                p_station->probability_min,
+                p_station->probability_max);
 
     // Draw additional stuff if this is the tracked station
     if (is_tracked_station(p_station->call_sign)) {
@@ -6305,6 +6307,8 @@ void init_station(DataRow *p_station) {
     p_station->power_gain[0]      = '\0';
     p_station->signal_gain[0]     = '\0';
     p_station->signpost[0]        = '\0';
+    p_station->probability_min[0] = '\0';
+    p_station->probability_max[0] = '\0';
     p_station->station_time[0]    = '\0';
     p_station->sats_visible[0]    = '\0';
     p_station->status_data        = NULL;
