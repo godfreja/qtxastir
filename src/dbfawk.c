@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.20 2004/05/27 02:11:00 we7u Exp $
+ * $Id: dbfawk.c,v 1.21 2004/05/31 05:34:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -123,11 +123,6 @@ dbfawk_field_info *dbfawk_field_list(DBFHandle dbf, char *dbffields) {
     fi = calloc(1,sizeof(dbfawk_field_info));
     if (!fi) {
         fprintf(stderr,"dbfawk_field_list: first calloc failed\n");
-        // Free whatever list we have at this point?
-        if (head) {
-            dbfawk_free_info(head);
-        }
- 
         return NULL;
     }
 
@@ -145,8 +140,6 @@ dbfawk_field_info *dbfawk_field_list(DBFHandle dbf, char *dbffields) {
     sp = p;
     prev = fi;
   }
-  if (!head)
-    fprintf(stderr,"dbfawk_field_list: head is NULL\n");
 
   return head;
 }
