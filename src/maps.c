@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.77 2002/05/03 16:57:21 we7u Exp $
+ * $Id: maps.c,v 1.78 2002/05/03 17:22:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -81,6 +81,7 @@
 #include "datum.h"
 #include "draw_symbols.h"
 #include "rotated.h"
+#include "color.h"
 
 #define DOS_HDR_LINES 8
 #define GRID_MORE 5000
