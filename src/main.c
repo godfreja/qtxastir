@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.546 2004/12/08 14:58:15 we7u Exp $
+ * $Id: main.c,v 1.547 2004/12/14 20:17:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10801,7 +10801,8 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 //fprintf(stderr,"server data: %s\n", line);
 
                         packet_data_add(langcode("WPUPDPD006"),
-                            (char *)line);
+                            (char *)line,
+                            -1);    // data_port -1 signifies x_spider
 
                         // Set port to -2 here to designate that it
                         // came from x_spider.  -1 = from a log
@@ -10837,7 +10838,8 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                                     (char *)incoming_data);
 
                             packet_data_add(langcode("WPUPDPD006"),
-                                (char *)incoming_data);
+                                (char *)incoming_data,
+                                data_port);
 
                             if (enable_server_port) {
                                 // Send data to the x_spider server
@@ -10894,7 +10896,8 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                                     (char *)incoming_data);
 
                             packet_data_add(langcode("WPUPDPD005"),
-                                (char *)incoming_data);
+                                (char *)incoming_data,
+                                data_port);
 
                             if (enable_server_port) {
                                 // Send data to the x_spider server
@@ -10942,7 +10945,8 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                                         (char *)incoming_data);
 
                                 packet_data_add(langcode("WPUPDPD005"),
-                                    (char *)incoming_data);
+                                    (char *)incoming_data,
+                                    data_port);
 
                                 if (enable_server_port) {
                                     // Send data to the x_spider server
@@ -10993,7 +10997,8 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                                         (char *)incoming_data);
 
                                 packet_data_add(langcode("WPUPDPD005"),
-                                    (char *)incoming_data);
+                                    (char *)incoming_data,
+                                    data_port);
 
                                 if (enable_server_port) {
                                     // Send data to the x_spider server
