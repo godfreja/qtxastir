@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.91 2003/10/13 21:46:23 we7u Exp $
+ * $Id: xa_config.c,v 1.92 2003/10/14 20:37:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -336,10 +336,8 @@ void save_data(void)  {
         sprintf (name, "%f", imagemagick_gamma_adjust);
         store_string(fout, "IMAGEMAGICK_GAMMA_ADJUST", name);
 #endif  // HAVE_IMAGEMAGICK
-#if defined(HAVE_LIBGEOTIFF)
         sprintf (name, "%f", raster_map_intensity);
         store_string(fout, "RASTER_MAP_INTENSITY", name);
-#endif  // HAVE_LIBGEOTIFF
 #endif  // NO_GRAPHICS
 
         store_int (fout, "MAP_LETTERSTYLE", letter_style);
@@ -777,12 +775,10 @@ void load_data_or_default(void) {
     else
         sscanf(name, "%f", &imagemagick_gamma_adjust);
 #endif  // HAVE_IMAGEMAGICK
-#if defined(HAVE_LIBGEOTIFF)
     if (!get_string("RASTER_MAP_INTENSITY", name))
         raster_map_intensity = 1.0;
     else
         sscanf(name, "%f", &raster_map_intensity);
-#endif  // HAVE_LIBGEOTIFF
 #endif  // NO_GRAPHICS
 
     if (!get_int ("MAP_LETTERSTYLE", &letter_style, 0, 2, 1))
