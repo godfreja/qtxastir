@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.60 2003/05/10 07:15:38 we7u Exp $
+ * $Id: alert.c,v 1.61 2003/05/10 07:31:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -319,7 +319,7 @@ void normal_title(char *incoming_title, char *outgoing_title) {
     outgoing_title[32] = '\0';
     if ((c_ptr = strstr(outgoing_title, "County Warning Area ")) && c_ptr == outgoing_title) {
         c_ptr = &outgoing_title[strlen("County Warning Area ")]; // Find end of text
-        strcpy(outgoing_title, "CWA");  // Add "CWA" to output string instead
+        strncpy(outgoing_title, "CWA",4);  // Add "CWA" to output string instead
         // Copy remaining portion of input string to the output string
         strncat(outgoing_title, c_ptr, 32-strlen("County Warning Area "));
         outgoing_title[32] = '\0';  // Make sure string is terminated
