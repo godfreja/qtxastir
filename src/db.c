@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.321 2004/06/18 20:01:03 we7u Exp $
+ * $Id: db.c,v 1.322 2004/06/18 20:32:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3118,6 +3118,8 @@ void Change_tactical_change_data(Widget widget, XtPointer clientData, XtPointer 
         tactical_pointer->call_sign);
 
     XtFree(temp);
+
+    redraw_on_new_data = 2;  // redraw now
 
     Change_tactical_destroy_shell(widget,clientData,callData);
 }
