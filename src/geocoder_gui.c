@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.12 2004/10/07 21:43:37 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.13 2004/10/20 21:30:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -146,6 +146,15 @@ void Geocoder_place_now(Widget w, XtPointer clientData, XtPointer callData) {
     (void)remove_trailing_spaces(geocoder_locality_name);
     (void)remove_trailing_spaces(geocoder_address_name);
 
+/*
+fprintf(stderr,"%s\n%s\n%s\n%s\n%s\n",
+    geocoder_zip_name,
+    geocoder_state_name,
+    geocoder_locality_name,
+    geocoder_address_name,
+    geocoder_map_filename);
+*/
+
     index = io_open(geocoder_map_filename);
 
     xastir_snprintf(input,
@@ -157,6 +166,9 @@ void Geocoder_place_now(Widget w, XtPointer clientData, XtPointer callData) {
         geocoder_state_name,
         geocoder_zip_name);
 
+    if (debug_level & 1)
+        fprintf(stderr,"Searching for: %s\n", input);
+
     if (geo_find(index,input,strlen(input),&loc)) {
         long coord_lon, coord_lat;
         char lat_str[20];
@@ -165,6 +177,7 @@ void Geocoder_place_now(Widget w, XtPointer clientData, XtPointer callData) {
         char lond = 'E';
         char latd = 'N';
         double res, tmp;
+
 
         if (loc.at.longitude < 0) {
             loc.at.longitude = -loc.at.longitude;
