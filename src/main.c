@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.361 2003/10/19 22:31:32 we7u Exp $
+ * $Id: main.c,v 1.362 2003/10/28 23:20:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13263,9 +13263,10 @@ void map_chooser_select_vector_maps(Widget widget, XtPointer clientData, XtPoint
     // Run through the list looking for matching file extensions
     for(x=1; x<=i;x++) {
 
-        if (XmListPosSelected(map_list,x)) {
-            XmListDeselectPos(map_list,x);
-        }
+//        // Deselect all currently selected maps
+//        if (XmListPosSelected(map_list,x)) {
+//            XmListDeselectPos(map_list,x);
+//        }
 
         if(XmStringGetLtoR(list[(x-1)],XmFONTLIST_DEFAULT_TAG,&temp)) {
             ext = get_map_ext (temp);
@@ -13302,9 +13303,10 @@ void map_chooser_select_250k_maps(Widget widget, XtPointer clientData, XtPointer
     // Run through the list looking for matching file extensions
     for(x=1; x<=i;x++) {
 
-        if (XmListPosSelected(map_list,x)) {
-            XmListDeselectPos(map_list,x);
-        }
+//        // Deselect all currently selected maps
+//        if (XmListPosSelected(map_list,x)) {
+//            XmListDeselectPos(map_list,x);
+//        }
 
         if(XmStringGetLtoR(list[(x-1)],XmFONTLIST_DEFAULT_TAG,&temp)) {
             ext = get_map_ext (temp);
@@ -13340,9 +13342,10 @@ void map_chooser_select_100k_maps(Widget widget, XtPointer clientData, XtPointer
     // Run through the list looking for matching file extensions
     for(x=1; x<=i;x++) {
 
-        if (XmListPosSelected(map_list,x)) {
-            XmListDeselectPos(map_list,x);
-        }
+//        // Deselect all currently selected maps
+//        if (XmListPosSelected(map_list,x)) {
+//            XmListDeselectPos(map_list,x);
+//        }
 
         if(XmStringGetLtoR(list[(x-1)],XmFONTLIST_DEFAULT_TAG,&temp)) {
             ext = get_map_ext (temp);
@@ -13378,9 +13381,10 @@ void map_chooser_select_24k_maps(Widget widget, XtPointer clientData, XtPointer 
     // Run through the list looking for matching file extensions
     for(x=1; x<=i;x++) {
 
-        if (XmListPosSelected(map_list,x)) {
-            XmListDeselectPos(map_list,x);
-        }
+//        // Deselect all currently selected maps
+//        if (XmListPosSelected(map_list,x)) {
+//            XmListDeselectPos(map_list,x);
+//        }
 
         if(XmStringGetLtoR(list[(x-1)],XmFONTLIST_DEFAULT_TAG,&temp)) {
             ext = get_map_ext (temp);
