@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.128 2002/08/13 21:01:58 we7u Exp $
+ * $Id: db.c,v 1.129 2002/08/14 16:52:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6158,7 +6158,7 @@ int extract_comp_position(DataRow *p_station, char **info, /*@unused@*/ int type
     float lon = 0;
     float lat = 0;
     float range;
-    int skip;
+    int skip = 0;
 
 
     if (debug_level & 1)
