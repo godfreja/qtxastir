@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.215 2003/02/25 00:26:13 we7u Exp $
+ * $Id: db.c,v 1.216 2003/02/25 00:29:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10715,6 +10715,7 @@ else {
 // Instead we need to skip the message database part altogether and
 // just throw the alert onto the alert_list, then set variables so
 // that we'll do a display update soon.
+// Make sure that we don't add duplicate alerts to the list.
         (void)msg_data_add(addr,call,message,msg_id,MESSAGE_NWS,from,&dummy);
         (void)alert_message_scan();
         // This function fills in the Shapefile filename and index
@@ -10756,6 +10757,7 @@ else {
 // Instead we need to skip the message database part altogether and
 // just throw the alert onto the alert_list, then set variables so
 // that we'll do a display update soon.
+// Make sure that we don't add duplicate alerts to the list.
         (void)msg_data_add(addr,call,message,msg_id,MESSAGE_NWS,from,&dummy);
         (void)alert_message_scan();
         // This function fills in the Shapefile filename and index
