@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: color.h,v 1.5 2004/01/26 16:18:19 we7u Exp $
+ * $Id: color.h,v 1.6 2004/03/04 23:12:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,6 +40,7 @@ typedef enum {
     RGB_OTHER
 } Pixel_Format;
 extern Pixel_Format visual_type;
+extern int visual_depth;
 
 /* from color.c */
 extern int load_color_file(void);
