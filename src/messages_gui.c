@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.2 2002/05/10 05:59:38 we7u Exp $
+ * $Id: messages_gui.c,v 1.3 2002/05/11 00:22:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -152,8 +152,8 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message_n
             statusline(langcode("BBARSTA011"),0);       // Auto Reply Messages OFF
             output_message(mw[i].to_call_sign,temp1,temp2);
             XmTextFieldSetString(mw[i].send_message_message_data,"");
-            if (mw[i].message_group!=1)
-                XtSetSensitive(mw[i].button_ok,FALSE);
+//            if (mw[i].message_group!=1)
+//                XtSetSensitive(mw[i].button_ok,FALSE);
         }
         else {
             // Could add a popup here someday that says something about
