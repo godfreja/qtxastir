@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.370 2004/08/20 17:22:43 we7u Exp $
+ * $Id: db.c,v 1.371 2004/08/20 18:38:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9742,7 +9742,7 @@ void add_status(DataRow *p_station, char *status_string) {
 
             // Fill in the string
             xastir_snprintf(p_station->status_data->text_ptr,
-                sizeof(p_station->status_data->text_ptr),
+                len+1,
                 "%s",
                 status_string);
 
@@ -9896,7 +9896,7 @@ void add_comment(DataRow *p_station, char *comment_string) {
 
             // Fill in the string
             xastir_snprintf(p_station->comment_data->text_ptr,
-                sizeof(p_station->comment_data->text_ptr),
+                len+1,
                 "%s",
                 comment_string);
 
