@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.27 2002/07/11 22:07:36 we7u Exp $
+ * $Id: util.c,v 1.28 2002/07/11 23:10:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -218,6 +218,10 @@ double phg_range(char p, char h, char g) {
 
 //    if (range > 70.0)
 //        printf("PHG%c%c%c results in range of %f\n", p, h, g, range);
+
+    // Note:  Bob Bruninga, WB4APR, decided to cut PHG circles by
+    // 1/2 in order to show more realistic mobile ranges.
+    range = range / 2.0;
 
     return(range);
 }
