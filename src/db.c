@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.120 2002/07/19 20:51:10 we7u Exp $
+ * $Id: db.c,v 1.121 2002/07/20 07:44:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10270,6 +10270,12 @@ void relay_digipeat(char *call, char *path, char *info, int port) {
         return;
     }
 
+    // Check whether transmit has been enabled for this interface.
+    // If not, get out while the gettin's good. 
+    if (devices[port].transmit_data != 1) {
+        return;
+    }
+
     // Check for the only two types of interfaces where we might want to
     // do RELAY digipeating.  If not one of these, go bye-bye.
     if ( (devices[port].device_type != DEVICE_SERIAL_KISS_TNC)
@@ -10310,12 +10316,12 @@ void relay_digipeat(char *call, char *path, char *info, int port) {
     // through that callsign (or a later one).
     if ( (r_ptr = strstr(short_path,"RELAY")) != NULL) {
 //        if ( (r_ptr = strstr(short_path,"SOMTN")) != NULL) {  // DEBUG STATEMENT
-        //printf("*** FOUND RELAY: ", short_path);
+//        printf("*** FOUND RELAY: ", short_path);
     }
 
     if ( (c_ptr = strstr(short_path,my_callsign)) != NULL) {
         // Note that my_callsign is in all caps already
-        //printf("*** FOUND MY CALLSIGN: ", short_path);
+//        printf("*** FOUND MY CALLSIGN: ", short_path);
     }
 
     // Check whether either RELAY or my_callsign were found
@@ -10416,8 +10422,8 @@ void relay_digipeat(char *call, char *path, char *info, int port) {
     }
 
     if (devices[port].device_type == DEVICE_SERIAL_KISS_TNC) {
-        //printf("KISS RELAY short_path: %s\n", short_path);
-        //printf("KISS RELAY   new_path: %s\n", new_path);
+//        printf("KISS RELAY short_path: %s\n", short_path);
+//        printf("KISS RELAY   new_path: %s\n", new_path);
 
 //WE7U
 //        send_ax25_frame(port, call, destination, new_path, info);
