@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.99 2004/10/16 04:25:02 we7u Exp $
+ * $Id: map_gdal.c,v 1.100 2004/10/18 14:55:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -587,6 +587,11 @@ void guess_vector_attributes( Widget w,
             if (strcasecmp(driver_type,"SDTS") == 0) {
 // DEBUG:
 // Determine whether it is a hypsography layer we're dealing with.
+//
+// Consider trying GXxor function with gc_tint someday to see what
+// the contour lines look like with that method:  Should make them
+// quite readable no matter what the underlying map colors.
+//
                 // Set color for SDTS hypsography layer (contours)
 //                (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x43]);  // gray80
                 (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x0e]);  // yellow
@@ -613,6 +618,11 @@ void guess_vector_attributes( Widget w,
             if (strcasecmp(driver_type,"SDTS") == 0) {
 // DEBUG:
 // Determine whether it is a hypsography layer we're dealing with.
+//
+// Consider trying GXxor function with gc_tint someday to see what
+// the contour lines look like with that method:  Should make them
+// quite readable no matter what the underlying map colors.
+//
                 // Set color for SDTS hypsography layer (contours)
 //                (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x43]);  // gray80
                 (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x0e]);  // yellow
