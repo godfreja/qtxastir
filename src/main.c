@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.169 2002/11/22 23:39:28 we7u Exp $
+ * $Id: main.c,v 1.170 2002/11/23 08:40:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2952,6 +2952,19 @@ void check_statusline_timeout(void) {
 
         if (last_id_time < sec_now() - id_interval) {
             popup_ID_message(langcode("BBARSTA040"),status_text);
+#ifdef HAVE_FESTIVAL
+            if (festival_speak_ID) {
+                char my_speech_callsign[100];
+
+                strcpy(my_speech_callsign,my_callsign);
+                spell_it_out(my_speech_callsign);
+                xastir_snprintf(status_text,
+                    sizeof(status_text),
+                    langcode ("BBARSTA040"),
+                    my_speech_callsign);
+                SayText(status_text);
+            }
+#endif
         }
 
         last_statusline = 0;	// now inactive

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.57 2002/11/22 23:39:28 we7u Exp $
+# $Id: language-Italian.sys,v 1.58 2002/11/23 08:40:42 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -825,7 +825,7 @@ SPCHSTR006|%s, distance is %.1f %s.||
 SPCHSTR007|%s, distance is %d %s %s %s.||
 SPCHSTR008|%s, distance is %.1f %s %s %s.||
 SPCHSTR009|New Weather Alert||
-SPCHSTR010|New||
+SPCHSTR010|New Call||
 SPCHSTR011|Heard, D X, %s, at distance of %.1f %s||
 #
 SPCHDIRN00|north of||

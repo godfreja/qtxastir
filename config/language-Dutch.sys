@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.57 2002/11/22 23:39:28 we7u Exp $
+# $Id: language-Dutch.sys,v 1.58 2002/11/23 08:40:42 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -829,7 +829,7 @@ SPCHSTR006|%s, afstand is %.1f %s.||
 SPCHSTR007|%s, afstand is %d %s %s %s.||
 SPCHSTR008|%s, afstand is %.1f %s %s %s.||
 SPCHSTR009|New Weather Alert||
-SPCHSTR010|New||
+SPCHSTR010|New Call||
 SPCHSTR011|Heard, D X, %s, at distance of %.1f %s||
 #
 SPCHDIRN00|ten noorden van||

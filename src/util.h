@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.12 2002/11/15 00:25:48 we7u Exp $
+ * $Id: util.h,v 1.13 2002/11/23 08:40:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -90,6 +90,7 @@ extern int  is_num_or_sp(char ch);
 extern int  is_xnum_or_dash(char *data, int max);
 extern void removeCtrlCodes(char *cp);
 extern void makePrintable(char *cp);
+extern void spell_it_out(char *text);
 
 typedef struct
 {

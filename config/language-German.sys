@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.56 2002/11/22 23:39:28 we7u Exp $
+# $Id: language-German.sys,v 1.57 2002/11/23 08:40:42 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -830,7 +830,7 @@ SPCHSTR006|%s, entfernung ist %.1f %s.||
 SPCHSTR007|%s, distance is %d %s %s %s.||
 SPCHSTR008|%s, distance is %.1f %s %s %s.||
 SPCHSTR009|New Weather Alert||
-SPCHSTR010|New||
+SPCHSTR010|New Call||
 SPCHSTR011|Heard, D X, %s, at distance of %.1f %s||
 #
 SPCHDIRN00|north of||

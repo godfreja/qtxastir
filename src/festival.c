@@ -1,6 +1,6 @@
 // Modification for Xastir CVS purposes
 //
-// $Id: festival.c,v 1.2 2002/03/05 21:28:23 we7u Exp $
+// $Id: festival.c,v 1.3 2002/11/23 08:40:43 we7u Exp $
 //
 // End of modification
 
@@ -274,6 +274,9 @@ int festivalClose()
 
 int SayText(char *text)
 {
+    if (debug_level & 2)
+        printf("SayText: %s\n",text);
+
     festivalStringToSpeech(text);
     return 0;
 }
