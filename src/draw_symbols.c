@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.14 2002/08/13 18:39:02 we7u Exp $
+ * $Id: draw_symbols.c,v 1.15 2002/10/11 19:53:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -138,6 +138,9 @@ void draw_nice_string(Widget w, Pixmap where, int style, long x, long y, char *t
 // the circle was as well, in case we don't have a PLS object placed
 // there also.  Perhaps a small dot and/or four lines going from
 // that point to the edge of the circle?
+//
+// range is in miles
+// x_long/y_lat are in Xastir lat/lon units
 //
 void draw_pod_circle(long x_long, long y_lat, double range, Pixmap where) {
     double diameter;
