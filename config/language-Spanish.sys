@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.70 2003/01/15 22:25:58 francais1 Exp $
+# $Id: language-Spanish.sys,v 1.71 2003/01/16 18:08:17 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -140,7 +140,7 @@ PULDNDP022|Sacar Rastro de Findu|F|
 PULDNDP032|Filtrar Datos||
 PULDNDP040|Seleccionar Nada||
 PULDNDP041|Seleccionar TNC||
-PULDNDP027|Seleccionar Local||
+PULDNDP027|Seleccionar Direct||
 PULDNDP034|Seleccionar Net||
 PULDNDP019|Incluir Datos Expirados||
 PULDNDP028|Seleccionar Estaciónes Fijas||

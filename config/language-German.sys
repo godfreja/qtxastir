@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.68 2003/01/15 22:25:58 francais1 Exp $
+# $Id: language-German.sys,v 1.69 2003/01/16 18:08:17 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -145,7 +145,7 @@ PULDNDP022|Spur von Findu holen|h|
 PULDNDP032|Filter Data||
 PULDNDP040|Select None||
 PULDNDP041|Select TNC||
-PULDNDP027|Select Local||
+PULDNDP027|Select Direct||
 PULDNDP034|Select Net||
 PULDNDP019|Alte Daten zeigen||
 PULDNDP028|Select Fixed Stations||

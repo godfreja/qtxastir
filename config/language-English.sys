@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.68 2003/01/15 22:25:58 francais1 Exp $
+# $Id: language-English.sys,v 1.69 2003/01/16 18:08:17 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -139,7 +139,7 @@ PULDNDP022|Fetch Findu Trail|u|
 PULDNDP032|Filter Data||
 PULDNDP040|Select None||
 PULDNDP041|Select TNC||
-PULDNDP027|Select Local||
+PULDNDP027|Select Direct||
 PULDNDP034|Select Net||
 PULDNDP019|Include Expired Data||
 PULDNDP028|Select Fixed Stations||

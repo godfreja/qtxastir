@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.68 2003/01/15 22:25:58 francais1 Exp $
+# $Id: language-French.sys,v 1.69 2003/01/16 18:08:17 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -139,7 +139,7 @@ PULDNDP022|Télécharger piste Findu||
 PULDNDP032|Filtrer données||
 PULDNDP040|Choisir rien||
 PULDNDP041|Choisir TNC||
-PULDNDP027|Choisir local||
+PULDNDP027|Choisir Direct||
 PULDNDP034|Choisir net||
 PULDNDP019|Inclure données périmées||
 PULDNDP028|Choisir stations fixes||
