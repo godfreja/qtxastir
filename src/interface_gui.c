@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.54 2003/05/27 20:40:39 we7u Exp $
+ * $Id: interface_gui.c,v 1.55 2003/07/09 22:55:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3886,6 +3886,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                             NULL);
 
         Inet_active_on_startup  = XtVaCreateManagedWidget(langcode("UNIOP00011"),xmToggleButtonWidgetClass,form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNtopAttachment, XmATTACH_FORM,
                                       XmNtopOffset, 5,
                                       XmNbottomAttachment, XmATTACH_NONE,
@@ -3896,6 +3898,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         Inet_transmit_data  = XtVaCreateManagedWidget(langcode("UNIOP00010"),xmToggleButtonWidgetClass,form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, Inet_active_on_startup,
                                       XmNtopOffset, 5,
@@ -3918,6 +3922,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         Inet_host_data = XtVaCreateManagedWidget("Config_Inet host_data", xmTextFieldWidgetClass, form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNeditable,   TRUE,
                                       XmNcursorPositionVisible, TRUE,
                                       XmNsensitive, TRUE,
@@ -3947,6 +3953,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         Inet_port_data = XtVaCreateManagedWidget("Config_Inet port_data", xmTextFieldWidgetClass, form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNeditable,   TRUE,
                                       XmNcursorPositionVisible, TRUE,
                                       XmNsensitive, TRUE,
@@ -3975,6 +3983,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         Inet_password_data = XtVaCreateManagedWidget("Config_Inet password_data", xmTextFieldWidgetClass, form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNeditable,   TRUE,
                                       XmNcursorPositionVisible, TRUE,
                                       XmNsensitive, TRUE,
@@ -4016,6 +4026,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         Inet_filter_data = XtVaCreateManagedWidget("Config_Inet filter_data", xmTextFieldWidgetClass, form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNeditable,   TRUE,
                                       XmNcursorPositionVisible, TRUE,
                                       XmNsensitive, TRUE,
@@ -4034,6 +4046,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         Inet_reconnect_data = XtVaCreateManagedWidget(langcode("WPUPCFI011"),xmToggleButtonWidgetClass,form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, filter,
                                       XmNtopOffset, 20,
@@ -4056,6 +4070,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         button_ok = XtVaCreateManagedWidget(langcode("UNIOP00001"),xmPushButtonGadgetClass, form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, sep,
                                       XmNtopOffset, 10,
@@ -4069,6 +4085,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
         button_cancel = XtVaCreateManagedWidget(langcode("UNIOP00002"),xmPushButtonGadgetClass, form,
+                                      XmNnavigationType, XmTAB_GROUP,
+                                      XmNtraversalOn, TRUE,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, sep,
                                       XmNtopOffset, 10,
