@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.271 2003/04/29 21:37:18 jtwilley Exp $
+ * $Id: main.c,v 1.272 2003/05/08 21:36:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1445,7 +1445,8 @@ void Smart_Beacon(Widget w, XtPointer clientData, XtPointer callData) {
 
 
 
-// Find the extents of every map we have
+// Find the extents of every map we have.  This is the callback for
+// the "Re-Index Maps" button.
 // 
 void Index_Maps_Now(Widget w, XtPointer clientData, XtPointer callData) {
 /*
