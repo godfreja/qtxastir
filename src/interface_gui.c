@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.4 2002/03/06 07:53:23 we7u Exp $
+ * $Id: interface_gui.c,v 1.5 2002/03/06 18:11:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -867,6 +867,9 @@ void Config_TNC( /*@unused@*/ Widget w, int device_type, int config_type, int po
             XmTextFieldSetString(TNC_down_file_data,"tnc-stop.sys");
         } else {
             /* reconfig */
+
+            if (debug_level & 128)
+                printf("Reconfiguring interface\n");
 
 begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC" );
 
@@ -3715,12 +3718,12 @@ end_critical_section(&devices_lock, "interface_gui.c:interface_setup" );
                         Config_TNC(w, DEVICE_SERIAL_TNC_HSP_GPS, 0, port);
                         break;
 
-                                        case DEVICE_SERIAL_TNC_AUX_GPS:
-                                                /* configure this port */
+                    case DEVICE_SERIAL_TNC_AUX_GPS:
+                        /* configure this port */
                         if (debug_level & 1)
                             printf("ADD SERIAL TNC w AUX GPS\n");
-                                                Config_TNC(w, DEVICE_SERIAL_TNC_AUX_GPS, 0, port);
-                                                break;
+                        Config_TNC(w, DEVICE_SERIAL_TNC_AUX_GPS, 0, port);
+                        break;
 
                     case DEVICE_SERIAL_GPS:
                         /* configure this port */
@@ -4004,12 +4007,15 @@ end_critical_section(&devices_lock, "interface_gui.c:interface_option" );
                             Config_TNC(w, DEVICE_SERIAL_TNC_HSP_GPS, 1, port);
                             break;
 
-                                                case DEVICE_SERIAL_TNC_AUX_GPS:
-                                                        /* configure this port */
+                        case DEVICE_SERIAL_TNC_AUX_GPS:
+
+end_critical_section(&devices_lock, "interface_gui.c:interface_option" );
+
+                            /* configure this port */
                             if (debug_level & 1)
                                 printf("Modify SERIAL TNC with AUX GPS\n");
-                                                        Config_TNC(w, DEVICE_SERIAL_TNC_AUX_GPS, 1, port);
-                                                        break;
+                            Config_TNC(w, DEVICE_SERIAL_TNC_AUX_GPS, 1, port);
+                            break;
 
                         case DEVICE_SERIAL_GPS:
  
