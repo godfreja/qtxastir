@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.55 2003/07/14 21:26:05 we7u Exp $
+$Id: README.win32,v 1.56 2003/07/14 21:37:02 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -141,7 +141,7 @@ required:
 [ ]     less
     Utils
 [ ]     bzip2
-[ ]     diff
+[ ]     diffutils
 [ ]     patch
     Web
 [ ]     wget (or can use libcurl instead)
