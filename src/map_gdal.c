@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.110 2004/10/20 01:13:48 we7u Exp $
+ * $Id: map_gdal.c,v 1.111 2004/10/20 02:17:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -3093,7 +3093,7 @@ clear_dangerous();
         short_filenm);
     statusline(status_text,0);       // Loading ...
 
-    fprintf(stderr,"Loading %s\n", filenm);
+//    fprintf(stderr,"Loading %s\n", filenm);
 
 
  
