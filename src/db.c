@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.284 2003/10/02 23:51:56 we7u Exp $
+ * $Id: db.c,v 1.285 2003/10/09 16:03:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7087,7 +7087,7 @@ void station_del_ptr(DataRow *p_name) {
         // deleting our own objects from time to time.  Leave this
         // in until we're sure the problem has been fixed.
         if (is_my_call(p_name->origin,1)) {
-            printf("station_del_ptr: Removing my own object: %s\n",
+            fprintf(stderr,"station_del_ptr: Removing my own object: %s\n",
                 p_name->call_sign);
         }
 

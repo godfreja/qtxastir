@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.349 2003/10/02 14:09:40 n2ygk Exp $
+ * $Id: main.c,v 1.350 2003/10/09 16:03:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14583,7 +14583,7 @@ void Test(Widget w, XtPointer clientData, XtPointer callData) {
         pixmap_final);          // Pixmap where);
 */
 
-    printf("view_zero_distance_bulletins = %d\n",
+    fprintf(stderr,"view_zero_distance_bulletins = %d\n",
         view_zero_distance_bulletins);
 
     (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
