@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.36 2004/01/26 16:18:24 we7u Exp $
+ * $Id: wx.c,v 1.37 2004/03/23 18:01:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1960,8 +1960,12 @@ void wx_fill_data(int from, int type, unsigned char *data, DataRow *fill) {
                 strncpy(weather->wx_hum,(temp_conv+1),2);
             }
 
-            if ((temp_conv=strchr(data,'b'))) { // Air Pressure in hPa
-                strncpy(weather->wx_baro,(temp_conv+1),5);
+            if ((temp_conv=strchr(data,'b'))) { // Air Pressure in 1/10 hPa
+			    memset(temp_data1,0,sizeof(temp_data1));
+				strncpy(temp_data1,(temp_conv+1),5);
+			    temp_temp = (float)(atof(temp_data1))/10.0;
+                xastir_snprintf(temp_data1, sizeof(temp_data1), "%0.1f",temp_temp);
+                strcpy(weather->wx_baro,temp_data1); 
             }
 
             if ((temp_conv=strchr(data,'x'))) { // WX Station Identifier
