@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.125 2004/09/16 14:47:17 we7u Exp $
+ * $Id: xa_config.c,v 1.126 2004/10/04 15:32:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1169,32 +1169,32 @@ void load_data_or_default(void) {
     if (!get_string ("MAPS_LABEL_FONT_TINY", rotated_label_fontname[FONT_TINY], sizeof(rotated_label_fontname[FONT_TINY])))
         xastir_snprintf(rotated_label_fontname[FONT_TINY],
             sizeof(rotated_label_fontname[FONT_TINY]),
-            "-adobe-helvetica-medium-o-normal--8-*-*-*-*-*-iso8859-1");
+            "-adobe-helvetica-medium-r-normal--8-*-*-*-*-*-iso8859-1");
 
     if (!get_string ("MAPS_LABEL_FONT_SMALL", rotated_label_fontname[FONT_SMALL], sizeof(rotated_label_fontname[FONT_SMALL])))
         xastir_snprintf(rotated_label_fontname[FONT_SMALL],
             sizeof(rotated_label_fontname[FONT_SMALL]),
-            "-adobe-helvetica-medium-o-normal--10-*-*-*-*-*-iso8859-1");
+            "-adobe-helvetica-medium-r-normal--10-*-*-*-*-*-iso8859-1");
 
     if (!get_string ("MAPS_LABEL_FONT_MEDIUM", rotated_label_fontname[FONT_MEDIUM], sizeof(rotated_label_fontname[FONT_MEDIUM])))
         xastir_snprintf(rotated_label_fontname[FONT_MEDIUM],
             sizeof(rotated_label_fontname[FONT_MEDIUM]),
-            "-adobe-helvetica-medium-o-normal--12-*-*-*-*-*-iso8859-1");
+            "-adobe-helvetica-medium-r-normal--12-*-*-*-*-*-iso8859-1");
 
     if (!get_string ("MAPS_LABEL_FONT_LARGE", rotated_label_fontname[FONT_LARGE], sizeof(rotated_label_fontname[FONT_LARGE])))
         xastir_snprintf(rotated_label_fontname[FONT_LARGE],
             sizeof(rotated_label_fontname[FONT_LARGE]),
-            "-adobe-helvetica-medium-o-normal--14-*-*-*-*-*-iso8859-1");
+            "-adobe-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1");
 
     if (!get_string ("MAPS_LABEL_FONT_HUGE", rotated_label_fontname[FONT_HUGE], sizeof(rotated_label_fontname[FONT_HUGE])))
         xastir_snprintf(rotated_label_fontname[FONT_HUGE],
             sizeof(rotated_label_fontname[FONT_HUGE]),
-            "-adobe-helvetica-medium-o-normal--24-*-*-*-*-*-iso8859-1");
+            "-adobe-helvetica-medium-r-normal--24-*-*-*-*-*-iso8859-1");
 
     if (!get_string ("MAPS_LABEL_FONT", rotated_label_fontname[FONT_DEFAULT], sizeof(rotated_label_fontname[FONT_DEFAULT])))
         xastir_snprintf(rotated_label_fontname[FONT_DEFAULT],
             sizeof(rotated_label_fontname[FONT_DEFAULT]),
-            "-adobe-helvetica-medium-o-normal--12-*-*-*-*-*-iso8859-1");
+            "-adobe-helvetica-medium-r-normal--12-*-*-*-*-*-iso8859-1");
 
 //N0VH
 #if defined(HAVE_IMAGEMAGICK)
