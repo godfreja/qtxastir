@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.11 2004/07/30 03:57:57 we7u Exp $
+ * $Id: hostname.c,v 1.12 2004/08/11 02:16:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -136,6 +136,18 @@ char *host_lookup(char *host, char *ip, int time) {
 
 //---------------------------------------------------------------------------------------
             if (host_pid==0) {  // We're in the child process
+
+
+                // Change the name of the new child process.  So far
+                // this only works for "ps" listings, not for "top".
+                // This code only works on Linux.  For BSD use
+                // setproctitle(3), NetBSD can use setprogname(2).
+#ifdef __linux__
+                init_set_proc_title(my_argc, my_argv, my_envp);
+                set_proc_title("%s", "hostname lookup (xastir)");
+                //printf("DEBUG: %s\n", Argv[0]);
+#endif  // __linux__
+
 
                 // Close the end of the pipe we don't need here
 

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.67 2004/07/29 05:42:09 we7u Exp $
+ * $Id: main.h,v 1.68 2004/08/11 02:16:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -88,6 +88,31 @@ extern int interrupt_drawing_now;
 #define MAX_NET_CHARS 128
 #define MAX_GPS_CHARS 128
 #define MAX_WX_CHARS 4
+
+
+
+//////////////////////////////////////////////////////////////////////
+// These globals and prototypes are from:
+// http://lightconsulting.com/~thalakan/process-title-notes.html
+// They seems to work fine on Linux, but they only change the "ps"
+// listings, not the top listings.  I don't know why yet.
+
+/* Globals */
+//extern char **Argv = ((void *)0);
+//extern char *__progname, *__progname_full;
+//extern char *LastArgv = ((void *)0);
+
+/* Prototypes */
+extern void set_proc_title(char *fmt,...);
+extern void init_set_proc_title(int argc, char *argv[], char *envp[]);
+
+// New stuff defined by Xastir project:
+extern int my_argc;
+extern void *my_argv;
+extern void *my_envp;
+//////////////////////////////////////////////////////////////////////
+
+
 
 extern int skip_dupe_checking;
 extern int serial_char_pacing;  // Inter-character delay in ms.
