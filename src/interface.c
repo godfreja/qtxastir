@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.70 2003/02/20 09:51:34 we7u Exp $
+ * $Id: interface.c,v 1.71 2003/02/24 19:25:15 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2586,7 +2586,7 @@ void port_read(int port) {
             FD_ZERO(&rd);
             FD_SET(port_data[port].channel, &rd);
             tmv.tv_sec = 0;
-            tmv.tv_usec = 100;
+            tmv.tv_usec = 100000;
             (void)select(0,&rd,NULL,NULL,&tmv);
         }
     }
@@ -2701,7 +2701,7 @@ void port_write(int port) {
             FD_ZERO(&wd);
             FD_SET(port_data[port].channel, &wd);
             tmv.tv_sec = 0;
-            tmv.tv_usec = 100;  // Delay 100us
+            tmv.tv_usec = 100000;  // Delay 100ms
             (void)select(0,NULL,&wd,NULL,&tmv);
         }
     }
