@@ -1,5 +1,5 @@
 /*
- * $Id: callpass.c,v 1.3 2004/01/26 16:12:50 we7u Exp $
+ * $Id: callpass.c,v 1.4 2004/07/30 00:02:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -65,7 +65,11 @@ int main(int argc, char *argv[]) {
     char temp[100];
 
     if (argc>1) {
-        strcpy(temp,argv[1]);
+
+        strncpy(temp,argv[1],100);
+
+        temp[99] = '\0';    // Forced termination
+
         if (strlen(temp)>0)
             printf("Passcode for %s is %d\n",temp,doHash(temp));
 
