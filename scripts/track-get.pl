@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $Id: track-get.pl,v 1.1 2002/05/08 19:04:54 we7u Exp $
+# $Id: track-get.pl,v 1.2 2002/05/08 19:48:42 we7u Exp $
 
 # This script will ask for an item designator, then create a file
 # with that name + ".log" in the ~/.xastir/logs directory.  The
@@ -140,5 +140,6 @@ while ($gps->records)
 
 printf("\n\nThe data has been saved in: ($filename)\n");
 printf("Please open this logfile with Xastir to display the track\n");
+printf("!!!Remember to set your GPS back to NMEA mode for APRS!!!\n");
 
 
