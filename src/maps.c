@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.403 2004/03/18 23:14:53 we7u Exp $
+ * $Id: maps.c,v 1.404 2004/05/18 19:54:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3454,6 +3454,12 @@ static void map_search (Widget w, char *dir, alert_entry * alert, int *alert_cou
         if (alert->filename[0] == '\0') {   // No filename in struct, so will have
                                             // to search for the shape in the files.
             switch (alert->title[3]) {
+                case 'F':   // 'F' in 4th char means fire alert
+                    // Use fire alert file fz_??????
+                    //fprintf(stderr,"%c:Fire Alert file\n",alert->title[3]);
+                    strncpy (alert->filename, "fz", sizeof (alert->filename));
+                    break;
+ 
                 case 'C':   // 'C' in 4th char means county
                     // Use County file c_??????
                     //fprintf(stderr,"%c:County file\n",alert->title[3]);
