@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.499 2004/07/23 16:31:54 we7u Exp $
+ * $Id: main.c,v 1.500 2004/07/24 22:49:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10594,7 +10594,9 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 //fprintf(stderr,"server data: %s\n", line);
 
                         packet_data_add(langcode("WPUPDPD006"),(char *)line);
-                        decode_ax25_line((char *)line,'I',0, 1);
+
+                        // Set port to -1 here
+                        decode_ax25_line((char *)line,'I',-1, 1);
 
                         max++;  // Count the number of packets processed
                     }

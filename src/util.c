@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.107 2004/07/13 14:54:16 we7u Exp $
+ * $Id: util.c,v 1.108 2004/07/24 22:49:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2467,9 +2467,9 @@ void reload_tactical_calls(void) {
                     xastir_snprintf(line2,sizeof(line2),"%s>APRS:ID",line);
 
                     // Decode this packet.  This will put it into
-                    // our station database.  Port is set to -1
+                    // our station database.  Port is set to -2
                     // here.
-                    decode_ax25_line( line2, DATA_VIA_LOCAL, -1, 1);
+                    decode_ax25_line( line2, DATA_VIA_LOCAL, -2, 1);
 
                     // Add the tactical callsign to the recently
                     // added station.  We must search for it first.
