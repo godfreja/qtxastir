@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.13 2003/08/14 21:59:36 we7u Exp $
+ * $Id: map_shp.c,v 1.14 2003/08/14 22:02:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1669,7 +1669,7 @@ void draw_shapefile_map (Widget w,
                             switch (temp[1]) {
                                 case '0':   // H0? = Water feature/shoreline
                                     // Skip the vector if we're above this zoom level
-                                    if (map_color_levels && scale_y > 16384)
+                                    if (map_color_levels && scale_y > 4096)
                                         skip_it++;
                                     if (map_color_levels && scale_y > 16)
                                         skip_label++;
