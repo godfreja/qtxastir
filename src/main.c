@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.248 2003/03/12 19:23:02 we7u Exp $
+ * $Id: main.c,v 1.249 2003/03/15 05:59:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7408,7 +7408,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
             // have new maps to draw because of it.  This function
             // can cause a complete redraw of the maps.
             check_for_new_gps_map();
-#endif HAVE_GPSMAN
+#endif  // HAVE_GPSMAN
 
             /* check on Redraw requests */
             if (         ( (redraw_on_new_data > 1)
