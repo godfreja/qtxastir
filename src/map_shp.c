@@ -1,9 +1,9 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.42 2003/12/20 00:28:44 we7u Exp $
+ * $Id: map_shp.c,v 1.43 2004/01/26 16:18:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2003  The Xastir Group
+ * Copyright (C) 2000-2004  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -23,7 +23,7 @@
  *
  *
  * Please see separate copyright notice attached to the
- * SHPRingDir_2d() function in this file.
+ * shape_ring_direction() function in this file.
  *
  * DBFAWK TODO:
  *  - reload .dbfawk's when they've changed (or maps are reindexed)

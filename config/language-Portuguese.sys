@@ -1,4 +1,7 @@
-# $Id: language-Portuguese.sys,v 1.114 2004/01/16 18:14:02 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.115 2004/01/26 16:12:51 we7u Exp $
+#
+# Copyright (C) 2000-2004  The Xastir Group
+#
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental

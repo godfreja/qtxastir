@@ -1,4 +1,7 @@
-# $Id: Makefile.am,v 1.13 2003/11/29 06:34:20 we7u Exp $
+# $Id: Makefile.am,v 1.14 2004/01/26 16:18:19 we7u Exp $
+#
+# Copyright (C) 2000-2004  The Xastir Group
+#
 
 bin_PROGRAMS = xastir
 noinst_PROGRAMS = testawk x_spider

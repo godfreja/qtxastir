@@ -1,8 +1,8 @@
 /*
- * $Id: x_spider.h,v 1.2 2003/11/29 08:10:43 we7u Exp $
+ * $Id: x_spider.h,v 1.3 2004/01/26 16:18:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2003  The Xastir Group
+ * Copyright (C) 2003-2004  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

@@ -1,4 +1,6 @@
 /*
+   Portions Copyright (C) 2002-2004  The Xastir Group
+
    The datum conversion code here and in datum.c is from MacGPS 45.
 
    According to the Read_Me file in the source archive of that program,
@@ -23,7 +25,7 @@
    Thanks Chuck!
 
    N7TAP
-   $Id: datum.h,v 1.8 2003/10/31 23:35:24 we7u Exp $
+   $Id: datum.h,v 1.9 2004/01/26 16:18:19 we7u Exp $
 */
 
 #define FROM_WGS_84 1

@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.76 2003/10/02 17:08:28 we7u Exp $
+$Id: README.win32,v 1.77 2004/01/26 16:11:48 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -916,5 +916,5 @@ Turn up the volume on your PC speakers and enjoy the noise xastir makes."
 
 
 
-Copyright (C) 2003 The Xastir Group
+Copyright (C) 2003-2004 The Xastir Group
 

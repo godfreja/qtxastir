@@ -1,8 +1,9 @@
 /******************************************************************
  *
- * $Id: db2APRS.c,v 1.1 2004/01/16 18:58:39 we7u Exp $
+ * $Id: db2APRS.c,v 1.2 2004/01/26 16:18:25 we7u Exp $
  *
  * Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
+ * Portions Copyright (C) 2004  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

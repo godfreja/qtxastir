@@ -1,4 +1,7 @@
-# $Id: tnc-startup.sys,v 1.5 2003/01/16 17:56:26 we7u Exp $
+# $Id: tnc-startup.sys,v 1.6 2004/01/26 16:12:51 we7u Exp $
+#
+# Copyright (C) 2000-2004  The Xastir Group
+#
 # This is the TNC Startup file for Kantronics TNC.
 # lines that begin with a pound sign are comments.
 

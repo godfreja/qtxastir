@@ -1,4 +1,7 @@
-# $Id: Makefile.am,v 1.2 2003/02/18 20:49:05 kg4ijb Exp $
+# $Id: Makefile.am,v 1.3 2004/01/26 16:12:50 we7u Exp $
+
+# Copyright (C) 2000-2004  The Xastir Group
+
 
 MAINTAINERCLEANFILES=Makefile.in
 

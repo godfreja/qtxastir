@@ -1,9 +1,9 @@
 /*
- * $Id: gps.h,v 1.5 2003/03/18 22:28:05 we7u Exp $
+ * $Id: gps.h,v 1.6 2004/01/26 16:18:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2003  The Xastir Group
+ * Copyright (C) 2000-2004  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

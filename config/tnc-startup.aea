@@ -1,4 +1,7 @@
-# $Id: tnc-startup.aea,v 1.4 2003/11/06 06:54:16 jtwilley Exp $
+# $Id: tnc-startup.aea,v 1.5 2004/01/26 16:12:51 we7u Exp $
+#
+# Copyright (C) 2000-2004  The Xastir Group
+#
 # This is the TNC Startup file for AEA TNC's.
 # lines that begin with a pound sign are comments.
 #

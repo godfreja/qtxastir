@@ -1,6 +1,8 @@
 #!/bin/sh
 #
-# $Id: xastir-fixcfg.sh,v 1.3 2003/07/07 18:09:34 we7u Exp $
+# $Id: xastir-fixcfg.sh,v 1.4 2004/01/26 16:14:21 we7u Exp $
+#
+# Copyright (C) 2003-2004  The Xastir Group
 #
 # fix up a user's .xastir/config/xastir.cnf to rewrite /usr/local/xastir
 # to /usr/local/share/xastir.  NOTE: This only works when -prefix=/usr/local!

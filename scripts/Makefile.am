@@ -1,4 +1,7 @@
-# $Id: Makefile.am,v 1.9 2003/07/03 17:32:03 n2ygk Exp $
+# $Id: Makefile.am,v 1.10 2004/01/26 16:14:21 we7u Exp $
+#
+# Copyright (C) 2000-2004  The Xastir Group
+#
 
 pkglib_SCRIPTS = \
     Coordinate.pm \

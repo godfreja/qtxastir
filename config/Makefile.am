@@ -1,4 +1,8 @@
-# $Id: Makefile.am,v 1.10 2003/11/10 14:56:38 n2ygk Exp $
+# $Id: Makefile.am,v 1.11 2004/01/26 16:12:51 we7u Exp $
+#
+# Copyright (C) 2000-2004  The Xastir Group
+#
+
 configdir = ${pkgdatadir}/config
 
 EXTRA_DIST = \
