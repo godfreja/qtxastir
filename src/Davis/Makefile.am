@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.1 2004/02/04 20:18:24 we7u Exp $
+# $Id: Makefile.am,v 1.2 2004/06/01 22:49:23 we7u Exp $
 #
 # Copyright (C) 2004  The Xastir Group
 #
@@ -14,11 +14,13 @@ SUBDIRS = src
 # Remove this file here (it is created via configure), not from within intl.
 # DISTCLEANFILES =
 
-EXTRA_DIST = config.guess config-ml.in config.sub install-sh \
-        missing mkinstalldirs README bootstrap.sh
+EXTRA_DIST = aclocal.m4 AUTHORS bootstrap.sh ChangeLog config.h.in \
+        config.status configure.ac COPYING INSTALL NEWS \
+        README bootstrap.sh
 
-MAINTAINERCLEANFILES = configure aclocal.m4 Makefile.in Makefile \
-        config.guess config.sub install-sh missing mkinstalldirs
+MAINTAINERCLEANFILES = configure config.status aclocal.m4 \
+        Makefile.in Makefile config.guess config.sub install-sh \
+        missing mkinstalldirs
 
 docdir=${pkgdatadir}/doc
 #doc_DATA=AUTHORS FAQ ChangeLog LICENSE README README.CVS \
