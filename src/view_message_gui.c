@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.25 2004/12/23 07:54:49 we7u Exp $
+ * $Id: view_message_gui.c,v 1.26 2004/12/28 20:29:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -69,7 +69,7 @@ Widget vm_dist_data = NULL;
 static xastir_mutex All_messages_dialog_lock;
 
 int vm_range;
-int view_message_limit;
+int view_message_limit = 10000;
 
 
 

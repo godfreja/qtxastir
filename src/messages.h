@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.13 2004/12/26 09:10:11 we7u Exp $
+ * $Id: messages.h,v 1.14 2004/12/28 20:29:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -95,6 +95,7 @@ extern void send_queued(char *to);
 /* from messages_gui.c */
 extern xastir_mutex send_message_dialog_lock;
 extern void messages_gui_init(void);
+extern void get_send_message_path(char *callsign, char *path, int path_size);
 extern void Send_message(Widget w, XtPointer clientData, XtPointer callData);
 extern void Clear_messages(Widget w, XtPointer clientData, XtPointer callData);
 extern void clear_outgoing_messages_to(char *callsign);
