@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.123 2004/10/29 20:00:52 we7u Exp $
+ * $Id: util.c,v 1.124 2004/11/01 17:11:48 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3925,7 +3925,11 @@ int check_unproto_path ( char *data ) {
     bad_path = i = have_relay = have_wide = have_widen = have_trace = have_tracen = is_wide = 0;
 
     // Remember to free() tmpdata before we return
+#ifdef HAVE_STRNDUP
     tmpdata = (char *)strndup(data, strlen(data));
+#else
+    tmpdata = (char *)strdup(data);
+#endif
     (void)to_upper(tmpdata);
     split_string(tmpdata, ViaCalls, 10);
 

@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.100 2004/10/03 19:46:49 we7u Exp $
+# $Id: configure.ac,v 1.101 2004/11/01 17:11:45 tvrusso Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -187,7 +187,8 @@ AC_CHECK_FUNCS([putenv select setenv setlocale settimeofday signal])
 AC_CHECK_FUNCS([snprintf socket sqrt stpcpy strcasecmp strchr strdup])
 AC_CHECK_FUNCS([strerror strncasecmp strpbrk strptime strrchr strstr])
 AC_CHECK_FUNCS([strtol strtoul tzset vsnprintf])
-
+# this is a GNU extension and not present on all systems.
+AC_CHECK_FUNCS([strndup])
  
 # Check for intl library (Needed for Cygwin) 
 # 
