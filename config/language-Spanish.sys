@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.110 2003/06/18 18:40:59 we7u Exp $
+# $Id: language-Spanish.sys,v 1.111 2003/07/15 20:46:59 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -889,6 +889,9 @@ POPEM00031|Cambiado a símbolo WX '/_', otras opciones:  '\_'  '/W'  y  '\W'||
 POPEM00032|Aviso: Usando Símbolo del National Weather Service!||
 POPEM00033|No GPS Data!||
 POPEM00034|Disactivando TX de Mi Posición Hasta ver Data de GPS Válido!||
+POPEM00035|Warning||
+POPEM00036|Notice||
+POPEM00037|HSP interface present: GPS timing has been increased||
 #
 # Salto de Locación
 JMLPO00001|Localización de Mapa||

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.310 2003/07/15 20:23:09 we7u Exp $
+ * $Id: main.c,v 1.311 2003/07/15 20:46:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7888,8 +7888,17 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                 port_write_string(i, tmp);
                                 break;
 
-                            case DEVICE_SERIAL_GPS:
                             case DEVICE_SERIAL_TNC_HSP_GPS:
+                                // Check for GPS timing being too
+                                // short for HSP interfaces.  If to
+                                // short, we'll never receive any
+                                // TNC data, just GPS data.
+                                if (gps_time < 3) {
+                                    gps_time = 3;
+                                    popup_message(langcode("POPEM00036"),
+                                        langcode("POPEM00037"));
+                                }
+                            case DEVICE_SERIAL_GPS:
                             case DEVICE_NET_GPSD:
 
 // For each of these we wish to dump their queue to be processed at

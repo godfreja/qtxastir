@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.100 2003/06/18 18:40:59 we7u Exp $
+# $Id: language-French.sys,v 1.101 2003/07/15 20:46:58 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -885,6 +885,9 @@ POPEM00031|Changé au symbole météo '/_', autres alternatives:  '\_'  '/W'  et  '
 POPEM00032|Attention: utilise symbole du "National Weather Service"!||
 POPEM00033|Pas de données GPS!||
 POPEM00034|TX de ma position désactivé jusqu'a réception de bonnes données GPS!||#'
+POPEM00035|Warning||
+POPEM00036|Notice||
+POPEM00037|HSP interface present: GPS timing has been increased||
 #
 # Jump Location
 JMLPO00001|Lieu de la carte||

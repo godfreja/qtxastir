@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.96 2003/06/18 18:40:59 we7u Exp $
+# $Id: language-English.sys,v 1.97 2003/07/15 20:46:58 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -887,6 +887,9 @@ POPEM00031|Changed to WX symbol '/_', other options:  '\_'  '/W'  and  '\W'||
 POPEM00032|Warning: Using National Weather Service Symbol!||
 POPEM00033|No GPS Data!||
 POPEM00034|Disabling My Position TX Until Valid GPS Data!||
+POPEM00035|Warning||
+POPEM00036|Notice||
+POPEM00037|HSP interface present: GPS timing has been increased||
 #
 # Jump Location 
 JMLPO00001|Map Display Bookmarks||

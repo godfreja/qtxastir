@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.104 2003/06/18 18:40:59 we7u Exp $
+# $Id: language-Dutch.sys,v 1.105 2003/07/15 20:46:57 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -896,6 +896,9 @@ POPEM00031|Veranderd in WX symbool '/_', andere opties:  '\_'  '/W'  and  '\W'||
 POPEM00032|Waarschuwing: Gebruik Nationaal Weer Service Symbool!||
 POPEM00033|Geen GPS Gegevens!||
 POPEM00034|Zet Mijn Positie TX uit totdat geldige GPS gegevens beschikbaar zijn!||
+POPEM00035|Warning||
+POPEM00036|Notice||
+POPEM00037|HSP interface present: GPS timing has been increased||
 #
 # Jump Location
 JMLPO00001|Kaart Lokatie||
