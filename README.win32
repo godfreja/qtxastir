@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.84 2004/04/02 22:16:51 we7u Exp $
+$Id: README.win32,v 1.85 2004/04/05 20:14:57 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -149,6 +149,9 @@ required:
 [ ] XFree86-prog:      Headers
 [ ] XFree86-xwinclip:  Windows clipboard integration for X11
 [ ] zip
+
+We've had reports that XFree86-xwinclip is not available anymore.
+It's not critical.
 
 Clicking on the small circle with the two arrows will run you
 through the various select/de-select options for each package.
