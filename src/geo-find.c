@@ -1,5 +1,5 @@
 
-// $Id: geo-find.c,v 1.2 2004/04/01 17:11:46 we7u Exp $
+// $Id: geo-find.c,v 1.3 2004/07/30 03:57:57 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -426,9 +426,9 @@ int geo_find(
 	s.address = s.range_count = 0;
 	if (NULL != (s.out = out)) {
 		out->zip_code = 0;
-		strcpy(out->street_name,"");
-		strcpy(out->city_name,"");
-		strcpy(out->state_name,"");
+        out->street_name[0] = '\0';
+        out->city_name[0] = '\0';
+        out->state_name[0] = '\0';
 	}
 	return get_address(&s);
 }

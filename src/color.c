@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: color.c,v 1.9 2004/06/30 20:36:52 rzg Exp $
+ * $Id: color.c,v 1.10 2004/07/30 03:57:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -71,7 +71,12 @@ int load_color_file(void) {
                         }
                     }
                     if (ok) {
-                        strcpy(color_choice[colors_loaded].colorname,colorname);
+                       
+                        xastir_snprintf(color_choice[colors_loaded].colorname,
+                            MAX_COLORNAME,
+                            "%s",
+                            colorname);
+
 // Do we really want to assign to unsigned short int's here?
                         color_choice[colors_loaded].color.red=(unsigned short)(r*257);
                         color_choice[colors_loaded].color.blue=(unsigned short)(b*257);

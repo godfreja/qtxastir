@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.7 2004/07/01 03:57:22 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.8 2004/07/30 03:57:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -65,10 +65,10 @@ int show_destination_mark = 0;
 void geocoder_gui_init(void)
 {
     init_critical_section( &geocoder_place_dialog_lock );
-    strcpy(geocoder_zip_name,"");
-    strcpy(geocoder_state_name,"");
-    strcpy(geocoder_locality_name,"");
-    strcpy(geocoder_address_name,"");
+    geocoder_zip_name[0] = '\0';
+    geocoder_state_name[0] = '\0';
+    geocoder_locality_name[0] = '\0';
+    geocoder_address_name[0] = '\0';
 }
 
 

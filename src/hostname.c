@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.10 2004/05/28 19:03:22 we7u Exp $
+ * $Id: hostname.c,v 1.11 2004/07/30 03:57:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -105,7 +105,7 @@ char *host_lookup(char *host, char *ip, int time) {
     char ip_addr[400];
     char temp[40];
     int fp[2];
-    char buf[401];
+    char buf[400];
     int ip_found;
     int first;
     int tm;
@@ -159,7 +159,7 @@ char *host_lookup(char *host, char *ip, int time) {
                     (void)signal(SIGALRM, previous_loc);
 
                     // Return net connection time out
-                    strcpy(ip_addr,"TIMEOUT");
+                    xastir_snprintf(ip_addr, 8, "TIMEOUT");
                     (void)write(fp[1],ip_addr,strlen(ip_addr));
 
                     if (debug_level & 1024)
@@ -224,7 +224,7 @@ char *host_lookup(char *host, char *ip, int time) {
                     }
                     if (ip_found==0) {
                         /* Host not found */
-                        strcpy(ip_addr,"NOIP");
+                        xastir_snprintf(ip_addr, 5, "NOIP");
 
                         if (debug_level & 1024)
                             fprintf(stderr,"Host NO IP");
@@ -233,7 +233,7 @@ char *host_lookup(char *host, char *ip, int time) {
                 }
                 else {
                     /* Host not found */
-                    strcpy(ip_addr,"NOHOST");
+                    xastir_snprintf(ip_addr, 7, "NOHOST");
 
                     if (debug_level & 1024)
                         fprintf(stderr,"NO HOST\n");
@@ -280,7 +280,7 @@ char *host_lookup(char *host, char *ip, int time) {
                     }
                 }
                 (void)read(fp[0],buf,sizeof(buf)-1);
-                strcpy(ip,buf);
+                strncpy(ip, buf, sizeof(buf));
 
                 if (debug_level & 1024)
                     fprintf(stderr,"Parent closing read end of pipe\n");

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.23 2004/07/15 21:32:43 we7u Exp $
+ * $Id: dbfawk.c,v 1.24 2004/07/30 03:57:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -57,6 +57,7 @@
 #include <dirent.h>
 #include "awk.h"
 #include "dbfawk.h"
+#include "snprintf.h"
 
 
 
@@ -216,9 +217,13 @@ dbfawk_sig_info *dbfawk_load_sigs(const char *dir, /* directory path */
 
                 i = i->next;
             }
-            strcpy(path,dir);
-            strcat(path,"/");
-            strcat(path,e->d_name);
+
+            xastir_snprintf(path,
+                len+strlen(dir)+2,
+                "%s/%s",
+                dir,
+                e->d_name);
+
             i->prog = awk_load_program_file(path);
 
             if (awk_compile_program(symtbl,i->prog) < 0) {
@@ -298,11 +303,18 @@ dbfawk_sig_info *dbfawk_find_sig(dbfawk_sig_info *Dbf_sigs,
             return NULL;
         }
 
-        strcpy(perfile,file);
+        xastir_snprintf(perfile,
+            strlen(file)+7,
+            "%s",
+            file);
+
         dot = strrchr(perfile,'.');
+
         if (dot)
             *dot = '\0';
-        strcat(perfile,".dbfawk");
+
+        strncat(perfile, ".dbfawk", 8);
+
         info = calloc(1,sizeof(*info));
  
         if (!info) {

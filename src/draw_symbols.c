@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.53 2004/07/08 21:48:13 we7u Exp $
+ * $Id: draw_symbols.c,v 1.54 2004/07/30 03:57:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2393,14 +2393,6 @@ void Select_symbol_change_data(Widget widget, XtPointer clientData, XtPointer ca
         symbol_change_requested_from = 0;
     }
 
-/*
-    // Small memory leak in below statement:
-    //strcpy(altnet_call, XmTextGetString(altnet_text));
-    // Change to:
-    temp = XmTextGetString(altnet_text);
-    strcpy(altnet_call,temp);
-    XtFree(temp);
-*/
     Select_symbol_destroy_shell(widget,select_symbol_dialog,callData);
 }
 
