@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.129 2002/08/22 00:19:34 we7u Exp $
+ * $Id: main.c,v 1.130 2002/08/29 21:01:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -18632,13 +18632,13 @@ int main(int argc, char *argv[], char *envp[]) {
     if (ag_error){
         printf("\nXastir Command line Options\n\n");
         printf("-v level      Set the debug level\n\n");
-        printf("-lEnglish     Set the language to English\n");
         printf("-lDutch       Set the language to Dutch\n");
+        printf("-lEnglish     Set the language to English\n");
         printf("-lFrench      Set the language to French\n");
         printf("-lGerman      Set the language to German\n");
-        printf("-lSpanish     Set the language to Spanish\n");
         printf("-lItalian     Set the language to Italian\n");
         printf("-lPortuguese  Set the language to Portuguese\n");
+        printf("-lSpanish     Set the language to Spanish\n");
         printf("-i            Install private Colormap\n");
         printf("\n");
         exit(0);
