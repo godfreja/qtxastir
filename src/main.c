@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.68 2002/05/07 18:40:19 we7u Exp $
+ * $Id: main.c,v 1.69 2002/05/08 19:38:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,6 +40,7 @@
 #include <pwd.h>
 #include <pthread.h>
 #include <locale.h>
+#include <strings.h>
 
 #ifdef HAVE_IMAGEMAGICK
 #include <time.h>
@@ -9680,7 +9681,7 @@ int Setup_object_data(char *line, int line_length) {
     altitude[0] = '\0'; // Start with empty string
     if (strlen(line) != 0) {   // Altitude was entered (we only handle feet currently)
         // Need to check for all digits, and 1 to 6 digits
-        if (isdigit(line[0])) {
+        if (isdigit((int)line[0])) {
             temp2 = atoi(line);
             if ( (temp2 >= 0) && (temp2 <= 999999) ) {
                 xastir_snprintf(altitude, sizeof(altitude), "/A=%06ld", temp2);
@@ -9985,7 +9986,7 @@ int Setup_item_data(char *line, int line_length) {
     altitude[0] = '\0'; // Start with empty string
     if (strlen(line) != 0) {   // Altitude was entered (we only handle feet currently)
         // Need to check for all digits, and 1 to 6 digits
-        if (isdigit(line[0])) {
+        if (isdigit((int)line[0])) {
             temp2 = atoi(line);
             if ((temp2 >= 0) && (temp2 <= 999999)) {
                 xastir_snprintf(altitude, sizeof(altitude), "/A=%06ld",temp2);
