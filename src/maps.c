@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.310 2003/07/23 19:17:08 we7u Exp $
+ * $Id: maps.c,v 1.311 2003/07/23 21:34:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4326,8 +4326,9 @@ void load_auto_maps (Widget w, char *dir) {
 
 
     HandlePendingEvents(app_context);
-    if (interrupt_drawing_now)
+    if (interrupt_drawing_now) {
         return;
+    }
 
     // Skip the sorting of the maps if we don't need to do it
     if (re_sort_maps) {
@@ -4379,11 +4380,17 @@ void load_auto_maps (Widget w, char *dir) {
     while  (current != NULL) {
 
     HandlePendingEvents(app_context);
-    if (interrupt_drawing_now)
+    if (interrupt_drawing_now) {
+        // Update to screen
+        (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
         return;
+    }
 
-    if (disable_all_maps)
+    if (disable_all_maps) {
+        // Update to screen
+        (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
         return;
+    }
 
         // Debug
 //        fprintf(stderr,"Drawing level:%05d, file:%s\n",
@@ -4433,8 +4440,11 @@ void load_maps (Widget w) {
         fprintf(stderr,"Load maps start\n");
 
     HandlePendingEvents(app_context);
-    if (interrupt_drawing_now)
+    if (interrupt_drawing_now) {
+        // Update to screen
+        (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
         return;
+    }
 
     // Skip the sorting of the maps if we don't need to do it
     if (re_sort_maps) {
@@ -4579,11 +4589,16 @@ void load_maps (Widget w) {
         HandlePendingEvents(app_context);
         if (interrupt_drawing_now) {
             statusline(" ",1);      // delete status line
+            // Update to screen
+            (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
             return;
         }
 
-        if (disable_all_maps)
+        if (disable_all_maps) {
+            // Update to screen
+            (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
             return;
+        }
  
         // Debug
 //        fprintf(stderr,"Drawing level:%05d, file:%s\n",

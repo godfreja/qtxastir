@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.7 2003/07/23 20:29:46 we7u Exp $
+ * $Id: map_shp.c,v 1.8 2003/07/23 21:34:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1314,6 +1314,8 @@ void draw_shapefile_map (Widget w,
             free(panWidth);
         DBFClose( hDBF );   // Clean up open file descriptors
         SHPClose( hSHP );
+        // Update to screen
+        (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
         return;
     }
 
