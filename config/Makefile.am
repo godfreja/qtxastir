@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.14 2004/06/11 19:45:20 we7u Exp $
+# $Id: Makefile.am,v 1.15 2004/06/14 19:53:49 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -36,7 +36,8 @@ EXTRA_DIST = \
     tnc-startup.pico \
     tnc-startup.aea \
     tnc-startup.d700 \
-    tnc-stop.d700
+    tnc-stop.d700 \
+    tnc-stop.thd7
 
 config_DATA = ${EXTRA_DIST}
 
