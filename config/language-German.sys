@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.63 2002/12/19 06:03:52 we7u Exp $
+# $Id: language-German.sys,v 1.64 2002/12/19 20:36:08 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -110,7 +110,8 @@ PULDNMMC02|Vektor|V|
 PULDNMMC03|250k Topo|2|
 PULDNMMC04|100k Topo|1|
 PULDNMMC05|24k Topo|4|
-PULDNMMC06|Expand Directories||
+PULDNMMC06|Expand Dirs|||
+PULDNMMC07|Maps Selected:||
 #
 # Karten - Hintergrundfarbe
 PULDNMBC01|Grau||

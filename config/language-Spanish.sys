@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.65 2002/12/19 06:03:52 we7u Exp $
+# $Id: language-Spanish.sys,v 1.66 2002/12/19 20:36:08 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -105,7 +105,8 @@ PULDNMMC02|Vectores|V|
 PULDNMMC03|250k Topo|2|
 PULDNMMC04|100k Topo|1|
 PULDNMMC05|24k Topo|4|
-PULDNMMC06|Expand Directories||
+PULDNMMC06|Expand Dirs|||
+PULDNMMC07|Maps Selected:||
 #
 # Colores de fondo del mapa
 PULDNMBC01|Gris||
