@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.6 2002/03/06 09:29:03 we7u Exp $
+ * $Id: interface.c,v 1.7 2002/03/06 09:44:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3676,6 +3676,9 @@ int tnc_get_data_type(char *buf, int port) {
                 }
             }
         }
+    }
+    else {  // Must be APRS data
+        type = 0;
     }
     return(type);
 }
