@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.81 2004/09/09 03:43:05 we7u Exp $
+ * $Id: alert.c,v 1.82 2004/09/10 15:27:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -871,7 +871,7 @@ int alert_active(alert_entry *alert, alert_match_level match_level) {
     if (strlen(alert->title) == 0) {
         if (debug_level & 2)
             fprintf(stderr,"alert_active:NULL\n");
-        return(NULL);
+        return(0);
     }
  
     if (debug_level & 2)
