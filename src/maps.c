@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.194 2003/01/12 16:22:45 we7u Exp $
+ * $Id: maps.c,v 1.195 2003/01/14 17:19:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5640,8 +5640,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm, int destination_pixm
     // don't kill Xastir in the ReadImage routine.
     f = fopen (image_info->filename, "r");
     if (f == NULL) {
-        if (debug_level & 16)
-            printf("File could not be read\n");
+        printf("File %s could not be read\n",image_info->filename);
         return;
     }
     (void)fclose (f);
