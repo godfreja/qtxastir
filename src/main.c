@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.544 2004/11/17 18:28:34 we7u Exp $
+ * $Id: main.c,v 1.545 2004/11/30 18:43:43 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8050,6 +8050,7 @@ void create_gc(Widget w) {
         return;
 
     // Allocate colors
+    // Note that the names here are the ones given in xastir.rgb
     colors[0x00] = (int)GetPixelByName(w,"DarkGreen");  // was darkgreen (same)
     colors[0x01] = (int)GetPixelByName(w,"purple");
     colors[0x02] = (int)GetPixelByName(w,"DarkGreen");  // was darkgreen (same)
@@ -8134,6 +8135,15 @@ void create_gc(Widget w) {
     colors[0x67] = (int)GetPixelByName(w,"plum2");
     colors[0x68] = (int)GetPixelByName(w,"MediumBlue"); // was blue3 (the same!)
     colors[0x69] = (int)GetPixelByName(w,"gray86");
+
+    // These colors added to make it possible to color local shapefile tiger
+    //  maps similar to on-line ones.
+    colors[0x70] = (int)GetPixelByName(w,"RosyBrown2");
+    colors[0x71] = (int)GetPixelByName(w,"gray81");
+    colors[0x72] = (int)GetPixelByName(w,"tgr_park_1");
+    colors[0x73] = (int)GetPixelByName(w,"tgr_city_1");
+    colors[0x74] = (int)GetPixelByName(w,"tgr_forest_1");
+    colors[0x75] = (int)GetPixelByName(w,"tgr_water_1");
 
     // tracking trail colors
     // set color for your own station with  #define MY_TRAIL_COLOR  in db.c

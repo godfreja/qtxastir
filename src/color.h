@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: color.h,v 1.7 2004/07/30 03:57:57 we7u Exp $
+ * $Id: color.h,v 1.8 2004/11/30 18:43:32 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25,7 +25,7 @@
 #ifndef XASTIR_COLOR_H
 #define XASTIR_COLOR_H
 
-#define MAX_COLORS 75
+#define MAX_COLORS 81
 
 #define MAX_COLORNAME 40
 typedef struct {
