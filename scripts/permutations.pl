@@ -2,11 +2,11 @@
 
 
 #
-# Copyright (C) 2002 Paul Lutt, KE7XT & Curt Mills, WE7U.
+# Copyright (C) 2002-2003 Paul Lutt, KE7XT & Curt Mills, WE7U.
 # Released to the public domain.
 #
 #
-# $Id: permutations.pl,v 1.7 2002/08/26 21:52:03 we7u Exp $
+# $Id: permutations.pl,v 1.8 2003/01/06 22:42:16 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
