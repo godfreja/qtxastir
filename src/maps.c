@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.29 2002/04/18 22:28:12 we7u Exp $
+ * $Id: maps.c,v 1.30 2002/04/18 22:46:35 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7823,7 +7823,7 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
                         switch (nfile.st_mode & S_IFMT) {
                             case (S_IFDIR):     // It's a directory, skip it
                                 break;
-                            case (S_IFLNK):     // It's a symbolic link
+
                             case (S_IFREG):     // It's a file, check it
                                 /*printf("FILE %s\n",dl->d_name); */
                                 // Here we look for a match for the
@@ -7901,7 +7901,7 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
                                 map_search(w, fullpath, alert, alert_count, warn, destination_pixmap);
                             }
                             break;
-                        case (S_IFLNK):     // It's a symbolic link
+
                         case (S_IFREG):     // It's a file, draw the map
                             /*printf("FILE %s\n",dl->d_name); */
 

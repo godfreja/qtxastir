@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.59 2002/04/18 22:28:12 we7u Exp $
+ * $Id: main.c,v 1.60 2002/04/18 22:46:35 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6903,7 +6903,6 @@ void dir_sort(char *dir) {
 
                         break;
 
-                    case(S_IFLNK):  // We found a symbolic link
                     case(S_IFREG):  // We found a regular file
                         /*printf("FILE %d<%s>\n",*item,fullpath+my_size);*/
 
