@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.66 2002/12/20 20:59:15 we7u Exp $
+# $Id: language-Italian.sys,v 1.67 2003/01/05 19:54:57 kd6zwr Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -905,4 +905,8 @@ SMARTB011|Enable SmartBeaconing(tm)||
 GAMMA001|Adjust Gamma Correction||
 GAMMA002|Gamma Correction||
 #
+#
+#
+# Distance/Bearing on status line
+PULDNDB001|Dist/Bearing Status||
 #

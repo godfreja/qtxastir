@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.67 2002/12/20 20:59:15 we7u Exp $
+# $Id: language-Spanish.sys,v 1.68 2003/01/05 19:54:57 kd6zwr Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -905,4 +905,8 @@ SMARTB011|Enable SmartBeaconing(tm)||
 GAMMA001|Adjust Gamma Correction||
 GAMMA002|Gamma Correction||
 #
+#
+#
+# Distance/Bearing on status line
+PULDNDB001|Dist/Bearing Status||
 #

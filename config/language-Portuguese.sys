@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.63 2002/12/20 20:59:15 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.64 2003/01/05 19:54:57 kd6zwr Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -903,4 +903,8 @@ SMARTB011|Activar SmartBeaconing(tm)||
 GAMMA001|Correcção do ajuste gamma||
 GAMMA002|Correcção gamma||
 #
+#
+#
+# Distance/Bearing on status line
+PULDNDB001|Dist/Bearing Status||
 #

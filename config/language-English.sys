@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.65 2002/12/20 20:59:15 we7u Exp $
+# $Id: language-English.sys,v 1.66 2003/01/05 19:54:56 kd6zwr Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -906,4 +906,8 @@ SMARTB011|Enable SmartBeaconing(tm)||
 GAMMA001|Adjust Gamma Correction||
 GAMMA002|Gamma Correction||
 #
+#
+#
+# Distance/Bearing on status line
+PULDNDB001|Dist/Bearing Status||
 #

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.66 2002/12/20 20:59:15 we7u Exp $
+# $Id: language-Dutch.sys,v 1.67 2003/01/05 19:54:56 kd6zwr Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -909,4 +909,8 @@ SMARTB011|Schakel SmartBeaconing in(tm)||
 GAMMA001|Stel Gamma Correctie bij||
 GAMMA002|Gamma Correctie||
 #
+#
+#
+# Distance/Bearing on status line
+PULDNDB001|Dist/Bearing Status||
 #
