@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.53 2003/02/04 04:08:39 jtwilley Exp $
+ * $Id: util.c,v 1.54 2003/02/15 17:59:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -738,7 +738,7 @@ time_t time_from_aprsstring(char *aprs_time) {
     time_t timenw;
     long zone;
 
-#ifdef USING_SOLARIS
+#ifdef __solaris__
     extern time_t timezone;
 #endif
 

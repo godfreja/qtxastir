@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.12 2003/02/15 03:55:20 kg4ijb Exp $
+# $Id: configure.ac,v 1.13 2003/02/15 17:59:07 we7u Exp $
 
 
 #
@@ -115,7 +115,7 @@ then
 else 
     case "$host_os" in 
     solaris*) 
-        AC_DEFINE(XASTIR_SYSTEM, [Solaris], [Define system type]) 
+        AC_DEFINE(XASTIR_SYSTEM, "Solaris", [Define system type])
         ac_tnc_port='"/dev/cua/a"' 
         ac_gps_port='"/dev/cua/b"' 
         # the X11 headers don't automatically include prototype info 
@@ -124,7 +124,7 @@ else
         AC_MSG_RESULT(GCC on Solaris - added -Wno-return-type -DFUNCPROTO=15) 
         ;; 
     darwin*) 
-        AC_DEFINE(XASTIR_SYSTEM, [Darwin], [Define system type]) 
+        AC_DEFINE(XASTIR_SYSTEM, "Darwin", [Define system type]) 
         ac_tnc_port='"/dev/cua/a"' 
         ac_gps_port='"/dev/cua/b"' 
         # 
@@ -143,7 +143,7 @@ else
 		AC_DEFINE(SYS_LINUX, 1, Compiling for Linux OS) 
 		;; 
     freebsd*) 
-        AC_DEFINE(XASTIR_SYSTEM, [FreeBSD], [Define system type]) 
+        AC_DEFINE(XASTIR_SYSTEM, "FreeBSD", [Define system type]) 
         ac_tnc_port='"/dev/cuaa0"' 
         ac_gps_port='"/dev/cuaa1"' 
         CFLAGS="-g -O2 -Wall -pipe -pthread" 
@@ -151,7 +151,7 @@ else
         AC_DEFINE(SYS_FREEBSD, 1, Compiling for FreeBSD) 
         ;; 
     openbsd*) 
-        AC_DEFINE(XASTIR_SYSTEM, [OpenBSD], [Define system type]) 
+        AC_DEFINE(XASTIR_SYSTEM, "OpenBSD", [Define system type]) 
         ac_tnc_port='"/dev/cuaa0"' 
         ac_gps_port='"/dev/cuaa1"' 
         CFLAGS="-g -O2 -Wall -pipe -pthread" 
@@ -159,7 +159,7 @@ else
         AC_DEFINE(SYS_OPENBSD, 1, Compiling for OpenBSD) 
         ;; 
 	cygwin*) 
-        AC_DEFINE(XASTIR_SYSTEM, [CYGWIN], [Define system type]) 
+        AC_DEFINE(XASTIR_SYSTEM, "CYGWIN", [Define system type]) 
         ac_tnc_port='"com1"' 
         ac_gps_port='"com2"' 
 		AC_MSG_RESULT(none needed) 
@@ -798,8 +798,10 @@ if test "$use_imagemagick" = "yes"; then
   esac 
 
   if test "$magickold" = "yes"; then 
-    AC_MSG_WARN(*** Old ImageMagick version ($magickversion) found. ***)
-    AC_MSG_WARN(*** Please upgrade to 5.4.9 or newer for full functionality. ***) 
+    AC_MSG_WARN(*********************************************************)
+    AC_MSG_WARN(***     Old ImageMagick version ($magickversion) found.        ***)
+    AC_MSG_WARN(*** Upgrade to 5.4.9 or newer for full functionality. ***)
+    AC_MSG_WARN(*********************************************************) 
   fi 
 fi
 

@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.4 2003/02/04 04:08:37 jtwilley Exp $
+ * $Id: hostname.c,v 1.5 2003/02/15 17:59:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -48,7 +48,7 @@
 
 
 #ifndef __LCLINT__
-  #ifdef USING_SOLARIS
+  #ifdef __solaris__
     jmp_buf ret_place;
   #else
     static  sigjmp_buf ret_place;       /* Jump address if alarm */

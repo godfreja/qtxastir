@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.202 2003/02/10 11:26:25 we7u Exp $
+ * $Id: maps.c,v 1.203 2003/02/15 17:59:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,7 +35,7 @@
 #include <sys/types.h>
 #include <pwd.h>
 
-#ifdef USING_SOLARIS
+#ifdef __solaris__
 #include <strings.h>
 #endif
 
@@ -49,7 +49,7 @@
 #include <netinet/in.h>
 #include <Xm/XmAll.h>
 
-#ifdef USING_SOLARIS
+#ifdef __solaris__
   #ifndef NO_XPM
     #include <Xm/XpmI.h>
   #endif

@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.19 2003/02/05 01:02:32 we7u Exp $
+ * $Id: gps.c,v 1.20 2003/02/15 17:59:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -158,7 +158,7 @@ int decode_gps_rmc( char *data,
                                                         strcpy(cse,course);
 
 // MacOS X doesn't have the strptime call
-#ifndef USING_MAC_OS_X
+#ifndef __MacOSX__
 // Same for __CYGWIN__
 #ifndef __CYGWIN__
                                                         /* Translate date/time into time_t */
@@ -178,7 +178,7 @@ int decode_gps_rmc( char *data,
                                                         putenv(tzn);
                                                         tzset();
 #endif  // __CYGWIN__
-#endif  // #ifndef USING_MAC_OS_X
+#endif  // #ifndef __MacOSX__
                                                     }
                                                 }
                                             }

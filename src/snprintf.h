@@ -2,7 +2,7 @@
  * snprintf.h
  *   header file for snprintf.c
  *
- * $Id: snprintf.h,v 1.3 2003/01/24 00:34:51 we7u Exp $
+ * $Id: snprintf.h,v 1.4 2003/02/15 17:59:10 we7u Exp $
  */
 /*
  * Copyright (C) 2000-2003 Xastir Development Team
@@ -28,7 +28,7 @@
 #include <stdio.h>
 #include "config.h"
 
-#ifdef USING_SOLARIS
+#ifdef __solaris__
 #include <stdarg.h>
 #endif
 

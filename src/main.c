@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.223 2003/02/12 23:00:52 we7u Exp $
+ * $Id: main.c,v 1.224 2003/02/15 17:59:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -20649,7 +20649,7 @@ int main(int argc, char *argv[], char *envp[]) {
     static char lang_to_use_or[30];
     char temp[100];
 
-#ifdef USING_SOLARIS
+#ifdef __solaris__
     extern char *optarg;
 #endif
 
