@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.301 2003/06/26 15:37:21 n2ygk Exp $
+ * $Id: maps.c,v 1.302 2003/06/30 16:52:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3442,6 +3442,8 @@ void index_save_to_file() {
 
 
 //WE7U2
+// This function is currently not used.
+//
 // Function used to add map directories/files to the in-memory map
 // index.  Causes an update of the index list in memory.  Input
 // records are inserted in alphanumerical order.  This function is
@@ -3449,6 +3451,7 @@ void index_save_to_file() {
 // this function is called the new record has all of the needed
 // information in it.
 //
+/*
 static void index_insert_sorted(map_index_record *new_record) {
 
     map_index_record *current = map_index_head;
@@ -3599,6 +3602,7 @@ static void index_insert_sorted(map_index_record *new_record) {
         }
     }
 }
+*/
 
 
 
