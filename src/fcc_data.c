@@ -1,5 +1,5 @@
 /*
- * $Id: fcc_data.c,v 1.6 2004/01/26 16:18:20 we7u Exp $
+ * $Id: fcc_data.c,v 1.7 2004/06/04 17:36:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -316,7 +316,7 @@ int search_fcc_data_appl(char *callsign, FccAppl *data) {
             if (bytes_read>0) {
                 for (xx=0;(xx<bytes_read) && !found;xx++) {
                     if(data_in[xx]!='\n' && data_in[xx]!='\r') {
-                        if (line_pos<200) {
+                        if (line_pos<199) {
                             line[line_pos++]=data_in[xx];
                             line[line_pos]='\0';
                         }
