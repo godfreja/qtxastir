@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.201 2003/02/06 19:45:36 we7u Exp $
+ * $Id: maps.c,v 1.202 2003/02/10 11:26:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9268,7 +9268,8 @@ void draw_palm_image_map(Widget w, char *dir, char *filenm,
                         }
                     }
                 }
-                else if (record_hdr.type == 0) {  // We have a label
+                else if ( (record_hdr.type == 0)    // We have a label
+                        && map_labels) {  // and we wish to draw it
                     long label_x_cord;
                     long label_y_cord;
                     int  label_length;
