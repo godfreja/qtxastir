@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.81 2003/04/02 21:01:07 francais1 Exp $
+ * $Id: interface.c,v 1.82 2003/04/03 22:24:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2970,6 +2970,7 @@ void init_device_names(void) {
     strcpy(dtype[DEVICE_SERIAL_TNC_AUX_GPS].device_name,langcode("IFDNL00009"));
     strcpy(dtype[DEVICE_SERIAL_KISS_TNC].device_name,langcode("IFDNL00010"));
     strcpy(dtype[DEVICE_NET_DATABASE].device_name,langcode("IFDNL00011"));
+    strcpy(dtype[DEVICE_NET_AGWPE].device_name,langcode("IFDNL00012"));
 }
 
 
