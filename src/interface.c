@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.142 2003/11/06 17:21:40 we7u Exp $
+ * $Id: interface.c,v 1.143 2003/11/26 16:01:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2241,7 +2241,7 @@ char *process_OpenTrac_packet( unsigned char *data,
     int           i;
     int           elen;
     int           etype;
-    int           decoded         = 0;
+    unsigned int  decoded         = 0;
     unsigned char origin_call[7];       // Where the packet originated
     unsigned char origin_ssid     = 0;
     unsigned char entity_call[7];       // What the packet is talking about
