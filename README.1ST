@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.44 2002/12/10 21:15:59 we7u Exp $
+$Id: README.1ST,v 1.45 2002/12/16 07:07:26 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -1374,7 +1374,9 @@ file is always on my website at:
 ; and semi-colons with the "TAB" character.
 ;
 ; Standard APRSd port definitions at 
-; http://www.ntstrans.com/~ntstate/ports.html
+; http://aprsdcsp.antelope.net/ports.html
+; and at
+; http://www.wa4dsy.net/aprs/ports.html
 ;
 ; Direct IP addresses subject to change -- 
 ; recommended to use only when DNS (named) access fails.
