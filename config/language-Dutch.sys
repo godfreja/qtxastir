@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.18 2002/06/01 18:47:59 n0vh Exp $
+# $Id: language-Dutch.sys,v 1.19 2002/06/02 21:54:12 n0vh Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -94,6 +94,10 @@ MPUPTGR009|Interstate Labels||
 MPUPTGR010|US Hwy Labels||
 MPUPTGR011|State Hwy Labels||
 MPUPTGR012|Select items to be displayed:||
+MPUPTGR013|Rivers||
+MPUPTGR014|Lakes||
+MPUPTGR015|Airports, Parks, etc||
+MPUPTGR016|Map Intensity||
 #
 # PopUp "Map Chooser"
 WPUPMCP001|Kaart Kiezer||
