@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.87 2003/04/15 22:14:41 we7u Exp $
+# $Id: language-German.sys,v 1.88 2003/05/09 06:28:22 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -83,6 +83,7 @@ PULDNMP020|Einstellungen Tigermaps||
 PULDNMP021|Autom. Karten - PixelKarten aus||
 PULDNMP022|Karten beim Start indizieren||
 PULDNMP023|Karten reindizieren|r|
+PULDNMP024|Map Re-Index: ALL Maps|A|
 #
 #
 # PopUp "Einstellungen Tigermaps"
