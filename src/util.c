@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.100 2004/05/07 16:19:16 we7u Exp $
+ * $Id: util.c,v 1.101 2004/05/07 20:21:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2298,6 +2298,15 @@ void reload_object_item(void) {
                 // station database and cause it to be transmitted at
                 // regular intervals.  Port is set to -1 here.
                 decode_ax25_line( line2, DATA_VIA_LOCAL, -1, 1);
+
+// Right about here we could do a lookup for the object/item
+// matching the name and change the timing on it.  This could serve
+// to spread the transmit timing out a bit so that all objects/items
+// are not transmitted together.  Another easier option would be to
+// change the routine which chooses when to transmit, having it
+// randomize the numbers a bit each time.  I chose the second
+// option.
+
             }
         }
         (void)fclose(f);
