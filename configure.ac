@@ -1,14 +1,14 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.19 2003/02/17 05:25:15 we7u Exp $
+# $Id: configure.ac,v 1.20 2003/02/18 16:23:38 we7u Exp $
 
 
 #
 # SET VERSION HERE!
 #
-# It should look something like this:  (xastir, 1.1.3, xastir@xastir.org)
+# It should look something like this:  (xastir, 1.1.4, xastir@xastir.org)
 #
-AC_INIT(xastir, 1.1.3, xastir@xastir.org)
+AC_INIT(xastir, 1.1.4, xastir@xastir.org)
 
 
 
