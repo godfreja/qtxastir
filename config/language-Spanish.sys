@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.5 2002/03/27 07:57:31 we7u Exp $
+# $Id: language-Spanish.sys,v 1.6 2002/03/28 19:02:10 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -696,6 +696,7 @@ LHPUPNI205|Baro||
 LHPUPNI206|RN-H||
 LHPUPNI207|RNSM||
 LHPUPNI208|RN24||
+LHPUPNI209|Lat/Lon or UTM||
 #
 # Traza Alertas WX sobre mapas
 PULDNMAT01|Muestra mapa de alarma sobre otros mapas||

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.5 2002/03/27 07:57:30 we7u Exp $
+# $Id: language-French.sys,v 1.6 2002/03/28 19:02:10 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -695,6 +695,7 @@ LHPUPNI205|Baro||
 LHPUPNI206|RN-H||
 LHPUPNI207|RNSM||
 LHPUPNI208|RN24||
+LHPUPNI209|Lat/Lon or UTM||
 #
 # Maps WX Alert styles
 PULDNMAT01|Voir cartes alertes sur autres cartes||

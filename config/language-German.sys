@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.5 2002/03/27 07:57:31 we7u Exp $
+# $Id: language-German.sys,v 1.6 2002/03/28 19:02:10 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -701,6 +701,7 @@ LHPUPNI205|Druck||
 LHPUPNI206|Rn-h||
 LHPUPNI207|Rn-0||
 LHPUPNI208|Rn24||
+LHPUPNI209|Lat/Lon or UTM||
 #
 # Stil der Wetterwarnungskarten
 PULDNMAT01|Zeige Warnungen über anderen Karten||
