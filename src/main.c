@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.517 2004/09/07 01:44:22 we7u Exp $
+ * $Id: main.c,v 1.518 2004/09/10 16:19:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11013,6 +11013,15 @@ if (end_critical_section(&data_lock, "main.c:UpdateTime(2)" ) > 0)
 
         check_pointer_position();
     }
+
+
+#ifdef __CYGWIN__
+    // These are needed in order to keep Xastir from using too much
+    // CPU on Cygwin.
+    usleep(2);
+    usleep(2);
+#endif  // __CYGWIN__
+
 
     sched_yield();  // Yield the processor to another thread
 
