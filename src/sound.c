@@ -1,5 +1,5 @@
 /*
- * $Id: sound.c,v 1.6 2004/05/28 19:03:23 we7u Exp $
+ * $Id: sound.c,v 1.7 2004/07/30 04:06:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -47,10 +47,19 @@ pid_t play_sound(char *sound_cmd, char *soundfile) {
             sound_pid = fork(); // Create a new process to run in
             if (sound_pid!=-1) {
                 if(sound_pid==0) {
-                    strcpy(file,SOUND_DIR);
-                    strcat(file,"/");
-                    strcat(file,soundfile);
-                    xastir_snprintf(command, sizeof(command), "%s %s", sound_cmd, file);
+
+                    xastir_snprintf(file,
+                        sizeof(file),
+                        "%s/%s",
+                        SOUND_DIR,
+                        soundfile);
+
+                    xastir_snprintf(command,
+                        sizeof(command),
+                        "%s %s",
+                        sound_cmd,
+                        file);
+
                     /*fprintf(stderr,"PS%d:%s\n",sound_pid,file);*/
                     (void)system(command);  // Note we're not caring about whether it succeeded or not
                     exit(0);    // Exits only this process, not Xastir itself
