@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.379 2003/11/26 17:37:17 we7u Exp $
+ * $Id: maps.c,v 1.380 2003/11/27 02:47:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6005,11 +6005,15 @@ void load_maps (Widget w) {
                         // we have things ordered in the list, the
                         // directories appear before their member files.
                         if (mapname[strlen(mapname)-1] == '/') {
+                            int len;
+
                             // Found a directory.  Save the name.
                             xastir_snprintf(selected_dir,
                                 sizeof(selected_dir),
                                 "%s",
                                 mapname);
+
+                            len = strlen(mapname);
 
 //fprintf(stderr,"Selected %s directory\n",selected_dir);
 
@@ -6025,7 +6029,7 @@ void load_maps (Widget w) {
 
                             while (current != NULL) {
 
-                               if (strstr(current->filename,selected_dir)) {
+                                if (strncmp(current->filename,selected_dir,len) == 0) {
 
                                     if (current->filename[strlen(current->filename)-1] != '/') {
 
