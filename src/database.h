@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.11 2005/03/14 21:15:20 we7u Exp $
+ * $Id: database.h,v 1.12 2005/03/15 01:58:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -59,7 +59,7 @@ enum APRS_Types {
     APRS_NULL,
     APRS_MSGCAP,
     APRS_FIXED,
-    APRS_DOWN,
+    APRS_DOWN,      // Not used anymore
     APRS_MOBILE,
     APRS_DF,
     APRS_OBJECT,
