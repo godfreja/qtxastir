@@ -1,8 +1,9 @@
 
-// $Id: geo-client.c,v 1.1 2004/03/29 23:40:32 we7u Exp $
+// $Id: geo-client.c,v 1.2 2005/01/08 09:54:36 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
+ * Portions Copyright (C) 2004-2005  The Xastir Group
  *
  * This program uses a "map file" produced by processing TIGER/Line data.
  * It accepts street addresses on standard input, attempts to resolve them

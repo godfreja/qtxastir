@@ -1,10 +1,11 @@
 
 
-// $Id: hashtable_itr.c,v 1.4 2004/12/24 08:50:19 tvrusso Exp $
+// $Id: hashtable_itr.c,v 1.5 2005/01/08 09:54:36 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark  <firstname.lastname@cl.cam.ac.uk> */
-/* Modified by the Xastir Group */
+/* Portions Copyright (C) 2004-2005  The Xastir Group */
+
 
 #include <stdlib.h> /* defines NULL */
 #include <stdio.h>

@@ -1,9 +1,10 @@
 
-// $Id: io-mmap.c,v 1.2 2004/03/29 23:57:59 we7u Exp $
+// $Id: io-mmap.c,v 1.3 2005/01/08 09:54:35 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
-*/
+ * Portions Copyright (C) 2004-2005  The Xastir Group
+ */
 
 #include "io.h"
 #include <stdio.h>
