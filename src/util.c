@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.137 2005/01/08 10:06:54 we7u Exp $
+ * $Id: util.c,v 1.138 2005/01/10 21:39:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3345,6 +3345,10 @@ void upd_echo(char *path) {
 // dl9sau:
 // I liked to have xastir to compute the locator along with the normal coordinates.
 // The algorithm derives from dk5sg's util/qth.c (wampes)
+//
+// This computes Maidenhead grid coordinates and is used for both
+// the status line ("text2" widget) and the Coordinate Calculator at
+// present.
 //
 char *sec_to_loc(long longitude, long latitude)
 {
