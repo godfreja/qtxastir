@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.142 2002/09/26 23:11:13 we7u Exp $
+ * $Id: maps.c,v 1.143 2002/10/01 17:43:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7267,6 +7267,7 @@ void draw_geotiff_image_map (Widget w, char *dir, char *filenm, int destination_
                                         f_NW_x_bounding_wgs84,
                                         f_NW_y_bounding_wgs84 ) ) {
         printf("draw_geotiff_image_map: Problem converting from lat/lon\n");
+        printf("Did you follow the instructions for installing PROJ?\n");
         return;
     }
 
@@ -7276,6 +7277,8 @@ void draw_geotiff_image_map (Widget w, char *dir, char *filenm, int destination_
                                         f_NE_x_bounding_wgs84,
                                         f_NE_y_bounding_wgs84 ) ) {
         printf("draw_geotiff_image_map: Problem converting from lat/lon\n");
+        printf("Did you follow the instructions for installing PROJ?\n");
+ 
         return;
     }
 
@@ -7285,6 +7288,8 @@ void draw_geotiff_image_map (Widget w, char *dir, char *filenm, int destination_
                                         f_SW_x_bounding_wgs84,
                                         f_SW_y_bounding_wgs84 ) ) {
         printf("draw_geotiff_image_map: Problem converting from lat/lon\n");
+        printf("Did you follow the instructions for installing PROJ?\n");
+ 
         return;
     }
 
@@ -7294,6 +7299,8 @@ void draw_geotiff_image_map (Widget w, char *dir, char *filenm, int destination_
                                         f_SE_x_bounding_wgs84,
                                         f_SE_y_bounding_wgs84 ) ) {
         printf("draw_geotiff_image_map: Problem converting from lat/lon\n");
+        printf("Did you follow the instructions for installing PROJ?\n");
+ 
         return;
     }
 
