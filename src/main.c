@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.162 2002/11/14 19:30:25 we7u Exp $
+ * $Id: main.c,v 1.163 2002/11/15 00:25:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13818,7 +13818,7 @@ void Object_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
     if (Setup_object_data(line, sizeof(line))) {
 
         // Update this object in our save file
-        log_object_item(line);
+        log_object_item(line,0,last_object);
 
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
@@ -13848,7 +13848,7 @@ void Item_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
     if (Setup_item_data(line,sizeof(line))) {
 
         // Update this item in our save file
-        log_object_item(line);
+        log_object_item(line,0,last_object);
 
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
@@ -13879,8 +13879,9 @@ void Object_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
 
         line[10] = '_';                         // mark as deleted object
 
-        // Update this object in our save file
-        log_object_item(line);
+        // Update this object in our save file, then comment all
+        // instances out in the file.
+        log_object_item(line,1,last_object);
 
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
@@ -13914,8 +13915,9 @@ void Item_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
             i++;
         }
 
-        // Update this item in our save file
-        log_object_item(line);
+        // Update this item in our save file, then comment all
+        // instances out in the file.
+        log_object_item(line,1,last_object);
 
         if (object_tx_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
