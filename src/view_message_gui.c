@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.22 2004/08/21 06:35:23 we7u Exp $
+ * $Id: view_message_gui.c,v 1.23 2004/10/18 18:58:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -347,7 +347,7 @@ begin_critical_section(&All_messages_dialog_lock, "view_message_gui.c:view_all_m
                 XmNrightAttachment,XmATTACH_NONE,
                 NULL);
 
-        dist_units = XtVaCreateManagedWidget((units_english_metric?langcode("UNIOP00004"):langcode("UNIOP00005")),
+        dist_units = XtVaCreateManagedWidget((english_units?langcode("UNIOP00004"):langcode("UNIOP00005")),
                 xmLabelWidgetClass, 
                 my_form,
                 XmNtopAttachment, XmATTACH_FORM,

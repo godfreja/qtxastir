@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.126 2004/10/04 15:32:15 we7u Exp $
+ * $Id: xa_config.c,v 1.127 2004/10/18 18:58:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -563,7 +563,7 @@ void save_data(void)  {
         store_int (fout, "DISPLAY_DEAD_RECKONING_SYMBOL", Display_.dr_symbol);
 
 
-        store_int (fout, "DISPLAY_UNITS_ENGLISH",         units_english_metric);
+        store_int (fout, "DISPLAY_UNITS_ENGLISH",         english_units);
         store_int (fout, "DISPLAY_DIST_BEAR_STATUS",      do_dbstatus);
 
 
@@ -1332,8 +1332,8 @@ void load_data_or_default(void) {
 
 
 
-    if (!get_int ("DISPLAY_UNITS_ENGLISH", &units_english_metric, 0, 1, 0))
-        units_english_metric = 0;
+    if (!get_int ("DISPLAY_UNITS_ENGLISH", &english_units, 0, 1, 0))
+        english_units = 0;
 
     if (!get_int ("DISPLAY_DIST_BEAR_STATUS", &do_dbstatus, 0, 1, 0))
         do_dbstatus = 0;
