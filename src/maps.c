@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.268 2003/05/09 17:43:56 we7u Exp $
+ * $Id: maps.c,v 1.269 2003/05/10 23:42:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1179,6 +1179,14 @@ void create_shapefile_map(char *dir, char *shapefile_name, int type,
     //
     my_shp_handle = SHPCreate(temp_shapefile_name, type);
     my_dbf_handle = DBFCreate(temp_shapefile_name);
+
+    // Check whether we were able to open these handles
+    if ((my_shp_handle == NULL) || (my_dbf_handle == NULL)) {
+        // Probably write-protected directory
+        fprintf(stderr, "Could not create shapefile %s\n",
+            temp_shapefile_name);
+        return;
+    }
 
     // Create the different fields we'll use to store the
     // attributes:
