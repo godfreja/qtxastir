@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.102 2004/11/05 16:57:40 we7u Exp $
+# $Id: configure.ac,v 1.103 2004/11/10 19:58:07 shadow Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -345,7 +345,7 @@ if test "${use_imagemagick}" = "yes"; then
   XASTIR_CHECK_IMAGEMAGICK
 fi
 
-
+XASTIR_BERKELEY_DB_CHK
  
 # Set XASTIR_DATA_BASE in CPPFLAGS due to Gnu coding standard that requires
 # datadir expansion to be deferred until make time.
