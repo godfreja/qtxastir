@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.58 2002/04/27 06:39:22 we7u Exp $
+ * $Id: maps.c,v 1.59 2002/04/27 14:59:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1967,7 +1967,7 @@ void draw_shapefile_map (Widget w,
                                             lanes = 1;
                                             break;
                                         case '1':
-                                            lanes = 3;
+                                            lanes = 1;
                                             break;
                                         case '2':
                                             lanes = 1;
