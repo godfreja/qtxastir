@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.246 2003/03/06 18:47:33 we7u Exp $
+ * $Id: main.c,v 1.247 2003/03/06 22:41:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,7 +22,6 @@
  * Look at the README for more information on the program.
  */
 
-//#define HAVE_GPSMAN 1
 
 #include "config.h"
 #include "snprintf.h"
