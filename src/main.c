@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.137 2002/09/19 07:56:56 we7u Exp $
+ * $Id: main.c,v 1.138 2002/09/19 08:08:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4970,8 +4970,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             MY_BACKGROUND_COLOR,
             NULL);
 
-//    trackme_button=XtVaCreateManagedWidget(langcode("TrackMe"),
-    trackme_button=XtVaCreateManagedWidget("TrackMe",
+    trackme_button=XtVaCreateManagedWidget(langcode("POPUPMA022"),
             xmToggleButtonGadgetClass,
             trackme_frame,
             XmNtopAttachment, XmATTACH_FORM,
