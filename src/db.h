@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.4 2002/05/25 00:07:38 we7u Exp $
+ * $Id: db.h,v 1.5 2002/06/05 20:28:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -340,6 +340,7 @@ extern void db_init(void);
 
 // 
 void mscan_file(char msg_type, void (*function)(Message *fill));
+extern void msg_record_ack(char *to_call_sign, char *my_call, char *seq, int timeout);
 extern void display_file(Widget w);
 extern void clean_data_file(void);
 extern void read_file_line(FILE *f);
