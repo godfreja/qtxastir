@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.425 2004/12/26 18:57:26 tvrusso Exp $
+ * $Id: maps.c,v 1.426 2005/01/03 18:28:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2093,6 +2093,7 @@ static void Print_window( Widget widget, XtPointer clientData, XtPointer callDat
     char command[MAX_FILENAME*2];
     char temp[100];
     char format[50] = "-portrait ";
+    int xpmretval;
 
 
     xastir_snprintf(xpm_filename,
@@ -2118,12 +2119,16 @@ static void Print_window( Widget widget, XtPointer clientData, XtPointer callDat
     statusline(temp,1);       // Dumping image to file...
 
 
-    if ( !XpmWriteFileFromPixmap(XtDisplay(appshell),   // Display *display
-            xpm_filename,                               // char *filename
-            pixmap_final,                               // Pixmap pixmap
-            (Pixmap)NULL,                               // Pixmap shapemask
-            NULL ) == XpmSuccess ) {                    // XpmAttributes *attributes
-        fprintf(stderr,"ERROR writing %s\n", xpm_filename );
+    xpmretval=XpmWriteFileFromPixmap(XtDisplay(appshell),// Display *display
+            xpm_filename,                                // char *filename
+            pixmap_final,                                // Pixmap pixmap
+            (Pixmap)NULL,                                // Pixmap shapemask
+            NULL );
+
+    if (xpmretval != XpmSuccess) {
+        fprintf(stderr,"ERROR writing %s: %s\n", xpm_filename,
+            XpmGetErrorString(xpmretval));
+        return; 
     }
     else {          // We now have the xpm file created on disk
 
@@ -2999,6 +3004,7 @@ void Snapshot(void) {
 #ifndef NO_XPM
     pthread_t snapshot_thread_id;
     char xpm_filename[MAX_FILENAME];
+    int xpmretval;
 #endif  // NO_XPM
 
 
@@ -3031,15 +3037,17 @@ void Snapshot(void) {
         fprintf(stderr,"Creating %s\n", xpm_filename );
 
     // Create an XPM file from pixmap_final.
-    if ( !XpmWriteFileFromPixmap( XtDisplay(appshell),  // Display *display
+    xpmretval=XpmWriteFileFromPixmap(XtDisplay(appshell),   // Display *display
             xpm_filename,                               // char *filename
             pixmap_final,                               // Pixmap pixmap
             (Pixmap)NULL,                               // Pixmap shapemask
-            NULL ) == XpmSuccess ) {                    // XpmAttributes *attributes
-        fprintf(stderr,"ERROR writing %s\n", xpm_filename );
+            NULL );
+
+    if (xpmretval != XpmSuccess) {
+        fprintf(stderr,"ERROR writing %s: %s\n", xpm_filename,
+            XpmGetErrorString(xpmretval));
         return;
     }
-
 
     chmod( xpm_filename, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH );
 
