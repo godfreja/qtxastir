@@ -1,5 +1,5 @@
 
-$Id: README.Getting-Started,v 1.3 2004/08/19 20:10:16 we7u Exp $
+$Id: README.Getting-Started,v 1.4 2004/08/23 19:48:05 we7u Exp $
 
 
 Hello new user, and welcome to Xastir!
@@ -22,6 +22,12 @@ Xastir up and running in one of the following configurations:
 Note that you can start with either of the first two options and add
 only the options you wish in order to come up with your own custom
 configuration of Xastir.
+
+These instructions are written for Linux users.  Windows users
+should refer to the README.win32 document instead.
+MacOSX/Solaris/FreeBSD users should refer to the README document
+first, then the INSTALL document and the below instructions for
+further notes.
 
 One question you might ask is whether you can just find a binary on
 the 'net somewhere and install it instead of compiling Xastir from
