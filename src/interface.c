@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.13 2002/05/16 23:29:14 we7u Exp $
+ * $Id: interface.c,v 1.14 2002/05/17 23:55:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -824,6 +824,7 @@ int command_file_to_tnc_port(int port, char *filename) {
 // dtr 1 is down, 0 is normal(up)
 //***********************************************************
 void port_dtr(int port, int dtr) {
+#ifndef CYGWIN
     int sg;
 
     /* check for 1 or 0 */
@@ -865,6 +866,7 @@ void port_dtr(int port, int dtr) {
     if (end_critical_section(&port_data_lock, "interface.c:port_dtr(2)" ) > 0)
         printf("port_data_lock, Port = %d\n", port);
 
+#endif  // CYGWIN
 }
 
 
