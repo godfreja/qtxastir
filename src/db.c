@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.17 2002/04/16 21:16:15 we7u Exp $
+ * $Id: db.c,v 1.18 2002/04/17 19:58:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7722,7 +7722,7 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
     //--------------------------------------------------------------------------
     if (!done && strncmp(addr,"NWS-",4) == 0) {             // NWS weather alert
         //printf("found NWS: |%s| |%s| |%s|\n",addr,message,msg_id);      // could have sort of line number
-        msg_data_add(addr,call,message,"",MESSAGE_NWS,from);
+        msg_data_add(addr,call,message,msg_id,MESSAGE_NWS,from);
         (void)alert_message_scan();
         done = 1;
         if (operate_as_an_igate>1 && from==DATA_VIA_NET && !is_my_call(call,1)) { // { for my editor...
