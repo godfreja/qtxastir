@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.121 2002/07/19 00:02:15 we7u Exp $
+ * $Id: main.c,v 1.122 2002/07/19 08:06:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5655,11 +5655,6 @@ if (begin_critical_section(&data_lock, "main.c:UpdateTime(1)" ) > 0)
                             }
 
                         case DEVICE_AX25_TNC:
-                            // For KISS and AX.25 ports:  See if
-                            // we're supposed to relay digipeat the
-                            // packet
-                            relay_digipeat(incoming_data, data_port);
-
 
                         case DEVICE_SERIAL_TNC:
                             if (log_tnc_data)

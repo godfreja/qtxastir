@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.12 2002/07/18 21:40:51 we7u Exp $
+ * $Id: interface.h,v 1.13 2002/07/19 08:06:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -212,7 +212,7 @@ extern void output_my_data(char *message, int port, int type, int loopback_only,
 int tnc_get_data_type(char *buf, int port);
 void tnc_data_clean(char *buf);
 extern void output_waypoint_data(char *message);
-
+extern void send_ax25_frame(int port, char *source, char *destination, char *path, char *data);
 
 extern pid_t getpgid(pid_t pid);
 

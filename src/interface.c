@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.40 2002/07/18 23:48:20 we7u Exp $
+ * $Id: interface.c,v 1.41 2002/07/19 08:06:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1737,7 +1737,7 @@ int net_detach(int port) {
 // byte.  The callsign as processed is ready for inclusion in an
 // AX.25 header.
 //
-void fix_up_callsign(char *data) {
+void fix_up_callsign(unsigned char *data) {
     unsigned char new_call[8] = "       ";  // Start with seven spaces
     int ssid = 0;
     int i;
@@ -1776,6 +1776,12 @@ void fix_up_callsign(char *data) {
     }
     else {  // Whacko SSID.  Set it to zero
         new_call[6] = 0x30;     // Set 2 reserved bits
+    }
+
+    // Check for an asterisk, which means it's been digipeated through
+    // the callsign already
+    if (strstr(data,"*") != 0) {
+        new_call[6] = new_call[6] | 0x80; // Set the 'H' bit
     }
 
     // Shift each byte one bit to the left
