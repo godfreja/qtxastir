@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.31 2003/02/03 19:38:57 we7u Exp $
+ * $Id: db.h,v 1.32 2003/02/20 09:45:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -160,7 +160,7 @@ typedef struct _ack_record {
 #ifdef MSG_DEBUG
 extern void msg_clear_data(Message *clear);
 extern void msg_copy_data(Message *to, Message *from);
-#else
+#else   // MSG_DEBUG
 #define msg_clear_data(clear) memset((Message *)clear, 0, sizeof(Message))
 #define msg_copy_data(to, from) memmove((Message *)to, (Message *)from, sizeof(Message))
 #endif /* MSG_DEBUG */
@@ -377,7 +377,7 @@ typedef struct _DataRow {
 #ifdef DATA_DEBUG
 extern void clear_data(DataRow *clear);
 extern void copy_data(DataRow *to, DataRow *from);
-#else
+#else   // DATA_DEBUG
 #define clear_data(clear) memset((DataRow *)clear, 0, sizeof(DataRow))
 #define copy_data(to, from) memmove((DataRow *)to, (DataRow *)from, sizeof(DataRow))
 #endif /* DATA_DEBUG */

@@ -1,5 +1,5 @@
 /*
- * $Id: igate.h,v 1.3 2003/01/24 00:34:53 we7u Exp $
+ * $Id: igate.h,v 1.4 2003/02/20 09:45:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -36,4 +36,6 @@ extern void output_igate_net(char *line, int port, int third_party);
 extern void output_igate_rf(char *from, char *call, char *path, char *line, int port, int third_party);
 extern void output_nws_igate_rf(char *from, char *path, char *line, int port, int third_party);
 
-#endif
+#endif  // __XASTIR_IGATE_H
+
+

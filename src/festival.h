@@ -1,6 +1,6 @@
 // Modification for Xastir CVS purposes
 //
-// $Id: festival.h,v 1.2 2003/01/14 21:08:08 we7u Exp $
+// $Id: festival.h,v 1.3 2003/02/20 09:45:17 we7u Exp $
 //
 // End of modification
 
@@ -95,4 +95,6 @@ int festivalOpen();
 void festivalStringToWave(char *text);
 int festivalClose();
 
-#endif
+#endif  // _FESTIVAL_CLIENT_H_
+
+

@@ -1,5 +1,5 @@
 
-// $Id: rotated.h,v 1.2 2002/03/05 21:28:24 we7u Exp $
+// $Id: rotated.h,v 1.3 2003/02/20 09:45:19 we7u Exp $
 
 /* ************************************************************************ */
 
@@ -60,7 +60,7 @@ XPoint *XRotTextExtents(Display*, XFontStruct*, float,
                         int, int, char*, int);
 }
 
-#else
+#else   // _cplusplus || c_plusplus
 
 extern float   XRotVersion();
 extern void    XRotSetMagnification();
@@ -77,6 +77,5 @@ extern XPoint *XRotTextExtents();
 
 
 #endif /* _XVERTEXT_INCLUDED_ */
-
 
 

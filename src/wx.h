@@ -1,5 +1,5 @@
 /*
- * $Id: wx.h,v 1.3 2003/01/24 00:34:51 we7u Exp $
+ * $Id: wx.h,v 1.4 2003/02/20 09:45:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -72,4 +72,6 @@ extern void wx_alert_update_list(void);
 
 extern void WX_station(Widget w, XtPointer clientData, XtPointer callData);
 
-#endif
+#endif  // __XASTIR_WX_H
+
+

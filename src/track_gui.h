@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.h,v 1.3 2003/01/24 00:34:51 we7u Exp $
+ * $Id: track_gui.h,v 1.4 2003/02/20 09:45:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -36,4 +36,7 @@ extern int track_case;
 extern int track_match;
 extern char tracking_station_call[30];
 extern void Download_findu_trail(Widget w, XtPointer clientData, XtPointer callData);
-#endif
+
+#endif  // __TRACK_GUI_H
+
+

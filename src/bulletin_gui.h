@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.h,v 1.4 2003/01/24 00:37:40 we7u Exp $
+ * $Id: bulletin_gui.h,v 1.5 2003/02/20 09:45:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -37,4 +37,6 @@ extern void check_for_new_bulletins();
 extern void popup_bulletins(void);
 extern void bulletin_gui_init(void);
 
-#endif
+#endif  // __XASTIR_BULLETIN_GUI_H
+
+

@@ -1,5 +1,5 @@
 /*
- * $Id: gps.h,v 1.3 2003/01/24 00:34:53 we7u Exp $
+ * $Id: gps.h,v 1.4 2003/02/20 09:45:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -34,5 +34,6 @@ extern void gps_data_find(char *gps_line_data, int port);
 
 extern void create_garmin_waypoint(long latitude,long longitude,char *call_sign);
 
-#endif
+#endif  // __XASTIR_GPS_H
+
 
