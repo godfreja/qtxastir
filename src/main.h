@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.17 2002/09/19 19:28:23 we7u Exp $
+ * $Id: main.h,v 1.18 2002/09/19 20:57:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -82,8 +82,8 @@ extern char DATABASE_FILE[];
 extern char DATABASE_POINTER_FILE[];
 extern char DATABASE_POINTER_TEMP[];
 extern char ALERT_MAP_DIR[];
-extern char WIN_MAP_DIR[];
-extern char WIN_MAP_DATA[];
+extern char SELECTED_MAP_DIR[];
+extern char SELECTED_MAP_DATA[];
 extern char MAP_INDEX_DATA[];
 extern char AUTO_MAP_DIR[];
 extern char SYMBOLS_DIR[];

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.47 2002/09/19 07:56:56 we7u Exp $
+ * $Id: xa_config.c,v 1.48 2002/09/19 20:57:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -352,8 +352,8 @@ void save_data(void)  {
         store_int(fout, "ALTNET", altnet);
         store_string (fout, "AUTO_MAP_DIR", AUTO_MAP_DIR);
         store_string (fout, "ALERT_MAP_DIR", ALERT_MAP_DIR);
-        store_string (fout, "WIN_MAP_DIR", WIN_MAP_DIR);
-        store_string (fout, "WIN_MAP_DATA", WIN_MAP_DATA);
+        store_string (fout, "SELECTED_MAP_DIR", SELECTED_MAP_DIR);
+        store_string (fout, "SELECTED_MAP_DATA", SELECTED_MAP_DATA);
         store_string (fout, "MAP_INDEX_DATA", MAP_INDEX_DATA);
         store_string (fout, "SYMBOLS_DIR", SYMBOLS_DIR);
         store_string (fout, "SOUND_DIR", SOUND_DIR);
@@ -756,11 +756,11 @@ void load_data_or_default(void) {
     if (!get_string ("ALERT_MAP_DIR", ALERT_MAP_DIR))
         strcpy (ALERT_MAP_DIR, get_data_base_dir ("Counties"));
 
-    if (!get_string ("WIN_MAP_DIR", WIN_MAP_DIR))
-        strcpy (WIN_MAP_DIR, get_data_base_dir ("maps"));
+    if (!get_string ("SELECTED_MAP_DIR", SELECTED_MAP_DIR))
+        strcpy (SELECTED_MAP_DIR, get_data_base_dir ("maps"));
 
-    if (!get_string ("WIN_MAP_DATA", WIN_MAP_DATA))
-        strcpy (WIN_MAP_DATA, get_user_base_dir ("config/selected_maps.sys"));
+    if (!get_string ("SELECTED_MAP_DATA", SELECTED_MAP_DATA))
+        strcpy (SELECTED_MAP_DATA, get_user_base_dir ("config/selected_maps.sys"));
 
     if (!get_string ("MAP_INDEX_DATA", MAP_INDEX_DATA))
         strcpy (MAP_INDEX_DATA, get_user_base_dir ("config/map_index.sys"));
