@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.30 2002/08/06 23:14:27 we7u Exp $
+ * $Id: util.c,v 1.31 2002/08/09 06:33:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -61,6 +61,24 @@ int position_amb_chars;
 char echo_digis[6][9+1];
 
 #define ACCEPT_0N_0E    /* set this to see stations at 0N/0E on the map */
+
+
+
+
+
+//
+// Inserts localtime date/time in "timestring".  Timestring
+// Should be at least 101 characters long.
+//
+void get_timestamp(char *timestring) {
+    struct tm *time_now;
+    time_t secs_now;
+
+
+    secs_now=sec_now();
+    time_now = localtime(&secs_now);
+    (void)strftime(timestring,100,"%a %b %e %T %Z %Y",time_now);
+}
 
 
 
