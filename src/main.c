@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.260 2003/04/03 19:52:30 we7u Exp $
+ * $Id: main.c,v 1.261 2003/04/03 20:57:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13544,7 +13544,12 @@ void Test(Widget w, XtPointer clientData, XtPointer callData) {
 
     (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
 
-    //test_create_shapefile_map();
+
+#ifdef HAVE_LIBSHP
+    test_create_shapefile_map();
+#endif
+
+
 }
 
 
