@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.397 2003/11/24 06:50:24 we7u Exp $
+ * $Id: main.c,v 1.398 2003/11/24 07:07:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3944,6 +3944,10 @@ void Map_font_xfontsel(Widget widget, XtPointer clientData, XtPointer callData) 
 // if the temp file was updated, filling in the dialog when it
 // figured it out.
 
+// Check out "gps_operation_pending" and the GPS thread to see how
+// it was done before.  Probably could use the same techniques to
+// make the xfontsel stuff work properly in another thread without
+// stopping the main Xastir thread.
 }
 
 
