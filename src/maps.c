@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.281 2003/05/30 19:16:33 we7u Exp $
+ * $Id: maps.c,v 1.282 2003/05/31 05:47:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -560,7 +560,7 @@ void map_plot (Widget w, long max_x, long max_y, long x_long_cord,
 
                     case DRAW_TO_PIXMAP:
                         // We must be drawing maps 'cuz this is the pixmap we use for it.
-                        if (map_color_fill && draw_filled)
+                        if (map_color_fill && draw_filled) {
 
                             if (npoints >= 3) {
                                 (void)XFillPolygon(XtDisplay(w),
@@ -576,6 +576,7 @@ void map_plot (Widget w, long max_x, long max_y, long x_long_cord,
                                     "map_plot:Too few points:%d, Skipping XFillPolygon()",
                                     npoints);
                             }
+                        }
                         break;
 
                     case DRAW_TO_PIXMAP_ALERTS:
