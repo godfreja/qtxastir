@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.81 2003/04/10 21:17:07 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.82 2003/04/11 20:42:19 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -537,6 +537,7 @@ WPUPCFIA11|Reconnect on NET failure?||
 WPUPCFIA12|Run as an I-Gate?||
 WPUPCFIA13|Broadcast messages via TNC when an I-Gate?||
 WPUPCFIA14|Log I-Gate Transactions?||
+WPUPCFIA15|Transmit RadioPort||
 #
 # Configurar Alarmas de Audio
 WPUPCFA001|Configurar alarme de audio||

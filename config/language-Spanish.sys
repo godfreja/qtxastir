@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.86 2003/04/10 21:17:07 we7u Exp $
+# $Id: language-Spanish.sys,v 1.87 2003/04/11 20:42:19 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -539,6 +539,7 @@ WPUPCFIA11|Reconnect on NET failure?||
 WPUPCFIA12|Run as an I-Gate?||
 WPUPCFIA13|Broadcast messages via TNC when an I-Gate?||
 WPUPCFIA14|Log I-Gate Transactions?||
+WPUPCFIA15|Transmit RadioPort||
 #
 # Configurar Alarmas de Audio
 WPUPCFA001|Configurar Alarma de Audio||
