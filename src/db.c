@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.417 2004/12/24 20:27:57 we7u Exp $
+ * $Id: db.c,v 1.418 2004/12/24 23:28:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -841,7 +841,7 @@ void msg_record_ack(char *to_call_sign,
 
     if (do_update) {
 
-//        update_messages(1); // Force an update
+        update_messages(1); // Force an update
 
         // Call check_popup_messages() here in order to pop up any
         // closed Send Message dialogs.  For first ack's or
