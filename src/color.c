@@ -1,5 +1,5 @@
-/* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: color.c,v 1.5 2003/02/04 04:08:36 jtwilley Exp $
+/* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
+ * $Id: color.c,v 1.6 2003/07/15 14:17:27 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea

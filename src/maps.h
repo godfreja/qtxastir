@@ -1,5 +1,5 @@
-/* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.28 2003/06/30 16:53:19 we7u Exp $
+/* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
+ * $Id: maps.h,v 1.29 2003/07/15 14:17:27 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
