@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.96 2003/05/20 21:28:44 we7u Exp $
+# $Id: language-Dutch.sys,v 1.97 2003/05/23 17:52:46 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -421,6 +421,15 @@ WPUPCFT027|ASCII Type||
 WPUPCFT028|TNC Instelling m/HSP GPS||
 WPUPCFT029|TNC Instelling m/AUX GPS||
 WPUPCFT030|Configureer KISS TNC||
+WPUPCFT031|TNC Configuration Files||
+WPUPCFT032|TNC Setup Filename||
+WPUPCFT033|TNC Shutdown Filename||
+WPUPCFT034|KISS Parameters||
+WPUPCFT035|TXDelay (10 ms units)||
+WPUPCFT036|Persistence (0 to 255)||
+WPUPCFT037|SlotTime (10 ms units)||
+WPUPCFT038|TxTail (10 ms units)||
+WPUPCFT039|Full Duplex||
 #
 # PopUp "Configure WX Port"
 WPUPCFWX01|WX Poort Instelling||
@@ -590,6 +599,8 @@ WPUPTSP005|Volg Nu!||
 WPUPTSP006|Stop met Volgen||
 WPUPTSP007|Download Spoor||
 WPUPTSP008|Roepnaam||
+WPUPTSP009|Start Trail (hrs ago)||
+WPUPTSP010|Trail Length (hrs)||
 #
 # PopUp "Messages"
 WPUPMSB001|Stuur Bericht, Venster %d||
