@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.83 2002/05/03 23:52:35 we7u Exp $
+ * $Id: maps.c,v 1.84 2002/05/06 00:53:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1734,10 +1734,12 @@ void draw_shapefile_map (Widget w,
                         xbm_path, &_w, &_h, &pixmap_wx_stipple, &_xh, &_yh);
         (void)XSetStipple(XtDisplay(w), gc_tint, pixmap_wx_stipple);
     } else {
+// Are these actually used anymore by the code?  Colors get set later
+// when we know more about what we're dealing with.
         if (lake_flag || river_flag)
             (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x1a]); // Steel Blue
         else if (path_flag)
-            (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x04]); // brown
+            (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x08]); // black
         else if (railroad_flag)
             (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x01]); // purple
         else if (city_flag)
@@ -7951,7 +7953,7 @@ void draw_map (Widget w, char *dir, char *filenm, alert_entry * alert,
 #endif // HAVE_GEOTIFF
 
 
-    // Must be APRSdos or WinAPRS map
+    // Else must be APRSdos or WinAPRS map
     else if (ext != NULL && strcasecmp (ext, "MAP") == 0) {
         f = fopen (file, "r");
         if (f != NULL) {
