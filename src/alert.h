@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.12 2003/02/24 18:25:23 we7u Exp $
+ * $Id: alert.h,v 1.13 2003/02/24 19:41:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -74,6 +74,9 @@ extern int alert_display_request(void);
 extern int alert_on_screen(void);
 extern int alert_message_scan(void);
 extern int alert_redraw_on_update;
-extern void alert_expire(void);
+extern int alert_expire(void);
+extern int alert_active_count(void);
 
 #endif /* __XASTIR_ALERT_H */
+
+
