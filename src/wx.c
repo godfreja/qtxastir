@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.25 2002/10/10 22:19:51 we7u Exp $
+ * $Id: wx.c,v 1.26 2002/10/10 22:21:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -986,7 +986,7 @@ void wx_fill_data(int from, int type, unsigned char *data, DataRow *fill) {
 
             // Temperature
             xastir_snprintf(weather->wx_temp, sizeof(weather->wx_temp), "%03d",
-                (int)((tmp1 + 0.5) * 9.0 / 5.0 + 32.0));
+                (int)(tmp1 * 9.0 / 5.0 + 32.0 + 0.5));
 
             // Wind direction.  Each vane increment equals 22.5 degrees.
             xastir_snprintf(weather->wx_course, sizeof(weather->wx_course), "%03d",
