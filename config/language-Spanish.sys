@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.20 2002/06/01 18:54:01 n0vh Exp $
+# $Id: language-Spanish.sys,v 1.21 2002/06/02 21:59:57 n0vh Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -90,6 +90,10 @@ MPUPTGR009|Interstate Labels||
 MPUPTGR010|US Hwy Labels||
 MPUPTGR011|State Hwy Labels||
 MPUPTGR012|Select items to be displayed:||
+MPUPTGR013|Rivers||
+MPUPTGR014|Lakes||
+MPUPTGR015|Airports, Parks, etc||
+MPUPTGR016|Map Intensity||
 #
 #
 # Seleccion de Mapas

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.19 2002/06/01 18:52:13 n0vh Exp $
+# $Id: language-Italian.sys,v 1.20 2002/06/02 21:59:57 n0vh Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -90,6 +90,10 @@ MPUPTGR009|Interstate Labels||
 MPUPTGR010|US Hwy Labels||
 MPUPTGR011|State Hwy Labels||
 MPUPTGR012|Select items to be displayed:||
+MPUPTGR013|Rivers||
+MPUPTGR014|Lakes||
+MPUPTGR015|Airports, Parks, etc||
+MPUPTGR016|Map Intensity||
 #
 #
 # Finestra di dialogo mappe

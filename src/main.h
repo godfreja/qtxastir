@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.9 2002/05/08 19:38:36 we7u Exp $
+ * $Id: main.h,v 1.10 2002/06/02 21:59:58 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -211,6 +211,7 @@ extern void on_off_switch(int switchpos, Widget first, Widget second);
 extern void busy_cursor(Widget w);
 extern void pos_dialog(Widget w);
 extern void create_image(Widget w);
+extern void draw_tiger_map(Widget w);
 
 extern void locate_gui_init(void);
 extern void location_gui_init(void);

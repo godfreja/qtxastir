@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.18 2002/06/01 18:49:11 n0vh Exp $
+# $Id: language-English.sys,v 1.19 2002/06/02 21:59:57 n0vh Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -90,6 +90,10 @@ MPUPTGR009|Interstate Labels||
 MPUPTGR010|US Hwy Labels||
 MPUPTGR011|State Hwy Labels||
 MPUPTGR012|Select items to be displayed:||
+MPUPTGR013|Rivers||
+MPUPTGR014|Lakes||
+MPUPTGR015|Airports, Parks, etc||
+MPUPTGR016|Map Intensity||
 #
 # PopUp "Map Chooser"
 WPUPMCP001|Map Chooser||

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.12 2002/06/01 18:52:59 n0vh Exp $
+# $Id: language-Portuguese.sys,v 1.13 2002/06/02 21:59:57 n0vh Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -88,6 +88,10 @@ MPUPTGR009|Interstate Labels||
 MPUPTGR010|US Hwy Labels||
 MPUPTGR011|State Hwy Labels||
 MPUPTGR012|Select items to be displayed:||
+MPUPTGR013|Rivers||
+MPUPTGR014|Lakes||
+MPUPTGR015|Airports, Parks, etc||
+MPUPTGR016|Map Intensity||
 #
 #
 # Seleção de mapas
