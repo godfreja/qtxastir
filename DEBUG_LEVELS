@@ -1,3 +1,6 @@
+
+$Id: DEBUG_LEVELS,v 1.3 2003/05/14 22:50:24 we7u Exp $
+
 This file has two parts.  The first part describes the debug_level
 definitions that were in the old code and which files they were in.
 The second part describes the new structure for debug levels.
