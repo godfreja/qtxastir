@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.77 2002/06/19 00:06:28 we7u Exp $
+ * $Id: db.c,v 1.78 2002/06/19 17:44:50 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7060,8 +7060,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
         if (p_station->node_path_ptr != NULL)
             free(p_station->node_path_ptr);
         // Malloc and store the new path
-        p_station->node_path_ptr = (char *)malloc(sizeof(path) + 1);
-        substr(p_station->node_path_ptr,path,sizeof(path));
+        p_station->node_path_ptr = (char *)malloc(strlen(path) + 1);
+        substr(p_station->node_path_ptr,path,strlen(path));
  
         p_station->flag |= ST_ACTIVE;
         if (third_party)
