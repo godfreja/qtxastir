@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.405 2004/12/16 05:29:36 tvrusso Exp $
+ * $Id: db.c,v 1.406 2004/12/16 20:40:30 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12436,7 +12436,8 @@ int process_directed_query(char *call,char *path,char *message,char from) {
         while (p_station != NULL) {
             if ((p_station->flag & ST_ACTIVE) != 0) {       // ignore deleted objects
                 if ( ((p_station->flag & ST_VIATNC) != 0)   // test "via TNC" flag
-                        && ((p_station->flag & ST_DIRECT) != 0) ) { // And "direct" flag
+                     && ((p_station->flag & ST_DIRECT) != 0) // And "direct" flag
+                     && !is_my_call(p_station->call_sign,1) ) { // and not me
                     if (strlen(temp)+strlen(p_station->call_sign) < 65) {
                         strncat(temp,
                             " ",
