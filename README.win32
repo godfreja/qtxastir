@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.39 2003/05/19 20:14:32 we7u Exp $
+$Id: README.win32,v 1.40 2003/05/21 00:14:27 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -96,7 +96,7 @@ be selected as well, that's ok and necessary:
 [ ]     tiff (install sources for this one too? TBD)
     Interpreters
 [ ]     m4
-[ ]     perl (install 5.6.1 instead of 5.8.0)
+[ ]     perl
     Libs
 [ ]     curl
 [ ]     curl-devel
