@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.539 2004/10/18 18:57:59 we7u Exp $
+ * $Id: main.c,v 1.540 2004/10/23 22:24:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4168,6 +4168,8 @@ void Gamma_adjust(Widget w, XtPointer clientData, XtPointer callData) {
 // chose map label font
 void Map_font_destroy_shell( /*@unused@*/ Widget widget, XtPointer clientData, /*@unused@*/ XtPointer callData) {
     Widget shell = (Widget) clientData;
+
+    xfontsel_query = 0;
     XtPopdown(shell);
     XtDestroyWidget(shell);
     map_font_dialog = (Widget)NULL;
@@ -4267,6 +4269,10 @@ void Map_font_change_data(Widget widget, XtPointer clientData, XtPointer callDat
     char *temp;
     Widget shell = (Widget) clientData;
     int i;
+
+
+    xfontsel_query = 0;
+
     for (i = 0; i < FONT_MAX; i++) {
         temp = XmTextGetString(map_font_text[i]);
 
