@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.62 2002/12/15 07:00:00 we7u Exp $
+# $Id: language-French.sys,v 1.63 2002/12/19 06:03:52 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -99,9 +99,8 @@ MPUPTGR016|Map Intensity||
 #
 # PopUp "Map Chooser"
 WPUPMCP001|Choix de cartes||
-WPUPMCP002|Sélection de cartes||
-PULDNMMC01|Aucune|A|
-PULDNMMC02|Cartes vectorielles|V|
+PULDNMMC01|Clear|A|
+PULDNMMC02|vectorielles|V|
 PULDNMMC03|Topogr. 250k|2|
 PULDNMMC04|Topogr. 100k|1|
 PULDNMMC05|Topogr. 24k|4|

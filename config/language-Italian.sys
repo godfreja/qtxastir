@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.63 2002/12/15 07:00:00 we7u Exp $
+# $Id: language-Italian.sys,v 1.64 2002/12/19 06:03:52 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -100,9 +100,8 @@ MPUPTGR016|Map Intensity||
 #
 # Finestra di dialogo mappe
 WPUPMCP001|Scegli mappa||
-WPUPMCP002|Seleziona Mappe||
-PULDNMMC01|Nessuna|N|
-PULDNMMC02|Mappe vettoriali|V|
+PULDNMMC01|Clear|N|
+PULDNMMC02|Vettoriali|V|
 PULDNMMC03|Topografiche 250k|2|
 PULDNMMC04|Topografiche 100k|1|
 PULDNMMC05|Topografiche 24k|4|

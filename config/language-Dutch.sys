@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.63 2002/12/15 07:00:00 we7u Exp $
+# $Id: language-Dutch.sys,v 1.64 2002/12/19 06:03:52 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -104,9 +104,8 @@ MPUPTGR016|Kaart Intensiteit||
 #
 # PopUp "Map Chooser"
 WPUPMCP001|Kaart Kiezer||
-WPUPMCP002|Kies Kaarten||
-PULDNMMC01|Geen|N|
-PULDNMMC02|Vector Kaarten|V|
+PULDNMMC01|Clear|N|
+PULDNMMC02|Vector|V|
 PULDNMMC03|250k Topogr.|2|
 PULDNMMC04|100k Topogr.|1|
 PULDNMMC05|24k Topogr.|4|

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.12 2002/12/08 04:57:02 we7u Exp $
+ * $Id: maps.h,v 1.13 2002/12/19 06:03:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -72,6 +72,9 @@ typedef struct _map_index_record{
     unsigned long left;
     unsigned long right;
     int accessed;
+    int map_layer;      // For future expansion.  Specify which layer to draw the map on.
+    int draw_filled;    // For future expansion.  Specify whether to fill polygons when drawing.
+    int selected;       // Specifies if map is currently selected
     struct _map_index_record *next;
 } map_index_record;
 extern map_index_record *map_index_head;
