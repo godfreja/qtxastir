@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.26 2003/03/06 18:47:32 we7u Exp $
+ * $Id: gps.c,v 1.27 2003/03/18 21:50:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -327,10 +327,10 @@ void gps_data_find(char *gps_line_data, int port) {
             fprintf(stderr,"Got RMC %s\n", filtered_data);
         }
 
-        if (debug_level & 128) {
+//        if (debug_level & 128) {
             // Got GPS RMC String
             statusline(langcode("BBARSTA015"),0);
-        }
+//        }
 
         strncpy(gps_gprmc, gps_line_data, MAX_GPS_STRING);
         gps_gprmc[MAX_GPS_STRING] = '\0';   // Terminate it
@@ -396,10 +396,10 @@ void gps_data_find(char *gps_line_data, int port) {
             fprintf(stderr,"Got GGA %s\n", filtered_data);
         }
 
-        if (debug_level & 128) {
+//        if (debug_level & 128) {
             // Got GPS GGA String
             statusline(langcode("BBARSTA016"),0);
-        }
+//        }
 
         strncpy(gps_gpgga, gps_line_data, MAX_GPS_STRING);
         gps_gpgga[MAX_GPS_STRING] = '\0';   // Terminate it

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.21 2003/02/20 09:45:21 we7u Exp $
+ * $Id: xastir.h,v 1.22 2003/03/18 21:50:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -192,6 +192,11 @@ extern char locate_gnis_filename[200];
 // serial data to get through ok (Peet Bros U2k Complete Record Mode
 // for one).
 #define MAX_LINE_SIZE 512
+
+// from main.c
+extern char gprmc_save_string[MAX_LINE_SIZE+1];
+extern char gpgga_save_string[MAX_LINE_SIZE+1];
+extern int gps_port_save;
 
 // from map.c
 extern double calc_dscale_x(long x, long y);
