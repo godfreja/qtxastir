@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.21 2003/07/15 14:17:27 n2ygk Exp $
+ * $Id: list_gui.c,v 1.22 2003/10/28 15:02:25 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -424,7 +424,7 @@ void Station_List_fill(int type, int new_offset) {
             rows  = (h+10) / 29;         // number of rows we can display, 29 pixel per row
 //            fprintf(stderr,"fill: %d %d %d\n",wh, h, rows);
         } else {
-            if (list_size_w[type] != -1 && list_size_h[type] != -1) {
+            if (list_size_w[type] > 0 && list_size_h[type] > 0) {
                 wh = list_size_h[type];         // restore size
                 ww = list_size_w[type];
                 rows  = (wh -81+10) / 29;              // 81 ???
@@ -2303,7 +2303,7 @@ end_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List" );
 // this point when trying to resize the window:
  
         /* set last size if there was one */    // done in list_fill
-        if (list_size_w[type] != -1 && list_size_h[type] != -1)
+        if (list_size_w[type] > 0 && list_size_h[type] > 0)
                     XtVaSetValues(station_list_dialog[type], 
                     XmNwidth,  list_size_w[type], 
                     XmNheight, list_size_h[type], 
