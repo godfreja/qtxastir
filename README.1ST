@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.3 2002/02/06 00:57:09 we7u Exp $
+$Id: README.1ST,v 1.4 2002/02/25 22:29:24 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -418,6 +418,17 @@ First Time Install:
      can find your ax.25 libraries.
 
      This builds XASTIR, You should not get any error or warning messages.
+
+     If you wish to install Xastir in some location other than the default
+     /usr/local/bin and /usr/local/xastir directories, you may add the
+     "--prefix=<path>" flag to configure before compiling.  i.e.
+
+     "./configure --prefix=/home/apps/xastir"
+
+     While will cause the executables to be installed in /home/apps/xastir/bin/
+     and the rest of Xastir to be installed under the /home/apps/xastir/xastir/
+     directory.
+  
 
      -----------------------------------------------------------------------
 MAC OS X NOTES:
