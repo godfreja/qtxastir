@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.336 2004/06/30 19:43:31 we7u Exp $
+ * $Id: db.c,v 1.337 2004/06/30 20:53:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8069,11 +8069,13 @@ int extract_speed_course(char *info, char *speed, char *course) {
         speed[0] ='\0';
         course[0]='\0';
     }
-    for(i=0; i<2; i++) {        // recheck data format looking for undefined fields
-        if( !(isdigit((int)speed[i]) ) )
-            speed[0] = '\0';
-        if( !(isdigit((int)course[i]) ) )
-            course[0] = '\0';
+    else {  // recheck data format looking for undefined fields
+        for(i=0; i<2; i++) {
+            if( !(isdigit((int)speed[i]) ) )
+                speed[0] = '\0';
+            if( !(isdigit((int)course[i]) ) )
+                course[0] = '\0';
+        }
     }
 
     return(found);
