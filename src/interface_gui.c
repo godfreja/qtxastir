@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.79 2004/10/30 21:13:26 we7u Exp $
+ * $Id: interface_gui.c,v 1.80 2004/12/08 16:57:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -672,6 +672,9 @@ void Config_TNC( /*@unused@*/ Widget w, int device_type, int config_type, int po
 #ifndef HAVE_SETTIMEOFDAY
                 XtSetSensitive(TNC_GPS_set_time,FALSE);
 #endif  // HAVE_SETTIMEOFDAY
+#ifdef __CYGWIN__
+                XtSetSensitive(TNC_GPS_set_time,FALSE);
+#endif  // __CYGWIN__
 
                 break;
             case DEVICE_SERIAL_KISS_TNC:
@@ -1950,6 +1953,11 @@ void Config_GPS( /*@unused@*/ Widget w, int config_type, int port) {
 #ifndef HAVE_SETTIMEOFDAY
         XtSetSensitive(GPS_set_time,FALSE);
 #endif  // HAVE_SETTIMEOFDAY
+#ifdef __CYGWIN__
+        XtSetSensitive(GPS_set_time,FALSE);
+#endif  // __CYGWIN__
+
+
  
         frame = XtVaCreateManagedWidget("Config_GPS frame", xmFrameWidgetClass, form,
                                     XmNtopAttachment,XmATTACH_WIDGET,
@@ -3687,6 +3695,11 @@ void Config_NGPS( /*@unused@*/ Widget w, int config_type, int port) {
 #ifndef HAVE_SETTIMEOFDAY
         XtSetSensitive(NGPS_set_time,FALSE);
 #endif  // HAVE_SETTIMEOFDAY
+#ifdef __CYGWIN__
+        XtSetSensitive(NGPS_set_time,FALSE);
+#endif  // __CYGWIN__
+
+
  
         sep = XtVaCreateManagedWidget("Config_NGPS sep", xmSeparatorGadgetClass,form,
                                       XmNorientation, XmHORIZONTAL,
