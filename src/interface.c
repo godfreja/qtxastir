@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.8 2002/03/07 18:55:58 we7u Exp $
+ * $Id: interface.c,v 1.9 2002/03/07 20:49:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3681,6 +3681,14 @@ int tnc_get_data_type(char *buf, int port) {
     else {  // Must be APRS data
         type = 0;
     }
+
+    if (debug_level & 1) {
+        if (type == 0)
+            printf("APRS data\n");
+        else
+            printf("NMEA data\n");
+    }
+
     return(type);
 }
 
