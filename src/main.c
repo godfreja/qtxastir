@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.270 2003/04/25 00:20:55 jtwilley Exp $
+ * $Id: main.c,v 1.271 2003/04/29 21:37:18 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -85,6 +85,14 @@
 //#ifdef HAVE_NETAX25_AXLIB_H
 //#include <netax25/axlib.h>
 //#endif    // HAVE_NETAX25_AXLIB_H
+
+#ifdef HAVE_LIBCURL
+#include <curl/curl.h>
+#endif
+
+#ifdef HAVE_GDAL
+#include "ogr_api.h"
+#endif
 
 #include "xastir.h"
 #include "draw_symbols.h"
@@ -21874,7 +21882,11 @@ int main(int argc, char *argv[]) {
     program_start_time = sec_now(); // For use by "Display Uptime"
 
 #ifdef HAVE_LIBCURL
-    curl_global_init();
+    curl_global_init(CURL_GLOBAL_ALL);
+#endif
+
+#ifdef HAVE_GDAL
+    OGRRegisterAll();
 #endif
 
 #ifdef HAVE_IMAGEMAGICK
