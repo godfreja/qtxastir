@@ -1,6 +1,6 @@
 
 
-// $Id: hashtable_itr.c,v 1.2 2004/11/02 20:37:06 we7u Exp $
+// $Id: hashtable_itr.c,v 1.3 2004/12/24 07:39:28 tvrusso Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark  <firstname.lastname@cl.cam.ac.uk> */
@@ -53,11 +53,26 @@ hashtable_iterator(struct hashtable *h)
 
 void *
 hashtable_iterator_key(struct hashtable_itr *i)
-{ return i->e->k; }
+{ 
+    if (!i) 
+        return NULL;
+    if (i->e) 
+        return i->e->k;
+    else 
+        return NULL;
+}
 
 void *
 hashtable_iterator_value(struct hashtable_itr *i)
-{ return i->e->v; }
+{ 
+    if (!i) 
+        return NULL;
+    if (i->e) {
+        return i->e->v;
+    } else {
+    }
+
+}
 
 /*****************************************************************************/
 /* advance - advance the iterator to the next element
