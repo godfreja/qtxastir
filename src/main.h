@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.24 2002/11/13 02:07:18 we7u Exp $
+ * $Id: main.h,v 1.25 2002/11/13 20:40:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -79,6 +79,7 @@ extern FILE *read_file_ptr;
 extern Widget trackme_button;
 extern int debug_level;
 extern int my_position_valid;
+extern int using_gps_position;
 extern int transmit_now;
 extern char DATABASE_FILE[];
 extern char DATABASE_POINTER_FILE[];
