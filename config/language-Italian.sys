@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.123 2004/03/09 06:55:00 we7u Exp $
+# $Id: language-Italian.sys,v 1.124 2004/03/09 16:34:30 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -441,6 +441,7 @@ WPUPCFT037|SlotTime (unità di 10 ms)||
 WPUPCFT038|Coda Tx (unità di 10 ms)||
 WPUPCFT039|Full Duplex||
 WPUPCFT040|Configura TNC Multi-Port KISS||
+WPUPCFT041|Radio Port||
 #
 #Configura Porta Meteo
 WPUPCFWX01|Configura Porta Meteo||

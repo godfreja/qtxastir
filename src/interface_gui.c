@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.66 2004/03/09 06:42:15 we7u Exp $
+ * $Id: interface_gui.c,v 1.67 2004/03/09 16:34:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -295,7 +295,7 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC_change_data" )
         if (strcmp(devices[TNC_port].radio_port,"") == 0) {
             strcpy(devices[TNC_port].radio_port,"0");
         }
-fprintf(stderr,"Radio Port: %s\n",devices[TNC_port].radio_port);
+//fprintf(stderr,"Radio Port: %s\n",devices[TNC_port].radio_port);
     }
 
     if (XmToggleButtonGetState(TNC_active_on_startup))
@@ -629,7 +629,7 @@ void Config_TNC( /*@unused@*/ Widget w, int device_type, int config_type, int po
         if (device_type ==  DEVICE_SERIAL_MKISS_TNC) {
             // Add a "Radio Port" field for Multi-Port KISS TNC's.
 
-            radio_port_label = XtVaCreateManagedWidget(langcode("Radio Port"),
+            radio_port_label = XtVaCreateManagedWidget(langcode("WPUPCFT041"),
                                       xmLabelWidgetClass, form,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, TNC_active_on_startup,
@@ -1295,7 +1295,7 @@ XmNtopWidget, (device_type == DEVICE_SERIAL_KISS_TNC || device_type == DEVICE_SE
 
             if (device_type == DEVICE_SERIAL_MKISS_TNC) {
                 XmTextFieldSetString(TNC_radio_port_data,"0");
-fprintf(stderr,"Assigning '0' to radio port\n");
+//fprintf(stderr,"Assigning '0' to radio port\n");
             }
 
             XmToggleButtonSetState(TNC_active_on_startup,TRUE,FALSE);
@@ -1361,7 +1361,7 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC" );
 
             if (device_type == DEVICE_SERIAL_MKISS_TNC) {
                 XmTextFieldSetString(TNC_radio_port_data, devices[TNC_port].radio_port);
-fprintf(stderr,"Reconfig: %s\n", devices[TNC_port].radio_port);
+//fprintf(stderr,"Reconfig: %s\n", devices[TNC_port].radio_port);
             }
 
             if (devices[TNC_port].connect_on_startup)

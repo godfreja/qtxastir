@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.125 2004/03/09 06:54:59 we7u Exp $
+# $Id: language-Dutch.sys,v 1.126 2004/03/09 16:34:30 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -451,6 +451,7 @@ WPUPCFT037|SlotTime (10 ms stappen)||
 WPUPCFT038|TxTail (10 ms stappen)||
 WPUPCFT039|Vol Duplex||
 WPUPCFT040|Configureer Multi-Port KISS TNC||
+WPUPCFT041|Radio Port||
 #
 # PopUp "Configure WX Port"
 WPUPCFWX01|WX Poort Instelling||

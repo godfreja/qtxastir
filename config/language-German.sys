@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.125 2004/03/09 06:55:00 we7u Exp $
+# $Id: language-German.sys,v 1.126 2004/03/09 16:34:30 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -447,6 +447,7 @@ WPUPCFT037|SlotTime (in 10 ms Einheiten)||
 WPUPCFT038|TxTail (in 10 ms Einheiten)||
 WPUPCFT039|Voll-Duplex||
 WPUPCFT040|Multi-Port KISS TNC konfigurieren||
+WPUPCFT041|Radio Port||
 # 
 # PopUp "Einstellungen Wetterstation"
 WPUPCFWX01|Einstellungen Wetterstation||

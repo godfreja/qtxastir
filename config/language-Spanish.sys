@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.131 2004/03/09 06:55:00 we7u Exp $
+# $Id: language-Spanish.sys,v 1.132 2004/03/09 16:34:30 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -444,6 +444,7 @@ WPUPCFT037|SlotTime (10 ms unidades)||
 WPUPCFT038|TxTail (10 ms unidades)||
 WPUPCFT039|Full Duplex||
 WPUPCFT040|Configurar un Multi-Port KISS TNC||
+WPUPCFT041|Radio Port||
 #
 # Configurar el Puerto de la Estación Meteorológica
 WPUPCFWX01|Configurar el Puerto de la Estación Meteorológica||
