@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.44 2003/02/27 17:39:22 we7u Exp $
+# $Id: configure.ac,v 1.45 2003/02/28 00:30:30 jtwilley Exp $
 
 
 #########################################################################
@@ -24,10 +24,7 @@ echo "Configuring AC_PACKAGE_NAME AC_PACKAGE_VERSION"
 echo ""
 
 # Take out the dots in order to create the TOCALL
-SHORT_VERSION="AC_PACKAGE_VERSION"
-SHORT_VERSION=`echo $SHORT_VERSION | sed -e 's/\.//g'`
-AC_SUBST(SHORT_VERSION)
-AC_DEFINE_UNQUOTED(XASTIR_TOCALL, "APX$SHORT_VERSION", [Defines the version tocall])
+AC_DEFINE_UNQUOTED(XASTIR_TOCALL, "`echo AC_PACKAGE_VERSION | sed -e 's/^/APX/' -e 's/\.//g'`", [Defines the version tocall])
 
 
 
