@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.1 2003/06/26 15:37:21 n2ygk Exp $
+ * $Id: map_gnis.c,v 1.2 2003/07/03 21:30:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -423,6 +423,11 @@ void draw_gnis_map (Widget w,
                     // is, draw a text label at that location.
                     else if (coord_lon >= min_lon && coord_lon <= max_lon
                             && coord_lat <= min_lat && coord_lat >= max_lat) {
+
+                        if (interrupt_drawing_now) {
+                            (void)fclose(f);
+                            return;
+                        }
 
                         if (debug_level & 16) {
                             fprintf(stderr,"%s\t%s\t%s\t%s\t%s\t%s\t\t",

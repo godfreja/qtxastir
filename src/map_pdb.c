@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_pdb.c,v 1.1 2003/06/26 15:37:21 n2ygk Exp $
+ * $Id: map_pdb.c,v 1.2 2003/07/03 21:30:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -261,6 +261,11 @@ void draw_palm_image_map(Widget w,
                 map_right); // Right
 
             fclose(fn);
+
+            // Update the statusline for this map name.
+            xastir_snprintf(status_text, sizeof(status_text), langcode ("BBARSTA039"), filenm);
+            statusline(status_text,0);       // Loading/Indexing ...
+
             return; // Done indexing this file
         }
 
@@ -269,14 +274,7 @@ void draw_palm_image_map(Widget w,
 
 
             // Update the statusline for this map name
-            // Check whether we're indexing or drawing the map
-            if ( (destination_pixmap == INDEX_CHECK_TIMESTAMPS)
-                    || (destination_pixmap == INDEX_NO_TIMESTAMPS) ) {
-                xastir_snprintf(status_text, sizeof(status_text), langcode ("BBARSTA039"), filenm);
-            }
-            else {
-                xastir_snprintf(status_text, sizeof(status_text), langcode ("BBARSTA028"), filenm);
-            }
+            xastir_snprintf(status_text, sizeof(status_text), langcode ("BBARSTA028"), filenm);
             statusline(status_text,0);       // Loading/Indexing ...
 
 
@@ -285,6 +283,11 @@ void draw_palm_image_map(Widget w,
 
             /* read vectors */
             for (record_count = 2; record_count <= records; record_count++) {
+
+                if (interrupt_drawing_now) {
+                    fclose(fn);
+                    return;
+                }
 
                 // Point to the next record list header & snag it
                 fseek(fn, record_ptr, SEEK_SET);
@@ -532,3 +535,5 @@ void draw_palm_image_map(Widget w,
         fprintf(stderr,"Couldn't open file: %s\n", filename);
     }
 }
+
+
