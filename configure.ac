@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.14 2003/02/15 19:39:04 we7u Exp $
+# $Id: configure.ac,v 1.15 2003/02/15 22:30:34 we7u Exp $
 
 
 #
@@ -259,8 +259,9 @@ AC_HEADER_DIRENT
 AC_HEADER_STDC 
 AC_HEADER_SYS_WAIT 
 AC_CHECK_HEADERS([argz.h arpa/inet.h fcntl.h libintl.h limits.h locale.h malloc.h netdb.h]) 
-AC_CHECK_HEADERS([netinet/in.h nl_types.h stddef.h stdlib.h string.h strings.h sys/file.h]) 
-AC_CHECK_HEADERS([sys/ioctl.h sys/param.h sys/socket.h sys/time.h signal.h termios.h unistd.h]) 
+AC_CHECK_HEADERS([netinet/in.h nl_types.h stdarg.h stddef.h stdlib.h string.h strings.h])
+AC_CHECK_HEADERS([sys/file.h sys/ioctl.h sys/param.h sys/socket.h sys/time.h signal.h])
+AC_CHECK_HEADERS([termios.h unistd.h]) 
  
 # Checks for typedefs, structures, and compiler characteristics. 
 # 

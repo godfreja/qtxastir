@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.76 2003/02/15 20:10:57 we7u Exp $
+ * $Id: xa_config.c,v 1.77 2003/02/15 22:30:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25,12 +25,6 @@
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
-// This define should go away when "configure" is set up properly
-// for CYGWIN
-//#ifdef __CYGWIN__
-//#define XASTIR_SYSTEM "CYGWIN"
-//#endif
 
 #include <stdio.h>
 #include <fcntl.h>
