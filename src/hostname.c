@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.9 2004/01/26 16:18:20 we7u Exp $
+ * $Id: hostname.c,v 1.10 2004/05/28 19:03:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -166,7 +166,7 @@ char *host_lookup(char *host, char *ip, int time) {
                         fprintf(stderr,"Child closing write end of pipe\n");
 
                     close(fp[1]);   // All done writing to the pipe
-                    exit(EXIT_FAILURE);
+                    exit(EXIT_FAILURE); // Exit from child process
                 }
                 (void)alarm(time);  // Start the timer
 
@@ -251,7 +251,7 @@ char *host_lookup(char *host, char *ip, int time) {
                     fprintf(stderr,"Child closing write end of pipe\n");
 
                 close(fp[1]);   // All done writing to the pipe
-                exit(EXIT_FAILURE);
+                exit(EXIT_FAILURE); // Exit from child process
 
             }   // End of child process
 //---------------------------------------------------------------------------------------
