@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.h,v 1.1 2002/02/02 03:18:09 kg4ijb Exp $
+ * $Id: list_gui.h,v 1.2 2002/03/28 23:31:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -33,5 +33,5 @@ extern int list_size_w[];
 extern void list_gui_init(void);
 extern void update_station_scroll_list(void);
 extern int stations_types(int type);
-
+extern void Station_List_fill(int type, int new_offset);
 #endif
