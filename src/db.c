@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.132 2002/08/22 00:19:34 we7u Exp $
+ * $Id: db.c,v 1.133 2002/08/26 19:08:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9804,7 +9804,8 @@ else {
     if (debug_level & 1)
         printf("8\n");
     //--------------------------------------------------------------------------
-    // special treatment required?: Msg w/o line for me ???
+    // special treatment required?: Msg w/o line for me ?  Can also
+    // be messages between other people (much more common).
     //--------------------------------------------------------------------------
     if (!done) {                                   // message without line number
         long dummy;
@@ -9819,6 +9820,10 @@ else {
         }
 
         // Could be response to a query.  Popup a messsage.
+
+// Check addr for my_call and !third_party, then check later in the
+// packet for my_call if it is a third_party message?  Depends on
+// what the packet looks like by this point.
         if ( (message[0] != '?') && is_my_call(addr,1) ) {
             popup_message(langcode("POPEM00018"),message);
 
