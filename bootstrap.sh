@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: bootstrap.sh,v 1.7 2004/02/04 20:41:00 we7u Exp $
+# $Id: bootstrap.sh,v 1.8 2004/09/27 00:29:04 tvrusso Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -25,3 +25,4 @@ autoconf
 echo "Running automake"
 automake -a -c
 
+echo "Bootstrap complete."

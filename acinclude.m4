@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.17 2004/09/17 19:22:46 we7u Exp $
+# $Id: acinclude.m4,v 1.18 2004/09/27 00:29:04 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -291,7 +291,7 @@ fi
 # things grabbed elsewhere
 
 # this is from Squeak-3.2-4's acinclude.m4
-AC_DEFUN(AC_CHECK_GMTOFF,
+AC_DEFUN([AC_CHECK_GMTOFF],
 [AC_CACHE_CHECK([for gmtoff in struct tm], ac_cv_tm_gmtoff,
   AC_TRY_COMPILE([#include <time.h>],[struct tm tm; tm.tm_gmtoff;],
     ac_cv_tm_gmtoff="yes", ac_cv_tm_gmtoff="no"))
