@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.545 2004/11/30 18:43:43 tvrusso Exp $
+ * $Id: main.c,v 1.546 2004/12/08 14:58:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7416,11 +7416,28 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     XtSetArg(al[ac], XmNforeground, MY_FG_COLOR); ac++;
     XtSetArg(al[ac], XmNbackground, MY_BG_COLOR); ac++;
 
+
 #ifdef SWAP_MOUSE_BUTTONS
-    XtSetArg(al[ac], XmNmenuPost, "<Btn1Down>"); ac++;  // Set for popup menu on button 1
+    //
+    // Motif 2.2.2 (and perhaps earlier, back to version 2.0) has a
+    // problem where the XmNmenuPost doesn't work properly for
+    // modifiers (CapsLock/ScrollLock/NumLock/etc).  We're reverting
+    // back to the Motif 1.x method of doing things.  It works!
+    //
+    //XtSetArg(al[ac], XmNmenuPost, "<Btn1Down>"); ac++;  // Set for popup menu on button 1
+    XtSetArg(al[ac], XmNwhichButton, 1); ac++;  // Enable popup menu on button 1
+
 #else   // SWAP_MOUSE_BUTTONS
-    XtSetArg(al[ac], XmNmenuPost, "<Btn3Down>"); ac++;  // Set for popup menu on button 3
+    //
+    // Motif 2.2.2 (and perhaps earlier, back to version 2.0) has a
+    // problem where the XmNmenuPost doesn't work properly for
+    // modifiers (CapsLock/ScrollLock/NumLock/etc).  We're reverting
+    // back to the Motif 1.x method of doing things.  It works!
+    //
+    //XtSetArg(al[ac], XmNmenuPost, "<Btn3Down>"); ac++;  // Set for popup menu on button 3
+    XtSetArg(al[ac], XmNwhichButton, 3); ac++;  // Enable popup menu on button 3
 #endif  // SWAP_MOUSE_BUTTONS
+
 
     XtSetArg(al[ac], XmNnavigationType, XmTAB_GROUP); ac++;
     XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
