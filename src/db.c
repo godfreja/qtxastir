@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.105 2002/07/11 23:54:05 we7u Exp $
+ * $Id: db.c,v 1.106 2002/07/12 00:20:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4455,7 +4455,7 @@ int store_trail_point(DataRow *p_station, long lon, long lat, time_t sec, char *
             ptr->speed  = -1;
 
     if (course[0] != '\0')
-            ptr->course = atoi(course);
+            ptr->course = (int)(atof(course) + 0.5);    // Poor man's rounding
     else
             ptr->course = -1;
 
