@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.166 2002/11/12 23:23:54 we7u Exp $
+ * $Id: db.c,v 1.167 2002/11/13 02:07:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9255,6 +9255,10 @@ void my_station_gps_change(char *pos_long, char *pos_lat, char *course, char *sp
     if (track_station_on == 1)          // maybe we are tracking ourselves?
         track_station(da,tracking_station_call,p_station);
 
+    // We parsed a good GPS string, so allow beaconing to proceed
+    // normally
+    my_position_valid = 1;
+ 
     //redraw_on_new_data = 1;   // redraw next chance
     redraw_on_new_data = 2;     // Immediate update of symbols/tracks
 }
