@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.9 2003/05/22 20:20:41 we7u Exp $
+$Id: README.MAPS,v 1.10 2003/05/23 20:16:37 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -307,6 +307,12 @@ Getting Maps and other Data Files for Xastir:
 
       A .geo with only the word "TERRASERVER" in it will retrieve a satellite
       photo of the area from terraserver.  You need "wget" or libcurl, plus
+      ImageMagick installed, and support for them compiled into Xastir.  No
+      additional map downloads are needed if these are the only maps that you
+      want to use.
+
+      A .geo with only the word "TOPOSERVER" in it will retrieve a topographic
+      map of the area from terraserver.  You need "wget" or libcurl, plus
       ImageMagick installed, and support for them compiled into Xastir.  No
       additional map downloads are needed if these are the only maps that you
       want to use.
