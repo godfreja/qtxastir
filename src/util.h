@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.1 2002/02/02 03:19:28 kg4ijb Exp $
+ * $Id: util.h,v 1.2 2002/02/14 17:33:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -51,6 +51,8 @@ extern long convert_lon_s2l(char *lon);
 extern double calc_distance(long lat1, long lon1, long lat2, long lon2);
 extern double calc_distance_course(long lat1, long lon1, long lat2, long lon2, char *course_deg, int course_deg_length);
 extern double distance_from_my_station(char *call_sign, char *course_deg);
+
+extern char *convert_bearing_to_name(char *bearing, int opposite);
 
 extern int  filethere(char *fn);
 extern int  filecreate(char *fn);

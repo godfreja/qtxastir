@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.2 2002/02/05 04:55:48 we7u Exp $
+ * $Id: main.h,v 1.3 2002/02/14 17:33:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -152,6 +152,7 @@ extern char sound_band_open_message[];
 extern char sound_wx_alert_message[];
 extern int festival_speak_new_station;
 extern int festival_speak_proximity_alert;
+extern int festival_speak_tracked_proximity_alert;
 extern int festival_speak_band_opening;
 extern int festival_speak_new_message_alert;
 extern int festival_speak_new_message_body;
