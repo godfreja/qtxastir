@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.177 2004/06/18 15:38:02 we7u Exp $
+ * $Id: interface.c,v 1.178 2004/06/18 15:46:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1963,11 +1963,12 @@ int OpenTrac_decode_maidenhead(unsigned char *element,
 
 // 0x33 Radio Capabilities
 //
-//WE7U
 // Modifies: Nothing yet
 // 
 int OpenTrac_decode_radio_capabilities(unsigned char *element,
                                        int           element_len) {
+
+//WE7U: Need code here that passes back values.
 
     fprintf(stderr, "Radio Capabilites\n");
 
@@ -2048,7 +2049,7 @@ int OpenTrac_decode_acreg(unsigned char *element,
 int OpenTrac_surface_observation(unsigned char *element,
                                  int           element_len) {
 
-//WE7U: Need to pass back the data .
+//WE7U: Need to pass back the data.
 
     fprintf(stderr, "Surface Observation Report Element\n");
 
@@ -2066,7 +2067,7 @@ int OpenTrac_surface_observation(unsigned char *element,
 int OpenTrac_rainfall_history(unsigned char *element,
                               int           element_len) {
 
-//WE7U: Need to pass back the data .
+//WE7U: Need to pass back the data.
 
     fprintf(stderr, "Rainfall History Element\n");
 
