@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.138 2002/09/10 23:14:20 we7u Exp $
+ * $Id: db.c,v 1.139 2002/09/19 20:27:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -96,7 +96,7 @@ void track_station(Widget w, char *call_tracked, DataRow *p_station);
 int  new_message_data;
 time_t last_message_remove;     // last time we did a check for message removing
 
-char packet_data[16][300];
+char packet_data[16][MAX_LINE_SIZE+1];
 int  packet_data_display;
 int  redraw_on_new_packet_data;
 
@@ -10481,7 +10481,7 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 //
 int decode_ax25_header(unsigned char *incoming_data, int length) {
     char temp[20];
-    char result[4096+100];
+    char result[MAX_LINE_SIZE+100];
     char dest[15];
     int i, ptr;
     char callsign[15];
