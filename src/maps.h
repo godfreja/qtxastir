@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.30 2003/08/14 16:12:06 we7u Exp $
+ * $Id: maps.h,v 1.31 2003/08/15 23:11:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,6 +26,7 @@
 #define __XASTIR_MAPS_H
 
 #include <X11/Intrinsic.h>
+#include <Xm/Xm.h>
 
 #define MAX_OUTBOUND 900
 #define MAX_MAP_POINTS 100000
@@ -67,6 +68,7 @@ typedef struct {
 
 typedef struct _map_index_record{
     char filename[MAX_FILENAME];
+    XmString XmStringPtr;
     unsigned long bottom;
     unsigned long top;
     unsigned long left;
