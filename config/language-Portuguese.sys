@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.62 2002/12/19 20:36:08 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.63 2002/12/20 20:59:15 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -104,7 +104,7 @@ PULDNMMC03|250k Topo|2|
 PULDNMMC04|100k Topo|1|
 PULDNMMC05|24k Topo|4|
 PULDNMMC06|Expand Dirs|||
-PULDNMMC07|Maps Selected:||
+PULDNMMC07|Dirs/Maps Selected:||
 #
 # Cores de fundo do mapa
 PULDNMBC01|Cinzento||

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.65 2002/12/19 20:36:08 we7u Exp $
+# $Id: language-Italian.sys,v 1.66 2002/12/20 20:59:15 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -106,7 +106,7 @@ PULDNMMC03|Topografiche 250k|2|
 PULDNMMC04|Topografiche 100k|1|
 PULDNMMC05|Topografiche 24k|4|
 PULDNMMC06|Expand Dirs|||
-PULDNMMC07|Maps Selected:||
+PULDNMMC07|Dirs/Maps Selected:||
 #
 # Menù Colori dello sfondo delle mappe.
 PULDNMBC01|Grigio||
