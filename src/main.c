@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.367 2003/10/29 19:59:49 we7u Exp $
+ * $Id: main.c,v 1.368 2003/10/29 20:27:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12207,12 +12207,20 @@ void map_properties_fill_in (void) {
     int n,i;
     XmString str_ptr;
     map_index_record *current = map_index_head;
+    int top_position;
 
 
     busy_cursor(appshell);
 
     i=0;
     if (map_properties_dialog) {
+
+        // Save our current place in the dialog
+        XtVaGetValues(map_properties_list,
+            XmNtopItemPosition, &top_position,
+            0);
+
+//        fprintf(stderr,"Top Position: %d\n",top_position);
 
         // Empty the map_properties_list widget first
         XmListDeleteAllItems(map_properties_list);
@@ -12328,6 +12336,11 @@ void map_properties_fill_in (void) {
             }
             current = current->next;
         }
+
+        // Restore our place in the dialog
+        XtVaSetValues(map_properties_list,
+            XmNtopItemPosition, top_position,
+            NULL);
     }
 }
 
