@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.300 2004/02/28 01:00:08 we7u Exp $
+ * $Id: db.c,v 1.301 2004/02/28 01:26:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -91,6 +91,7 @@ void station_shortcuts_update_function(int hash_key, DataRow *p_rem);
 int  extract_speed_course(char *info, char *speed, char *course);
 int  extract_bearing_NRQ(char *info, char *bearing, char *nrq);
 
+int skip_dupe_checking;
 int  tracked_stations = 0;       // A count variable used in debug code only
 void track_station(Widget w, char *call_tracked, DataRow *p_station);
 
@@ -5640,6 +5641,13 @@ int is_trailpoint_echo(DataRow *p_station) {
     char temp[50];
     TrackRow *ptr;
 
+
+    // Check whether we're to skip checking for dupes (reading in
+    // objects/items from file is one such case).
+    //
+    if (skip_dupe_checking) {
+        return(0);  // Say that it isn't an echo
+    }
 
     // Start at newest end of linked list and compare.  Return if we're
     // beyond the checktime.

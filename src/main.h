@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.56 2004/01/26 16:18:22 we7u Exp $
+ * $Id: main.h,v 1.57 2004/02/28 01:26:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -81,6 +81,7 @@ extern int interrupt_drawing_now;
 #define MAX_GPS_CHARS 128
 #define MAX_WX_CHARS 4
 
+extern int skip_dupe_checking;
 extern int serial_char_pacing;  // Inter-character delay in ms.
 extern int disable_all_maps;
 extern int re_sort_maps;

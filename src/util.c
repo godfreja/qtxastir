@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.95 2004/01/26 16:18:24 we7u Exp $
+ * $Id: util.c,v 1.96 2004/02/28 01:26:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2200,6 +2200,8 @@ void reload_object_item(void) {
     FILE *f;
     char line[300+1];
     char line2[300+1];
+    int save_state;
+
 
     file = get_user_base_dir("config/object.log");
 
@@ -2209,7 +2211,15 @@ void reload_object_item(void) {
 
     f=fopen(file,"r");
     if (f!=NULL) {
+
+        // Turn off duplicate point checking (need this in order to
+        // work with SAR objects).  Save state so that we don't mess
+        // it up.
+        save_state = skip_dupe_checking;
+        skip_dupe_checking++;
+
         while (fgets(line, 300, f) != NULL) {
+
             if (debug_level & 1)
                 fprintf(stderr,"Loading object/item from file: %s",line);
    
@@ -2223,6 +2233,9 @@ void reload_object_item(void) {
             }
         }
         (void)fclose(f);
+
+        // Restore the skip_dupe_checking state
+        skip_dupe_checking = save_state;
 
         // Update the screen
         redraw_symbols(da);
