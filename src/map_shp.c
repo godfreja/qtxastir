@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.66 2004/05/28 23:02:38 we7u Exp $
+ * $Id: map_shp.c,v 1.67 2004/05/29 00:45:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1452,7 +1452,7 @@ void draw_shapefile_map (Widget w,
             xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "wntr_strm.xbm");
         else if (strncasecmp(alert->alert_tag, "WINTER_WEATHER", 14) == 0)
             xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "winter_wx.xbm");
-        else if (strncasecmp(alert->alert_tag, "RED_FLAG_WARN", 13) == 0)
+        else if (strncasecmp(alert->alert_tag, "RED_FLAG", 8) == 0)
             xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "red_flag.xbm");
         else
             xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "alert.xbm");
