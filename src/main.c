@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.454 2004/05/10 20:51:40 we7u Exp $
+ * $Id: main.c,v 1.455 2004/05/19 23:23:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -23937,6 +23937,10 @@ void Configure_station_change_data(Widget widget, XtPointer clientData, XtPointe
 
     /* set station ambiguity*/
     position_amb_chars = Configure_station_pos_amb;
+
+    if (transmit_compressed_posit) {
+        position_amb_chars = 0;
+    }
 
     strcpy(my_comment,XmTextFieldGetString(station_config_comment_data));
     (void)remove_trailing_spaces(my_comment);
