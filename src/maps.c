@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.215 2003/02/24 19:41:12 we7u Exp $
+ * $Id: maps.c,v 1.216 2003/02/24 20:23:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11951,22 +11951,11 @@ void load_alert_maps (Widget w, char *dir) {
                                     (unsigned char)0x62 };
 
 
-// NOTES:
-// Have alert_expire() schedule a map redraw if anything has
-// expired?  We might not want that in all cases, like inside this
-// routine (load_alert_maps).
-//
 // Figure out how to pass a quantity of zones off to the map drawing
 // routines, then we can draw them all with one pass through each
 // map file.  Alphanumerically sort the zones to make it easier for
 // the map drawing functions.
 
-
-    // Expire old alerts (zero the title string).
-    // alert_active_count() returns the number of active alerts.
-    // alert_expire() returns the number of alerts that were just
-    // expired.
-    (void)alert_expire();
 
     alert_count = MAX_ALERT - 1;
 

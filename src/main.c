@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.232 2003/02/22 16:41:09 n0vh Exp $
+ * $Id: main.c,v 1.233 2003/02/24 20:23:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7294,6 +7294,11 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 
             //if ( (new_message_data > 0) && ( (delay_time % 2) == 0) )
             //update_messages(0);                 // Check Messages, no forced update
+
+            // Check whether it's time to expire some weather
+            // alerts.  This function will set redraw_on_new_data if
+            // any alerts are expired from the list.
+            (void)alert_expire();
 
             /* check on Redraw requests */
             if (         ( (redraw_on_new_data > 1)

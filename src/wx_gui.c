@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.26 2003/02/24 18:25:28 we7u Exp $
+ * $Id: wx_gui.c,v 1.27 2003/02/24 20:23:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -301,9 +301,6 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
 
         // Get the previous alert count from the alert list window
         XtVaGetValues(wx_alert_list, XmNitemCount, &max_item_count, NULL);
-
-        // Expire old alerts (zero the title string)
-        alert_expire();
 
         ii = 0; // Current dialog count
 
