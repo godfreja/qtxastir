@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.12 2002/06/20 00:17:04 we7u Exp $
+ * $Id: gps.c,v 1.13 2002/06/20 17:36:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -521,6 +521,10 @@ void create_garmin_waypoint(long latitude,long longitude,char *call_sign) {
         }
     }
     short_callsign[6] = '\0';   // Truncate at 6 chars
+
+    // Convert to upper case.  Garmin's don't seem to like lower
+    // case waypoint names
+    to_upper(short_callsign);
 
     //printf("Creating waypoint for %s:%s\n",call_sign,short_callsign);
 
