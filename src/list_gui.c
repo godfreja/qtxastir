@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.28 2004/06/30 20:32:41 we7u Exp $
+ * $Id: list_gui.c,v 1.29 2004/07/01 04:05:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -579,6 +579,7 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill"
                 temp_ptr = XmTextFieldGetString(SL_call[type][row]);
                 xastir_snprintf(temp_call, sizeof(temp_call), "%s", temp_ptr);
                 XtFree(temp_ptr);
+
                 if (strcmp(temp_call,p_station->call_sign) !=0 ) {
                     XmTextFieldSetString(SL_call[type][row],p_station->call_sign);
                     if (ghost)

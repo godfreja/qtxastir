@@ -1,5 +1,5 @@
 /*
- * $Id: location_gui.c,v 1.7 2004/01/26 16:18:21 we7u Exp $
+ * $Id: location_gui.c,v 1.8 2004/07/01 04:07:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,6 +35,7 @@
 #include "xa_config.h"
 #include "util.h"
 #include "lang.h"
+#include "snprintf.h"
 
 
 Widget location_dialog = (Widget)NULL;
@@ -266,7 +267,14 @@ void location_add(/*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPo
     Widget my_text = (Widget) clientData;
     int len,n,found;
 
-    strcpy(name,XmTextFieldGetString(my_text));
+
+    temp_ptr = XmTextFieldGetString(my_text);
+    xastir_snprintf(name,
+        sizeof(name),
+        "%s",
+        temp_ptr);
+    XtFree(temp_ptr);
+
     (void)remove_trailing_spaces(name);
     XmTextFieldSetString(my_text,"");
     /* should check for name used already */
