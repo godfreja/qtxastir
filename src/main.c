@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.462 2004/06/04 05:49:23 we7u Exp $
+ * $Id: main.c,v 1.463 2004/06/18 14:30:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9796,6 +9796,23 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                         devices[i].gps_retrieve);
                                 }
                                 port_write_string(i, tmp);
+
+                                if (gprmc_save_string[0] != '\0')
+                                    ret1 = gps_data_find(gprmc_save_string, gps_port_save);
+                                if (gpgga_save_string[0] != '\0')
+                                    ret2 = gps_data_find(gpgga_save_string, gps_port_save);
+
+                                // Blank out the global variables
+                                gprmc_save_string[0] = '\0';
+                                gpgga_save_string[0] = '\0';
+
+                                if (ret1 && ret2)
+                                    statusline("GPS:  $GPRMC, $GPGGA", 0);
+                                else if (ret1)
+                                    statusline("GPS:  $GPRMC", 0);
+                                else if (ret2)
+                                    statusline("GPS:  $GPGGA", 0);
+
                                 break;
 
                             case DEVICE_SERIAL_TNC_HSP_GPS:
