@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.17 2002/05/21 17:19:47 we7u Exp $
+ * $Id: util.c,v 1.18 2002/05/24 22:01:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1596,7 +1596,7 @@ int valid_path(char *path) {
 /*
  *  Check for a valid AX.25 call
  *      Valid calls consist of up to 6 uppercase alphanumeric characters
- *      plus optinal SSID (four-bit integer)       [APRS Reference, AX.25 Reference]
+ *      plus optional SSID (four-bit integer)       [APRS Reference, AX.25 Reference]
  */
 int valid_call(char *call) {
     int len, ok;
