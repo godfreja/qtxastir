@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.203 2003/02/02 16:42:24 we7u Exp $
+ * $Id: db.c,v 1.204 2003/02/03 05:05:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -123,6 +123,8 @@ time_t last_object_check = 0;   // Used to determine when to re-transmit objects
 
 time_t last_emergency_time = 0;
 char last_emergency_callsign[MAX_CALLSIGN+1];
+int st_direct_timeout = 60 * 60;    // 60 Minutes.
+
 
 
 
@@ -8822,10 +8824,9 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
             // stations transmit every 30 minutes.  One hour gives
             // us time to receive a direct packet from them among
             // all the digipeated packets.
-            int TIMEOUT = 60 * 60;  // 60 Minutes/1 Hour.
 
             if ((p_station->flag & ST_DIRECT) != 0 &&
-                    sec_now() > (p_station->direct_heard + TIMEOUT)) {
+                    sec_now() > (p_station->direct_heard + st_direct_timeout)) {
                 if (debug_level & 1)
                     printf("Clearing ST_DIRECT for station %s\n", 
                         p_station->call_sign);

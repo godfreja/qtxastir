@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.28 2003/02/02 04:42:42 jtwilley Exp $
+ * $Id: db.h,v 1.29 2003/02/03 05:05:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -422,6 +422,7 @@ extern void check_message_remove(void);
 extern int  new_message_data;
 
 // stations
+extern int st_direct_timeout;   // Interval that ST_DIRECT flag stays set
 extern long stations;
 extern DataRow *n_first;  // pointer to first element in name ordered station list
 extern DataRow *n_last;   // pointer to last element in name ordered station list
