@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.413 2004/12/22 07:18:32 we7u Exp $
+ * $Id: db.c,v 1.414 2004/12/22 18:07:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3192,6 +3192,16 @@ void display_file(Widget w) {
             gc_tint,
             pixmap_final);
     }
+
+
+    // Check whether currently_selected_stations has changed.  If
+    // so, set stations_old to 0 so that main.c will come along and
+    // update the counts on the status line.
+    if (currently_selected_stations != currently_selected_stations_save) {
+        stations_old = 0;   // Cause and update to occur
+    }
+    currently_selected_stations_save = currently_selected_stations;
+
 
     if (debug_level & 1)
         fprintf(stderr,"Display File Stop\n");
@@ -13006,7 +13016,7 @@ void shorten_path( char *path, char *short_path, int short_path_size ) {
 
 
 /*
- *  Mesages, Bulletins and Announcements         [APRS Reference, chapter 14]
+ *  Messages, Bulletins and Announcements         [APRS Reference, chapter 14]
  */
 int decode_message(char *call,char *path,char *message,char from,int port,int third_party) {
     char *temp_ptr;

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.551 2004/12/22 16:44:39 we7u Exp $
+ * $Id: main.c,v 1.552 2004/12/22 18:07:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -228,7 +228,9 @@ void *my_envp;
 
 // A count of the stations currently on the screen.  Counted by
 // db.c:display_file() routine.
-int currently_selected_stations = 0;
+int currently_selected_stations      = 0;
+int currently_selected_stations_save = 0;
+
 
 // Used in segfault handler
 char dangerous_operation[200];
