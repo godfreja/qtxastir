@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.24 2002/04/16 23:17:59 we7u Exp $
+ * $Id: maps.c,v 1.25 2002/04/17 01:02:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7849,6 +7849,8 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
                     }
                 }
             }
+            (void)closedir (dm);
+
             if (done) {    // We found a filename match for the alert
                 // Go draw the weather alert (kind'a)
                 draw_map (w,
