@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.101 2002/07/11 21:36:20 we7u Exp $
+ * $Id: db.c,v 1.102 2002/07/11 21:45:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6542,8 +6542,9 @@ int extract_RMC(DataRow *p_station, char *data, char *call_sign, char *path) {
     // should we copy it before processing? it changes data: ',' gets substituted by '\0' !!
     ok = 0; // Start out as invalid.  If we get enough info, we change this to a 1.
 
-    if ( (data == NULL) || (strlen(data) < 37) ) {  // Not enough data to parse position from.
-        printf("Invalid RMC string: Too short\n");
+    if ( (data == NULL) || (strlen(data) < 34) ) {  // Not enough data to parse position from.
+        if (debug_level & 256)
+            printf("Invalid RMC string: Too short\n");
         return(ok);
     }
 
@@ -6689,7 +6690,7 @@ int extract_GGA(DataRow *p_station,char *data,char *call_sign, char *path) {
 
     ok = 0; // Start out as invalid.  If we get enough info, we change this to a 1.
  
-    if ( (data == NULL) || (strlen(data) < 35) )  // Not enough data to parse position from.
+    if ( (data == NULL) || (strlen(data) < 32) )  // Not enough data to parse position from.
         return(ok);
 
     p_station->record_type = NORMAL_GPS_GGA;
