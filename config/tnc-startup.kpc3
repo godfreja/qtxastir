@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kpc3,v 1.2 2002/03/11 18:06:56 we7u Exp $
+# $Id: tnc-startup.kpc3,v 1.3 2002/03/11 23:36:11 we7u Exp $
 # This is the TNC Startup file for Kantronics TNC.
 # lines that begin with a pound sign are comments.
 
@@ -9,6 +9,7 @@ B E 0
 DIGI on
 ECho off
 EXP on
+FILT off
 FLow off
 FUll off
 HEA off
@@ -16,7 +17,6 @@ LFadd off
 LFSup ON
 AUTOLF off
 MCOM off
-MFILT off
 MON ON
 MResp OFF
 MRPt on
