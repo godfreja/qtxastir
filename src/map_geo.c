@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.26 2004/03/02 08:10:54 we7u Exp $
+ * $Id: map_geo.c,v 1.27 2004/03/02 17:56:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -847,8 +847,8 @@ void draw_geo_image_map (Widget w,
         url_e = (int)(left_e / t_scale); // N/E of the map corner
 
         xastir_snprintf(fileimg, sizeof(fileimg),
-//          "http://terraservice.net/download.ashx?t=%d\046s=%d\046x=%d\046y=%d\046z=%d\046w=%d\046h=%d",
-            "http://terraserver-usa.net/download.ashx?t=%d\046s=%d\046x=%d\046y=%d\046z=%d\046w=%d\046h=%d",
+            "http://terraservice.net/download.ashx?t=%d\046s=%d\046x=%d\046y=%d\046z=%d\046w=%d\046h=%d",
+//            "http://terraserver-usa.net/download.ashx?t=%d\046s=%d\046x=%d\046y=%d\046z=%d\046w=%d\046h=%d",
             (toposerver_flag) ? 2 : 1,
             t_zoom,
             url_e,
