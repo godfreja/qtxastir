@@ -1,5 +1,5 @@
 /*
- * $Id: rac_data.h,v 1.3 2004/01/26 16:18:23 we7u Exp $
+ * $Id: rac_data.h,v 1.4 2004/06/04 22:47:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -51,6 +51,7 @@ typedef struct {
     char club_province[3];
     char club_postal_code[10];
     char crlf[2];
+    char filler[8]; // To prevent overruns
 } rac_record;
 
 extern int search_rac_data(char *callsign, rac_record *data);

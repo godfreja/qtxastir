@@ -1,5 +1,5 @@
 /*
- * $Id: rac_data.c,v 1.7 2004/01/26 16:18:23 we7u Exp $
+ * $Id: rac_data.c,v 1.8 2004/06/04 22:47:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -236,7 +236,10 @@ int search_rac_data(char *callsign, rac_record *data) {
             (void)chomp(callsign,5);
 
         while (!feof(fdb) && strncmp((char *)&racdata,callsign,6) < 0)
-            rc = fgets((char *)&racdata, sizeof(racdata)+8, fdb);
+
+//WE7U
+// Problem here:  We're sticking 8 bytes too many into racdata!
+            rc = fgets((char *)&racdata, sizeof(racdata), fdb);
 
     } else
         fprintf(stderr,"Search:Could not open RAC data base: %s\n", get_data_base_dir("fcc/AMACALL.LST") );
