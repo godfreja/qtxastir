@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.190 2004/08/07 18:12:19 we7u Exp $
+ * $Id: interface.c,v 1.191 2004/08/12 17:03:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -775,8 +775,17 @@ unsigned char *parse_agwpe_packet(unsigned char *input_string,
             // routines.  We skip the first byte as it's not part of
             // the AX.25 packet.
             if ( !decode_ax25_header( (char *)&input_string[37], data_length ) ) {
+//                int zz;
+
                 // Had a problem decoding it.  Drop it on the floor.
                 fprintf(stderr, "AGWPE: Bad KISS packet.  Dropping it.\n");
+
+special_debug++;
+//                for (zz = 0; zz < data_length; zz++) {
+//                    fprintf(stderr, "%02x ", input_string[zz+36]);
+//                }
+//                fprintf(stderr,"\n");
+
                 return(NULL);
             }
 
