@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.38 2003/05/21 23:16:19 we7u Exp $
+ * $Id: draw_symbols.c,v 1.39 2003/05/24 07:05:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -100,6 +100,10 @@ void draw_nice_string(Widget w, Pixmap where, int style, long x, long y, char *t
             // draw text the old way in a gray box
             // Leave this next one hard-coded to 0xff.  This keeps
             // the background as gray.
+
+// With a large font, the background rectangle is too small.  Need
+// to include the font metrics in this drawing algorithm.
+
             (void)XSetForeground(XtDisplay(w),gc,colors[0xff]);
             (void)XFillRectangle(XtDisplay(w),where,gc,x-1,(y-10),(length*6)+2,11);
             (void)XSetForeground(XtDisplay(w),gc,colors[bgcolor]);
@@ -108,6 +112,10 @@ void draw_nice_string(Widget w, Pixmap where, int style, long x, long y, char *t
         case 2:
         default:
             // draw white or colored text in a black box
+
+// With a large font, the background rectangle is too small.  Need
+// to include the font metrics in this drawing algorithm.
+ 
             (void)XSetForeground(XtDisplay(w),gc,(int)GetPixelByName(w,"black") );
             (void)XFillRectangle(XtDisplay(w),where,gc,x-2,(y-11),(length*6)+3,13);
             break;
