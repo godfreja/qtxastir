@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.38 2004/08/20 04:06:31 we7u Exp $
+ * $Id: igate.c,v 1.39 2004/08/21 06:13:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -390,7 +390,7 @@ int not_a_dupe(int queue_type, int port, char *line, int insert_mode) {
             temp->time = (time_t)sec_now();
 
             xastir_snprintf(temp->data,
-                MAX_TNC_LINE_SIZE+15,
+                sizeof(temp->data),
                 "%s",
                 match_line);
 

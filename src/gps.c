@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.42 2004/08/19 19:38:14 we7u Exp $
+ * $Id: gps.c,v 1.43 2004/08/21 06:13:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -263,10 +263,17 @@ int decode_gps_rmc( char *data,
     if ( tzp == NULL ) {
         tzp = "";
     }
-    xastir_snprintf(tzn, 512, "TZ=%s", tzp);
+    xastir_snprintf(tzn,
+        sizeof(tzn),
+        "TZ=%s",
+        tzp);
     putenv("TZ=UTC");
     tzset();
-    xastir_snprintf(sampledatime, 15, "%s%s", sampledate, sampletime);
+    xastir_snprintf(sampledatime,
+        sizeof(sampledatime),
+        "%s%s",
+        sampledate,
+        sampletime);
     (void)strptime(sampledatime, "%d%m%y%H%M%S", &stm);
     *stim=mktime(&stm);
     putenv(tzn);

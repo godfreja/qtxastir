@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.412 2004/08/20 17:27:07 we7u Exp $
+ * $Id: maps.c,v 1.413 2004/08/21 06:13:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5567,7 +5567,7 @@ void fill_in_new_alert_entries(Widget w, char *dir) {
     // Set up our path to the wx alert maps
     memset(alert_scan, 0, sizeof (alert_scan));    // Zero our alert_scan string
     xastir_snprintf(alert_scan, // Fetch the base directory
-        MAX_FILENAME-10,
+        sizeof(alert_scan),
         "%s",
         dir);
     strncat(alert_scan, // Complete alert directory is now set up in the string
