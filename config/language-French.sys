@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.3 2002/03/04 21:19:14 we7u Exp $
+# $Id: language-French.sys,v 1.4 2002/03/06 21:57:16 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -274,8 +274,8 @@ WPUPCFG005|GPS seul||
 WPUPCFG006|TNC branché au GPS (Cable HSP)||
 WPUPCFG007|TNC branché au GPS avec CTL-E||
 WPUPCFG008|Intervalle de temps GPS||
-WPUPCFG009|10 sec||
-WPUPCFG010|20 sec||
+WPUPCFG009|5 sec||
+WPUPCFG010|15 sec||
 WPUPCFG011|30 sec||
 WPUPCFG012|1 min||
 WPUPCFG013|2 min||

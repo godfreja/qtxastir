@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.3 2002/03/04 21:19:14 we7u Exp $
+# $Id: language-German.sys,v 1.4 2002/03/06 21:57:16 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -280,8 +280,8 @@ WPUPCFG005|Eigenständiger GPS||
 WPUPCFG006|TNC mit GPS verbunden (HSP Kabel)||
 WPUPCFG007|TNC mit GPS verbunden über Ctrl-E||
 WPUPCFG008|GPS Zeit (Abgleich alle)||
-WPUPCFG009|10 Sek||
-WPUPCFG010|20 Sek||
+WPUPCFG009|5 Sek||
+WPUPCFG010|15 Sek||
 WPUPCFG011|30 Sek||
 WPUPCFG012|1 Minute||
 WPUPCFG013|2 Minuten||
