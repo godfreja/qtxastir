@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.227 2003/03/29 00:34:48 we7u Exp $
+ * $Id: db.c,v 1.228 2003/03/29 00:37:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11451,6 +11451,7 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 // MKISS
 // FlexKISS             -,
 // FlexCRC              -|-- These are all the same!
+// RMNC-KISS            -|
 // CRC-RMNC             -'
 // 
 // 
