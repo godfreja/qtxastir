@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.162 2002/12/14 06:35:17 we7u Exp $
+ * $Id: maps.c,v 1.163 2002/12/14 07:52:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10455,7 +10455,6 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
 
                                 //printf("FULL PATH %s\n",fullpath);
 
-//WE7U
                                 // If we're indexing, throw the
                                 // directory into the map index as
                                 // well.
@@ -10478,6 +10477,9 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
                                     // we can identify it as a
                                     // directory.
                                     strcat(temp_dir,"/");
+
+                                    // Add the directory to the
+                                    // in-memory map index.
                                     index_update_directory(temp_dir);
                                 }
 
