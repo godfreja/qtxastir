@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.c,v 1.6 2002/05/03 22:16:57 francais1 Exp $
+ * $Id: list_gui.c,v 1.7 2002/06/18 22:21:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -536,7 +536,14 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill"
                         XmTextFieldSetString(SL_power_gain[type][row],stemp);
                         XtManageChild(SL_power_gain[type][row]);
 
-                        xastir_snprintf(stemp, sizeof(stemp), "%s", p_station->comments);
+// Should we display only the first comment field we have stored, or
+// concatenate all of them up to the limit of stemp?
+                        //xastir_snprintf(stemp, sizeof(stemp), "%s", p_station->comments);
+                        if (p_station->comment_data != NULL)
+                            xastir_snprintf(stemp, sizeof(stemp), "%s", p_station->comment_data->text);
+                        else
+                            stemp[0] = '\0';    // Empty string
+
                         XmTextFieldSetString(SL_comments[type][row],stemp);
                         XtManageChild(SL_comments[type][row]);
 
