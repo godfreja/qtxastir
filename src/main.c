@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.78 2002/06/06 18:00:27 we7u Exp $
+ * $Id: main.c,v 1.79 2002/06/07 15:52:53 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1891,7 +1891,7 @@ void create_image(Widget w) {
     //
     //  If tigermaps are enabled, then load them.
     //
-    if (tiger_flag)
+    if (tiger_flag && !disable_all_maps)
         draw_tiger_map(w);
 #endif // HAVE_IMAGEMAGICK
 
