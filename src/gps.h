@@ -1,5 +1,5 @@
 /*
- * $Id: gps.h,v 1.4 2003/02/20 09:45:17 we7u Exp $
+ * $Id: gps.h,v 1.5 2003/03/18 22:28:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,7 +30,7 @@
 
 extern int gps_stop_now;
 
-extern void gps_data_find(char *gps_line_data, int port);
+extern int gps_data_find(char *gps_line_data, int port);
 
 extern void create_garmin_waypoint(long latitude,long longitude,char *call_sign);
 
