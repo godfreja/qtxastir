@@ -1,4 +1,4 @@
-# $Id: tnc-startup.pico,v 1.9 2004/01/26 16:12:51 we7u Exp $
+# $Id: tnc-startup.pico,v 1.10 2004/06/04 19:43:05 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -61,7 +61,10 @@ NOMODE on
 PERSIST 128
 #
 PASSALL off
+#
+# Important!  Monitor only PID 0xf0 packets:
 #PIDCHECK off
+#
 PMS off
 SCREENLN 0
 #

@@ -1,4 +1,4 @@
-# $Id: tnc-startup.aea,v 1.5 2004/01/26 16:12:51 we7u Exp $
+# $Id: tnc-startup.aea,v 1.6 2004/06/04 19:42:57 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -24,6 +24,10 @@ HEA off
 #MCOM off
 MFILTER 0
 MON ON
+#
+# Important!  Only monitor PID 0xf0 packets:
+MPROTO OFF
+#
 #MResp OFF
 MRPt on
 MSTamp off

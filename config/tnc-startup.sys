@@ -1,4 +1,4 @@
-# $Id: tnc-startup.sys,v 1.6 2004/01/26 16:12:51 we7u Exp $
+# $Id: tnc-startup.sys,v 1.7 2004/06/04 19:43:05 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -29,7 +29,20 @@ MXMit off
 NEWmode off
 #PACLen 128
 PASSALL off
-#PID off
+#
+#
+# Important!  Monitor only PID 0xf0 packets:
+# *Kantronics*
+PID off
+# *TAPR2*
+MNOAX25 off
+# *Paccomm*
+#PIDCHECK
+# *AEA*
+MPROTO OFF
+# End of monitor only PID 0xf0 packets section
+#
+#
 SCR 0
 # B E 0 must be set to 0 or both APRS and your TNC will send BCNS
 # Which will alternate in everyones L and A lists and fill up

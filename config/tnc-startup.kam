@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kam,v 1.6 2004/06/04 17:20:35 we7u Exp $
+# $Id: tnc-startup.kam,v 1.7 2004/06/04 19:43:04 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -31,5 +31,7 @@ FLOW OFF
 HID OFF/OFF
 MSTAMP OFF
 PASSALL OFF
+#
+# Important!  Monitor only PID 0xf0 packets:
 PID OFF
 
