@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.387 2003/11/12 05:37:35 we7u Exp $
+ * $Id: main.c,v 1.388 2003/11/13 16:16:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7060,28 +7060,6 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             al,
             ac);
 
-    // "Move my station here"
-    ac = 0;
-    XtSetArg(al[ac], XmNforeground, MY_FG_COLOR); ac++;
-    XtSetArg(al[ac], XmNbackground, MY_BG_COLOR); ac++;
-    XtSetArg(al[ac], XmNnavigationType, XmTAB_GROUP); ac++;
-    XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
-    //    XtSetArg(al[ac], XmNmnemonic, langcode_hotkey("POPUPMA019")); ac++;
-    XtSetArg(al[ac], XmNmnemonic, langcode("POPUPMA025")); ac++;
-    //    modify_object=XtCreateManagedWidget(langcode("POPUPMA019"),
-    setmyposition=XtCreateManagedWidget(langcode("POPUPMA025"),
-            xmPushButtonGadgetClass,
-            right_menu_popup,
-            al,
-            ac);
-    XtAddCallback(setmyposition,XmNactivateCallback,SetMyPosition,"1");
-
-    XtCreateManagedWidget("create_appshell sep7c",
-            xmSeparatorWidgetClass,
-            right_menu_popup,
-            al,
-            ac);
-
     // "Pan Up"
     ac = 0;
     XtSetArg(al[ac], XmNforeground, MY_FG_COLOR); ac++;
@@ -7157,6 +7135,28 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     //    XmNarrowDirection,  XmARROW_DOWN,
     //    NULL);
     XtAddCallback(pan_down,XmNactivateCallback,Pan_down,NULL);
+
+    XtCreateManagedWidget("create_appshell sep7c",
+            xmSeparatorWidgetClass,
+            right_menu_popup,
+            al,
+            ac);
+
+    // "Move my station here"
+    ac = 0;
+    XtSetArg(al[ac], XmNforeground, MY_FG_COLOR); ac++;
+    XtSetArg(al[ac], XmNbackground, MY_BG_COLOR); ac++;
+    XtSetArg(al[ac], XmNnavigationType, XmTAB_GROUP); ac++;
+    XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
+    //    XtSetArg(al[ac], XmNmnemonic, langcode_hotkey("POPUPMA019")); ac++;
+    XtSetArg(al[ac], XmNmnemonic, langcode("POPUPMA025")); ac++;
+    //    modify_object=XtCreateManagedWidget(langcode("POPUPMA019"),
+    setmyposition=XtCreateManagedWidget(langcode("POPUPMA025"),
+            xmPushButtonGadgetClass,
+            right_menu_popup,
+            al,
+            ac);
+    XtAddCallback(setmyposition,XmNactivateCallback,SetMyPosition,"1");
 
 
 //-------------------------------------------------------------------------
