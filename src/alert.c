@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.57 2003/05/05 18:00:36 we7u Exp $
+ * $Id: alert.c,v 1.58 2003/05/05 20:36:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -59,7 +59,7 @@
 //   |              |        |     |      |       |                                     |
 //  from            to       |     |    title   title                               issue_date
 //                           |  alert_tag
-//                        activity
+//                        activity (expiration)
 //
 //
 // The code should also handle the case where the packet looks like
@@ -381,7 +381,7 @@ void alert_print_list(void) {
                 alert_list[i].alert_level,                  // T
                 alert_list[i].alert_tag,                    // TORNDO
 
-                alert_list[i].activity,                     // 191915z
+                alert_list[i].activity,                     // 191915z (expiration)
 
                 (unsigned long)(alert_list[i].expiration),  // 1019234700
 
@@ -961,7 +961,7 @@ int alert_on_screen(void) {
 //   |              |        |     |      |       |                                     |
 //  from            to       |     |    title   title                               issue_date
 //                           |  alert_tag
-//                        activity
+//                        activity (expiration)
 //
 //
 // The code should also handle the case where the packet looks like
