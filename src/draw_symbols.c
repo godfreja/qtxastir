@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.4 2002/06/13 22:53:37 we7u Exp $
+ * $Id: draw_symbols.c,v 1.5 2002/06/14 17:58:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1378,8 +1378,19 @@ void draw_symbol(Widget w, char symbol_table, char symbol_id, char symbol_overla
                         }
                         if ( (!ghost || show_old_data) && temp_show_last_heard) {
                             char age[20];
+                            float minutes;
 
-                            xastir_snprintf(age,sizeof(age),"%ld min",(sec_now() - sec_heard)/60);
+                            minutes = (float)( (sec_now() - sec_heard) / 60.0);
+                            // More than an hour old?
+                            if (minutes >= 60.0) {
+                                xastir_snprintf(age,sizeof(age),"%.1fhr",
+                                    (float)(minutes / 60.0) );
+                            }
+                            else {  // Less than an hour old
+                                xastir_snprintf(age,sizeof(age),"%dmin",
+                                    (int)minutes);
+                            }
+
                             length = strlen(age);
                             x_offset=(((x_long-x_long_offset)/scale_x)-(length*6))-12;
                             y_offset=((y_lat  -y_lat_offset) /scale_y)+posyl;
