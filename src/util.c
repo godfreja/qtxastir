@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.22 2002/06/12 21:52:25 we7u Exp $
+ * $Id: util.c,v 1.23 2002/06/12 23:29:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -718,7 +718,14 @@ char *compress_posit(const char *input_lat, const char group, const char *input_
     int temp, deg;
     double minutes;
 
-    //printf("lat:%s\tlong:%s\n",input_lat,input_lon);
+    //printf("lat:%s, long:%s, symbol:%c%c, course:%d, speed:%d, phg:%s\n",
+    //    input_lat,
+    //    input_lon,
+    //    group,
+    //    symbol,
+    //    last_course,
+    //    last_speed,
+    //    phg);
 
     (void)sscanf(input_lat, "%2d%lf%c", &deg, &minutes, &ext);
     temp = 380926 * (90 - (deg + minutes / 60.0) * ( ext=='N' ? 1 : -1 ));
@@ -746,11 +753,15 @@ char *compress_posit(const char *input_lat, const char group, const char *input_
 
     //printf("%s\n",lon);
 
-    // Set up csT bytes for course/speed if both are non-zero
+    // Set up csT bytes for course/speed if either are non-zero
     c = s = t = ' ';
     if (last_course > 0 || last_speed > 0) {
-        c = (char)(last_course/4 + 33);
-        s = pow(1.08, (double)last_speed) + 32;
+        if (last_course >= 360)
+            c = '!';    // 360 would be past 'z'.  Set it to zero.
+        else
+            c = (char)(last_course/4 + 33);
+        s = (char)(log(last_speed + 1) / log(1.08) + 0.5);  // Poor man's rounding
+        s = (char)(s + 33); // Convert to ASCII
         t = 'C';
     }
     // Else set up csT bytes for PHG if within parameters

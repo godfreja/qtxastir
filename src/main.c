@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.85 2002/06/12 21:52:25 we7u Exp $
+ * $Id: main.c,v 1.86 2002/06/12 23:29:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10620,7 +10620,7 @@ int Setup_object_data(char *line, int line_length) {
             line[strlen(line)] = comment[temp++];
         }
     }
-printf("line: %s\n",line);
+    //printf("line: %s\n",line);
 
 // NOTE:  Compressed mode will be shorter still.  Account
 // for that when compressed mode is implemented for objects.
@@ -10945,7 +10945,7 @@ int Setup_item_data(char *line, int line_length) {
             line[strlen(line)] = comment[temp++];
         }
     }
-printf("line: %s\n",line);
+    //printf("line: %s\n",line);
 
 // NOTE:  Compressed mode will be shorter still.  Account
 // for that when compressed mode is implemented for items.
