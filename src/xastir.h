@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.8 2002/06/06 18:00:28 we7u Exp $
+ * $Id: xastir.h,v 1.9 2002/06/06 21:45:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -133,7 +133,7 @@ extern Colormap cmap;
 
 
 /* from messages.c */
-extern int  message_counter;
+extern char  message_counter[5+1];
 extern int  auto_reply;
 extern char auto_reply_message[100];
 extern int  satellite_ack_mode;

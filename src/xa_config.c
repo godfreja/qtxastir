@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.23 2002/06/04 23:13:38 we7u Exp $
+ * $Id: xa_config.c,v 1.24 2002/06/06 21:45:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -524,12 +524,7 @@ void save_data(void)  {
         store_long(fout, "DEFAULT_STATION_REMOVE", (long)sec_remove);
         store_string (fout, "HELP_DATA", HELP_FILE);
 
-        // An attempt to keep away from rollover condition for
-        // message_counter
-        if (message_counter < 1000)
-            store_int (fout, "MESSAGE_COUNTER", message_counter);
-        else
-            store_int (fout, "MESSAGE_COUNTER", 0);
+        store_string (fout, "MESSAGE_COUNTER", message_counter);
 
         store_string (fout, "AUTO_MSG_REPLY", auto_reply_message);
         store_int (fout, "DISPLAY_PACKET_TYPE", Display_packet_data_type);
@@ -1053,8 +1048,9 @@ void load_data_or_default(void) {
 //            sec_remove = (time_t)(24*3600); // change to a one-day expire
     }
 
-    if (!get_int ("MESSAGE_COUNTER", &message_counter,0,99999,0))
-        message_counter = 0;
+    if (!get_string ("MESSAGE_COUNTER", message_counter))
+        strcpy (message_counter, "00");
+    message_counter[2] = '\0';  // Terminate at 2 chars
 
     if (!get_string ("AUTO_MSG_REPLY", auto_reply_message))
         strcpy (auto_reply_message, "Autoreply- No one is at the keyboard");
