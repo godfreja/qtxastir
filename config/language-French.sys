@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.34 2002/07/15 23:03:16 we7u Exp $
+# $Id: language-French.sys,v 1.35 2002/07/16 21:32:20 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -354,6 +354,7 @@ WPUPCFT026|Type binaire||
 WPUPCFT027|Type ASCII||
 WPUPCFT028|Configurer TNC +AUX GPS||
 WPUPCFT029|COnfigurer TNC +INVALID ENUM||
+WPUPCFT030|Configure KISS TNC||
 #
 # PopUp "Configure WX Port"
 WPUPCFWX01|Configurer port météo||

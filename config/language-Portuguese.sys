@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.29 2002/07/15 23:03:16 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.30 2002/07/16 21:32:20 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -353,6 +353,7 @@ WPUPCFT026|Tipo Binário||
 WPUPCFT027|Tipo ASCII||
 WPUPCFT028|Configurar TNC com GPS AUX||
 WPUPCFT029|Configurar TNC com ENUM INVÁLIDO||
+WPUPCFT030|Configure KISS TNC||
 #
 # Configurar a porta da estação meteorológica
 WPUPCFWX01|Configurar a porta da estação meteorológica||

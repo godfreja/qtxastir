@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.36 2002/07/15 23:03:16 we7u Exp $
+# $Id: language-Spanish.sys,v 1.37 2002/07/16 21:32:20 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -355,6 +355,7 @@ WPUPCFT026|Tipo Binario||
 WPUPCFT027|Tipo ASCII||
 WPUPCFT028|Configurar el TNC c/AUX GPS||
 WPUPCFT029|Configurar el TNC c/MAL ENUM||
+WPUPCFT030|Configure KISS TNC||
 #
 # Configurar el Puerto de la Estación Meteorológica
 WPUPCFWX01|Configurar el Puerto de la Estación Meteorológica||

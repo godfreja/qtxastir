@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.35 2002/07/15 23:03:16 we7u Exp $
+# $Id: language-Italian.sys,v 1.36 2002/07/16 21:32:20 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -355,6 +355,7 @@ WPUPCFT026|Dati binari||
 WPUPCFT027|Dati ASCII||
 WPUPCFT028|Configura TNC con cavo AUX per GPS||
 WPUPCFT029|Configura TNC con INVALID ENUM||
+WPUPCFT030|Configure KISS TNC||
 #
 #Configura Porta Meteo
 WPUPCFWX01|Configura Porta Meteo||
