@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.44 2003/04/22 17:34:59 we7u Exp $
+ * $Id: main.h,v 1.45 2003/06/14 01:47:54 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -211,6 +211,8 @@ extern int map_background_color;
 extern int map_color_fill;
 extern int letter_style;
 extern int wx_alert_style;
+extern time_t map_refresh_interval;
+extern time_t map_refresh_time;
 extern char sound_command[];
 extern pid_t last_sound_pid;
 extern int sound_play_new_station;
