@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.23 2003/02/15 20:09:32 we7u Exp $
+ * $Id: gps.c,v 1.24 2003/02/19 21:55:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -365,7 +365,7 @@ void gps_data_find(char *gps_line_data, int port) {
                     fprintf(stderr,"Setting Time %ld EUID: %d, RUID: %d\n",
                         (long)t, (int)getuid(), (int)getuid());
                 }
-#ifdef __linux__
+#ifdef HAVE_SETTIMEOFDAY
                 settimeofday(&tv, &tz);
 #endif
             }

@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.39 2003/02/15 22:30:34 we7u Exp $
+ * $Id: interface_gui.c,v 1.40 2003/02/19 21:56:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -518,7 +518,7 @@ void Config_TNC( /*@unused@*/ Widget w, int device_type, int config_type, int po
                                       NULL);
 
 // We can only set the time properly on Linux systems
-#ifndef __linux__
+#ifndef HAVE_SETTIMEOFDAY
                 XtSetSensitive(TNC_GPS_set_time,FALSE);
 #endif
 
@@ -1592,7 +1592,7 @@ void Config_GPS( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
 // We can only set the time properly on Linux systems
-#ifndef __linux__
+#ifndef HAVE_SETTIMEOFDAY
         XtSetSensitive(GPS_set_time,FALSE);
 #endif
  
@@ -3118,7 +3118,7 @@ void Config_NGPS( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
 // We can only set the time properly on Linux systems
-#ifndef __linux__
+#ifndef HAVE_SETTIMEOFDAY
         XtSetSensitive(NGPS_set_time,FALSE);
 #endif
  
