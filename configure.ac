@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.51 2003/03/17 20:39:20 we7u Exp $
+# $Id: configure.ac,v 1.52 2003/03/17 22:58:24 we7u Exp $
 
 
 #########################################################################
@@ -881,19 +881,21 @@ if test "$use_imagemagick" = "yes"; then
     if test "$use_imagemagick" = "no"; then
       AC_MSG_WARN(*** Cannot find ImageMagick include files:  Building w/o ImageMagick support. ***)
     else
-      AC_CHECK_LIB([Magick], [WriteImage], AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library]), )
+      AC_CHECK_LIB([Magick], [WriteImage], use_imagemagick="yes", use_imagemagick="no")
       if test "$use_imagemagick" != "yes"; then
         #
         # Try one more location for Cygwin specifically.
         #
         AC_CHECK_FILE(/usr/lib/libMagick.dll.a, use_imagemagick="yes", use_imagemagick="no") 
-        if test "$use_imagemagick" = "yes"; then 
-          AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library])
-        else
+        if test "$use_imagemagick" != "yes"; then 
           AC_MSG_WARN(*** Cannot find ImageMagick library files:  Building w/o ImageMagick support. ***)
         fi 
       fi
     fi
+  fi
+  #
+  if test "$use_imagemagick" = "yes"; then
+    AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library])
   fi
   #
   if test "$magickold" = "yes"; then 
