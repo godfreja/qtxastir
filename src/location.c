@@ -1,5 +1,5 @@
 /*
- * $Id: location.c,v 1.3 2003/07/04 19:32:20 we7u Exp $
+ * $Id: location.c,v 1.4 2003/07/23 17:33:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -74,17 +74,25 @@ void map_pos_last_position(void) {
 void map_pos(long mid_y, long mid_x, long sz) {
     // see also set_map_position() in db.c
 
+    // Set interrupt_drawing_now because conditions have changed
+    // (new map center).
+    interrupt_drawing_now++;
+
     set_last_position();
     mid_x_long_offset = mid_x;
     mid_y_lat_offset  = mid_y;
     scale_y = sz;
     scale_x = get_x_scale(mid_x,mid_y,scale_y);
     setup_in_view();  // flag all stations in screen view
+
+    // Request that a new image be created.  Calls create_image,
+    // XCopyArea, and display_zoom_status.
+    request_new_image++;
     
-    if (create_image(da)) {
-        // We don't care whether or not this succeeds?
-        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
-        display_zoom_status();
-    }
+//    if (create_image(da)) {
+//        // We don't care whether or not this succeeds?
+//        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+//        display_zoom_status();
+//    }
 }
 

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.48 2003/07/18 21:05:01 we7u Exp $
+ * $Id: main.h,v 1.49 2003/07/23 17:33:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -264,6 +264,7 @@ extern int transmit_disable;
 extern int posit_tx_disable;
 extern int object_tx_disable;
 extern int map_chooser_expand_dirs;
+extern int request_new_image;
 
 extern int coordinate_system;
 #define USE_DDDDDD      0
