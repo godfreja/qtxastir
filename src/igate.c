@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.18 2003/04/11 20:49:39 we7u Exp $
+ * $Id: igate.c,v 1.19 2003/04/16 23:27:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -889,7 +889,7 @@ void load_NWS_stations(char *file) {
                     add_NWS_stations();
                     if (NWS_station_data != NULL) {
                         // add data
-                        (void)sscanf(line,"%s",NWS_station_data[NWS_stations-1].call);
+                        (void)sscanf(line,"%11s",NWS_station_data[NWS_stations-1].call);
                         if (debug_level & 1024)
                             fprintf(stderr,"LINE:%s\n",line);
                     }
