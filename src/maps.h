@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.19 2003/02/24 23:26:44 we7u Exp $
+ * $Id: maps.h,v 1.20 2003/03/20 22:29:45 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -111,9 +111,9 @@ extern int grid_size;
   #if defined(HAVE_IMAGEMAGICK)
     extern float imagemagick_gamma_adjust;
   #endif    // HAVE_IMAGEMAGICK
-  #if defined(HAVE_GEOTIFF)
+  #if defined(HAVE_LIBGEOTIFF)
     extern float geotiff_map_intensity;
-  #endif    // HAVE_GEOTIFF
+  #endif    // HAVE_LIBGEOTIFF
 #endif  // NO_GRAPHICS
 
 extern void Print_properties(Widget widget, XtPointer clientData, XtPointer callData);

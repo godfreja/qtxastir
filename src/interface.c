@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.75 2003/03/18 21:50:21 we7u Exp $
+ * $Id: interface.c,v 1.76 2003/03/20 22:29:19 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1425,11 +1425,7 @@ static void* net_connect_thread(void *arg) {
     int len;
     int result;
 
-#ifdef __solaris__
-    char flag;
-#else   // __solaris__
     int flag;
-#endif  // __solaris__
 
     //int stat;
     struct sockaddr_in address;
@@ -1466,7 +1462,7 @@ static void* net_connect_thread(void *arg) {
             fprintf(stderr,"after htons\n");
         len = (int)sizeof(address);
         flag = 1;
-        (void)setsockopt(port_data[port].channel, SOL_SOCKET, SO_KEEPALIVE, &flag, sizeof(int));
+        (void)setsockopt(port_data[port].channel, SOL_SOCKET, SO_KEEPALIVE, (char *) &flag, sizeof(int));
         if (debug_level & 2)
             fprintf(stderr,"after setsockopt\n");
         pthread_testcancel();  // Check for thread termination request
@@ -2256,15 +2252,7 @@ void port_read(int port) {
     */
     struct sockaddr from;
 
-#ifdef __solaris__
-    unsigned int    from_len;
-#else   // __solaris__
-  #ifndef socklen_t
-    int             from_len;
-  #else // socklen_t
-    socklen_t       from_len;
-  #endif    // socklen_t
-#endif  // __solaris__
+    socklen_t from_len;
 
 #ifdef HAVE_AX25
     char           *dev;

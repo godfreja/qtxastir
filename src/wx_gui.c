@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.27 2003/02/24 20:23:56 we7u Exp $
+ * $Id: wx_gui.c,v 1.28 2003/03/20 22:29:49 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -39,9 +39,9 @@
 #define _(x)        (x)
 #endif  // HAVE_LIBINTL_H
 
-#ifdef HAVE_LIBM
+#ifdef HAVE_MATH_H
 #include <math.h>
-#endif  // HAVE_LIBM
+#endif  // HAVE_MATH_H
 
 #include "xastir.h"
 #include "wx.h"

@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.7 2003/02/20 09:51:34 we7u Exp $
+ * $Id: hostname.c,v 1.8 2003/03/20 22:29:19 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -94,11 +94,11 @@ char *host_lookup(char *host, char *ip, int time) {
     char **names, **addrs;
     static struct hostent *hostinfo;
 
-#ifdef __linux__
-    sighandler_t previous_loc;
-#else   // __linux__
-    void *previous_loc;
-#endif  // __linux__
+#ifdef RETSIGTYPE
+    RETSIGTYPE * previous_loc;
+#else 
+#error RETSIGTYPE not defined
+#endif
 
     pid_t host_pid;
     int status;
