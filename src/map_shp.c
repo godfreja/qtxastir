@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.82 2004/12/22 06:22:57 tvrusso Exp $
+ * $Id: map_shp.c,v 1.83 2004/12/23 03:09:49 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1663,6 +1663,7 @@ void draw_shapefile_map (Widget w,
             }
             CHECKMALLOC(RTree_hitarray);
             RTree_hitarray[0]=found_shape;
+            // fprintf(stderr," %s contains alert\n");
             nhits=1;
         }
         else {  // Didn't find the record
@@ -1676,9 +1677,11 @@ void draw_shapefile_map (Widget w,
             // shape whose bounding box overlaps the viewport.
             nhits = RTreeSearch(si->root, &viewportRect, 
                                 RTreeSearchCallback, 0);
+            // fprintf(stderr,"Found %d hits in %s\n",nhits,file);
         } else {
             // we read the entire shapefile
             nhits=nEntities;
+            // fprintf(stderr," %s entirely in view, with %d shapes\n",nhits);
         }
     }
 #else
@@ -1713,6 +1716,8 @@ void draw_shapefile_map (Widget w,
 #ifdef USE_RTREE
         if (si) {
             structure=RTree_hitarray[RTree_hitarray_index];
+        } else if ((weather_alert_flag && found_shape!=-1)) {
+            structure = RTree_hitarray[0];
         } else {
             structure = RTree_hitarray_index;
         }
