@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.27 2004/12/08 05:45:05 we7u Exp $
+ * $Id: map_tiger.c,v 1.28 2004/12/15 04:30:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -215,13 +215,6 @@ void draw_tiger_map (Widget w,
 
 
 
-
-    xastir_snprintf(map_it,
-        sizeof(map_it),
-        langcode ("BBARSTA028"),
-        short_filenm);
-    statusline(map_it,0);       // Loading ...
-
     // Create a shorter filename for display (one that fits the
     // status line more closely).  Subtract the length of the
     // "Indexing " and/or "Loading " strings as well.
@@ -241,6 +234,11 @@ void draw_tiger_map (Widget w,
             filenm);
     }
 
+    xastir_snprintf(map_it,
+        sizeof(map_it),
+        langcode ("BBARSTA028"),
+        short_filenm);
+    statusline(map_it,0);       // Loading ...
 
 
         
