@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.180 2002/11/26 07:05:19 we7u Exp $
+ * $Id: db.c,v 1.181 2002/11/26 23:56:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1881,6 +1881,11 @@ int ok_to_draw_symbol(DataRow *p_station) {
             // Check if WX info and we wish to see it
             if (p_station->weather_data) {
                 ok = wx_obj_display_enable;
+            }
+            // Check if water gage and we wish to see it
+            else if (p_station->aprs_symbol.aprs_type == '/'
+                    && p_station->aprs_symbol.aprs_symbol == 'w') {
+                ok = gage_obj_display_enable;
             }
             else {  // Object doesn't contain weather
                 ok = 1;
