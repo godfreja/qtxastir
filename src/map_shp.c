@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.58 2004/05/25 23:17:44 we7u Exp $
+ * $Id: map_shp.c,v 1.59 2004/05/26 04:42:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -849,6 +849,21 @@ void draw_shapefile_map (Widget w,
 // Here's where a bunch of calloc() calls occur.  Some of which
 // don't get freed!  dbfawk_field_list allocates new memory.
             fld_info = dbfawk_field_list(hDBF, dbffields);
+
+            //  Check for NULL here
+            if (!fld_info) {
+                fprintf(stderr,"draw_shapefile_map: fld_info is NULL\n");
+//WE7U
+// Frees memory
+                if (sig_info != NULL && sig_info != dbfawk_default_sig  && (sig_info->sig == NULL)) {
+                    if (sig_info->prog != NULL)
+//WE7U
+// Frees memory
+                        awk_free_program(sig_info->prog);
+                    free(sig_info);
+                }
+                return;
+            }
 
         } else {                /* should never be reached anymore! */
             fprintf(stderr,"No DBFAWK signature for %s and no default!\n",filenm);
