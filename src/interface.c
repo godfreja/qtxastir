@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.17 2002/06/20 00:17:04 we7u Exp $
+ * $Id: interface.c,v 1.18 2002/06/20 19:47:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3702,6 +3702,8 @@ begin_critical_section(&devices_lock, "interface.c:output_waypoint_data" );
 
             if (port_data[i].status == DEVICE_UP) {
                 port_write_string(i,data_txt);
+                usleep(250000);    // 0.25 secs
+ 
                 if (debug_level & 1)
                     printf("Sending to interface:%d, %s\n",i,data_txt);
             }
