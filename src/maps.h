@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.20 2003/03/20 22:29:45 jtwilley Exp $
+ * $Id: maps.h,v 1.21 2003/04/02 00:27:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -117,6 +117,8 @@ extern int grid_size;
 #endif  // NO_GRAPHICS
 
 extern void Print_properties(Widget widget, XtPointer clientData, XtPointer callData);
+
+extern void test_create_shapefile_map(void);
 
 #endif /* __XASTIR_MAPS_H */
 

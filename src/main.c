@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.257 2003/03/26 19:28:19 we7u Exp $
+ * $Id: main.c,v 1.258 2003/04/02 00:27:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13543,6 +13543,8 @@ void Test(Widget w, XtPointer clientData, XtPointer callData) {
         view_zero_distance_bulletins);
 
     (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+
+    test_create_shapefile_map();
 }
 
 
