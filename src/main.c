@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.510 2004/08/19 19:38:15 we7u Exp $
+ * $Id: main.c,v 1.511 2004/08/22 18:39:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1804,7 +1804,8 @@ void Coordinate_calc_clear_data(Widget widget, XtPointer clientData, XtPointer c
 // inputs are output directly.  Latitude/longitude are converted to
 // the various different lat/lon representations.
 //
-// Outputs: global variables and "result" textField.
+// Outputs: global variables and "result" textField, full_zone.
+// full_zone should be a string of at least size 4.
 //
 void Coordinate_calc_output(char *full_zone, long northing,
             long easting, double latitude, double longitude) {
