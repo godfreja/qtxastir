@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.237 2003/04/02 00:27:47 we7u Exp $
+ * $Id: maps.c,v 1.238 2003/04/03 17:39:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4209,7 +4209,7 @@ void Snapshot(void) {
         // ImageMagick command "convert" installed.
         xastir_snprintf(command,
             sizeof(command),
-            "%s -quality 100 %s %s",
+            "%s -quality 100 -colors 256 %s %s",
             CONVERT_PATH,
             xpm_filename,
             png_filename );
