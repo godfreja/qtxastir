@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.420 2004/10/18 20:17:08 we7u Exp $
+ * $Id: maps.c,v 1.421 2004/11/16 05:05:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4943,7 +4943,9 @@ void index_save_to_file() {
             }
             // Set up pointers for next loop iteration
             last = current;
-            current = current->next;
+
+            if (current != NULL)
+                current = current->next;
         }
 
 
