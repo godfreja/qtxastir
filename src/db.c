@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.184 2003/01/10 01:15:19 we7u Exp $
+ * $Id: db.c,v 1.185 2003/01/13 06:22:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4817,6 +4817,9 @@ int extract_weather_item(char *data, char type, int datalen, char *temp) {
         substr(temp,data+ofs,datalen);
         for (i=ofs-1;i<len-datalen;i++)        // delete item from info field
             data[i] = data[i+datalen+1];
+        if (debug_level & 2) {
+            printf("extract_weather_item: %s\n",temp);
+        }
     } else
         temp[0] = '\0';
     return(found);
@@ -11931,6 +11934,16 @@ void  read_file_line(FILE *f) {
                 if (cin == (char)10) {                  // Found LF as EOL char
                     line[pos] = '\0';                   // Always add a terminating zero after last char
                     pos = 0;                            // start next line
+
+                    // Save a backup copy of the incoming string.
+                    // Used for debugging purposes.  If we get a
+                    // segfault, we can print out the last message
+                    // received.
+                    xastir_snprintf(incoming_data_copy,
+                        MAX_LINE_SIZE,
+                        "%s",
+                        line);
+
                     decode_ax25_line(line,'F',-1, 1);   // Decode the packet
                     return;                             // only read line by line
                 }

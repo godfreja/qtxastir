@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.195 2003/01/05 19:54:57 kd6zwr Exp $
+ * $Id: main.c,v 1.196 2003/01/13 06:22:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7330,6 +7330,7 @@ void quit(int sig) {
 /* handle segfault signal */
 void segfault(/*@unused@*/ int sig) {
     fprintf(stderr, "Caught Segfault! Xastir will terminate\n");
+    fprintf(stderr, "Last incoming line was: %s\n", incoming_data_copy);
     fprintf(stderr, "%02d:%02d:%02d\n", get_hours(), get_minutes(), get_seconds() );
     quit(-1);
 }
