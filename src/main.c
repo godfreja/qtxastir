@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.168 2002/11/22 00:50:05 we7u Exp $
+ * $Id: main.c,v 1.169 2002/11/22 23:39:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6807,7 +6807,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                             char station_id[50];
                             xastir_snprintf(station_id,
                                 sizeof(station_id), "%s, %d",
-                                langcode("WPUPCFSP08"),
+                                langcode("SPCHSTR009"),
                                 temp_alert_count);
                             SayText(station_id);
                         }

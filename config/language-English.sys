@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.55 2002/11/22 00:50:04 we7u Exp $
+# $Id: language-English.sys,v 1.56 2002/11/22 23:39:28 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -824,6 +824,10 @@ SPCHSTR005|%s, distance is %d %s.||
 SPCHSTR006|%s, distance is %.1f %s.||
 SPCHSTR007|%s, distance is %d %s %s %s.||
 SPCHSTR008|%s, distance is %.1f %s %s %s.||
+SPCHSTR009|New Weather Alert||
+SPCHSTR010|New||
+SPCHSTR011|Heard, D X, %s, at distance of %.1f %s||
+#
 #
 SPCHDIRN00|north of||
 SPCHDIRS00|south of||
