@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.29 2002/10/17 22:23:31 we7u Exp $
+$Id: README.1ST,v 1.30 2002/10/18 21:04:15 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -1107,6 +1107,15 @@ Getting Data Files for Xastir:
       these files.  See above for where to put the GNIS files and how to create
       the symlink so that both mapping and searching of GNIS files will
       function.
+
+      A note from Chris Bell about these files:
+      ---------------------------------------------------------------------
+      The _deci files are huge,
+      with tons of trailing spaces at the end of each line.  I ran them
+      through sed, and cut out about two thirds of the diskspace required!
+
+          sed -e 's/[ ]*$//g' < CA_deci > CA.gnis
+      ---------------------------------------------------------------------
 
      County Warning maps:
       All WX County maps should be stored in the /usr/local/xastir/Counties
