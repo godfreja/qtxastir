@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.109 2003/04/21 22:45:36 we7u Exp $
+ * $Id: interface.c,v 1.110 2003/04/22 08:30:18 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5779,14 +5779,8 @@ void tnc_data_clean(char *buf) {
         fprintf(stderr,"tnc_data_clean: called to clean %s\n", filtered_data);
     }
 
-    while (buf[0]=='c' && buf[1]=='m' && buf[2]=='d' && buf[3]==':') {
-        for(i = 4; i < (int)strlen(buf); i++) {
-            buf[i-4] = buf[i];
-        }
-        buf[i++]=0;     //Null out any remaining old data just in case
-        buf[i++]=0;
-        buf[i++]=0;
-        buf[i++]=0;
+    while (!strncmp(buf,"cmd:",4)) {
+        strcpy(buf,&buf[4]);
     }
 
     if (debug_level & 1) {
