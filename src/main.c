@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.319 2003/08/02 17:00:30 we7u Exp $
+ * $Id: main.c,v 1.320 2003/08/04 23:13:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3341,8 +3341,8 @@ void statusline(char *status_text,int update) {
 
     XmTextFieldSetString (text, status_text);
     last_statusline = sec_now();
-    if (update != 0)
-        XmUpdateDisplay(text);          // do an immediate update
+//    if (update != 0)
+//        XmUpdateDisplay(text);          // do an immediate update
 }
 
 
