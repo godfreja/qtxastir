@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.69 2004/03/09 21:18:18 we7u Exp $
+ * $Id: interface_gui.c,v 1.70 2004/03/10 17:50:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -989,8 +989,7 @@ XmNtopWidget, (device_type == DEVICE_SERIAL_KISS_TNC || device_type == DEVICE_SE
                                       XmNrightAttachment,XmATTACH_NONE,
                                       NULL);
 
-//WE7U
-// Draw a different frame3 for Serial KISS TNC interfaces
+// Draw a different frame3 for Serial KISS/MKISS TNC interfaces
         switch(device_type) {
             case DEVICE_SERIAL_KISS_TNC:
             case DEVICE_SERIAL_MKISS_TNC:
