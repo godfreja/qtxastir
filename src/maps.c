@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.383 2003/12/02 22:16:15 we7u Exp $
+ * $Id: maps.c,v 1.384 2003/12/03 00:23:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3395,9 +3395,13 @@ extern void draw_ogr_map(Widget w,
 } map_driver[] = {
   {"map",map,draw_dos_map},
   {"pdb",pdb,draw_palm_image_map},
+//#ifdef HAVE_LIBGDAL
+//  {"shp",shp,draw_ogr_map},
+//#else   // HAVE_LIBGDAL
 #ifdef HAVE_LIBSHP
   {"shp",shp,draw_shapefile_map},
 #endif /* HAVE_LIBSHP */
+//#endif  // HAVE_LIBGDAL
 #ifdef HAVE_LIBGEOTIFF
   {"tif",tif,draw_geotiff_image_map},
 #endif /* HAVE_LIBGEOTIFF */
