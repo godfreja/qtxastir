@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.186 2002/12/27 19:53:43 we7u Exp $
+ * $Id: maps.c,v 1.187 2002/12/27 20:54:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11541,6 +11541,7 @@ void index_restore_from_file(void) {
                                             // line.
                 char scanf_format[50];
                 int processed;
+                int i;
 
 //printf("%s\n",in_string);
 
@@ -11576,6 +11577,18 @@ void index_restore_from_file(void) {
                 // Check if the string is bogus
                 if (strlen(temp_record->filename) == 0) {
                     processed = 0;  // Reject this record
+                }
+
+                // Check for control characters in the filename.
+                // Reject any that have them.
+                for (i = 0; i < strlen(temp_record->filename); i++)
+                {
+                    if (temp_record->filename[i] < 0x20) {
+
+                        processed = 0;  // Reject this record
+                        printf("index_restore_from_file: Found control chars in %s\n",
+                            temp_record->filename);
+                    }
                 }
 
                 // Mark the record as non-accessed at this point.
