@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.101 2004/11/12 19:31:54 we7u Exp $
+$Id: README.win32,v 1.102 2004/11/13 00:17:15 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -124,6 +124,7 @@ required:
 [ ] curl
 [ ] curl-devel
 [ ] cvs
+[ ] db4.2 (need libdb4.2 & libdb4.2-devel)
 [ ] diffutils
 [ ] gcc
 [ ] gzip
