@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.68 2003/12/17 20:56:47 we7u Exp $
+ * $Id: map_gdal.c,v 1.69 2003/12/17 20:58:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -876,7 +876,7 @@ void Draw_OGR_Polygons(OGRGeometryH geometryH,
                     //
                     if (!polygon_hole) {    // It's a fill polygon (outer ring)
 
-                        // Temporary code (drawing only a border)
+// Temporary code (drawing only a border currently)
                         for ( mm = 1; mm < polygon_points; mm++ ) {
 
                             draw_vector_ll(da,
@@ -889,7 +889,7 @@ void Draw_OGR_Polygons(OGRGeometryH geometryH,
                         }
                     }
                     else {  // It's a hole polygon (inner ring)
-// Don't draw anything... yet
+// Don't draw anything... yet.  Do X11 Regions later.
                     }
                 }
                 else {  // Draw just the border
