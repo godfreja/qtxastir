@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.17 2003/11/04 16:46:29 we7u Exp $
+ * $Id: map_geo.c,v 1.18 2003/11/04 22:24:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -422,7 +422,11 @@ void draw_geo_image_map (Widget w,
     // another routine to service this request.
     //
     if (tigerserver_flag) {
+
+#ifdef HAVE_IMAGEMAGICK
         draw_tiger_map(w, filenm, destination_pixmap);
+#endif  // HAVE_IMAGEMAGICK
+
         return;
     }
 
