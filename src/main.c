@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.104 2002/06/28 03:21:52 n0vh Exp $
+ * $Id: main.c,v 1.105 2002/06/28 03:30:55 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8189,7 +8189,7 @@ void Config_tiger( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@
        tiger_states  = XtVaCreateManagedWidget(langcode("MPUPTGR008"),xmToggleButtonWidgetClass,tiger_form,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, tiger_lakes,
-                                      XmNtopOffset, 6,
+                                      XmNtopOffset, 16,
                                       XmNbottomAttachment, XmATTACH_NONE,
                                       XmNleftAttachment, XmATTACH_POSITION,
                                       XmNleftPosition, 0,
@@ -8202,7 +8202,7 @@ void Config_tiger( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@
        tiger_interstate  = XtVaCreateManagedWidget(langcode("MPUPTGR009"),xmToggleButtonWidgetClass,tiger_form,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, tiger_lakes,
-                                      XmNtopOffset, 6,
+                                      XmNtopOffset, 16,
                                       XmNbottomAttachment, XmATTACH_NONE,
                                       XmNleftAttachment, XmATTACH_POSITION,
                                       XmNleftPosition, 0,
@@ -8241,7 +8241,7 @@ void Config_tiger( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@
        tiger_intensity  = XtVaCreateManagedWidget("Intensity", xmScaleWidgetClass,tiger_form,
                                       XmNtopAttachment, XmATTACH_WIDGET,
                                       XmNtopWidget, tiger_ushwy,
-                                      XmNtopOffset, 10,
+                                      XmNtopOffset, 16,
                                       XmNbottomAttachment, XmATTACH_NONE,
                                       XmNleftAttachment, XmATTACH_POSITION,
                                       XmNleftPosition, 0,
