@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.c,v 1.8 2002/04/01 06:50:14 we7u Exp $
+ * $Id: xa_config.c,v 1.9 2002/04/09 22:38:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -996,7 +996,7 @@ void load_data_or_default(void) {
         print_invert = 0;
 
     if (!get_int ("RAIN_GAUGE_TYPE", &WX_rain_gauge_type))
-        WX_rain_gauge_type = 0;     // Tenth of an inch
+        WX_rain_gauge_type = 0;     // No Correction
 
 
     /* list attributes */
