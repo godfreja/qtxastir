@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.236 2003/04/12 01:32:41 we7u Exp $
+ * $Id: db.c,v 1.237 2003/04/15 19:52:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11622,8 +11622,9 @@ void relay_digipeat(char *call, char *path, char *info, int port) {
     int ok;
     char destination[MAX_CALLSIGN+1];
 
-char small_string[200];
-char big_string[2000];
+    // These strings are debugging tools
+    char small_string[200];
+    char big_string[2000];
 
 
     // Check whether relay_digipeat has been enabled for this interface.
