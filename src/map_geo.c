@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.31 2004/07/08 21:49:04 we7u Exp $
+ * $Id: map_geo.c,v 1.32 2004/08/18 20:35:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -610,11 +610,14 @@ void draw_geo_image_map (Widget w,
                 if (fileimg[0] != '/' ) { // not absolute path
                     // make it relative to the .geo file
                     char temp[MAX_FILENAME];
+
                     strncpy(temp, file, MAX_FILENAME); // grab .geo file name
                     temp[MAX_FILENAME-1] = '\0';
                     (void)get_map_dir(temp);           // leaves just the path and trailing /
                     if (strlen(temp) < (MAX_FILENAME - 1 - strlen(fileimg)))
-                        strcat(temp, fileimg);
+                        strncat(temp,
+                            fileimg,
+                            sizeof(temp) - strlen(temp));
                     strcpy(fileimg, temp);
                 }
             }

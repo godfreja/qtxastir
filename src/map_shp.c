@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.69 2004/07/15 21:32:44 we7u Exp $
+ * $Id: map_shp.c,v 1.70 2004/08/18 20:35:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3466,7 +3466,9 @@ if (on_screen) {
 
                             // Append the name of the quad
                             temp = DBFReadStringAttribute( hDBF, structure, 0 );
-                            strcat(quad_label,temp);
+                            strncat(quad_label,
+                                temp,
+                                sizeof(quad_label) - strlen(quad_label));
                         }
                         else {
                             quad_label[0] = '\0';

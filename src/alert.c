@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.75 2004/07/19 21:17:06 we7u Exp $
+ * $Id: alert.c,v 1.76 2004/08/18 20:35:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1320,9 +1320,15 @@ void alert_build_list(Message *fill) {
                 // that the lengths of the strings we're working
                 // with are quite short.  Little danger of
                 // overrunning our destination string.
-                strcat(uncompressed_wx,",");
-                strcat(uncompressed_wx,prefix); 
-                strcat(uncompressed_wx,suffix);
+                strncat(uncompressed_wx,
+                    ",",
+                    sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                strncat(uncompressed_wx,
+                    prefix,
+                    sizeof(uncompressed_wx) - strlen(uncompressed_wx)); 
+                strncat(uncompressed_wx,
+                    suffix,
+                    sizeof(uncompressed_wx) - strlen(uncompressed_wx));
                 // Terminate it every time
                 uncompressed_wx[9999] = '\0';
 
@@ -1385,9 +1391,15 @@ void alert_build_list(Message *fill) {
                             // strings we're working with are quite
                             // short.  Little danger of overrunning
                             // our destination string.
-                            strcat(uncompressed_wx,",");
-                            strcat(uncompressed_wx,prefix); 
-                            strcat(uncompressed_wx,suffix);
+                            strncat(uncompressed_wx,
+                                ",",
+                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                            strncat(uncompressed_wx,
+                                prefix,
+                                sizeof(uncompressed_wx) - strlen(uncompressed_wx)); 
+                            strncat(uncompressed_wx,
+                                suffix,
+                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
                             // Terminate it every time
                             uncompressed_wx[9999] = '\0';
                         }
@@ -1443,9 +1455,15 @@ void alert_build_list(Message *fill) {
                             // strings we're working with are quite
                             // short.  Little danger of overrunning
                             // our destination string.
-                            strcat(uncompressed_wx,",");
-                            strcat(uncompressed_wx,prefix); 
-                            strcat(uncompressed_wx,suffix);
+                            strncat(uncompressed_wx,
+                                ",",
+                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                            strncat(uncompressed_wx,
+                                prefix,
+                                sizeof(uncompressed_wx) - strlen(uncompressed_wx)); 
+                            strncat(uncompressed_wx,
+                                suffix,
+                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
                             // Terminate it every time
                             uncompressed_wx[9999] = '\0';
                         }

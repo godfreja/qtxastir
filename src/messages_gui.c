@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.23 2004/07/30 04:02:43 we7u Exp $
+ * $Id: messages_gui.c,v 1.24 2004/08/18 20:35:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -183,7 +183,7 @@ void reverse_path(char *input_string) {
     reverse_path[strlen(reverse_path) - 1] = '\0';
 
     // Save the new path back into the string we were given.
-    strcat(input_string,reverse_path);
+    strncat(input_string, reverse_path, len);
 }
 
 
