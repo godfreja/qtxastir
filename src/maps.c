@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.380 2003/11/27 02:47:38 we7u Exp $
+ * $Id: maps.c,v 1.381 2003/11/28 22:55:39 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -29,7 +29,6 @@
 
 
 //#define MAP_SCALE_CHECK
-//#define FUZZYRASTER
 
 
 #include "config.h"
@@ -334,7 +333,7 @@ void maps_init(void)
 double calc_dscale_y(long x, long y) {
 
     // approximation by looking at +/- 0.5 minutes offset
-    (void)(calc_distance(y-3000, x, y+3000, x)/6000.0);
+    //    (void)(calc_distance(y-3000, x, y+3000, x)/6000.0);
     // but this scale is fixed at 1852/6000
     return((double)(1852.0/6000.0));
 }
@@ -3362,6 +3361,16 @@ extern void draw_gnis_map(Widget w,
                           u_char alert_color,
                           int destination_pixmap,
                           int draw_filled);
+
+#ifdef HAVE_LIBGDAL
+extern void draw_gdal_map(Widget w,
+                   char *dir,
+                   char *filenm,
+                   alert_entry *alert,
+                   u_char alert_color,
+                   int destination_pixmap,
+                   int draw_filled);
+#endif /* HAVE_LIBGDAL */
 
  struct {
   char *ext;

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.418 2003/11/26 22:10:39 we7u Exp $
+ * $Id: main.c,v 1.419 2003/11/28 22:55:38 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -100,8 +100,9 @@
 #include <curl/curl.h>
 #endif
 
-#ifdef HAVE_GDAL
-#include "ogr_api.h"
+#ifdef HAVE_LIBGDAL
+#include <ogr_api.h>
+#include <gdal.h>
 #endif
 
 #include "xastir.h"
@@ -24896,10 +24897,6 @@ int main(int argc, char *argv[]) {
 
 #ifdef HAVE_LIBCURL
     curl_global_init(CURL_GLOBAL_ALL);
-#endif
-
-#ifdef HAVE_GDAL
-    OGRRegisterAll();
 #endif
 
 #ifdef HAVE_IMAGEMAGICK
