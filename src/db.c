@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.261 2003/06/20 21:57:37 we7u Exp $
+ * $Id: db.c,v 1.262 2003/07/04 19:32:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12233,8 +12233,10 @@ void set_map_position(Widget w, long lat, long lon) {
     mid_y_lat_offset  = lat;
     mid_x_long_offset = lon;
     setup_in_view();  // flag all stations in new screen view
-    create_image(w);
-    (void)XCopyArea(XtDisplay(w),pixmap_final,XtWindow(w),gc,0,0,screen_width,screen_height,0,0);
+
+    if (create_image(w)) {
+        (void)XCopyArea(XtDisplay(w),pixmap_final,XtWindow(w),gc,0,0,screen_width,screen_height,0,0);
+    }
 }
 
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.305 2003/07/03 20:23:24 we7u Exp $
+ * $Id: maps.c,v 1.306 2003/07/04 19:32:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4128,6 +4128,7 @@ void load_alert_maps (Widget w, char *dir) {
 
     for (ii = alert_max_count - 1; ii >= 0; ii--) {
 
+        HandlePendingEvents(app_context);
         if (interrupt_drawing_now)
             return;
 
@@ -4314,6 +4315,8 @@ static void insert_map_sorted(char *filename){
 void load_auto_maps (Widget w, char *dir) {
     map_index_record *current = map_index_head;
 
+
+    HandlePendingEvents(app_context);
     if (interrupt_drawing_now)
         return;
 
@@ -4366,6 +4369,7 @@ void load_auto_maps (Widget w, char *dir) {
     current = map_sorted_list_head;
     while  (current != NULL) {
 
+    HandlePendingEvents(app_context);
     if (interrupt_drawing_now)
         return;
 
@@ -4416,6 +4420,7 @@ void load_maps (Widget w) {
     if (debug_level & 16)
         fprintf(stderr,"Load maps start\n");
 
+    HandlePendingEvents(app_context);
     if (interrupt_drawing_now)
         return;
 
@@ -4559,6 +4564,7 @@ void load_maps (Widget w) {
     current = map_sorted_list_head;
     while  (current != NULL) {
 
+        HandlePendingEvents(app_context);
         if (interrupt_drawing_now) {
             statusline(" ",1);      // delete status line
             return;

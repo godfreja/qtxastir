@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.2 2003/07/03 21:30:35 we7u Exp $
+ * $Id: map_shp.c,v 1.3 2003/07/04 19:32:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1307,20 +1307,22 @@ void draw_shapefile_map (Widget w,
     }
 
 
+    HandlePendingEvents(app_context);
+    if (interrupt_drawing_now) {
+        if (panWidth)
+            free(panWidth);
+        DBFClose( hDBF );   // Clean up open file descriptors
+        SHPClose( hSHP );
+        return;
+    }
+
+
     // Here's where we actually iterate through the entire file, drawing
     // each structure as we find it.
     for (structure = start_record; structure < end_record; structure++) {
         int skip_it = 0;
         int skip_label = 0;
 
-
-        if (interrupt_drawing_now) {
-            if (panWidth)
-                free(panWidth);
-            DBFClose( hDBF );   // Clean up open file descriptors
-            SHPClose( hSHP );
-            return;
-        }
 
         // Have had segfaults before at the SHPReadObject() call
         // when the Shapefile was corrupted.

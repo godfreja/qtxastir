@@ -1,5 +1,5 @@
 /*
- * $Id: location.c,v 1.2 2003/01/24 00:34:53 we7u Exp $
+ * $Id: location.c,v 1.3 2003/07/04 19:32:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -80,11 +80,11 @@ void map_pos(long mid_y, long mid_x, long sz) {
     scale_y = sz;
     scale_x = get_x_scale(mid_x,mid_y,scale_y);
     setup_in_view();  // flag all stations in screen view
-    create_image(da);
-
-    // We don't care whether or not this succeeds?
-    (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
-
-    display_zoom_status();
+    
+    if (create_image(da)) {
+        // We don't care whether or not this succeeds?
+        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+        display_zoom_status();
+    }
 }
 

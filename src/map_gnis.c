@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.2 2003/07/03 21:30:35 we7u Exp $
+ * $Id: map_gnis.c,v 1.3 2003/07/04 19:32:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -164,6 +164,12 @@ void draw_gnis_map (Widget w,
         xastir_snprintf(status_text, sizeof(status_text), langcode ("BBARSTA028"), filenm);
     }
     statusline(status_text,0);       // Loading/Indexing ...
+
+
+    HandlePendingEvents(app_context);
+    if (interrupt_drawing_now) {
+        return;
+    }
 
 
     // Attempt to open the file
@@ -423,11 +429,6 @@ void draw_gnis_map (Widget w,
                     // is, draw a text label at that location.
                     else if (coord_lon >= min_lon && coord_lon <= max_lon
                             && coord_lat <= min_lat && coord_lat >= max_lat) {
-
-                        if (interrupt_drawing_now) {
-                            (void)fclose(f);
-                            return;
-                        }
 
                         if (debug_level & 16) {
                             fprintf(stderr,"%s\t%s\t%s\t%s\t%s\t%s\t\t",

@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.5 2003/07/03 21:30:35 we7u Exp $
+ * $Id: map_dos.c,v 1.6 2003/07/04 19:32:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -572,6 +572,7 @@ draw_dos_map(Widget w,
       return; // Done indexing this file
     }
       
+    HandlePendingEvents(app_context);
     if (interrupt_drawing_now) {
         (void)fclose(f);
         return;
@@ -599,6 +600,12 @@ draw_dos_map(Widget w,
       /* read vectors */
       max_x = screen_width  + MAX_OUTBOUND;
       max_y = screen_height + MAX_OUTBOUND;
+ 
+      HandlePendingEvents(app_context);
+      if (interrupt_drawing_now) {
+          (void)fclose(f);
+          return;
+      }
       
       x_long_cord = 0;
       y_lat_cord  = 0;
@@ -606,11 +613,6 @@ draw_dos_map(Widget w,
       dos_flag = 0;
       for (count = 0l;count < total_vector_points && !feof (f) && !dos_labels; count++) {
 
-        if (interrupt_drawing_now) {
-            (void)fclose(f);
-            return;
-        }
- 
         if (strncmp ("DOS ", map_type, 4) == 0) {
           (void)fgets (&Buffer[strlen (Buffer)],(int)sizeof (Buffer) - (strlen (Buffer)), f);
           while ((ptr = strpbrk (Buffer, "\r\n")) != NULL && !dos_labels) {
@@ -899,14 +901,15 @@ draw_dos_map(Widget w,
       // Here is the map label section of the code for both DOS & Windows-type maps
       if (map_labels) {
 
+        HandlePendingEvents(app_context);
+        if (interrupt_drawing_now) {
+            (void)fclose(f);
+            return;
+        }
+
+
         /* read labels */
         for (count = 0l; count < total_labels && !feof (f); count++) {
-
-          if (interrupt_drawing_now) {
-              (void)fclose(f);
-              return;
-          }
-
 
           //DOS-Type Map Labels
           embedded_object = 0;

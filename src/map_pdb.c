@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_pdb.c,v 1.2 2003/07/03 21:30:35 we7u Exp $
+ * $Id: map_pdb.c,v 1.3 2003/07/04 19:32:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -281,13 +281,16 @@ void draw_palm_image_map(Widget w,
             max_x = (long)(screen_width + MAX_OUTBOUND);
             max_y = (long)(screen_height + MAX_OUTBOUND);
 
+
+            HandlePendingEvents(app_context);
+            if (interrupt_drawing_now) {
+                fclose(fn);
+                return;
+            }
+
+
             /* read vectors */
             for (record_count = 2; record_count <= records; record_count++) {
-
-                if (interrupt_drawing_now) {
-                    fclose(fn);
-                    return;
-                }
 
                 // Point to the next record list header & snag it
                 fseek(fn, record_ptr, SEEK_SET);
