@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.70 2002/06/17 22:13:09 we7u Exp $
+ * $Id: db.c,v 1.71 2002/06/17 23:16:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7470,11 +7470,11 @@ void compute_smart_beacon(char *current_course, char *current_speed) {
         // just completed a turn, check to see if our heading has
         // stabilized yet.  If so, beacon the latest heading.  We'll
         // have to save another variable which says whether the last
-        // beacon was caused by a corner-pegging.  The net effect of
-        // this is that we'll get an extra posit coming out of a
-        // turn that specifies our correct course and probably a
-        // more accurate speed until the next posit.  This should
-        // make dead-reckoning work even better.
+        // beacon was caused by corner-pegging.  The net effect is
+        // that we'll get an extra posit coming out of a turn that
+        // specifies our correct course and probably a more accurate
+        // speed until the next posit.  This should make
+        // dead-reckoning work even better.
         if (0) {
         }
 ////////////////////////////////////////////////////////////////////
