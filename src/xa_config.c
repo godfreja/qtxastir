@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.59 2002/11/27 00:35:04 we7u Exp $
+ * $Id: xa_config.c,v 1.60 2002/12/15 07:00:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -641,6 +641,7 @@ void save_data(void)  {
         }
 
 	store_int (fout, "TRACK_ME", track_me);
+    store_int (fout, "MAP_CHOOSER_EXPAND_DIRS", map_chooser_expand_dirs);
 
         if (debug_level & 1)
             printf ("Save Data Stop\n");
@@ -1320,6 +1321,9 @@ void load_data_or_default(void) {
 
     if (!get_int ("TRACK_ME", &track_me,0,1,0))
         track_me = 0;	// No tracking
+
+    if (!get_int ("MAP_CHOOSER_EXPAND_DIRS", &map_chooser_expand_dirs,0,1,0))
+        map_chooser_expand_dirs = 0;
 
     input_close();
 }

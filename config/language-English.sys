@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.61 2002/12/10 21:52:09 we7u Exp $
+# $Id: language-English.sys,v 1.62 2002/12/15 07:00:00 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -105,6 +105,7 @@ PULDNMMC02|Vector Maps|V|
 PULDNMMC03|250k Topos|2|
 PULDNMMC04|100k Topos|1|
 PULDNMMC05|24k Topos|4|
+PULDNMMC06|Expand Directories||
 #
 # PullDown "Map Background Color"
 PULDNMBC01|Gray||

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.62 2002/12/10 21:52:09 we7u Exp $
+# $Id: language-Dutch.sys,v 1.63 2002/12/15 07:00:00 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -110,6 +110,7 @@ PULDNMMC02|Vector Kaarten|V|
 PULDNMMC03|250k Topogr.|2|
 PULDNMMC04|100k Topogr.|1|
 PULDNMMC05|24k Topogr.|4|
+PULDNMMC06|Expand Directories||
 #
 # PullDown "Map Background Color"
 PULDNMBC01|Grijs||

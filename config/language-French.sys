@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.61 2002/12/10 21:52:09 we7u Exp $
+# $Id: language-French.sys,v 1.62 2002/12/15 07:00:00 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -105,6 +105,7 @@ PULDNMMC02|Cartes vectorielles|V|
 PULDNMMC03|Topogr. 250k|2|
 PULDNMMC04|Topogr. 100k|1|
 PULDNMMC05|Topogr. 24k|4|
+PULDNMMC06|Expand Directories||
 #
 # PullDown "Map Background Color"
 PULDNMBC01|Gris||
