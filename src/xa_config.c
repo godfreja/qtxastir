@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.77 2003/02/15 22:30:38 we7u Exp $
+ * $Id: xa_config.c,v 1.78 2003/02/18 17:34:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -845,7 +845,7 @@ void load_data_or_default(void) {
     if (!get_int ("USE_TIGERMAPS", &tiger_flag, 0, 1, 0))
         tiger_flag = 0;
 
-    if (!get_int ("TIGERMAP_INTENSITY", &tigermap_intensity, 50, 100, 100))
+    if (!get_int ("TIGERMAP_INTENSITY", &tigermap_intensity, 0, 100, 100))
         tigermap_intensity = 100;
 
     if (!get_int ("TIGERMAP_TIMEOUT", &tigermap_timeout, 10, 120, 30))
