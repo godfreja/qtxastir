@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.36 2003/12/03 00:25:14 we7u Exp $
+ * $Id: map_shp.c,v 1.37 2003/12/03 20:53:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -426,9 +426,9 @@ int shape_ring_direction ( SHPObject *psObject, int Ring ) {
 
 //WE7U: Temporary.  For OGR debugging.
 //
-#ifdef HAVE_LIBGDAL
-extern void draw_ogr_map(Widget w, char *dir, char *filenm, alert_entry *alert, u_char alert_color, int destination_pixmap, int draw_filled);
-#endif  // HAVE_LIBGDAL
+//#ifdef HAVE_LIBGDAL
+//extern void draw_ogr_map(Widget w, char *dir, char *filenm, alert_entry *alert, u_char alert_color, int destination_pixmap, int draw_filled);
+//#endif  // HAVE_LIBGDAL
 
 
 
@@ -688,15 +688,16 @@ void draw_shapefile_map (Widget w,
 
 
 
-#ifdef HAVE_LIBGDAL
-    draw_ogr_map (w,
-        dir,
-        filenm,
-        alert,
-        alert_color,
-        destination_pixmap,
-        draw_filled);
-#endif  // HAVE_LIBGDAL
+//#ifdef HAVE_LIBGDAL
+//    draw_ogr_map (w,
+//        dir,
+//        filenm,
+//        alert,
+//        alert_color,
+//        destination_pixmap,
+//        draw_filled);
+//#endif  // HAVE_LIBGDAL
+
 
 #ifdef WITH_DBFAWK
     if (Dbf_sigs == NULL)
