@@ -1,5 +1,5 @@
 /*
- * $Id: db.c,v 1.5 2002/03/05 21:28:23 we7u Exp $
+ * $Id: db.c,v 1.6 2002/03/06 08:27:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1658,7 +1658,7 @@ void display_file(Widget w) {
                         }
                     }
                     else if (debug_level & 256) {
-                        printf("Station trails %d, tarck_data %x\n",
+                        printf("Station trails %d, track_data %x\n",
                             station_trails, (int)p_station->track_data);
                     }
                     display_station(w,p_station,0);
