@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.336 2003/09/04 18:00:32 we7u Exp $
+ * $Id: main.c,v 1.337 2003/09/04 22:28:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22509,7 +22509,7 @@ int main(int argc, char *argv[]) {
 #endif  // USE_LARGE_SYSTEM_FONT
 
 #ifdef USE_SMALL_SYSTEM_FONT
-        "*.fontList: -*-*-*-*-*-*-8-*-*-*-*-*-*-*\n",
+        "*.fontList: -*-*-*-*-*-*-7-*-*-*-*-*-*-*\n",
 #endif  // USE_SMALL_SYSTEM_FONT
 
         "*List.Translations: #override \n\
