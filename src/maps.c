@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.26 2002/04/17 18:36:53 we7u Exp $
+ * $Id: maps.c,v 1.27 2002/04/17 23:48:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8119,7 +8119,9 @@ void load_alert_maps (Widget w, char *dir) {
 
     //printf("Done drawing all active alerts\n");
 
-    (void)alert_display_request ();
+    if (alert_display_request()) {
+        alert_redraw_on_update = redraw_on_new_data = 2;
+    }
 }
 
 
