@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.20 2002/03/28 18:41:58 francais1 Exp $
+ * $Id: main.c,v 1.21 2002/03/28 19:28:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7183,6 +7183,8 @@ void coordinates_toggle( /*@unused@*/ Widget widget, XtPointer clientData, XtPoi
     else
         coordinate_system = USE_DDMMMM;
 
+    // Update any active view lists so their coordinates get updated
+    Station_List_fill(1,0);     // Update View->Mobile Station list (has lat/lon or UTM info on it)
 }
 
 
