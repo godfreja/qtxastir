@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.39 2002/07/18 23:34:20 we7u Exp $
+ * $Id: interface.c,v 1.40 2002/07/18 23:48:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3190,11 +3190,12 @@ int add_device(int port_avail,int dev_type,char *dev_nm,char *passwd,int dev_sck
                 case DEVICE_SERIAL_TNC_AUX_GPS:
                     if (ok == 1) {
 
-begin_critical_section(&devices_lock, "interface.c:add_device" );
+// We already have the lock by the time add_device() is called!
+//begin_critical_section(&devices_lock, "interface.c:add_device" );
 
                         xastir_snprintf(temp, sizeof(temp), "config/%s", devices[port_avail].tnc_up_file);
 
-end_critical_section(&devices_lock, "interface.c:add_device" );
+//end_critical_section(&devices_lock, "interface.c:add_device" );
 
                         (void)command_file_to_tnc_port(port_avail,get_data_base_dir(temp));
                     }
