@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.29 2004/07/15 19:58:50 we7u Exp $
+ * $Id: igate.c,v 1.30 2004/07/15 21:32:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -366,6 +366,12 @@ int not_a_dupe(int queue_type, int port, char *line, int insert_mode) {
             // Allocate a new storage space for the record and fill
             // it in.
             temp = (DupeRecord *)malloc(sizeof(DupeRecord));
+
+            if (!temp) {
+                fprintf(stderr,"Couldn't allocate memory in not_a_dupe()\n");
+                return(1);  // Send back "not a dupe"
+            }
+
             temp->time = (time_t)sec_now();
             strcpy(temp->data,match_line);
             temp->next = NULL;  // Will be the end of the linked list
