@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.16 2005/01/08 10:06:53 we7u Exp $
+ * $Id: map_tif.c,v 1.17 2005/03/02 16:56:16 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -697,7 +697,7 @@ void draw_geotiff_image_map (Widget w,
     proj_is_latlong=FALSE;
     if( !GTIFKeyGet(gtif,ProjectedCSTypeGeoKey, &PCS,0,1))
       {
-	fprintf(stderr,"Warning: no PCS in geotiff file %s, assuming map is in lat/lon!\n", filenm);
+          //printf(stderr,"Warning: no PCS in geotiff file %s, assuming map is in lat/lon!\n", filenm);
 	proj_is_latlong=TRUE;
       }
 
