@@ -1,5 +1,5 @@
 /*
- * $Id: fcc_data.c,v 1.12 2005/01/08 10:06:52 we7u Exp $
+ * $Id: fcc_data.c,v 1.13 2005/02/04 19:36:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -102,6 +102,7 @@ int build_fcc_index(int type){
             return(1);
         else {
             statusline("FCC index old, rebuilding",1);
+            fprintf(stderr,"FCC index is old.  Rebuilding index.\n");
 //            XmTextFieldSetString(text,"FCC index old, rebuilding");
 //            XtManageChild(text);
 //            XmUpdateDisplay(XtParent(text));     // DK7IN: do we need this ???
@@ -155,6 +156,7 @@ int build_fcc_index(int type){
 
 //    XmTextFieldSetString(text,"");
 //    XtManageChild(text);
+
     return(1);
 }
 

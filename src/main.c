@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.557 2005/01/12 01:30:02 we7u Exp $
+ * $Id: main.c,v 1.558 2005/02/04 19:36:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -739,7 +739,7 @@ int tiger_show_statehwy = TRUE;
 int tiger_show_water = TRUE;
 int tiger_show_lakes = TRUE;
 int tiger_show_misc = TRUE;
-int tigermap_timeout = 30;
+int tigermap_timeout = 90;
 
 #endif  // HAVE_IMAGEMAGICK
 
@@ -18334,7 +18334,7 @@ void Config_tiger( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@
                 XmNorientation, XmHORIZONTAL,
                 XmNborderWidth, 1,
                 XmNminimum, 10,
-                XmNmaximum, 180,
+                XmNmaximum, 300,
                 XmNshowValue, TRUE,
                 XmNvalue, tigermap_timeout,
                 XtVaTypedArg, XmNtitleString, XmRString, langcode("MPUPTGR017"), timeout_length,
@@ -29205,9 +29205,8 @@ int main(int argc, char *argv[], char *envp[]) {
 //fprintf(stderr,"***check_fcc_data\n");
 
             /* check for ham databases */
-            (void)check_fcc_data();
-
             (void)check_rac_data();
+            (void)check_fcc_data();
 
 
             // Find the extents of every map we have.  Use the smart

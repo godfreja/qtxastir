@@ -1,5 +1,5 @@
 /*
- * $Id: rac_data.c,v 1.11 2005/01/08 10:06:54 we7u Exp $
+ * $Id: rac_data.c,v 1.12 2005/02/04 19:36:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -108,7 +108,8 @@ int build_rac_index(void) {
         if(file_time(get_data_base_dir("fcc/AMACALL.LST"))<=file_time(get_user_base_dir("data/AMACALL.ndx"))) {
             return(1);
         } else {
-            statusline("RAC Index old rebuilding",1);
+            statusline("RAC index old rebuilding",1);
+            fprintf(stderr,"RAC index is old.  Rebuilding index.\n");
 //            XmTextFieldSetString(text,"RAC Index old rebuilding");
 //            XtManageChild(text);
 //            XmUpdateDisplay(XtParent(text));
@@ -159,6 +160,7 @@ int build_rac_index(void) {
 
 //    XmTextFieldSetString(text,"");
 //    XtManageChild(text);
+
     return(1);
 }
 
