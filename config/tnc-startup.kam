@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kam,v 1.3 2002/03/11 23:36:11 we7u Exp $
+# $Id: tnc-startup.kam,v 1.4 2003/01/16 17:56:26 we7u Exp $
 # This is the TNC Startup file for a Kantronics KAM TNC. 
 # lines that begin with a pound sign are comments.
 # Edit this file for your tnc!
@@ -27,3 +27,4 @@ ECHO OFF
 FLOW OFF
 HID OFF/OFF
 MSTAMP OFF
+PASSALL OFF

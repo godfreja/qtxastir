@@ -1,4 +1,4 @@
-# $Id: tnc-startup.paccomm,v 1.1 2002/08/15 21:27:22 we7u Exp $
+# $Id: tnc-startup.paccomm,v 1.2 2003/01/16 17:56:26 we7u Exp $
 # This is the TNC Startup file for a Pac-Comm TNC with v5.x firmware.
 # Adapted from Kantronics startup file by Kurt Freiberger, WB5BBW
 
@@ -28,6 +28,7 @@ MFILT $00
 MRPt on
 MSTamp off
 NEWmode off
+PASSALL off
 SCR 0
 MON 1
 #

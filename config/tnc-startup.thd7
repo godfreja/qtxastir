@@ -1,4 +1,4 @@
-# $Id: tnc-startup.thd7,v 1.1 2002/02/02 03:16:17 kg4ijb Exp $
+# $Id: tnc-startup.thd7,v 1.2 2003/01/16 17:56:26 we7u Exp $
 #
 # TNC Init file for KENWOOD TH-D7
 AWlen 8
@@ -12,6 +12,7 @@ MCOM off
 MON ON
 MRPt on
 PACLen 128
+PASSALL off
 HBAUD 1200
 # Delete following lines if without GPS
 GBAUD 4800

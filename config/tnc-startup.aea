@@ -1,4 +1,4 @@
-# $Id: tnc-startup.aea,v 1.2 2002/03/19 05:41:06 we7u Exp $
+# $Id: tnc-startup.aea,v 1.3 2003/01/16 17:56:26 we7u Exp $
 # This is the TNC Startup file for AEA TNC's.
 # lines that begin with a pound sign are comments.
 #
@@ -27,6 +27,7 @@ MSTamp off
 MXMit off
 NEWmode off
 #PACLen 128
+PASSALL off
 #PID off
 SCR 0
 # B E 0 must be set to 0 or both APRS and your TNC will send BCNS
