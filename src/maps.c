@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.80 2002/05/03 19:28:03 we7u Exp $
+ * $Id: maps.c,v 1.81 2002/05/03 20:52:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2592,15 +2592,23 @@ void draw_shapefile_map (Widget w,
                                 (void)XDrawLines(XtDisplay(w), pixmap_alerts, gc_tint, points, i, CoordModeOrigin);
                             }
                             else if (map_color_fill) {  // Land masses?
-                                if (city_flag) {
-                                    (void)XSetForeground(XtDisplay(w), gc, GetPixelByName(w,"PaleGoldenrod")); // PaleGoldenrod
-                                }
-                                else {
+                                if (city_flag)
+                                    (void)XSetForeground(XtDisplay(w), gc, GetPixelByName(w,"RosyBrown"));  // RosyBrown, duh
+                                else
                                     (void)XSetForeground(XtDisplay(w), gc, colors[0xff]); // grey
-                                }
 
                                 (void)XFillPolygon(XtDisplay (w), pixmap, gc, points, i, Complex, CoordModeOrigin);
                                 (void)XSetForeground(XtDisplay(w), gc, colors[0x08]); // black for border
+
+                                // Draw a thicker border for city boundaries
+                                if (city_flag) {
+                                    (void)XSetLineAttributes(XtDisplay(w), gc, 2, LineSolid, CapButt,JoinMiter);
+                                    (void)XSetForeground(XtDisplay(w), gc, colors[0x14]); // lightgray for border
+                                }
+                                else {
+                                    (void)XSetForeground(XtDisplay(w), gc, colors[0x08]); // black for border
+                                }
+
                                 (void)XDrawLines(XtDisplay(w), pixmap, gc, points, i, CoordModeOrigin);
                             }
                             else {
