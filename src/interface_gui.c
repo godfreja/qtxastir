@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.11 2002/05/16 16:38:40 we7u Exp $
+ * $Id: interface_gui.c,v 1.12 2002/05/17 23:52:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -197,7 +197,11 @@ void set_port_speed(int port) {
             break;
 
         case(10):
+#ifdef CYGWIN
+            devices[port].sp=B115200;
+#else
             devices[port].sp=B230400;
+#endif
             break;
 
         default:
@@ -974,10 +978,12 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC" );
                     device_speed=9;
                     break;
 
+#ifndef CYGWIN
                 case(B230400):
                     XmToggleButtonSetState(speed_230400,TRUE,FALSE);
                     device_speed=10;
                     break;
+#endif
 
                 default:
                     XmToggleButtonSetState(speed_4800,TRUE,FALSE);
@@ -1462,10 +1468,12 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_GPS" );
                     device_speed=9;
                     break;
 
+#ifndef CYGWIN
                 case(B230400):
                     XmToggleButtonSetState(speed_230400,TRUE,FALSE);
                     device_speed=10;
                     break;
+#endif
 
                 default:
                     XmToggleButtonSetState(speed_4800,TRUE,FALSE);
@@ -1995,10 +2003,12 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_WX" );
                     device_speed=9;
                     break;
 
+#ifndef CYGWIN
                 case(B230400):
                     XmToggleButtonSetState(speed_230400,TRUE,FALSE);
                     device_speed=10;
                     break;
+#endif
 
                 default:
                     XmToggleButtonSetState(speed_4800,TRUE,FALSE);
