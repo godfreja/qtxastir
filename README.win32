@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.111 2004/11/26 06:10:48 we7u Exp $
+$Id: README.win32,v 1.112 2004/12/24 04:26:45 we7u Exp $
 
 
   Two companies have created simpler installs of Cygwin/Xastir than
@@ -9,7 +9,8 @@ $Id: README.win32,v 1.111 2004/11/26 06:10:48 we7u Exp $
 
     Lintronix:  WinXastir CD available for a nominal fee.
     Everything needed to install Cygwin/Xastir off-line.  Walks you
-    through an automated install:
+    through an automated install.  Internet install of Xastir is
+    also now available:
 
         http://www.lintronix.com/winxastir/
         winxastir@lintronix.com
@@ -17,7 +18,9 @@ $Id: README.win32,v 1.111 2004/11/26 06:10:48 we7u Exp $
 
     Inuit Nunaani Wireless Inc:  CD available for a nominal fee.
     Everything needed to install Cygwin/Xastir off-line.  Walks you
-    through an automated install:
+    through an automated install.  This install is verified to work
+    on WinXP and Win98 (known _not_ to work on Win95/WinME).
+    Contact:
 
         Tom Tessier <ttessier@trtdigital.ca>
 
