@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.28 2004/01/26 16:18:24 we7u Exp $
+ * $Id: track_gui.c,v 1.29 2004/02/26 20:30:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -400,6 +400,12 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
         sizeof(log_filename),
         "%s/map.log",
         get_user_base_dir("tmp"));
+
+    // Erase any previously existing local file by the same name.
+    // This avoids the problem of having an old tracklog here and
+    // the code trying to display it when the download fails.
+    unlink( log_filename );
+
 
     XmScaleGetValue(posit_start_value , &posit_start);
     XmScaleGetValue(posit_length_value , &posit_length);

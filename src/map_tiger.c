@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.13 2004/01/26 16:18:23 we7u Exp $
+ * $Id: map_tiger.c,v 1.14 2004/02/26 20:30:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -361,6 +361,10 @@ void draw_tiger_map (Widget w,
         get_user_base_dir("tmp"),
         "gif");
 
+    // Erase any previously existing local file by the same name.
+    // This avoids the problem of having an old map image here and
+    // the code trying to display it when the download fails.
+    unlink( local_filename );
 
     HandlePendingEvents(app_context);
     if (interrupt_drawing_now) {

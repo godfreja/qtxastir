@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.23 2004/02/11 22:40:22 we7u Exp $
+ * $Id: map_geo.c,v 1.24 2004/02/26 20:30:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -782,6 +782,12 @@ fprintf(stderr,"1 ");
             sizeof(local_filename),
             "%s/map.%s",
             get_user_base_dir("tmp"),ext);
+
+        // Erase any previously existing local file by the same
+        // name.  This avoids the problem of having an old map image
+        // here and the code trying to display it when the download
+        // fails.
+        unlink( local_filename );
 
 #ifdef HAVE_LIBCURL
         curl = curl_easy_init();
