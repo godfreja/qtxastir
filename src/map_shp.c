@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.88 2005/01/09 23:06:59 tvrusso Exp $
+ * $Id: map_shp.c,v 1.89 2005/01/09 23:10:52 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1456,6 +1456,10 @@ void draw_shapefile_map (Widget w,
             sType = "Polyline";
             break;
 
+        case SHPT_ARCZ:
+            sType = "3D Polyline";
+            break;
+
         case SHPT_POLYGON:
             sType = "Polygon";
             break;
@@ -1947,6 +1951,7 @@ void draw_shapefile_map (Widget w,
 
 
                 case SHPT_ARC:
+                case SHPT_ARCZ:
                     // We hit this case once for each polyline shape
                     // in the file, iff at least part of that shape
                     // is within our viewport.
