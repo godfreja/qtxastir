@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.210 2005/01/08 10:06:52 we7u Exp $
+ * $Id: interface.c,v 1.211 2005/01/20 00:45:41 shadow Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5410,11 +5410,7 @@ void port_read(int port) {
 #ifdef __solaris__
                     from_len = (unsigned int)sizeof(from);
 #else   // __solaris__
-  #ifndef socklen_t
-                    from_len = (int)sizeof(from);
-  #else // socklen_t
                     from_len = (socklen_t)sizeof(from);
-  #endif    // socklen_t
 #endif  // __solaris__
 
                     port_data[port].scan = recvfrom(port_data[port].channel,buffer,
