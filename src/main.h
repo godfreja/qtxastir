@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.18 2002/09/19 20:57:44 we7u Exp $
+ * $Id: main.h,v 1.19 2002/09/26 19:30:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -129,6 +129,7 @@ extern int symbol_display;
 extern int symbol_rotate;
 extern int wx_display_enable;
 extern int wx_display_short;
+extern int wx_obj_display_enable;
 extern int colors[256];
 extern int max_trail_colors;
 extern int trail_colors[32];
