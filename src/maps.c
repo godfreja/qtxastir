@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.331 2003/10/09 19:47:26 we7u Exp $
+ * $Id: maps.c,v 1.332 2003/10/09 19:52:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1091,8 +1091,8 @@ void draw_grid(Widget w) {
         utm_grid.hash.lr_y = y_lat_offset  + (screen_height * scale_y);
 
 utm_grid_draw:
-        // Draw grid in dashed yellow lines
-        (void)XSetForeground(XtDisplay(w), gc, colors[0x27]);
+        // Draw grid in dashed purple lines
+        (void)XSetForeground(XtDisplay(w), gc, colors[0x01]);
 
 
 
