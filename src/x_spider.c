@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.21 2004/08/18 20:35:44 we7u Exp $
+ * $Id: x_spider.c,v 1.22 2004/08/19 06:45:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -103,6 +103,7 @@
 
 //#include "config.h"
 #include "x_spider.h"
+#include "snprintf.h"
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -522,7 +523,7 @@ int pipe_check(char *client_address) {
 //fprintf(stderr,"x_spider:Found an authentication string\n");
 
                 // Copy the line
-                strncpy(line2, line, sizeof(line2));
+                xastir_snprintf(line2, sizeof(line2), "%s", line);
 
                 // Add white space to the end.
                 strncat(line2,
@@ -573,7 +574,7 @@ int pipe_check(char *client_address) {
                     //    "x_spider: Authenticated user %s\n",
                     //    callsign);
                     p->authenticated = 1;
-                    strncpy(p->callsign,callsign,20);
+                    xastir_snprintf(p->callsign, 20, "%s", callsign);
                     p->callsign[19] = '\0';
                 }
                 else {
