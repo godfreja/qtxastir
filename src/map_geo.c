@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.30 2004/03/22 22:12:01 we7u Exp $
+ * $Id: map_geo.c,v 1.31 2004/07/08 21:49:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -888,6 +888,8 @@ void draw_geo_image_map (Widget w,
             z,
             geo_image_width,
             geo_image_height);
+//http://terraservice.net/download.ashx?t=1&s=11&x=1384&y=13274&z=10&w=1215&h=560
+//fprintf(stderr,"%s\n",fileimg);
     }
 #endif // HAVE_IMAGEMAGICK
 
