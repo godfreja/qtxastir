@@ -1,7 +1,7 @@
 /*
    See the top of datum.h for information on this code.
    N7TAP
-   $Id: datum.c,v 1.16 2003/11/03 21:22:10 we7u Exp $
+   $Id: datum.c,v 1.17 2003/11/24 21:55:35 we7u Exp $
 */
 
 
@@ -471,7 +471,8 @@ void ll_to_utm_ups(short ellipsoidID, const double lat, const double lon,
 
     ZoneNumber = (int)((LongTemp + 180)/6) + 1;
 
-    if (coordinate_system == USE_MGRS) {
+    if (coordinate_system == USE_UTM_SPECIAL
+            || coordinate_system == USE_MGRS) {
 
         // Special zone for southern Norway.  Used for military
         // version of UTM (MGRS) only.

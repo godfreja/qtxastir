@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.52 2003/11/04 16:46:28 we7u Exp $
+ * $Id: main.h,v 1.53 2003/11/24 21:55:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -272,7 +272,9 @@ extern int coordinate_system;
 #define USE_DDMMMM      1
 #define USE_DDMMSS      2
 #define USE_UTM         3
-#define USE_MGRS        4
+#define USE_UTM_SPECIAL 4
+#define USE_MGRS        5
+
 
 extern void HandlePendingEvents(XtAppContext app);
 extern void create_gc(Widget w);

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.25 2003/11/03 21:22:11 we7u Exp $
+ * $Id: list_gui.c,v 1.26 2003/11/24 21:55:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -672,7 +672,8 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill"
 
                         XtManageChild(SL_alt[type][row]);
 
-                        if (coordinate_system == USE_UTM) {
+                        if (coordinate_system == USE_UTM
+                                || coordinate_system == USE_UTM_SPECIAL) {
                             // Create a UTM string from coordinates
                             // in Xastir coordinate system.
                             convert_xastir_to_UTM_str(stemp, sizeof(stemp), p_station->coord_lon, p_station->coord_lat);
