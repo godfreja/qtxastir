@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.30 2003/02/01 01:04:07 we7u Exp $
+ * $Id: draw_symbols.c,v 1.31 2003/02/03 05:49:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2466,7 +2466,7 @@ void draw_deadreckoning_features(DataRow *p_station, Pixmap where, Widget w) {
             "",
             "",
             "",
-            p_station->sec_heard-sec_old,
+            p_station->sec_heard-sec_old,   // Always draw it ghosted
             0,
             where,
             symbol_orient(p_station->course),

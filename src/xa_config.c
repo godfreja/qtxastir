@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.72 2003/02/03 05:05:22 we7u Exp $
+ * $Id: xa_config.c,v 1.73 2003/02/03 05:49:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -670,6 +670,7 @@ void save_data(void)  {
 	store_int (fout, "TRACK_ME", track_me);
     store_int (fout, "MAP_CHOOSER_EXPAND_DIRS", map_chooser_expand_dirs);
     store_int (fout, "ST_DIRECT_TIMEOUT", st_direct_timeout);
+    store_int (fout, "DEAD_RECKONING_TIMEOUT", dead_reckoning_timeout);
 
         if (debug_level & 1)
             printf ("Save Data Stop\n");
@@ -1352,7 +1353,10 @@ void load_data_or_default(void) {
         map_chooser_expand_dirs = 0;
 
     if (!get_int ("ST_DIRECT_TIMEOUT", &st_direct_timeout,1,60*60*24*30,60*60))
-        map_chooser_expand_dirs = 60*60;    // One hour default
+        st_direct_timeout = 60*60;    // One hour default
+
+    if (!get_int ("DEAD_RECKONING_TIMEOUT", &dead_reckoning_timeout,1,60*60*24*30,60*10))
+        dead_reckoning_timeout = 60*10;     // Ten minute default
 
     input_close();
 }
