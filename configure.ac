@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.91 2004/07/06 22:29:21 we7u Exp $
+# $Id: configure.ac,v 1.92 2004/07/07 16:30:05 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -130,6 +130,14 @@ AC_SUBST(LIBS)
 
 # New stuff to check for Motif/Lesstif.  Shamelessly borrowed from
 # the "vim" project.
+
+# From Tom Russo:
+#
+# "Ideally, instead of doing a simple "if test -f $try/Xm/Xm.h", it
+# should add -I$try to CPPFLAGS and attempt an AC_CHECK_HEADER.  For
+# libXm it should add -L$try to LDFLAGS and try an AC_CHECK_LIB."
+#
+# Someone want to add that stuff in?
 
 # Check for Motif include files location.
 # The LAST one found is used, this makes the highest version to be
