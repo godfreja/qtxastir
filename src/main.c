@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.276 2003/05/15 03:59:03 we7u Exp $
+ * $Id: main.c,v 1.277 2003/05/19 19:52:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,7 +41,7 @@
 #include <pthread.h>
 #include <locale.h>
 #include <strings.h>
-#include <time.h>
+#include <sys/time.h>
 
 #ifdef HAVE_IMAGEMAGICK
 #include <sys/types.h>
