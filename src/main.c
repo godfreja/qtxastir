@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.312 2003/07/15 22:42:44 we7u Exp $
+ * $Id: main.c,v 1.313 2003/07/18 21:05:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8853,14 +8853,18 @@ void  Map_disable_toggle( /*@unused@*/ Widget widget, XtPointer clientData, XtPo
     char *which = (char *)clientData;
     XmToggleButtonCallbackStruct *state = (XmToggleButtonCallbackStruct *)callData;
 
-    if(state->set)
+    if(state->set) {
         disable_all_maps = atoi(which);
-    else
-        disable_all_maps = 0;
-
-    if (create_image(da)) {
-        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
     }
+    else {
+        disable_all_maps = 0;
+    }
+
+    request_new_image++;
+
+//    if (create_image(da)) {
+//        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+//    }
 }
 
 
