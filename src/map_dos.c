@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.9 2003/07/26 16:35:06 we7u Exp $
+ * $Id: map_dos.c,v 1.10 2003/12/04 01:08:04 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1106,7 +1106,8 @@ draw_dos_map(Widget w,
                                                y,
                                                label_length,
                                                colors[(int)(label_type_1[0] & 0x7f)],
-                                               label_text);
+                                               label_text,
+                                               FONT_DEFAULT);
                     }
                     else {  // Rotated label
                       draw_rotated_label_text (w,
@@ -1115,7 +1116,8 @@ draw_dos_map(Widget w,
                                                y,
                                                label_length,
                                                colors[(int)(label_type_1[0] & 0x7f)],
-                                               label_text);
+                                               label_text,
+                                               FONT_DEFAULT);
                     }
                   }
                 }
