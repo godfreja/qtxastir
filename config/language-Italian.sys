@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.92 2003/05/12 05:18:30 we7u Exp $
+# $Id: language-Italian.sys,v 1.93 2003/05/18 18:29:40 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -78,8 +78,8 @@ PULDNMP008|Intensità Mappa|I|
 PULDNMP020|Abilita/Configura Tigermap||
 PULDNMP021|Mappe Automatche - Disabilita Mappe Raster||
 PULDNMP022|Indicizza Mappe all' Avvio||
-PULDNMP023|Re-Indicizza le Mappe|R|
-PULDNMP024|Map Re-Index: ALL Maps|A|
+PULDNMP023|Indice: Aggiungi Nuove Mappe|N|
+PULDNMP024|Indice: Riordina Tutte le Mappe|R|
 #
 #
 # PopUp "Configure Tigermap"
