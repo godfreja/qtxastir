@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.158 2002/11/13 23:31:20 we7u Exp $
+ * $Id: maps.c,v 1.159 2002/11/22 05:15:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -997,8 +997,14 @@ void draw_rotated_label_text (Widget w, int rotation, int x, int y, int label_le
 
 
     /* load font */
-    if(!font) 
+    if(!font) {
         font=(XFontStruct *)XLoadQueryFont (XtDisplay (w), fontname);
+        if (font == NULL) {	// Couldn't get the font!!!
+            printf("draw_rotated_label_text: Couldn't get font %s\n",
+                fontname);
+            return;
+        }
+    }
 
 
     // Code to determine the bounding box corner points for the rotated text
