@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.10 2002/04/09 22:38:25 we7u Exp $
+ * $Id: interface_gui.c,v 1.11 2002/05/16 16:38:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -435,6 +435,12 @@ void Config_TNC( /*@unused@*/ Widget w, int device_type, int config_type, int po
                                       XmNrightAttachment, XmATTACH_NONE,
                                       XmNbackground, colors[0xff],
                                       NULL);
+
+// We can only set the time properly on Linux systems
+#ifndef __linux__
+                XtSetSensitive(TNC_GPS_set_time,FALSE);
+#endif
+
                 break;
             case DEVICE_SERIAL_TNC:
             default:
@@ -1208,6 +1214,11 @@ void Config_GPS( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNrightAttachment, XmATTACH_NONE,
                                       XmNbackground, colors[0xff],
                                       NULL);
+
+// We can only set the time properly on Linux systems
+#ifndef __linux__
+        XtSetSensitive(GPS_set_time,FALSE);
+#endif
  
         frame = XtVaCreateManagedWidget("Config_GPS frame", xmFrameWidgetClass, form,
                                     XmNtopAttachment,XmATTACH_WIDGET,
@@ -2701,6 +2712,11 @@ void Config_NGPS( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNrightAttachment, XmATTACH_NONE,
                                       XmNbackground, colors[0xff],
                                       NULL);
+
+// We can only set the time properly on Linux systems
+#ifndef __linux__
+        XtSetSensitive(NGPS_set_time,FALSE);
+#endif
  
         sep = XtVaCreateManagedWidget("Config_NGPS sep", xmSeparatorGadgetClass,form,
                                       XmNorientation, XmHORIZONTAL,
