@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.14 2003/02/20 23:31:47 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.15 2003/02/25 18:04:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -290,10 +290,14 @@ static void zero_bulletin_processing(Message *fill) {
                 // in time here.
                 if (first_new_bulletin_time > (fill->sec_heard) )
                     first_new_bulletin_time = fill->sec_heard;
- 
-                // Set the flag that gets the whole ball rolling
-                new_bulletin_flag = 1;
+
+                // Check whether we really wish to pop them up
+                if (pop_up_new_bulletins
+                        && view_zero_distance_bulletins) { 
+                    // Set the flag that gets the whole ball rolling
+                    new_bulletin_flag = 1;
 //fprintf(stderr,"Filled in distance, setting new_bulletin_flag\n");
+                }
             }
         }
         else {
