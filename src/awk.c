@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.11 2003/09/27 14:18:28 n2ygk Exp $
+ * $Id: awk.c,v 1.12 2003/11/26 16:54:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -410,7 +410,7 @@ void awk_eval_expr(awk_symtab *this,
                     && dp <= &((char *)src->val)[src->size]) {
                     char *sp;
 
-                    if (sizeof(tbuf) >= src->size) { /* tbuf big enuf */
+                    if ((int)sizeof(tbuf) >= src->size) { /* tbuf big enuf */
                         sp = tbuf;
                     } else {    /* tbuf too small */
                         sp = malloc(src->size);
@@ -451,13 +451,13 @@ void awk_eval_expr(awk_symtab *this,
         *dp = '\0';                     /* null terminate the string */
         switch(dest->type) {
         case INT:
-            if (dest->size >= sizeof(int)) {
+            if (dest->size >= (int)sizeof(int)) {
                 *((int *)dest->val) = atoi(tbuf);
                 dest->len = sizeof(int);
             }
             break;
         case FLOAT:
-            if (dest->size >= sizeof(double)) {
+            if (dest->size >= (int)sizeof(double)) {
                 *((double *)dest->val) = atof(tbuf);
                 dest->len = sizeof(double);
             }
