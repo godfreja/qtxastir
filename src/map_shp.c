@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.31 2003/11/11 15:02:16 n2ygk Exp $
+ * $Id: map_shp.c,v 1.32 2003/11/13 15:27:22 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3303,7 +3303,6 @@ if (on_screen) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Done with drawing shapes, now draw labels
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// XXX - todo: center large polygon labels in the center (e.g. county boundary)
 
 #ifdef WITH_DBFAWK
                     temp = name;
@@ -3394,10 +3393,18 @@ if (on_screen) {
                                 (float)lat_f);
                         }
                         else {  // Not quad overlay, use vertices
+             // XXX - todo: center large polygon labels in the center (e.g. county boundary)
+                            /* center label in polygon bounding box */
+                            temp_ok = convert_to_xastir_coordinates(&my_long,
+                                &my_lat,
+                                ((float)(object->dfXMax + object->dfXMin))/2.0,
+                                ((float)(object->dfYMax + object->dfYMin))/2.0);
+#ifdef notdef
                             temp_ok = convert_to_xastir_coordinates(&my_long,
                                 &my_lat,
                                 (float)object->padfX[0],
                                 (float)object->padfY[0]);
+#endif
                         }
                         //fprintf(stderr,"%ld %ld\n", my_long, my_lat);
 
@@ -3436,7 +3443,16 @@ if (on_screen) {
                                         strlen(quad_label));
                                 }
                                 else {
+#ifdef notdef
                                     (void)draw_label_text ( w,
+                                        x,
+                                        y,
+                                        strlen(temp),
+                                        colors[label_color],
+                                        (char *)temp);
+#endif
+                                    (void)draw_centered_label_text(w,
+                                        -90,
                                         x,
                                         y,
                                         strlen(temp),
