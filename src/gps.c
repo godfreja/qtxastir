@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.5 2002/03/06 09:17:05 we7u Exp $
+ * $Id: gps.c,v 1.6 2002/03/06 09:52:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -310,6 +310,8 @@ void gps_data_find(char *gps_line_data, int port) {
                             cse,
                             &t ) == 1) {    /* mod station data */
             /* got GPS data */
+            alt[0] = '\0';
+            sats[0] = '\0';
             my_station_gps_change(long_pos,lat_pos,cse,spd,
                 sunit[0],alt,sats);
         }
@@ -336,6 +338,9 @@ void gps_data_find(char *gps_line_data, int port) {
                              alt,
                              aunit) == 1) { /* mod station data */
             /* got GPS data */
+            cse[0] = '\0';
+            spd[0] = '\0';
+            sunit[0] = '\0';
             my_station_gps_change(long_pos,lat_pos,cse,spd,
                 sunit[0],alt,sats);
         }
