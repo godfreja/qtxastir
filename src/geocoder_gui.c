@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.11 2004/09/17 19:56:56 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.12 2004/10/07 21:43:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -394,7 +394,6 @@ begin_critical_section(&geocoder_place_dialog_lock, "geocoder_gui.c:Geocoder_pla
 
 //        zip = XtVaCreateManagedWidget(langcode("FEATURE001"),xmLabelWidgetClass, form,
         zip = XtVaCreateManagedWidget("Zip Code:",xmLabelWidgetClass, form,
- 
                 XmNtopAttachment, XmATTACH_WIDGET,
                 XmNtopWidget, state,
                 XmNtopOffset, 10,

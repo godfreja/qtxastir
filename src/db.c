@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.394 2004/10/07 15:14:07 shadow Exp $
+ * $Id: db.c,v 1.395 2004/10/07 21:43:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4837,7 +4837,6 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
 
 
             button_nws = XtVaCreateManagedWidget(langcode("WPUPSTI064"),xmPushButtonGadgetClass, form,
- 
                             XmNtopAttachment, XmATTACH_NONE,
                             XmNbottomAttachment, XmATTACH_WIDGET,
                             XmNbottomWidget, button_messages,
