@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.54 2002/11/14 19:30:24 we7u Exp $
+# $Id: language-Italian.sys,v 1.55 2002/11/19 17:59:58 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -165,6 +165,9 @@ PULDNDP032|Filter Symbols||
 PULDNDP033|Filter Info||
 PULDNDP034|Display Non-Local Stations||
 PULDNDP035|Enable Dead-Reckoning||
+PULDNDP036|Enable Dead-Reckoning Arcs||
+PULDNDP037|Enable Dead-Reckoning Course||
+PULDNDP038|Enable Dead-Reckoning Symbols||
 #
 # Sistema di misura
 PULDNUT001|Sistema inglese||
