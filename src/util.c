@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.92 2003/11/03 19:04:38 we7u Exp $
+ * $Id: util.c,v 1.93 2003/11/03 21:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -49,7 +49,6 @@
 
 #include "xastir.h"
 #include "util.h"
-#include "db.h"
 #include "main.h"
 #include "xa_config.h"
 #include "datum.h"
@@ -75,6 +74,89 @@ char echo_digis[6][9+1];
 struct timeval timer_start;
 struct timeval timer_stop;
 struct timezone tz;
+
+
+
+
+
+char *remove_leading_spaces(char *data) {
+    int i,j;
+    int count;
+
+    if (data == NULL)
+        return NULL;
+
+    if (strlen(data) == 0)
+        return NULL;
+
+    count = 0;
+    // Count the leading space characters
+    for (i = 0; i < (int)strlen(data); i++) {
+        if (data[i] == ' ') {
+            count++;
+        }
+        else {  // Found a non-space
+            break;
+        }
+    }
+
+    // Check whether entire string was spaces
+    if (count == (int)strlen(data)) {
+        // Empty the string
+        data[0] = '\0';
+    }
+    else if (count > 0) {  // Found some spaces
+        i = 0;
+        for( j = count; j < (int)strlen(data); j++ ) {
+            data[i++] = data[j];    // Move string left
+        }
+        data[i] = '\0'; // Terminate the new string
+    }
+
+    return(data);
+}
+
+
+
+
+
+char *remove_trailing_spaces(char *data) {
+    int i;
+
+    if (data == NULL)
+        return NULL;
+
+    if (strlen(data) == 0)
+        return NULL;
+
+    for(i=strlen(data)-1;i>=0;i--)
+        if(data[i] == ' ')
+            data[i] = '\0';
+        else
+            break;
+
+        return(data);
+}
+
+
+
+
+
+char *remove_trailing_asterisk(char *data) {
+    int i;
+
+    if (data == NULL)
+        return NULL;
+
+    if (strlen(data) == 0)
+        return NULL;
+
+    for(i=strlen(data)-1;i>0;i--) {
+        if(data[i] == '*')
+            data[i] = '\0';
+    }
+    return(data);
+}
 
 
 

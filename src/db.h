@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.39 2003/09/18 00:24:37 we7u Exp $
+ * $Id: db.h,v 1.40 2003/11/03 21:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -405,8 +405,6 @@ extern int decode_ax25_header(unsigned char *incoming_data, int length);
 extern int decode_ax25_line(char *line, char from, int port, int dbadd);
 
 // utilities
-extern char *remove_trailing_spaces(char *data);
-extern char *remove_trailing_asterisk(char *data);
 extern void packet_data_add(char *from, char *line);
 extern void General_query(Widget w, XtPointer clientData, XtPointer calldata);
 extern void IGate_query(Widget w, XtPointer clientData, XtPointer calldata);

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.24 2003/11/03 18:59:41 we7u Exp $
+ * $Id: list_gui.c,v 1.25 2003/11/03 21:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,7 +50,6 @@
 #include "main.h"
 #include "xastir.h"
 #include "messages.h"
-#include "db.h"
 #include "draw_symbols.h"
 #include "list_gui.h"
 

@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.33 2003/05/20 17:34:11 we7u Exp $
+ * $Id: wx.c,v 1.34 2003/11/03 21:22:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -77,7 +77,6 @@
 #include "xastir.h"
 #include "interface.h"
 #include "lang.h"
-#include "db.h"
 #include "util.h"
 
 

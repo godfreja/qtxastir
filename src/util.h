@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.21 2003/11/03 18:59:42 we7u Exp $
+ * $Id: util.h,v 1.22 2003/11/03 21:22:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -29,6 +29,9 @@
 #include "db.h"
 #include <pthread.h>
 
+extern char *remove_leading_spaces(char *data);
+extern char *remove_trailing_spaces(char *data);
+extern char *remove_trailing_asterisk(char *data);
 extern int  position_amb_chars;
 extern void start_timer(void);
 extern void stop_timer(void);

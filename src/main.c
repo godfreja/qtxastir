@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.372 2003/11/03 20:59:47 we7u Exp $
+ * $Id: main.c,v 1.373 2003/11/03 21:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -110,7 +110,6 @@
 #include "xa_config.h"
 #include "maps.h"
 #include "alert.h"
-#include "db.h"
 #include "interface.h"
 #include "wx.h"
 #include "popup.h"

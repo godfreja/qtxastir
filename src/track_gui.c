@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.26 2003/06/21 01:27:06 we7u Exp $
+ * $Id: track_gui.c,v 1.27 2003/11/03 21:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -34,7 +34,6 @@
 
 #include "main.h"
 #include "xastir.h"
-#include "db.h"
 #include "main.h"
 #include "lang.h"
 #include "popup.h"

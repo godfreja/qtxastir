@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.14 2003/07/31 16:01:58 we7u Exp $
+ * $Id: view_message_gui.c,v 1.15 2003/11/03 21:22:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -51,7 +51,6 @@
 #endif  // TIME_WITH_SYS_TIME
 
 #include "xastir.h"
-#include "db.h"
 #include "main.h"
 #include "util.h"
 

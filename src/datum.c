@@ -1,7 +1,7 @@
 /*
    See the top of datum.h for information on this code.
    N7TAP
-   $Id: datum.c,v 1.15 2003/11/03 18:59:41 we7u Exp $
+   $Id: datum.c,v 1.16 2003/11/03 21:22:10 we7u Exp $
 */
 
 
@@ -12,8 +12,11 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+
 #include "datum.h"
 #include "main.h"
+#include "util.h"
 
 
 //  ellipsoid: index into the gEllipsoid[] array, in which
@@ -673,10 +676,23 @@ void utm_ups_to_ll(short ellipsoidID, const double utmNorthing, const double utm
     int NorthernHemisphere; // 1=northern hemisphere, 0=southern
 
 
+//fprintf(stderr,"%s  %f  %f\n",
+//    utmZone,
+//    utmEasting,
+//    utmNorthing);
+
     x = utmEasting;
     y = utmNorthing;
 
     ZoneNumber = strtoul(utmZone, &ZoneLetter, 10);
+
+    // Remove any possible leading spaces
+    remove_leading_spaces(ZoneLetter);
+
+    // Make sure the zone letter is upper-case
+    *ZoneLetter = toupper(*ZoneLetter);
+
+//fprintf(stderr,"ZoneLetter: %s\n", ZoneLetter);
 
     if (       *ZoneLetter == 'Y'       // North Pole
             || *ZoneLetter == 'Z'       // North Pole
@@ -695,6 +711,10 @@ void utm_ups_to_ll(short ellipsoidID, const double utmNorthing, const double utm
         //
         double e, t, rho;
         const double k0 = 0.994;
+
+
+//fprintf(stderr,"UPS Coordinates\n");
+
 
         e = sqrt(eccSquared);
 

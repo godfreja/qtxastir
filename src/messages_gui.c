@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.18 2003/04/12 00:07:41 we7u Exp $
+ * $Id: messages_gui.c,v 1.19 2003/11/03 21:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,7 +32,6 @@
 
 #include "main.h"
 #include "xastir.h"
-#include "db.h"
 #include "main.h"
 #include "lang.h"
 
