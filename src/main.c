@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.18 2002/03/28 00:54:37 francais1 Exp $
+ * $Id: main.c,v 1.19 2002/03/28 18:27:14 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1030,10 +1030,11 @@ static void TrackMouse( /*@unused@*/ Widget w, XtPointer clientData, XEvent *eve
 
 
 static void ClearTrackMouse( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XEvent *event, /*@unused@*/ Boolean *flag) {
-
-    Widget textarea = (Widget) clientData;
-    XmTextFieldSetString(textarea," ");
-    XtManageChild(textarea);
+// N7TAP: In my opinion, it is handy to have the cursor position still displayed
+//        in the xastir window when I switch to another (like to write it down...)
+//    Widget textarea = (Widget) clientData;
+//    XmTextFieldSetString(textarea," ");
+//    XtManageChild(textarea);
 }
 
 
