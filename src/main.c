@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.46 2002/04/05 00:41:42 we7u Exp $
+ * $Id: main.c,v 1.47 2002/04/05 00:59:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2722,7 +2722,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
     coordinate_calculator_button = XtVaCreateManagedWidget(langcode("COORD001"),
                         xmPushButtonGadgetClass,mappane,
-                        XmNmnemonic, langcode_hotkey("Coordinate Calculator"),
+                        XmNmnemonic, langcode_hotkey("COORD001"),
                         XmNbackground,colors[0xff],NULL);
 
     (void)XtVaCreateManagedWidget("create_appshell sep2",xmSeparatorGadgetClass,mappane,XmNbackground,colors[0xff],NULL);
