@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.384 2004/09/15 19:59:27 we7u Exp $
+ * $Id: db.c,v 1.385 2004/09/15 20:19:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -188,14 +188,6 @@ int is_my_call(char *call, int exact) {
     // for a terminators in the first position.  If a terminator in
     // the second position, we'll fail the match properly in the
     // string compares.
-    // We need this next bit of code so that we don't run off the
-    // end of the string when we compare the 2nd char position.
-    //
-    if (!call[0])   // Empty string
-        return(0);
-
-    if (!my_callsign[0])    // Empty string
-        return(0);
 
 
     // Check first letter.  If a match, go on to strcmp() functions,
@@ -205,6 +197,16 @@ int is_my_call(char *call, int exact) {
     if (call[0] != my_callsign[0]) {
         return(0);
     }
+
+
+    // We need this next bit of code so that we don't run off the
+    // end of the string when we compare the 2nd char position.
+    //
+    if (!call[0])   // Empty string
+        return(0);
+
+    if (!my_callsign[0])    // Empty string
+        return(0);
 
 
     // Same for second letter.  This is much faster than the string
