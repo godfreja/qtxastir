@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.5 2002/05/21 19:02:47 we7u Exp $
+ * $Id: messages_gui.c,v 1.6 2002/06/13 18:47:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -292,7 +292,7 @@ void Send_message( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtP
     Atom delw;
 
     groupon=0;
-    box_len=85;
+    box_len=90;
     i=0;
 
 begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message" );
