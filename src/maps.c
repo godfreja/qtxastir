@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.50 2002/04/25 18:56:30 we7u Exp $
+ * $Id: maps.c,v 1.51 2002/04/25 20:18:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1942,8 +1942,8 @@ void draw_shapefile_map (Widget w,
                                 (void)XSetFillStyle(XtDisplay(w), gc_tint, FillSolid);
                                 (void)XDrawLines(XtDisplay(w), pixmap_alerts, gc_tint, points, i, CoordModeOrigin);
                             }
-                            else if (map_color_fill) {
-                                (void)XSetForeground(XtDisplay(w), gc, colors[0x07]); // darkgray fill
+                            else if (map_color_fill) {  // Land masses?
+                                (void)XSetForeground(XtDisplay(w), gc, colors[0xff]); // grey73 fill
                                 (void)XFillPolygon(XtDisplay (w), pixmap, gc, points, i, Complex, CoordModeOrigin);
                                 (void)XSetForeground(XtDisplay(w), gc, colors[0x08]); // black for border
                                 (void)XDrawLines(XtDisplay(w), pixmap, gc, points, i, CoordModeOrigin);
