@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.63 2003/02/08 01:33:13 we7u Exp $
+$Id: README.1ST,v 1.64 2003/02/08 01:33:53 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -1293,7 +1293,7 @@ WINDOWS/CYGWIN NOTES:
      listed above but add "-L/usr/lib -lmagick" to the end of it (and add
      the Shapelib line above if you want Shapelib as well).  "make install".
 
-     Add this to your PATH line in your .profile:
+     Add this to your .profile:
 
          export MAGICK_HOME=/usr
 
