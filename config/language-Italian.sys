@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.9 2002/04/01 20:52:30 we7u Exp $
+# $Id: language-Italian.sys,v 1.10 2002/04/02 17:32:01 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -801,4 +801,11 @@ FEATURE003|Contea:||
 FEATURE004|Quadrante:||
 FEATURE005|Tipo:||
 FEATURE006|File GNIS:||
+#
+# Coordinate Calculator Dialog
+COORD001|Coordinate Calc||
+COORD002|Calc||
+COORD003|Calculate||
+COORD004|Clear||
+#
 #

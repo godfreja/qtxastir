@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.8 2002/04/01 20:52:30 we7u Exp $
+# $Id: language-Spanish.sys,v 1.9 2002/04/02 17:32:01 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -801,4 +801,11 @@ FEATURE003|Pais:||
 FEATURE004|Mapa Quad:||
 FEATURE005|Tipo:||
 FEATURE006|GNIS Archivo:||
+#
+# Coordinate Calculator Dialog
+COORD001|Coordinate Calc||
+COORD002|Calc||
+COORD003|Calculate||
+COORD004|Clear||
+#
 #

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.8 2002/04/01 20:52:30 we7u Exp $
+# $Id: language-German.sys,v 1.9 2002/04/02 17:32:01 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -806,3 +806,11 @@ FEATURE003|County:||
 FEATURE004|Map Quad:||
 FEATURE005|Typ:||
 FEATURE006|GNIS Datei:||
+#
+# Coordinate Calculator Dialog
+COORD001|Coordinate Calc||
+COORD002|Calc||
+COORD003|Calculate||
+COORD004|Clear||
+#
+#

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.8 2002/04/01 20:52:30 we7u Exp $
+# $Id: language-French.sys,v 1.9 2002/04/02 17:32:01 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -800,4 +800,11 @@ FEATURE003|Comté:||
 FEATURE004|Quadrant de carte:||
 FEATURE005|Type:||
 FEATURE006|Fichier GNIS:||
+#
+# Coordinate Calculator Dialog
+COORD001|Coordinate Calc||
+COORD002|Calc||
+COORD003|Calculate||
+COORD004|Clear||
+#
 #

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.8 2002/04/01 20:52:30 we7u Exp $
+# $Id: language-Dutch.sys,v 1.9 2002/04/02 17:32:01 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -805,3 +805,11 @@ FEATURE003|Land:||
 FEATURE004|Kaart Quad:||
 FEATURE005|Type:||
 FEATURE006|GNIS Bestand:||
+#
+# Coordinate Calculator Dialog
+COORD001|Coordinate Calc||
+COORD002|Calc||
+COORD003|Calculate||
+COORD004|Clear||
+#
+#
