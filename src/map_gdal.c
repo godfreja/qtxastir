@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.69 2003/12/17 20:58:18 we7u Exp $
+ * $Id: map_gdal.c,v 1.70 2003/12/17 21:07:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -869,10 +869,19 @@ void Draw_OGR_Polygons(OGRGeometryH geometryH,
 
 
 
-                    // Initial attempt:  Draw just the filled
-                    // polygons.  Skip the hole polygons.  Later
-                    // I'll implement X11 regions like the Shapefile
-                    // code has.
+// Initial attempt:  Draw just the filled polygons.  Skip the hole
+// polygons.  Later I'll implement X11 regions like the Shapefile
+// code has.  It'd be very nice to implement separate functions for
+// creating the initial region, then calling another routine that
+// will make a hole in it, repeating until we run out of hole
+// polygons, then drawing the initial outer-ring polygon onto the
+// pixmap using the resulting "holey" region for a mask.
+//
+// create_filled_region()  Have it remember the initial polygon.
+// create_hole_in_region()
+// draw_region_to_pixmap()
+//
+
                     //
                     if (!polygon_hole) {    // It's a fill polygon (outer ring)
 
