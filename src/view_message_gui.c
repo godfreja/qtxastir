@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.16 2004/01/26 16:18:24 we7u Exp $
+ * $Id: view_message_gui.c,v 1.17 2004/07/01 04:11:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -206,7 +206,13 @@ end_critical_section(&All_messages_dialog_lock, "view_message_gui.c:all_messages
 
 void All_messages_destroy_shell( /*@unused@*/ Widget widget, XtPointer clientData, /*@unused@*/ XtPointer callData) {
     Widget shell = (Widget) clientData;
-    vm_range = atoi(XmTextFieldGetString(vm_dist_data));
+    char *temp_ptr;
+
+
+    temp_ptr = XmTextFieldGetString(vm_dist_data);
+    vm_range = atoi(temp_ptr);
+    XtFree(temp_ptr);
+
     XtPopdown(shell);
 
 begin_critical_section(&All_messages_dialog_lock, "view_message_gui.c:All_messages_destroy_shell" );
@@ -224,8 +230,13 @@ end_critical_section(&All_messages_dialog_lock, "view_message_gui.c:All_messages
 
 void All_messages_change_range( /*@unused@*/ Widget widget, XtPointer clientData, /*@unused@*/ XtPointer callData) {
     Widget shell = (Widget) clientData;
+    char *temp_ptr;
 
-    vm_range = atoi(XmTextFieldGetString(vm_dist_data));
+
+    temp_ptr = XmTextFieldGetString(vm_dist_data);
+    vm_range = atoi(temp_ptr);
+    XtFree(temp_ptr);
+
     XtPopdown(shell);
 
     All_messages_destroy_shell(widget, clientData, callData);
