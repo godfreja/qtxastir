@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.173 2002/12/21 16:08:54 we7u Exp $
+ * $Id: maps.c,v 1.174 2002/12/21 16:25:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10603,7 +10603,7 @@ void index_update_directory(char *directory) {
             // Found a match!
             //printf("Found: Updating entry for %s\n",directory);
             temp_record = current;
-            done++; // Exit the while loop
+            done++; // Exit loop, "current" points to found record
         }
         else if (test > 0) {    // Found a string past us in the
                                 // alphabet.  Insert ahead of this
@@ -10614,13 +10614,13 @@ void index_update_directory(char *directory) {
             //printf("Not Found: Inserting an index record for %s\n",directory);
             temp_record = (map_index_record *)malloc(sizeof(map_index_record));
 
-            if (previous == current) {  // Start of list!
+            if (current == map_index_head) {  // Start of list!
                 // Insert new record at head of list
                 temp_record->next = map_index_head;
                 map_index_head = temp_record;
                 //printf("Inserting at head of list\n");
             }
-            else {
+            else {  // Insert between "previous" and "current"
                 // Insert new record before "current"
                 previous->next = temp_record;
                 temp_record->next = current;
@@ -10642,8 +10642,10 @@ void index_update_directory(char *directory) {
         }
     }
 
-    if (!done) {  // Matching record not found, add a
-        // record to the end of the list
+    if (!done) {    // Matching record not found, add a record to
+                    // the end of the list.  "previous" points to
+                    // the last record in the list or NULL (empty
+                    // list).
         //printf("Not Found: Adding an index record for %s\n",directory);
         temp_record = (map_index_record *)malloc(sizeof(map_index_record));
         temp_record->next = NULL;
@@ -10759,7 +10761,7 @@ void index_update_xastir(char *filename,
             //printf("Not Found: Inserting an index record for %s\n",filename);
             temp_record = (map_index_record *)malloc(sizeof(map_index_record));
 
-            if (previous == current) {  // Start of list!
+            if (current == map_index_head) {  // Start of list!
                 // Insert new record at head of list
                 temp_record->next = map_index_head;
                 map_index_head = temp_record;
@@ -10917,7 +10919,7 @@ void index_update_ll(char *filename,
             //printf("Not Found: Inserting an index record for %s\n",filename);
             temp_record = (map_index_record *)malloc(sizeof(map_index_record));
 
-            if (previous == current) {  // Start of list!
+            if (current == map_index_head) {  // Start of list!
                 // Insert new record at head of list
                 temp_record->next = map_index_head;
                 map_index_head = temp_record;
