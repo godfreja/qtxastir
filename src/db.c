@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.49 2002/06/06 18:00:27 we7u Exp $
+ * $Id: db.c,v 1.50 2002/06/06 21:43:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -360,7 +360,6 @@ char *get_most_recent_ack(char *callsign) {
 void init_message_data(void) {  // called at start of main
 
     new_message_data = 0;
-//    message_counter = 0;  // Now read in from config file instead
     last_message_remove = sec_now();
 }
 
