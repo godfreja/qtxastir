@@ -6,7 +6,7 @@
 # Released to the public domain.
 #
 #
-# $Id: coord-convert.pl,v 1.4 2002/08/13 23:51:21 we7u Exp $
+# $Id: coord-convert.pl,v 1.5 2002/08/14 20:51:05 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
@@ -49,6 +49,8 @@ while (1) {
 
     # Snag the input
     $_ = <>;
+
+    print "\n";
 
     # If the first item has 2 digits and one character and there are
     # three "words" in the input, we're starting with a UTM value.

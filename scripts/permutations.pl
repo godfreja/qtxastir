@@ -6,7 +6,7 @@
 # Released to the public domain.
 #
 #
-# $Id: permutations.pl,v 1.5 2002/08/14 18:21:03 we7u Exp $
+# $Id: permutations.pl,v 1.6 2002/08/14 20:51:05 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
@@ -39,6 +39,8 @@ sub convert {
 
     # Snag the input
     $_ = $_[0];
+
+    print "\n";
 
     # If the first item has 2 digits and one character and there are
     # three "words" in the input, we're starting with a UTM value.
