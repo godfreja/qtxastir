@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.1 2002/02/02 03:18:53 kg4ijb Exp $
+ * $Id: main.h,v 1.2 2002/02/05 04:55:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -44,7 +44,12 @@ extern FILE *read_file_ptr;
 
 #ifdef __LCLINT__
 #define PACKAGE "xastir"
+
+#ifdef __LCLINT__
+#undef VERSION
 #define VERSION "lclint"
+#endif
+
 #define VERSIONTXT "xastir lclint debug version"
 #else
 #define VERSIONTXT PACKAGE " " VERSION
