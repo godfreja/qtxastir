@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.282 2003/09/18 19:04:58 we7u Exp $
+ * $Id: db.c,v 1.283 2003/09/19 17:57:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11329,8 +11329,8 @@ else {
         fprintf(stderr,"5\n");
     //--------------------------------------------------------------------------
     if (!done
-            && ( (strncmp(addr,"NWS-",4) == 0)
-              || (strncmp(addr,"NWS_",4) == 0) ) ) {    // NWS weather alert
+            && ( (strncmp(addr,"NWS-",4) == 0)          // NWS weather alert
+              || (strncmp(addr,"NWS_",4) == 0) ) ) {    // NWS weather alert compressed
 
         //fprintf(stderr,"found NWS: |%s| |%s| |%s|\n",addr,message,msg_id);      // could have sort of line number
 
