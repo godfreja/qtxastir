@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.59 2004/10/03 04:58:02 we7u Exp $
+ * $Id: draw_symbols.c,v 1.60 2004/11/10 19:58:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,7 +32,7 @@
 #include <Xm/XmAll.h>
 
 #include "xastir.h"
-#include "db.h"
+#include "database.h"
 #include "draw_symbols.h"
 #include "main.h"
 #include "util.h"

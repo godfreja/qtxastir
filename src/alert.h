@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.19 2004/07/19 21:17:18 we7u Exp $
+ * $Id: alert.h,v 1.20 2004/11/10 19:58:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -38,7 +38,7 @@
 #endif
 
 
-#include "db.h"
+#include "database.h"
 #include "maps.h"
 
 

@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.19 2004/10/27 17:02:17 we7u Exp $
+# $Id: Makefile.am,v 1.20 2004/11/10 19:58:03 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -14,7 +14,7 @@ xastir_SOURCES = \
     bulletin_gui.c bulletin_gui.h \
     color.c color.h \
     datum.c datum.h \
-    db.c db.h \
+    db.c database.h \
     dbfawk.c dbfawk.h \
     draw_symbols.c draw_symbols.h \
     fcc_data.c fcc_data.h \

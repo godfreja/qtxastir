@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.40 2004/10/02 18:08:20 we7u Exp $
+ * $Id: xastir.h,v 1.41 2004/11/10 19:58:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -89,7 +89,7 @@
 
 #include <X11/Intrinsic.h>
 
-//#include "db.h"
+//#include "database.h"
 #include "util.h"
 #include "messages.h"
 #include "fcc_data.h"

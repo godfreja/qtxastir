@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.397 2004/11/04 20:27:56 we7u Exp $
+ * $Id: db.c,v 1.398 2004/11/10 19:58:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15266,7 +15266,7 @@ int Create_object_item_tx_string(DataRow *p_station, char *line, int line_length
 // to set the initial timing.
 
 //
-// Added these to db.h:DataRow struct:
+// Added these to database.h:DataRow struct:
 // time_t last_transmit_time;          // Time we last transmitted an object/item.  Used to
 //                                     // implement decaying transmit time algorithm
 // short transmit_time_increment;      // Seconds to add to transmit next time around.  Used

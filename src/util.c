@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.127 2004/11/05 16:37:36 we7u Exp $
+ * $Id: util.c,v 1.128 2004/11/10 19:58:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3336,8 +3336,8 @@ char *sec_to_loc(long longitude, long latitude)
   static char buf[7];
   char *loc = buf;
 
-  // db.h:    long coord_lon;                     // Xastir coordinates 1/100 sec, 0 = 180°W
-  // db.h:    long coord_lat;                     // Xastir coordinates 1/100 sec, 0 =  90°N
+  // database.h:    long coord_lon;                     // Xastir coordinates 1/100 sec, 0 = 180°W
+  // database.h:    long coord_lat;                     // Xastir coordinates 1/100 sec, 0 =  90°N
 
   longitude /= 100;
   latitude  =  2* 90 * 3600L - latitude / 100;

@@ -1,5 +1,5 @@
 /*
- * $Id: wx.h,v 1.7 2004/08/19 06:31:43 we7u Exp $
+ * $Id: wx.h,v 1.8 2004/11/10 19:58:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,7 +26,7 @@
 #ifndef __XASTIR_WX_H
 #define __XASTIR_WX_H
 
-#include "db.h"
+#include "database.h"
 
 extern void fill_wx_data(void);
 
