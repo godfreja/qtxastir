@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.28 2004/01/26 20:50:11 we7u Exp $
+$Id: INSTALL,v 1.29 2004/01/29 16:53:19 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -503,6 +503,12 @@ First Time Install:
      new map.
 
      Make sure you have Shapelib installed first (see above instructions).
+
+     Note that you may have to change the gpsmanshp Makefile to call out
+     "TCLVERSION = 8.4" instead of 8.3, depending upon which version of tcl is
+     installed on your system.  Use your package manager to determine this
+     ("rpm -q -a | grep tcl"), or you may be able to find out in /usr/lib by
+     typing "ls -ld tcl*".
 
      Install gpsmanshp:
 
