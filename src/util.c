@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.62 2003/02/23 09:52:07 we7u Exp $
+ * $Id: util.c,v 1.63 2003/02/23 16:37:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -846,9 +846,9 @@ time_t time_from_aprsstring(char *aprs_time) {
 
             // Now check whether we have any overflows.  According
             // to the "mktime()" man page, we probably don't need to
-            // do this.  It normalizes the time itself.  On all
-            // systems though?
-/*
+            // do this for overflow (It normalizes the time itself),
+            // but I think we still need to for underflow.
+//WE7U: Check this stuff carefully!
             if (alert_time.tm_min > 59) {
                 alert_time.tm_hour++;
                 alert_time.tm_min -= 60;
@@ -885,7 +885,6 @@ time_t time_from_aprsstring(char *aprs_time) {
                     }
                 }
             }
-*/
         }
     }
     else {  // We didn't parse out the day from the input string.
