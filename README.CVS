@@ -1,5 +1,5 @@
 
-$Id: README.CVS,v 1.12 2004/10/01 16:19:15 we7u Exp $
+$Id: README.CVS,v 1.13 2004/10/04 17:16:56 we7u Exp $
 
 
 CVS Instructions:
@@ -223,6 +223,11 @@ SUDO Instructions:
     command you can copy the script to /usr/local/bin and then run it as
     "update-xastir" from anywhere.
 
+    A note from Gerry Creager as to another way to set up the sudoers file:
+
+      "I now consider it a good idea to add the "gifted" users to the 'wheel'
+      group and then solely enable wheel in /etc/sudoers; I've seen a recent
+      article also supporting this."
 
 
   ------------------------------------------------------------------------
