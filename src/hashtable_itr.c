@@ -1,6 +1,6 @@
 
 
-// $Id: hashtable_itr.c,v 1.3 2004/12/24 07:39:28 tvrusso Exp $
+// $Id: hashtable_itr.c,v 1.4 2004/12/24 08:50:19 tvrusso Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark  <firstname.lastname@cl.cam.ac.uk> */
@@ -70,6 +70,7 @@ hashtable_iterator_value(struct hashtable_itr *i)
     if (i->e) {
         return i->e->v;
     } else {
+        return NULL;
     }
 
 }
