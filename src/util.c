@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.146 2005/02/17 09:14:00 we7u Exp $
+ * $Id: util.c,v 1.147 2005/03/16 00:50:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1422,6 +1422,7 @@ char *compress_posit(const char *input_lat, const char group, const char *input_
     //    phg);
 
     (void)sscanf(input_lat, "%2d%lf%c", &deg, &minutes, &ext);
+    ext = (char)toupper((int)ext);
     temp = 380926 * (90 - (deg + minutes / 60.0) * ( ext=='N' ? 1 : -1 ));
 
     //fprintf(stderr,"temp: %d\t",temp);
@@ -1435,6 +1436,7 @@ char *compress_posit(const char *input_lat, const char group, const char *input_
     //fprintf(stderr,"%s\n",lat);
 
     (void)sscanf(input_lon, "%3d%lf%c", &deg, &minutes, &ext);
+    ext = (char)toupper((int)ext);
     temp = 190463 * (180 + (deg + minutes / 60.0) * ( ext=='W' ? -1 : 1 ));
 
     //fprintf(stderr,"temp: %d\t",temp);
