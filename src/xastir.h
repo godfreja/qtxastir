@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.17 2002/10/30 21:40:34 francais1 Exp $
+ * $Id: xastir.h,v 1.18 2002/11/22 00:50:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -197,6 +197,8 @@ extern double calc_dscale_x(long x, long y);
 
 /* from popup_gui.c */
 extern void popup_message(char *banner, char *message);
+extern void popup_ID_message(char *banner, char *message);
+
 
 /* from view_messages.c */
 extern void all_messages(char from, char *call_sign, char *from_call, char *message);

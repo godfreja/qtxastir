@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.55 2002/11/19 17:59:58 we7u Exp $
+# $Id: language-Italian.sys,v 1.56 2002/11/22 00:50:04 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -267,7 +267,7 @@ BBARSTA036|Libero AUX, ricezione dati da TNC..||
 BBARSTA037|Dati GPS rilevati||
 BBARSTA038|Posizionare il cambiamento sulla mia stazione||
 BBARSTA039|Indexing %s||
-BBARSTA040|This is Amateur Radio Station %s||
+BBARSTA040|Amateur APRS Station %s||
 BBARSTA041|Waiting for GPS data..||
 #
 #Visualizzazione dati packet

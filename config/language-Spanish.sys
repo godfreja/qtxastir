@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.56 2002/11/19 17:59:59 we7u Exp $
+# $Id: language-Spanish.sys,v 1.57 2002/11/22 00:50:04 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -267,7 +267,7 @@ BBARSTA036|Limpiando el AUX datos obtenido del TNC..||
 BBARSTA037|Datos de GPS Decondificado||
 BBARSTA038|Coloque el cambio en mi estación||
 BBARSTA039|Indexing %s||
-BBARSTA040|This is Amateur Radio Station %s||
+BBARSTA040|Amateur APRS Station %s||
 BBARSTA041|Waiting for GPS data..||
 #
 # Despliegue Paquete de Datos

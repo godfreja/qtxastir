@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.55 2002/11/19 18:29:22 francais1 Exp $
+ * $Id: xa_config.c,v 1.56 2002/11/22 00:50:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -588,6 +588,7 @@ void save_data(void)  {
 
 #ifdef HAVE_FESTIVAL
             /* Festival speech settings */
+        store_int (fout, "SPEAK_ID",festival_speak_ID);
         store_int (fout, "SPEAK_NEW_STATION",festival_speak_new_station);
         store_int (fout, "SPEAK_PROXIMITY_ALERT",festival_speak_proximity_alert);
         store_int (fout, "SPEAK_TRACKED_ALERT",festival_speak_tracked_proximity_alert);
@@ -595,8 +596,10 @@ void save_data(void)  {
         store_int (fout, "SPEAK_MESSAGE_ALERT",festival_speak_new_message_alert);
         store_int (fout, "SPEAK_MESSAGE_BODY",festival_speak_new_message_body);
         store_int (fout, "SPEAK_WEATHER_ALERT",festival_speak_new_weather_alert);
+        store_int (fout, "SPEAK_ID",festival_speak_ID);
 #endif
-        
+        store_int (fout, "ATV_SCREEN_ID", ATV_screen_ID);
+       
         /* defaults */
         store_long (fout, "DEFAULT_STATION_OLD", (long)sec_old);
 
@@ -1220,8 +1223,12 @@ void load_data_or_default(void) {
     if (!get_int ("SPEAK_WEATHER_ALERT",&festival_speak_new_weather_alert,0,1,0))
         festival_speak_new_weather_alert = 0; 
 
+    if (!get_int ("SPEAK_ID",&festival_speak_ID,0,1,0))
+        festival_speak_new_station = 0;
 #endif
-
+    if (!get_int ("ATV_SCREEN_ID",&ATV_screen_ID,0,1,0))
+        ATV_screen_ID = 0; 
+ 
     /* defaults */
     if (!get_long ("DEFAULT_STATION_OLD", (long *)&sec_old, 1l, 604800l, 4800l))
         sec_old = (time_t)4800l;
