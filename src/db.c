@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.335 2004/06/30 17:54:22 we7u Exp $
+ * $Id: db.c,v 1.336 2004/06/30 19:43:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9103,7 +9103,7 @@ int extract_GLL(DataRow *p_station,char *data,char *call_sign, char *path) {
     if (Substring[2] == NULL)   // No N/S string
         return(ok);
 
-    if (Substring[3] == NULL)   // No longitude N/S
+    if (Substring[3] == NULL)   // No longitude string
         return(ok);
 
     if (Substring[4] == NULL)   // No E/W string
@@ -9125,7 +9125,7 @@ int extract_GLL(DataRow *p_station,char *data,char *call_sign, char *path) {
     if (temp_char != 'E' && temp_char != 'W')
         return(ok);
 
-    xastir_snprintf(lat_s,
+    xastir_snprintf(long_s,
         sizeof(long_s),
         "%s%c",
         Substring[3],
