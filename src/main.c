@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.359 2003/10/18 04:49:58 we7u Exp $
+ * $Id: main.c,v 1.360 2003/10/18 05:55:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1929,15 +1929,15 @@ void Coordinate_calc_compute(Widget widget, XtPointer clientData, XtPointer call
     str_ptr = XmTextGetString(coordinate_calc_latitude_easting);
     i = strlen(str_ptr);
     // Check for exactly six or seven chars.  If seven, first one must
-    // be a zero.
+    // be a zero (Not true!  UPS coordinates have digits there!).
     if ( have_utm && (i != 6) && (i != 7) ) {
         have_utm = 0;
         //fprintf(stderr,"Bad Easting value: Not 6 or 7 chars\n");
     }
-    if ( have_utm && (i == 7) && (str_ptr[0] != '0') ) {
-        have_utm = 0;
-        //fprintf(stderr,"Bad Easting value: 7 chars but first one not 0\n");
-    }
+//    if ( have_utm && (i == 7) && (str_ptr[0] != '0') ) {
+//        have_utm = 0;
+//        //fprintf(stderr,"Bad Easting value: 7 chars but first one not 0\n");
+//    }
     if (have_utm) {
         int j;
 
@@ -2238,7 +2238,7 @@ void Coordinate_calc_compute(Widget widget, XtPointer clientData, XtPointer call
     // display.
     if (have_utm) {
         // Process UTM values
-        utm_to_ll(E_WGS_84,
+        utm_ups_to_ll(E_WGS_84,
             (double)northing,
             (double)easting,
             full_zone,

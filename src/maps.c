@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.346 2003/10/18 04:49:58 we7u Exp $
+ * $Id: maps.c,v 1.347 2003/10/18 05:55:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1500,7 +1500,7 @@ void draw_grid2(Widget w) {
 
 /*
             // Convert the new point to lat/long coordinates
-            utm_to_ll(E_WGS_84,
+            utm_ups_to_ll(E_WGS_84,
                 double_northing,
                 double_easting,
                 full_zone,
@@ -1558,7 +1558,7 @@ void draw_grid2(Widget w) {
             // Convert the new point to lat/long coordinates.  We
             // probably need to mess with full_zone as well, since
             // it contains a northern zone right now.
-            utm_to_ll(E_WGS_84,
+            utm_ups_to_ll(E_WGS_84,
                 double_northing,
                 double_easting,
 //                full_zone,

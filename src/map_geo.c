@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.15 2003/10/18 04:49:58 we7u Exp $
+ * $Id: map_geo.c,v 1.16 2003/10/18 05:55:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -482,7 +482,7 @@ void draw_geo_image_map (Widget w,
 
         map_top_n  = (int)((top_n  / t_scale) + 1) * t_scale;
         map_left_e = (int)((left_e / t_scale) + 0) * t_scale;
-        utm_to_ll(gDatum[D_NAD_83_CONUS].ellipsoid, map_top_n, map_left_e, zstr, &top, &left);
+        utm_ups_to_ll(gDatum[D_NAD_83_CONUS].ellipsoid, map_top_n, map_left_e, zstr, &top, &left);
 
         geo_image_height = (map_top_n - bottom_n) * 200 / t_scale;
         geo_image_width  = (right_e - map_left_e) * 200 / t_scale;
