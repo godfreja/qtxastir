@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.541 2004/11/04 20:27:57 we7u Exp $
+ * $Id: main.c,v 1.542 2004/11/12 17:03:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -28743,6 +28743,11 @@ int main(int argc, char *argv[], char *envp[]) {
         (void)mkdir(get_user_base_dir("gps"),S_IRWXU);
     }
 
+    if (filethere(get_user_base_dir("map_cache")) != 1) {
+        fprintf(stderr,"Making map_cache dir\n");
+        (void)mkdir(get_user_base_dir("map_cache"),S_IRWXU);
+    }
+
 
     /* done checking user dirs */
 
@@ -29145,4 +29150,3 @@ int main(int argc, char *argv[], char *envp[]) {
     quit(0);
     return 0;
 }
-
