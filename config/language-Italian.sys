@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.37 2002/07/18 21:40:51 we7u Exp $
+# $Id: language-Italian.sys,v 1.38 2002/08/06 20:42:37 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -153,6 +153,7 @@ PULDNDP024|Display Last Report Time||
 PULDNDP007|Percorsi delle stazioni|i|
 PULDNDP015|Elimina tutte le stazioni|C|
 PULDNDP016|Elimina tutti i percorsi|T|
+PULDNDP025|Clear Object/Item History||
 #
 # Sistema di misura
 PULDNUT001|Sistema inglese||
