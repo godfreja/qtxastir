@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.70 2003/01/16 18:08:17 we7u Exp $
+# $Id: language-Dutch.sys,v 1.71 2003/01/16 21:39:12 francais1 Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -143,16 +143,20 @@ PULDNDP022|Spoor Downloaden|p|
 # SubMenu "Filter Data"
 PULDNDP032|Filter Data||
 PULDNDP040|Select None||
-PULDNDP041|Select TNC||
-PULDNDP027|Select Direct||
+PULDNDP041|Select Mine||
+PULDNDP042|Select TNC||
+PULDNDP027|- Select Direct||
+PULDNDP043|- Select Via Digi||
 PULDNDP034|Select Net||
 PULDNDP019|Geef verlopen gegevens weer||
-PULDNDP028|Select Fixed Stations||
-PULDNDP029|Select Moving Stations||
-PULDNDP030|Select WX Stations||
-PULDNDP026|Select Weather Objects/Items||
-PULDNDP039|Select Water Gauge Objects/Items||
-PULDNDP031|Select Other Objects/Items||
+PULDNDP044|Select Stations||
+PULDNDP028|- Select Fixed Stations||
+PULDNDP029|- Select Moving Stations||
+PULDNDP030|- Select WX Stations||
+PULDNDP045|Select Objects/Items||
+PULDNDP026|- Select Weather Objects/Items||
+PULDNDP039|- Select Water Gauge Objects/Items||
+PULDNDP031|- Select Other Objects/Items||
 # SubMenu "Filter Display"
 PULDNDP033|Filter Display||
 PULDNDP010|Roepnaam|R|

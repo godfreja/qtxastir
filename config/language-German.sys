@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.69 2003/01/16 18:08:17 we7u Exp $
+# $Id: language-German.sys,v 1.70 2003/01/16 21:39:12 francais1 Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -144,16 +144,20 @@ PULDNDP022|Spur von Findu holen|h|
 # SubMenu "Filter Data"
 PULDNDP032|Filter Data||
 PULDNDP040|Select None||
-PULDNDP041|Select TNC||
-PULDNDP027|Select Direct||
+PULDNDP041|Select Mine||
+PULDNDP042|Select TNC||
+PULDNDP027|- Select Direct||
+PULDNDP043|- Select Via Digi||
 PULDNDP034|Select Net||
 PULDNDP019|Alte Daten zeigen||
-PULDNDP028|Select Fixed Stations||
-PULDNDP029|Select Moving Stations||
-PULDNDP030|Select WX Stations||
-PULDNDP026|Select WX Objects/Items||
-PULDNDP039|Select Water Gauge Objects/Items||
-PULDNDP031|Select Other Objects/Items||
+PULDNDP044|Select Stations||
+PULDNDP028|- Select Fixed Stations||
+PULDNDP029|- Select Moving Stations||
+PULDNDP030|- Select WX Stations||
+PULDNDP045|Select Objects/Items||
+PULDNDP026|- Select WX Objects/Items||
+PULDNDP039|- Select Water Gauge Objects/Items||
+PULDNDP031|- Select Other Objects/Items||
 # SubMenu "Filter Display"
 PULDNDP033|Filter Display||
 PULDNDP010|Rufzeichen||

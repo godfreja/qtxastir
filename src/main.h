@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.35 2003/01/15 22:25:59 francais1 Exp $
+ * $Id: main.h,v 1.36 2003/01/16 21:38:08 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -128,14 +128,18 @@ extern int output_station_type;
 
 typedef struct _selections {
     int none;
+    int mine;
     int tnc;
-    int local;
+    int direct;
+    int via_digi;
     int net;
     int old_data;
 
-    int stationary_stations;
+    int stations;
+    int fixed_stations;
     int moving_stations;
     int weather_stations;
+    int objects;
     int weather_objects;
     int gauge_objects;
     int other_objects;

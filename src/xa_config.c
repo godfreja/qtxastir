@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.62 2003/01/15 22:25:59 francais1 Exp $
+ * $Id: xa_config.c,v 1.63 2003/01/16 21:38:08 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -376,13 +376,17 @@ void save_data(void)  {
 
         // filter values
         // NOT SAVED: Select_.none
+        // NOT SAVED: Select_.mine
         // NOT SAVED: Select_.tnc
-        // NOT SAVED: Select_.local
+        // NOT SAVED: Select_.direct
+        // NOT SAVED: Select_.via_digi
         // NOT SAVED: Select_.net
         store_int (fout, "DISPLAY_OLD_STATION_DATA",      Select_.old_data);
-        // NOT SAVED: Select_.stationary_stations
+        // NOT SAVED: Select_.stations
+        // NOT SAVED: Select_.fixed_stations
         // NOT SAVED: Select_.moving_stations
         // NOT SAVED: Select_.weather_stations
+        // NOT SAVED: Select_.objects
         store_int (fout, "DISPLAY_STATION_WX_OBJ",        Select_.weather_objects);
         store_int (fout, "DISPLAY_WATER_GAGE_OBJ",        Select_.gauge_objects);
         // NOT SAVED: Select_.other_objects

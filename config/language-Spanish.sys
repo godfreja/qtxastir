@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.72 2003/01/16 18:19:24 francais1 Exp $
+# $Id: language-Spanish.sys,v 1.73 2003/01/16 21:39:12 francais1 Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -139,16 +139,20 @@ PULDNDP022|Sacar Rastro de Findu|F|
 # SubMenu "Filter Data"
 PULDNDP032|Filtrar Datos||
 PULDNDP040|Seleccionar Nada||
-PULDNDP041|Seleccionar TNC||
-PULDNDP027|Seleccionar Directo||
+PULDNDP041|Seleccionar Mío||
+PULDNDP042|Seleccionar TNC||
+PULDNDP027|- Seleccionar Directo||
+PULDNDP043|- Seleccionar Via Digi||
 PULDNDP034|Seleccionar Net||
 PULDNDP019|Incluir Datos Expirados||
-PULDNDP028|Seleccionar Estaciónes Fijas||
-PULDNDP029|Seleccionar Estaciónes Mobiles||
-PULDNDP030|Seleccionar Estaciónes de Tiempo||
-PULDNDP026|Seleccionar Objetos/Artículos de Tiempo||
-PULDNDP039|Seleccionar Objetos/Artículos Medidores de Agua||
-PULDNDP031|Seleccionar Otros Objetos/Artículos||
+PULDNDP044|Seleccionar Estaciónes||
+PULDNDP028|- Seleccionar Estaciónes Fijas||
+PULDNDP029|- Seleccionar Estaciónes Mobiles||
+PULDNDP030|- Seleccionar Estaciónes de Tiempo||
+PULDNDP045|Seleccionar Objetos/Artículos||
+PULDNDP026|- Seleccionar Objetos/Artículos de Tiempo||
+PULDNDP039|- Seleccionar Objetos/Artículos Medidores de Agua||
+PULDNDP031|- Seleccionar Otros Objetos/Artículos||
 # SubMenu "Filter Display"
 PULDNDP033|Filtrar Visualización||
 PULDNDP010|Mostrar Indicativo|I|
