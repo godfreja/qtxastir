@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.7 2003/03/15 00:41:46 we7u Exp $
+$Id: README.win32,v 1.8 2003/03/15 01:01:43 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -359,10 +359,10 @@ Extract the files:
     cd ~/src/imagemagick
     tar xzvf filename
 
-Copy the files/directories into the /usr/local tree:
+Copy the files/directories into the /usr tree:
 
     cd ImageMagick-5.5.3
-    cp -R * /usr/local
+    cp -R * /usr
 
 Reconfigure Xastir to use this library:
 
