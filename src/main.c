@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.555 2005/01/08 09:54:36 we7u Exp $
+ * $Id: main.c,v 1.556 2005/01/11 02:06:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15919,9 +15919,13 @@ void Stations_Clear( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /
     // This implements persistent objects.
     reload_object_item();
 
+
+//  We shouldn't have to call this next function here once the new
+//  function is fully implemented.
     // Reload tactical calls from file.  This implements persistence
     // for this feature as well.
     reload_tactical_calls();
+
 
     redraw_on_new_data=2;
 }
