@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.19 2002/06/20 21:01:13 we7u Exp $
+ * $Id: interface.c,v 1.20 2002/06/21 19:17:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3205,7 +3205,14 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
 
 
         if (transmit_compressed_posit)
-            strcpy(my_pos, compress_posit(my_output_lat,my_group,my_output_long,my_symbol,my_last_course,my_last_speed,my_phg));
+            strcpy(my_pos,
+                compress_posit(my_output_lat,
+                    my_group,
+                    my_output_long,
+                    my_symbol,
+                    my_last_course,
+                    my_last_speed,  // In knots
+                    my_phg));
         else { /* standard non compressed mode */
             xastir_snprintf(my_pos, sizeof(my_pos), "%s%c%s%c", my_output_lat, my_group, my_output_long, my_symbol);
             /* get PHG, if used for output */
@@ -3213,7 +3220,11 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
                 strcpy(output_phg,my_phg);
 
             /* get CSE/SPD, Always needed for output even if 0 */
-            xastir_snprintf(output_cs, sizeof(output_cs), "%03d/%03d/", my_last_course, my_last_speed);
+            xastir_snprintf(output_cs,
+                sizeof(output_cs),
+                "%03d/%03d/",
+                my_last_course,
+                my_last_speed);    // Speed in knots
 
             /* get altitude */
             if (my_last_altitude_time > 0)
