@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.85 2004/04/05 20:14:57 we7u Exp $
+$Id: README.win32,v 1.86 2004/04/09 20:07:05 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -136,8 +136,8 @@ required:
 [ ] make
 [ ] nano (a text editor, optional)
 [ ] patch
-[ ] pcre (for future development)
-[ ] pcre-devel (for future development)
+[ ] pcre
+[ ] pcre-devel
 [ ] perl
 [ ] rcs
 [ ] tcltk
