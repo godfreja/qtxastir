@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.17 2002/04/12 19:50:40 we7u Exp $
+# $Id: language-German.sys,v 1.18 2002/06/01 18:51:28 n0vh Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -79,6 +79,23 @@ PULDNMP005|Hintergrundfarbe|H|
 PULDNMP006|Textdarstellung|T|
 PULDNMP011|Mauszeiger-Menu|M|
 PULDNMP008|Intensität|I|                                                       
+PULDNMP020|Enable/Configure Tigermap||
+#
+#
+# PopUp "Configure Tigermap"
+MPUPTGR001|Grid||
+MPUPTGR002|Counties||
+MPUPTGR003|City Labels||
+MPUPTGR004|Urban Areas||
+MPUPTGR005|Major Roads||
+MPUPTGR006|Streets||
+MPUPTGR007|Railroads||
+MPUPTGR008|State Labels||
+MPUPTGR009|Interstate Labels||
+MPUPTGR010|US Hwy Labels||
+MPUPTGR011|State Hwy Labels||
+MPUPTGR012|Select items to be displayed:||
+#
 #
 # PopUp "Kartenauswahl"
 WPUPMCP001|Kartenauswahl||

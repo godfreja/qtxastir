@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.19 2002/04/12 19:50:40 we7u Exp $
+# $Id: language-Spanish.sys,v 1.20 2002/06/01 18:54:01 n0vh Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -74,6 +74,23 @@ PULDNMP005|Color de fondo|C|
 PULDNMP006|Etiquetas de estns|E|
 PULDNMP011|Menú Indicador del Ratón|R|
 PULDNMP008|Intensidad del Mapa|I|                                              
+PULDNMP020|Enable/Configure Tigermap||
+#
+#
+# PopUp "Configure Tigermap"
+MPUPTGR001|Grid||
+MPUPTGR002|Counties||
+MPUPTGR003|City Labels||
+MPUPTGR004|Urban Areas||
+MPUPTGR005|Major Roads||
+MPUPTGR006|Streets||
+MPUPTGR007|Railroads||
+MPUPTGR008|State Labels||
+MPUPTGR009|Interstate Labels||
+MPUPTGR010|US Hwy Labels||
+MPUPTGR011|State Hwy Labels||
+MPUPTGR012|Select items to be displayed:||
+#
 #
 # Seleccion de Mapas
 WPUPMCP001|Selección de Mapa||
