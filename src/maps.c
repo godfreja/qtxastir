@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.302 2003/06/30 16:52:46 we7u Exp $
+ * $Id: maps.c,v 1.303 2003/06/30 21:37:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1767,7 +1767,7 @@ void clean_string(char *input) {
 // Test map visibility (on screen)
 //
 // Input parameters are in Xastir coordinate system (fastest for us)
-// checkpercentage:
+// check_percentage:
 //      0 = don't check
 //      1 = check map size versus viewport scale.  Return 0 if map
 //      is too large/small (percentage-wise) to be displayed.
@@ -1787,7 +1787,7 @@ enum map_onscreen_enum map_onscreen(long left,
                                     long right, 
                                     long top, 
                                     long bottom,
-                                    int checkpercentage) {
+                                    int check_percentage) {
     unsigned long max_x_long_offset;
     unsigned long max_y_lat_offset;
     long map_border_min_x;
