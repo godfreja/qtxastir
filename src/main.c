@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.417 2003/11/26 02:19:05 we7u Exp $
+ * $Id: main.c,v 1.418 2003/11/26 22:10:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14952,6 +14952,14 @@ void map_chooser_init (void) {
 
 
     busy_cursor(appshell);
+
+    // First run through our in-memory map index, clearing all of
+    // the selected bits.
+    current = map_index_head;
+    while (current != NULL) {
+        current->selected = 0;
+        current = current->next;
+    }
 
     (void)filecreate(SELECTED_MAP_DATA);   // Create empty file if it doesn't exist
 
