@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.74 2003/06/16 18:49:40 we7u Exp $
+ * $Id: util.c,v 1.75 2003/07/10 20:25:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -756,8 +756,16 @@ time_t time_from_aprsstring(char *aprs_time) {
 #ifndef __CYGWIN__
     extern time_t timezone;
 #endif  // __CYGWIN__
+    // Use "_timezone" instead in Cygwin
+#define timezone _timezone
 #endif  // HAVE_TM_GMTOFF
 
+
+#ifdef __CYGWIN__
+    // Must call tzset before using the _timezone variable in
+    // Cygwin, else the timezone won't have been initialized.
+    tzset();
+#endif  // __CYGWIN__
 
     // Compute our current time and the offset from GMT.  If
     // daylight savings time is in effect, factor that in as well.
