@@ -1,4 +1,4 @@
-# $Id: nwsz_ddmmyy.dbfawk,v 1.6 2004/01/26 16:12:51 we7u Exp $
+# $Id: nwsz_ddmmyy.dbfawk,v 1.7 2004/05/18 20:28:03 we7u Exp $
 #
 # Copyright (C) 2003-2004  The Xastir Group
 #
@@ -37,5 +37,10 @@ dbffields="STATE_ZONE:NAME"}
 # Use this rule to re-initialize variables between records.
 BEGIN_RECORD {key=""; lanes=2; fill_color=11; color=8; name=""; filled=1; pattern=0; display_level=8192; label_level=512; label_color=20; font_size=2; symbol=""}
 
+# Normal Zones
 /^STATE_ZONE=(..)(.*)$/ {key="$1_Z$2"; next}
+
+# Fire Zones
+#/^STATE_ZONE=(..)(.*)$/ {key="$1_F$2"; next}
+
 /^NAME=(.*)$/ {name="$1"; next}
