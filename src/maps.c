@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.2 2002/02/05 04:58:01 we7u Exp $
+ * $Id: maps.c,v 1.3 2002/02/11 22:22:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4914,9 +4914,11 @@ void draw_geotiff_image_map (Widget w, char *dir, char *filenm)
 
 
     /* Get the geotiff horizontal datum name */
-    GTIFGetDatumInfo( defn.Datum, &datum_name, NULL );
-    if (debug_level & 2)
-        printf("Datum: %d/%s\n", defn.Datum, datum_name );
+    if ( defn.Datum != 32767 ) {
+        GTIFGetDatumInfo( defn.Datum, &datum_name, NULL );
+        if (debug_level & 2)
+            printf("Datum: %d/%s\n", defn.Datum, datum_name );
+    }
 
 
     /*
