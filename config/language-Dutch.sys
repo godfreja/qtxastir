@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.109 2003/10/30 22:32:17 we7u Exp $
+# $Id: language-Dutch.sys,v 1.110 2003/10/31 23:34:35 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -372,6 +372,7 @@ WPUPCFC003|dd.dddddd|d|
 WPUPCFC004|dd mm.mmm|m|
 WPUPCFC005|dd mm ss.s|s|
 WPUPCFC006|UTM|U|
+WPUPCFC007|MGRS||
 #
 # PopUp "Configure GPS"
 WPUPCFG001|GPS Instelling||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.115 2003/10/30 22:32:17 we7u Exp $
+# $Id: language-Spanish.sys,v 1.116 2003/10/31 23:34:35 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -365,6 +365,7 @@ WPUPCFC003|dd.ddddd|d|
 WPUPCFC004|dd mm.mmm|m|
 WPUPCFC005|dd mm ss.s|s|
 WPUPCFC006|UTM|U|
+WPUPCFC007|MGRS||
 #
 # Configurar GPS
 WPUPCFG001|Configurar GPS||

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.103 2003/10/29 06:26:52 jtwilley Exp $
+# $Id: language-English.sys,v 1.104 2003/10/31 23:34:35 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -363,6 +363,7 @@ WPUPCFC003|dd.ddddd|d|
 WPUPCFC004|dd mm.mmm|m|
 WPUPCFC005|dd mm ss.s|s|
 WPUPCFC006|UTM|U|
+WPUPCFC007|MGRS||
 #
 # PopUp "Configure GPS"
 WPUPCFG001|Configure GPS||
