@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.151 2004/10/08 02:15:47 we7u Exp $
+# $Id: language-Dutch.sys,v 1.152 2004/10/29 20:00:48 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -470,6 +470,8 @@ WPUPCFT038|TxTail (10 ms stappen)||
 WPUPCFT039|Vol Duplex||
 WPUPCFT040|Configureer Multi-Port KISS TNC||
 WPUPCFT041|Radio poort||
+WPUPCFT042|Dubious UNPROTO Path!||
+WPUPCFT043|Please consider a shorter path such as WIDE2-2 or RELAY,WIDE2-2||
 #
 # PopUp "Configure WX Port"
 WPUPCFWX01|WX Poort instelling||

@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.27 2004/08/22 00:01:07 we7u Exp $
+ * $Id: util.h,v 1.28 2004/10/29 20:00:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -125,7 +125,7 @@ int curl_getfile(char *fileimg, char *local_filename);
 #endif
 
 extern void split_string( char *data, char *cptr[], int max );
-
+extern int check_unproto_path( char *data );
 
 #endif // __XASTIR_UTIL_H
 
