@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Currently maintained by Chuck Byam (KG4IJB), cbyam@virginia.edu
 #
-# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.5 2002/02/13 17:36:40 we7u Exp $
+# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.6 2002/02/25 20:43:46 francais1 Exp $
 #
 # Xastir Configure Script
 #
@@ -168,6 +168,14 @@ AC_DEFINE_UNQUOTED(STIPPLE, 1) dnl Use crowbar and lets keep going
 to_call=APX$MAJOR_VERSION$MINOR_VERSION$MICRO_VERSION
 AC_SUBST(to_call)
 AC_DEFINE_UNQUOTED(XASTIR_TOCALL, "$to_call")
+
+dnl Set XASTIR_DATA_BASE in config.h.
+if test "x${prefix}" = "xNONE"; then
+  AC_DEFINE_UNQUOTED(XASTIR_DATA_BASE, "${ac_default_prefix}/xastir")
+else
+  AC_DEFINE_UNQUOTED(XASTIR_DATA_BASE, "${prefix}/xastir")
+fi
+
 XASTIR_CHECK_CCPIPE
 AC_PATH_PROG(xastirpath, xastir)
 XASTIR_PRUNE_DUPLICATES

@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.h,v 1.1 2002/02/02 03:19:42 kg4ijb Exp $
+ * $Id: xa_config.h,v 1.2 2002/02/25 20:43:46 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -24,9 +24,6 @@
 
 
 #define MAX_VALUE 300
-
-#define XASTIR_USER_BASE "/usr/local/xastir"
-#define XASTIR_DATA_BASE "/usr/local/xastir"
 
 extern time_t next_time;
 

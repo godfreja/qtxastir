@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.c,v 1.3 2002/02/14 22:37:36 we7u Exp $
+ * $Id: xa_config.c,v 1.4 2002/02/25 20:43:47 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -177,12 +177,12 @@ char *get_user_base_dir(char *dir) {
     static char base[MAX_VALUE];
     char *env_ptr;
 
-    strcpy (base, ((env_ptr = getenv ("XASTIR_USER_BASE")) != NULL) ? env_ptr : XASTIR_USER_BASE);
+    strcpy (base, ((env_ptr = getenv ("XASTIR_USER_BASE")) != NULL) ? env_ptr : user_dir);
 
-    if (base[strlen (base) - 1] != '/') {
-        sprintf (base, "%s/.xastir/", user_dir);
-        /*sprintf(base,"%s/",XASTIR_BASE); */
-    }
+    if (base[strlen (base) - 1] != '/')
+        strcat (base, "/");
+
+    strcat (base, ".xastir/");
     return strcat (base, dir);
 }
 
