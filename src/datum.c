@@ -1,7 +1,7 @@
 /*
    See the top of datum.h for information on this code.
    N7TAP
-   $Id: datum.c,v 1.12 2003/11/03 16:08:42 we7u Exp $
+   $Id: datum.c,v 1.13 2003/11/03 16:33:00 we7u Exp $
 */
 
 
@@ -645,6 +645,12 @@ static void calcPhi(double *phi, double e, double t)
 
 
 
+
+//WE7U
+// This function appears to have a problem in the south polar
+// region.  85 40 30s/85 40 30w shows the problem.  Latitude ends up
+// _much_ too small in this case, placing us into the north polar
+// region instead.
 
 // Converts from UTM/UPS coordinates to Lat/Long coordinates.
 //
