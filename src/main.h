@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.12 2002/06/13 22:53:38 we7u Exp $
+ * $Id: main.h,v 1.13 2002/06/14 21:15:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -96,6 +96,23 @@ extern char SOUND_DIR[];
 extern time_t WX_ALERTS_REFRESH_TIME;
 extern time_t gps_time;
 extern time_t POSIT_rate;
+
+extern time_t posit_last_time;
+extern time_t posit_next_time;
+
+extern int smart_beaconing;
+extern int sb_POSIT_rate;
+extern int sb_last_heading;
+extern int sb_current_heading;
+extern time_t sb_last_posit_time;
+extern int sb_turn_min;
+extern int sb_turn_slope;
+extern int sb_turn_time;
+extern int sb_posit_fast;
+extern int sb_posit_slow;
+extern int sb_low_speed_limit;
+extern int sb_high_speed_limit;
+
 extern int output_station_type;
 extern int symbol_display_enable;
 extern int symbol_display_rotate;
