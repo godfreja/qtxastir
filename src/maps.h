@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.10 2002/10/09 05:52:05 we7u Exp $
+ * $Id: maps.h,v 1.11 2002/10/21 04:30:19 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -94,6 +94,8 @@ extern int print_invert;
 extern int  locate_place(Widget w, char *name, char *state, char *county, char *quad, char* type, char *filename, int follow_case, int get_match);
 extern void maps_init(void);
 extern time_t last_snapshot;
+
+extern int grid_size;
 
 #if !defined(NO_GRAPHICS)
 #if defined(HAVE_IMAGEMAGICK)
