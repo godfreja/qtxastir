@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.68 2004/05/12 20:49:11 we7u Exp $
+ * $Id: alert.c,v 1.69 2004/05/28 23:02:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1691,6 +1691,14 @@ void alert_build_list(Message *fill) {
             else
                 entry.alert_level = 'G';
 
+
+            // Kludge for fire zones
+            if (!strncmp(entry.alert_tag,"RED_FLAG",8))
+            {
+                // need to replace "Z" in the zone field with "F"
+                if (entry.title[3] == 'Z')
+                    entry.title[3] = 'F';
+            }
             // Look for a similar alert
 
 // We need some improvements here.  We compare these fields:
