@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.419 2003/11/28 22:55:38 kd6zwr Exp $
+ * $Id: main.c,v 1.420 2003/11/29 05:57:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9157,7 +9157,12 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 
 
     do_time = 0;
-    nexttime = 1;  // Start UpdateTime again 1 milliseconds after we've completed
+
+    // Start UpdateTime() again 2 milliseconds after we've
+    // completed.  Note:  Setting this to a '1' or '0' can cause
+    // some systems (RedHat/FreeBSD) to spin their wheels a lot,
+    // using up great amounts of CPU time.
+    nexttime = 2;
 
     (void)sound_done();
 
