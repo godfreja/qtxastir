@@ -1,5 +1,5 @@
 
-$Id: README.CVS,v 1.8 2004/01/26 16:09:49 we7u Exp $
+$Id: README.CVS,v 1.9 2004/01/28 17:42:30 we7u Exp $
 
 
 CVS Instructions:
@@ -65,6 +65,12 @@ CVS Instructions:
      All done!  You now have the latest development sources on your computer.
      Now you can forget about all of the previous instructions unless you
      delete the entire tree and want to start over from scratch.
+
+     Note that if you choose the "RELEASE" or "STABLE" tags, those tags will
+     become sticky, so that "cvs update" commands will update to the latest
+     versions of files containing those tags.  If you wish to remove this
+     sticky option so that you can synchronize to a different tag or the latest
+     developer's CVS, see the "cvs update -A" command below.
 
 
      CVS Commands for Maintaining the Current Development Sources:
