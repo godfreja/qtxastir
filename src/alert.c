@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.37 2002/04/24 08:06:13 we7u Exp $
+ * $Id: alert.c,v 1.38 2002/06/13 18:21:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1137,7 +1137,7 @@ printf("Zone:%s%s\n",prefix,suffix);
                         start_number = (int)atoi(suffix);
                         end_number = (int)atoi(ending);
                         for ( k=start_number+1; k<=end_number; k++) {
-                            snprintf(temp,4,"%03d",k);
+                            xastir_snprintf(temp,4,"%03d",k);
 // And another zone...
 printf("Zone:%s%s\n",prefix,temp);
                         }
