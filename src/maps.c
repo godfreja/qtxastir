@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.377 2003/11/26 16:29:42 we7u Exp $
+ * $Id: maps.c,v 1.378 2003/11/26 16:43:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -871,7 +871,9 @@ void draw_grid(Widget w) {
             utm_grid_spacing_m = 100000;
         else {
             utm_grid_spacing_m = 0;
-            goto utm_grid_dont_draw;
+            // All done!  Don't draw the minor grids.  Major grids
+            // have already been drawn by this point.
+            return;
         }
 
         // Check hash to see if utm_grid is already set up
@@ -1379,8 +1381,6 @@ utm_grid_draw:
                 }
             }
         }
-
-utm_grid_dont_draw:
     }   // End of UTM grid section
 
     else { // Lat/Long coordinate system, draw lat/long lines
