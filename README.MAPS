@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.51 2005/01/25 06:05:28 we7u Exp $
+$Id: README.MAPS,v 1.52 2005/02/01 16:12:49 we7u Exp $
 
 
 Recommended Configurations for:
@@ -579,7 +579,8 @@ Getting Maps and other Data Files for Xastir:
     3. You can also use the shapelib tools (shpproj was presented earlier)
        to manually create a shapefile.  For example, the following 
        marks out the mile-posts for a marathon, using tgrlpt.dbfawk
-       (US Census Tiger/Line landmark points with an APRS symbol extension)       for the metadata:
+       (US Census Tiger/Line landmark points with an APRS(tm) symbol extension) 
+       for the metadata:
        #!/bin/sh
        # turn mileposts into a Tiger landmark shapefile
 
@@ -994,6 +995,8 @@ MAP CACHING (WORKS WITH ONLINE TIGERMAPS):
 
 
   ------------------------------------------------------------------------
+APRS(tm) is a Trademark of Bob Bruninga
+
 Copyright (C) 1999 Frank Giannandrea
 Copyright (C) 2000-2005 The Xastir Group
 

@@ -1,5 +1,5 @@
 
-$Id: changes.txt,v 1.4 2005/01/08 10:19:33 we7u Exp $
+$Id: changes.txt,v 1.5 2005/02/01 16:12:50 we7u Exp $
 
 Copyright (C) 1999  Frank Giannandrea
 Copyright (C) 2000-2005  The Xastir Group
@@ -535,5 +535,5 @@ of FREE Alpha version software!
 
 
 
-APRS[tm] is a Trademark of Bob Bruninga, 
+APRS(tm) is a Trademark of Bob Bruninga,
 his home page is at "http://web.usna.navy.mil/~bruninga/aprs.html"
