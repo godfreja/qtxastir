@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.50 2004/12/29 16:40:50 we7u Exp $
+ * $Id: messages.c,v 1.51 2004/12/30 16:36:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -359,7 +359,12 @@ end_critical_section(&send_message_dialog_lock, "messages.c:check_popup_window2"
     }
     else {
         /* window open! */
+        // Pop it up
         ret=found;
+    }
+
+    if (found != -1) {  // Already have a window
+        XtPopup(mw[i].send_message_dialog,XtGrabNone);
     }
 
     return(ret);
