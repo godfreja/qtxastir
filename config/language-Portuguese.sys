@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.26 2002/07/03 19:16:21 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.27 2002/07/12 21:09:32 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -666,6 +666,7 @@ IGPUPCF000|I-Gate Opções||
 IGPUPCF001|Desactiva todo o tráfego da IGate||
 IGPUPCF002|Só permite tráfego de RF para Inet||
 IGPUPCF003|Permite tráfego de RF->Inet e Inet->RF||
+IGPUPCF004|Igate -> RF Path   ||
 #
 # Estação meteorológica
 WXPUPSI000|Estação meteorológica||

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.31 2002/07/03 19:16:20 we7u Exp $
+# $Id: language-French.sys,v 1.32 2002/07/12 21:09:32 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -667,6 +667,7 @@ IGPUPCF000|Options IGate||
 IGPUPCF001|Arrêter traffic Internet||
 IGPUPCF002|Autoriser RF vers Internet seulement||
 IGPUPCF003|Autoriser RF->Inet et Inet->RF||
+IGPUPCF004|Igate -> RF Path   ||
 #
 # WX Station
 WXPUPSI000|Station météo||

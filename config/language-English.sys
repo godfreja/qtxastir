@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.31 2002/07/03 19:16:20 we7u Exp $
+# $Id: language-English.sys,v 1.32 2002/07/12 21:09:32 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -668,6 +668,7 @@ IGPUPCF000|IGate Options||
 IGPUPCF001|Disable all IGate traffic||
 IGPUPCF002|Allow RF to Inet traffic ONLY||
 IGPUPCF003|Allow RF->Inet and Inet->RF traffic||
+IGPUPCF004|Igate -> RF Path   ||
 #
 # WX Station
 WXPUPSI000|WX Station||

@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.5 2002/06/20 21:01:13 we7u Exp $
+ * $Id: igate.c,v 1.6 2002/07/12 21:09:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -130,7 +130,9 @@ begin_critical_section(&devices_lock, "igate.c:output_igate_net" );
 
                                         /* ok write this data out to the Inet port */
 end_critical_section(&devices_lock, "igate.c:output_igate_net" );
-                                        output_my_data(data_txt,x,1,0); // The "1" means raw format
+                                        // The "1" means raw format, the last digit
+                                        // says to _not_ use the unproto_igate path
+                                        output_my_data(data_txt,x,1,0,0);
 begin_critical_section(&devices_lock, "igate.c:output_igate_net" );
 
                                     }
@@ -243,7 +245,10 @@ begin_critical_section(&devices_lock, "igate.c:output_igate_rf" );
 
                                     /* ok write this data out to the RF port */
 end_critical_section(&devices_lock, "igate.c:output_igate_rf" );
-                                    output_my_data(line,x,0,0); // First "0" means "cooked" format
+                                    // First "0" means "cooked"
+                                    // format, last digit: use
+                                    // unproto_igate path
+                                    output_my_data(line,x,0,0,1);
 begin_critical_section(&devices_lock, "igate.c:output_igate_rf" );
                                 }
                                 else {
@@ -461,7 +466,10 @@ begin_critical_section(&devices_lock, "igate.c:output_nws_igate_rf" );
 
                                         /* ok write this data out to the RF port */
 end_critical_section(&devices_lock, "igate.c:output_nws_igate_rf" );
-                                        output_my_data(line,x,0,0); // First "0" means cooked format
+                                        // First "0" means "cooked"
+                                        // format, last digit: use
+                                        // unproto_igate path
+                                        output_my_data(line,x,0,0,1);
 begin_critical_section(&devices_lock, "igate.c:output_nws_igate_rf" );
                                     }
                                     else {

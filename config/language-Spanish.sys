@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.33 2002/07/03 19:16:21 we7u Exp $
+# $Id: language-Spanish.sys,v 1.34 2002/07/12 21:09:32 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -668,6 +668,7 @@ IGPUPCF000|I-Gate Opciones||
 IGPUPCF001|Desactiva todo el IGate tráfico||
 IGPUPCF002|Sólo Permite tráfico de RF->Inet||
 IGPUPCF003|Permite ambos tráficos RF<->Inet||
+IGPUPCF004|Igate -> RF Path   ||
 #
 # Estación Meteorológica
 WXPUPSI000|Estación meteorológica||

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.31 2002/07/03 19:16:20 we7u Exp $
+# $Id: language-German.sys,v 1.32 2002/07/12 21:09:32 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -673,6 +673,7 @@ IGPUPCF000|IGate Optionen||
 IGPUPCF001|Allen IGate-Verkehr verhindern||
 IGPUPCF002|Verkehr NUR von HF nach Inet erlauben||
 IGPUPCF003|HF->Inet und Inet->HF Verkehr erlauben||
+IGPUPCF004|Igate -> RF Path   ||
 #
 # Wetterstation
 WXPUPSI000|Wetterstation||
