@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.281 2003/05/21 00:15:22 we7u Exp $
+ * $Id: main.c,v 1.282 2003/05/21 18:45:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11346,8 +11346,11 @@ void map_properties_fill_in (void) {
                 else {
                     xastir_snprintf(temp_filled,
                         sizeof(temp_filled),
-                        "  %s ",
+                        "  %3s ",
                         langcode("MAPP006"));
+                    // In case the language string was too long,
+                    // truncate it so it fits our column width.
+                    temp_filled[6] = '\0';
                 }
 
                 if (current->auto_maps == 0) {
@@ -11356,8 +11359,11 @@ void map_properties_fill_in (void) {
                 else {
                     xastir_snprintf(temp_auto,
                         sizeof(temp_auto),
-                        "  %s  ",
+                        "  %3s  ",
                         langcode("MAPP006"));
+                    // In case the language string was too long,
+                    // truncate it so it fits our column width.
+                    temp_filled[7] = '\0';
                 }
 
                 xastir_snprintf(temp,
