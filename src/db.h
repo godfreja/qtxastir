@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.22 2002/10/04 00:29:58 we7u Exp $
+ * $Id: db.h,v 1.23 2002/10/10 08:48:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -66,7 +66,8 @@ enum APRS_Types {
     STATION_CALL_DATA,
     OTHER_DATA,
     APRS_MICE,
-    APRS_GRID
+    APRS_GRID,
+    DALLAS_ONE_WIRE
 };
 
 
