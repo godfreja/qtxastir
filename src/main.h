@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.59 2004/03/29 23:40:55 we7u Exp $
+ * $Id: main.h,v 1.60 2004/05/10 20:51:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,6 +32,12 @@
 #ifdef __linux__
   #define MUTEX_DEBUG 1
 #endif  // __linux__
+
+
+// Define this if your pthreads implementation uses SIGUSR1 signal.
+// This will disable our SIGUSR1 handler which allows us to create
+// snapshots on receipt of that signal.
+//#define OLD_PTHREADS
 
 
 // To enable the "Transmit Raw WX data" button in

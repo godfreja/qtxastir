@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.453 2004/05/09 02:54:51 we7u Exp $
+ * $Id: main.c,v 1.454 2004/05/10 20:51:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9897,12 +9897,16 @@ void segfault(/*@unused@*/ int sig) {
     quit(-1);
 }
 
+
+
+
+
 /*  
    Added by KB4AMA
    Handle USR1 signal.  This will cause
    a snapshot to be generated.
 */
-
+#ifndef OLD_PTHREADS
 void usr1sig(int sig) {
 	if (debug_level & 512)
 		fprintf(stderr, "Caught Signal USR1, Doing a snapshot! Signal No %d\n", sig);
@@ -9910,6 +9914,10 @@ void usr1sig(int sig) {
 	last_snapshot = 0;
 	(void)Snapshot();
 }
+#endif  // OLD_PTHREADS
+
+
+
 
 
 /*********************  dialog position *************************/
@@ -25907,7 +25915,11 @@ int main(int argc, char *argv[]) {
     (void) signal(SIGINT,quit);                         // set signal on stop
     (void) signal(SIGQUIT,quit);
     (void) signal(SIGTERM,quit);
+
+#ifndef OLD_PTHREADS
     (void) signal(SIGUSR1,usr1sig);			// take a snapshot on demand 
+#endif  // OLD_PTHREADS
+
     (void) signal(SIGPIPE,SIG_IGN);                     // set sigpipe signal to ignore
     if (!trap_segfault)
         (void) signal(SIGSEGV,segfault);                // set segfault signal to check
