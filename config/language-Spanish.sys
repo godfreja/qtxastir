@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.114 2003/10/13 21:46:22 we7u Exp $
+# $Id: language-Spanish.sys,v 1.115 2003/10/30 22:32:17 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -1020,13 +1020,15 @@ GPS011|Violeta||
 #
 # Diálogo de Propiedades de Mapa
 MAPP001|Propiedades de Mapa||
-MAPP002|Dibuja   Mapa||
-MAPP003|Capa   Llenado  AutoMapa   Sendero/NombreArchivo||
+MAPP002| Max   Min    Dibuja   Mapa||
+MAPP003| Zoom  Zoom  Capa   Llenado  AutoMapa   Sendero/NombreArchivo||
 MAPP004|Cambie Capa->||
 MAPP005|Llenado->||
 MAPP006|Sí||
 MAPP007|No||
 MAPP008|Automapas->||
+MAPP009|Max Zoom->||
+MAPP010|Min Zoom->||
 #
 # Cadenas del Tiempo
 TIME001|Día||

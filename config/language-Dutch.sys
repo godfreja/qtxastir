@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.108 2003/10/13 21:46:21 we7u Exp $
+# $Id: language-Dutch.sys,v 1.109 2003/10/30 22:32:17 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -1033,13 +1033,15 @@ GPS011|Violet||
 #
 # Map Properties Dialog
 MAPP001|Kaart eigenschappen||
-MAPP002|Kaart    Teken||
-MAPP003|Laag    Vulling  AutoKaart Path/Bestandsnaam||
+MAPP002| Max   Min   Kaart    Teken||
+MAPP003| Zoom  Zoom  Laag    Vulling  AutoKaart Path/Bestandsnaam||
 MAPP004|Verander Laag->||
 MAPP005|Vulling->||
 MAPP006|Ja||
 MAPP007|Nee||
 MAPP008|AutoKaart->||
+MAPP009|Max Zoom->||
+MAPP010|Min Zoom->||
 #
 #
 # Time Strings

@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.104 2003/10/13 21:46:21 we7u Exp $
+# $Id: language-French.sys,v 1.105 2003/10/30 22:32:17 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -1022,13 +1022,15 @@ GPS011|Violet||
 #
 # Map Properties Dialog
 MAPP001|Caractéristiques des cartes||
-MAPP002|Carte  Afficher||
-MAPP003|Couche Remplie AutoCartes  Voie/Fichier||
+MAPP002| Max   Min    Carte  Afficher||
+MAPP003| Zoom  Zoom  Couche Remplie AutoCartes  Voie/Fichier||
 MAPP004|Modifier Couche->||
 MAPP005|Remplie->||
 MAPP006|Oui||
 MAPP007|Non||
 MAPP008|AutoCartes->||
+MAPP009|Max Zoom->||
+MAPP010|Min Zoom->||
 #
 #
 # Time Strings
