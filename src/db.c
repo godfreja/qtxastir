@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.91 2002/07/03 23:59:57 we7u Exp $
+ * $Id: db.c,v 1.92 2002/07/04 00:03:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1828,9 +1828,9 @@ void display_station(Widget w, DataRow *p_station, int single) {
                 xastir_snprintf(temp_altitude, sizeof(temp_altitude), "%.0f%s",
                     (float)(p_station->track_data->altitude[trail_prev] * cvt_dm2len), un_alt);
 
-                printf("Trail data              with altitude: %s : %s\n",
-                    p_station->call_sign,
-                    temp_altitude);
+//                printf("Trail data              with altitude: %s : %s\n",
+//                    p_station->call_sign,
+//                    temp_altitude);
             }
             else {
                 //printf("Trail data w/o altitude                %s\n",
