@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.49 2004/05/18 19:54:46 we7u Exp $
+ * $Id: map_shp.c,v 1.50 2004/05/18 20:26:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -893,7 +893,7 @@ void draw_shapefile_map (Widget w,
                 break;
 
             case 'z':   // Zone File
-            case 'f':   // Fire zone file
+            case 'f':   // Fire zone file, KS_F033
             default:
                 // Weather alert zones, z_ files:  KS_Z033
                 // STATE_ZONE
