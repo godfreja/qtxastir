@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.231 2003/02/22 01:16:29 we7u Exp $
+ * $Id: main.c,v 1.232 2003/02/22 16:41:09 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11949,7 +11949,7 @@ void Config_tiger( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@
                 XmNsensitive, TRUE,
                 XmNorientation, XmHORIZONTAL,
                 XmNborderWidth, 1,
-                XmNminimum, 0,
+                XmNminimum, 30, //Having less than this makes the tigermaps too dark to see (0 will cause a segfault) - N0VH
                 XmNmaximum, 100,
                 XmNshowValue, TRUE,
                 XmNvalue, tigermap_intensity,
