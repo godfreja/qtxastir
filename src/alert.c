@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.62 2003/07/15 14:17:27 n2ygk Exp $
+ * $Id: alert.c,v 1.63 2003/09/19 17:56:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -473,7 +473,8 @@ int alert_expire(void) {
 
     // Skip NWS_SOLAR and -NoActivationExpected alerts, they don't
     // interest us.
-    if (strcmp(entry->to, "NWS-SOLAR") == 0) {
+    if ( (strcmp(entry->to, "NWS-SOLAR") == 0)
+            || (strcmp(entry->to, "NWS_SOLAR") == 0) ) {
         if (debug_level & 2)
             fprintf(stderr,"NWS-SOLAR, skipping\n");
         return(NULL);
@@ -968,6 +969,9 @@ int alert_on_screen(void) {
 //
 // SFONPW>APRS::NWS-ADVIS:WIND,CA_Z007,CA_Z065, ALAMEDA AND CON & NAPA COUNTY {JDIAA
 //
+// We also now have compressed NWS alerts, signified by NWS_ADVIS
+// (underline instead of dash).
+//
 //
 // Expiration is then computed from the activity field.  Alert_level
 // is computed from "to" and/or "alert_tag".  There can be up to
@@ -1125,7 +1129,8 @@ void alert_build_list(Message *fill) {
 
         memset(&entry, 0, sizeof(entry));
 
-        // Zero the title strings
+        // Zero the title strings.  We can have up to five alerts in
+        // a non-compressed weather alert.
         title[0][0] = '\0';
         title[1][0] = '\0';
         title[2][0] = '\0';
