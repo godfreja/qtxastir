@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.7 2002/03/06 09:44:28 we7u Exp $
+ * $Id: interface.c,v 1.8 2002/03/07 18:55:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -797,6 +797,7 @@ int command_file_to_tnc_port(int port, char *filename) {
 
                         port_write_string(port,command);
                         line[0] = (char)0;
+                        usleep(500000); // 500ms to let TNC process each line
                     }
                 }
             }
