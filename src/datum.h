@@ -23,7 +23,7 @@
    Thanks Chuck!
 
    N7TAP
-   $Id: datum.h,v 1.3 2002/10/31 21:52:48 we7u Exp $
+   $Id: datum.h,v 1.4 2003/10/17 20:39:40 we7u Exp $
 */
 
 #define FROM_WGS_84 1
@@ -91,6 +91,6 @@ void ll_to_utm(short ellipsoidID, const double lat, const double lon,
              double *utmNorthing, double *utmEasting, char* utmZone, int utmZoneLength);
 void utm_to_ll(short ellipsoidID, const double utmNorthing, const double utmEasting,
                const char* utmZone, double *lat, double *lon);
-char utm_letter_designator(double lat);
+char utm_letter_designator(double lat, double lon);
 
 
