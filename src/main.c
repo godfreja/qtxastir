@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.220 2003/02/04 03:52:40 jtwilley Exp $
+ * $Id: main.c,v 1.221 2003/02/04 08:06:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3672,6 +3672,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
 #ifdef ARROWS
         pan_up_menu, pan_down_menu, pan_left_menu, pan_right_menu,
+        zoom_in_menu, zoom_out_menu,
 #endif // ARROWS
 
         help_button, help_about, help_help;
@@ -5848,6 +5849,38 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             XmNtraversalOn, FALSE,
             NULL);
     XtAddCallback(pan_right_menu,XmNactivateCallback,Pan_right,NULL);
+
+    zoom_in_menu=XtVaCreateManagedWidget(langcode("POPUPMA002"),
+            xmPushButtonWidgetClass,
+            toolbar,
+            XmNtopAttachment, XmATTACH_FORM,
+            XmNbottomAttachment, XmATTACH_FORM,
+            XmNleftAttachment, XmATTACH_WIDGET,
+            XmNleftWidget, pan_right_menu,
+            XmNleftOffset, 0,
+            XmNrightAttachment, XmATTACH_NONE,
+            XmNnavigationType, XmTAB_GROUP,
+            XmNtraversalOn, FALSE,
+            MY_FOREGROUND_COLOR,
+            MY_BACKGROUND_COLOR,
+            NULL);
+    XtAddCallback(zoom_in_menu,XmNactivateCallback,Zoom_in_no_pan,NULL);
+
+    zoom_out_menu=XtVaCreateManagedWidget(langcode("POPUPMA003"),
+            xmPushButtonWidgetClass,
+            toolbar,
+            XmNtopAttachment, XmATTACH_FORM,
+            XmNbottomAttachment, XmATTACH_FORM,
+            XmNleftAttachment, XmATTACH_WIDGET,
+            XmNleftWidget, zoom_in_menu,
+            XmNleftOffset, 0,
+            XmNrightAttachment, XmATTACH_NONE,
+            XmNnavigationType, XmTAB_GROUP,
+            XmNtraversalOn, FALSE,
+            MY_FOREGROUND_COLOR,
+            MY_BACKGROUND_COLOR,
+            NULL);
+    XtAddCallback(zoom_out_menu,XmNactivateCallback,Zoom_out_no_pan,NULL);
 #endif // ARROWS
 
 
