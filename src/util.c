@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.153 2005/03/23 20:36:05 we7u Exp $
+ * $Id: util.c,v 1.154 2005/03/24 05:57:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2441,8 +2441,9 @@ double calc_distance(long lat1, long lon1, long lat2, long lon2) {
  *  great-circle calculation, or Haversine, also a great-circle
  *  calculation.
  *
- *  NOTE:  The angle returned is a separate calculation, so it could
- *  be a Rhumb Line angle that is returned.  Check this out.
+ *  NOTE:  The angle returned is a separate calculation, but using
+ *  the unit sphere distance in it's calculation.  A great circle
+ *  bearing is computed, not a Rhumb-line bearing.
  *
  *
  * Inputs:  lat1/long1/lat2/long2 in Xastir coordinate system (long)
@@ -2477,10 +2478,14 @@ double calc_distance_course(long lat1, long lon1, long lat2, long lon2, char *co
 
     // 2) Haversine Formula.  Returns answer in meters.
     r_m = calc_distance_haversine_radian(r_lat1, r_lon1, r_lat2, r_lon2);
-    r_d = r_m / 6367000.0;  // Back to unit sphere
+    //
+    // Conversion from distance in meters back to unit sphere.  This
+    // is needed for the course calculation below as well as the
+    // later scaling up to feet/meters or miles/km.
+    r_d = r_m / 6367000.0; 
 
 
-    // Compute the course:
+    // Compute the great-circle bearing
     if (cos(r_lat1) < 0.0000000001) {
         if (r_lat1>0.0)
             r_c=M_PI;
