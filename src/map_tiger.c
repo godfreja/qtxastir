@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.9 2003/11/04 17:17:37 we7u Exp $
+ * $Id: map_tiger.c,v 1.10 2003/11/26 16:25:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -123,7 +123,7 @@ struct FtpFile {
   char *filename;
   FILE *stream;
 };
-#endif
+#endif  // HAVE_LIBCURL
 
 extern int npoints;		/* tsk tsk tsk -- globals */
 extern int mag;
@@ -156,7 +156,9 @@ void draw_tiger_map (Widget w,
     long map_y_min, map_y_max;      //
     long map_x_ctr;                 // half map width in pixel
     long map_y_ctr;                 // half map height in pixel
-    int map_seen, map_act, map_done;
+    int map_seen = 0;
+    int map_act;
+    int map_done;
 
     long map_c_yc;                  // map center, vert coordinate
     long map_c_xc;                  // map center, hor  coordinate
@@ -188,11 +190,11 @@ void draw_tiger_map (Widget w,
     CURLcode res;
     char curlerr[CURL_ERROR_SIZE];
     struct FtpFile ftpfile;
-#else
+#else   // HAVE_LIBCURL
 #ifdef HAVE_WGET
     char tempfile[MAX_FILENAME];
 #endif  // HAVE_WGET
-#endif
+#endif  // HAVE_LIBCURL
     double left, right, top, bottom, map_width, map_height;
     double lat_center  = 0;
     double long_center = 0;
@@ -412,7 +414,7 @@ void draw_tiger_map (Widget w,
         fprintf(stderr,"Couldn't download the Tigermap image\n");
         return;
     }
-#else
+#else   // HAVE_LIBCURL
 #ifdef HAVE_WGET
     xastir_snprintf(tempfile, sizeof(tempfile),
         "%s --server-response --timestamping --tries=1 --timeout=%d --output-document=%s \'%s\' 2> /dev/null\n",
