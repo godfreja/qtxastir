@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.143 2004/10/30 21:01:34 we7u Exp $
+# $Id: language-English.sys,v 1.144 2004/11/02 15:20:16 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -460,9 +460,12 @@ WPUPCFT038|TxTail (10 ms units)||
 WPUPCFT039|Full Duplex||
 WPUPCFT040|Configure Multi-Port KISS TNC||
 WPUPCFT041|Radio Port||
-WPUPCFT042|Dubious UNPROTO Path!||
+WPUPCFT042|Interface Properties: Dubious UNPROTO Path!||
 WPUPCFT043|Please consider a shorter path such as WIDE2-2 or RELAY,WIDE2-2||
-WPUPCFT044|Dubious IGATE Path!||
+WPUPCFT044|Interface Properties: Dubious IGATE Path!||
+WPUPCFT045|Transmitting w/Dubious UNPROTO Path!||
+WPUPCFT046|Transmitting w/Dubious IGATE Path!||
+#
 #
 # PopUp "Configure WX Port"
 WPUPCFWX01|Configure WX Port||
