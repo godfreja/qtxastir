@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.298 2003/06/20 21:57:38 we7u Exp $
+ * $Id: main.c,v 1.299 2003/06/20 23:55:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22158,6 +22158,12 @@ int main(int argc, char *argv[]) {
         fprintf(stderr,"Making user tracklogs dir\n");
         (void)mkdir(get_user_base_dir("tracklogs"),S_IRWXU);
     }
+
+    if (filethere(get_user_base_dir("tmp")) != 1) {
+        fprintf(stderr,"Making user tmp dir\n");
+        (void)mkdir(get_user_base_dir("tmp"),S_IRWXU);
+    }
+
 
 
     /* done checking user dirs */
