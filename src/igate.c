@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.45 2005/03/01 20:55:40 we7u Exp $
+ * $Id: igate.c,v 1.46 2005/03/02 19:41:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -970,7 +970,7 @@ end_critical_section(&devices_lock, "igate.c:output_igate_rf" );
                         // unproto_igate path
                         output_my_data(line,x,0,0,1,NULL);
 
-fprintf(stderr, "Igating->RF: %s\n", line);
+//fprintf(stderr, "Igating->RF: %s\n", line);
 
 begin_critical_section(&devices_lock, "igate.c:output_igate_rf" );
 
