@@ -2,7 +2,7 @@
 # Copyright (C) 1999,2000  Frank Giannandrea
 # Copyright (C) 2001-2003  The Xastir Group
 #
-# $Id: symbols.dat,v 1.3 2003/01/24 00:37:40 we7u Exp $
+# $Id: symbols.dat,v 1.4 2003/01/27 07:13:01 we7u Exp $
 #
 # Symbol definitions for XASTIR
 #
@@ -1297,8 +1297,27 @@ APRS b             l Bicycle (SSID -4)
 ....................
 ....................
 ....................
-#APRS c
-#
+APRS c              Incident Command Post
+qqqqqqqqqqqqqqqqqqqq
+qmmmmmmmmmmmmmmmmmkq
+qmmmmmmmmmmmmmmmmkkq
+qmmmmmmmmmmmmmmmkkkq
+qmmmmmmmmmmmmmmkkkkq
+qmmmmmmmmmmmmmkkkkkq
+qmmmmmmmmmmmmkkkkkkq
+qmmmmmmmmmmmkkkkkkkq
+qmmmmmmmmmmkkkkkkkkq
+qmmmmmmmmmkkkkkkkkkq
+qmmmmmmmmkkkkkkkkkkq
+qmmmmmmmkkkkkkkkkkkq
+qmmmmmmkkkkkkkkkkkkq
+qmmmmmkkkkkkkkkkkkkq
+qmmmmkkkkkkkkkkkkkkq
+qmmmkkkkkkkkkkkkkkkq
+qmmkkkkkkkkkkkkkkkkq
+qmkkkkkkkkkkkkkkkkkq
+qkkkkkkkkkkkkkkkkkkq
+qqqqqqqqqqqqqqqqqqqq
 APRS d               Dual Garage (Fire Department)
 ....................
 .........qq.........
