@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.25 2004/11/15 18:05:57 tvrusso Exp $
+# $Id: acinclude.m4,v 1.26 2004/11/21 06:26:25 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -146,6 +146,7 @@ if test "$wget" != "no"; then
 fi
 
 AC_PATH_PROG(convert, [convert --version], no, $BINPATH)
+AC_CHECK_FILE(/usr/bin/convert.exe, convert="/usr/bin/convert")
 if test "$convert" != "no"; then
   AC_DEFINE_UNQUOTED(HAVE_CONVERT, 1, [Define if you have convert]) 
   AC_DEFINE_UNQUOTED(CONVERT_PATH, "${convert}", [Path to convert]) 
@@ -644,7 +645,7 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.25 2004/11/15 18:05:57 tvrusso Exp $
+dnl $Id: acinclude.m4,v 1.26 2004/11/21 06:26:25 we7u Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.
