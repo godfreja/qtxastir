@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.97 2003/05/14 20:47:54 we7u Exp $
+# $Id: language-Spanish.sys,v 1.98 2003/05/14 23:30:06 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -77,8 +77,8 @@ PULDNMP008|Intensidad del Mapa|I|
 PULDNMP020|Activar/Configurar Tigermap||
 PULDNMP021|Auto Mapa - Desactivar Mapas de Trama||
 PULDNMP022|Indezar Mapas en Inicio||
-PULDNMP023|Re-Indezar Mapas|R|
-PULDNMP024|Re-Indezar Mapa: TODOS los Mapas|T|
+PULDNMP023|Indice: Agregar Nuevos Mapas|N|
+PULDNMP024|Indice: Reindezar TODOS los Mapas|R|
 #
 # Menú "Configurar Tigermapa"
 MPUPTGR001|Rejilla||
