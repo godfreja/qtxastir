@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.h,v 1.7 2002/11/14 19:30:25 we7u Exp $
+ * $Id: draw_symbols.h,v 1.8 2003/01/15 22:25:59 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,7 +41,6 @@ typedef struct {
     Pixmap pix_mask_old;        // mask for ghost symbols, half transparent icons
 } SymbolData;
 
-extern int symbol_callsign_display;
 extern SymbolData symbol_data[];
 
 extern void draw_nice_string(Widget w, Pixmap where, int style, long x, long y, char *text, int bgcolor, int fgcolor, int length);
