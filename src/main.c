@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.441 2004/02/04 16:49:34 we7u Exp $
+ * $Id: main.c,v 1.442 2004/02/06 21:33:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12780,13 +12780,13 @@ void Help_About( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@un
 
     xb = XmStringCreateLtoR("\nXastir V" VERSION "\n\n" ABOUT_MSG, XmFONTLIST_DEFAULT_TAG);
 
-    xa = XmStringCreateLtoR(_("\n\n\nLibraries used: \n"), XmFONTLIST_DEFAULT_TAG);
+    xa = XmStringCreateLtoR("\n\n\nLibraries used: " XASTIR_INSTALLED_LIBS, XmFONTLIST_DEFAULT_TAG);
     xms = XmStringConcat(xb, xa);
     XmStringFree(xa);
     XmStringFree(xb);
     //xms is still defined
 
-    xa = XmStringCreateLtoR("\n", XmFONTLIST_DEFAULT_TAG);  // Add a newline
+    xa = XmStringCreateLtoR("\n\n", XmFONTLIST_DEFAULT_TAG);  // Add some newlines
     xb = XmStringConcat(xms, xa);
     XmStringFree(xa);
     XmStringFree(xms);
