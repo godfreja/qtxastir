@@ -1,4 +1,4 @@
-# $Id: nwsozddmmyy.dbfawk,v 1.8 2004/05/28 19:23:22 we7u Exp $
+# $Id: nwsozddmmyy.dbfawk,v 1.9 2004/12/28 06:16:34 tvrusso Exp $
 #
 # Copyright (C) 2003-2004  The Xastir Group
 #
@@ -35,7 +35,7 @@ dbffields="ID:NAME"}
 
 # BEGIN_RECORD is called once per dbf record which contains multiple fields.
 # Use this rule to re-initialize variables between records.
-BEGIN_RECORD {key="BOGUS"; lanes=2; fill_color=11; color=8; name=""; filled=1; fill_style=0; pattern=0; display_level=8192; label_level=512; label_color=20; font_size=2; symbol=""}
+BEGIN_RECORD {key="BOGUS"; lanes=2; fill_color=11; color=8; name=""; filled=1; fill_style=0; pattern=0; display_level=65536; label_level=512; label_color=20; font_size=2; symbol=""}
 
 /^ID=(..)(.*)$/ {key="$1_$2"; next}
 /^NAME=(.*)$/ {name="$1"; next}
