@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.32 2002/10/22 06:35:04 rzg Exp $
+$Id: README.1ST,v 1.33 2002/10/25 20:34:33 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -943,6 +943,19 @@ Gating NWS Weather Alerts to RF:
 Getting Data Files for Xastir:
 ------------------------------
     Download some maps:
+
+      NOTE:  Set map FILES to permissions 444 or 644 ("r--r--r--" or
+      "rw-r--r--") using the "chmod" command.  The map DIRECTORIES
+      should be set to 755 ("rwxr-xr-x").  These permissions will
+      allow anyone on the box to read the map files.  If you're
+      running as the ROOT user regularly, stop to consider the
+      problems you might get into if you type the wrong command, not
+      to mention the problems if someone manages to get control of
+      one of your ROOT programs!  (KISS your files goodbye now,
+      while you still can!).  Create another user account and run
+      under that login instead of root.  You'll save yourself many
+      headaches in the future.  This is speaking from DIRECT
+      experience.
 
       If you compiled with ImageMagick and have wget installed, you can skip
       this step and use the online Tiger/Terraserver maps exclusively. However,
