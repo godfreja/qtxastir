@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.14 2002/07/23 20:43:45 we7u Exp $
+ * $Id: interface.h,v 1.15 2002/07/23 21:27:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -156,7 +156,7 @@ typedef struct {
     char   persistence[4];                        /* KISS parameter */
     char   slottime[4];                           /* KISS parameter */
     char   txtail[4];                             /* KISS parameter */
-    char   fullduplex[2];                         /* KISS parameter */
+    int    fullduplex;                            /* KISS parameter */
     int    relay_digipeat;                        /* If 1: interface should RELAY digipeat */
 } ioparam;
 

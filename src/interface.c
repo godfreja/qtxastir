@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.47 2002/07/23 20:43:45 we7u Exp $
+ * $Id: interface.c,v 1.48 2002/07/23 21:27:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3265,7 +3265,7 @@ int add_device(int port_avail,int dev_type,char *dev_nm,char *passwd,int dev_sck
                     send_kiss_config(port_avail,0,0x02,atoi(devices[port_avail].persistence));
                     send_kiss_config(port_avail,0,0x03,atoi(devices[port_avail].slottime));
                     send_kiss_config(port_avail,0,0x04,atoi(devices[port_avail].txtail));
-                    send_kiss_config(port_avail,0,0x05,atoi(devices[port_avail].fullduplex));
+                    send_kiss_config(port_avail,0,0x05,devices[port_avail].fullduplex);
                     break;
 
                 default:

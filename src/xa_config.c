@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.42 2002/07/23 20:43:45 we7u Exp $
+ * $Id: xa_config.c,v 1.43 2002/07/23 21:27:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -455,7 +455,7 @@ void save_data(void)  {
 
             strcpy (name, name_temp);
             strcat (name, "TNC_FULLDUPLEX");
-            store_string (fout, name, devices[i].fullduplex);
+            store_int (fout, name, devices[i].fullduplex);
 
             strcpy (name, name_temp);
             strcat (name, "SPEED");
@@ -961,8 +961,8 @@ void load_data_or_default(void) {
 
         strcpy (name, name_temp);
         strcat (name, "TNC_FULLDUPLEX");
-        if (!get_string (name, devices[i].fullduplex))
-            strcpy (devices[i].fullduplex, "0");
+        if (!get_int (name, &devices[i].fullduplex, 0, 1, 0))
+            devices[i].fullduplex = 0;
 
         strcpy (name, name_temp);
         strcat (name, "SPEED");
