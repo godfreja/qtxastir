@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.15 2003/04/19 00:21:11 we7u Exp $
+# $Id: Makefile.am,v 1.16 2003/05/15 05:07:09 jtwilley Exp $
 AUTOMAKE_OPTIONS = gnu dist-bzip2
 ACLOCAL_AMFLAGS = -I m4
 
@@ -10,7 +10,7 @@ SUBDIRS = src m4 config help scripts symbols callpass
 # DISTCLEANFILES = intl/libintl.h
 
 EXTRA_DIST = xastir.spec.in xastir.spec config.guess config.sub install-sh \
-        missing mkinstalldirs TODO placeholder FAQ LICENSE README.1ST README \
+        missing mkinstalldirs placeholder FAQ LICENSE README \
         DEBUG_LEVELS bootstrap.sh xastir.1
 
 MAINTAINERCLEANFILES = configure aclocal.m4 Makefile.in Makefile \
