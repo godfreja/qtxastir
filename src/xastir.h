@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.2 2002/03/28 00:54:38 francais1 Exp $
+ * $Id: xastir.h,v 1.3 2002/04/18 22:28:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -108,6 +108,7 @@ extern int redraw_on_new_data;
 
 extern void sort_list(char *filename,int size, Widget list, int *item);
 
+extern Colormap cmap;
 
 
 

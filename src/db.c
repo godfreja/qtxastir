@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.18 2002/04/17 19:58:35 we7u Exp $
+ * $Id: db.c,v 1.19 2002/04/18 22:28:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3888,7 +3888,7 @@ void draw_trail(Widget w, DataRow *fill, int solid) {
     long marg_lat, marg_lon;
     int col_trail, col_dot;
     XColor rgb;
-    Colormap cmap;
+/*    Colormap cmap;  KD6ZWR - Now set in main() */
     long brightness;
     char flag1;
 
@@ -3904,7 +3904,7 @@ void draw_trail(Widget w, DataRow *fill, int solid) {
 
             // define color of position dots in trail
             rgb.pixel = col_trail;
-            cmap = DefaultColormap(XtDisplay(w), DefaultScreen(XtDisplay(w)));
+/*            cmap = DefaultColormap(XtDisplay(w), DefaultScreen(XtDisplay(w)));  KD6ZWR - Now set in main() */
             XQueryColor(XtDisplay(w),cmap,&rgb);
             brightness = (long)(0.3*rgb.red + 0.55*rgb.green + 0.15*rgb.blue);
             if (brightness > 32000) {
