@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.506 2004/08/11 20:15:02 we7u Exp $
+ * $Id: main.c,v 1.507 2004/08/14 16:43:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -21453,10 +21453,14 @@ int Setup_object_data(char *line, int line_length) {
     //fprintf(stderr,"Comment: %s\n",comment);
     if (strlen(comment) != 0) {
 
-        // Add a space first.  It's required for multipoint polygons
-        // in the comment field.
-        line[strlen(line) + 1] = '\0';
-        line[strlen(line)] = ' ';
+        if (comment[0] == '}') {
+            // May be a multipoint polygon string at the start of
+            // the comment field.  Add a space before this special
+            // character as multipoints have to start with " }" to
+            // be valid.
+            line[strlen(line) + 1] = '\0';
+            line[strlen(line)] = ' ';
+        }
 
         temp = 0;
         while ( (strlen(line) < 80) && (temp < (int)strlen(comment)) ) {
@@ -21932,11 +21936,15 @@ int Setup_item_data(char *line, int line_length) {
     //fprintf(stderr,"Comment: %s\n",comment);
     if (strlen(comment) != 0) {
 
-        // Add a space first.  It's required for multipoint polygons
-        // in the comment field.
-        line[strlen(line) + 1] = '\0';
-        line[strlen(line)] = ' ';
- 
+        if (comment[0] == '}') {
+            // May be a multipoint polygon string at the start of
+            // the comment field.  Add a space before this special
+            // character as multipoints have to start with " }" to
+            // be valid.
+            line[strlen(line) + 1] = '\0';
+            line[strlen(line)] = ' ';
+        }
+
         temp = 0;
         while ( (strlen(line) < (64 + strlen(last_object))) && (temp < (int)strlen(comment)) ) {
             //fprintf(stderr,"temp: %d->%d\t%c\n", temp, strlen(line), comment[temp]);
