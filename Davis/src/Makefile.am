@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.1 2004/06/02 16:38:53 we7u Exp $
+# $Id: Makefile.am,v 1.2 2005/01/08 09:33:52 we7u Exp $
 #
-# Copyright (C) 2004  The Xastir Group
+# Copyright (C) 2004-2005  The Xastir Group
 #
 
 bin_PROGRAMS =
