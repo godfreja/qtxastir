@@ -1,5 +1,5 @@
 
-$Id: README.CVS,v 1.10 2004/02/05 19:00:50 we7u Exp $
+$Id: README.CVS,v 1.11 2004/09/22 19:25:53 we7u Exp $
 
 
 CVS Instructions:
@@ -96,6 +96,9 @@ CVS Instructions:
          chmod 4555 /usr/local/bin/xastir (only needed if using kernel AX.25)
          exit (from root)
          xastir
+
+     Note that you'll need autoconf 2.53 or newer and automake 1.6.3 or newer
+     in order to run the "./bootstrap.sh" script.
 
      For the "cvs update" line, you can also choose which version to update to,
      just like the "cvs co" lines shown above:
