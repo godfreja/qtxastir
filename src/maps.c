@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.187 2002/12/27 20:54:19 we7u Exp $
+ * $Id: maps.c,v 1.188 2002/12/28 20:55:17 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11517,7 +11517,7 @@ void index_restore_from_file(void) {
     FILE *f;
     map_index_record *temp_record;
     char in_string[MAX_FILENAME*2];
-
+    char temp_fname[MAX_FILENAME];  // test for sscanf bug
 
 //printf("\nRestoring map index from file\n");
 
@@ -11572,7 +11572,11 @@ void index_restore_from_file(void) {
                     &temp_record->map_layer,
                     &temp_record->draw_filled,
                     &temp_record->auto_maps,
-                    temp_record->filename);
+                    &temp_fname);
+                //sometimes sscanf puts junk in the string if it is part of 
+                // the structure directly, this seems to 
+                // avoid the issue... ???? -KD6ZWR
+                strcpy(temp_record->filename, temp_fname);
 
                 // Check if the string is bogus
                 if (strlen(temp_record->filename) == 0) {
