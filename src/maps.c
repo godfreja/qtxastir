@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.154 2002/11/01 00:27:50 we7u Exp $
+ * $Id: maps.c,v 1.155 2002/11/02 00:56:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6878,7 +6878,7 @@ void draw_geotiff_image_map (Widget w, char *dir, char *filenm, int destination_
 
 
     /* convert_to_xastir_coordinates( x,y,longitude,latitude ); */
-    if (have_fgd)   /* Must be a USGS file */
+    if (have_fgd)   /* Could be a USGS file */
     {
         int temp_ok1, temp_ok2;
 
