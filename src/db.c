@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.389 2004/10/03 04:58:01 we7u Exp $
+ * $Id: db.c,v 1.390 2004/10/04 19:58:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3675,7 +3675,7 @@ void station_data_fill_in ( /*@unused@*/ Widget w, XtPointer clientData, XtPoint
 
 // Maximum tracks listed in Station Info dialog.  This prevents
 // lockups on extremely long tracks.
-#define MAX_TRACK_LIST 100
+#define MAX_TRACK_LIST 50
 
 
     db_station_info_callsign = (char *) clientData; // Used for auto-updating this dialog
