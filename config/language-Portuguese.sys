@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.32 2002/08/06 20:42:37 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.33 2002/09/19 08:04:01 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -203,6 +203,7 @@ POPUPMA013|Ir para a esquerda|l|
 POPUPMA014|Ir para a direita|r|
 POPUPMA020|Medida||
 POPUPMA021|Movimento||
+POPUPMA022|TrackMe||
 #
 # Menú dos estados das linhas de etiquetas
 BBARZM0001|Foco %s||

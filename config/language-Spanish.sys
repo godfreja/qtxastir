@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.39 2002/08/06 20:42:37 we7u Exp $
+# $Id: language-Spanish.sys,v 1.40 2002/09/19 08:04:01 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -205,6 +205,7 @@ POPUPMA013|Paneo izquierda|l|
 POPUPMA014|Paneo derecha|r|
 POPUPMA020|Medida||
 POPUPMA021|Movimiento||
+POPUPMA022|TrackMe||
 #
 # Menú de Estados de la líneas de Etiquetas
 BBARZM0001|Foco %s||
