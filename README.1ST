@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.62 2003/02/08 00:29:24 we7u Exp $
+$Id: README.1ST,v 1.63 2003/02/08 01:33:13 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -1274,7 +1274,7 @@ WINDOWS/CYGWIN NOTES:
      in your home directory.  This is in lieu of the "ldconfig" command
      required for Unix/Linux.  It appears that Cygwin uses the PATH variable
      to look for both binaries and libraries.  Add this line (create the
-     file if the file doesn't exist):
+     "~/.profile" file if the file doesn't exist):
 
         export PATH=$PATH:/lib:/usr/lib:/usr/X11R6/lib:/usr/local/lib
 
