@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.137 2003/08/12 18:48:57 we7u Exp $
+ * $Id: interface.c,v 1.138 2003/08/15 19:11:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3200,11 +3200,13 @@ void port_dtr(int port, int dtr) {
 void dtr_all_set(int dtr) {
     int i;
 
-    for (i = 0; i < MAX_IFACE_DEVICES; i++)
-        if (port_data[i].device_type == DEVICE_SERIAL_TNC_HSP_GPS && port_data[i].status == DEVICE_UP)
+//fprintf(stderr,"dtr_all_set(%d)\t",dtr);
+    for (i = 0; i < MAX_IFACE_DEVICES; i++) {
+        if (port_data[i].device_type == DEVICE_SERIAL_TNC_HSP_GPS
+                && port_data[i].status == DEVICE_UP) {
             port_dtr(i,dtr);
-
-
+        }
+    }
 }
 
 

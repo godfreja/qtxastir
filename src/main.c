@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.325 2003/08/14 16:12:05 we7u Exp $
+ * $Id: main.c,v 1.326 2003/08/15 19:11:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7890,7 +7890,9 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                     // GPS listen timeout!  Pop us out of GPS listen
                     // mode on all HSP ports.  Listen to the TNC for
                     // a while.
+//fprintf(stderr,"1:calling dtr_all_set(0)\n");
                     dtr_all_set(0);
+                    sec_last_dtr = sec_now();
                 }
             }
 
@@ -7899,7 +7901,9 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
             // to normal for all HSP interfaces (set to receive from
             // TNC now).
             if (gps_stop_now) {
+//fprintf(stderr,"2:calling dtr_all_set(0)\n");
                 dtr_all_set(0); // Go back to TNC listen mode
+                sec_last_dtr = sec_now();
             }
 
 
@@ -7921,6 +7925,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                 // HSP interfaces:  Set DTR line for all.  DTR will
                 // get reset for each line as valid GPS data gets
                 // parsed on that interface.
+//fprintf(stderr,"3:calling dtr_all_set(1)\n");
                 dtr_all_set(1);
                 sec_last_dtr = sec_now();   // GPS listen timeout
 
