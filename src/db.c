@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.402 2004/12/01 04:34:07 we7u Exp $
+ * $Id: db.c,v 1.403 2004/12/13 03:19:37 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12762,7 +12762,9 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
             addr9);
         (void)remove_trailing_spaces(addr);
         message = message + 10;                 // pointer to message text
-        temp_ptr = strstr(message,"{");         // look for message ID
+
+        temp_ptr = strrchr(message,'{');         // look for message ID after
+                                                 //*last* { in message.
         msg_id[0] = '\0';
         if (temp_ptr != NULL) {
             substr(msg_id,temp_ptr+1,5);        // extract message ID, could be non-digit
