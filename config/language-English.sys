@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.91 2003/05/20 19:09:31 we7u Exp $
+# $Id: language-English.sys,v 1.92 2003/05/20 19:22:45 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -1003,5 +1003,16 @@ MAPP005|Filled->||
 MAPP006|Yes||
 MAPP007|No||
 MAPP008|Automaps->||
+#
+#
+# Time Strings
+TIME001|Day||
+TIME002|Days||
+TIME003|Hour||
+TIME004|Hours||
+TIME005|Minute||
+TIME006|Minutes||
+TIME007|Second||
+TIME008|Seconds||
 #
 #

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.100 2003/05/20 19:09:33 we7u Exp $
+# $Id: language-Spanish.sys,v 1.101 2003/05/20 19:22:46 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -998,5 +998,16 @@ MAPP005|Filled->||
 MAPP006|Yes||
 MAPP007|No||
 MAPP008|Automaps->||
+#
+#
+# Time Strings
+TIME001|Day||
+TIME002|Days||
+TIME003|Hour||
+TIME004|Hours||
+TIME005|Minute||
+TIME006|Minutes||
+TIME007|Second||
+TIME008|Seconds||
 #
 #

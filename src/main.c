@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.279 2003/05/20 19:09:33 we7u Exp $
+ * $Id: main.c,v 1.280 2003/05/20 19:22:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3569,24 +3569,24 @@ void Compute_Uptime(Widget w, XtPointer clientData, XtPointer callData) {
     seconds = runtime - (minutes * 60);
 
     if (days == 1)
-        strcpy(Days,"Day");
+        strcpy(Days,langcode("TIME001")); // Day
     else
-        strcpy(Days,"Days");
+        strcpy(Days,langcode("TIME002")); // Days
 
     if (hours == 1)
-        strcpy(Hours,"Hour");
+        strcpy(Hours,langcode("TIME003"));    // Hour
     else
-        strcpy(Hours,"Hours");
+        strcpy(Hours,langcode("TIME004"));    // Hours
 
    if (minutes == 1)
-        strcpy(Minutes,"Minute");
+        strcpy(Minutes,langcode("TIME005"));  // Minute
     else
-        strcpy(Minutes,"Minutes");
+        strcpy(Minutes,langcode("TIME006"));  // Minutes
 
    if (seconds == 1)
-        strcpy(Seconds,"Second");
+        strcpy(Seconds,langcode("TIME007"));  // Seconds
     else
-        strcpy(Seconds,"Seconds");
+        strcpy(Seconds,langcode("TIME008"));  // Seconds
 
 
     if (days != 0) {

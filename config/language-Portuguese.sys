@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.91 2003/05/20 19:09:32 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.92 2003/05/20 19:22:46 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -1005,5 +1005,16 @@ MAPP005|Filled->||
 MAPP006|Yes||
 MAPP007|No||
 MAPP008|Automaps->||
+#
+#
+# Time Strings
+TIME001|Day||
+TIME002|Days||
+TIME003|Hour||
+TIME004|Hours||
+TIME005|Minute||
+TIME006|Minutes||
+TIME007|Second||
+TIME008|Seconds||
 #
 #
