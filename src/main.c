@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.477 2004/06/28 00:15:48 rzg Exp $
+ * $Id: main.c,v 1.478 2004/06/28 16:56:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7736,6 +7736,8 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     //XtAddEventHandler(da,ButtonReleaseMask,FALSE,(XtEventHandler)Mouse_button_handler,NULL);
 
 
+    // If adding any more widgets here, increase the size of the
+    // children[] array above.
     ac = 0;
     children[ac++] = text;
     children[ac++] = text2;
