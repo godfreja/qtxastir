@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.147 2002/10/18 05:30:34 we7u Exp $
+ * $Id: main.c,v 1.148 2002/10/18 17:13:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -260,11 +260,11 @@ int symbol_display;             // Switch for Symbols (and text) display
 int symbol_display_enable;  // Set by togglebutton
 int symbol_display_rotate;  // Set by togglebutton
 
-int symbol_display_stations;
-int symbol_display_stationary;
-int symbol_display_moving;
-int symbol_display_WX;
-int symbol_display_objects;
+int symbol_display_stations = 1;
+int symbol_display_stationary = 1;
+int symbol_display_moving = 1;
+int symbol_display_WX = 1;
+int symbol_display_objects = 1;
 
 Widget symbols_stations_button;
 Widget symbols_stationary_button;
