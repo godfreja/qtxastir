@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.435 2004/01/12 19:44:56 we7u Exp $
+ * $Id: main.c,v 1.436 2004/01/14 20:00:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25455,7 +25455,7 @@ int main(int argc, char *argv[]) {
     // Note that this symlink will probably not fail.  It's easy to
     // create a symlink that points to nowhere.
     if (symlink(get_data_base_dir(temp),get_user_base_dir("config/help.dat")) == -1) {
-        fprintf(stderr,"Error creating database link\n");
+        fprintf(stderr,"Error creating database link for help.dat\n");
         exit(0);
     }
 
@@ -25465,7 +25465,7 @@ int main(int argc, char *argv[]) {
     // Note that this symlink will probably not fail.  It's easy to
     // create a symlink that points to nowhere.
     if (symlink(get_data_base_dir(temp),get_user_base_dir("config/language.sys")) == -1) {
-        fprintf(stderr,"Error creating database link\n");
+        fprintf(stderr,"Error creating database link for language.sys\n");
         exit(0);
     }
 
