@@ -1,9 +1,9 @@
 /*
- * $Id: lang.c,v 1.11 2004/07/30 03:57:58 we7u Exp $
+ * $Id: lang.c,v 1.12 2005/01/08 10:06:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2004  The Xastir Group
+ * Copyright (C) 2000-2005  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

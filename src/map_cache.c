@@ -1,9 +1,9 @@
 /*
- * $Id: map_cache.c,v 1.9 2004/12/23 18:49:45 we7u Exp $
+ * $Id: map_cache.c,v 1.10 2005/01/08 10:06:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2004  The Xastir Group
+ * Copyright (C) 2000-2005  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

@@ -1,8 +1,8 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.128 2004/11/17 16:11:35 we7u Exp $
+ * $Id: map_gdal.c,v 1.129 2005/01/08 10:06:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2004  The Xastir Group
+ * Copyright (C) 2004-2005  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

@@ -1,7 +1,7 @@
 
-// $Id: rotated.c,v 1.13 2004/09/13 19:54:10 we7u Exp $
+// $Id: rotated.c,v 1.14 2005/01/08 10:06:54 we7u Exp $
 //
-// Portions Copyright (C) 2000-2004  The Xastir Group
+// Portions Copyright (C) 2000-2005  The Xastir Group
 //
 // Note that this version has been changed since xvertext 5.0 in order
 // to get rid of compiler warnings and such.  The original 5.0 notice
