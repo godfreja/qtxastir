@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.51 2004/05/20 21:46:31 we7u Exp $
+ * $Id: map_shp.c,v 1.52 2004/05/24 00:01:44 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3544,6 +3544,16 @@ if (on_screen) {
         free(ptr2);
         ptr2 = label_ptr;
     }
+
+#ifdef WITH_DBFAWK
+    dbfawk_free_info(fld_info);
+    if (sig_info != NULL && sig_info != dbfawk_default_sig  && (sig_info->sig == NULL))
+    {
+        if (sig_info->prog != NULL)
+            awk_free_program(sig_info->prog);
+        free(sig_info);
+    }
+#endif
 
 
     DBFClose( hDBF );

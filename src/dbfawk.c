@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.9 2004/01/26 16:18:20 we7u Exp $
+ * $Id: dbfawk.c,v 1.10 2004/05/24 00:01:33 n2ygk Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -61,6 +61,18 @@ int dbfawk_sig(DBFHandle dbf, char *sig, int size)
       *--sp = '\0';             /* clobber the trailing sep */
   }
   return nf;
+}
+
+/* Free a field list */
+void dbfawk_free_info ( dbfawk_field_info *list)
+{
+    dbfawk_field_info *x, *p;
+    for ( p = list; p != NULL; )
+    {
+        x = p;
+        p = p->next;
+        free(x);
+    }
 }
 
 /*
@@ -217,7 +229,10 @@ dbfawk_sig_info *dbfawk_find_sig(dbfawk_sig_info *info,
             return NULL;
         }
         info->prog = awk_load_program_file(perfile);
-        /* N.B. info->sig is left uninitialized since it won't be searched */
+        /* N.B. info->sig is left NULL since it won't be searched, and 
+           to flag that it's safe to free this memory when we're done with
+           it */
+        info->sig = NULL;
         free(perfile);
         if (info->prog)
             return info;
