@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.55 2002/04/26 18:14:10 we7u Exp $
+ * $Id: maps.c,v 1.56 2002/04/26 18:27:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1682,7 +1682,7 @@ void draw_shapefile_map (Widget w,
         if (lake_flag || river_flag)
             (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x1a]); // SteelBlue
         else if (path_flag)
-            (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x0c]); // red
+            (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x04]); // brown
         else if (railroad_flag)
             (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x01]); // purple
         else
