@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.50 2002/10/21 01:06:02 francais1 Exp $
+ * $Id: interface.c,v 1.51 2002/10/21 05:26:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -345,8 +345,9 @@ int my_ax25_aton_arglist(char *call[], struct full_sockaddr_ax25 *sax)
 // port device to work with
 //***********************************************************
 int ui_connect( int port, char *to[]) {
-    int    s = -1, sockopt;
+    int    s = -1;
 #ifdef HAVE_AX25
+    int    sockopt;
     int    addrlen = sizeof(struct full_sockaddr_ax25);
     struct full_sockaddr_ax25 axbind, axconnect;
     /* char  *arg[2]; */
