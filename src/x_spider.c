@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.12 2004/07/27 00:08:49 we7u Exp $
+ * $Id: x_spider.c,v 1.13 2004/07/28 17:48:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -499,6 +499,9 @@ int pipe_check(void) {
         else {  // We received some data.  Send it down all of the
                 // pipes except the one that sent it.
 
+            pipe_object *q;
+
+
 // Check for an authentication string.  If the pipe has not been
 // authenticated, we don't allow it to send anything to the upstream
 // server.  It's probably ok to send it to downstream connections
@@ -576,7 +579,7 @@ int pipe_check(void) {
                 }
             }
 
-            pipe_object *q = pipe_head;
+            q = pipe_head;
 
             while (q != NULL) {
 //                fprintf(stderr,"pipe_check: %s\n",line);
