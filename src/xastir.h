@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.22 2003/03/18 21:50:36 we7u Exp $
+ * $Id: xastir.h,v 1.23 2003/03/18 22:59:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,6 +26,10 @@
 
 #ifndef _XASTIR_H
 #define _XASTIR_H
+
+
+//#define SERIAL_KISS_RELAY_DIGI
+
 
 #include <X11/Intrinsic.h>
 
