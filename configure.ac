@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.43 2003/02/26 17:38:25 we7u Exp $
+# $Id: configure.ac,v 1.44 2003/02/27 17:39:22 we7u Exp $
 
 
 #########################################################################
@@ -493,6 +493,9 @@ AC_CHECK_LIB(intl, gettext, LIBS="-lintl ${LIBS}")
 # 
 use_shapelib=no 
 AC_CHECK_HEADERS(libshp/shapefil.h, XASTIR_SHAPELIB_INC="yes") 
+if test "$XASTIR_SHAPELIB_INC" != "yes"; then
+  AC_CHECK_HEADERS(shapefil.h, XASTIR_SHAPELIB_INC="yes")
+fi
 if test "$XASTIR_SHAPELIB_INC" = "yes" 
 then 
   # This one fails for Cygwin if Shapelib is in /usr/local/lib 
