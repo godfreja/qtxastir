@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.38 2003/05/19 18:24:43 we7u Exp $
+$Id: README.win32,v 1.39 2003/05/19 20:14:32 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -492,6 +492,20 @@ something like this:
     xastir &
 
 Perhaps name it "aprs".  Start it by typing "./aprs".
+
+--------------------------------------------------------------------
+Note from Kirk Mefford, KC2ELO:
+
+Also one more way to work around the "MAGICK_HOME" issues with
+running from the startxwin.bat file is to add "SET MAGICK_HOME=/usr"
+to the bat file before it gets to loading things. [remember DOS? ;)
+]
+
+I have Xastir loading directly from "startxwin.bat" with "run 
+/usr/local/bin/xastir" and ImageMagick works fine with "SET 
+MAGICK_HOME=/usr" at the top of the bat file.
+--------------------------------------------------------------------
+
 
 HIGHLY RECOMMENDED:  If you create a file called "terraserver.geo"
 in the /usr/local/xastir/maps directory, containing the single line
