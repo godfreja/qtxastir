@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.82 2003/03/01 01:52:42 we7u Exp $
+$Id: README.1ST,v 1.83 2003/03/04 19:13:35 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS(tm)
@@ -1403,8 +1403,8 @@ WINDOWS/CYGWIN NOTES:
      At the "make install" step, it'll fail to
      install listgeo and geotifcp because they have a .exe extension on
      Cygwin, which the install script doesn't know about.  Edit the Makefile
-     to add a ".exe" after those to names and try again.  It should complete
-     ok.
+     to add a ".exe" after those two names and try again.  It should
+     complete ok.
 
      "configure" still doesn't find libgeotiff.  Am investigating why.
  
