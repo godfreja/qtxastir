@@ -1,8 +1,12 @@
 #! /bin/sh
 
 
-# $Id: update-xastir,v 1.1 2004/11/18 18:59:05 we7u Exp $
+# $Id: update-xastir,v 1.2 2004/11/18 20:23:00 we7u Exp $
 # Copyright (C) 2004 The Xastir Group
+
+# See README.CVS for instructions on setting up SUDO, specifically
+# the /etc/sudoers file.  Windows/Cygwin users shouldn't need sudo
+# and can just delete the sudo keyword from the lines below.
 
 
 cvs update
