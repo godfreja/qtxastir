@@ -1,5 +1,5 @@
 /*
- * $Id: lang.c,v 1.4 2002/03/29 00:19:21 we7u Exp $
+ * $Id: lang.c,v 1.5 2002/04/10 19:58:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -75,7 +75,9 @@ char *langcode(char *code) {
                     return(lang_code_ptr[i]);   // Found it, length ok
                 }
                 else {
-                    printf("String size: %d,  Max size: %d, %s\n", strlen(lang_code[i]), MAX_LANG_LINE_SIZE,code);
+                    printf("String size: %d,  Max size: %d, %s\n",
+                        (int)strlen(lang_code[i]),
+                        MAX_LANG_LINE_SIZE,code);
                     return(invalid_code);       // Found it, but string too long
                 }
             }
