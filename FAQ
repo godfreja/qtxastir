@@ -1,6 +1,6 @@
                   XASTIR Frequently Asked Questions
 
-$Id: FAQ,v 1.24 2004/01/20 21:32:31 we7u Exp $
+$Id: FAQ,v 1.25 2004/01/20 21:34:16 we7u Exp $
 
 The latest version of this FAQ is always available from the Xastir web site, at
 <http://www.xastir.org/docs/FAQ.html>, soon to be available also at:
@@ -294,6 +294,11 @@ The Answers
     ImageMagick detection code says something like:  "ld: cannot find -llcms",
     "ld: cannot find -lz", or "ld: cannot find -ljpeg".  Install the additional
     libraries that it needs, and perhaps development packages for them as well.
+    NOTE:  If the "spec" file for the ImageMagick/ImageMagick-devel RPM's had
+    the proper dependencies listed, you would have been asked to install all of
+    the dependent libraries before you could have even installed the
+    ImageMagick RPM's.  Encourage your vendor to fix the "spec" files for those
+    RPM's to include all dependencies.
 
 
 4. Running Xastir
