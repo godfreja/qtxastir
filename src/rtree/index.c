@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: index.c,v 1.3 2005/01/08 10:24:28 we7u Exp $
+ * $Id: index.c,v 1.4 2005/01/14 04:16:10 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25,7 +25,7 @@
  * MODULE:       R-Tree library 
  *              
  * AUTHOR(S):    Antonin Guttman - original code
- *               Daniel Green (green@superliminal.com) - major clean-up
+ *               Melinda Green (melinda@superliminal.com) - major clean-up
  *                               and implementation of bounding spheres
  *               
  * PURPOSE:      Multidimensional index
