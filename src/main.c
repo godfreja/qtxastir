@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.297 2003/06/18 18:40:58 we7u Exp $
+ * $Id: main.c,v 1.298 2003/06/20 21:57:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -16305,10 +16305,10 @@ int Setup_object_data(char *line, int line_length) {
         xastir_snprintf(line, line_length, "%s", XmTextFieldGetString(signpost_data));
         //fprintf(stderr,"Signpost entered: %s\n", line);
         if (strlen(line) != 0) {   // Signpost data was entered
-            // Need to check for all digits, and 1 to 3 digits
-            temp = atoi(line);
-            if ( (temp >= 0) && (temp <= 999) ) {
-                xastir_snprintf(signpost, sizeof(signpost), "{%d}", temp);
+            // Need to check for between one and three characters
+            temp = strlen(line);
+            if ( (temp >= 0) && (temp <= 3) ) {
+                xastir_snprintf(signpost, sizeof(signpost), "{%s}", line);
             } else {
                 signpost[0] = '\0';
             }
@@ -16659,10 +16659,10 @@ int Setup_item_data(char *line, int line_length) {
         xastir_snprintf(line, line_length, "%s", XmTextFieldGetString(signpost_data));
         //fprintf(stderr,"Signpost entered: %s\n", line);
         if (strlen(line) != 0) {   // Signpost data was entered
-            // Need to check for all digits, and 1 to 3 digits
-            temp = atoi(line);
-            if ( (temp >= 0) && (temp <= 999) ) {
-                xastir_snprintf(signpost, sizeof(signpost), "{%d}", temp);
+            // Need to check for between one and three characters
+            temp = strlen(line);
+            if ( (temp >= 0) && (temp <= 3) ) {
+                xastir_snprintf(signpost, sizeof(signpost), "{%s}", line);
             } else {
                 signpost[0] = '\0';
             }
