@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.159 2002/10/21 01:06:01 francais1 Exp $
+ * $Id: db.c,v 1.160 2002/10/21 03:15:34 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1882,8 +1882,17 @@ int ok_to_draw_symbol(DataRow *p_station) {
     }
     else {    // Not an object or item
 
-        // Check whether we wish to display normal stations
-        if (symbol_display_stations) {
+        // Check whether we wish to display normal local stations
+        if (p_station->flag & ST_LOCAL &&
+            !symbol_display_local_stations)
+            return 0;
+
+        // Check whether we wish to display normal nonlocal stations
+        if (!(p_station->flag & ST_LOCAL) &&
+            !symbol_display_nonlocal_stations)
+            return 0;
+
+        if (symbol_display_local_stations || symbol_display_nonlocal_stations) {
 
             // Check for weather
             if (p_station->weather_data) {

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.21 2002/10/18 05:30:35 we7u Exp $
+ * $Id: main.h,v 1.22 2002/10/21 03:15:35 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -119,7 +119,8 @@ extern int pop_up_new_bulletins;
 extern int output_station_type;
 extern int symbol_display_enable;
 extern int symbol_display_rotate;
-extern int symbol_display_stations;
+extern int symbol_display_local_stations;
+extern int symbol_display_nonlocal_stations;
 extern int symbol_display_stationary;
 extern int symbol_display_moving;
 extern int symbol_display_WX;
