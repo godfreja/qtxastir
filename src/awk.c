@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.15 2004/05/25 20:02:36 we7u Exp $
+ * $Id: awk.c,v 1.16 2004/05/25 20:45:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -32,6 +32,14 @@
 // awk_eval_expr
 // awk_new_rule
 // awk_new_program
+// awk_compile_program
+// awk_exec_action
+// awk_load_program_file
+// awk_load_program_array
+// awk_exec_begin_record
+// awk_exec_begin
+// awk_exec_end_record
+// awk_exec_end
 //
 // These functions free memory:
 // ----------------------------
