@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.63 2003/09/19 17:56:38 we7u Exp $
+ * $Id: alert.c,v 1.64 2003/12/16 16:19:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -593,6 +593,11 @@ static alert_entry *alert_match(alert_entry *alert, alert_match_level match_leve
         memmove(ptr, ptr+1, strlen(ptr)+1);
 
     for (i = 0; i < alert_max_count; i++) {
+
+        if (alert_list[i].title[0] == '\0') {
+            // Found a blank alert list entry, skip it.
+            continue;
+        }
 
         // Shorten the title
         normal_title(alert_list[i].title, title_m);
