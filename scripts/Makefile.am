@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.15 2004/10/21 08:51:50 tvrusso Exp $
+# $Id: Makefile.am,v 1.16 2004/12/05 21:46:56 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -7,8 +7,10 @@ pkglib_SCRIPTS = \
     Coordinate.pm \
     coord-convert.pl \
     fcc-get \
+    get-gnis \
     icontable.pl \
     inf2geo.pl \
+    kiss-off.pl \
     mapblast2geo.pl \
     mapfgd.pl \
     overlay.pl \
@@ -17,14 +19,13 @@ pkglib_SCRIPTS = \
     split_gnis.bash \
     split_gnis.pl \
     test_coord.pl \
+    toporama50k.pl \
+    toporama250k.pl\
     track-get.pl \
     update_langfile.pl \
     waypoint-get.pl \
     xastir-fixcfg.sh \
     xastir-migrate.sh \
-    kiss-off.pl \
-    toporama50k.pl \
-    toporama250k.pl\
     Xastir_tigerpoly.py
 
 
