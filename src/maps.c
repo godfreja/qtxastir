@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.345 2003/10/16 23:09:14 we7u Exp $
+ * $Id: maps.c,v 1.346 2003/10/18 04:49:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1469,7 +1469,7 @@ void draw_grid2(Widget w) {
         // equator based on our current offset.  Convert an equator
         // point to UTM, then add the offset into the UTM northing
         // value to get a point to start drawing from.
-        ll_to_utm(E_WGS_84,
+        ll_to_utm_ups(E_WGS_84,
             (double)0.0,    // lat  (on the equator)
             (double)3.0,    // long (on a meridian of a zone)
             &double_northing,

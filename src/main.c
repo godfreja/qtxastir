@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.358 2003/10/17 19:38:25 we7u Exp $
+ * $Id: main.c,v 1.359 2003/10/18 04:49:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2257,7 +2257,7 @@ void Coordinate_calc_compute(Widget widget, XtPointer clientData, XtPointer call
         // Process lat/lon values
         double_northing = (double)northing;
         double_easting = (double)easting;
-        ll_to_utm(E_WGS_84,
+        ll_to_utm_ups(E_WGS_84,
             (double)latitude,
             (double)longitude,
             &double_northing,

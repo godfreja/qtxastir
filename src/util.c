@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.82 2003/09/19 17:57:54 we7u Exp $
+ * $Id: util.c,v 1.83 2003/10/18 04:49:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1101,7 +1101,7 @@ void convert_xastir_to_UTM_str(char *str, int str_len, long x, long y) {
     double utmEasting;
     char utmZone[10];
  
-    ll_to_utm(E_WGS_84,
+    ll_to_utm_ups(E_WGS_84,
         (double)(-((y - 32400000l )/360000.0)),
         (double)((x - 64800000l )/360000.0),
         &utmNorthing,
@@ -1117,7 +1117,7 @@ void convert_xastir_to_UTM_str(char *str, int str_len, long x, long y) {
 
 // Convert Xastir lat/lon to UTM
 void convert_xastir_to_UTM(double *easting, double *northing, char *zone, int zone_len, long x, long y) {
-    ll_to_utm(E_WGS_84,
+    ll_to_utm_ups(E_WGS_84,
         (double)(-((y - 32400000l )/360000.0)),
         (double)((x - 64800000l )/360000.0),
         northing,
