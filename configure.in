@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Currently maintained by Chuck Byam (KG4IJB), cbyam@virginia.edu
 #
-# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.10 2002/07/22 18:08:37 we7u Exp $
+# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.11 2002/11/11 23:01:33 we7u Exp $
 #
 # Xastir Configure Script
 #
@@ -47,6 +47,12 @@ case $host in
       ac_tnc_port='"/dev/cuaa0"'
       ac_gps_port='"/dev/cuaa1"'
       AC_MSG_WARN(*** FreeBSD support is not fully implemented yet! ***)
+      ;;
+  *-*-openbsd* )
+      AC_DEFINE(XASTIR_SYSTEM, "OpenBSD")
+      ac_tnc_port='"/dev/cuaa0"'
+      ac_gps_port='"/dev/cuaa1"'
+      AC_MSG_WARN(*** OpenBSD support is not fully implemented yet! ***)
       ;;
    *-*-*sunos* )
       AC_DEFINE(XASTIR_SYSTEM, "SunOS")
