@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.34 2003/04/12 01:32:42 we7u Exp $
+ * $Id: db.h,v 1.35 2003/05/06 20:19:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -230,7 +230,6 @@ typedef struct {                //                      strlen
     char    wx_speed[4];        // in mph                   3
     time_t  wx_speed_sec_time;
     char    wx_gust[4];         // in mph                   3
-    char    wx_sustained[4];    // in mph                   3
     char    wx_hurricane_radius[4];  //nautical miles       3
     char    wx_trop_storm_radius[4]; //nautical miles       3
     char    wx_whole_gale_radius[4]; // nautical miles      3
