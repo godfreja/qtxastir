@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.c,v 1.9 2002/04/09 22:38:25 we7u Exp $
+ * $Id: xa_config.c,v 1.10 2002/04/16 18:34:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -850,7 +850,7 @@ void load_data_or_default(void) {
 
     /* WX ALERTS */
     if (!get_long ("WX_ALERTS_REFRESH_TIME", (long *)&WX_ALERTS_REFRESH_TIME))
-        WX_ALERTS_REFRESH_TIME = (time_t)30l;
+        WX_ALERTS_REFRESH_TIME = (time_t)15l;
 
     /* gps */
     if (!get_long ("GPS_TIME", (long *)&gps_time))
