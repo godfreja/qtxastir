@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.16 2002/06/06 22:03:45 we7u Exp $
+ * $Id: messages.c,v 1.17 2002/06/20 21:01:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -314,6 +314,9 @@ end_critical_section(&send_message_dialog_lock, "messages.c:clear_outgoing_messa
 
 
 
+// Adds a message to the outgoing message queue.  Doesn't actually
+// cause a transmit.  "check_and_transmit_messages()" is the
+// function which actually gets things moving.
 void output_message(char *from, char *to, char *message) {
     int ok,i,j;
     char message_out[MAX_MESSAGE_OUTPUT_LENGTH+1];

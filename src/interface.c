@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.18 2002/06/20 19:47:59 we7u Exp $
+ * $Id: interface.c,v 1.19 2002/06/20 21:01:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3643,6 +3643,11 @@ end_critical_section(&devices_lock, "interface.c:output_my_data" );
     // Decode our own transmitted packets.
     // Note that this function call is destructive to the first parameter.
     // This is why we call it _after_ we call the log_data functions.
+    //
+    // This must be the "L" packet we see in the View->Messages
+    // dialog.  We don't see a "T" packet (for TNC) and we only see
+    // "I" packets if we re-receive our own packet from the internet
+    // feeds.
     decode_ax25_line( data_txt, DATA_VIA_LOCAL, port, 1);
 }
 

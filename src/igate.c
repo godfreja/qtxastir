@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.4 2002/05/30 15:04:09 n0vh Exp $
+ * $Id: igate.c,v 1.5 2002/06/20 21:01:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -184,7 +184,7 @@ end_critical_section(&devices_lock, "igate.c:output_igate_net" );
 /****************************************************************/
 /* output data to tnc interfaces                                */
 /* from: type of port heard from                                */
-/* call: call sign heard fro                                    */
+/* call: call sign heard from                                   */
 /* line: data to gate to rf                                     */
 /* port: port data came from                                    */
 /****************************************************************/
