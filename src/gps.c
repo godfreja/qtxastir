@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.22 2003/02/15 19:39:05 we7u Exp $
+ * $Id: gps.c,v 1.23 2003/02/15 20:09:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -83,12 +83,12 @@ int decode_gps_rmc( char *data,
     char course[7];
     char sampledate[7];
 
-#ifndef __CYGWIN__
+#ifdef HAVE_STRPTIME
     char sampledatime[15];
     char *tzp;
     char tzn[512];
     struct tm stm;
-#endif // __CYGWIN__
+#endif // HAVE_STRPTIME
  
     int ok;
 
