@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.85 2005/01/08 10:06:52 we7u Exp $
+ * $Id: interface_gui.c,v 1.86 2005/03/02 17:39:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6319,13 +6319,15 @@ void modify_device_list(int option, int port) {
     char temp2[150];
     XmString str_ptr;
 
+
     n=1;
     for (i=0; i < MAX_IFACE_DEVICES; i++) {
         if (devices[i].device_type!=DEVICE_NONE) {
             switch (option) {
                 case 0 :
                     /* delete entire list available */
-                    XmListDeletePos(control_iface_list,1);
+                    XmListDeleteAllItems(control_iface_list);
+                    return; // Exit routine
                     break;
 
                 case 1 :
@@ -6536,7 +6538,8 @@ void modify_device_list(int option, int port) {
 
                 case 4 :
                     /* delete entire list available */
-                    XmListDeletePos(control_iface_list,1);
+                    XmListDeleteAllItems(control_iface_list);
+                    return; // Exit routine
                     break;
 
                 default:
