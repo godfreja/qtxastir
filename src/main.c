@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.206 2003/01/27 23:18:45 we7u Exp $
+ * $Id: main.c,v 1.207 2003/01/27 23:58:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15869,11 +15869,23 @@ void updateObjectPictureCallback(/*@unused@*/ Widget w, /*@unused@*/ XtPointer c
     group = (XmTextFieldGetString(object_group_data))[0];
     symb  = (XmTextFieldGetString(object_symbol_data))[0];
     if (group == '/' || group == '\\') {
+        // No overlay character
         table   = group;
         overlay = ' ';
     } else {
-        table   = '\\';
-        overlay = group;
+        // Found overlay character.  Check that it's a valid
+        // overlay.
+        if ( (group >= '0' && group <= '9')
+                || (group >= 'A' && group <= 'Z') ) {
+            // Valid overlay character
+            table   = '\\';
+            overlay = group;
+        }
+        else {
+            // Bad overlay character
+            table = '\\';
+            overlay = ' ';
+        }
     }
     symbol(object_icon,0,table,symb,overlay,Ob_icon,0,0,0,' ');         // create icon
 
