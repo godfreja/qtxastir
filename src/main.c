@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.177 2002/12/14 07:52:25 we7u Exp $
+ * $Id: main.c,v 1.178 2002/12/14 08:16:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9524,7 +9524,7 @@ void map_chooser_select_maps(Widget widget, XtPointer clientData, XtPointer call
 // inside the directory.
 if (temp[strlen(temp)-1] == '/') {
     strcpy(selected_dir,temp);  // Save it
-printf("Selected %s directory\n",selected_dir);
+//printf("Selected %s directory\n",selected_dir);
 }
                     XtFree(temp);
                 }
@@ -9532,7 +9532,7 @@ printf("Selected %s directory\n",selected_dir);
             else if (selected_dir[0] != '\0') {
                 if (XmStringGetLtoR(list[(x-1)],XmFONTLIST_DEFAULT_TAG,&temp)) {
                     if (strstr(temp,selected_dir) == temp) {
-printf("Also matched: %s\n",temp);
+//printf("Also matched: %s\n",temp);
                         fprintf(f,"%s\n",temp);
                     }
                     XtFree(temp);
