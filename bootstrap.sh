@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# $Id: bootstrap.sh,v 1.7 2004/02/04 20:41:00 we7u Exp $
+#
 # Copyright (C) 2000-2004  The Xastir Group
 #
 #
