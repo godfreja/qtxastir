@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.19 2003/01/24 00:34:51 we7u Exp $
+ * $Id: xastir.h,v 1.20 2003/01/30 19:45:16 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -119,6 +119,7 @@ extern XtAppContext app_context;
 extern int redraw_on_new_data;
 //extern Widget hidden_shell;
 extern int tiger_flag;
+extern int index_maps_on_startup;
 
 #ifdef HAVE_IMAGEMAGICK  //N0VH
 extern int tiger_show_grid;

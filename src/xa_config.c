@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.69 2003/01/24 04:57:28 we7u Exp $
+ * $Id: xa_config.c,v 1.70 2003/01/30 19:45:16 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -366,6 +366,7 @@ void save_data(void)  {
         store_int (fout, "MAPS_LABELS", map_labels);
         store_int (fout, "MAPS_AUTO_MAPS", map_auto_maps);
         store_int (fout, "MAPS_AUTO_MAPS_SKIP_RASTER", auto_maps_skip_raster);
+        store_int (fout, "MAPS_INDEX_ON_STARTUP", index_maps_on_startup);
 
 //N0VH
 #if defined(HAVE_IMAGEMAGICK)
@@ -832,6 +833,9 @@ void load_data_or_default(void) {
 
     if (!get_int ("MAPS_AUTO_MAPS_SKIP_RASTER", &auto_maps_skip_raster, 0, 1, 0))
         auto_maps_skip_raster = 0;
+
+    if (!get_int ("MAPS_INDEX_ON_STARTUP", &index_maps_on_startup, 0, 1, 1))
+      index_maps_on_startup = 1;
 
 //N0VH
 #if defined(HAVE_IMAGEMAGICK)

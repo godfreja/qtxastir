@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.72 2003/01/23 01:18:21 francais1 Exp $
+# $Id: language-Dutch.sys,v 1.73 2003/01/30 19:45:12 kd6zwr Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -62,7 +62,6 @@ PULDNCF004|Station|t|
 PULDNCF006|Audio Alarm|A|
 PULDNCF007|Spraak|p|
 PULDNCF008|Instellingen Nu Bewaren!|I|
-PULDNCF003|Re-Index Maps|R|
 # (Units see PULDNDP006)
 #
 # Menu "Maps"
@@ -82,6 +81,8 @@ PULDNMP011|Muis Menu|M|
 PULDNMP008|Kaart Intensiteit|I|
 PULDNMP020|Aanzetten/Configureren Tigermap||
 PULDNMP021|Auto Map - Disable Raster Maps||
+PULDNMP022|Index Maps on Startup||
+PULDNMP023|Re-Index Maps|R|
 #
 #
 # PopUp "Configureren Tigermap"

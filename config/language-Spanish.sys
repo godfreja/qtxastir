@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.74 2003/01/23 01:18:22 francais1 Exp $
+# $Id: language-Spanish.sys,v 1.75 2003/01/30 19:45:14 kd6zwr Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -57,7 +57,6 @@ PULDNCF002|Sistema de Coordenada|C|
 PULDNCF006|Audio Alarmas|A|
 PULDNCF007|Sintetizador de Voz|S|
 PULDNCF008|Guardar Configuración!|G|
-PULDNCF003|Re-Index Maps|R|
 # (Unidades ver PULDNDP006)
 #
 # Menú de Mapas
@@ -77,6 +76,8 @@ PULDNMP011|Menú Indicador del Ratón|R|
 PULDNMP008|Intensidad del Mapa|I|
 PULDNMP020|Enable/Configure Tigermap||
 PULDNMP021|Auto Map - Disable Raster Maps||
+PULDNMP022|Index Maps on Startup||
+PULDNMP023|Re-Index Maps|R|
 #
 #
 # PopUp "Configure Tigermap"

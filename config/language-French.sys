@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.72 2003/01/23 01:18:21 francais1 Exp $
+# $Id: language-French.sys,v 1.73 2003/01/30 19:45:13 kd6zwr Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -56,7 +56,6 @@ PULDNCF002|Coordinate System|C|
 PULDNCF006|Alertes sonores|A|
 PULDNCF007|Parole|P|
 PULDNCF008|Sauver configuration maintenant!|a|
-PULDNCF003|Re-Index Maps|R|
 # (Units see PULDNDP006)
 #
 # Menu "Maps"
@@ -76,6 +75,8 @@ PULDNMP011|Menu souris|e|
 PULDNMP008|Intensité des cartes|I|
 PULDNMP020|Enable/Configure Tigermap||
 PULDNMP021|Auto Map - Disable Raster Maps||
+PULDNMP022|Index Maps on Startup||
+PULDNMP023|Re-Index Maps|R|
 #
 #
 # PopUp "Configure Tigermap"
