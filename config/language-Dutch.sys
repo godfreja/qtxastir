@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.144 2004/08/20 16:52:01 we7u Exp $
+# $Id: language-Dutch.sys,v 1.145 2004/08/24 04:47:51 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -653,10 +653,11 @@ WPUPMSB003|Stations Roepnaam:||
 WPUPMSB004|Groeps Roepnaam:||
 WPUPMSB005|Nieuwe Roepnaam||
 WPUPMSB006|Nieuwe Groep||
-WPUPMSB007|Wis Berichten||
+WPUPMSB007|Clear Msg History||
 WPUPMSB008|Bericht:||
 WPUPMSB009|Stuur Nu!||
 WPUPMSB010|Path:||
+WPUPMSB011|Cancel Pending Msgs||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Automatich Antwoord Bericht||

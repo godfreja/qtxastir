@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.35 2004/08/19 06:38:23 we7u Exp $
+ * $Id: messages.c,v 1.36 2004/08/24 04:47:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -338,6 +338,40 @@ void clear_outgoing_message(int i) {
     message_pool[i].active_time=0;;
     message_pool[i].next_time=0l;
     message_pool[i].tries=0;
+}
+
+
+
+
+
+// Clear all pending transmit messages that are from us and to the
+// callsign listed.  Perhaps it'd be better to time it out instead
+// so that it still shows up in the message window?  Here we just
+// erase it.
+//
+void clear_outgoing_messages_to(char *callsign) {
+    int ii;
+
+
+//    fprintf(stderr,"Callsign: %s\n", callsign);
+
+    // Run through the entire outgoing message queue
+    for (ii = 0; ii < MAX_OUTGOING_MESSAGES; ii++) {
+
+        // If it matches the callsign we're talking to
+        if (strcasecmp(message_pool[ii].to_call_sign,callsign) == 0) {
+
+            // Clear it out.
+            message_pool[ii].active=MESSAGE_CLEAR;
+            message_pool[ii].to_call_sign[0] = '\0';
+            message_pool[ii].from_call_sign[0] = '\0';
+            message_pool[ii].message_line[0] = '\0';
+            message_pool[ii].seq[0] = '\0';
+            message_pool[ii].active_time=0;;
+            message_pool[ii].next_time=0l;
+            message_pool[ii].tries=0;
+        }
+    }
 }
 
 

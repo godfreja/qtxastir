@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.141 2004/08/20 16:52:01 we7u Exp $
+# $Id: language-Italian.sys,v 1.142 2004/08/24 04:47:51 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -642,10 +642,11 @@ WPUPMSB003|Nominativi stazioni:||
 WPUPMSB004|Nominativo gruppo:||
 WPUPMSB005|Nuovo nominativo||
 WPUPMSB006|Nuovo gruppo||
-WPUPMSB007|Elimina messaggi||
+WPUPMSB007|Clear Msg History||
 WPUPMSB008|Messaggio:||
 WPUPMSB009|Invia ora!||
 WPUPMSB010|Percorso:||
+WPUPMSB011|Cancel Pending Msgs||
 #
 #Auto Reply
 WPUPARM001|Cambia risposta automatica||
