@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.28 2002/07/13 17:38:19 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.29 2002/07/15 23:03:16 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -642,6 +642,7 @@ IFDNL00006|AX.25 TNC||
 IFDNL00007|GPS ligado via o servidor gpsd||
 IFDNL00008|Est. meteorológica ligada a uma REDE||
 IFDNL00009|TNC com GPS na porta AUX||
+IFDNL00010|Serial KISS TNC||
 #
 # Info dispositivo interface
 IFDIN00000|%s %d %s sobre serie %s||

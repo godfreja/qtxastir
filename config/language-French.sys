@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.33 2002/07/13 17:38:19 we7u Exp $
+# $Id: language-French.sys,v 1.34 2002/07/15 23:03:16 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -643,6 +643,7 @@ IFDNL00006|TNC AX25||
 IFDNL00007|GPS réseau (par gpsd)||
 IFDNL00008|Météo par réseau||
 IFDNL00009|TNC série + GPS sur câble AUX||
+IFDNL00010|Serial KISS TNC||
 #
 # Interface device info 
 IFDIN00000|%s %d %s sur port série %s||
