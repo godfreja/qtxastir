@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.47 2004/09/08 19:22:52 we7u Exp $
+$Id: INSTALL,v 1.48 2004/09/09 15:06:09 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -1050,6 +1050,11 @@ profile listing, but be prepared for a long run-time and a lot of
 CPU to be used by gprof to generate it:
 
     gprof -l /usr/local/bin/xastir | tee profile.txt
+
+Also see this link, which talks about how to profile multithreaded
+applications:
+
+    http://sam.zoy.org/writings/programming/gprof.html
 
 
 Checking for Memory Leaks:
