@@ -4,7 +4,7 @@
 # Released to the public domain.
 # Modified from the earlier inf2geo.pl script.
 #
-# $Id: ozi2geo.pl,v 1.1 2004/03/18 17:58:42 we7u Exp $
+# $Id: ozi2geo.pl,v 1.2 2004/03/18 18:11:57 we7u Exp $
 #
 # Read in .map file (an OziExplorer file in this case).
 # Check the version of the map format (1st line).  My example is
@@ -19,8 +19,7 @@
 # Write out the .geo file
 #
 # 2003-08-15 ZL2UMF: add processing multiple files in one go (masks
-# and whot-not) so you can convert all your ui-view maps in one
-# step.
+# and whot-not) so you can convert all your maps in one step.
 
 #use strict; 
 use IO::File;
