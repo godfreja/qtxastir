@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.153 2004/10/29 20:00:50 we7u Exp $
+# $Id: language-Spanish.sys,v 1.154 2004/10/30 21:01:35 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -465,6 +465,7 @@ WPUPCFT040|Configurar un Multi-Port KISS TNC||
 WPUPCFT041|Radio Port||
 WPUPCFT042|Dubious UNPROTO Path!||
 WPUPCFT043|Please consider a shorter path such as WIDE2-2 or RELAY,WIDE2-2||
+WPUPCFT044|Dubious IGATE Path!||
 #
 # Configurar el Puerto de la Estación Meteorológica
 WPUPCFWX01|Configurar el Puerto de la Estación Meteorológica||

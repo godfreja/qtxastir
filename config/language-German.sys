@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.148 2004/10/29 20:00:50 we7u Exp $
+# $Id: language-German.sys,v 1.149 2004/10/30 21:01:34 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -468,6 +468,7 @@ WPUPCFT040|Multi-Port KISS TNC konfigurieren||
 WPUPCFT041|Funkgerät Port||
 WPUPCFT042|Dubious UNPROTO Path!||
 WPUPCFT043|Please consider a shorter path such as WIDE2-2 or RELAY,WIDE2-2||
+WPUPCFT044|Dubious IGATE Path!||
 # 
 # PopUp "Einstellungen Wetterstation"
 WPUPCFWX01|Einstellungen Wetterstation||
