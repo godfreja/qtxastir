@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.176 2004/06/18 15:35:47 we7u Exp $
+ * $Id: interface.c,v 1.177 2004/06/18 15:38:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2856,7 +2856,7 @@ fprintf(stderr, "\n***** %s\n\n", buffer);
                         fprintf(stderr, "Class: Incident Command System\n");
                     }
                     else if ((etype & 0xff00) == 0xf000) {
-                        // Note:  0xffff Null element is caught in
+                        // Note:  0xffff Null element is caught
                         // before we get to here.
                         fprintf(stderr, "Class: Experimental\n");
                     }
