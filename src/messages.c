@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.44 2004/12/01 19:45:13 we7u Exp $
+ * $Id: messages.c,v 1.45 2004/12/07 06:01:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,7 +35,11 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
+#ifdef HAVE_STRING_H
+#  include <string.h>
+#else
+#  include <strings.h>
+#endif
 #include <ctype.h>
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -1020,5 +1024,4 @@ void send_queued(char *to) {
 
     }
 }
-
 

@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.23 2004/10/18 18:58:10 we7u Exp $
+ * $Id: view_message_gui.c,v 1.24 2004/12/07 06:01:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,7 +35,11 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
+#ifdef HAVE_STRING_H
+#  include <string.h>
+#else
+#  include <strings.h>
+#endif
 #include <ctype.h>
 #include <sys/types.h>
 
@@ -464,5 +468,4 @@ end_critical_section(&All_messages_dialog_lock, "view_message_gui.c:view_all_mes
         (void)XRaiseWindow(XtDisplay(All_messages_dialog), XtWindow(All_messages_dialog));
     }
 }
-
 
