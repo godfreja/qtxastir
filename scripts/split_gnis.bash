@@ -1,10 +1,14 @@
 #!/bin/sh
 
-# $Id: split_gnis.bash,v 1.1 2004/03/15 23:47:22 we7u Exp $
+# $Id: split_gnis.bash,v 1.2 2004/03/15 23:49:20 we7u Exp $
 
 # script created 14-MAR-04 by William Baguhn, kc9asi
 # This script is in the public domain.
 # Comments or suggestions to kc9asi@arrl.net
+
+# This script uses the "fromdos" program.  You may need to change
+# that line to use "dos2unix" instead, depending on what utilities
+# are available on your system.
 
 # This will take a GNIS datapoint file (typically for a whole state, 8+Mb),
 # break it down into smaller chunks (typically for a county, 30-200k)
