@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.36 2004/08/24 04:47:53 we7u Exp $
+ * $Id: messages.c,v 1.37 2004/09/28 21:53:03 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -179,6 +179,9 @@ void group_build_list(char *filename) {
             else
                 while ((i = fgetc(f)) != EOF && i != '\n'); // clean-up after long group name
 
+	// check for DOS EOL markup!
+            if ((ptr = strchr(&group_data_list[group_data_count*10], '\r')))
+                *ptr = '\0';
             if (group_data_list[group_data_count*10])
                 group_data_count++;
         }
