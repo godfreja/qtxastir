@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.60 2002/04/18 22:46:35 francais1 Exp $
+ * $Id: main.c,v 1.61 2002/04/23 23:39:40 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4284,6 +4284,32 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
             // Do nothing.  We have a popup tied into the button press anyway.
             // (Mouse_button_handler & right_menu_popup).
             // Leave the button release alone in this case.
+            mouse_zoom = 0;
+        }
+        else if (event->xbutton.button == Button4) {
+// Scroll up
+            menu_x=input_x;
+            menu_y=input_y;
+            Pan_up(w, client_data, call_data);
+        }
+        else if (event->xbutton.button == Button5) {
+// Scroll down
+            menu_x=input_x;
+            menu_y=input_y;
+            Pan_down(w, client_data, call_data);
+        }
+        else if (event->xbutton.button == 6) {
+// Mouse button 6 release
+            menu_x=input_x;
+            menu_y=input_y;
+            Zoom_out_no_pan(w, client_data, call_data);
+            mouse_zoom = 0;
+        }
+        else if (event->xbutton.button == 7) {
+// Mouse button 7 release
+            menu_x=input_x;
+            menu_y=input_y;
+            Zoom_in_no_pan(w, client_data, call_data);
             mouse_zoom = 0;
         }
     }
