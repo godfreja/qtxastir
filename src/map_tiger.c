@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.11 2003/12/18 06:45:50 we7u Exp $
+ * $Id: map_tiger.c,v 1.12 2003/12/20 00:28:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -577,9 +577,9 @@ void draw_tiger_map (Widget w,
             else {  // QuantumDepth = 8
                 if (debug_level & 512)
                     fprintf(stderr,"Color quantum is [0..255]\n");
-                my_colors[l].red   = temp_pack.red   << 8;
-                my_colors[l].green = temp_pack.green << 8;
-                my_colors[l].blue  = temp_pack.blue  << 8;
+                my_colors[l].red   = (temp_pack.red << 8) * raster_map_intensity;
+                my_colors[l].green = (temp_pack.green << 8) * raster_map_intensity;
+                my_colors[l].blue  = (temp_pack.blue << 8) * raster_map_intensity;
             }
 
             // Get the color allocated on < 8bpp displays. pixel color is written to my_colors.pixel
@@ -767,9 +767,9 @@ void draw_tiger_map (Widget w,
                             XSetForeground(XtDisplay(w), gc, my_colors[index_pack[l]].pixel);
                         }
                         else {
-                            pack_pixel_bits(pixel_pack[l].red,
-                                            pixel_pack[l].green,
-                                            pixel_pack[l].blue,
+                            pack_pixel_bits(pixel_pack[l].red * raster_map_intensity,
+                                            pixel_pack[l].green * raster_map_intensity,
+                                            pixel_pack[l].blue * raster_map_intensity,
                                             &my_colors[0].pixel);
                             XSetForeground(XtDisplay(w), gc, my_colors[0].pixel);
                         }
