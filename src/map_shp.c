@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.33 2003/11/25 15:05:51 n2ygk Exp $
+ * $Id: map_shp.c,v 1.34 2003/11/26 16:14:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -165,7 +165,7 @@ void create_shapefile_map(char *dir, char *shapefile_name, int type,
             shapefile_name);
 
         // Change spaces to underlines
-        for (ii = 0; ii < strlen(temp_shapefile_name); ii++) {
+        for (ii = 0; ii < (int)strlen(temp_shapefile_name); ii++) {
             if (temp_shapefile_name[ii] == ' ') {
                 temp_shapefile_name[ii] = '_';
             }
