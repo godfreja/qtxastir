@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.40 2002/11/15 02:02:50 we7u Exp $
+ * $Id: util.c,v 1.41 2002/11/21 18:20:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1566,9 +1566,16 @@ void disown_object_item(char *call_sign, char *new_owner) {
         if (valid_object(name)) {
 
             if ( strcmp(name,call_sign) == 0 ) {
-                // Match.  Comment it out in the file.
-                fprintf(f,"#%s",line);
-                //printf("#%s",line);
+                // Match.  Comment it out in the file unless it's
+                // already commented out.
+                if (line[0] != '#') {
+                    fprintf(f,"#%s",line);
+                    //printf("#%s",line);
+                }
+                else {
+                    fprintf(f,"%s",line);
+                    //printf("%s",line);
+                }
             }
             else {
                 // No match.  Copy the line verbatim unless it's just a
