@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.92 2003/10/14 20:37:35 we7u Exp $
+ * $Id: xa_config.c,v 1.93 2003/10/28 23:46:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -737,13 +737,13 @@ void load_data_or_default(void) {
         sprintf (my_comment, "XASTIR-%s", XASTIR_SYSTEM);
 
     /* default values */
-    if (!get_long ("SCREEN_WIDTH", &screen_width, 0l, 10000l, 640l))
+    if (!get_long ("SCREEN_WIDTH", &screen_width, 100l, 10000l, 640l))
         screen_width = 640;
 
     if (screen_width < 100)
         screen_width = 100;
 
-    if (!get_long ("SCREEN_HEIGHT", &screen_height, 0l, 10000l, 480l))
+    if (!get_long ("SCREEN_HEIGHT", &screen_height, 40l, 10000l, 480l))
         screen_height = 480;
 
     if (screen_height < 40)
