@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.198 2003/02/04 04:08:38 jtwilley Exp $
+ * $Id: maps.c,v 1.199 2003/02/04 08:43:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3990,7 +3990,7 @@ void clean_string(char *input) {
             strcpy(input,i+1);
         }
         else {  // We only found one quote character.  What to do?
-            fprintf(stderr,"clean_string: Only one quote found!\n");
+//            fprintf(stderr,"clean_string: Only one quote found!\n");
         }
     }
     //fprintf(stderr,"|%s|\n",input);
