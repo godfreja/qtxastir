@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Currently maintained by Chuck Byam (KG4IJB), cbyam@virginia.edu
 #
-# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.8 2002/04/10 17:21:23 we7u Exp $
+# $Header: /cvsroot/xastir/xastir/Attic/configure.in,v 1.9 2002/05/09 19:34:16 we7u Exp $
 #
 # Xastir Configure Script
 #
@@ -185,6 +185,7 @@ AC_OUTPUT([Makefile \
     m4/Makefile \
     config/Makefile \
     help/Makefile \
+    scripts/Makefile \
     symbols/Makefile \
     callpass/Makefile \
     xastir.spec])
