@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.27 2004/01/26 16:09:49 we7u Exp $
+$Id: README.MAPS,v 1.28 2004/02/23 22:52:19 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -307,6 +307,10 @@ Getting Maps and other Data Files for Xastir:
       For more detailed documentation, see the shpproj.txt file in the
       "<shapelib source directory>/contrib/doc" directory.
 
+      There's a resource for looking up the FIPS codes for a particular
+      area:
+
+            http://www.aprs.net/fips/
 
       An important note about shpproj from Tom Russo, KM5VY:
 
