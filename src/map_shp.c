@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.78 2004/11/17 16:11:35 we7u Exp $
+ * $Id: map_shp.c,v 1.79 2004/12/12 22:21:41 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3330,7 +3330,7 @@ if (on_screen) {
                         }
 
                         if ( (i >= 3)
-                                && (ok_to_draw)
+                                && (ok_to_draw && !skip_it)
                                 && ( !draw_filled || !map_color_fill || (draw_filled && polygon_hole_storage[ring] == 0) ) ) {
                             // We have a polygon to draw!
 //WE7U3
