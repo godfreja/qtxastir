@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.23 2004/11/20 02:49:31 we7u Exp $
+ * $Id: map_tiger.c,v 1.24 2004/11/30 06:56:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -207,6 +207,8 @@ void draw_tiger_map (Widget w,
     int geo_image_width;        // Image width  from GEO file
     int geo_image_height;       // Image height from GEO file
 
+    time_t query_start_time, query_end_time; 
+
 #ifdef USE_MAP_CACHE 
 	int map_cache_return; 
 #endif  // USE_MAP_CACHE
@@ -395,6 +397,9 @@ void draw_tiger_map (Widget w,
           fprintf(stderr,"ftp or http file: %s\n", fileimg);
     }
 
+    if (debug_level & 512) {
+        query_start_time=time(&query_start_time); 
+    }
 
 #ifdef USE_MAP_CACHE 
 
@@ -507,13 +512,16 @@ void draw_tiger_map (Widget w,
 
     // For debugging the MagickError/MagickWarning segfaults.
     //system("cat /dev/null >/var/tmp/xastir_hacker_map.gif");
-
+    
 #ifdef USE_MAP_CACHE
 
 	map_cache_put(fileimg,local_filename); 
 
         } // end if is cached  DHBROWN
 #endif // MAP_CACHE
+
+    (debug_level & 512) && fprintf (stderr, "Query took %d seconds\n", 
+                            (int) (time(&query_end_time) - query_start_time)); 
 
     // Set permissions on the file so that any user can overwrite it.
     chmod(local_filename, 0666);
