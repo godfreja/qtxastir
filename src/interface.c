@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.58 2003/01/30 21:34:14 we7u Exp $
+ * $Id: interface.c,v 1.59 2003/01/30 22:09:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3518,7 +3518,7 @@ begin_critical_section(&devices_lock, "interface.c:startup_all_or_defined_port" 
                             0,
                             0,
                             devices[i].reconnect,
-                            NULL);
+                            "");
                     }
                     break;
 
@@ -3532,7 +3532,7 @@ begin_critical_section(&devices_lock, "interface.c:startup_all_or_defined_port" 
                             devices[i].sp,
                             devices[i].style,
                             0,
-                            NULL);
+                            "");
                     }
                     break;
 
@@ -3551,7 +3551,7 @@ begin_critical_section(&devices_lock, "interface.c:startup_all_or_defined_port" 
                             0,
                             0,
                             devices[i].reconnect,
-                            NULL);
+                            "");
                     }
                     break;
 
@@ -3565,7 +3565,7 @@ begin_critical_section(&devices_lock, "interface.c:startup_all_or_defined_port" 
                             devices[i].sp,
                             devices[i].style,
                             0,
-                            NULL);
+                            "");
                     }
                     break;
 
@@ -3585,7 +3585,7 @@ begin_critical_section(&devices_lock, "interface.c:startup_all_or_defined_port" 
                             devices[i].sp,
                             devices[i].style,
                             0,
-                            NULL);
+                            "");
                     }
                     break;
 
@@ -3599,7 +3599,7 @@ begin_critical_section(&devices_lock, "interface.c:startup_all_or_defined_port" 
                             -1,
                             -1,
                             0,
-                            NULL);
+                            "");
                     }
                     break;
 
