@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.1 2003/06/26 15:37:21 n2ygk Exp $
+ * $Id: map_dos.c,v 1.2 2003/06/30 16:52:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -87,9 +87,9 @@ static symbol_label *map_symbol_label_ptr;
 
 /* MAP counters */
 
-static long vectors_num;
-static long text_label_num;
-static long object_label_num;
+//static long vectors_num;
+//static long text_label_num;
+//static long object_label_num;
 
 
 
@@ -323,7 +323,7 @@ draw_dos_map(Widget w,
   char map_type[5];
   char map_version[5];
   char file_name[33];
-  char *ext;
+//  char *ext;
   char map_title[33];
   char map_creator[8];
   unsigned long creation_date;
