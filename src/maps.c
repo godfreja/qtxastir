@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.146 2002/10/03 18:25:35 we7u Exp $
+ * $Id: maps.c,v 1.147 2002/10/03 18:35:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5401,7 +5401,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm, int destination_pixm
             printf("%s",tempfile);
 
         if ( system(tempfile) ) {   // Go get the file
-            printf("Couldn't download the image\n");
+            printf("Couldn't download the geo or Terraserver image\n");
             return;
         }
 
@@ -6107,7 +6107,7 @@ void draw_tiger_map (Widget w) {
        printf("%s",tempfile);
 
     if (system(tempfile)) {   // Go get the file
-       printf("Couldn't download the image\n");
+       printf("Couldn't download the Tigermap image\n");
        return;
     }
 

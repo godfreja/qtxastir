@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.6 2002/09/19 07:56:56 we7u Exp $
+ * $Id: track_gui.c,v 1.7 2002/10/03 18:35:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -411,7 +411,7 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
         printf("%s",tempfile);
 
     if ( system(tempfile) ) {   // Go get the file
-        printf("Couldn't download the image\n");
+        printf("Couldn't download the trail\n");
         return;
     }
 
