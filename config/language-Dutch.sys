@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.106 2003/09/26 17:06:26 we7u Exp $
+# $Id: language-Dutch.sys,v 1.107 2003/09/28 22:39:43 n2ygk Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -1001,6 +1001,10 @@ GAMMA001|Stel Gamma Correctie bij||
 GAMMA002|Gamma Correctie||
 #
 #
+# Map labels font Dialog
+MAPFONT001|Change Map Labels Font||
+MAPFONT002|Map Labels Font||
+MAPFONT003|Font name:||
 #
 # Distance/Bearing on status line
 PULDNDB001|Afst/Richting Status||

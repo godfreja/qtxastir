@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.112 2003/09/26 17:06:26 we7u Exp $
+# $Id: language-Spanish.sys,v 1.113 2003/09/28 22:39:43 n2ygk Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -989,6 +989,11 @@ SMARTB011|Activar Baliza Inteligente(tm)||
 # Diálogo Ajuste de Gamma
 GAMMA001|Ajuste Corrección de Gamma||
 GAMMA002|Corrección Gamma||
+#
+# Map labels font Dialog
+MAPFONT001|Change Map Labels Font||
+MAPFONT002|Map Labels Font||
+MAPFONT003|Font name:||
 #
 # Distancia/Orientación en línea de estado
 PULDNDB001|Estado de Distancia/Orientación||
