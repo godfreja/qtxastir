@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.45 2002/06/04 20:27:10 we7u Exp $
+ * $Id: db.c,v 1.46 2002/06/04 21:20:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -262,10 +262,10 @@ static int message_update_delay = 300;
 
 
 
-void init_message_data(void) {          // called at start of main
+void init_message_data(void) {  // called at start of main
 
     new_message_data = 0;
-    message_counter = 0;
+//    message_counter = 0;  // Now read in from config file instead
     last_message_remove = sec_now();
 }
 
