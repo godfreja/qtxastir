@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.126 2003/06/16 22:56:10 we7u Exp $
+ * $Id: interface.c,v 1.127 2003/07/07 20:22:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -724,7 +724,7 @@ void channel_data(int port, unsigned char *string, int length) {
 
 
         // If it's any of three types of GPS ports and is a GPRMC or
-        // GPGGA string, just stick it in a one of two global
+        // GPGGA string, just stick it in one of two global
         // variables for holding such strings.  UpdateTime() can
         // come along and process/clear-out those strings at the
         // gps_time interval.
