@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.9 2002/03/28 00:54:38 francais1 Exp $
+ * $Id: util.c,v 1.10 2002/04/01 20:28:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -832,8 +832,8 @@ void convert_xastir_to_UTM_str(char *str, int str_len, long x, long y) {
 //
 // CONVERT_LP_NOSP      = DDMM.MMN
 // CONVERT_LP_NORMAL    = DD MM.MMN
-// CONVERT_HP_NOSP      = DDMMM.MMN
-// CONVERT_UP_TRK       = NDD MMMM.MM
+// CONVERT_HP_NOSP      = DDMM.MMMN
+// CONVERT_UP_TRK       = NDD MM.MMMM
 // CONVERT_DEC_DEG      = DD.DDDDDN
 // CONVERT_DMS_NORMAL   = DD MM SSN
 // CONVERT_HP_NORMAL    = DD MM.MMMN
@@ -891,8 +891,8 @@ void convert_lat_l2s(long lat, char *str, int str_len, int type) {
 //
 // CONVERT_LP_NOSP      = DDDMM.MME
 // CONVERT_LP_NORMAL    = DDD MM.MME
-// CONVERT_HP_NOSP      = DDDMMM.MME
-// CONVERT_UP_TRK       = EDDD MMMM.MM
+// CONVERT_HP_NOSP      = DDDMM.MMME
+// CONVERT_UP_TRK       = EDDD MM.MMMM
 // CONVERT_DEC_DEG      = DDD.DDDDDE
 // CONVERT_DMS_NORMAL   = DDD MM SSN
 // CONVERT_HP_NORMAL    = DDD MM.MMME
