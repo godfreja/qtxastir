@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.14 2002/08/05 22:07:54 we7u Exp $
+ * $Id: messages_gui.c,v 1.15 2002/08/05 22:29:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -558,9 +558,9 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message" 
         XtSetArg(args[n], XmNrightAttachment,XmATTACH_FORM); n++;
         XtSetArg(args[n], XmNrightOffset,5); n++;
         XtSetArg(args[n], XmNautoShowCursorPosition, FALSE); n++;
+        XtSetArg(args[n], XmNforeground, MY_FG_COLOR); n++;
 
-// These two cause segfaults:
-//        XtSetArg(args[n], XmNforeground, MY_FG_COLOR); n++;
+// This one causes segfaults, why?
 //        XtSetArg(args[n], XmNbackground, MY_BG_COLOR); n++;
  
         mw[i].send_message_text = XmCreateScrolledText(mw[i].form,
