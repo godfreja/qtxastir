@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.37 2003/05/21 23:16:56 we7u Exp $
+ * $Id: db.h,v 1.38 2003/08/21 19:31:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -224,6 +224,7 @@ typedef struct {
 // An empty string indicates undefined data.
 typedef struct {                //                      strlen
     time_t  wx_sec_time;
+    int     wx_storm;           // Set to one if severe storm
     char    wx_time[MAX_TIME];
     char    wx_course[4];       // in °                     3
     char    wx_speed[4];        // in mph                   3
