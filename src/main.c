@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.440 2004/02/02 20:58:38 we7u Exp $
+ * $Id: main.c,v 1.441 2004/02/04 16:49:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7715,7 +7715,7 @@ void create_gc(Widget w) {
                     xbm_path, &_w, &_h, &pixmap_50pct_stipple, &_xh, &_yh);
 
     if (ret_val != 0) {
-        fprintf(stderr,"Bitmap not found: %s\n",xbm_path);
+        fprintf(stderr,"XReadBitmapFile() failed: Bitmap not found? %s\n",xbm_path);
         exit(1);
     }
 
@@ -7724,7 +7724,7 @@ void create_gc(Widget w) {
                     xbm_path, &_w, &_h, &pixmap_25pct_stipple, &_xh, &_yh);
 
     if (ret_val != 0) {
-        fprintf(stderr,"Bitmap not found: %s\n",xbm_path);
+        fprintf(stderr,"XReadBitmapFile() failed: Bitmap not found? %s\n",xbm_path);
         exit(1);
     }
 
@@ -7733,7 +7733,7 @@ void create_gc(Widget w) {
                     xbm_path, &_w, &_h, &pixmap_13pct_stipple, &_xh, &_yh);
 
     if (ret_val != 0) {
-        fprintf(stderr,"Bitmap not found: %s\n",xbm_path);
+        fprintf(stderr,"XReadBitmapFile() failed: Bitmap not found? %s\n",xbm_path);
         exit(1);
     }
 
@@ -7742,7 +7742,7 @@ void create_gc(Widget w) {
                     xbm_path, &_w, &_h, &pixmap_wx_stipple, &_xh, &_yh);
 
     if (ret_val != 0) {
-        fprintf(stderr,"Bitmap not found: %s\n",xbm_path);
+        fprintf(stderr,"XReadBitmapFile() failed: Bitmap not found? %s\n",xbm_path);
         exit(1);
     }
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.43 2004/01/26 16:18:23 we7u Exp $
+ * $Id: map_shp.c,v 1.44 2004/02/04 16:49:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1377,7 +1377,7 @@ void draw_shapefile_map (Widget w,
                         xbm_path, &_w, &_h, &pixmap_wx_stipple, &_xh, &_yh);
 
         if (ret_val != 0) {
-            fprintf(stderr,"Bitmap not found: %s\n",xbm_path);
+            fprintf(stderr,"XReadBitmapFile() failed: Bitmap not found? %s\n",xbm_path);
             exit(1);
         }
 
