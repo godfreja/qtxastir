@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.348 2004/07/16 18:27:30 we7u Exp $
+ * $Id: db.c,v 1.349 2004/07/19 21:17:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -480,7 +480,6 @@ int msg_comp_data(const void *a, const void *b) {
 
 
 void msg_input_database(Message *m_fill) {
-#define MSG_INCREMENT 25
     void *m_ptr;
     long i;
 

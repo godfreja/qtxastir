@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.18 2004/01/26 16:18:19 we7u Exp $
+ * $Id: alert.h,v 1.19 2004/07/19 21:17:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,6 +40,11 @@
 
 #include "db.h"
 #include "maps.h"
+
+
+// How many alerts we add storage for each time we're short.
+#define ALERT_COUNT_INCREMENT 200
+
 
 typedef enum {
     ALERT_TITLE,

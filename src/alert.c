@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.74 2004/07/16 18:27:30 we7u Exp $
+ * $Id: alert.c,v 1.75 2004/07/19 21:17:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -319,10 +319,6 @@ alert_entry *alert_list = NULL;
 static int alert_list_count = 0;           // Count of active alerts
 int alert_max_count = 0;     // Alerts we've allocated space for
 int alert_redraw_on_update = 0;
-
-
-// How many alerts we add storage for each time we're short.
-#define ALERT_COUNT_INCREMENT 25
 
 
 
