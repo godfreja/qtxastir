@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.141 2005/01/23 20:49:58 we7u Exp $
+ * $Id: util.c,v 1.142 2005/01/26 21:27:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2541,6 +2541,11 @@ void disown_object_item(char *call_sign, char *new_owner) {
 #endif  // HAVE_CP
     char line[300];
     char name[15];
+
+
+//fprintf(stderr,"disown_object_item, object: %s, new_owner: %s\n",
+//    call_sign,
+//    new_owner);
 
 
     // If it's my call in the new_owner field, then I must have just
