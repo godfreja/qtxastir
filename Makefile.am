@@ -1,10 +1,10 @@
 
-# $Id: Makefile.am,v 1.27 2004/09/27 00:29:04 tvrusso Exp $
+# $Id: Makefile.am,v 1.28 2004/09/27 15:04:49 tvrusso Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
 
-AUTOMAKE_OPTIONS = gnu
+AUTOMAKE_OPTIONS = gnu dist-bzip2
 ACLOCAL_AMFLAGS = -I m4
 
 D=      `date +%G%m%d.%H%M%S`
