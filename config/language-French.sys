@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.6 2002/03/28 19:02:10 we7u Exp $
+# $Id: language-French.sys,v 1.7 2002/04/01 06:50:14 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -333,6 +333,11 @@ WPUPCFG029|COnfigurer TNC +INVALID ENUM||
 # PopUp "Configure WX Port"
 WPUPCFWX01|Configurer port météo||
 WPUPCFWX02|Port météo||
+WPUPCFWX03|Rain Gauge Type (Global Setting)||
+WPUPCFWX04|1/10 inch||
+WPUPCFWX05|2.54 mm||
+WPUPCFWX06|1/100 inch||
+WPUPCFWX07|0.254 mm||
 #
 # PopUp "Configure - Station"
 WPUPCFS001|Configurer la station||

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.7 2002/03/28 19:02:10 we7u Exp $
+# $Id: language-Italian.sys,v 1.8 2002/04/01 06:50:14 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -336,6 +336,11 @@ WPUPCFT029|Configura TNC con INVALID ENUM||
 #Configura Porta Meteo
 WPUPCFWX01|Configura Porta Meteo||
 WPUPCFWX02|Periferica della stazione||
+WPUPCFWX03|Rain Gauge Type (Global Setting)||
+WPUPCFWX04|1/10 inch||
+WPUPCFWX05|2.54 mm||
+WPUPCFWX06|1/100 inch||
+WPUPCFWX07|0.254 mm||
 #
 #Configure Stazione
 WPUPCFS001|Configura Dati Stazione||

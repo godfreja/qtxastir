@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.c,v 1.7 2002/03/27 07:57:31 we7u Exp $
+ * $Id: xa_config.c,v 1.8 2002/04/01 06:50:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -463,6 +463,11 @@ void save_data(void)  {
         store_int (fout, "PRINT_AUTO_SCALE", print_auto_scale);
         store_int (fout, "PRINT_IN_MONOCHROME", print_in_monochrome);
         store_int (fout, "PRINT_INVERT_COLORS", print_invert);
+
+        /* Rain Gauge Type, set in the Serial Weather interface
+            properties dialog, but really a global default */
+        store_int (fout, "RAIN_GAUGE_TYPE", WX_rain_gauge_type);
+
 
         /* list attributes */
         for (i = 0; i < 5; i++) {
@@ -989,6 +994,9 @@ void load_data_or_default(void) {
 
     if (!get_int ("PRINT_INVERT_COLORS", &print_invert))
         print_invert = 0;
+
+    if (!get_int ("RAIN_GAUGE_TYPE", &WX_rain_gauge_type))
+        WX_rain_gauge_type = 0;     // Tenth of an inch
 
 
     /* list attributes */
