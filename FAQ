@@ -1,6 +1,6 @@
                   XASTIR Frequently Asked Questions
 
-$Id: FAQ,v 1.18 2003/05/20 18:16:41 we7u Exp $
+$Id: FAQ,v 1.19 2003/05/22 18:58:41 we7u Exp $
 
 The latest version of this FAQ is always available from the Xastir web site, at
 <http://www.xastir.org/docs/FAQ.html>, soon to be available also at:
@@ -540,4 +540,7 @@ If you find other problems, or would like to point out other caveats to add to
 this FAQ, please point them out to the developers on the Xastir-dev mailing
 list.  The addresses for the mailing lists may be found on the main Xastir
 web pages, which are listed at the top of this document.
+
+
+Copyright (C) 2000-2003 The Xastir Group
 

@@ -1,5 +1,5 @@
 
-$Id: DEBUG_LEVELS,v 1.3 2003/05/14 22:50:24 we7u Exp $
+$Id: DEBUG_LEVELS,v 1.4 2003/05/22 18:58:41 we7u Exp $
 
 This file has two parts.  The first part describes the debug_level
 definitions that were in the old code and which files they were in.
@@ -47,4 +47,6 @@ New Scheme
         main.c file to change the bounds checking, and are
         available for future use.
 
+
+Copyright (C) 2002-2003 The Xastir Group
 

@@ -1,5 +1,5 @@
 
-$Id: LICENSE,v 1.1 2002/02/02 03:15:23 kg4ijb Exp $
+$Id: LICENSE,v 1.2 2003/05/22 18:58:41 we7u Exp $
 
 
 1) The majority of the Xastir source code is under the GPL license.
@@ -64,4 +64,9 @@ The name and copyright are listed in that file.
 /*                                                                       */
 /*************************************************************************/
 
+
+
+
+The file you're looking at (LICENSE) is
+Copyright (C) 2000-2003  The Xastir Group
 
