@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.528 2004/10/03 05:19:30 we7u Exp $
+ * $Id: main.c,v 1.529 2004/10/05 17:11:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9489,11 +9489,13 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
 
                 else if (moving_object) {   // Move function
                     // For this function we need to:
-                    //      Determine which icon is closest to the mouse pointer press position.
-                    //          We'll use Station_info to select the icon for us.
-                    //      Compute the lat/lon of the mouse pointer release position.
-                    //      Put the new value of lat/lon into the object data.
-                    //      Cause symbols to get redrawn.
+                    //   Determine which icon is closest to the mouse pointer press position.
+                    //     We'll use Station_info to select the icon for us.
+                    //   Determine whether it is our object.  If not, force
+                    //     the user to "adopt" the object before moving it.
+                    //   Compute the lat/lon of the mouse pointer release position.
+                    //   Put the new value of lat/lon into the object data.
+                    //   Cause symbols to get redrawn.
 
                     // Reset the zoom-box variables
                     possible_zoom_function = 0;
