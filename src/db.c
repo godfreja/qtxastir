@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.318 2004/05/17 20:06:03 we7u Exp $
+ * $Id: db.c,v 1.319 2004/05/18 16:42:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4207,6 +4207,11 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
         if ( ( (p_station->flag & ST_OBJECT) || (p_station->flag & ST_ITEM) )
                 && (p_station->comment_data != NULL)
                 && ( strstr(p_station->comment_data->text_ptr, "{") != NULL ) ) {
+
+            static char temp[25];
+            char *ptr3;
+
+
             button_nws = XtVaCreateManagedWidget(langcode("WPUPSTI064"),xmPushButtonGadgetClass, form,
  
                             XmNtopAttachment, XmATTACH_NONE,
@@ -4229,9 +4234,6 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
             // "comment_data" records, hopefully the first one
             // checked (most recent).
             //
-            static char temp[25];
-            char *ptr3;
-
 
             strncpy(temp,p_station->origin,6);
             temp[6] = '\0';
