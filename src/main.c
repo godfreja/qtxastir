@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.431 2003/12/21 00:18:00 we7u Exp $
+ * $Id: main.c,v 1.432 2003/12/24 01:49:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -199,6 +199,9 @@
 /* JMT - works under FreeBSD */
 uid_t euid;
 gid_t egid;
+
+// Used in segfault handler
+char dangerous_operation[200];
 
 FILE *file_wx_test;
 
@@ -9854,6 +9857,8 @@ void quit(int sig) {
 void segfault(/*@unused@*/ int sig) {
     fprintf(stderr, "Caught Segfault! Xastir will terminate\n");
     fprintf(stderr, "Last incoming line was: %s\n", incoming_data_copy);
+    if (dangerous_operation[0] != '\0')
+        fprintf(stderr, "Possibly died at: %s\n", dangerous_operation);
     fprintf(stderr, "%02d:%02d:%02d\n", get_hours(), get_minutes(), get_seconds() );
     quit(-1);
 }
