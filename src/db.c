@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.124 2002/07/26 03:29:43 we7u Exp $
+ * $Id: db.c,v 1.125 2002/08/06 18:33:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9422,10 +9422,16 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
 //passing a NULL for the path:
             transmit_message_data(call,ack,NULL);
             if (auto_reply == 1) {
+
+                xastir_snprintf(ipacket_message,
+                    sizeof(ipacket_message), "AA:%s", auto_reply_message);
+
                 if (debug_level & 2)
-                    printf("Send autoreply to <%s> from <%s> :%s\n",call,my_callsign,auto_reply_message);
+                    printf("Send autoreply to <%s> from <%s> :%s\n",
+                        call, my_callsign, ipacket_message);
+
                 if (!is_my_call(call,1))
-                    output_message(my_callsign,call,auto_reply_message,"");
+                    output_message(my_callsign, call, ipacket_message, "");
             }
         }
 
@@ -9640,11 +9646,16 @@ int decode_UI_message(char *call,char *path,char *message,char from,int port,int
 //path here:
             transmit_message_data(call,ack,NULL);
             if (auto_reply == 1) {
+                char temp[300];
+
+                xastir_snprintf(temp, sizeof(temp), "AA:%s", auto_reply_message);
+
                 if (debug_level & 2)
-                    printf("Send autoreply to <%s> from <%s> :%s\n",call,my_callsign,auto_reply_message);
+                    printf("Send autoreply to <%s> from <%s> :%s\n",
+                        call, my_callsign, temp);
 
                 if (!is_my_call(call,1))
-                    output_message(my_callsign,call,auto_reply_message,"");
+                    output_message(my_callsign, call, temp, "");
             }
         }
         done = 1;
