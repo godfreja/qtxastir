@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.332 2003/08/20 18:05:52 we7u Exp $
+ * $Id: main.c,v 1.333 2003/09/04 16:18:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4012,8 +4012,8 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     XtSetArg(al[ac], XmNallowShellResize, TRUE);            ac++;
     XtSetArg(al[ac], XmNtitle,            title);           ac++;
     XtSetArg(al[ac], XmNargv,             app_argv);        ac++;
-    XtSetArg(al[ac], XmNminWidth,         640);             ac++;
-    XtSetArg(al[ac], XmNminHeight,        380);             ac++;
+    XtSetArg(al[ac], XmNminWidth,         320);             ac++;
+    XtSetArg(al[ac], XmNminHeight,        240);             ac++;
     XtSetArg(al[ac], XmNdefaultPosition,  FALSE);           ac++;
     XtSetArg(al[ac], XmNforeground,       MY_FG_COLOR);     ac++;
     XtSetArg(al[ac], XmNbackground,       MY_BG_COLOR);     ac++;
