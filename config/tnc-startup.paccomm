@@ -1,4 +1,4 @@
-# $Id: tnc-startup.paccomm,v 1.7 2004/07/26 17:04:58 we7u Exp $
+# $Id: tnc-startup.paccomm,v 1.8 2004/07/26 19:21:12 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -8,7 +8,7 @@
 # lines that begin with a pound sign are comments.
 
 HID off
-CWID off
+CWID every 0
 MON 0
 ECHO off
 #MYCall WB5BBW

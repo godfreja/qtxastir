@@ -1,4 +1,4 @@
-# $Id: tnc-startup.pico,v 1.12 2004/07/26 17:04:58 we7u Exp $
+# $Id: tnc-startup.pico,v 1.13 2004/07/26 19:21:13 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -37,7 +37,7 @@ FULLDUP off
 GPS off
 HEADERLI off
 HID off
-CWID off
+CWID every 0
 INTERVAL 0
 LFADD off
 LGETCHAR $05
