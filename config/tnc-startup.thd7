@@ -1,4 +1,4 @@
-# $Id: tnc-startup.thd7,v 1.4 2004/06/14 19:49:18 we7u Exp $
+# $Id: tnc-startup.thd7,v 1.5 2004/06/16 23:27:05 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -57,6 +57,7 @@ MRPt on
 PACLen 128
 PASSALL off
 HBAUD 1200
+TXDELAY 25
 #
 #--------------------------------------------------
 # Initialize the GPS
