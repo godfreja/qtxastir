@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.144 2002/09/24 20:11:36 we7u Exp $
+ * $Id: db.c,v 1.145 2002/09/25 08:28:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3422,7 +3422,16 @@ end_critical_section(&db_station_info_lock, "db.c:Station_data" );
         }
 
         if (strlen(weather->wx_baro) > 0) {
-            xastir_snprintf(temp, sizeof(temp), langcode("WPUPSTI033"),weather->wx_baro);
+            if (!units_english_metric) {  // hPa
+                xastir_snprintf(temp, sizeof(temp),
+                    langcode("WPUPSTI033"),
+                    weather->wx_baro);
+            }
+            else {  // Inches Mercury
+                xastir_snprintf(temp, sizeof(temp),
+                    langcode("WPUPSTI063"),
+                    atof(weather->wx_baro)*0.02953);
+            }
             XmTextInsert(si_text,pos,temp);
             pos += strlen(temp);
             xastir_snprintf(temp, sizeof(temp), "\n");

@@ -1,5 +1,5 @@
 /*
- * $Id: wx.h,v 1.1 2002/02/02 03:19:34 kg4ijb Exp $
+ * $Id: wx.h,v 1.2 2002/09/25 08:28:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,10 +41,8 @@ extern char wx_high_wind[10];
 extern char wx_high_wind_on;
 extern char wx_wind_chill[10];
 extern char wx_wind_chill_on;
-extern char wx_baro_inHg[10];
-extern char wx_baro_inHg_on;
-extern char wx_three_hour_baro[10];
-extern char wx_three_hour_baro_on;
+extern char wx_three_hour_baro[10]; // hPa
+extern char wx_three_hour_baro_on;  // hPa
 extern char wx_hi_temp[10];
 extern char wx_hi_temp_on;
 extern char wx_low_temp[10];
