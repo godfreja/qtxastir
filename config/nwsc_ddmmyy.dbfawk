@@ -1,4 +1,4 @@
-# $Id: nwsc_ddmmyy.dbfawk,v 1.2 2003/09/08 14:37:06 n2ygk Exp $
+# $Id: nwsc_ddmmyy.dbfawk,v 1.3 2003/09/09 13:56:57 n2ygk Exp $
 # This dbfawk file is used to map arbitrary dbf data that accompanies
 # a shapefile into Xastir canoncical values of:
 #   key     - search key
@@ -33,7 +33,7 @@ dbffields="COUNTYNAME:STATE:FIPS"}
 
 # BEGIN_RECORD is called once per dbf record which contains multiple fields.
 # Use this rule to re-initialize variables between records.
-BEGIN_RECORD {key=""; lanes=4; color=11; name=""; filled=1; pattern=1; display_level=8192; label_level=512; symbol=""}
+BEGIN_RECORD {key=""; lanes=4; color=11; name=""; filled=0; pattern=1; display_level=8192; label_level=512; symbol=""}
 
 # name: name is just the county name.
 /^COUNTYNAME=(.*)$/ {name="$1"; next}
