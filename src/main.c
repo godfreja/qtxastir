@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.428 2003/12/07 17:16:39 we7u Exp $
+ * $Id: main.c,v 1.429 2003/12/11 20:35:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3257,6 +3257,8 @@ void refresh_image(Widget w) {
 // done it copies the image to the drawing area, making it visible.
 void redraw_symbols(Widget w) {
 
+
+    HandlePendingEvents(app_context);
     if (interrupt_drawing_now)
         return;
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.48 2003/12/11 19:42:04 we7u Exp $
+ * $Id: map_gdal.c,v 1.49 2003/12/11 20:35:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -957,6 +957,7 @@ void draw_ogr_map(Widget w,
         int geometry_type = -1;
 
 
+        HandlePendingEvents(app_context);
         if (interrupt_drawing_now) {
 
             if (wgs84_spatialH != NULL) {
@@ -1144,8 +1145,9 @@ void draw_ogr_map(Widget w,
             int ii;
             double X1, Y1, Z1, X2, Y2, Z2;
 //            char *buffer;
- 
 
+ 
+            HandlePendingEvents(app_context);
             if (interrupt_drawing_now) {
                 if (featureH != NULL)
                     OGR_F_Destroy( featureH );
