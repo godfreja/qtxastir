@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.247 2003/05/06 20:33:01 we7u Exp $
+ * $Id: db.c,v 1.248 2003/05/06 21:49:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2424,9 +2424,13 @@ _do_the_drawing:
     }
 
 
-    // Draw wind barb if selected and we have wind
-    if (Display_.weather && Display_.wind_barb &&
-        weather != NULL && atoi(weather->wx_speed) >= 5) {
+    // Draw wind barb if selected and we have wind, but not a severe
+    // storm (wind barbs just confuse the matter).
+    if (Display_.weather && Display_.wind_barb
+            && weather != NULL && atoi(weather->wx_speed) >= 5
+            && weather->wx_hurricane_radius[0] == '\0'
+            && weather->wx_trop_storm_radius[0] == '\0'
+            && weather->wx_whole_gale_radius[0] == '\0') {
         draw_wind_barb(p_station->coord_lon,
                        p_station->coord_lat,
                        weather->wx_speed,
