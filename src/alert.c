@@ -1,9 +1,9 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.40 2002/07/08 22:43:18 we7u Exp $
+ * $Id: alert.c,v 1.41 2003/01/24 00:37:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2002  The Xastir Group
+ * Copyright (C) 2000-2003  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

@@ -1,9 +1,9 @@
 /*
- * $Id: list_gui.h,v 1.3 2002/06/26 15:50:07 francais1 Exp $
+ * $Id: list_gui.h,v 1.4 2003/01/24 00:34:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000,2001,2002  The Xastir Group
+ * Copyright (C) 2000-2003  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

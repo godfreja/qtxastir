@@ -1,9 +1,9 @@
 /*
- * $Id: draw_symbols.c,v 1.28 2003/01/15 22:25:59 francais1 Exp $
+ * $Id: draw_symbols.c,v 1.29 2003/01/24 00:34:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2002  The Xastir Group
+ * Copyright (C) 2000-2003  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

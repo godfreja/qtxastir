@@ -1,9 +1,9 @@
 /*
- * $Id: callpass.c,v 1.1 2002/02/10 00:56:23 kg4ijb Exp $
+ * $Id: callpass.c,v 1.2 2003/01/24 00:37:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000,2002  Xastir Dev Team
+ * Copyright (C) 2000-2003  Xastir Dev Team
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
