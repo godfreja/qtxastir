@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.32 2003/05/16 18:02:31 we7u Exp $
+$Id: README.win32,v 1.33 2003/05/16 18:10:31 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -127,6 +127,9 @@ Step 2)  Create shortcut for starting X:
 Create a shortcut to C:\cygwin\usr\X11r6\bin\startxwin.bat from your
 desktop.  This shortcut is the method you'll use to start up
 Xwindows.
+
+Change the properties on the shortcut so that it runs it from your
+home directory on Cygwin, something like "c:\cygwin\home\<user>\"
 
 
 Step 3)  Test Cygwin and create startup shortcuts:
