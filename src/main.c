@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.156 2002/10/30 21:40:33 francais1 Exp $
+ * $Id: main.c,v 1.157 2002/11/10 02:04:00 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3481,7 +3481,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     // Allocate a couple of colors that we'll need before we get
     // around to calling create_gc(), which creates the rest.
     //
-    //colors[0x08] = (int)GetPixelByName(Global.top,"black");
+    colors[0x08] = (int)GetPixelByName(Global.top,"black");
     colors[0x0c] = (int)GetPixelByName(Global.top,"red");
     colors[0xff] = (int)GetPixelByName(Global.top,"gray73");
 
