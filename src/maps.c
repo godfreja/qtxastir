@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.122 2002/08/22 18:33:09 we7u Exp $
+ * $Id: maps.c,v 1.123 2002/08/22 19:47:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8424,7 +8424,7 @@ void draw_palm_image_map(Widget w, char *dir, char *filenm, int destination_pixm
     struct {
         char name[32];
         short file_attributes;
-        short version;
+        short version;  // 2: No placeholder bytes in file, 3: w/bytes
         long creation_date;
         long modification_date;
         long backup_date;
@@ -8443,6 +8443,12 @@ void draw_palm_image_map(Widget w, char *dir, char *filenm, int destination_pixm
         char category;
         char id[3];
     } prl;
+
+    // Two placeholder bytes where were added in version 3.  We
+    // effectively skip these with fseek() below.
+//    struct {
+//        short placeholder;
+//    } pdb_ph;
 
     struct {
         long left_bounds;
