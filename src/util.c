@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.78 2003/07/15 18:13:03 we7u Exp $
+ * $Id: util.c,v 1.79 2003/07/15 22:58:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2651,8 +2651,9 @@ int begin_critical_section(xastir_mutex *lock, char *text) {
     if (pthread_equal( lock->threadID, calling_thread ))
     {
         // We tried to lock something that we already have the lock on.
-        fprintf(stderr,"%s:This thread already has the lock on this resource\n", text);
+        fprintf(stderr,"%s:Warning:This thread already has the lock on this resource\n", text);
         problems++;
+        return(0);  // Return the OK code.  Skip trying the lock.
     }
 
     //if (lock->threadID != 0)
@@ -2718,7 +2719,7 @@ int end_critical_section(xastir_mutex *lock, char *text) {
     if (lock->threadID == 0)
     {
         // We have a problem.  This resource hasn't been locked.
-        fprintf(stderr,"%s:Trying to unlock a resource that hasn't been locked:%ld\n",
+        fprintf(stderr,"%s:Warning:Trying to unlock a resource that hasn't been locked:%ld\n",
             text,
             (long int)lock->threadID);
         problems++;
@@ -2769,6 +2770,9 @@ int end_critical_section(xastir_mutex *lock, char *text) {
 }
 
 
+
+
+
 #ifdef TIMING_DEBUG
 void time_mark(int start)
 {
@@ -2792,6 +2796,9 @@ void time_mark(int start)
     }
 }
 #endif  // TIMING_DEBUG
+
+
+
 
 
 // Function which adds commas to callsigns (and other abbreviations?)
