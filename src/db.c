@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.212 2003/02/20 22:34:23 we7u Exp $
+ * $Id: db.c,v 1.213 2003/02/24 23:26:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10707,6 +10707,10 @@ else {
         //fprintf(stderr,"found NWS: |%s| |%s| |%s|\n",addr,message,msg_id);      // could have sort of line number
         (void)msg_data_add(addr,call,message,msg_id,MESSAGE_NWS,from,&dummy);
         (void)alert_message_scan();
+
+//WE7U
+        fill_in_new_alert_entries(da, ALERT_MAP_DIR);
+
         done = 1;
         if (operate_as_an_igate>1 && from==DATA_VIA_NET && !is_my_call(call,1)) { // { for my editor...
             char short_path[100];
@@ -10732,6 +10736,10 @@ else {
         //fprintf(stderr,"found SKY: |%s| |%s| |%s|\n",addr,message,msg_id);      // could have sort of line number
         (void)msg_data_add(addr,call,message,msg_id,MESSAGE_NWS,from,&dummy);
         (void)alert_message_scan();
+
+//WE7U
+        fill_in_new_alert_entries(da, ALERT_MAP_DIR);
+
         done = 1;
         if (operate_as_an_igate>1 && from==DATA_VIA_NET && !is_my_call(call,1)) { // { for my editor...
             char short_path[100];
