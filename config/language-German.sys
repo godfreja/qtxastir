@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.20 2002/06/06 18:00:27 we7u Exp $
+# $Id: language-German.sys,v 1.21 2002/06/10 23:46:09 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -291,7 +291,7 @@ WPUPCFD019|Mobile Station mit UTC Zeit/Sekunden||
 WPUPCFD021|Station mit Position und Wetter||
 WPUPCFD022|Station mit UTC Zeit, Position und Wetter||
 WPUPCFD023|Sende Wetter Rohdaten?||
-WPUPCFD024|Sende komprimierte Position?||
+WPUPCFD024|Compress object/item data when transmitting?||
 WPUPCFD025|Alternatives Netz?||
 WPUPCFD026|Sende Positionsmeldung in folgenden Intervallen|||
 #
@@ -397,6 +397,7 @@ WPUPCFS024|.18 Kilometer Kreis||
 WPUPCFS025|1.85 Kilometer Kreis||
 WPUPCFS026|18.53 Kilometer Kreis||
 WPUPCFS027|111.19 Kilometer Kreis||
+WPUPCFS029|Send compressed posits|C|
 #
 # PopUp "Objekt/Item"
 POPUPOB001|Objekt/Item||

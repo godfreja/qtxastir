@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.22 2002/06/06 18:00:27 we7u Exp $
+# $Id: language-Spanish.sys,v 1.23 2002/06/10 23:46:09 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -286,7 +286,7 @@ WPUPCFD019|Estación Móvil c/Horas-segundos Zúlu|u|
 WPUPCFD021|Posición de la estación c/Tiempo|T|
 WPUPCFD022|Posición de la estación, fecha-hora Zulu, y Tiempo|f|
 WPUPCFD023|Transmitir datos WX en Raw?||
-WPUPCFD024|Dato de posición comprimida cuando transmita?||
+WPUPCFD024|Compress object/item data when transmitting?||
 WPUPCFD025|Activar Red Alternada?|A|
 WPUPCFD026|Enviar reportes de posición en qué intervalos?||
 #
@@ -392,6 +392,7 @@ WPUPCFS024|.18 kilómetro||
 WPUPCFS025|1.85 kilómetros||
 WPUPCFS026|18.53 kilómetros||
 WPUPCFS027|111.19 kilómetros||
+WPUPCFS029|Send compressed posits|C|
 #
 # Diálogo de Objeto/Artículo
 POPUPOB001|Objeto/Arículo||

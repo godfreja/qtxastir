@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.10 2002/06/02 21:59:58 n0vh Exp $
+ * $Id: main.h,v 1.11 2002/06/10 23:46:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -125,6 +125,7 @@ extern int transmit_raw_wx;
 #endif
 
 extern int transmit_compressed_posit;
+extern int transmit_compressed_objects_items;
 extern int log_igate;
 extern int log_tnc_data;
 extern int log_net_data;
