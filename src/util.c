@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.81 2003/07/23 21:34:41 we7u Exp $
+ * $Id: util.c,v 1.82 2003/09/19 17:57:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2359,8 +2359,13 @@ int valid_inet_name(char *name, char *info, char *origin) {
                 ok = 0;
         ok = ok && (info != NULL);      // check if we can test info
         if (ok) {
-            ptr = strstr(info,":NWS-"); // NWS data in info field
+            ptr = strstr(info,":NWS-"); // "NWS-" in info field (non-compressed alert)
             ok = (ptr != NULL);
+
+            if (!ok) {
+                ptr = strstr(info,":NWS_"); // "NWS_" in info field (compressed alert)
+                ok = (ptr != NULL);
+            }
         }
         if (ok) {
             strcpy(origin, "INET-NWS");
