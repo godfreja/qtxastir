@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.27 2003/02/01 10:14:57 we7u Exp $
+ * $Id: db.h,v 1.28 2003/02/02 04:42:42 jtwilley Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -357,6 +357,7 @@ typedef struct _DataRow {
     char type;      // from '0' to '9'
     char style;     // from 'a' to 'z'
     long multipoints[MAX_MULTIPOINTS][2];
+    time_t direct_heard;                // KC2ELS - time last heard direct
 } DataRow;
 
 
