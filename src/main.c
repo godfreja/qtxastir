@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.155 2002/10/30 19:08:22 we7u Exp $
+ * $Id: main.c,v 1.156 2002/10/30 21:40:33 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -593,7 +593,9 @@ Pixmap  pixmap;
 Pixmap  pixmap_alerts;
 Pixmap  pixmap_final;
 
-Pixmap  pixmap_2x2_stipple; // 50% pixels used for position ambiguity, DF circle, etc.
+Pixmap  pixmap_50pct_stipple; // 50% pixels used for position ambiguity, DF circle, etc.
+Pixmap  pixmap_25pct_stipple; // 25% pixels used for large position ambiguity
+Pixmap  pixmap_13pct_stipple; // 12.5% pixels used for larger position ambiguity
 Pixmap  pixmap_wx_stipple;  // Used for weather alerts
 
 XastirGlobal Global;
@@ -6087,7 +6089,15 @@ void create_gc(Widget w) {
 
     xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "2x2.xbm");
     XReadBitmapFile(XtDisplay(w), DefaultRootWindow(XtDisplay(w)),
-                    xbm_path, &_w, &_h, &pixmap_2x2_stipple, &_xh, &_yh);
+                    xbm_path, &_w, &_h, &pixmap_50pct_stipple, &_xh, &_yh);
+
+    xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "25pct.xbm");
+    XReadBitmapFile(XtDisplay(w), DefaultRootWindow(XtDisplay(w)),
+                    xbm_path, &_w, &_h, &pixmap_25pct_stipple, &_xh, &_yh);
+
+    xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "13pct.xbm");
+    XReadBitmapFile(XtDisplay(w), DefaultRootWindow(XtDisplay(w)),
+                    xbm_path, &_w, &_h, &pixmap_13pct_stipple, &_xh, &_yh);
 
     xastir_snprintf(xbm_path, sizeof(xbm_path), "%s/%s", SYMBOLS_DIR, "alert.xbm");
     XReadBitmapFile(XtDisplay(w), DefaultRootWindow(XtDisplay(w)),
