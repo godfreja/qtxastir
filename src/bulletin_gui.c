@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.6 2002/08/22 00:19:34 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.7 2002/08/29 15:49:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -324,11 +324,14 @@ void check_for_new_bulletins() {
     //printf("%d new bulletins found\n",new_bulletin_count);
 
     if (new_bulletin_count) {
-printf("New bulletins (%d) caused popup!\n",new_bulletin_count);
         popup_bulletins();
+
+        if (debug_level & 1)
+            printf("New bulletins (%d) caused popup!\n",new_bulletin_count);
     }
     else {
-printf("No bulletin popup generated.\n");
+        if (debug_level & 1)
+            printf("No bulletin popup generated.\n");
     }
 
     // Reset so that we can do it all over again later.  We need

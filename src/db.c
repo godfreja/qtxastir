@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.134 2002/08/28 20:41:39 we7u Exp $
+ * $Id: db.c,v 1.135 2002/08/29 15:49:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -977,9 +977,6 @@ time_t msg_data_add(char *call_sign, char *from_call, char *data,
         }
     }
  
-    if (debug_level & 1)
-        printf("msg_data_add end\n");
-
     // Bring up the bulletins dialog if it's a new bulletin and
     // within our range.  We now just set some flags via the
     // "prep_for_..." call below, then recheck the distance before
@@ -992,11 +989,22 @@ time_t msg_data_add(char *call_sign, char *from_call, char *data,
         // sender of the bulletin.
         prep_for_popup_bulletins();
 
-printf("%05d:%9s:%c:%c:%9s:%s:%s\n",
-    distance, call_sign, type, from, from_call, data, seq);
+        if (debug_level & 1) {
+            printf("%05d:%9s:%c:%c:%9s:%s:%s\n",
+                distance,
+                call_sign,
+                type,
+                from,
+                from_call,
+                data,
+                seq);
+        }
 
     }
  
+    if (debug_level & 1)
+        printf("msg_data_add end\n");
+
     // Return the important variables we'll need
     *record_out = record;
     return(last_ack_sent);
