@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.307 2003/07/07 23:51:00 we7u Exp $
+ * $Id: main.c,v 1.308 2003/07/10 00:18:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7666,7 +7666,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
     static int last_alert_on_screen;
 
     do_time = 0;
-    nexttime = 50;  // Start UpdateTime again 100 milliseconds after we've completed
+    nexttime = 50;  // Start UpdateTime again 50 milliseconds after we've completed
 
     (void)sound_done();
 
