@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.35 2003/05/21 21:18:39 we7u Exp $
+ * $Id: draw_symbols.c,v 1.36 2003/05/21 22:34:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1214,6 +1214,14 @@ static __inline__ short l16(long val) {
 
 
 
+// According to the spec, the lat/long point is the upper left
+// corner of the object, and the offsets are down and to the right
+// (except for one line type where it's down and to the left).
+// Exceptions to this are the triangle, ellipse, and circle.  The
+// ellipse and circle have the lat/long as the center point.  The
+// triangle is an isoscelese triangle with the lat/long point being
+// the bottom right and the bottom of the triangle being horizontal.
+//
 void draw_area(long x_long, long y_lat, char type, char color,
                char sqrt_lat_off, char sqrt_lon_off, char width, time_t sec_heard, Pixmap where) {
     long left, top, right, bottom, xoff, yoff;
