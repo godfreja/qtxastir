@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.14 2002/06/20 17:44:23 we7u Exp $
+ * $Id: gps.c,v 1.15 2002/06/21 19:15:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -188,6 +188,7 @@ int decode_gps_rmc( char *data,
             }
         }
     }
+    //printf("Speed %s\n",spd);
     return(ok);
 }
 
