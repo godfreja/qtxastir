@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.10 2002/07/18 01:01:44 we7u Exp $
+ * $Id: interface.h,v 1.11 2002/07/18 16:31:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -196,6 +196,7 @@ extern int WX_rain_gauge_type;
 
 /* interface.c */
 extern unsigned char *incoming_data;
+extern int incoming_data_length;
 extern int NETWORK_WAITTIME;
 extern void startup_all_or_defined_port(int port);
 extern void shutdown_all_active_or_defined_port(int port);

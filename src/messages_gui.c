@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.8 2002/07/13 17:38:20 we7u Exp $
+ * $Id: messages_gui.c,v 1.9 2002/07/18 16:31:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -330,6 +330,7 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message_n
 
         strcpy(path,XmTextFieldGetString(mw[i].send_message_path));
         (void)remove_trailing_spaces(path);
+        (void)to_upper(path);
 
         if(debug_level & 2)
             printf("Send message to <%s> from <%s> :%s\n",temp1,mw[i].to_call_sign,temp2);
