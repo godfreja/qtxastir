@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.116 2002/07/16 16:47:08 we7u Exp $
+ * $Id: main.c,v 1.117 2002/07/17 23:17:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5787,7 +5787,8 @@ void pos_dialog(Widget w) {
         ht = 480;
 
     max_x = x + wd - (wd / 5);
-    max_y = y + ht - (ht / 5);
+//    max_y = y + ht - (ht / 5);
+    max_y = y + ht/3;
 
     // Check for proper values for last stored position
     if (   (last_popup_x < x)
