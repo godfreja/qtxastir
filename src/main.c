@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.434 2004/01/08 21:38:26 we7u Exp $
+ * $Id: main.c,v 1.435 2004/01/12 19:44:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7489,20 +7489,11 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
     XtManageChild(text);
 
-    (void)XtCreateWidget("MAIN",
+    (void)XtCreateManagedWidget("MAIN",
             xmMainWindowWidgetClass,
             appshell,
             NULL,
             0);
-
-    // Set to the proper size before we make the window visible on the screen
-    XtVaSetValues(appshell,
-                XmNx,           1,
-                XmNy,           1,
-                XmNwidth,       screen_width,
-//              XmNheight,      (screen_height+60+2),   // DK7IN: added 2 because height had been smaller everytime
-                XmNheight,      (screen_height + 60),   // we7u:  Above statement makes mine grow by 2 each time
-                NULL);
 
     XtRealizeWidget (appshell);
 
@@ -7513,9 +7504,14 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     (void)XSetBackground(XtDisplay(da),gc,MY_BG_COLOR);
     (void)XFillRectangle(XtDisplay(appshell),XtWindow(da),gc,0,0,screen_width,screen_height);
 
-
-    // Actually manage the main application widget
-    XtManageChild(appshell);
+    // Set to the proper size before we make the window visible on the screen
+    XtVaSetValues(appshell,
+                XmNx,           1,
+                XmNy,           1,
+                XmNwidth,       screen_width,
+//              XmNheight,      (screen_height+60+2),   // DK7IN: added 2 because height had been smaller everytime
+                XmNheight,      (screen_height + 60),   // we7u:  Above statement makes mine grow by 2 each time
+                NULL);
 
     // Show the window
     XtPopup(appshell,XtGrabNone);
