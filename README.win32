@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.3 2003/03/12 01:02:14 we7u Exp $
+$Id: README.win32,v 1.4 2003/03/14 19:43:29 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -14,6 +14,16 @@ and you won't have a home directory in Cygwin.  This means there
 won't be a good place to put your Xastir startup files.  Of course,
 log in as the same user each time in order for Cygwin to use the
 proper home directory for you.
+
+Explanation of this login box, for those that don't see it:  If you have
+the option of running networking, you'll have a login box show up when you
+first start up Windows.  It'll ask for you user name and password, then let
+you in.  If you escape out of that dialog, Windows may start right up but
+networking will be disabled.
+
+If you don't see that box, there are two options that I know about, either
+you or someone else set it up to auto-login with your user/password combo,
+or you don't have networking installed at all.
 
 The following steps direct you through installing Cygwin, Xastir,
 and a few optional map libraries that Xastir can use.  Note that in
@@ -410,11 +420,11 @@ configure.
 
 
 
-Adding libgeotiff (tested with libgeotiff-1.1.5):
+Adding libgeotiff (tested with libgeotiff-1.2.0):
 -------------------------------------------------
 
-    tar xzvf libgeotiff-1.1.5.tar.gz
-    cd libgeotiff-1.1.5
+    tar xzvf libgeotiff-1.2.0.tar.gz
+    cd libgeotiff-1.2.0
     ./configure
     make
     make install
