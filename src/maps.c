@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.53 2002/04/25 23:04:37 we7u Exp $
+ * $Id: maps.c,v 1.54 2002/04/26 15:50:47 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3404,8 +3404,7 @@ void draw_gnis_map (Widget w, char *dir, char *filenm)
 
 
                         if (ok == 1) {  // If ok to draw it
-                            // colors[0x08] = Black
-                            (void)draw_label_text ( w, x, y, strlen(name), colors[0x08], (char *)name);
+                            draw_nice_string(w, pixmap, 0, x, y, (char*)name, 0xf, 0x10, strlen(name));
                         }
 
                     }
