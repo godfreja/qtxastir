@@ -6,7 +6,7 @@
 # Released to the public domain.
 #
 #
-# $Id: coord-convert.pl,v 1.5 2002/08/14 20:51:05 we7u Exp $
+# $Id: coord-convert.pl,v 1.6 2002/08/15 17:22:11 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
@@ -110,6 +110,9 @@ while (1) {
 
     # Look for lat/long value in the input
 
+    # Add missing decimal points.
+    s/^(\d+)([NSns])\s+(\d+)([EWew])\s*$/$1.$2 $3.$4/;
+
     # Check for N/S/E/W characters in the input.  Set the
     # appropriate flags if found.
     $lat_dir = "N";
@@ -152,7 +155,7 @@ while (1) {
 
         $temp = $lat_min;
         $lat_min = int abs($temp);
-        $lat_sec = (abs($temp) * 60.0) % 60;
+        $lat_sec = (abs($temp) * 600.0) % 600;
         $lat_sec = $lat_sec / 10;
 
         $temp = $long_min;
