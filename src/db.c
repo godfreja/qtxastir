@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.304 2004/03/09 06:42:15 we7u Exp $
+ * $Id: db.c,v 1.305 2004/03/30 20:21:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -43,6 +43,7 @@
 #include "util.h"
 #include "bulletin_gui.h"
 #include "fcc_data.h"
+#include "geo.h"
 #include "gps.h"
 #include "rac_data.h"
 #include "interface.h"
@@ -2761,11 +2762,32 @@ void display_file(Widget w) {
         }
         p_station = p_station->t_next;  // next station
     }
-    if (debug_level & 1)
-        fprintf(stderr,"Display File Stop\n");
+
     draw_ruler(w);
 
     Draw_All_CAD_Objects(w);        // Draw all CAD objects, duh.
+
+    // Check if we should mark where we found an address
+    if (mark_destination) {
+        draw_pod_circle(destination_coord_lon,
+                        destination_coord_lat,
+                        0.0020 * scale_y,
+                        colors[0x0e],   // Yellow
+                        pixmap_final);
+        draw_pod_circle(destination_coord_lon,
+                        destination_coord_lat,
+                        0.0023 * scale_y,
+                        colors[0x44],   // Red
+                        pixmap_final);
+        draw_pod_circle(destination_coord_lon,
+                        destination_coord_lat,
+                        0.0026 * scale_y,
+                        colors[0x61],   // Blue
+                        pixmap_final);
+    }
+
+    if (debug_level & 1)
+        fprintf(stderr,"Display File Stop\n");
 }
 
 
