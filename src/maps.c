@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.378 2003/11/26 16:43:27 we7u Exp $
+ * $Id: maps.c,v 1.379 2003/11/26 17:37:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2843,6 +2843,7 @@ end_critical_section(&print_properties_dialog_lock, "maps.c:Print_properties" );
 // point this thread is started, the XPM file has already been
 // created.  We now create a .geo file to go with the .png file.
 //
+#ifndef NO_XPM
 static void* snapshot_thread(void *arg) {
     char xpm_filename[MAX_FILENAME];
     char png_filename[MAX_FILENAME];
@@ -2978,6 +2979,7 @@ static void* snapshot_thread(void *arg) {
 
     return(NULL);
 }
+#endif  // NO_XPM
 
 
 
