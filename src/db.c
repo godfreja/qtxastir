@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.270 2003/08/09 01:03:29 we7u Exp $
+ * $Id: db.c,v 1.271 2003/08/11 19:57:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -57,8 +57,8 @@
 #endif  // WITH_DMALLOC
 
 
-#define STATION_REMOVE_CYCLE 60         /* check station remove in seconds (every minute) */
-#define MESSAGE_REMOVE_CYCLE 60         /* check message remove in seconds (every minute) */
+#define STATION_REMOVE_CYCLE 300        /* check station remove in seconds (every 5 minutes) */
+#define MESSAGE_REMOVE_CYCLE 600        /* check message remove in seconds (every 10 minutes) */
 #define MAX_TRAIL_SEG_LEN    60l        /* max length of displayed trail segments in minutes (1 deg) */
 #define IN_VIEW_MIN         600l        /* margin for off-screen stations, with possible trails on screen, in minutes */
 #define TRAIL_POINT_MARGIN   30l        /* margin for off-screen trails points, for segment to be drawn, in minutes */
