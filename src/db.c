@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.400 2004/11/30 21:12:35 we7u Exp $
+ * $Id: db.c,v 1.401 2004/11/30 21:23:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1362,11 +1362,11 @@ begin_critical_section(&send_message_dialog_lock, "db.c:update_messages" );
                                 if (msg_data[msg_index[j]].interval) {
                                     xastir_snprintf(interval_str,
                                         sizeof(interval_str),
-                                        ">%3ldsecs",
+                                        ">%ldsecs",
                                         msg_data[msg_index[j]].interval);
                                     // Don't highlight the interval
                                     // value
-                                    offset = offset + 8;
+                                    offset = offset + strlen(interval_str);
                                 }
                                 else {
                                     interval_str[0] = '\0';
