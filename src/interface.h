@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.25 2004/01/26 16:18:21 we7u Exp $
+ * $Id: interface.h,v 1.26 2004/02/12 22:18:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -42,6 +42,8 @@
 
 #define DEFAULT_GPS_RETR 0x05 /* CTRL-E */
 
+// Define a 60 second max wait on a serial port (in microseconds)
+#define SERIAL_MAX_WAIT 60000000
 
 // KISS Protocol Special Characters & Commands:
 #define KISS_FEND           0xc0  // Frame End
