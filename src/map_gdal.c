@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.7 2003/10/16 19:30:02 we7u Exp $
+ * $Id: map_gdal.c,v 1.8 2003/10/16 19:33:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -135,7 +135,9 @@ void map_gdal_init() {
     fprintf(stderr,"\nGDAL Registered Drivers:\n");
     for (jj = 0; jj < ii; jj++) {
         hDriver = GDALGetDriver(jj);
-        printf("\t%s\n", GDALGetDriverLongName(hDriver) );
+        printf("%12s   %s\n",
+            GDALGetDriverShortName(hDriver),
+            GDALGetDriverLongName(hDriver) );
     }
     fprintf(stderr,"\n");
 
