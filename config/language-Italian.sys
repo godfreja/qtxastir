@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.88 2003/04/25 22:29:11 we7u Exp $
+# $Id: language-Italian.sys,v 1.89 2003/04/25 22:49:57 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -207,10 +207,10 @@ PULDNTNT02|Proprietà|P|
 PULDNTNT03|Disabilita Trasmissioni: TUTTE||
 PULDNTNT05|Disabilita Trasmissioni: Mia Posizione||
 PULDNTNT06|Disabilita Trasmissioni: Oggetti/Entità||
-PULDNTNT07|Fetch GPS Track|F|
-PULDNTNT08|Fetch GPS Routes|R|
-PULDNTNT09|Fetch GPS Waypoints|W|
-PULDNTNT01|Trasmetti ora!|N|
+PULDNTNT01|Trasmetti Ora!|T|
+PULDNTNT07|Prendi il tracciato GPS|F|
+PULDNTNT08|Prendi le rotte GPS|R|
+PULDNTNT09|Prendi le direzioni GPS|W|
 #
 # Menù Aiuto
 PULDNHEL01|Versione di Xastir|A|
