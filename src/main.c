@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.543 2004/11/17 17:57:51 we7u Exp $
+ * $Id: main.c,v 1.544 2004/11/17 18:28:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3318,7 +3318,7 @@ void refresh_image(Widget w) {
 
     HandlePendingEvents(app_context);
     if (interrupt_drawing_now)
-        return(0);
+        return;
  
     /* display icons */
     display_file(w);
