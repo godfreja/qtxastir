@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.455 2004/05/19 23:23:51 we7u Exp $
+ * $Id: main.c,v 1.456 2004/05/24 18:02:05 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9385,7 +9385,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                         }
 #endif /* HAVE_FESTIVAL */
                     }
-                    last_alert_on_screen = alert_redraw_on_update;
+                    last_alert_on_screen = temp_alert_count;
                     alert_redraw_on_update = 0;
                 } else {
                     if (!pending_ID_message)
