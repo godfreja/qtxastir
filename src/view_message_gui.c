@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.13 2003/07/31 15:21:21 we7u Exp $
+ * $Id: view_message_gui.c,v 1.14 2003/07/31 16:01:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -347,7 +347,7 @@ begin_critical_section(&All_messages_dialog_lock, "view_message_gui.c:view_all_m
                 XmNleftAttachment, XmATTACH_WIDGET,
                 XmNleftWidget, button_range,
                 XmNleftOffset, 10,
-                XmNrightAttachment, XmATTACH_NONE,
+                XmNrightAttachment, XmATTACH_FORM,
                 XmNnavigationType, XmTAB_GROUP,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
