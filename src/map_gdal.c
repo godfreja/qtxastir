@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.31 2003/12/06 06:02:55 we7u Exp $
+ * $Id: map_gdal.c,v 1.32 2003/12/06 06:33:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -477,8 +477,9 @@ void draw_ogr_map(Widget w,
         // Use the OGR "envelope" function to get the extents for
         // the entire file or dataset.  Remember that it could be in
         // state-plane coordinate system or something else equally
-        // strange.  Make sure we convert it to WGS84/lat/long
-        // before saving the index.
+        // strange.  Make sure we convert it to WGS84 or NAD83
+        // lat/long before saving the index.
+
 
 // It looks like we need to run through all of the layers so that we
 // can get a "super-extents" set of numbers that include all layers.
@@ -498,10 +499,6 @@ void draw_ogr_map(Widget w,
               90.0,  // Top
             -180.0,  // Left
              180.0); // Right
-
-// Query the coordinate system.  Need to have the extents in WGS84
-// or NAD83 lat/long coordinate systems in order to compute the
-// extents properly.
 
         // Close data source
         OGR_DS_Destroy( datasource );
@@ -553,7 +550,9 @@ void draw_ogr_map(Widget w,
 //        OGRFeatureDefnH layerDefn;
         OGREnvelope psExtent;  
         OGRSpatialReferenceH spatial;
- 
+        int extents_found = 0;
+
+
 
         if (interrupt_drawing_now) {
             // Close data source
@@ -669,16 +668,27 @@ void draw_ogr_map(Widget w,
             // We have extents.  Check whether any part of the layer
             // is within our viewport.
             fprintf(stderr, "Extents obtained.\n");
+            extents_found++;
         }
         else {
 //            fprintf(stderr, "    Extents unavailable for layer %d without a FORCE.\n", i);
             if (OGR_L_GetExtent(layer, &psExtent, TRUE) != OGRERR_FAILURE) {
                 fprintf(stderr, "Extents obtained via FORCE.\n");
+                extents_found++;
             }
             else {
                 fprintf(stderr, "Extents are not available even with FORCE.\n");
             }
         }
+        if (extents_found) {
+            fprintf(stderr,
+                "  MinX: %f, MaxX: %f, MinY: %f, MaxY: %f\n",
+                psExtent.MinX,
+                psExtent.MaxX,
+                psExtent.MinY,
+                psExtent.MaxY);
+        }
+
 
         // Dump info about this layer
 //        layerDefn = OGR_L_GetLayerDefn( layer );
