@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.149 2003/12/16 18:09:40 we7u Exp $
+ * $Id: interface.c,v 1.150 2003/12/16 18:16:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1400,8 +1400,8 @@ int OpenTrac_decode_position(unsigned char *element,
     *lon = fetch32bits(element+4) / semicircles;
 
     if (element_len == 11) {
-        alt = ((*(element+8))<<16)+get16(element+9);
-        alt = (alt/100)-10000;
+        *alt = ( (*(element+8))<<16 ) + fetch16bits(element+9);
+        *alt = (*alt / 100) - 10000;
     }
 
     fprintf(stderr, "Position: Lat %f Lon %f Alt %f\n",*lat,*lon,*alt);
@@ -1476,9 +1476,9 @@ int OpenTrac_decode_courseandspeed(unsigned char *element,
     if (element_len != 3)
         return -1;
 
-    *course = (*element<<1) + ((*(element+1)&0x80) >> 7);
-    rawspeed = (fetch16bits(element+1) & 0x7fff);
-    *speed = (float)rawspeed*0.072; // kph
+    *course = ( (*element) << 1 ) + ( (*(element+1) & 0x80) >> 7);
+    rawspeed = fetch16bits(element+1) & 0x7fff;
+    *speed = (float)(rawspeed * 0.072); // kph
 
     fprintf(stderr, "Course: %d Speed: %f kph\n", *course, *speed);
 
