@@ -1,5 +1,5 @@
 /*
- * $Id: alert.c,v 1.1 2002/02/02 03:16:54 kg4ijb Exp $
+ * $Id: alert.c,v 1.2 2002/03/04 21:33:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -380,7 +380,7 @@ static void alert_build_list(Message *fill) {
           memmove(ptr, ptr+1, strlen(ptr));
 
         if ((ptr = strpbrk(entry[i].title, "}>=!:/*+;"))) {
-            if (debug_level > 0) {
+            if (debug_level & 2) {
                 fprintf(stderr,
                     "Warning: Weird Weather Message: %ld:%s>%s:%s!\n",
                     (long)fill->sec_heard,
