@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.44 2004/02/04 16:49:35 we7u Exp $
+ * $Id: map_shp.c,v 1.45 2004/02/21 20:35:34 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1540,8 +1540,8 @@ void draw_shapefile_map (Widget w,
 
                 (void)XSetFillStyle(XtDisplay(w), gc, fill_style);
                 
-                skip_it = (map_color_levels && scale_y > display_level);
-                skip_label = (map_color_levels && scale_y > label_level);
+                skip_it = (map_color_levels && (scale_y > display_level));
+                skip_label = (map_color_levels && (scale_y > label_level));
 
             }
 #endif /* WITH_DBFAWK */
@@ -1570,7 +1570,7 @@ void draw_shapefile_map (Widget w,
 //                            && map_labels
 //                            && (fieldcount >= 3) ) {
 
-                    if (1) {    // Need a bracket so we can define
+                    if (!skip_it) {    // Need a bracket so we can define
                                 // some local variables.
                         const char *temp = NULL;
                         int ok = 1;
@@ -1636,7 +1636,7 @@ void draw_shapefile_map (Widget w,
                             // Fine-tuned this string so that it is
                             // to the right of the 'X' and aligned
                             // nicely.
-                            if (map_labels) {
+                            if (map_labels && !skip_label) {
                                 draw_nice_string(w, pixmap, 0, x+10, y+5, (char*)temp, 0xf, 0x10, strlen(temp));
                                 //(void)draw_label_text ( w, x, y, strlen(temp), colors[label_color], (char *)temp);
                                 //(void)draw_rotated_label_text (w, 90, x+10, y, strlen(temp), colors[label_color], (char *)temp);
