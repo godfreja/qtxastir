@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.165 2002/11/12 22:56:44 we7u Exp $
+ * $Id: db.c,v 1.166 2002/11/12 23:23:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2240,7 +2240,7 @@ void display_station(Widget w, DataRow *p_station, int single) {
             draw_pod_circle(p_station->coord_lon,
                 p_station->coord_lat,
                 0.0035 * scale_y,
-                colors[0x44],   // Red
+                colors[0x0e],   // Yellow
                 pixmap_final);
         }
 
@@ -2396,7 +2396,7 @@ void display_station(Widget w, DataRow *p_station, int single) {
             draw_pod_circle(p_station->coord_lon,
                 p_station->coord_lat,
                 0.0035 * scale_y,
-                colors[0x44],   // Red
+                colors[0x0e],   // Yellow
                 pixmap_final);
         }
 
