@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.474 2004/06/24 20:00:58 we7u Exp $
+ * $Id: main.c,v 1.475 2004/06/24 20:08:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9125,6 +9125,42 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
                 // and input_x/input_y where the button release occurred.
 
                 if (measuring_distance) {   // Measure distance function
+
+                    // Check whether we already have a box on screen
+                    // that we need to erase.
+                    if (zoom_box_x1 != -1) {
+//fprintf(stderr,"erasing\n");
+                        // Remove the last box drawn via the XOR
+                        // function.
+                        XDrawLine(XtDisplay(da),
+                            XtWindow(da),
+                            gc_tint,
+                            zoom_box_x1,    // Keep x constant
+                            zoom_box_y1,
+                            zoom_box_x1,
+                            zoom_box_y2);
+                        XDrawLine(XtDisplay(da),
+                            XtWindow(da),
+                            gc_tint,
+                            zoom_box_x1,
+                            zoom_box_y1,    // Keep y constant
+                            zoom_box_x2,
+                            zoom_box_y1);
+                        XDrawLine(XtDisplay(da),
+                            XtWindow(da),
+                            gc_tint,
+                            zoom_box_x2,    // Keep x constant
+                            zoom_box_y1,
+                            zoom_box_x2,
+                            zoom_box_y2);
+                        XDrawLine(XtDisplay(da),
+                            XtWindow(da),
+                            gc_tint,
+                            zoom_box_x1,
+                            zoom_box_y2,    // Keep y constant
+                            zoom_box_x2,
+                            zoom_box_y2);
+                    }
 
                     // Reset the zoom-box variables
                     possible_zoom_function = 0;
