@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.233 2003/04/01 09:09:50 we7u Exp $
+ * $Id: db.c,v 1.234 2003/04/11 21:07:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11638,10 +11638,12 @@ char big_string[2000];
         return;
     }
 
-    // Check for the only two types of interfaces where we might want to
-    // do RELAY digipeating.  If not one of these, go bye-bye.
+    // Check for the only three types of interfaces where we might
+    // want to do RELAY digipeating.  If not one of these, go
+    // bye-bye.
     if ( (devices[port].device_type != DEVICE_SERIAL_KISS_TNC)
-            && (devices[port].device_type != DEVICE_AX25_TNC)) {
+            && (devices[port].device_type != DEVICE_AX25_TNC)
+            && (devices[port].device_type != DEVICE_NET_AGWPE) ) {
         return;
     }
 
@@ -11828,6 +11830,16 @@ strcat(big_string,small_string);
         // send packet
         if (port_data[port].status == DEVICE_UP)
             port_write_string(port, info);
+    }
+    else if (devices[port].device_type == DEVICE_NET_AGWPE) {
+        send_agwpe_packet(port, // Xastir interface port
+            atoi(devices[port].device_host_filter_string), // AGWPE RadioPort
+            '\0',               // Type of frame (data)
+            call,               // source
+            destination,        // destination
+            new_path,           // Path,
+            info,
+            strlen(info));
     }
 
 
