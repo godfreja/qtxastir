@@ -1,9 +1,10 @@
-# $Id: tnc-startup.sys,v 1.3 2002/03/11 23:36:11 we7u Exp $
+# $Id: tnc-startup.sys,v 1.4 2002/03/19 05:41:06 we7u Exp $
 # This is the TNC Startup file for Kantronics TNC.
 # lines that begin with a pound sign are comments.
 
 int terminal
 
+ECHO off
 MYAlias RELAY
 B E 0
 DIGI on
