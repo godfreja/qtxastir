@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.371 2004/08/20 18:38:42 we7u Exp $
+ * $Id: db.c,v 1.372 2004/08/20 20:50:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11493,13 +11493,22 @@ void my_station_add(char *my_callsign, char my_group, char my_symbol, char *my_l
         sizeof(temp_data),
         "%s",
         my_lat);
+
+//fprintf(stderr," my_lat:%s\n",temp_data);
+
     temp_data[9] = '\0';
+
     strp = &temp_data[20];
     xastir_snprintf(strp,
-        sizeof(strp),
+//        sizeof(strp),   // No good, as strp is a pointer
+        (int)(sizeof(temp_data) / 2),
         "%s",
         my_long);
     strp[10] = '\0';
+
+//fprintf(stderr,"my_long:%s\n",my_long);
+//fprintf(stderr,"my_long:%s\n",strp);
+
     switch (my_amb) {
     case 1: // 1/10th minute
         temp_data[6] = strp[7] = '5';
