@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.10 2004/08/19 06:38:23 we7u Exp $
+ * $Id: map_gnis.c,v 1.11 2004/09/16 14:00:40 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -781,6 +781,10 @@ Cell Name
                                 ok = 0;
                         }
                         else if (strcasecmp(type,"woods") == 0) {
+                            if (scale_y > 50)
+                                ok = 0;
+                        }
+                        else if (strcasecmp(type,"ruin") == 0) {
                             if (scale_y > 50)
                                 ok = 0;
                         }
