@@ -29,7 +29,7 @@ dnl
 dnl  acinclude.m4
 dnl     macros autoconf uses when building configure from configure.in
 dnl
-dnl  $Id: acinclude.m4,v 1.3 2003/02/03 07:21:22 jtwilley Exp $
+dnl  $Id: acinclude.m4,v 1.4 2003/02/10 21:54:36 we7u Exp $
 dnl
 dnl    aclocal.m4 -> acinclude.m4
 dnl    Make changes to the configure scripts here and not to aclocal.m4
@@ -693,15 +693,23 @@ if test "$IRIX" = "yes"
 then
   AC_MSG_WARN(Skipping library tests because they CONFUSE Irix.)
 else
-  AC_CHECK_LIB(shp, DBFOpen, XASTIR_SHAPELIB_LIB="-lshp")
-  if test "$XASTIR_SHAPELIB_LIB" = "-lshp"
+  AC_CHECK_HEADERS(libshp/shapefil.h, XASTIR_SHAPELIB_INC="yes")
+  if test "$XASTIR_SHAPELIB_INC" = "yes"
   then
-    dnl CFLAGS="-DUSE_SHAPELIB ${CFLAGS}"
-    AC_DEFINE_UNQUOTED(HAVE_SHAPELIB, 1, [Define if you have ShapeLib])
-    LIBS="${XASTIR_SHAPELIB_LIB} ${LIBS}"
-    dnl AC_SUBST(CFLAGS)
-    AC_MSG_RESULT(Shapelib support found and will be compiled in.)
-    use_shapelib=yes
+    AC_CHECK_LIB(shp, DBFOpen, XASTIR_SHAPELIB_LIB="-lshp")
+    if test "$XASTIR_SHAPELIB_LIB" = "-lshp"
+    then
+      dnl CFLAGS="-DUSE_SHAPELIB ${CFLAGS}"
+      AC_DEFINE_UNQUOTED(HAVE_SHAPELIB, 1, [Define if you have ShapeLib])
+      LIBS="${XASTIR_SHAPELIB_LIB} ${LIBS}"
+      dnl AC_SUBST(CFLAGS)
+      AC_MSG_RESULT(Shapelib support found and will be compiled in.)
+      use_shapelib=yes
+    else
+      AC_MSG_RESULT(Shapelib library files not found.)
+    fi
+  else
+    AC_MSG_RESULT(Shapelib header files not found.)
   fi
 fi
 ])
@@ -960,7 +968,7 @@ dnl The link_motif and include_motif variables should be fit to put on
 dnl your application's link line in your Makefile.
 dnl
 dnl Oleo CVS Id: motif.m4,v 1.9 1999/04/09 11:46:49 danny
-dnl LessTif CVS $Id: acinclude.m4,v 1.3 2003/02/03 07:21:22 jtwilley Exp $
+dnl LessTif CVS $Id: acinclude.m4,v 1.4 2003/02/10 21:54:36 we7u Exp $
 dnl
 AC_DEFUN(AC_FIND_MOTIF,
 [
