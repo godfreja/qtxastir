@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.32 2003/06/08 16:15:36 we7u Exp $
+ * $Id: gps.c,v 1.33 2003/07/18 19:49:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -31,6 +31,9 @@
 
 /* The following files support setting the system time from the GPS */
 #if TIME_WITH_SYS_TIME
+  // Define needed by some versions of Linux in order to define
+  // strptime()
+# define __USE_XOPEN
 # include <sys/time.h>
 # include <time.h>
 #else   // TIME_WITH_SYS_TIME
