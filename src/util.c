@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.101 2004/05/07 20:21:01 we7u Exp $
+ * $Id: util.c,v 1.102 2004/06/15 03:10:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2503,7 +2503,7 @@ int valid_path(char *path) {
                     && ch != 'o') {     // Q-construct stuff
 
                 if (debug_level & 1)
-                    fprintf(stderr, "valid_path: Bad Path: Anti-loop stuff from aprsd\n");
+                    fprintf(stderr, "valid_path: Bad Path: Anti-loop stuff from aprsd or lower-case chars found\n");
                 return(0);          // wrong character in path
             }
         }
