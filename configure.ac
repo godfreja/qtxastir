@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.61 2003/07/18 20:15:37 we7u Exp $
+# $Id: configure.ac,v 1.62 2003/07/18 20:58:59 we7u Exp $
 
 
 #########################################################################
@@ -237,7 +237,6 @@ X_EXTRA_LIBS=`echo $X_EXTRA_LIBS | sed -e 's/  */ /g'`
  
 CC=`echo $CC | sed -e 's/  */ /g'` 
 CFLAGS=`echo $CFLAGS | sed -e 's/  */ /g'`
-CFLAGS="${CFLAGS} -Wall"
 CPPFLAGS=`echo $CPPFLAGS | sed -e 's/  */ /g'` 
 CXXFLAGS=`echo $CXXFLAGS | sed -e 's/  */ /g'` 
 LDFLAGS=`echo $LDFLAGS | sed -e 's/  */ /g'` 
