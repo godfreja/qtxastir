@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.109 2003/11/04 17:17:34 we7u Exp $
+# $Id: language-Italian.sys,v 1.110 2003/11/06 17:13:07 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -1025,8 +1025,8 @@ GPS011|Viola||
 #
 # Map Properties Dialog
 MAPP001|Proprietà Mappa||
-MAPP002| Max   Min    Disegna  Mappa||
-MAPP003| Zoom  Zoom  Livello  Riempi  AutoMap   Percorso/Nome File||
+MAPP002|Max   Min  Disegna Mappa Auto||
+MAPP003|Zoom  Zoom Livello Riempi Map  Percorso/Nome File||
 MAPP004|Cambia Livello->||
 MAPP005|Riempito->||
 MAPP006|Si||

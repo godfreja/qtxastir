@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.110 2003/10/31 23:34:35 we7u Exp $
+# $Id: language-German.sys,v 1.111 2003/11/06 17:13:07 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -1030,8 +1030,8 @@ GPS011|Violett||
 #
 # Karten-Eigenschaften Dialog
 MAPP001|Karten-Eigenschaften||
-MAPP002| Max   Min    Karten gefüllt  automat.||
-MAPP003| Zoom  Zoom  Ebene  zeichnen  Karte     Pfad/Dateiname||
+MAPP002|Max   Min   Karten gefüllt automat.||
+MAPP003|Zoom  Zoom  Ebene  zeichnen Karte Pfad/Dateiname||
 MAPP004|Ebene ändern->||
 MAPP005|gefüllt->||
 MAPP006|Ja ||

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.380 2003/11/06 17:02:45 we7u Exp $
+ * $Id: main.c,v 1.381 2003/11/06 17:13:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12379,7 +12379,7 @@ void map_properties_fill_in (void) {
 
                 xastir_snprintf(temp,
                     sizeof(temp),
-                    "%s %s %s %s %s %s",
+                    "%s %s %s %s %s  %s",
                     temp_max_zoom,
                     temp_min_zoom,
                     temp_layer,
