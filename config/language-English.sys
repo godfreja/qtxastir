@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.130 2004/07/08 19:07:13 we7u Exp $
+# $Id: language-English.sys,v 1.131 2004/07/13 19:21:18 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -201,6 +201,7 @@ PULDNDP048|Reload Object/Item History||
 PULDNDP049|Clear All Tactical Calls||
 PULDNDP050|Clear Tactical Call History||
 PULDNDP051|Select Tactical Calls Only||
+PULDNDP052|- Label Trailpoints||
 #
 # Units
 PULDNUT001|Enable English Units|E|

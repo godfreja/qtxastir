@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.63 2004/07/13 14:54:15 we7u Exp $
+ * $Id: main.h,v 1.64 2004/07/13 19:21:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -163,6 +163,7 @@ extern Selections Select_;
 
 typedef struct _what_to_display {
     int callsign;
+    int label_all_trackpoints;
     int symbol;
     int symbol_rotate;
     int trail;

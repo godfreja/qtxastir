@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.135 2004/07/08 19:07:13 we7u Exp $
+# $Id: language-German.sys,v 1.136 2004/07/13 19:21:18 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -207,6 +207,7 @@ PULDNDP048|ObjektHistorie erneut laden||
 PULDNDP049|Clear All Tactical Calls||
 PULDNDP050|Clear Tactical Call History||
 PULDNDP051|Select Tactical Calls Only||
+PULDNDP052|- Label Trailpoints||
 #
 # Maﬂeinheiten
 PULDNUT001|Englische Maﬂe||
