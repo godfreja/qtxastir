@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.154 2005/02/15 19:42:07 we7u Exp $
+# $Id: language-French.sys,v 1.155 2005/03/18 21:20:35 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -718,7 +718,7 @@ WPUPSTI054|Sauver piste||
 WPUPSTI055|Echo de:||
 WPUPSTI056|Activer actualisation automatique||
 WPUPSTI057|Omni-DF: %s||
-WPUPSTI058|Relèvement DF:||
+WPUPSTI058|Relèvement DF: %s||
 WPUPSTI059|Etat %02d/%02d %02d:%02d : %s||
 WPUPSTI060|Temp combustible: %02.1f°C  ||
 WPUPSTI061|Temp combustible: %s°F   ||

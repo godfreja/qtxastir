@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.163 2005/02/15 19:42:03 we7u Exp $
+# $Id: language-Dutch.sys,v 1.164 2005/03/18 21:20:34 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -730,7 +730,7 @@ WPUPSTI054|Sla spoor op||
 WPUPSTI055|Echo vanaf:||
 WPUPSTI056|Zet automatisch bijwerken aan||
 WPUPSTI057|Omni-DF: %s||
-WPUPSTI058|DF richting:||
+WPUPSTI058|DF richting: %s||
 WPUPSTI059|Status %02d/%02d %02d:%02d : %s||
 WPUPSTI060|Ontbrandings temp: %02.1føC  ||
 WPUPSTI061|Ontbrandings temp: %søF   ||
