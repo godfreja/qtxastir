@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.250 2003/05/13 06:59:29 we7u Exp $
+ * $Id: db.c,v 1.251 2003/05/21 22:40:10 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7552,7 +7552,7 @@ void extract_area(DataRow *p_station, char *data) {
         if (temp_area.type == AREA_LINE_RIGHT || temp_area.type == AREA_LINE_LEFT) {
             if (data[0] == '{') {
                 if (sscanf(data, "{%u}", &val) == 1) {
-                    temp_area.corridor_width = val & 0xff;
+                    temp_area.corridor_width = val & 0xffff;
                     for (i = 0; i <= len; i++)
                         if (data[i] == '}')
                             break;

@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.35 2003/05/06 20:19:17 we7u Exp $
+ * $Id: db.h,v 1.36 2003/05/21 22:40:10 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -207,8 +207,7 @@ typedef struct {
     unsigned color : 4;
     unsigned sqrt_lat_off : 8;
     unsigned sqrt_lon_off : 8;
-    unsigned corridor_width : 8;
-    // Will corridors bigger than 255 miles on one side of the line be needed?
+    unsigned corridor_width : 16;
 } AreaObject;
 
 typedef struct {

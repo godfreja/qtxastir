@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.36 2003/05/21 22:34:57 we7u Exp $
+ * $Id: draw_symbols.c,v 1.37 2003/05/21 22:40:11 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1223,7 +1223,7 @@ static __inline__ short l16(long val) {
 // the bottom right and the bottom of the triangle being horizontal.
 //
 void draw_area(long x_long, long y_lat, char type, char color,
-               char sqrt_lat_off, char sqrt_lon_off, char width, time_t sec_heard, Pixmap where) {
+               char sqrt_lat_off, char sqrt_lon_off, unsigned int width, time_t sec_heard, Pixmap where) {
     long left, top, right, bottom, xoff, yoff;
     int  c;
     XPoint points[4];
