@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.105 2003/05/23 22:59:28 we7u Exp $
+# $Id: language-Spanish.sys,v 1.106 2003/05/28 17:14:12 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -507,6 +507,7 @@ POPUPOB039|Señal - Altura(HAAT) - Ganancia - Dirección||
 POPUPOB040|Dirigiendo - Ancho de la orientación||
 POPUPOB041|Antena Omni-direccional||
 POPUPOB042|Antena Direccional||
+POPUPOB043|Useless||
 #
 # Configurar Internet
 WPUPCFI001|Configurar Internet||

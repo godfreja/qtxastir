@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.95 2003/05/23 17:52:46 we7u Exp $
+# $Id: language-French.sys,v 1.96 2003/05/28 17:14:12 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -503,6 +503,7 @@ POPUPOB039|Signal - Hauteur (HAAT) - Gain - Directivité||
 POPUPOB040|Largeur de faisceau - Relèvement||
 POPUPOB041|Antenne omni||
 POPUPOB042|Antenne dirigée||
+POPUPOB043|Useless||
 #
 # PopUp "Configure Internet"
 WPUPCFI001|Configurer Internet||

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.99 2003/05/23 23:01:55 we7u Exp $
+# $Id: language-Dutch.sys,v 1.100 2003/05/28 17:14:11 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -514,6 +514,7 @@ POPUPOB039|Signaal - Hoogte(HAAT) - Versterking - Richting||
 POPUPOB040|Straal breedte - Richting||
 POPUPOB041|Rondstraler||
 POPUPOB042|Richtantenne||
+POPUPOB043|Useless||
 #
 # PopUp "Configure Internet"
 WPUPCFI001|Internet Instelling||

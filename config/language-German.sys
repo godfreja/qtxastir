@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.95 2003/05/23 17:52:46 we7u Exp $
+# $Id: language-German.sys,v 1.96 2003/05/28 17:14:12 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -510,6 +510,7 @@ POPUPOB039|Leistung - Höhe - Gewinn - Richtung||
 POPUPOB040|Beam Width - Bearing||
 POPUPOB041|Rundstrahlantenne||
 POPUPOB042|Richtantenne||
+POPUPOB043|Useless||
 #
 # PopUp "Internet Einstellungen"
 WPUPCFI001|Internet Einstellungen||
