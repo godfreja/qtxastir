@@ -1,5 +1,5 @@
 
-// $Id: geo-find.c,v 1.1 2004/03/29 23:40:32 we7u Exp $
+// $Id: geo-find.c,v 1.2 2004/04/01 17:11:46 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -159,7 +159,7 @@ D(printf("    Success...\n"));
 
 static int find_name(
 	struct io_file *index,int begin,int end,
-	char type,const char *name,int name_len)
+	char type,const char *name, unsigned int name_len)
 {
 	const int size = 45;
 	const int count = (end - begin) / size;
@@ -184,8 +184,8 @@ static int get_name_at(
 {
 	char n[41];
 	const char *next,*save;
-	int len = last - s->next;
-	int begin,end,pos;
+	unsigned int len = last - s->next;
+	unsigned int begin,end,pos;
 
 	if (io_in_i4(s->index,
 	    io_in_i4(s->index,
