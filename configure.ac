@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.71 2003/12/02 23:06:21 we7u Exp $
+# $Id: configure.ac,v 1.72 2003/12/12 20:02:35 we7u Exp $
 
 
 #########################################################################
@@ -326,7 +326,7 @@ echo Building with ShapeLib...... : $use_shapelib
 echo Building with ImageMagick... : $use_imagemagick 
 echo Building with libproj....... : $use_proj
 echo Building with GeoTiff....... : $use_geotiff 
-echo Building with GDAL.......... : $use_gdal
+echo Building with GDAL/OGR...... : $use_gdal
 echo Building with pcre.......... : $use_pcre
 echo Building with dbfawk........ : $use_dbfawk
 echo 
