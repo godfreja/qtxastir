@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.24 2003/04/18 22:37:19 we7u Exp $
+$Id: README.win32,v 1.25 2003/04/24 21:06:28 we7u Exp $
 
 ------------------------------------
 Installing Xastir on Windows/Cygwin:
@@ -86,7 +86,7 @@ be selected as well, that's ok and necessary:
     editors/vim
     graphics/tiff (install sources for this one too? TBD)
     interpreters/m4
-    interpreters/perl
+    interpreters/perl (install 5.6.1 instead of 5.8.0)
     text/less
     utils/diff
     utils/patch
