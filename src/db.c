@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.19 2002/04/18 22:28:12 we7u Exp $
+ * $Id: db.c,v 1.20 2002/04/21 04:26:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7730,7 +7730,14 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
 
             shorten_path(path,short_path);
             //sprintf(ipacket_message,"}%s>%s,TCPIP,%s*::%s:%s",call,short_path,my_callsign,addr9,message);
-            xastir_snprintf(ipacket_message, sizeof(ipacket_message), "}%s>%s,TCPIP,%s*::%s:%s",call,short_path,my_callsign,addr9,message);
+            xastir_snprintf(ipacket_message,
+                sizeof(ipacket_message),
+                "}%s>%s,TCPIP,%s*::%s:%s",
+                call,
+                short_path,
+                my_callsign,
+                addr9,
+                message);
             output_nws_igate_rf(call,path,ipacket_message,port,third_party);
         }
     }
