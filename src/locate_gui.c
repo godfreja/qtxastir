@@ -1,5 +1,5 @@
 /*
- * $Id: locate_gui.c,v 1.14 2004/09/17 19:56:56 we7u Exp $
+ * $Id: locate_gui.c,v 1.15 2004/10/02 18:08:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -275,13 +275,14 @@ void Locate_station(/*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, Xt
     static Widget pane, form, button_locate, button_cancel, call,
         button_lookup, sep;
     Atom delw;
-    int emergency_flag = (int) callData;
+    int emergency_flag = XTPOINTER_TO_INT(callData);
 
  
     if (!locate_station_dialog) {
 
 begin_critical_section(&locate_station_dialog_lock, "locate_gui.c:Locate_station" );
 
+        // Check whether it is an emergency locate function
         if (emergency_flag == 1) {
                 locate_station_dialog = XtVaCreatePopupShell(langcode("WPUPLSP006"),
                 xmDialogShellWidgetClass,Global.top,

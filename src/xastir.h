@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.39 2004/09/17 19:46:06 we7u Exp $
+ * $Id: xastir.h,v 1.40 2004/10/02 18:08:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -77,6 +77,11 @@
 #endif  // HAVE_GC_H
  
 
+
+// Macros that help us avoid warnings on 64-bit CPU's.
+// Borrowed from the freeciv project (also a GPL project).
+#define INT_TO_XTPOINTER(m_i)  ((XtPointer)((long)(m_i)))
+#define XTPOINTER_TO_INT(m_p)  ((int)((long)(m_p)))
 
 
 #define SERIAL_KISS_RELAY_DIGI
