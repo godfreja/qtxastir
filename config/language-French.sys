@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.111 2003/12/03 07:42:00 jtwilley Exp $
+# $Id: language-French.sys,v 1.112 2003/12/04 01:05:43 n2ygk Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -1005,7 +1005,11 @@ GAMMA002|Correction de gamma||
 # Map labels font Dialog
 MAPFONT001|Change Map Labels Font||
 MAPFONT002|Map Labels Font||
-MAPFONT003|Font name:||
+MAPFONT003|Tiny||
+MAPFONT004|Small||
+MAPFONT005|Medium||
+MAPFONT006|Large||
+MAPFONT007|Huge||
 #
 # Distance/Bearing on status line
 PULDNDB001|Etat dist/relèvement||

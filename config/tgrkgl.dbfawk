@@ -1,4 +1,4 @@
-# $Id: tgrkgl.dbfawk,v 1.4 2003/11/13 15:27:21 n2ygk Exp $
+# $Id: tgrkgl.dbfawk,v 1.5 2003/12/04 01:05:43 n2ygk Exp $
 # This dbfawk file is used to map arbitrary dbf data that accompanies
 # a shapefile into Xastir canoncical values of:
 #   key     - search key
@@ -30,7 +30,7 @@ dbffields="KGLNAME:CFCC"}
 # BEGIN_RECORD is called once per dbf record which contains multiple fields.
 # Use this rule to re-initialize variables between records.
 BEGIN_RECORD {key=""; lanes=1; fill_color=255; color=8; name=""; filled=1; pattern=0;
-display_level=0; label_level=0; label_color=8; symbol="/. "}
+display_level=0; label_level=0; label_color=8; font_size=2; symbol="/. "}
 
 # name and key are both the KGL name
 /^KGLNAME=(.*)$/ {name=$1; key=$1; next}

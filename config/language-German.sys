@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.114 2003/12/03 07:42:00 jtwilley Exp $
+# $Id: language-German.sys,v 1.115 2003/12/04 01:05:43 n2ygk Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -1012,7 +1012,11 @@ GAMMA002|Gammakorrektur||
 # Map labels font Dialog
 MAPFONT001|Change Map Labels Font||
 MAPFONT002|Map Labels Font||
-MAPFONT003|Font name:||
+MAPFONT003|Tiny||
+MAPFONT004|Small||
+MAPFONT005|Medium||
+MAPFONT006|Large||
+MAPFONT007|Huge||
 #
 # Entfernung/Richtung auf der Statuszeile
 PULDNDB001|Entf./Richtung in Status||
