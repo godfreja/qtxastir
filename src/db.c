@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.420 2004/12/26 09:10:11 we7u Exp $
+ * $Id: db.c,v 1.421 2004/12/26 21:13:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13422,7 +13422,7 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
 
                 transmit_message_data_delayed(call,ack,NULL,sec_now()+30);
                 transmit_message_data_delayed(call,ack,NULL,sec_now()+60);
-                transmit_message_data_delayed(call,ack,NULL,sec_now()+90);
+                transmit_message_data_delayed(call,ack,NULL,sec_now()+120);
             }
 
 
