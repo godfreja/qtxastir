@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.14 2003/01/29 22:08:58 we7u Exp $
+ * $Id: igate.c,v 1.15 2003/02/03 22:29:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -941,7 +941,7 @@ int check_NWS_stations(char *call) {
 /****************************************************************/
 /* output NWS data to tnc interfaces                            */
 /* from: type of port heard from                                */
-/* call: call sign heard fro                                    */
+/* call: call sign heard from                                   */
 /* line: data to gate to rf                                     */
 /* port: port data came from                                    */
 /****************************************************************/

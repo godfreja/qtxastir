@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.75 2003/02/01 10:14:56 we7u Exp $
+# $Id: language-Dutch.sys,v 1.76 2003/02/03 22:29:41 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -58,6 +58,7 @@ PULDNVI014|Tijd programma beschikbaar||
 # Menu "Configure"
 PULDNCF001|Standaard|S|
 PULDNCF002|Coordinaten aanduiding|C|
+PULDNCF003|Timing|m|
 PULDNCF004|Station|t|
 PULDNCF006|Audio Alarm|A|
 PULDNCF007|Spraak|p|
