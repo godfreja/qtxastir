@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.206 2004/12/14 19:39:06 we7u Exp $
+ * $Id: interface.c,v 1.207 2004/12/28 21:04:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8210,8 +8210,13 @@ void output_my_data(char *message, int incoming_port, int type, int loopback_onl
     int done;
 
 
-    if (debug_level & 1)
-        fprintf(stderr,"Sending out port: %d, type: %d\n", incoming_port, type);
+    if (debug_level & 1) {
+        fprintf(stderr,
+            "Sending out port: %d, type: %d, path: %s\n",
+            incoming_port,
+            type,
+            path);
+    }
 
     if (message == NULL)
         return;
