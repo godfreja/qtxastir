@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.19 2004/08/11 17:40:37 we7u Exp $
+ * $Id: x_spider.c,v 1.20 2004/08/12 20:46:37 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -785,6 +785,8 @@ void Server(int argc, char *argv[], char *envp[]) {
     struct sockaddr_in cli_addr, serv_addr;
     pipe_object *p;
     int sendbuff;
+    int pipe_to_parent; /* symbolic names to reduce confusion */
+    int pipe_from_parent;
 
     
     // Open a TCP listening socket
@@ -966,8 +968,8 @@ void Server(int argc, char *argv[], char *envp[]) {
             // New naming system so that we don't have to remember
             // the longer name:
             //
-            int pipe_to_parent = p->to_parent[1];
-            int pipe_from_parent = p->to_child[0];
+            pipe_to_parent = p->to_parent[1];
+            pipe_from_parent = p->to_child[0];
 
             close(sockfd);      // Close original socket.  Child
                                 // doesn't need the listening
