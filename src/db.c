@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.332 2004/06/24 20:49:23 we7u Exp $
+ * $Id: db.c,v 1.333 2004/06/29 18:41:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4654,8 +4654,8 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
         XtAddCallback(station_data_auto_update_w,XmNvalueChangedCallback,station_data_auto_update_toggle,"1");
 
         //Add tactical button at the top/right
-//        button_tactical = XtVaCreateManagedWidget(langcode("WPUPSTI004"),xmPushButtonGadgetClass, form,
-        button_tactical = XtVaCreateManagedWidget("Assign Tactical Call",xmPushButtonGadgetClass, form,
+        // "Assign Tactical Call"
+        button_tactical = XtVaCreateManagedWidget(langcode("WPUPSTI066"),xmPushButtonGadgetClass, form,
             XmNtopAttachment, XmATTACH_FORM,
             XmNtopOffset, 5,
             XmNbottomAttachment, XmATTACH_NONE,
