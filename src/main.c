@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.432 2003/12/24 01:49:43 we7u Exp $
+ * $Id: main.c,v 1.433 2004/01/08 21:34:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25514,6 +25514,8 @@ int main(int argc, char *argv[]) {
                                        &argc, argv,
                                        fallback_resources,
                                        XmNmappedWhenManaged, FALSE,
+                                       XmNwidth, 10,
+                                       XmNheight, 10,
                                        NULL);
             // DK7IN: now scanf and printf use "," instead of "."
             // that leads to several problems in the initialisation
