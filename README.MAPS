@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.15 2003/09/19 17:58:27 we7u Exp $
+$Id: README.MAPS,v 1.16 2003/09/26 23:22:33 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -436,9 +436,9 @@ Getting Maps and other Data Files for Xastir:
        Grab xastir-sounds.tgz at the ftp site you downloaded Xastir, or at
         ftp://ftp.tapr.org/software_lib/Linux/xastir/xastir-sounds.tgz
 
-       Untar this archive into the /usr/local directory, assuming Xastir
-       is installed in /usr/local/share/xastir. (FIXME: thunder.wav is
-       missing?) 
+       Untar the file.  Put the sounds files into the
+       /usr/local/share/xastir/sounds directory where Xastir can find them.
+       (FIXME: thunder.wav is missing?).
 
      Download FCC and/or RAC Database files:
 
