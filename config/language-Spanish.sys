@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.41 2002/09/24 06:48:08 we7u Exp $
+# $Id: language-Spanish.sys,v 1.42 2002/09/25 07:49:59 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -576,6 +576,7 @@ WPUPSTI059|Status: %s||
 WPUPSTI060|Fuel Temp: %02.1f°C  ||
 WPUPSTI061|Fuel Temp: %s°F   ||
 WPUPSTI062|Fuel Moisture: %s%%   ||
+WPUPSTI063|Baro: %s in Hg||
 #
 # FCC-RAC buscar Indicativo
 STIFCC0001|Buscar FCC banco de datos||

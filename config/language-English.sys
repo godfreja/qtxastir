@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.39 2002/09/24 06:48:08 we7u Exp $
+# $Id: language-English.sys,v 1.40 2002/09/25 07:49:58 we7u Exp $
 # This is the English Language file used for all the prompts in xastir
 # 
 # Creator        : Frank Giannandrea <fgiannan@eazy.net >
@@ -575,7 +575,7 @@ WPUPSTI059|Status: %s||
 WPUPSTI060|Fuel Temp: %02.1f°C  ||
 WPUPSTI061|Fuel Temp: %s°F   ||
 WPUPSTI062|Fuel Moisture: %s%%   ||
-
+WPUPSTI063|Baro: %s in Hg||
 #
 #
 # FCC-RAC Call Look up
