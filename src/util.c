@@ -1,5 +1,5 @@
 /*
- * $Id: util.c,v 1.6 2002/03/26 23:36:37 we7u Exp $
+ * $Id: util.c,v 1.7 2002/03/27 20:59:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -803,7 +803,15 @@ int position_defined(long lat, long lon, int strict) {
 
 
 
-/* convert latitude from long to string */
+// convert latitude from long to string 
+//
+// CONVERT_LP_NOSP      = DDMM.MMN
+// CONVERT_LP_NORMAL    = DD MM.MMN
+// CONVERT_HP_NOSP      = DDMMM.MMN
+// CONVERT_UP_TRK       = NDD MMMM.MM
+// CONVERT_DEC_DEG      = DD.DDDDDN
+// CONVERT_HP_NORMAL    = DD MM.MMMN
+//
 void convert_lat_l2s(long lat, char *str, int str_len, int type) {
     char ns;
     float deg;
@@ -849,7 +857,15 @@ void convert_lat_l2s(long lat, char *str, int str_len, int type) {
 
 
 
-/* convert longitude from long to string */
+// convert longitude from long to string
+//
+// CONVERT_LP_NOSP      = DDDMM.MME
+// CONVERT_LP_NORMAL    = DDD MM.MME
+// CONVERT_HP_NOSP      = DDDMMM.MME
+// CONVERT_UP_TRK       = EDDD MMMM.MM
+// CONVERT_DEC_DEG      = DDD.DDDDDE
+// CONVERT_HP_NORMAL    = DDD MM.MMME
+//
 void convert_lon_l2s(long lon, char *str, int str_len, int type) {
     char ew;
     float deg;
