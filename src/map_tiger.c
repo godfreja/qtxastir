@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.21 2004/11/17 16:11:35 we7u Exp $
+ * $Id: map_tiger.c,v 1.22 2004/11/17 17:46:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -444,6 +444,10 @@ void draw_tiger_map (Widget w,
         /* verbose debug is keen */
       //        curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
         curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, curlerr);
+
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, tigermap_timeout);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+        curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
 
         /* write function */
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_fwrite);
