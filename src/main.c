@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.331 2003/08/16 01:12:21 we7u Exp $
+ * $Id: main.c,v 1.332 2003/08/20 18:05:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8005,7 +8005,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
             /* Check to reestablish a connection */
             if(sec_now() > net_next_time) {
                 net_last_time = sec_now();
-                net_next_time = net_last_time + 450;    // Check every 7.5 minutes
+                net_next_time = net_last_time + 60;    // Check every minute
                 //net_next_time = net_last_time + 30;   // This statement is for debug
 
                 /*fprintf(stderr,"Checking for reconnects\n");*/
