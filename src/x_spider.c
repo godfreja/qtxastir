@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.13 2004/07/28 17:48:08 we7u Exp $
+ * $Id: x_spider.c,v 1.14 2004/07/28 19:17:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -617,6 +617,7 @@ int pipe_check(void) {
             if (p->authenticated) {
 
 //fprintf(stderr,"Data available, sending to server\n");
+//fprintf(stderr,"\t%s\n",line);
 
                 if (writen(pipe_server_to_xastir, line, n) != n) {
                     fprintf(stderr, "pipe_check: Writen error2: %d\n", errno);

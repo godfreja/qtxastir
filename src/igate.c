@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.32 2004/07/24 22:49:37 we7u Exp $
+ * $Id: igate.c,v 1.33 2004/07/28 19:17:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -469,6 +469,8 @@ void output_igate_net(char *line, int port, int third_party) {
 
     if (line[0] == '\0')
         return;
+
+//fprintf(stderr,"Igating: %s\n", line);
 
     // Should we Igate from RF->NET?
     if (operate_as_an_igate <= 0)
