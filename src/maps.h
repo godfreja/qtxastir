@@ -1,5 +1,5 @@
 /*
- * $Id: maps.h,v 1.1 2002/02/02 03:19:14 kg4ijb Exp $
+ * $Id: maps.h,v 1.2 2002/04/24 23:00:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -28,7 +28,7 @@
 #include <X11/Intrinsic.h>
 
 #define MAX_OUTBOUND 900
-#define MAX_MAP_POINTS 5000
+#define MAX_MAP_POINTS 20000
 
 #define DRAW_TO_PIXMAP          0
 #define DRAW_TO_PIXMAP_FINAL    1
