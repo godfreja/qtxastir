@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.48 2002/10/18 19:34:10 we7u Exp $
+# $Id: language-German.sys,v 1.49 2002/10/19 19:06:02 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -267,6 +267,7 @@ BBARSTA036|Setze AUX auf TNC Daten..||
 BBARSTA037|Dekodiere GPS daten||
 BBARSTA038|Bringen Sie Änderung auf meine Station in Position||
 BBARSTA039|Indexing %s||
+BBARSTA040|This is Amateur Radio Station %s||
 #
 # PopUp "Zeige - Packet Radio"
 WPUPDPD001|Packet Radio Daten||
