@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.59 2004/05/26 04:42:09 we7u Exp $
+ * $Id: map_shp.c,v 1.60 2004/05/26 19:15:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -838,6 +838,16 @@ void draw_shapefile_map (Widget w,
 // Calls awk_compile_action() which allocates memory!
             if (awk_compile_program(Symtbl,sig_info->prog) < 0) {
                 fprintf(stderr,"Unable to compile .dbfawk program\n");
+
+//WE7U
+// Frees memory
+                if (sig_info != NULL && sig_info != dbfawk_default_sig  && (sig_info->sig == NULL)) {
+                    if (sig_info->prog != NULL)
+//WE7U
+// Frees memory
+                        awk_free_program(sig_info->prog);
+                    free(sig_info);
+                }
                 return;
             }
 //WE7U
