@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.28 2004/10/03 05:43:57 we7u Exp $
+ * $Id: x_spider.c,v 1.29 2004/11/28 02:56:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -692,6 +692,11 @@ int pipe_check(char *client_address) {
             // pipes.
 // Also send it down the socket.
         pipe_object *q = pipe_head;
+
+        // The internet protocol for sending lines is "\r\n", and we
+        // only have a '\r' on the end at present.  Add a '\n' to
+        // the end.
+        strncat(line,"\n",1);
 
         while (q != NULL) {
 //          fprintf(stderr,"pipe_check: %s\n",line);
