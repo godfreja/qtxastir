@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.8 2002/10/09 05:52:05 we7u Exp $
+ * $Id: track_gui.c,v 1.9 2003/01/11 16:30:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -404,11 +404,11 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
     //Download_trail_destroy_shell(w, clientData, callData);
 
     xastir_snprintf(fileimg, sizeof(fileimg),
-        "\'http://64.34.101.121/cgi-bin/rawposit.cgi?call=%s&start=%d&length=%d\'",
+        "\'http://www.findu.com/cgi-bin/rawposit.cgi?call=%s&start=%d&length=%d\'",
         download_trail_station_call,posit_start,posit_length);
 
     xastir_snprintf(tempfile, sizeof(tempfile),
-            "wget -S -N -t 1 -T 30 -O %s %s 2> /dev/null\n",
+            "wget --server-response --timestamping --tries=1 --timeout=30 --output-document=%s %s 2> /dev/null\n",
             log_filename,
             fileimg);
 
