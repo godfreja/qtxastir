@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.140 2004/08/03 19:42:45 we7u Exp $
+# $Id: language-German.sys,v 1.141 2004/08/04 20:04:37 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -551,6 +551,8 @@ POPUPOB040|Öffnungswinkel - Richtung||
 POPUPOB041|Rundstrahlantenne||
 POPUPOB042|Richtantenne||
 POPUPOB043|unbekannt||
+POPUPOB044|Adopt Object||
+POPUPOB045|Adopt Item||
 #
 # PopUp "Internet Einstellungen"
 WPUPCFI001|Internet Einstellungen||

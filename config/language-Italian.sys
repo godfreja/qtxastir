@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.138 2004/08/03 19:42:45 we7u Exp $
+# $Id: language-Italian.sys,v 1.139 2004/08/04 20:04:37 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -545,6 +545,8 @@ POPUPOB040|Larghezza fascio - Puntamento||
 POPUPOB041|Antenna Omni||
 POPUPOB042|Antenna Direzionale||
 POPUPOB043|Sconosciuta||
+POPUPOB044|Adopt Object||
+POPUPOB045|Adopt Item||
 #
 #Configure Internet
 WPUPCFI001|Configura Rete||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.145 2004/08/03 19:42:46 we7u Exp $
+# $Id: language-Spanish.sys,v 1.146 2004/08/04 20:04:37 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -548,6 +548,8 @@ POPUPOB040|Dirigiendo - Ancho de la orientación||
 POPUPOB041|Antena Omni-direccional||
 POPUPOB042|Antena Direccional||
 POPUPOB043|Inútil||
+POPUPOB044|Adopt Object||
+POPUPOB045|Adopt Item||
 #
 # Configurar Internet
 WPUPCFI001|Configurar Internet||
