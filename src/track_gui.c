@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.3 2002/06/22 18:01:09 n0vh Exp $
+ * $Id: track_gui.c,v 1.4 2002/06/28 03:21:52 n0vh Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -486,7 +486,7 @@ begin_critical_section(&download_findu_dialog_lock, "track_gui.c:Download_findu_
                                       XmNrightAttachment,XmATTACH_NONE,
                                       XmNnavigationType, XmTAB_GROUP,
                                       XmNtraversalOn, TRUE,
-				      XmNwidth, 190,
+				      //XmNwidth, 190,
 				      XmNrightAttachment, XmATTACH_FORM,
                                       XmNrightOffset, 10,
 				      XmNbackground, colors[0xff],
@@ -510,7 +510,7 @@ begin_critical_section(&download_findu_dialog_lock, "track_gui.c:Download_findu_
                                       XmNrightAttachment,XmATTACH_NONE,
                                       XmNnavigationType, XmTAB_GROUP,
                                       XmNtraversalOn, TRUE,
-				      XmNwidth, 190,
+				      //XmNwidth, 190,
 				      XmNrightAttachment, XmATTACH_FORM,
                                       XmNrightOffset, 10,
 				      XmNbackground, colors[0xff],
