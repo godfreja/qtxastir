@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.34 2002/05/17 21:14:16 we7u Exp $
+ * $Id: db.c,v 1.35 2002/05/17 22:26:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -599,6 +599,12 @@ void msg_data_add(char *call_sign, char *from_call, char *data, char *seq, char 
         // send message window
         if (strcmp(m_fill.message_line,data) != 0) {
             do_update++;
+        }
+
+        // Check for zero time
+        if (m_fill.sec_heard == 0) {
+            m_fill.sec_heard = sec_now();
+            printf("Zero time on a previous message.\n");
         }
     }
     else {
