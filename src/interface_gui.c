@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.24 2002/07/18 21:55:08 we7u Exp $
+ * $Id: interface_gui.c,v 1.25 2002/07/20 07:31:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -245,7 +245,7 @@ Widget TNC_relay_digipeat;
 
 
 
-
+ 
 void Config_TNC_destroy_shell( /*@unused@*/ Widget widget, XtPointer clientData,  /*@unused@*/ XtPointer callData) {
     Widget shell = (Widget) clientData;
     XtPopdown(shell);
@@ -289,10 +289,16 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC_change_data" )
     else
         devices[TNC_port].connect_on_startup=0;
 
-    if(XmToggleButtonGetState(TNC_transmit_data))
+    if(XmToggleButtonGetState(TNC_transmit_data)) {
         devices[TNC_port].transmit_data=1;
-    else
+        if (devices[TNC_port].device_type == DEVICE_SERIAL_KISS_TNC)
+            XtSetSensitive(TNC_relay_digipeat, TRUE);
+    }
+    else {
         devices[TNC_port].transmit_data=0;
+        if (devices[TNC_port].device_type == DEVICE_SERIAL_KISS_TNC)
+            XtSetSensitive(TNC_relay_digipeat, FALSE);
+    }
 
     if (type == DEVICE_SERIAL_KISS_TNC) {
         if (XmToggleButtonGetState(TNC_relay_digipeat))
@@ -1202,6 +1208,11 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC" );
                         XmToggleButtonSetState(TNC_relay_digipeat, TRUE, FALSE);
                     else
                         XmToggleButtonSetState(TNC_relay_digipeat, FALSE, FALSE);
+
+                    if (devices[TNC_port].transmit_data)
+                        XtSetSensitive(TNC_relay_digipeat, TRUE);
+                    else
+                        XtSetSensitive(TNC_relay_digipeat, FALSE);
                     break;
                 case DEVICE_SERIAL_TNC:
                 default:
