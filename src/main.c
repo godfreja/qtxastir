@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.475 2004/06/24 20:08:22 we7u Exp $
+ * $Id: main.c,v 1.476 2004/06/24 20:49:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9830,6 +9830,10 @@ void check_pointer_position(void) {
 
 
 
+// Used to determine when to update the station number on the status
+// line:
+int stations_old = 0;
+
 
 // This is the periodic process that updates the maps/symbols/tracks.
 // At the end of the function it schedules itself to be run again.
@@ -9841,7 +9845,6 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
         int i;
     static int last_alert_on_screen;
     char station_num[30];
-    int stations_old = stations;
 
 
     do_time = 0;
@@ -10450,6 +10453,9 @@ if (end_critical_section(&data_lock, "main.c:UpdateTime(2)" ) > 0)
                 langcode("BBARSTH001"),
                 stations);
             XmTextFieldSetString(text3, station_num);
+
+            // Set up for next time
+            stations_old = stations;
         }
 
         check_pointer_position();
