@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.67 2002/04/30 22:53:06 we7u Exp $
+ * $Id: main.c,v 1.68 2002/05/07 18:40:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2426,6 +2426,11 @@ void menu_link_for_mouse_menu(Widget w, XtPointer clientData, XtPointer callData
 void Snapshots_toggle( /*@unused@*/ Widget w, XtPointer clientData, XtPointer callData) {
     char *which = (char *)clientData;
     XmToggleButtonCallbackStruct *state = (XmToggleButtonCallbackStruct *)callData;
+
+    // Whether we're setting or unsetting it, set the timer such
+    // that a snapshot will occur immediately once the button is set
+    // again.
+    last_snapshot = 0;
 
     if(state->set)
         snapshots_enabled = atoi(which);

@@ -1,5 +1,5 @@
 /*
- * $Id: maps.h,v 1.4 2002/04/26 15:53:38 francais1 Exp $
+ * $Id: maps.h,v 1.5 2002/05/07 18:40:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -75,6 +75,8 @@ extern int print_in_monochrome;
 extern int print_invert;
 extern int  locate_place(Widget w, char *name, char *state, char *county, char *quad, char* type, char *filename, int follow_case, int get_match);
 extern void maps_init(void);
+extern time_t last_snapshot;
+
 
 
 #if !defined(NO_GRAPHICS) && (defined(HAVE_IMAGEMAGICK) || defined(HAVE_GEOTIFF))
