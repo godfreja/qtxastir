@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.127 2002/08/13 20:47:53 we7u Exp $
+ * $Id: db.c,v 1.128 2002/08/13 21:01:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8930,7 +8930,7 @@ int decode_Mic_E(char *call_sign,char *path,char *info,char from,int port,int th
     else
         west = (int)((path[5] & 0x40) == (char)0x40);  // W/E Long Indicator
 
-printf("north:%c->%d\tlat:%c->%d\twest:%c->%d\n",path[3],north,path[4],long_offset,path[5],west);
+    //printf("north:%c->%d\tlat:%c->%d\twest:%c->%d\n",path[3],north,path[4],long_offset,path[5],west);
 
     /* Put the latitude string into the temp variable */
     xastir_snprintf(temp, sizeof(temp), "%c%c%c%c.%c%c%c%c",s_b1,s_b2,s_b3,s_b4,s_b5,s_b6,
