@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.12 2002/04/01 22:53:34 we7u Exp $
+ * $Id: util.c,v 1.13 2002/04/01 23:42:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -829,6 +829,7 @@ void convert_xastir_to_UTM_str(char *str, int str_len, long x, long y) {
 
 
 // convert latitude from long to string 
+// Input is in Xastir coordinate system
 //
 // CONVERT_LP_NOSP      = DDMM.MMN
 // CONVERT_LP_NORMAL    = DD MM.MMN
@@ -899,6 +900,7 @@ void convert_lat_l2s(long lat, char *str, int str_len, int type) {
 
 
 // convert longitude from long to string
+// Input is in Xastir coordinate system
 //
 // CONVERT_LP_NOSP      = DDDMM.MME
 // CONVERT_LP_NORMAL    = DDD MM.MME
