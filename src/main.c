@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.334 2003/09/04 16:40:52 we7u Exp $
+ * $Id: main.c,v 1.335 2003/09/04 17:11:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -140,7 +140,16 @@
 
 // If next line uncommented, Xastir will use larger fonts nearly
 // everywhere, including menus and status bar.
+//
 //#define USE_LARGE_SYSTEM_FONT
+
+// Conversely, this will make the system font a bit smaller than
+// normal.  Only define one or zero of USE_LARGE_SYSTEM_FONT or
+// USE_SMALL_SYSTEM_FONT.
+//
+//#define USE_SMALL_SYSTEM_FONT
+
+
 
 // If next line uncommented, Xastir will use a large font for the
 // station text in the drawing area.
@@ -22486,6 +22495,10 @@ int main(int argc, char *argv[]) {
 #ifdef USE_LARGE_SYSTEM_FONT
         "*.fontList: -*-*-*-*-*-*-20-*-*-*-*-*-*-*\n",
 #endif  // USE_LARGE_SYSTEM_FONT
+
+#ifdef USE_SMALL_SYSTEM_FONT
+        "*.fontList: -*-*-*-*-*-*-8-*-*-*-*-*-*-*\n",
+#endif  // USE_SMALL_SYSTEM_FONT
 
         "*List.Translations: #override \n\
         <Key>Return:    Select(children)\n\
