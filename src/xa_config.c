@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.19 2002/05/09 22:29:09 francais1 Exp $
+ * $Id: xa_config.c,v 1.20 2002/05/20 21:49:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1055,8 +1055,8 @@ void load_data_or_default(void) {
     if(!get_int("VIEW_MESSAGE_RANGE", &vm_range,0,99999,0))
         vm_range=0;
 
-    if(!get_int("VIEW_MESSAGE_LIMIT", &view_message_limit,0,10000,0))
-        view_message_limit = 3000;
+    if(!get_int("VIEW_MESSAGE_LIMIT", &view_message_limit,0,99999,0))
+        view_message_limit = 10000;
 
 
     /* printer variables */
