@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.83 2003/05/23 21:18:01 we7u Exp $
+ * $Id: xa_config.c,v 1.84 2003/06/06 23:57:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -664,10 +664,10 @@ void save_data(void)  {
             store_int (fout, name, list_size_w[i]);
         }
 
-	store_int (fout, "TRACK_ME", track_me);
-    store_int (fout, "MAP_CHOOSER_EXPAND_DIRS", map_chooser_expand_dirs);
-    store_int (fout, "ST_DIRECT_TIMEOUT", st_direct_timeout);
-    store_int (fout, "DEAD_RECKONING_TIMEOUT", dead_reckoning_timeout);
+        store_int (fout, "TRACK_ME", track_me);
+        store_int (fout, "MAP_CHOOSER_EXPAND_DIRS", map_chooser_expand_dirs);
+        store_int (fout, "ST_DIRECT_TIMEOUT", st_direct_timeout);
+        store_int (fout, "DEAD_RECKONING_TIMEOUT", dead_reckoning_timeout);
 
         if (debug_level & 1)
             fprintf(stderr,"Save Data Stop\n");
@@ -1348,7 +1348,7 @@ void load_data_or_default(void) {
     }
 
     if (!get_int ("TRACK_ME", &track_me,0,1,0))
-        track_me = 0;	// No tracking
+        track_me = 0;    // No tracking
 
     if (!get_int ("MAP_CHOOSER_EXPAND_DIRS", &map_chooser_expand_dirs,0,1,0))
         map_chooser_expand_dirs = 1;

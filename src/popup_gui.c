@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.11 2003/05/25 05:52:07 we7u Exp $
+ * $Id: popup_gui.c,v 1.12 2003/06/06 23:57:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -232,7 +232,7 @@ char *id_fontname=
     //"-*-helvetica-*-*-*-*-*-240-100-100-*-*-*-*";
     "-*-helvetica-*-*-*-*-*-240-*-*-*-*-*-*";
     //"-*-fixed-*-r-*-*-*-*-*-*-*-200-*-*";
-    //"-*-helvetica-bold-r-*-*-12-240-1075-1075-*-80-*-*";	// Test for bad font
+    //"-*-helvetica-bold-r-*-*-12-240-1075-1075-*-80-*-*";    // Test for bad font
 
 
 
@@ -257,7 +257,7 @@ void popup_ID_message(char *banner, char *message) {
         /* load font */
         if(!id_font) {
             id_font=(XFontStruct *)XLoadQueryFont (XtDisplay(da), id_fontname);
-            if (id_font == NULL) {	// Couldn't get the font!!!
+            if (id_font == NULL) {    // Couldn't get the font!!!
                 fprintf(stderr,"popup_ID_message: Couldn't get font %s\n",
                     id_fontname);
                 pending_ID_message = 0;
