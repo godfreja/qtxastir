@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.91 2002/06/17 20:11:27 we7u Exp $
+ * $Id: main.c,v 1.92 2002/06/17 22:13:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4918,7 +4918,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                     // speed/turns, etc.
                     posit_next_time = posit_last_time + sb_POSIT_rate;
                     sb_last_heading = sb_current_heading;
-printf("Sending Posit\n");
+                    //printf("Sending Posit\n");
                 }
                 else {
                     // Schedule next fixed posit time, set in
