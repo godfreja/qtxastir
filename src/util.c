@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.129 2004/11/17 17:46:55 we7u Exp $
+ * $Id: util.c,v 1.130 2004/11/20 02:49:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3837,7 +3837,9 @@ int curl_getfile(char *fileimg, char *local_filename) {
 
         curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30);
         curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
-        curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
+
+// Only newer libcurl has this?
+// curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
 
         ftpfile.filename = local_filename;
         ftpfile.stream = NULL;
