@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.82 2003/03/05 23:32:25 we7u Exp $
+# $Id: language-Spanish.sys,v 1.83 2003/03/06 18:47:32 we7u Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -847,6 +847,8 @@ POPEM00029|Encontrado!||
 POPEM00030|Símbolo de Estación Meteorológica||
 POPEM00031|Changed to WX symbol '/_', other options:  '\_'  '/W'  and  '\W'||
 POPEM00032|Warning: Using National Weather Service Symbol!||
+POPEM00033|No GPS Data!||
+POPEM00034|Disabling My Position TX Until Valid GPS Data!||
 #
 # Salto de Locación
 JMLPO00001|Localización de Mapa||
