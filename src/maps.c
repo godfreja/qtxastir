@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.14 2002/04/15 23:04:23 we7u Exp $
+ * $Id: maps.c,v 1.15 2002/04/16 00:07:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7458,11 +7458,8 @@ void map_search (Widget w, char *dir, alert_entry * alert, int *alert_count,int 
         // First check whether the alert->filename variable is filled
         // in.  If so, we've already found the file and can just display
         // that shape in the file
-        if (alert->filename[0]) {   // We have a filename
-            // Display the shape
-        }
-        else {  // No filename in struct, so will have to search for the
-                // shape in the files.
+        if (alert->filename[0] == '\0') {   // No filename in struct, so will have
+                                            // to search for the shape in the files.
             switch (alert->title[3]) {
                 case 'C':   // Check for a 'C' in the 4th character of the title
                     // County file c_??????
@@ -7485,6 +7482,19 @@ printf("%c:Unknown weather warning file\n",alert->title[3]);
             strncpy (alert->filename, "we7u", sizeof (alert->filename));
 //            printf("%s\t%s\t%s\n",alert->activity,alert->alert_tag,alert->title);
             printf("File: %s\n",alert->filename);
+        }
+
+        if (alert->filename[0]) {
+
+            //
+            // Need code here to call draw_map()
+            //
+        }
+        else {  // Still no filename for the weather alert.
+                // Output an error message?
+            //
+            // Need code here
+            //
         }
     }
     else {          // We're doing regular maps
