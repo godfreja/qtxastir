@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.404 2004/12/14 20:17:17 we7u Exp $
+ * $Id: db.c,v 1.405 2004/12/16 05:29:36 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12444,8 +12444,17 @@ int process_directed_query(char *call,char *path,char *message,char from) {
                         strncat(temp,
                             p_station->call_sign,
                             sizeof(temp) - strlen(temp));
-                    } else
-                        break;
+                    } else {
+                        transmit_message_data(call,temp,NULL);
+                        xastir_snprintf(temp, sizeof(temp), 
+                                        ":%s:Directs=",from_call);
+                        strncat(temp,
+                            " ",
+                            sizeof(temp) - strlen(temp));
+                        strncat(temp,
+                            p_station->call_sign,
+                            sizeof(temp) - strlen(temp));
+                    }
                 }
             }
             p_station = p_station->n_next;
