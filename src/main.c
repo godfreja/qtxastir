@@ -1,5 +1,5 @@
 /*
- * $Id: main.c,v 1.12 2002/03/11 07:01:49 we7u Exp $
+ * $Id: main.c,v 1.13 2002/03/26 23:43:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3598,6 +3598,7 @@ void quit(int sig) {
 /* handle segfault signal */
 void segfault(/*@unused@*/ int sig) {
     fprintf(stderr, "Caught Segfault! Xastir will terminate\n");
+    fprintf(stderr, "%02d:%02d:%02d\n", get_hours(), get_minutes(), get_seconds() );
     quit(-1);
 }
 
