@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.259 2003/04/02 19:30:50 we7u Exp $
+ * $Id: main.c,v 1.260 2003/04/03 19:52:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22076,6 +22076,16 @@ int main(int argc, char *argv[], char *envp[]) {
             init_message_data();                // init messages
             reset_outgoing_messages();
 
+            // If we don't make this call, we can't access Xt or
+            // Xlib calls from multiple threads at the same time.
+            // Note that Motif from the OSF (including OpenMotif)
+            // still can't handle multiple threads talking to it at
+            // the same time.  See:
+            // http://www.faqs.org/faqs/x-faq/part7/section-46.html
+            // We'll probably have to add in a global mutex lock in
+            // order to keep from accessing the widget set from more
+            // than one thread.
+            XInitThreads();
 
             /* set language attribs */
             (void)XtSetLanguageProc((XtAppContext) NULL, (XtLanguageProc) NULL, (XtPointer) NULL );
