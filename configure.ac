@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.23 2003/02/18 21:16:44 we7u Exp $
+# $Id: configure.ac,v 1.24 2003/02/19 06:20:56 we7u Exp $
 
 
 #
@@ -13,7 +13,7 @@ AC_INIT(xastir, 1.1.4, xastir@xastir.org)
 AC_PREREQ(2.53)
 
 AC_CONFIG_SRCDIR([src/xastir.h])
-AM_CONFIG_HEADER([config.h])
+AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE
 
 echo ""
