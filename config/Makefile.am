@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.9 2003/10/17 15:19:33 n2ygk Exp $
+# $Id: Makefile.am,v 1.10 2003/11/10 14:56:38 n2ygk Exp $
 configdir = ${pkgdatadir}/config
 
 EXTRA_DIST = \
@@ -16,6 +16,8 @@ EXTRA_DIST = \
     tgrkgl.dbfawk \
     tgrlk.dbfawk \
     tgrlpt.dbfawk \
+    tgrlpy.dbfawk \
+    tgrplc00.dbfawk \
     tgrwat.dbfawk \
     nwsc_ddmmyy.dbfawk \
     nwsmzddmmyy.dbfawk \
