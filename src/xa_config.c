@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.114 2004/03/29 23:40:55 we7u Exp $
+ * $Id: xa_config.c,v 1.115 2004/03/30 20:49:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -450,6 +450,7 @@ void save_data(void)  {
         store_string (fout, "GROUP_DATA_FILE", group_data_file);
         store_string (fout, "GNIS_FILE", locate_gnis_filename);
         store_string (fout, "GEOCODE_FILE", geocoder_map_filename);
+        store_int (fout, "SHOW_FIND_TARGET", show_destination_mark);
 
         /* maps */
         store_int (fout, "MAPS_LONG_LAT_GRID", long_lat_grid);
@@ -976,6 +977,8 @@ void load_data_or_default(void) {
     if (!get_string ("GEOCODE_FILE", geocoder_map_filename))
         strcpy (geocoder_map_filename, get_data_base_dir ("GNIS/geocode"));
 
+    if (!get_int ("SHOW_FIND_TARGET", &show_destination_mark, 0, 1, 1))
+        show_destination_mark = 1;
 
     /* maps */
     if (!get_int ("MAPS_LONG_LAT_GRID", &long_lat_grid, 0, 1, 1))
