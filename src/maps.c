@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.311 2003/07/23 21:34:41 we7u Exp $
+ * $Id: maps.c,v 1.312 2003/08/07 00:54:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3705,7 +3705,7 @@ void index_restore_from_file(void) {
                                             // line.
                 char scanf_format[50];
                 int processed;
-                int i;
+                int i, jj;
 
 //fprintf(stderr,"%s\n",in_string);
 
@@ -3808,7 +3808,8 @@ void index_restore_from_file(void) {
 
                 // Check for control characters in the filename.
                 // Reject any that have them.
-                for (i = 0; i < (int)strlen(temp_record->filename); i++)
+                jj = (int)strlen(temp_record->filename);
+                for (i = 0; i < jj; i++)
                 {
                     if (temp_record->filename[i] < 0x20) {
 
