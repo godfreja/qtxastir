@@ -10,7 +10,7 @@
 # 4) Formatting coordinates into decimal degrees, degrees/minutes,
 #    and degrees/minutes/seconds.
 #
-# Copyright (C) 1999-2002  Curt Mills, WE7U
+# Copyright (C) 2000-2002  Curt Mills, WE7U
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@
 
 
 #
-# $Id: Coordinate.pm,v 1.2 2002/08/13 21:34:40 we7u Exp $
+# $Id: Coordinate.pm,v 1.3 2002/08/13 21:36:19 we7u Exp $
 #
 #
 # Reference ellipsoids derived from Peter H. Dana's website- 
@@ -85,7 +85,7 @@
 package CoordinateFormat;
 
 
-$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.3 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -290,7 +290,7 @@ sub decimal_degrees
 package Ellipsoid;
 
 
-$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.3 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -431,7 +431,7 @@ sub inverse_flattening
 package EllipsoidTable;
 
 
-$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.3 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -600,7 +600,7 @@ $_ellipsoid{"WGS 84"}			= Ellipsoid->new( "WGS 84",		    6378137.000, 298.257223
 package Datum;
 
 
-$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.3 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -688,7 +688,7 @@ sub dz				# Z-offset from WGS84 ellipsoid center
 package DatumTable;
 
 
-$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.3 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -1748,7 +1748,7 @@ package Coordinate;
 #
 
 
-$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.3 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 use Math::Trig;

@@ -4,7 +4,7 @@
 # test_coord.pl:  Perl code to test out the Coordinate.pm
 # module.
 #
-# Copyright (C) 1999-2002  Curt Mills, WE7U
+# Copyright (C) 2000-2002  Curt Mills, WE7U
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -23,7 +23,7 @@
 
 
 #
-# $Id: test_coord.pl,v 1.2 2002/08/13 21:34:40 we7u Exp $
+# $Id: test_coord.pl,v 1.3 2002/08/13 21:36:19 we7u Exp $
 #
 #
 # TODO:
