@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.291 2003/06/14 01:47:54 kd6zwr Exp $
+ * $Id: maps.c,v 1.292 2003/06/16 18:49:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7196,13 +7196,13 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm, int destination_pixm
 
     if (imagemagick_options.equalize) {
         if (debug_level & 16)
-            puts("equalize");
+            fprintf(stderr,"equalize");
         EqualizeImage(image);
     }
 
     if (imagemagick_options.normalize) {
         if (debug_level & 16)
-            puts("normalize");
+            fprintf(stderr,"normalize");
         NormalizeImage(image);
     }
 
@@ -7243,7 +7243,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm, int destination_pixm
 
     pixel_pack = GetImagePixels(image, 0, 0, image->columns, image->rows);
     if (!pixel_pack) {
-        puts("pixel_pack == NULL!!!");
+        fprintf(stderr,"pixel_pack == NULL!!!");
         if (image)
             DestroyImage(image);
         if (image_info)
@@ -7253,7 +7253,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm, int destination_pixm
 
     index_pack = GetIndexes(image);
     if (image->storage_class == PseudoClass && !index_pack) {
-        puts("PseudoClass && index_pack == NULL!!!");
+        fprintf(stderr,"PseudoClass && index_pack == NULL!!!");
         if (image)
             DestroyImage(image);
         if (image_info)
@@ -7875,7 +7875,7 @@ void draw_tiger_map (Widget w) {
         fprintf(stderr,"Color depth is %i \n", (int)image->depth);
 
     if (image->colorspace != RGBColorspace) {
-        puts("TBD: I don't think we can deal with colorspace != RGB");
+        fprintf(stderr,"TBD: I don't think we can deal with colorspace != RGB");
         if (image)
             DestroyImage(image);
         if (image_info)
@@ -7921,7 +7921,7 @@ void draw_tiger_map (Widget w) {
 
     pixel_pack = GetImagePixels(image, 0, 0, image->columns, image->rows);
     if (!pixel_pack) {
-        puts("pixel_pack == NULL!!!");
+        fprintf(stderr,"pixel_pack == NULL!!!");
         if (image)
             DestroyImage(image);
         if (image_info)
@@ -7931,7 +7931,7 @@ void draw_tiger_map (Widget w) {
 
     index_pack = GetIndexes(image);
     if (image->storage_class == PseudoClass && !index_pack) {
-        puts("PseudoClass && index_pack == NULL!!!");
+        fprintf(stderr,"PseudoClass && index_pack == NULL!!!");
         if (image)
             DestroyImage(image);
         if (image_info)

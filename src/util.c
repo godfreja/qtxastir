@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.73 2003/06/04 16:05:35 we7u Exp $
+ * $Id: util.c,v 1.74 2003/06/16 18:49:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2762,7 +2762,7 @@ void time_mark(int start)
 
     if (start) {
         gettimeofday(&t_start, NULL);
-        puts("\nstart: 0.000000s");
+        fprintf(stderr,"\nstart: 0.000000s");
     }
     else {
         gettimeofday(&t_cur, NULL);
