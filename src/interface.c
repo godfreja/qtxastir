@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.91 2003/04/06 20:22:09 we7u Exp $
+ * $Id: interface.c,v 1.92 2003/04/07 17:26:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4073,7 +4073,7 @@ int add_device(int port_avail,int dev_type,char *dev_nm,char *passwd,int dev_sck
                         xastir_snprintf(logon_txt, sizeof(logon_txt),
                             "%s",
                             my_callsign);
-printf(":%s:\n",my_callsign);
+//printf(":%s:\n",my_callsign);
                         port_write_binary(port_avail, logon_txt, 255);
 
                         for (ii = 0; ii < 255; ii++)
@@ -4081,7 +4081,7 @@ printf(":%s:\n",my_callsign);
                         xastir_snprintf(logon_txt, sizeof(logon_txt),
                             "%s",
                             passwd);
-printf(":%s:\n",passwd);
+//printf(":%s:\n",passwd);
                         port_write_binary(port_avail, logon_txt, 255);
                     }
                 }
