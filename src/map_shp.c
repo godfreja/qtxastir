@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.45 2004/02/21 20:35:34 kd6zwr Exp $
+ * $Id: map_shp.c,v 1.46 2004/03/19 20:34:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1378,7 +1378,14 @@ void draw_shapefile_map (Widget w,
 
         if (ret_val != 0) {
             fprintf(stderr,"XReadBitmapFile() failed: Bitmap not found? %s\n",xbm_path);
-            exit(1);
+
+            // We shouldn't exit on this one, as it's not so severe
+            // that we should kill Xastir.  I've seen this happen
+            // after very long runtimes though, so perhaps there's a
+            // problem somewhere in the X11 server and/or it's
+            // caching?
+            //
+            //exit(1);
         }
 
         (void)XSetStipple(XtDisplay(w), gc_tint, pixmap_wx_stipple);
