@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.137 2002/09/10 22:14:26 we7u Exp $
+ * $Id: db.c,v 1.138 2002/09/10 23:14:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5281,9 +5281,9 @@ void exp_trailstation(FILE *f, DataRow *p_station) {
             speed  = current->speed;
             course = current->course;
             alt    = current->altitude;
-            if ((current->flag & TR_LOCAL) != '\0')
+            if ((current->flag & TR_NEWTRK) != '\0')
                 newtrk = 1;
-
+ 
             exp_trailpos(f,lat0,lon0,sec,speed,course,alt,newtrk);
 
             newtrk = 0;
