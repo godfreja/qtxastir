@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.354 2004/07/24 22:49:37 we7u Exp $
+ * $Id: db.c,v 1.355 2004/07/27 00:08:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13548,7 +13548,7 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
         if (strncasecmp(line,"user",4) == 0
                 || strncasecmp(line,"pass",4 == 0)
                 || strncasecmp(line,"filter",6 == 0)) {
-            fprintf(stderr,"Logged on via x_spider: %s\n", line);
+            fprintf(stderr,"\tLogged on: %s\n", line);
 
 // If the line has a "filter" parameter in it, we need to remove it,
 // else a client may change our filtering parameters.  Perhaps we
