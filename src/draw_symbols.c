@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.6 2002/06/17 18:42:15 we7u Exp $
+ * $Id: draw_symbols.c,v 1.7 2002/06/18 17:35:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1386,17 +1386,19 @@ void draw_symbol(Widget w, char symbol_table, char symbol_id, char symbol_overla
                             // time since last heard:
                             //  Green:  0-29 minutes
                             // Yellow: 30-59 minutes
-                            //    Red: 60-infinity minutes
+                            //    Red: 60 minutes to 1 day
+                            //  White: 1 day or later
 
                             minutes = (float)( (sec_now() - sec_heard) / 60.0);
                             hours = minutes / 60.0;
+
                             // More than a day old?
                             if (hours >= 24.0) {
-                                xastir_snprintf(age,sizeof(age),"%.1fday", hours/24.0);
-                                fgcolor = 0x4a; // red
+                                xastir_snprintf(age,sizeof(age),"%.1fday", hours / 24.0);
+                                fgcolor = 0x0f; // white
                             }
                             // More than an hour old?
-                            else if (minutes >= 60.0) {
+                            else if (hours >= 1.0) {
                                 xastir_snprintf(age,sizeof(age),"%.1fhr", hours);
                                 fgcolor = 0x4a; // red
                             }
