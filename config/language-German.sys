@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.29 2002/06/26 00:12:08 we7u Exp $
+# $Id: language-German.sys,v 1.30 2002/06/28 20:44:39 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -573,6 +573,7 @@ WPUPSTI055|Echo gehört von:||
 WPUPSTI056|Automatische Aktualisierung||
 WPUPSTI057|Omni-DF: %s||
 WPUPSTI058|DF Bearing:||
+WPUPSTI059|Status: %s||
 #
 # FCC-RAC Call Look up
 STIFCC0001|FCC Datenbank Abfrage||

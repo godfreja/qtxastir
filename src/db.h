@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.10 2002/06/26 00:20:38 we7u Exp $
+ * $Id: db.h,v 1.11 2002/06/28 20:44:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -327,6 +327,7 @@ typedef struct _DataRow {
     char station_time[MAX_STATION_TIME];
     char station_time_type;
     char sats_visible[MAX_SAT];
+    CommentRow *status_data;
     CommentRow *comment_data;           // Ptr to comment records or NULL
     int  df_color;
 } DataRow;

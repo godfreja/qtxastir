@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.29 2002/06/26 00:12:08 we7u Exp $
+# $Id: language-Dutch.sys,v 1.30 2002/06/28 20:44:39 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -571,6 +571,7 @@ WPUPSTI055|Echo vanaf:||
 WPUPSTI056|Zet Automatisch bijwerken aan||
 WPUPSTI057|Omni-DF: %s||
 WPUPSTI058|DF Richting:||
+WPUPSTI059|Status: %s||
 #
 # FCC-RAC Call Look up
 STIFCC0001|FCC Databank Doorzoeken||
