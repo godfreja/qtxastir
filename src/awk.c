@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.21 2004/08/20 04:06:30 we7u Exp $
+ * $Id: awk.c,v 1.22 2004/08/20 17:25:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -206,6 +206,10 @@ int awk_set_sym(awk_symbol *s,
     switch(s->type) {
     case STRING:
         if (minlen > 0) {
+            // Change this to an xastir_snprintf() function if we
+            // need to use this awk_set_sym() function later.
+            // strncpy can forget to null-terminate the string if
+            // the destination isn't large enough.
             strncpy(s->val,val,minlen);
             s->len = l - 1;
         }
