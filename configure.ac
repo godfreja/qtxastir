@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.107 2004/12/09 20:27:44 we7u Exp $
+# $Id: configure.ac,v 1.108 2004/12/10 02:32:35 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 
@@ -415,6 +415,21 @@ CPPFLAGS=`echo  "$CPPFLAGS" | awk '{for(i=1;i<=NF;++i) {if ($i != "-g") s = s " 
 changequote([,]) 
 
 
+#
+# Change the compiler optimization if using Windows/Cygwin in order
+# to reduce memory usage and speed up the compile.  Here we change
+# "-O2" to "-O1" in CFLAGS/CPPFLAGS to reduce the level of
+# optimization.
+#
+case "$host_os" in
+cygwin*)
+  changequote(,) 
+  CFLAGS=`echo  "$CFLAGS" | awk '{for(i=1;i<=NF;++i) {if ($i != "-O2") s = s " " $i} print s}'`
+  CPPFLAGS=`echo  "$CPPFLAGS" | awk '{for(i=1;i<=NF;++i) {if ($i != "-O2") s = s " " $i} print s}'`
+  changequote([,]) 
+;;
+esac
+ 
 
 # Create the ILIBS defined variable
 if test "${use_ax25}" = "yes"; then
