@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.c,v 1.8 2002/06/18 23:19:15 we7u Exp $
+ * $Id: list_gui.c,v 1.9 2002/06/19 00:06:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -528,7 +528,7 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill"
                         XmTextFieldSetString(SL_pos_time[type][row],stemp);
                         XtManageChild(SL_pos_time[type][row]);
 
-                        xastir_snprintf(stemp, sizeof(stemp), "%s", p_station->node_path);
+                        xastir_snprintf(stemp, sizeof(stemp), "%s", p_station->node_path_ptr);
                         XmTextFieldSetString(SL_node_path[type][row],stemp);
                         XtManageChild(SL_node_path[type][row]);
 
