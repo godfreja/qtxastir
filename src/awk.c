@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.16 2004/05/25 20:45:23 we7u Exp $
+ * $Id: awk.c,v 1.17 2004/05/26 05:57:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -467,16 +467,23 @@ void awk_eval_expr(awk_symtab *this,
                     && dp >= (char *)src->val 
                     && dp <= &((char *)src->val)[src->size]) {
                     char *sp;
+                    int free_it = 0;
 
                     if ((int)sizeof(tbuf) >= src->size) { /* tbuf big enuf */
                         sp = tbuf;
                     } else {    /* tbuf too small */
+                        free_it++;
                         sp = malloc(src->size);
                         if (!sp) /* oh well! */
                             break; 
                     }
                     awk_get_sym(src,sp,src->size,&newlen);
                     bcopy(sp,dp,newlen); /* now copy it in */
+
+                    // We only want to free it if we malloc'ed it.
+                    if (free_it)
+                        free(sp);
+
                 } else {
                     awk_get_sym(src,dp,(dmax-dl),&newlen);
                 }
