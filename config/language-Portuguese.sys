@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.73 2003/02/03 22:29:42 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.74 2003/02/04 00:42:09 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -331,6 +331,9 @@ WPUPCFD026|Enviar reportes de posição em que intervalos?||
 WPUPCFD027|Pop up de novos boletins||
 WPUPCFD028|Avisar se teclas foram modificadas||
 WPUPCFD029|Ver boletins de distância zero||
+#
+# PopUp "Configure - Timing"
+WPUPCFTM01|Configure Timing||
 #
 # PopUp "Sistema de configuração de coordenadas"
 WPUPCFC001|Sistema de configuração de coordenadas||

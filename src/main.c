@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.217 2003/02/04 00:19:29 we7u Exp $
+ * $Id: main.c,v 1.218 2003/02/04 00:42:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13112,7 +13112,7 @@ void Configure_timing( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
     Atom delw;
 
     if (!configure_timing_dialog) {
-        configure_timing_dialog = XtVaCreatePopupShell(langcode("WPUPCFD001"),
+        configure_timing_dialog = XtVaCreatePopupShell(langcode("WPUPCFTM01"),
                 xmDialogShellWidgetClass,
                 Global.top,
                 XmNdeleteResponse,XmDESTROY,

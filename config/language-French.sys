@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.76 2003/02/03 22:29:42 we7u Exp $
+# $Id: language-French.sys,v 1.77 2003/02/04 00:42:09 we7u Exp $
 # This is the French Language file used for all the prompts in xastir
 #
 # Creator        : Richard VE2DJE ve2dje@amsat.org
@@ -332,6 +332,9 @@ WPUPCFD026|Transmettre position à quel intervalle?||
 WPUPCFD027|Pop up new bulletins||
 WPUPCFD028|Warn if Modifier Keys||
 WPUPCFD029|View zero-distance bulletins||
+#
+# PopUp "Configure - Timing"
+WPUPCFTM01|Configure Timing||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configure Coordinate System||
