@@ -1,5 +1,5 @@
 /*
-   Portions Copyright (C) 2002-2004  The Xastir Group
+   Portions Copyright (C) 2002-2005  The Xastir Group
 
    The datum conversion code here and in datum.c is from MacGPS 45.
 
@@ -25,7 +25,7 @@
    Thanks Chuck!
 
    N7TAP
-   $Id: datum.h,v 1.9 2004/01/26 16:18:19 we7u Exp $
+   $Id: datum.h,v 1.10 2005/01/08 09:46:48 we7u Exp $
 */
 
 #define FROM_WGS_84 1

@@ -1,8 +1,9 @@
 
-// $Id: geo.h,v 1.5 2004/08/19 06:31:43 we7u Exp $
+// $Id: geo.h,v 1.6 2005/01/08 09:46:48 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
+ * Portions Copyright (C) 2004-2005  The Xastir Group
  *
  * The geo_find() function is the query interface for turning addressees
  * into geographical locations using an 'address map' built from TIGER/Line

@@ -1,9 +1,12 @@
 
 
-// $Id: hashtable.h,v 1.1 2004/10/27 16:58:58 we7u Exp $
+// $Id: hashtable.h,v 1.2 2005/01/08 09:46:48 we7u Exp $
 
 
 /* Copyright (C) 2002 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
+// Portions Copyright (C) 2004-2005  The Xastir Project
+
+
 
 #ifndef __HASHTABLE_CWC22_H__
 #define __HASHTABLE_CWC22_H__
