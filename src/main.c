@@ -1,5 +1,5 @@
 /*
- * $Id: main.c,v 1.15 2002/03/27 20:49:11 we7u Exp $
+ * $Id: main.c,v 1.16 2002/03/27 21:22:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1004,18 +1004,8 @@ static void TrackMouse( /*@unused@*/ Widget w, XtPointer clientData, XEvent *eve
         y = 64800000l;          //  90°S
 
     if (coordinate_system == USE_UTM) {
-        ll_to_utm(gDatum[E_WGS_84].ellipsoid,
-            (double)(-((y - 32400000l )/360000.0)),
-            (double)((x - 64800000l )/360000.0),
-            &utmNorthing,
-            &utmEasting,
-            utmZone,
-            sizeof(utmZone) );
-        utmZone[9] = '\0';
-        //printf( "%s %07.0f %07.0f\n", utmZone, utmEasting, utmNorthing );
-        xastir_snprintf(my_text, sizeof(my_text), "%s %07.0f %07.0f",
-            utmZone, utmEasting, utmNorthing );
-
+        // Create a UTM string from coordinate in Xastir coordinate system
+        convert_xastir_to_UTM_str(my_text, sizeof(my_text), x, y);
     }
     else {
         if (coordinate_system == USE_DDDDDD) {

@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.3 2002/03/26 23:36:37 we7u Exp $
+ * $Id: util.h,v 1.4 2002/03/27 21:22:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -46,6 +46,7 @@ extern char *compress_posit(const char *lat, const char group, const char *lon, 
                 const int course, const int speed, const char *phg);
 
 extern int  position_defined(long lat, long lon, int strict);
+extern void convert_xastir_to_UTM_str(char *str, int str_len, long x, long y);
 extern void convert_lat_l2s(long lat, char *str, int str_len, int type);
 extern void convert_lon_l2s(long lon, char *str, int str_len, int type);
 extern long convert_lat_s2l(char *lat);
