@@ -1,5 +1,5 @@
 /*
- * $Id: maps.c,v 1.33 2002/04/20 04:16:57 we7u Exp $
+ * $Id: maps.c,v 1.34 2002/04/20 19:23:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1646,8 +1646,10 @@ void draw_shapefile_map (Widget w,
                             (void)XSetLineAttributes (XtDisplay (w), gc, lanes, LineSolid, CapButt,JoinMiter);
                         }
                     }
-
-                    if (water_flag) {
+                    else if (water_flag) {
+                        (void)XSetLineAttributes (XtDisplay (w), gc, 0, LineSolid, CapButt,JoinMiter);
+                    }
+                    else {  // Set default line width
                         (void)XSetLineAttributes (XtDisplay (w), gc, 0, LineSolid, CapButt,JoinMiter);
                     }
 
@@ -1742,6 +1744,7 @@ void draw_shapefile_map (Widget w,
                             } else {
                                 int temp;
 
+                                (void)XSetLineAttributes (XtDisplay (w), gc, 0, LineSolid, CapButt,JoinMiter);
                                 temp = XDrawLines(XtDisplay(w), pixmap, gc, points, i, CoordModeOrigin);
                                 if (temp != 0) {
                                     //printf("*** BAD XDrawLines return value: %d ***\n", temp);
