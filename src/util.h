@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.5 2002/04/24 17:51:20 francais1 Exp $
+ * $Id: util.h,v 1.6 2002/05/29 23:59:37 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -93,5 +93,10 @@ typedef struct
 extern void init_critical_section(xastir_mutex *lock);
 extern int begin_critical_section(xastir_mutex *lock, char *text);
 extern int end_critical_section(xastir_mutex *lock, char *text);
+
+//#define TIMING_DEBUG
+#ifdef TIMING_DEBUG
+void time_mark(int start);
+#endif
 
 #endif // __XASTIR_UTIL_H

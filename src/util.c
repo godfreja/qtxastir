@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.18 2002/05/24 22:01:53 we7u Exp $
+ * $Id: util.c,v 1.19 2002/05/29 23:59:37 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2141,3 +2141,26 @@ int end_critical_section(xastir_mutex *lock, char *text) {
 }
 
 
+#ifdef TIMING_DEBUG
+void time_mark(int start)
+{
+    static struct timeval t_start;
+    struct timeval t_cur;
+    long sec, usec;
+
+    if (start) {
+        gettimeofday(&t_start, NULL);
+        puts("\nstart: 0.000000s");
+    }
+    else {
+        gettimeofday(&t_cur, NULL);
+        sec  = t_cur.tv_sec  - t_start.tv_sec;
+        usec = t_cur.tv_usec - t_start.tv_usec;
+        if (usec < 0) {
+            sec--;
+            usec += 1000000;
+        }
+        printf("time:  %ld.%06lds\n", sec, usec);
+    }
+}
+#endif
