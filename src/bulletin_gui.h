@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.h,v 1.1 2002/02/02 03:16:55 kg4ijb Exp $
+ * $Id: bulletin_gui.h,v 1.2 2002/06/25 22:03:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -31,6 +31,7 @@ extern int bulletin_range;
 extern void bulletin_message(char from, char *call_sign, char *tag, char *packet_message, time_t sec_heard);
 
 // From bulletin_gui.c
+extern void popup_bulletins(void);
 extern void bulletin_gui_init(void);
 
 #endif
