@@ -1,5 +1,5 @@
 
-$Id: README.1ST,v 1.17 2002/06/18 18:07:33 we7u Exp $
+$Id: README.1ST,v 1.18 2002/06/27 20:12:07 we7u Exp $
 
 
 Xastir is an open-source project to create a free X11 graphical APRS
@@ -379,6 +379,10 @@ First Time Install:
      library is sufficient:
        make lib
        make lib_install
+
+     You may also need to tweak "/etc/ld.so.conf" to contain the proper path
+     to the libraries and then run ldconfig to update "/etc/ld.so.cache".
+     Once this is done the loader should be able to find the Shapelib library.
 
 
    5. OPTIONAL:  Install ImageMagick graphics support.  Allows using more than
