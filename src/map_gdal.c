@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.113 2004/10/20 16:42:49 we7u Exp $
+ * $Id: map_gdal.c,v 1.114 2004/10/20 19:37:59 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004  The Xastir Group
@@ -587,10 +587,10 @@ void guess_vector_attributes( Widget w,
                               OGRLayerH layerH,
                               OGRFeatureH featureH,
                               int geometry_type ) {
-
-    label_color_guess = -1; // Default = don't draw the feature
     int ii;
     const char *pii = NULL;
+
+    label_color_guess = -1; // Default = don't draw the feature
 
 
 //fprintf(stderr,"guess: %s\n", full_filename);
