@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.15 2002/04/09 22:38:25 we7u Exp $
+# $Id: language-Dutch.sys,v 1.16 2002/04/12 18:11:47 we7u Exp $
 # This is the Dutch Language file used for all the prompts in xastir
 #
 # Creator        : Henk de Groot <pe1dnn@amsat.org >
@@ -744,6 +744,7 @@ POPEM00028|Kan bestand niet openen||
 POPEM00029|Gevonden!||
 POPEM00030|Weather Station Symbol||
 POPEM00031|Changed to WX symbol '/_', other option is '\_'||
+POPEM00032|Warning: Using National Weather Service Symbol!||
 #
 # Jump Location
 JMLPO00001|Kaart Lokatie||
