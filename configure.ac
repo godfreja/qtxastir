@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.15 2003/02/15 22:30:34 we7u Exp $
+# $Id: configure.ac,v 1.16 2003/02/15 22:35:47 we7u Exp $
 
 
 #
@@ -751,7 +751,7 @@ else
   #
   AC_CHECK_FILE(/sw/bin/Magick-config, use_imagemagick="yes") 
   if test "$use_imagemagick" = "yes"; then
-    MAGIC_BIN=`/sw/bin/Magick-config` 
+    MAGIC_BIN="/sw/bin/Magick-config"
   else
     AC_MSG_WARN(*** Missing Magick-config (or it is not in the path).  Building w/o ImageMagick support. ***) 
   fi
