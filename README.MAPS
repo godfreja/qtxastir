@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.14 2003/09/10 20:27:11 kd6zwr Exp $
+$Id: README.MAPS,v 1.15 2003/09/19 17:58:27 we7u Exp $
 
 Getting Maps and other Data Files for Xastir:
 ---------------------------------------------
@@ -396,13 +396,15 @@ Getting Maps and other Data Files for Xastir:
        current:
          http://wetnet.net/~we7u/xastir/Counties/
 
+        --------------------------
         The files of interest are:
+        --------------------------
 
         NWSI Libraries:
         ---------------
         County Warning Areas
         Zone Forecast Areas
-        Coastal and Offshore Marine Zones
+        Coastal and Offshore Marine Zones (3 files)
 
         County Libraries:
         -----------------
