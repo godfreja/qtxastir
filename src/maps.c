@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.385 2003/12/04 01:08:05 n2ygk Exp $
+ * $Id: maps.c,v 1.386 2003/12/04 08:43:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3407,6 +3407,23 @@ extern void draw_ogr_map(Widget w,
   {"pdb",pdb,draw_palm_image_map},
 //#ifdef HAVE_LIBGDAL
 //  {"shp",shp,draw_ogr_map},
+//  {"rt1",shp,draw_ogr_map},
+//  {"rt2",shp,draw_ogr_map},
+//  {"rt4",shp,draw_ogr_map},
+//  {"rt5",shp,draw_ogr_map},
+//  {"rt6",shp,draw_ogr_map},
+//  {"rt7",shp,draw_ogr_map},
+//  {"rt8",shp,draw_ogr_map},
+//  {"rta",shp,draw_ogr_map},
+//  {"rtc",shp,draw_ogr_map},
+//  {"rth",shp,draw_ogr_map},
+//  {"rti",shp,draw_ogr_map},
+//  {"rtp",shp,draw_ogr_map},
+//  {"rtr",shp,draw_ogr_map},
+//  {"rts",shp,draw_ogr_map},
+//  {"rtt",shp,draw_ogr_map},
+//  {"rtz",shp,draw_ogr_map},
+//  {"tab",shp,draw_ogr_map},
 //#else   // HAVE_LIBGDAL
 #ifdef HAVE_LIBSHP
   {"shp",shp,draw_shapefile_map},
