@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.4 2002/03/11 07:01:49 we7u Exp $
+ * $Id: main.h,v 1.5 2002/03/27 07:57:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -177,6 +177,11 @@ extern int transmit_disable;
 extern int posit_tx_disable;
 extern int object_tx_disable;
 
+extern int coordinate_system;
+#define USE_DDDDDD      0
+#define USE_DDMMMM      1
+#define USE_DDMMSS      2
+#define USE_UTM         3
 
 extern void create_gc(Widget w);
 extern void Station_info(Widget w, XtPointer clientData, XtPointer calldata);
