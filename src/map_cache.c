@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.2 2004/11/12 18:52:35 we7u Exp $
+ * $Id: map_cache.c,v 1.3 2004/11/13 14:00:19 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -23,10 +23,8 @@
  * Look at the README for more information on the program.
  */
 
-
 #ifdef  USE_MAP_CACHE
 #warning USE_MAP_CACHE Defined (and there was much rejoicing) 
-#endif
 
 
 
@@ -417,4 +415,4 @@ int map_cache_expired( char * mc_filename, time_t mc_max_age ){
     return (0);
 }
 
-
+#endif
