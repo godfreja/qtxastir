@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.271 2003/05/15 19:18:32 we7u Exp $
+ * $Id: maps.c,v 1.272 2003/05/15 19:32:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6669,6 +6669,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm, int destination_pixm
     // if that did not generate a valid size, bail out... 
     if ( (geo_image_width == 0) || (geo_image_height == 0) ) {
         fprintf(stderr,"*** Skipping '%s', IMAGESIZE tag missing or incorrect. ***\n",file);
+        fprintf(stderr,"Perhaps no XPM or ImageMagick library support is installed?\n");
         return;
     }
     // calculate bottom right map corner from tiepoints
