@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: index.h,v 1.1 2004/12/17 12:15:35 tvrusso Exp $
+ * $Id: index.h,v 1.2 2004/12/20 22:14:43 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -106,6 +106,7 @@ extern struct Node * RTreeNewNode();
 extern void RTreeInitNode(struct Node*);
 extern void RTreeFreeNode(struct Node *);
 extern void RTreePrintNode(struct Node *, int);
+extern void RTreeDestroyNode(struct Node*);
 extern void RTreeTabIn(int);
 extern struct Rect RTreeNodeCover(struct Node *);
 extern void RTreeInitRect(struct Rect*);

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: split_l.c,v 1.1 2004/12/17 12:15:35 tvrusso Exp $
+ * $Id: split_l.c,v 1.2 2004/12/20 22:14:43 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -126,10 +126,14 @@ static void RTreePickSeeds(struct PartitionVars *P)
 	register struct PartitionVars *p = P;
 	register int i, dim, high;
 	register struct Rect *r, *rlow, *rhigh;
-	register float w, separation, bestSep;
+        // Original superliminal.com implementation had no initializers here.
+        // They are not strictly necessary, as the variables are initialized
+        // in the first iteration of the first for loop, but GCC complains
+        // anyway.  Initializers added to keep it happy.
+	register float w, separation, bestSep=0.0;
 	RectReal width[NUMDIMS];
 	int leastUpper[NUMDIMS], greatestLower[NUMDIMS];
-	int seed0, seed1;
+	int seed0=0, seed1=0;
 	assert(p);
 	
 	for (dim=0; dim<NUMDIMS; dim++)
@@ -360,6 +364,10 @@ void RTreeSplitNode(struct Node *n, struct Branch *b, struct Node **nn)
 /*-----------------------------------------------------------------------------
 | Print out data for a partition from PartitionVars struct.
 -----------------------------------------------------------------------------*/
+
+// This is not used at the moment, and because it's declared static gcc
+// warns us it's not used.  Commented out to shut gcc up
+#if 0
 static void RTreePrintPVars(struct PartitionVars *p)
 {
 	int i;
@@ -397,3 +405,4 @@ static void RTreePrintPVars(struct PartitionVars *p)
 	printf("cover[1]:\n");
 	RTreePrintRect(&p->cover[1], 0);
 }
+#endif // shut up GCC

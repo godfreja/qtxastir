@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.80 2004/12/17 12:15:32 tvrusso Exp $
+ * $Id: map_shp.c,v 1.81 2004/12/20 22:14:41 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -696,8 +696,10 @@ void draw_shapefile_map (Widget w,
 #endif /* !WITH_DBFAWK */
     char            search_param2[10];
     int             found_shape = -1;
+#ifndef USE_RTREE
     int             start_record;
     int             end_record;
+#endif // !USE_RTREE
     int             ok_to_draw = 0;
     int             high_water_mark_i = 0;
     int             high_water_mark_index = 0;

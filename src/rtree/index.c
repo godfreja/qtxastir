@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: index.c,v 1.1 2004/12/17 12:15:35 tvrusso Exp $
+ * $Id: index.c,v 1.2 2004/12/20 22:14:43 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -307,7 +307,11 @@ int RTreeDeleteRect(struct Rect *R, int Tid, struct Node**Nn)
 	register int tid = Tid;
 	register struct Node **nn = Nn;
 	register int i;
-	register struct Node *tmp_nptr;
+	register struct Node *tmp_nptr=NULL; // Original superliminal.com
+                                             // source did not initialize.
+                                             // Code analysis says shouldn't
+                                             // matter, but let's initialize
+                                             // to shut up GCC
 	struct ListNode *reInsertList = NULL;
 	register struct ListNode *e;
 
