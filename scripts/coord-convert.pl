@@ -5,10 +5,8 @@
 # Copyright (C) 2002 Paul Lutt, KE7XT.
 # Released to the public domain.
 #
-# Modified by Curt Mills, WE7U.
 #
-#
-# $Id: coord-convert.pl,v 1.1 2002/08/13 00:03:39 we7u Exp $
+# $Id: coord-convert.pl,v 1.2 2002/08/13 21:34:40 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS

@@ -10,7 +10,7 @@
 # 4) Formatting coordinates into decimal degrees, degrees/minutes,
 #    and degrees/minutes/seconds.
 #
-# Copyright (C) 2002  The Xastir Group
+# Copyright (C) 1999-2002  Curt Mills, WE7U
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -26,19 +26,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
-# More information on the program can be found at:
-# Email:        bowhunter@mail.com
-# Web:          http://www.eskimo.com/~archer
-# Ftp:          ftp://ftp.eskimo.com/u/a/archer/aprs/xastir
-#	and	ftp://ftp.eskimo.com/u/a/archer/aprs/xastir/devel
-#
-# Enjoy!
-# Curt, WE7U
-#
 
 
 #
-# $Id: Coordinate.pm,v 1.1 2002/08/13 00:03:39 we7u Exp $
+# $Id: Coordinate.pm,v 1.2 2002/08/13 21:34:40 we7u Exp $
 #
 #
 # Reference ellipsoids derived from Peter H. Dana's website- 
@@ -94,7 +85,7 @@
 package CoordinateFormat;
 
 
-$VERSION = do { my @r=(q$Revision: 1.1 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -299,7 +290,7 @@ sub decimal_degrees
 package Ellipsoid;
 
 
-$VERSION = do { my @r=(q$Revision: 1.1 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -440,7 +431,7 @@ sub inverse_flattening
 package EllipsoidTable;
 
 
-$VERSION = do { my @r=(q$Revision: 1.1 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -609,7 +600,7 @@ $_ellipsoid{"WGS 84"}			= Ellipsoid->new( "WGS 84",		    6378137.000, 298.257223
 package Datum;
 
 
-$VERSION = do { my @r=(q$Revision: 1.1 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -697,7 +688,7 @@ sub dz				# Z-offset from WGS84 ellipsoid center
 package DatumTable;
 
 
-$VERSION = do { my @r=(q$Revision: 1.1 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 #
@@ -1757,7 +1748,7 @@ package Coordinate;
 #
 
 
-$VERSION = do { my @r=(q$Revision: 1.1 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
+$VERSION = do { my @r=(q$Revision: 1.2 $=~/\d+/g); sprintf "%d."."%02d"x$#r,@r };
 
 
 use Math::Trig;

@@ -4,7 +4,7 @@
 # test_coord.pl:  Perl code to test out the Coordinate.pm
 # module.
 #
-# Copyright (C) 2002  The Xastir Group
+# Copyright (C) 1999-2002  Curt Mills, WE7U
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,18 +20,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
-# More information on the program can be found at:
-# Email:        bowhunter@mail.com
-# Web:          http://www.eskimo.com/~archer
-# Ftp:          ftp://ftp.eskimo.com/u/a/archer/aprs/xastir
-#
-# Enjoy!
-# Curt Mills, WE7U
-#
 
 
 #
-# $Id: test_coord.pl,v 1.1 2002/08/13 00:03:39 we7u Exp $
+# $Id: test_coord.pl,v 1.2 2002/08/13 21:34:40 we7u Exp $
 #
 #
 # TODO:
