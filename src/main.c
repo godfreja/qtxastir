@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.164 2002/11/18 05:48:16 kd6zwr Exp $
+ * $Id: main.c,v 1.165 2002/11/19 00:25:56 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6653,6 +6653,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
     int max;
         int i;
     static int last_alert_on_screen;
+    static int sec_last_dr_update = 0;
 
     do_time = 0;
     nexttime = 10;  // Start UpdateTime again 10 milliseconds after we've completed
@@ -6733,6 +6734,12 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                     alert_redraw_on_update = redraw_on_new_data = 1;    // ????
 
             }
+
+            if (show_DR && sec_now() - sec_last_dr_update > 30) {
+                redraw_symbols(w);
+                sec_last_dr_update = sec_now();
+            }
+
 
             /* Look for packet data and check port status */
             if (delay_time > 15) {
