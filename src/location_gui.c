@@ -1,5 +1,5 @@
 /*
- * $Id: location_gui.c,v 1.4 2003/02/04 04:08:38 jtwilley Exp $
+ * $Id: location_gui.c,v 1.5 2003/04/16 23:42:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -128,7 +128,7 @@ void location_view(/*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@
                         temp_ptr=strtok(NULL,"|");  /* get the pos */
                         strncpy(pos,temp_ptr,100);
                         if (strcmp(location,name)==0) {
-                            (void)sscanf(pos,"%s %s %s",s_lat,s_long,s_sz);
+                            (void)sscanf(pos,"%19s %19s %9s", s_lat, s_long, s_sz);
                             map_pos(convert_lat_s2l(s_lat),convert_lon_s2l(s_long),atol(s_sz));
                             done=1;
                         }

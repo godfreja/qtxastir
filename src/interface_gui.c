@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.51 2003/04/15 20:00:52 we7u Exp $
+ * $Id: interface_gui.c,v 1.52 2003/04/16 23:42:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5730,7 +5730,7 @@ void interface_option(Widget w, XtPointer clientData,  /*@unused@*/ XtPointer ca
             /* if selection was made */
             if (found) {
                 /* look at list data (Must be "Device" port#) */
-                (void)sscanf(temp,"%s %d",temp2,&port);
+                (void)sscanf(temp,"%49s %d",temp2,&port);
                 if(do_w==1) {
                     /* delete interface */
                     /*fprintf(stderr,"delete interface port %d\n",port);*/
@@ -6112,7 +6112,7 @@ begin_critical_section(&devices_lock, "interface_gui.c:start_stop_interface" );
 end_critical_section(&devices_lock, "interface_gui.c:start_stop_interface" );
 
         /* look at list data (Must be "Device" port#) */
-        (void)sscanf(temp,"%s %d",temp2,&port);
+        (void)sscanf(temp,"%49s %d",temp2,&port);
         /*fprintf(stderr,"Port to change %d\n",port);*/
         do_w = atoi(which);
         if (do_w) {
