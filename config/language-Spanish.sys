@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.158 2004/12/21 01:58:43 we7u Exp $
+# $Id: language-Spanish.sys,v 1.159 2004/12/22 05:08:23 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -277,7 +277,7 @@ POPUPMA033|Termine el Modo Dibujar||
 # Menú de Estados de la líneas de Etiquetas
 BBARZM0001|Foco %s||
 BBARZM0002|Foco %s Tr||
-BBARSTH001|%d Estaciones||
+BBARSTH001|%d/%d Estaciones||
 BBARSTA000|%-9s Nuevo objeto!||
 BBARSTA001|%-9s Nueva estación!||
 BBARSTA002|%s||

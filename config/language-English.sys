@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.147 2004/12/21 01:58:43 we7u Exp $
+# $Id: language-English.sys,v 1.148 2004/12/22 05:08:22 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -274,7 +274,7 @@ POPUPMA033|End Draw Mode||
 # Status line labels
 BBARZM0001|Zoom %s||
 BBARZM0002|Zoom %s Tr||
-BBARSTH001|%d Stations||
+BBARSTH001|%d/%d Stations||
 BBARSTA000|%-9s New object!||
 BBARSTA001|%-9s New station!||
 BBARSTA002|%-9s||# new data (only display the call)

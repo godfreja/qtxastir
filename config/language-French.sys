@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.149 2004/12/21 01:58:43 we7u Exp $
+# $Id: language-French.sys,v 1.150 2004/12/22 05:08:22 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -273,7 +273,7 @@ POPUPMA033|Finir mode de dessin||
 # Status line labels
 BBARZM0001|Zoom %s||
 BBARZM0002|Zoom %s Sv||
-BBARSTH001|%d stations||
+BBARSTH001|%d/%d stations||
 BBARSTA000|%-9s Nouvel objet!||
 BBARSTA001|%-9s Nouvelle station!||
 BBARSTA002|%-9s||
