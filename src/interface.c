@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.174 2004/06/18 15:03:53 we7u Exp $
+ * $Id: interface.c,v 1.175 2004/06/18 15:24:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2827,7 +2827,22 @@ fprintf(stderr, "\n***** %s\n\n", buffer);
                         "Unknown Element Type, ");
 
                     // Provide more data if known.
-                    if ((etype & 0xff00) == 0x100) {
+                    if ((etype & 0xfff0) == 0x000) {
+                        fprintf(stderr, "Classification: Stream Control\n");
+                    }
+                    else if ((etype & 0xfff0) == 0x10) {
+                        fprintf(stderr, "Classification: Common Attribute\n");
+                    }
+                    else if ((etype & 0xfff0) == 0x20) {
+                        fprintf(stderr, "Classification: Network Information\n");
+                    }
+                    else if ((etype & 0xfff0) == 0x30) {
+                        fprintf(stderr, "Classification: ??\n");
+                    }
+                    else if ((etype & 0xfff0) == 0x40) {
+                        fprintf(stderr, "Classification: Weather\n");
+                    }
+                    else if ((etype & 0xff00) == 0x100) {
                         fprintf(stderr, "Classification: Reserved for Status Flags\n");
                     }
                     else if ((etype & 0xff00) == 0x200) {
