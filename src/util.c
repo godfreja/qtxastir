@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.33 2002/08/27 22:43:57 we7u Exp $
+ * $Id: util.c,v 1.34 2002/08/28 20:41:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1317,6 +1317,9 @@ double distance_from_my_station(char *call_sign, char *course_deg) {
     else {  // Station not found
         distance = 0.0;
     }
+
+    //printf("Distance for %s: %f\n", call_sign, distance);
+
     return(distance);
 }
 
