@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.27 2004/03/02 17:56:00 we7u Exp $
+ * $Id: map_geo.c,v 1.28 2004/03/03 22:54:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -254,43 +254,30 @@ void draw_toporama_map (Widget w,
     // Compute our custom URL based on our map view and the
     // requested map scale.
     //
-    if (toporama_flag == 50) {
-        if (scale_y > 32) {
-            my_screen_width = (int)(screen_width * (scale_y/32));
-            my_screen_height = (int)(screen_height * (scale_y/32));
-            my_zoom = 1.0;
-        }
-        else if (scale_y <= 16) {
-            my_screen_width = (int)(screen_width / 2);
-            my_screen_height = (int)(screen_height / 2);
-            my_zoom = 1.0;
-        }
-        else {
-            my_screen_width = (int)screen_width;
-            my_screen_height = (int)screen_height;
-            my_zoom = 1.0;
-        }
+    my_screen_width = (int)screen_width;
+    my_screen_height = (int)screen_height;
+ 
+    if (toporama_flag == 50) {  // 1:50k
+
+        my_zoom = 32.0 / scale_y;
+ 
+        if (scale_y <= 16)
+            my_zoom = 2.0;
     }
-    else {  // toporama_flag == 250
-        if (scale_y > 128) {
-            my_screen_width = (int)(screen_width * (scale_y/128));
-            my_screen_height = (int)(screen_height * (scale_y/128));
-            my_zoom = 1.0;
-        }
-        else if (scale_y <= 64) {
-            my_screen_width = (int)(screen_width / 2);
-            my_screen_height = (int)(screen_height / 2);
-            my_zoom = 1.0;
-        }
-        else {
-            my_screen_width = (int)screen_width;
-            my_screen_height = (int)screen_height;
-            my_zoom = 1.0;
-        }
+    else {  // toporama_flag == 250 (1:250k)
+
+        my_zoom = 128.0 / scale_y;
+ 
+        if (scale_y <= 64)
+            my_zoom = 2.0;
     }
+
+    // Set a max zoom limit so we don't tax the server too much.
+    if (my_zoom < 0.02)
+        my_zoom = 0.02;
              
     xastir_snprintf(fileimg, sizeof(fileimg),
-        "http://mm.aprs.net/toporama.cgi?set=%d|lat=%f|lon=%f|width=%d|height=%d|zoom=%0.1f",
+        "http://mm.aprs.net/toporama.cgi?set=%d|lat=%f|lon=%f|width=%d|height=%d|zoom=%0.3f",
         toporama_flag,  // Scale, 50 or 250
         lat_center,
         long_center,
