@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.135 2004/12/08 05:45:05 we7u Exp $
+ * $Id: util.c,v 1.136 2004/12/30 21:21:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -74,6 +74,21 @@ char echo_digis[6][MAX_CALLSIGN+1];
 struct timeval timer_start;
 struct timeval timer_stop;
 struct timezone tz;
+
+
+
+
+
+// Prints string to STDERR only if "my_debug_level" bits are set in
+// the global "debug_level" variable.  Used for getting extra debug
+// messages during various stages of debugging.
+//
+void xastir_debug(int my_debug_level, char *debug_string) {
+
+    if (debug_level & my_debug_level) {
+        fprintf(stderr, "%s", debug_string);
+    }
+}
 
 
 

@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.30 2004/12/07 08:05:07 we7u Exp $
+ * $Id: util.h,v 1.31 2004/12/30 21:21:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,6 +32,7 @@
 // Max number of WIDE digipeaters allowed
 #define MAX_WIDES 3
 
+extern void xastir_debug(int my_debug_level, char *debug_string);
 extern char *remove_leading_spaces(char *data);
 extern char *remove_trailing_spaces(char *data);
 extern char *remove_trailing_asterisk(char *data);
