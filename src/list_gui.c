@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.c,v 1.14 2002/08/21 18:16:52 we7u Exp $
+ * $Id: list_gui.c,v 1.15 2002/08/21 18:24:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -579,6 +579,10 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill"
                 strcpy(temp_call,XmTextFieldGetString(SL_call[type][row]));
                 if (strcmp(temp_call,p_station->call_sign) !=0 ) {
                     XmTextFieldSetString(SL_call[type][row],p_station->call_sign);
+                    if (ghost)
+                        XtSetSensitive(SL_call[type][row],FALSE);
+                    else
+                        XtSetSensitive(SL_call[type][row],TRUE);
                     XtManageChild(SL_call[type][row]);
                 }
 
