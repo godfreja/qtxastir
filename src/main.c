@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.62 2002/04/24 06:03:47 francais1 Exp $
+ * $Id: main.c,v 1.63 2002/04/24 17:50:26 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3820,6 +3820,7 @@ void create_gc(Widget w) {
     colors[0x17] = (int)GetPixelByName(w,"lightblue");
     colors[0x18] = (int)GetPixelByName(w,"purple");
     colors[0x19] = (int)GetPixelByName(w,"orange2");    // light orange
+    colors[0x1a] = (int)GetPixelByName(w,"SteelBlue");
     colors[0x20] = (int)GetPixelByName(w,"white");
 
     // Area object colors.  Order must not be changed. If beginning moves,
