@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.32 2002/04/01 21:37:56 we7u Exp $
+ * $Id: main.c,v 1.33 2002/04/01 22:52:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1725,7 +1725,7 @@ static void TrackMouse( /*@unused@*/ Widget w, XtPointer clientData, XEvent *eve
             convert_lat_l2s(y, str_lat, sizeof(str_lat), CONVERT_HP_NORMAL);
             convert_lon_l2s(x, str_long, sizeof(str_long), CONVERT_HP_NORMAL);
         }
-        xastir_snprintf(my_text, sizeof(my_text), "%s %s", str_lat, str_long);
+        xastir_snprintf(my_text, sizeof(my_text), "%s  %s", str_lat, str_long);
     }
 
     XmTextFieldSetString(textarea, my_text);
@@ -3826,7 +3826,7 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
                             convert_lat_l2s(y, str_lat, sizeof(str_lat), CONVERT_HP_NORMAL);
                             convert_lon_l2s(x, str_long, sizeof(str_long), CONVERT_HP_NORMAL);
                         }
-                        //printf("%s %s\n", str_lat, str_long);
+                        //printf("%s  %s\n", str_lat, str_long);
                     }
 
                     Station_info(w, "2", NULL);
