@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.30 2004/07/15 21:32:43 we7u Exp $
+ * $Id: igate.c,v 1.31 2004/07/22 01:56:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -611,7 +611,10 @@ void output_igate_net(char *line, int port, int third_party) {
 
 begin_critical_section(&devices_lock, "igate.c:output_igate_net" );
 
-    igate_options = devices[port].igate_options;
+    if (port)
+        igate_options = devices[port].igate_options;
+    else
+        igate_options = 1;
 
 end_critical_section(&devices_lock, "igate.c:output_igate_net" );
 

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.351 2004/07/20 18:41:11 we7u Exp $
+ * $Id: db.c,v 1.352 2004/07/22 01:56:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -58,6 +58,7 @@
 #include "list_gui.h"
 #include "track_gui.h"
 #include "xa_config.h"
+#include "x_spider.h"
 
 #ifdef  WITH_DMALLOC
 #include <dmalloc.h>
@@ -13461,7 +13462,8 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
 
 //WE7U
         // Attempt to digipeat this packet if we should
-        relay_digipeat(call_sign, path, info, port);
+        if (port)
+            relay_digipeat(call_sign, path, info, port);
  
         extract_TNC_text(info);                 // extract leading text from TNC X-1J4
         if (strlen(info) > 256)                 // first check if information field conforms to APRS specs
@@ -13504,7 +13506,8 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
         // Add it to the HEARD queue for this interface.  We use this
         // for igating purposes.  If some other igate beat us to this
         // packet, we don't want to duplicate it over the air.
-        insert_into_heard_queue(port, backup);
+        if (port)
+            insert_into_heard_queue(port, backup);
     }
 
     if (ok && (info[0] == ';' || info[0] == ')')) {             // look for objects or items

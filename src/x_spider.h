@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.h,v 1.3 2004/01/26 16:18:24 we7u Exp $
+ * $Id: x_spider.h,v 1.4 2004/07/22 01:56:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -31,9 +31,13 @@
 #define NET_CONNECT_TIMEOUT 20
 #define SERV_TCP_PORT       2023
 
-
 char *pname;
+extern int pipe_xastir_to_server;
+extern int pipe_server_to_xastir;
 
+extern int writen(register int fd, register char *ptr, register int nbytes);
+extern int readline(register int fd, register char *ptr, register int maxlen);
+extern int Fork_server(void);
 
 #endif /* XASTIR_SERVER_H */
 

@@ -1,10 +1,10 @@
-# $Id: Makefile.am,v 1.17 2004/06/02 03:28:51 we7u Exp $
+# $Id: Makefile.am,v 1.18 2004/07/22 01:56:07 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
 
 bin_PROGRAMS = xastir
-noinst_PROGRAMS = testawk x_spider
+noinst_PROGRAMS = testawk
 
 SUBDIRS =
 
@@ -56,21 +56,16 @@ xastir_SOURCES = \
     wx.c wx.h \
     wx_gui.c \
     xa_config.c xa_config.h \
-    xastir.h
+    xastir.h \
+    x_spider.c x_spider.h
 
 testawk_SOURCES = \
     testawk.c \
     awk.c \
     dbfawk.c
 
-x_spider_SOURCES = \
-    x_spider.c x_spider.h
- 
-
 
 xastir_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
 testawk_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
-
-x_spider_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 

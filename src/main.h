@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.64 2004/07/13 19:21:35 we7u Exp $
+ * $Id: main.h,v 1.65 2004/07/22 01:56:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -47,6 +47,9 @@
 // spec, you'll be putting out garbage and trashing the channel.
 //
 //#define TRANSMIT_RAW_WX
+
+
+extern int enable_local_server_port;
 
 
 extern char altnet_call[];
