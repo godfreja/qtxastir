@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.16 2005/01/08 10:06:53 we7u Exp $
+ * $Id: map_gnis.c,v 1.17 2005/01/20 07:27:29 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -316,8 +316,12 @@ Cell Name
 
                     i[0] = '\0';
                     xastir_snprintf(latitude,sizeof(latitude),"%s",j+1);
-                    clean_string(latitude);
+                    if (!isdigit(latitude[0])) { // skip record if not
+                        continue;                // numeric! (e.g. "UNKNOWN")
+                    }
 
+                    clean_string(latitude);
+                    
                     // Find end of Primary Longitude field (DDDMMSSW)
                     j = index(i+1, '|');
 
@@ -327,6 +331,10 @@ Cell Name
 
                     j[0] = '\0';
                     xastir_snprintf(longitude,sizeof(longitude),"%s",i+1);
+                    if (!isdigit(longitude[0])) { // skip record if not
+                        continue;                 // numeric (e.g. UNKNOWN)
+                    }
+
                     clean_string(longitude);
 
                     // Find end of Primary Latitude field (decimal
