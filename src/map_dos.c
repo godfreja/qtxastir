@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.8 2003/07/23 21:34:41 we7u Exp $
+ * $Id: map_dos.c,v 1.9 2003/07/26 16:35:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -198,9 +198,9 @@ void map_plot (Widget w, long max_x, long max_y, long x_long_cord,
                                     CoordModeOrigin);
                             }
                             else {
-                                fprintf(stderr,
-                                    "map_plot:Too few points:%d, Skipping XFillPolygon()",
-                                    npoints);
+//                                fprintf(stderr,
+//                                    "map_plot:Too few points:%d, Skipping XFillPolygon()",
+//                                    npoints);
                             }
                         }
                         break;
@@ -222,9 +222,9 @@ void map_plot (Widget w, long max_x, long max_y, long x_long_cord,
                                 CoordModeOrigin);
                         }
                         else {
-                            fprintf(stderr,
-                                "map_plot:Too few points:%d, Skipping XFillPolygon()",
-                                npoints);
+//                            fprintf(stderr,
+//                                "map_plot:Too few points:%d, Skipping XFillPolygon()",
+//                                npoints);
                         }
                         break;
                     }
