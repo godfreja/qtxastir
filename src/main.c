@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.460 2004/06/03 16:49:11 we7u Exp $
+ * $Id: main.c,v 1.461 2004/06/03 21:36:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9427,7 +9427,7 @@ void check_pointer_position(void) {
                         return;
                     }
 
-                    (void)XSetLineAttributes(XtDisplay(da), gc_tint, 0, LineSolid, CapButt,JoinMiter);
+                    (void)XSetLineAttributes(XtDisplay(da), gc_tint, 1, LineSolid, CapButt,JoinMiter);
                     (void)XSetForeground(XtDisplay(da), gc_tint, colors[(int)0x0e]); // yellow
                     (void)XSetFunction(XtDisplay(da), gc_tint, GXxor);
  
