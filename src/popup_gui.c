@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.2 2002/11/22 00:50:05 we7u Exp $
+ * $Id: popup_gui.c,v 1.3 2002/11/22 00:53:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -236,6 +236,12 @@ void popup_ID_message(char *banner, char *message) {
     int y = (int)(screen_height/2);
 
 
+#ifdef HAVE_FESTIVAL
+    if (ATV_speak_ID) {
+        SayText(message);
+    }
+#endif
+
     if (ATV_screen_ID) {
 
         // Fill the pixmap with grey so that the black ID text will
@@ -288,13 +294,6 @@ void popup_ID_message(char *banner, char *message) {
     else {  // ATV Screen ID is not enabled
         pending_ID_message = 0;
     }
-
-#ifdef HAVE_FESTIVAL
-    if (ATV_speak_ID) {
-        SayText(message);
-    }
-#endif
-
 }
 
 
