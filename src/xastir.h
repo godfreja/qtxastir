@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.9 2002/06/06 21:45:33 we7u Exp $
+ * $Id: xastir.h,v 1.10 2002/06/07 18:10:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -167,6 +167,7 @@ extern void set_last_position(void);
 extern void map_pos_last_position(void);
 
 /* from location_gui.c */
+extern char locate_station_call[30];
 extern void Last_location(Widget w, XtPointer clientData, XtPointer callData);
 extern void Jump_location(Widget w, XtPointer clientData, XtPointer callData);
 extern void map_pos(long mid_y, long mid_x, long sz);
