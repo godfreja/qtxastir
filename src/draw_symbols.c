@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.24 2002/11/19 17:59:59 we7u Exp $
+ * $Id: draw_symbols.c,v 1.25 2002/12/08 04:57:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1364,7 +1364,7 @@ void read_symbol_from_file(FILE *f, char *pixels) {
     char line[21];
 
     for (y=0;y<20;y++) {
-        (void)get_line(f,line,20);
+        (void)get_line(f,line,21);
         for (x=0;x<20;x++) {
             switch (line[x]) {
                 case('.'):       // transparent
@@ -1463,7 +1463,7 @@ void load_pixmap_symbol_file(char *filename) {
     f = fopen(filen,"r");
     if (f!=NULL) {
         while (!feof(f) && !done) {
-            (void)get_line(f,line,20);
+            (void)get_line(f,line,21);
             if (strncasecmp("TABLE ",line,6)==0) {
                 table_char=line[6];
                 /*printf("TABLE %c\n",table_char);*/

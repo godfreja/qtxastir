@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.10 2002/07/26 03:29:43 we7u Exp $
+ * $Id: igate.c,v 1.11 2002/12/08 04:57:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -858,7 +858,7 @@ void load_NWS_stations(char *file) {
     f = fopen(file,"r");
     if (f!=NULL) {
         while (!feof(f)) {
-            if (strlen(get_line(f,line,39))>0) {
+            if (strlen(get_line(f,line,40))>0) {
                 // look for comment
                 if (line[0] != '#' ) {
                     NWS_stations++;
