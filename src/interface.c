@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.117 2003/05/20 17:34:10 we7u Exp $
+ * $Id: interface.c,v 1.118 2003/05/21 00:15:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1215,7 +1215,7 @@ char *process_ax25_packet(unsigned char *bp, unsigned int len, char *buffer) {
         return(NULL);
 
     if(*bp != (unsigned char)0xF0)
-        return(NULL); /* check the the PID */
+        return(NULL); /* check the PID */
 
     bp++;
     len--;

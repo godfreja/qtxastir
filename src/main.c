@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.280 2003/05/20 19:22:46 we7u Exp $
+ * $Id: main.c,v 1.281 2003/05/21 00:15:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7098,7 +7098,7 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
                     // For this function we need to:
                     //      Determine which icon is closest to the mouse pointer press position.
                     //          We'll use Station_info to select the icon for us.
-                    //      Compute the lat/lon of the the mouse pointer release position.
+                    //      Compute the lat/lon of the mouse pointer release position.
                     //      Put the new value of lat/lon into the object data.
                     //      Cause symbols to get redrawn.
 
