@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.24 2004/11/14 01:10:25 tvrusso Exp $
+# $Id: acinclude.m4,v 1.25 2004/11/15 18:05:57 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -644,7 +644,7 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.24 2004/11/14 01:10:25 tvrusso Exp $
+dnl $Id: acinclude.m4,v 1.25 2004/11/15 18:05:57 tvrusso Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.
@@ -715,7 +715,7 @@ AC_DEFUN([XASTIR_BERKELEY_DB_CHK_LIB],
 #	    BDB_LIBADD="$BDB_LIBADD -ldb"; dblib="berkeley"; dbname=db,
 #            dblib="no")
 #        fi
-#	LIBS=$saved_LIBS
+	LIBS=$saved_LIBS
 
 	LDFLAGS=$BDB_SAVE_LDFLAGS
 ])
