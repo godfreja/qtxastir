@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.35 2003/01/30 22:09:05 we7u Exp $
+ * $Id: interface_gui.c,v 1.36 2003/01/31 00:15:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3756,7 +3756,6 @@ end_critical_section(&devices_lock, "interface_gui.c:Config_AX25" );
 /* Configure Network server GUI                      */
 /*****************************************************/
 
-//WE7U2
 /**** INTERNET CONFIGURE ******/
 Widget config_Inet_dialog = (Widget)NULL;
 Widget Inet_active_on_startup;
@@ -3805,7 +3804,6 @@ begin_critical_section(&devices_lock, "interface_gui.c:Inet_change_data" );
     (void)remove_trailing_spaces(devices[Inet_port].device_host_name);
     strcpy(devices[Inet_port].device_host_pswd,XmTextFieldGetString(Inet_password_data));
     (void)remove_trailing_spaces(devices[Inet_port].device_host_pswd);
-//WE7U2
     strcpy(devices[Inet_port].device_host_filter_string,XmTextFieldGetString(Inet_filter_data));
     (void)remove_trailing_spaces(devices[Inet_port].device_host_filter_string);
 
@@ -4017,7 +4015,7 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNsensitive, TRUE,
                                       XmNshadowThickness,    1,
                                       XmNcolumns, 30,
-                                      XmNmaxLength, 200,
+                                      XmNmaxLength, 190,
                                       XmNbackground, colors[0x0f],
                                       XmNleftAttachment,XmATTACH_WIDGET,
                                       XmNleftWidget, filter,
