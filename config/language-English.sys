@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.122 2004/03/09 16:34:30 we7u Exp $
+# $Id: language-English.sys,v 1.123 2004/04/21 21:59:18 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -255,6 +255,9 @@ POPUPMA021|Move||
 POPUPMA022|TrackMe||
 POPUPMA023|Modifiers Found!||
 POPUPMA024|Please turn OFF CapsLock/NumLock/ScrollLock/other modifiers||
+POPUPMA026|Center & Zoom||
+POPUPMA027|  Latitude||
+POPUPMA028| Longitude||
 #
 # Status line labels
 BBARZM0001|Zoom %s||

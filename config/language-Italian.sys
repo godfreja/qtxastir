@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.124 2004/03/09 16:34:30 we7u Exp $
+# $Id: language-Italian.sys,v 1.125 2004/04/21 21:59:33 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -255,6 +255,9 @@ POPUPMA021|Muovi||
 POPUPMA022|RintracciaMi||
 POPUPMA023|Trovato Blocchi Tastiera!||
 POPUPMA024|Per Favore disabilita Blocco Maiuscole/Numeri/Scorrimento/||
+POPUPMA026|Center & Zoom||
+POPUPMA027|  Latitude||
+POPUPMA028| Longitude||
 #
 #Etichette barra di stato
 BBARZM0001|Zoom %s||

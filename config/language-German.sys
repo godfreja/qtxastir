@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.126 2004/03/09 16:34:30 we7u Exp $
+# $Id: language-German.sys,v 1.127 2004/04/21 21:59:20 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -261,6 +261,9 @@ POPUPMA021|Bewegen||
 POPUPMA022|Verfolge mich||
 POPUPMA023|Modifikationstasten aktiv!||
 POPUPMA024|Bitte Umschalt/Num/Rollen/andere Modifikationstasten ausschalten||
+POPUPMA026|Center & Zoom||
+POPUPMA027|  Latitude||
+POPUPMA028| Longitude||
 #
 # Texte in Statuszeile
 BBARZM0001|Zoom %s||

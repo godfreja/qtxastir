@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.126 2004/03/09 16:34:30 we7u Exp $
+# $Id: language-Dutch.sys,v 1.127 2004/04/21 21:59:13 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -265,6 +265,9 @@ POPUPMA021|Verplaatsen||
 POPUPMA022|Volg Me||
 POPUPMA023|Functie Toetsen Actief!||
 POPUPMA024|Schakel CapsLock/NumLock/ScrollLock/andere Toetsen UIT||
+POPUPMA026|Center & Zoom||
+POPUPMA027|  Latitude||
+POPUPMA028| Longitude||
 #
 # Status line labels
 BBARZM0001|Zoom %s||
