@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.106 2002/07/12 00:20:44 we7u Exp $
+ * $Id: db.c,v 1.107 2002/07/12 18:08:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3074,6 +3074,7 @@ end_critical_section(&db_station_info_lock, "db.c:Station_data" );
     pos += strlen(temp);
 
     // dl9sau
+    // Maidenhead Grid Locator
     xastir_snprintf(temp, sizeof(temp), "  %s", sec_to_loc(p_station->coord_lon, p_station->coord_lat) );
     XmTextInsert(si_text,pos,temp);
     pos += strlen(temp);
