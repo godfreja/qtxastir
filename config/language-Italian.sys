@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.149 2004/11/30 20:24:44 we7u Exp $
+# $Id: language-Italian.sys,v 1.150 2004/12/20 05:39:14 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -945,6 +945,7 @@ POPEM00035|Attenzione||
 POPEM00036|Nota||
 POPEM00037|presente interfaccia HSP: l'intervallo di lettura del GPS viene aumentato||
 POPEM00038|Name Conflicts With Existing Object/Item/Station||
+POPEM00039|Illegal characters found, substituting periods in their place||
 # 
 # Jump Location 
 JMLPO00001|Posizione Mappa||

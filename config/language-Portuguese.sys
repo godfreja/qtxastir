@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.146 2004/11/30 20:24:45 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.147 2004/12/20 05:39:14 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -949,6 +949,7 @@ POPEM00035|Atencao||
 POPEM00036|Aviso||
 POPEM00037|Interface HSP presente: tempo de GPS foi aumentado||
 POPEM00038|Name Conflicts With Existing Object/Item/Station||
+POPEM00039|Illegal characters found, substituting periods in their place||
 #
 # Salto de localizacao
 JMLPO00001|Localizacao de mapa||
