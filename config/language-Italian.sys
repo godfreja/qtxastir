@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.26 2002/06/21 14:35:18 we7u Exp $
+# $Id: language-Italian.sys,v 1.27 2002/06/21 14:49:14 we7u Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -835,6 +835,12 @@ COORD001|Coordinate Calc||
 COORD002|Calc||
 COORD003|Calculate||
 COORD004|Clear||
+COORD005|UTM||
+COORD006|Latitude or||
+COORD007|Longitude or||
+COORD008|Zone||
+COORD009|UTM Easting||
+COORD010|UTM Northing||
 #
 #
 # Smart Beaconing Dialog

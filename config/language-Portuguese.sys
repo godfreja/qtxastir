@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.19 2002/06/21 14:35:18 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.20 2002/06/21 14:49:14 we7u Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -834,6 +834,12 @@ COORD001|Cálcular coordenadas||
 COORD002|Cálc||
 COORD003|Cálcular||
 COORD004|Limpar||
+COORD005|UTM||
+COORD006|Latitude or||
+COORD007|Longitude or||
+COORD008|Zone||
+COORD009|UTM Easting||
+COORD010|UTM Northing||
 #
 #
 # Smart Beaconing Dialog
