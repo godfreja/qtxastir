@@ -6,7 +6,7 @@
 # Released to the public domain.
 #
 #
-# $Id: permutations.pl,v 1.6 2002/08/14 20:51:05 we7u Exp $
+# $Id: permutations.pl,v 1.7 2002/08/26 21:52:03 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
@@ -26,6 +26,7 @@
 #
 
 
+use lib "/usr/local/lib";
 use Coordinate;         # WE7U's Coordinate.pm module
 
 

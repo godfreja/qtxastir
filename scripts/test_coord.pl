@@ -23,7 +23,7 @@
 
 
 #
-# $Id: test_coord.pl,v 1.3 2002/08/13 21:36:19 we7u Exp $
+# $Id: test_coord.pl,v 1.4 2002/08/26 21:52:03 we7u Exp $
 #
 #
 # TODO:
@@ -33,7 +33,7 @@
 
 #------------------------------------------------------------------------------------------------
 
-
+use lib "/usr/local/lib";
 use Coordinate;		# Snag WE7U's Coordinate module
 
 
