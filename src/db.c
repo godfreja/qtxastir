@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.26 2002/05/10 05:59:37 we7u Exp $
+ * $Id: db.c,v 1.27 2002/05/10 22:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -683,6 +683,11 @@ begin_critical_section(&send_message_dialog_lock, "db.c:update_messages" );
                                     msg_data[msg_index[j]].packet_time[10],
                                     msg_data[msg_index[j]].packet_time[11]
                                 );
+
+// Somewhere in here we appear to be losing the first message.  It
+// doesn't get written to the window later in the QSO.  Same for
+// closing the window and re-opening it, putting the same callsign
+// in and pressing "New Call" button.  First message is missing.
 
                                 // Label the message line with who sent it.
                                 xastir_snprintf(temp2, sizeof(temp2), "%s  %-9s>%s\n", stemp,
