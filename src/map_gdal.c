@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.25 2003/12/05 19:14:20 we7u Exp $
+ * $Id: map_gdal.c,v 1.26 2003/12/05 20:40:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003  The Xastir Group
@@ -433,8 +433,10 @@ void draw_ogr_map(Widget w,
                    int draw_filled) {
 
     OGRDataSourceH datasource;
+    OGRSFDriverH driver = NULL;
     int i, numLayers;
     char full_filename[300];
+    const char *ptr;
 
 
     xastir_snprintf(full_filename,
@@ -444,7 +446,7 @@ void draw_ogr_map(Widget w,
         filenm);
 
     // Open data source
-    datasource = OGROpen(full_filename, 0 /* bUpdate */, NULL);
+    datasource = OGROpen(full_filename, 0 /* bUpdate */, &driver);
 
     if (datasource == NULL)
     {
@@ -500,6 +502,28 @@ void draw_ogr_map(Widget w,
     }
 
 
+// Find out what type of file we're dealing with:
+// const char * OGR_Dr_GetName(OGRSFDriverH hDriver)
+
+   
+    // This reports "TIGER" for the tiger driver, "ESRI Shapefile"
+    // for Shapefiles.
+    // 
+    ptr = OGR_Dr_GetName(driver);
+    fprintf(stderr,"Type of file: %s\n", ptr);
+
+    // This one returns the name/path.  Less than useful.
+//    ptr = OGR_DS_GetName(datasource);
+//    fprintf(stderr,"Name of file: %s\n", ptr);
+
+
+    // If we're going to write, we need to test the capability using
+    // these functions:
+    // OGR_Dr_TestCapability(); // Does Driver have write capability?
+    // OGR_DS_TestCapability(); // Can we create new layers?
+
+
+
 // Optimization:  Get the envelope for each layer, skip the layer if
 // it's completely outside our viewport.
 
@@ -539,6 +563,16 @@ void draw_ogr_map(Widget w,
             OGR_DS_Destroy( datasource );
             return;
         }
+
+
+// We should test the capabilities of the layer so that we know the
+// best way to access it.
+// OGR_L_TestCapability:
+//      OLCRandomRead
+//      OLCFastSpatialFilter
+//      OLCFastFeatureCount
+//      OLCFastGetExtent
+
 
 
         // Dump info about this layer
