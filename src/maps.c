@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.400 2004/01/26 16:18:23 we7u Exp $
+ * $Id: maps.c,v 1.401 2004/02/13 21:40:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -976,7 +976,7 @@ void draw_grid(Widget w) {
         (void)XSetLineAttributes (XtDisplay (w), gc_tint, 2, LineSolid, CapButt,JoinMiter);
 
         // Draw the prime meridian in the same manner
-        draw_vector_ll(w, 90.0, 0.0, -90.0, 0.0, gc_tint, pixmap_final);
+        draw_vector_ll(w, -80.0, 0.0, 84.0, 0.0, gc_tint, pixmap_final);
 
 
         // Set the line width and style in the GC to 1 pixel wide
