@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.412 2003/11/25 17:49:03 we7u Exp $
+ * $Id: main.c,v 1.413 2003/11/25 18:01:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8030,6 +8030,7 @@ void Draw_CAD_Objects_close_polygon( /*@unused@*/ Widget widget,
     double area;
     int n;
     char temp_course[20];
+    char temp[200];
  
 
     // Check whether we're currently working on a polygon.  If not,
@@ -8179,7 +8180,19 @@ void Draw_CAD_Objects_close_polygon( /*@unused@*/ Widget widget,
     if (area < 0.0)
         area = -area;
 
-fprintf(stderr,"Area: %f\n", area);
+
+    // Format it for output and dump it out
+    xastir_snprintf(temp,
+        sizeof(temp),
+        "Area: %0.2f square %s",
+        area,
+        un_dst);
+    popup_message(langcode("POPUPMA020"),temp);
+
+#ifdef CAD_DEBUG
+    fprintf(stderr,"%s\n",temp);
+#endif
+
 
     // Tell the code that we're starting a new polygon by wiping out
     // the first position.
