@@ -1,8 +1,8 @@
 #!/usr/bin/perl
-# $Id: icontable.pl,v 1.1 2002/02/02 03:16:51 kg4ijb Exp $
+# $Id: icontable.pl,v 1.2 2002/02/12 00:08:01 dk7in Exp $
 
 # XASTIR icon table overview generator                        20.02.01
-#  Copyright (C) 2001 Rolf Bleher <Rolf@dk7in.de>  http://www.dk7in.de
+#  Copyright (C) 2001 Rolf Bleher                  http://www.dk7in.de
 
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
