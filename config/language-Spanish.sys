@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.146 2004/08/04 20:04:37 we7u Exp $
+# $Id: language-Spanish.sys,v 1.147 2004/08/18 04:59:15 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -692,8 +692,8 @@ WPUPSTI030|Temperatura: %s°F   ||
 WPUPSTI031| Humedad: %s%%   ||
 WPUPSTI032|Indice de Humedad: %02.1f°C  ||
 WPUPSTI033| Presión Barométrica: %s mb||
-WPUPSTI034|Nieve: %0.2f (cm/h)||
-WPUPSTI035|Nieve: %0.2f (plg/h)||
+WPUPSTI034|Nieve: %0.2f (cm/24h)||
+WPUPSTI035|Nieve: %0.2f (plg/24h)||
 WPUPSTI036|Lluvia: ||
 WPUPSTI037|%0.2f (mm/h)  ||
 WPUPSTI038|%0.2f (plg/h)  ||

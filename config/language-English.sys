@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.136 2004/08/04 20:04:37 we7u Exp $
+# $Id: language-English.sys,v 1.137 2004/08/18 04:59:15 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -689,8 +689,8 @@ WPUPSTI030|Temperature: %s°F   ||
 WPUPSTI031|Humidity: %s%%   ||
 WPUPSTI032| Humidex: %02.1f°C  ||
 WPUPSTI033|Baro: %s hPa||
-WPUPSTI034|Snow: %0.2f (cm/h)||
-WPUPSTI035|Snow: %0.2f (inch/h)||
+WPUPSTI034|Snow: %0.2f (cm/24h)||
+WPUPSTI035|Snow: %0.2f (inch/24h)||
 WPUPSTI036|Rain: ||
 WPUPSTI037|%0.2f (mm/h)    ||
 WPUPSTI038|%0.2f (inch/h)  ||

@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.142 2004/08/04 20:04:32 we7u Exp $
+# $Id: language-Dutch.sys,v 1.143 2004/08/18 04:59:15 we7u Exp $
 #
 # Copyright (C) 2000-2004  The Xastir Group
 #
@@ -700,8 +700,8 @@ WPUPSTI030|Temperatuur: %søF   ||
 WPUPSTI031|Vochigheid: %s%%   ||
 WPUPSTI032|Gevoels temperatuur: %02.1føC  ||
 WPUPSTI033|Baro: %s hPa||
-WPUPSTI034|Sneeuw: %0.2f (cm/h)||
-WPUPSTI035|Sneeuw: %0.2f (inch/h)||
+WPUPSTI034|Sneeuw: %0.2f (cm/24h)||
+WPUPSTI035|Sneeuw: %0.2f (inch/24h)||
 WPUPSTI036|Regen: ||
 WPUPSTI037|%0.2f (mm/h)   ||
 WPUPSTI038|%0.2f (inch/h)   ||

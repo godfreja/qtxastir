@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.31 2004/07/30 04:02:42 we7u Exp $
+ * $Id: list_gui.c,v 1.32 2004/08/18 04:59:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -751,7 +751,12 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill"
                         break;
 
                     case LST_WX:                        // weather stations list
+
                         weather = p_station->weather_data;
+
+                        if ((int)(((sec_old + weather->wx_sec_time)) < sec_now()))
+                            break;  // Weather data is too old
+
                         if (strlen(weather->wx_course) > 0)
                             XmTextFieldSetString(SL_wx_wind_course[type][row],weather->wx_course);
                         else
