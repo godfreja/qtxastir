@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.224 2003/03/27 23:46:13 we7u Exp $
+ * $Id: db.c,v 1.225 2003/03/27 23:57:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11512,8 +11512,14 @@ int decode_ax25_header(unsigned char *incoming_data, int length) {
     // want to process UI packets in Xastir.
 
     // Control byte should be 0x03 (UI Frame)
-    if (incoming_data[ptr++] != 0x03)
-        return(0);
+    if (incoming_data[ptr++] != 0x03) {
+
+// An MKISS tnc (2-ports or more) can encode the channel in
+// the control byte, so we don't really want to throw packets out
+// because of this.
+//        return(0);
+
+    }
 
     // PID byte should be 0xf0 (normal AX.25 text)
     if (incoming_data[ptr++] != 0xf0)
