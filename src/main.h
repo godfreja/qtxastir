@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.27 2002/11/19 17:59:59 we7u Exp $
+ * $Id: main.h,v 1.28 2002/11/19 18:29:22 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -99,6 +99,7 @@ extern char SOUND_DIR[];
 extern time_t WX_ALERTS_REFRESH_TIME;
 extern time_t gps_time;
 extern time_t POSIT_rate;
+extern time_t update_DR_rate;
 
 extern time_t posit_last_time;
 extern time_t posit_next_time;
