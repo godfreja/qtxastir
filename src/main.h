@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.7 2002/04/08 20:29:09 we7u Exp $
+ * $Id: main.h,v 1.8 2002/04/26 17:16:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,6 +32,15 @@
 #ifdef __linux__
   #define MUTEX_DEBUG 1
 #endif
+
+
+// To enable the "Transmit Raw WX data" button in
+// Configure->Defaults dialog.  Warning:  If you enable this, enable
+// the button in Configure->Defaults, and are running a weather
+// station that puts out raw data that is NOT allowed by the APRS
+// spec, you'll be putting out garbage and trashing the channel.
+//
+//#define TRANSMIT_RAW_WX
 
 
 extern char altnet_call[];
@@ -110,7 +119,11 @@ extern int units_english_metric;
 extern int redraw_on_new_data;
 extern int redo_list;
 extern int operate_as_an_igate;
+
+#ifdef TRANSMIT_RAW_WX
 extern int transmit_raw_wx;
+#endif
+
 extern int transmit_compressed_posit;
 extern int log_igate;
 extern int log_tnc_data;
