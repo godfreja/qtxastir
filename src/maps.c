@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.263 2003/05/01 16:47:59 kd6zwr Exp $
+ * $Id: maps.c,v 1.264 2003/05/02 18:03:47 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12846,6 +12846,7 @@ void index_sort(void) {
     int loops = 0; // for debug stats
 
     previous = map_index_head;
+    next = NULL;
     //  fprintf(stderr, "index_sort: start.\n");
     // check if we have any records at all, and at least two
     if ( (previous != NULL) && (previous->next != NULL) ) {
@@ -12911,6 +12912,7 @@ void index_restore_from_file(void) {
     }
 
     map_index_head = NULL;  // Starting with empty list
+    last_record = NULL;
 
     f = fopen(MAP_INDEX_DATA,"r");
     if (f == NULL)  // No map_index file yet
