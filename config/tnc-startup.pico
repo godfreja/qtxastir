@@ -1,4 +1,4 @@
-# $Id: tnc-startup.pico,v 1.5 2002/03/11 08:06:58 we7u Exp $
+# $Id: tnc-startup.pico,v 1.6 2002/03/19 05:25:52 we7u Exp $
 # This is the TNC Startup file for a dual-port Paccomm PicoPacket TNC.
 # lines that begin with a pound sign are comments.
 
@@ -6,20 +6,36 @@ ECHO off
 AUTOLF on
 BEACON EVERY 0
 #
+# Clear the GPS buffers
+LTEXT %
+L1TEXT %
+L2TEXT %
+L3TEXT %
+#
+# Set up the NMEA strings we wish to capture:
+#GPSTEXT %
+GPSTEXT $GPRMC
+#
+#LG1TEXT %
+LG1TEXT $GPGGA
+#
+LG2TEXT %
+#LG2TEXT $GPVTG
+#
+LG3TEXT %
+#LG3TEXT $PGRME
+#
 # Digipeat,callsign substitution,
 # no digi of own packets, and digi-once
 DIGIPEAT 7
 FLOW off
 FULLDUP off
 GPS off
-GPSTEXT $GPRMC
 HEADERLI off
 HID off
 LFADD off
 LGETCHAR $05
-LG1TEXT $GPGGA
-#LG2TEXT $GPVTG
-#LG3TEXT $PGRME
+#
 MALL ON
 MCOM off
 MCON on
