@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.13 2003/10/14 20:49:45 we7u Exp $
+ * $Id: map_geo.c,v 1.14 2003/10/16 23:38:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -344,16 +344,24 @@ void draw_geo_image_map (Widget w,
                 toposerver_flag = 1;
             }
 
-            if (strncasecmp (line, "REFRESH", 7) == 0) {
-                (void)sscanf (line + 8, "%d", &map_refresh_interval_temp);
-                if ( map_refresh_interval_temp > 0 && 
-                     ( map_refresh_interval == 0 || 
-                       map_refresh_interval_temp < map_refresh_interval) ) {
-                  map_refresh_interval = (time_t) map_refresh_interval_temp;
-                  map_refresh_time = sec_now() + map_refresh_interval;
-                  fprintf(stderr, "Map Refresh set to %d.\n", (int) map_refresh_interval);
+            // Check whether we're indexing or drawing the map.
+            // Exclude setting the map refresh interval from
+            // indexing.
+            if ( (destination_pixmap != INDEX_CHECK_TIMESTAMPS)
+                    && (destination_pixmap != INDEX_NO_TIMESTAMPS) ) {
+
+                if (strncasecmp (line, "REFRESH", 7) == 0) {
+                    (void)sscanf (line + 8, "%d", &map_refresh_interval_temp);
+                    if ( map_refresh_interval_temp > 0 && 
+                         ( map_refresh_interval == 0 || 
+                           map_refresh_interval_temp < map_refresh_interval) ) {
+                        map_refresh_interval = (time_t) map_refresh_interval_temp;
+                        map_refresh_time = sec_now() + map_refresh_interval;
+                        fprintf(stderr, "Map Refresh set to %d.\n", (int) map_refresh_interval);
+                    }
                 }
             }
+
             if (strncasecmp(line, "TRANSPARENT", 11) == 0) { 
                 // need to make this read a list of colors to zap out
                 (void)sscanf (line + 12, "%li", &trans_color); 
