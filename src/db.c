@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.188 2003/01/16 21:38:08 francais1 Exp $
+ * $Id: db.c,v 1.189 2003/01/17 06:58:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8668,8 +8668,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
             } else {                                    // old station
                 p_station->last_heard_via_tnc++;
 
-                // if the last 20 times this station was heard other than tnc clear the heard tnc data
-                if (p_station->last_heard_via_tnc > 20) {
+                // if the last 50 times this station was heard other than tnc clear the heard tnc data
+                if (p_station->last_heard_via_tnc > 50) {
                     p_station->last_heard_via_tnc = 0l;
                     p_station->flag &= (~ST_VIATNC);        // clear "via TNC" flag
                 }
