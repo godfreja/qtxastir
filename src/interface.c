@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.124 2003/06/14 07:19:32 we7u Exp $
+ * $Id: interface.c,v 1.125 2003/06/16 18:50:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1708,25 +1708,25 @@ int OpenTrac_decode_symbol(unsigned char *element,
     }
 
     switch (split[0]) {
-        case 1:
+        case '1':
             fprintf(stderr, " (Space Symbol)");
             break;
-        case 2:
+        case '2':
             fprintf(stderr, " (Air Symbol)");
             break;
-        case 3:
+        case '3':
             fprintf(stderr, " (Ground Symbol)");
             break;
-        case 4:
+        case '4':
             fprintf(stderr, " (Sea Symbol)");
             break;
-        case 5:
+        case '5':
             fprintf(stderr, " (Subsurface Symbol)");
             break;
-        case 6:
+        case '6':
             fprintf(stderr, " (Activities Symbol)");
             break;
-        case 7:
+        case '7':
             fprintf(stderr, " (Weather Symbol)");
             break;
         default:
