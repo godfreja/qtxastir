@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.14 2003/03/26 19:55:11 we7u Exp $
+# $Id: Makefile.am,v 1.15 2003/04/19 00:21:11 we7u Exp $
 AUTOMAKE_OPTIONS = gnu dist-bzip2
 ACLOCAL_AMFLAGS = -I m4
 
@@ -22,6 +22,9 @@ county_DATA=placeholder
 
 fccdir=${prefix}/xastir/fcc
 fcc_DATA=placeholder
+
+gnisdir=${prefix}/xastir/GNIS
+gnis_DATA=placeholder
 
 mapdir=${prefix}/xastir/maps
 map_DATA=placeholder
