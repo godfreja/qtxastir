@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.13 2002/04/11 19:53:10 we7u Exp $
+ * $Id: alert.c,v 1.14 2002/04/11 19:58:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -47,9 +47,10 @@
 // Global alert_tag string contains three characters for each alert.
 // These contain the first two characters of the title, and then 0
 // or 1 for the source of the alert (DATA_VIA_TNC or
-// DATA_VIA_LOCAL).  This string was probably initially added so
-// that we would know which subdirectory to look for the maps in, as
-// they use two-character abbreviations by state.
+// DATA_VIA_LOCAL).  The first two characters are used to add on to
+// the end of the path ("/usr/local/xastir/Counties/") to come up
+// with the State subdirectory to search for this map file
+// ("/usr/local/xastir/Counties/MS").
 //
 
 
