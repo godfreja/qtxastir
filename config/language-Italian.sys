@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.67 2003/01/05 19:54:57 kd6zwr Exp $
+# $Id: language-Italian.sys,v 1.68 2003/01/14 05:33:32 kd6zwr Exp $
 #
 # Xastir Version : 1.0.0
 # Creator        : Alessandro Frigeri, IK0YUP <IK0YUP@infinito.it>
@@ -216,6 +216,7 @@ POPUPMA017|Tutto il mondo||
 POPUPMA016|Ultima posizione e zoom||
 POPUPMA018|Oggetto/Entità->Crea||
 POPUPMA019|Oggetto/Entità->Modifica||
+POPUPMA025|Move My Station Here|H|
 POPUPMA011|Sposta in alto||
 POPUPMA012|Sposta in basso||
 POPUPMA013|Sposta a sinistra||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.68 2003/01/05 19:54:57 kd6zwr Exp $
+# $Id: language-Spanish.sys,v 1.69 2003/01/14 05:33:32 kd6zwr Exp $
 # Este es el archivo del Lenguaje Español usado para todas, consultas en Xastir.
 #
 # Creador        : por Jose R. Marte A. <hi8gn@amsat.org>
@@ -216,6 +216,7 @@ POPUPMA017|El Mundo Entero|E|
 POPUPMA016|Ultima Pos/Enfoque del Mapa|P|
 POPUPMA018|Crear Objeto/Artículo|C|
 POPUPMA019|Modificar Objeto/Artículo|M|
+POPUPMA025|Move My Station Here|H|
 POPUPMA011|Paneo arriba|u|
 POPUPMA012|Paneo abajo|d|
 POPUPMA013|Paneo izquierda|l|

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.66 2003/01/05 19:54:57 kd6zwr Exp $
+# $Id: language-German.sys,v 1.67 2003/01/14 05:33:32 kd6zwr Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -221,6 +221,7 @@ POPUPMA017|Ganze Welt||
 POPUPMA016|Letzte Ansicht||
 POPUPMA018|Objekt Neu||
 POPUPMA019|Objekt Ändern||
+POPUPMA025|Move My Station Here|H|
 POPUPMA011|nach oben||
 POPUPMA012|nach unten||
 POPUPMA013|nach links||

@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.64 2003/01/05 19:54:57 kd6zwr Exp $
+# $Id: language-Portuguese.sys,v 1.65 2003/01/14 05:33:32 kd6zwr Exp $
 # Este é o ficheiro da lingua Portuguesa usado para todas as consultas no Xastir.
 #
 # Criador        : por CT1DRB, David Quental
@@ -214,6 +214,7 @@ POPUPMA017|O mundo inteiro|E|
 POPUPMA016|Última pos/focagem do mapa|P|
 POPUPMA018|Criar objecto/artigo|C|
 POPUPMA019|Modificar objecto/artigo|M|
+POPUPMA025|Move My Station Here|H|
 POPUPMA011|Ir para cima|u|
 POPUPMA012|Ir para baixo|d|
 POPUPMA013|Ir para a esquerda|l|
