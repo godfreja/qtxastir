@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.55 2002/06/10 23:46:09 we7u Exp $
+ * $Id: db.c,v 1.56 2002/06/10 23:52:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6657,6 +6657,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                     compr_pos = 1;
                     if (!extract_comp_position(p_station,&data,type))   // compressed lat/lon
                         ok = 0;
+                    else
+                        p_station->pos_amb = 0; // No ambiguity in compressed posits
                 }
                 if (ok) {
                     strcpy(p_station->pos_time,get_time(temp_data));
@@ -6679,6 +6681,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                         compr_pos = 1;
                         if (!extract_comp_position(p_station,&data,type)) // compressed lat/lon
                             ok = 0;
+                        else
+                            p_station->pos_amb = 0; // No ambiguity in compressed posits
                     }
                 }
                 if (ok) {
@@ -6699,6 +6703,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                         compr_pos = 1;
                         if (!extract_comp_position(p_station,&data,type)) // compressed lat/lon
                             ok = 0;
+                        else
+                            p_station->pos_amb = 0; // No ambiguity in compressed posits
                     }
                 }
                 if (ok) {
@@ -6755,6 +6761,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                         compr_pos = 1;
                         if (!extract_comp_position(p_station,&data,type)) // compressed lat/lon
                             ok = 0;
+                        else
+                            p_station->pos_amb = 0; // No ambiguity in compressed posits
                     }
                 }
                 p_station->flag |= ST_OBJECT;                           // Set "Object" flag
@@ -6779,6 +6787,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                     compr_pos = 1;
                     if (!extract_comp_position(p_station,&data,type))   // compressed lat/lon
                         ok = 0;
+                    else
+                        p_station->pos_amb = 0; // No ambiguity in compressed posits
                 }
                 p_station->flag |= ST_ITEM;                             // Set "Item" flag
                 if (ok) {
@@ -6804,6 +6814,8 @@ int data_add(int type ,char *call_sign, char *path, char *data, char from, int p
                         compr_pos = 1;
                         if (!extract_comp_position(p_station,&data,type)) // compressed lat/lon
                             ok = 0;
+                        else
+                            p_station->pos_amb = 0; // No ambiguity in compressed posits
                     }
                 }
                 if (ok) {
