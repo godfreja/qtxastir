@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.32 2004/05/17 18:45:59 we7u Exp $
+ * $Id: wx_gui.c,v 1.33 2004/08/19 19:38:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -268,7 +268,8 @@ void wx_alert_double_click_action( Widget widget, XtPointer clientData, XtPointe
     // Grab the first 13 characters.  Remove spaces.  This is our handle
     // into the weather server for the full weather alert text.
 
-    strncpy(handle,choice,sizeof(handle));
+    xastir_snprintf(handle, sizeof(handle), "%s", choice);
+
     handle[13] = '\0';  // Terminate the string
     // Remove spaces
     ptr = handle;

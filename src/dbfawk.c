@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.24 2004/07/30 03:57:57 we7u Exp $
+ * $Id: dbfawk.c,v 1.25 2004/08/19 19:38:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -423,12 +423,19 @@ int DBFGetFieldIndex(DBFHandle psDBF, const char *pszFieldName) {
   char          name[12], name1[12], name2[12];
   int           i;
 
-  strncpy(name1, pszFieldName,11);
+  xastir_snprintf(name1,
+    sizeof(name1),
+    "%s",
+    pszFieldName);
+        
   str_to_upper(name1);
 
   for( i = 0; i < DBFGetFieldCount(psDBF); i++ ) {
       DBFGetFieldInfo( psDBF, i, name, NULL, NULL );
-      strncpy(name2,name,11);
+      xastir_snprintf(name2,
+        sizeof(name2),
+        "%s",
+        name);
       str_to_upper(name2);
 
       if(!strncmp(name1,name2,10))

@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.h,v 1.4 2004/01/26 16:18:20 we7u Exp $
+ * $Id: hostname.h,v 1.5 2004/08/19 19:38:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,7 +26,7 @@
 #ifndef __XASTIR_HOSTNAME_H
 #define __XASTIR_HOSTNAME_H
 
-extern char *host_lookup(char *host, char *ip, int time);
+extern char *host_lookup(char *host, char *ip, int ip_size, int time);
 
 #endif  // __XASTIR_HOSTNAME_H
 

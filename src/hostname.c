@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.13 2004/08/18 20:35:42 we7u Exp $
+ * $Id: hostname.c,v 1.14 2004/08/19 19:38:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -89,7 +89,7 @@ static void host_time_out( /*@unused@*/ int sig) {
 /* TIMEOUT for time exceeded                                             */
 /*************************************************************************/
 
-char *host_lookup(char *host, char *ip, int time) {
+char *host_lookup(char *host, char *ip, int ip_size, int time) {
     /*struct sockaddr_in address;*/
     char **names, **addrs;
     static struct hostent *hostinfo;
@@ -299,7 +299,8 @@ char *host_lookup(char *host, char *ip, int time) {
                     }
                 }
                 (void)read(fp[0],buf,sizeof(buf)-1);
-                strncpy(ip, buf, sizeof(buf));
+
+                xastir_snprintf(ip, ip_size, "%s", buf);
 
                 if (debug_level & 1024)
                     fprintf(stderr,"Parent closing read end of pipe\n");

@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.75 2004/08/18 20:35:43 we7u Exp $
+ * $Id: interface_gui.c,v 1.76 2004/08/19 19:38:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -322,7 +322,9 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC_change_data" )
         (void)remove_trailing_spaces(devices[TNC_port].radio_port);
 
         if (strcmp(devices[TNC_port].radio_port,"") == 0) {
-            strncpy(devices[TNC_port].radio_port,"0",2);
+            xastir_snprintf(devices[TNC_port].radio_port,
+                sizeof(devices[TNC_port].radio_port),
+                "0");
         }
 //fprintf(stderr,"Radio Port: %s\n",devices[TNC_port].radio_port);
     }

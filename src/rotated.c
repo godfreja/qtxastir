@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.10 2004/07/30 04:02:43 we7u Exp $
+// $Id: rotated.c,v 1.11 2004/08/19 19:38:16 we7u Exp $
 //
 // Portions Copyright (C) 2000-2004  The Xastir Group
 //
@@ -251,7 +251,7 @@ static char *my_strtok(char *str1, char *str2) {
 
 float XRotVersion(char *str, int n) {
     if(str!=NULL)
-        strncpy(str, XV_COPYRIGHT, n);
+        xastir_snprintf(str, n, "%s", XV_COPYRIGHT);
     return XV_VERSION;
 }
 

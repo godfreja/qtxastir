@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.25 2004/07/01 16:26:34 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.26 2004/08/19 19:38:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -155,7 +155,12 @@ void bulletin_message(char *call_sign, char *tag, char *packet_message, time_t s
 begin_critical_section(&display_bulletins_dialog_lock, "bulletin_gui.c:bulletin_message" );
 
         if ((Display_bulletins_dialog != NULL)) {   // Dialog is up
-            strncpy(temp_text, temp, 14);
+
+            xastir_snprintf(temp_text,
+                sizeof(temp_text),
+                "%s",
+                temp);
+
             temp_text[14] = '\0';
 
             // Look for this bulletin ID.  "pos" will hold the first char position if found.

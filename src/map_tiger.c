@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.16 2004/08/19 06:45:33 we7u Exp $
+ * $Id: map_tiger.c,v 1.17 2004/08/19 19:38:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -457,7 +457,10 @@ void draw_tiger_map (Widget w,
 
     image_info=CloneImageInfo((ImageInfo *) NULL);
 
-    (void) strncpy(image_info->filename, file, sizeof(file));
+    xastir_snprintf(image_info->filename,
+        sizeof(image_info->filename),
+        "%s",
+        file);
 
     if (debug_level & 512) {
            fprintf(stderr,"Copied %s into image info.\n", file);

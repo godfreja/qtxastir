@@ -1,5 +1,5 @@
 /*
- * $Id: gps.h,v 1.8 2004/08/19 06:31:43 we7u Exp $
+ * $Id: gps.h,v 1.9 2004/08/19 19:38:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -30,7 +30,7 @@
 
 #define MAX_GPS_STRING 300
 
-extern char gps_sats[];
+extern char gps_sats[4];
 extern int  gps_valid;
 
 extern int gps_stop_now;
