@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.105 2003/04/15 19:51:46 we7u Exp $
+ * $Id: interface.c,v 1.106 2003/04/16 00:24:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -212,6 +212,11 @@ void send_agwpe_packet(int xastir_interface,// Xastir interface port
     unsigned char path_string[200];
     int full_length;
     int data_length;
+
+
+//fprintf(stderr,"Sending to RadioPort %d\n", RadioPort);
+//fprintf(stderr,"Type:%c, From:%s, To:%s, Path:%s, Data:%s\n",
+//    type, FromCall, ToCall, Path, Data);
 
 
     // Check size of data
