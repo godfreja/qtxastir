@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.147 2002/10/03 18:35:28 we7u Exp $
+ * $Id: maps.c,v 1.148 2002/10/03 23:06:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11032,6 +11032,10 @@ void load_auto_maps (Widget w, char *dir) {
     // Run through the entire map_index linked list
     while (current != NULL) {
 
+        // I included GNIS here at this time because the files are
+        // very large (at least for a state-wide file), and they
+        // take a long time to load.  They're obviously not a raster
+        // format file.
         if (auto_maps_skip_raster
                 && (   strstr(current->filename,"geo")
                     || strstr(current->filename,"GEO")
