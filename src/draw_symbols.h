@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.h,v 1.13 2003/09/18 00:24:37 we7u Exp $
+ * $Id: draw_symbols.h,v 1.14 2003/10/13 21:46:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -45,9 +45,9 @@ extern SymbolData symbol_data[];
 
 extern void draw_nice_string(Widget w, Pixmap where, int style, long x, long y, char *text, int bgcolor, int fgcolor, int length);
 extern void clear_symbol_data(void);
-extern void read_symbol_from_file(FILE *f, char *pixels);
-extern void load_pixmap_symbol_file(char *filename);
-extern void insert_symbol(char table, char symbol, char *pixel, int deg, char orient);
+extern void read_symbol_from_file(FILE *f, char *pixels, char table_char);
+extern void load_pixmap_symbol_file(char *filename, int reloading);
+extern void insert_symbol(char table, char symbol, char *pixel, int deg, char orient, int reloading);
 extern char symbol_orient(char *course);
 extern void symbol(Widget w, int ghost,char symbol_table, char symbol_id, char symbol_overlay, Pixmap where, int mask, long x_offset, long y_offset, char rotate);
 

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.49 2003/07/23 17:33:44 we7u Exp $
+ * $Id: main.h,v 1.50 2003/10/13 21:46:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -213,6 +213,7 @@ extern char my_comment[];
 extern int map_background_color;
 extern int map_color_fill;
 extern int letter_style;
+extern int icon_outline_style;
 extern int wx_alert_style;
 extern time_t map_refresh_interval;
 extern time_t map_refresh_time;

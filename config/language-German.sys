@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.107 2003/09/28 22:39:43 n2ygk Exp $
+# $Id: language-German.sys,v 1.108 2003/10/13 21:46:22 we7u Exp $
 # This is the German Language file used for all the prompts in xastir
 # Dies ist die deutsche Sprachdatei für Menus und Textausgaben in Xastir
 #
@@ -77,6 +77,7 @@ PULDNMP009|Flächen einfärben||
 PULDNMP007|Wetterwarnung Counties||
 PULDNMP005|Hintergrundfarbe|H|
 PULDNMP006|Textdarstellung|T|
+PULDNMP026|Icon Outline Style|O|
 PULDNMP011|Mauszeiger-Menu|M|
 PULDNMP008|Intensität|I|
 PULDNMP020|Einstellungen Tigermaps||
@@ -136,6 +137,12 @@ PULDNMBC12|Schwarz||
 PULDNMSL01|Schwarze Umrandung|U|
 PULDNMSL02|Schatten|S|
 PULDNMSL03|Schwarzer Hintergrund|H|
+#
+# PullDown "Icon Outline Style"
+PULDNMIO01|No Outline|N|
+PULDNMIO02|Black Outline|B|
+PULDNMIO03|Grey Outline|G|
+PULDNMIO04|White Outline|W|
 #
 # Schalter
 PULDNOT001|An||
