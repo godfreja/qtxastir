@@ -1,5 +1,5 @@
-# $Id: Makefile.am,v 1.12 2003/02/18 20:43:29 kg4ijb Exp $
-AUTOMAKE_OPTIONS = gnu
+# $Id: Makefile.am,v 1.13 2003/02/18 22:11:52 kg4ijb Exp $
+AUTOMAKE_OPTIONS = gnu dist-bzip2
 ACLOCAL_AMFLAGS = -I m4
 
 D=      `date +%G%m%d.%H%M%S`
