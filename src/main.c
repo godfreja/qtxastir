@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.249 2003/03/15 05:59:08 we7u Exp $
+ * $Id: main.c,v 1.250 2003/03/17 07:29:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11188,8 +11188,15 @@ void Help_Index( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@un
 void Stations_Clear( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@unused@*/ XtPointer callData) {
 
     delete_all_stations();
+
     my_station_add(my_callsign,my_group,my_symbol,my_long,my_lat,my_phg,my_comment,(char)position_amb_chars);
+
     current_trail_color = 0x00;  // restart
+
+    // Reload saved objects and items from previous runs.
+    // This implements persistent objects.
+    reload_object_item();
+
     redraw_on_new_data=2;
 }
 
