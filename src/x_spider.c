@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.27 2004/10/03 04:58:03 we7u Exp $
+ * $Id: x_spider.c,v 1.28 2004/10/03 05:43:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -489,7 +489,7 @@ int pipe_check(char *client_address) {
             }
             free(p);    // Free the malloc'd memory.
 
-            (void)wait((int *)NULL);    // Reap the status of the dead process
+            wait(NULL); // Reap the status of the dead process
         }
         else if (n < 0) {
             //fprintf(stderr,"pipe_check: Readline error: %d\n",errno);
