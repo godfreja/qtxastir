@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.29 2004/07/01 04:05:49 we7u Exp $
+ * $Id: list_gui.c,v 1.30 2004/07/13 14:54:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -396,7 +396,7 @@ void Station_List_fill(int type, int new_offset) {
     char stemp[400];
     char stemp1[60];
     char stemp2[60];
-    char temp_call[MAX_CALL+1];
+    char temp_call[MAX_CALLSIGN+1];
     long l_lat, l_lon;
     float value;
     WeatherRow *weather;

@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.5 2004/01/26 16:18:23 we7u Exp $
+ * $Id: messages.h,v 1.6 2004/07/13 14:54:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -38,7 +38,6 @@
 #define MAX_MESSAGE_OUTPUT_LENGTH 64
 #define MAX_MESSAGE_ORDER 10
 #define MAX_TRIES 30
-#define MAX_CALLSIGN 20
 
 typedef struct {
     char active;

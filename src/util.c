@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.106 2004/06/24 19:29:40 we7u Exp $
+ * $Id: util.c,v 1.107 2004/07/13 14:54:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2480,7 +2480,7 @@ void reload_tactical_calls(void) {
 
                         if (p_station->tactical_call_sign == NULL) {
                             // Malloc some memory to hold it.
-                            p_station->tactical_call_sign = (char *)malloc(MAX_CALLSIGN+1);
+                            p_station->tactical_call_sign = (char *)malloc(MAX_TACTICAL_CALL+1);
                         }
 
                         if (p_station->tactical_call_sign != NULL) {
@@ -2492,7 +2492,7 @@ void reload_tactical_calls(void) {
                             }
                             else {
                                 xastir_snprintf(p_station->tactical_call_sign,
-                                    MAX_CALLSIGN,
+                                    MAX_TACTICAL_CALL,
                                     "%s",
                                     ptr);
                             }
