@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testawk.c,v 1.18 2004/10/10 19:16:56 tvrusso Exp $
+ * $Id: testawk.c,v 1.19 2004/12/16 06:01:07 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -103,10 +103,10 @@ awk_rule rules[] = {
 int nrules = sizeof(rules)/sizeof(rules[0]);
 
 void usage() {
-  fprintf(stderr,"Usage: testawk [-f file.awk| -D dir] [-d file.dbf] arg...\n");
+  fprintf(stderr,"Usage: testawk [-f file.awk| -D dir] -d file.dbf\n");
   fprintf(stderr," -D for dir containing *.dbfawk files.\n");
   fprintf(stderr," or -f for file containing awk rules.\n");
-  fprintf(stderr," -d for dbf file to parse [default dbf args on cmdline]\n");
+  fprintf(stderr," -d for dbf file to parse \n");
 }
 
 
@@ -121,7 +121,7 @@ int debug = 0;
 
 int main(int argc, char *argv[]) {
     awk_program *rs = NULL;
-    int args;
+    //    int args;
     awk_symtab *symtbl;
     /* variables to bind to: */
     int color;
@@ -232,6 +232,12 @@ int main(int argc, char *argv[]) {
       }
       DBFClose(dbf);
     } else {			/* use cmdline args */
+        usage();
+        exit(1);
+        /*
+         * remove this capability because it leads to
+         * segfaults if user gives invalid command line arguments.
+         * better to just print usage string 
       awk_exec_begin_record(rs);
       for (args = 1; args < argc; args++) {
 	fprintf(stderr,"==> %s\n",argv[args]);
@@ -239,6 +245,7 @@ int main(int argc, char *argv[]) {
 	// print_symtbl(symtbl);
       }
       awk_exec_end_record(rs);
+        */
     }
     awk_exec_end(rs);		/* execute an END rule if any */
     //    print_symtbl(symtbl);
