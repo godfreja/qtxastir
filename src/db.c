@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.271 2003/08/11 19:57:16 we7u Exp $
+ * $Id: db.c,v 1.272 2003/08/11 22:40:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6488,7 +6488,6 @@ void delete_station_memory(DataRow *p_del) {
  */
 /*@null@*/ DataRow *add_new_station(DataRow *p_name, DataRow *p_time, char *call) {
     DataRow *p_new;
-    char station_num[30];
     int hash_key;   // We use a 14-bit hash key
 
 
@@ -6545,12 +6544,6 @@ void delete_station_memory(DataRow *p_del) {
         }
     }
 
-
-    // this should not be here...  ??
-    if (!wait_to_redraw) {          // show number of stations in status line
-        xastir_snprintf(station_num, sizeof(station_num), langcode("BBARSTH001"), stations);
-        XmTextFieldSetString(text3, station_num);
-    }
     return(p_new);                      // return pointer to new element
 }
 
