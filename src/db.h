@@ -1,5 +1,5 @@
 /*
- * $Id: db.h,v 1.44 2004/01/26 16:18:20 we7u Exp $
+ * $Id: db.h,v 1.45 2004/02/26 20:07:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -37,6 +37,9 @@
 /* define max size of info field */
 #define MAX_INFO_FIELD_SIZE 256
 
+// Number of times to send killed objects/items before ceasing to
+// transmit them.
+#define MAX_KILLED_OBJECT_RETRANSMIT 10
 
 // We should probably be using APRS_DF in extract_bearing_NRQ()
 // and extract_omnidf() functions.  We aren't currently.
@@ -307,6 +310,7 @@ typedef struct _DataRow {
     time_t sec_heard;                   // time last heard, used also for time index
     int  time_sn;                       // serial number for making time index unique
     short flag;                         // several flags, see below
+    short object_retransmit;            // Number of times to retransmit object.  -1 = forever
     char pos_amb;                       // Position ambiguity, 0 = none, 1 = 0.1 minute...
     long coord_lon;                     // Xastir coordinates 1/100 sec, 0 = 180°W
     long coord_lat;                     // Xastir coordinates 1/100 sec, 0 =  90°N
