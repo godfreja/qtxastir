@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.35 2002/04/23 05:16:34 we7u Exp $
+ * $Id: alert.c,v 1.36 2002/04/23 07:31:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1000,25 +1000,30 @@ static void alert_build_list(Message *fill) {
             if ( (strcasecmp(alert_list[i].from, fill->from_call_sign) == 0)
                     && ( strncmp(alert_list[i].seq,fill->seq,4) == 0 ) ) {
 
-printf("%d:Found a matching alert to a SKY message:\t",i);
+                if (debug_level & 1)
+                    printf("%d:Found a matching alert to a SKY message:\t",i);
 
                 switch (fill->seq[4]) {
                     case 'B':
                         strcpy(alert_list[i].desc0,fill->message_line);
-printf("Wrote into desc0: %s\n",fill->message_line);
+                        if (debug_level & 1)
+                            printf("Wrote into desc0: %s\n",fill->message_line);
                         break;
                     case 'C':
                         strcpy(alert_list[i].desc1,fill->message_line);
-printf("Wrote into desc1: %s\n",fill->message_line);
+                        if (debug_level & 1)
+                            printf("Wrote into desc1: %s\n",fill->message_line);
                         break;
                     case 'D':
                         strcpy(alert_list[i].desc2,fill->message_line);
-printf("Wrote into desc2: %s\n",fill->message_line);
+                        if (debug_level & 1)
+                            printf("Wrote into desc2: %s\n",fill->message_line);
                         break;
                     case 'E':
                     default:
                         strcpy(alert_list[i].desc3,fill->message_line);
-printf("Wrote into desc3: %s\n",fill->message_line);
+                        if (debug_level & 1)
+                            printf("Wrote into desc3: %s\n",fill->message_line);
                         break;
                 }
 //                return; // All done with this sky message

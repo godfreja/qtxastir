@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.13 2002/04/23 06:32:30 we7u Exp $
+ * $Id: wx_gui.c,v 1.14 2002/04/23 07:31:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -147,11 +147,6 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
         for (n = 0; n < alert_list_count; n++) {
             char status[10];
 
-            // Y,AFGNPW  >NWS-WARN :191500z  ,WIND         ,WA_Z003
-            //xastir_snprintf(temp, sizeof(temp), "%c,%-9s>%-9s:%-9s,%-20s,%s",
-            //        alert_list[n].flags[0], alert_list[n].from, alert_list[n].to,
-            //        alert_list[n].activity, alert_list[n].alert_tag, alert_list[n].title);
-
             // AFGNPW      NWS-WARN    Until: 191500z   AK_Z213   WIND               P7IAA
             // TSATOR      NWS-ADVIS   Until: 190315z   OK_C127   TORNDO             H2VAA
             //xastir_snprintf(temp, sizeof(temp), "%-9s   %-9s   Until: %-7s   %-7s   %-20s   %s",
@@ -162,7 +157,7 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
                 xastir_snprintf(status, sizeof(status), "   ");
 
             xastir_snprintf(temp, sizeof(temp),
-"%-9s %s %-9s   %c%c @%c%c%c%cz ==> %c%c @%c%c%c%cz %s %-7s   %s  %s%s%s%s",
+                    "%-9s%s   %-9s   %c%c @%c%c%c%cz ==> %c%c @%c%c%c%cz %s %-7s   %s   %s%s%s%s",
                     alert_list[n].from,
                     alert_list[n].seq,
                     alert_list[n].to,
