@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.14 2004/11/17 16:11:35 we7u Exp $
+ * $Id: map_gnis.c,v 1.15 2005/01/02 05:26:24 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -729,10 +729,13 @@ Cell Name
                                     ok = 0;
                                 }
                             }
-                            else if (scale_y > 200) {   // Don't draw cities of less than 1,000
+                            else if (scale_y > 200) {   // Don't draw cities 
+                                                        // of less than 1,000
                                 if (atoi(population) < 1000) {
                                     ok = 0;
-                                    //fprintf(stderr,"Name: %s\tPopulation: %s\n",name,population);
+                                    //fprintf(stderr,
+                                    // "Name: %s\tPopulation: %s\n",name,
+                                    // population);
                                 }
                             }
                         }
