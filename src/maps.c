@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.74 2002/05/02 20:58:15 we7u Exp $
+ * $Id: maps.c,v 1.75 2002/05/02 21:25:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1709,7 +1709,7 @@ void draw_shapefile_map (Widget w,
         (void)XSetStipple(XtDisplay(w), gc_tint, pixmap_wx_stipple);
     } else {
         if (lake_flag || river_flag)
-            (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x48]); // Blue
+            (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x1a]); // Steel Blue
         else if (path_flag)
             (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x04]); // brown
         else if (railroad_flag)
@@ -2072,7 +2072,7 @@ void draw_shapefile_map (Widget w,
                         else {
                             (void)XSetLineAttributes (XtDisplay (w), gc, 0, LineSolid, CapButt,JoinMiter);
                         }
-                        (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x48]); // Blue
+                        (void)XSetForeground(XtDisplay(w), gc, colors[(int)0x1a]); // Steel Blue
                     }
                     else {  // Set default line width
                         (void)XSetLineAttributes (XtDisplay (w), gc, 0, LineSolid, CapButt,JoinMiter);
@@ -2445,7 +2445,7 @@ void draw_shapefile_map (Widget w,
 
                         if (i >= 3 && ok_to_draw) {   // We have a polygon to draw
                             if (lake_flag) {
-                                (void)XSetForeground(XtDisplay(w), gc, colors[0x48]); // Blue
+                                (void)XSetForeground(XtDisplay(w), gc, colors[0x1a]); // Steel Blue
                                 if (map_color_fill) {
                                     (void)XFillPolygon(XtDisplay(w), pixmap, gc, points, i, Complex, CoordModeOrigin);
 //                                    (void)XSetForeground(XtDisplay(w), gc, colors[0x08]); // black for border
@@ -2453,7 +2453,7 @@ void draw_shapefile_map (Widget w,
                                 (void)XDrawLines(XtDisplay(w), pixmap, gc, points, i, CoordModeOrigin);
                             }
                             else if (river_flag) {
-                                (void)XSetForeground(XtDisplay(w), gc, colors[0x48]); // Blue
+                                (void)XSetForeground(XtDisplay(w), gc, colors[0x1a]); // Steel Blue
                                 if (map_color_fill)
                                     (void)XFillPolygon(XtDisplay(w), pixmap, gc, points, i, Complex, CoordModeOrigin);
                                 else
