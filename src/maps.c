@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.395 2003/12/24 01:49:43 we7u Exp $
+ * $Id: maps.c,v 1.396 2003/12/30 15:38:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -305,9 +305,17 @@ void maps_init(void)
 #endif  // NO_GRAPHICS
 
 
-#ifdef HAVE_LIBSHP
+//#define GDAL_SHAPEFILES
+#ifdef GDAL_SHAPEFILES
+  #ifdef HAVE_LIBGDAL
+    fprintf(stderr,"%10s   ESRI Shapefile Maps (GDAL/OGR library)\n","shp");
+  #endif    // HAVE_LIBGDAL
+#else   // GDAL_SHAPEFILES
+  #ifdef HAVE_LIBSHP
     fprintf(stderr,"%10s   ESRI Shapefile Maps (Shapelib library)\n","shp");
-#endif  // HAVE_LIBSHP
+  #endif  // HAVE_LIBSHP
+#endif  // GDAL_SHAPEFILES
+
 
 #ifdef HAVE_LIBGEOTIFF
     fprintf(stderr,"%10s   USGS DRG Geotiff Topographic Maps (libgeotiff/libproj)\n","tif");
