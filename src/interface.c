@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.164 2004/06/15 06:23:41 we7u Exp $
+ * $Id: interface.c,v 1.165 2004/06/17 15:06:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6954,8 +6954,12 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
 
 
                 // Set converse mode.  We don't need to do this for
-                // KISS TNC interfaces.
-                xastir_snprintf(header_txt, sizeof(header_txt), "%c%s\r", '\3', "CONV");
+                // KISS TNC interfaces.  One european TNC doesn't
+                // accept "conv" but does accept the 'k' command.
+                // 
+//                xastir_snprintf(header_txt, sizeof(header_txt), "%c%s\r", '\3', "CONV");
+                xastir_snprintf(header_txt, sizeof(header_txt), "%c%s\r", '\3', "k");
+ 
                 if ( (port_data[port].device_type != DEVICE_SERIAL_KISS_TNC)
                         && (port_data[port].device_type != DEVICE_SERIAL_MKISS_TNC)
                         && (port_data[port].status == DEVICE_UP)
@@ -7438,8 +7442,13 @@ begin_critical_section(&devices_lock, "interface.c:output_my_data" );
                         usleep(10000);  // 10ms
                     }
  
-                    // Set converse mode
-                    xastir_snprintf(data_txt, sizeof(data_txt), "%c%s\r", '\3', "CONV");
+                    // Set converse mode.  One european TNC doesn't
+                    // accept "conv" but does accept the 'k'
+                    // command.
+                    //
+//                    xastir_snprintf(data_txt, sizeof(data_txt), "%c%s\r", '\3', "CONV");
+                    xastir_snprintf(data_txt, sizeof(data_txt), "%c%s\r", '\3', "k");
+
 
                     if ( (port_data[port].device_type != DEVICE_SERIAL_KISS_TNC)
                             && (port_data[port].device_type != DEVICE_SERIAL_MKISS_TNC)
