@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.6 2002/05/29 23:59:37 francais1 Exp $
+ * $Id: util.h,v 1.7 2002/07/02 23:25:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -98,5 +98,8 @@ extern int end_critical_section(xastir_mutex *lock, char *text);
 #ifdef TIMING_DEBUG
 void time_mark(int start);
 #endif
+
+// dl9sau
+extern char *sec_to_loc(long longitude, long latitude);
 
 #endif // __XASTIR_UTIL_H
