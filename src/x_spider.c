@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.29 2004/11/28 02:56:14 we7u Exp $
+ * $Id: x_spider.c,v 1.30 2004/11/29 19:37:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2004  The Xastir Group
@@ -394,6 +394,7 @@ void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
         }
         else {  // We received some data.  Send it down the socket.
 //            fprintf(stderr,"str_echo2: %s\n",line);
+
             if (writen(sockfd, line, n) != n) {
                 fprintf(stderr,"str_echo2: Writen error: %d\n",errno);
             }
@@ -693,10 +694,21 @@ int pipe_check(char *client_address) {
 // Also send it down the socket.
         pipe_object *q = pipe_head;
 
-        // The internet protocol for sending lines is "\r\n", and we
-        // only have a '\r' on the end at present.  Add a '\n' to
-        // the end.
-        strncat(line,"\n",1);
+        // The internet protocol for sending lines is "\r\n".  Knock
+        // off any line-end characters that might be present, then
+        // add a "\r\n" combo on the end.
+        //
+        if (n > 0 && (line[n-1] == '\r' || line[n-1] == '\n')) {
+            line[n-1] = '\0';
+            n--;
+        }
+        if (n > 0 && (line[n-1] == '\r' || line[n-1] == '\n')) {
+            line[n-1] = '\0';
+            n--;
+        }
+        // Add carriage-return/linefeed onto the end
+        strncat(line, "\r\n", 2);
+        n = n+2;
 
         while (q != NULL) {
 //          fprintf(stderr,"pipe_check: %s\n",line);
