@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.436 2005/03/01 20:05:18 we7u Exp $
+ * $Id: db.c,v 1.437 2005/03/10 21:02:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7420,6 +7420,7 @@ void init_station(DataRow *p_station) {
     p_station->object_retransmit  = -1;           // transmit forever
     p_station->last_transmit_time = sec_now();    // Used for object/item decaying algorithm
     p_station->transmit_time_increment = 0;       // Used in data_add()
+    p_station->last_modified_time = 0;            // Used for object/item dead-reckoning
     p_station->record_type        = '\0';
     p_station->data_via           = '\0';         // L local, T TNC, I internet, F file
     p_station->heard_via_tnc_port = 0;
