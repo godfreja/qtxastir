@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.352 2004/07/22 01:56:07 we7u Exp $
+ * $Id: db.c,v 1.353 2004/07/23 16:57:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9368,7 +9368,7 @@ void add_status(DataRow *p_station, char *status_string) {
             ptr = p_station->status_data;
             ptr2 = ptr;
             while (ptr != NULL) {
-                if (strcmp(ptr->text_ptr, status_string) == 0) {
+                if (strcasecmp(ptr->text_ptr, status_string) == 0) {
                     // Found a matching string
                     //fprintf(stderr,"Found match:
                     //%s:%s\n",p_station->call_sign,status_string);
@@ -9520,7 +9520,7 @@ void add_comment(DataRow *p_station, char *comment_string) {
             ptr = p_station->comment_data;
             ptr2 = ptr;
             while (ptr != NULL) {
-                if (strcmp(ptr->text_ptr, comment_string) == 0) {
+                if (strcasecmp(ptr->text_ptr, comment_string) == 0) {
                     // Found a matching string
                     //fprintf(stderr,"Found match: %s:%s\n",p_station->call_sign,comment_string);
 
