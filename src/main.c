@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.345 2003/09/18 19:04:57 we7u Exp $
+ * $Id: main.c,v 1.346 2003/09/18 19:38:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -20923,12 +20923,15 @@ if (Area_object_enabled) {
                 XtSetSensitive(ob_frame,FALSE);
 
 
-} else if (Probability_circles_enabled) {
+            } else if (Probability_circles_enabled) {
+                temp_data[0] = '/';
+                temp_data[1] = '\0';
+                XmTextFieldSetString(object_group_data,temp_data);
 
-                // Fetch the min/max fields from the object data and
-                // write that data into the input fields.
+                temp_data[0] = '[';
+                temp_data[1] = '\0';
+                XmTextFieldSetString(object_symbol_data,temp_data);
 
-// Fix this!
                 XmTextFieldSetString( probability_data_min, "" );
                 XmTextFieldSetString( probability_data_max, "" );
 
