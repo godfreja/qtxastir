@@ -1,5 +1,5 @@
-/*
- * $Id: xastir.h,v 1.1 2002/02/02 03:19:42 kg4ijb Exp $
+/* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
+ * $Id: xastir.h,v 1.2 2002/03/28 00:54:38 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,6 +41,7 @@
 #define CONVERT_LP_NOSP         3
 #define CONVERT_DEC_DEG         4
 #define CONVERT_UP_TRK          5
+#define CONVERT_DMS_NORMAL      6
 
 #ifndef M_PI                      /* if not defined in math.h */
 #define M_PI 3.14159265358979323846

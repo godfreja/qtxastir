@@ -1,5 +1,5 @@
-/*
- * $Id: db.c,v 1.10 2002/03/28 00:21:27 we7u Exp $
+/* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
+ * $Id: db.c,v 1.11 2002/03/28 00:54:37 francais1 Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2515,6 +2515,9 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
                 if (coordinate_system == USE_DDDDDD) {
                     convert_lat_l2s(p_station->coord_lat, temp, sizeof(temp), CONVERT_DEC_DEG);
                 }
+                else if (coordinate_system == USE_DDMMSS) {
+                    convert_lat_l2s(p_station->coord_lat, temp, sizeof(temp), CONVERT_DMS_NORMAL);
+                }
                 else {  // Assume coordinate_system == USE_DDMMMM
                     convert_lat_l2s(p_station->coord_lat, temp, sizeof(temp), CONVERT_HP_NORMAL);
                 }
@@ -2528,6 +2531,9 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
 
                 if (coordinate_system == USE_DDDDDD) {
                     convert_lon_l2s(p_station->coord_lon, temp, sizeof(temp), CONVERT_DEC_DEG);
+                }
+                else if (coordinate_system == USE_DDMMSS) {
+                    convert_lon_l2s(p_station->coord_lon, temp, sizeof(temp), CONVERT_DMS_NORMAL);
                 }
                 else {  // Assume coordinate_system == USE_DDMMMM
                     convert_lon_l2s(p_station->coord_lon, temp, sizeof(temp), CONVERT_HP_NORMAL);
@@ -2621,6 +2627,9 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
                             if (coordinate_system == USE_DDDDDD) {
                                 convert_lat_l2s(p_station->track_data->trail_lat_pos[last], temp, sizeof(temp), CONVERT_DEC_DEG);
                             }
+                            else if (coordinate_system == USE_DDMMSS) {
+                                convert_lat_l2s(p_station->track_data->trail_lat_pos[last], temp, sizeof(temp), CONVERT_DMS_NORMAL);
+                            }
                             else {  // Assume coordinate_system == USE_DDMMMM
                                 convert_lat_l2s(p_station->track_data->trail_lat_pos[last], temp, sizeof(temp), CONVERT_HP_NORMAL);
                             }
@@ -2634,6 +2643,9 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
 
                             if (coordinate_system == USE_DDDDDD) {
                                 convert_lon_l2s(p_station->track_data->trail_long_pos[last], temp, sizeof(temp), CONVERT_DEC_DEG);
+                            }
+                            else if (coordinate_system == USE_DDMMSS) {
+                                convert_lon_l2s(p_station->track_data->trail_long_pos[last], temp, sizeof(temp), CONVERT_DMS_NORMAL);
                             }
                             else {  // Assume coordinate_system == USE_DDMMMM
                                 convert_lon_l2s(p_station->track_data->trail_long_pos[last], temp, sizeof(temp), CONVERT_HP_NORMAL);
