@@ -1,5 +1,5 @@
 /* -*- c-basic-indent: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.221 2003/02/04 08:06:55 we7u Exp $
+ * $Id: main.c,v 1.222 2003/02/12 04:18:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13299,7 +13299,7 @@ void Configure_timing( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
                 NULL);
  
         // Interval for station being removed from database
-        removal_time = XtVaCreateManagedWidget("Station Removeal Time",
+        removal_time = XtVaCreateManagedWidget("Station Removal Time",
                 xmScaleWidgetClass,
                 my_form,
                 XmNtopAttachment, XmATTACH_WIDGET,
