@@ -1,5 +1,5 @@
 /*
- * $Id: list_gui.c,v 1.12 2002/06/26 15:50:07 francais1 Exp $
+ * $Id: list_gui.c,v 1.13 2002/07/04 18:26:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -176,14 +176,14 @@ void get_list_member(int type, DataRow **p_station, int skip, int forward) {
         case LST_MOB:
             if (forward == 1)
                 while (!found && (*p_station) != NULL) {
-                    if (((*p_station)->flag & ST_ACTIVE) != 0 && (*p_station)->track_data != NULL)
+                    if (((*p_station)->flag & ST_ACTIVE) != 0 && (*p_station)->newest_trackpoint != NULL)
                         found = (char)TRUE;
                     else
                         (*p_station) = (*p_station)->n_next;
                 }
             else
                 while (!found && (*p_station) != NULL) {
-                    if (((*p_station)->flag & ST_ACTIVE) != 0 && (*p_station)->track_data != NULL)
+                    if (((*p_station)->flag & ST_ACTIVE) != 0 && (*p_station)->newest_trackpoint != NULL)
                         found = (char)TRUE;
                     else
                         (*p_station) = (*p_station)->n_prev;
@@ -334,7 +334,7 @@ int stations_types(int type) {
                     st++;
                     break;
                 case 1:         // mobile stations list
-                    if (p_station->track_data != NULL)
+                    if (p_station->newest_trackpoint != NULL)
                         st++;
                     break;
                 case 2:         // WX stations list
