@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.38 2004/08/19 06:31:43 we7u Exp $
+ * $Id: xastir.h,v 1.39 2004/09/17 19:46:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -272,6 +272,7 @@ extern int gps_port_save;
 extern double calc_dscale_x(long x, long y);
 
 /* from popup_gui.c */
+extern void popup_message_always(char *banner, char *message);
 extern void popup_message(char *banner, char *message);
 extern void popup_ID_message(char *banner, char *message);
 
