@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.9 2003/02/14 23:13:25 we7u Exp $
+# $Id: configure.ac,v 1.10 2003/02/15 00:11:29 we7u Exp $
 
 
 #
@@ -430,7 +430,8 @@ else
 
   if test "$XASTIR_SHAPELIB_INC" = "yes"
   then
-    AC_CHECK_FILE(/sw/lib/libshp.so, XASTIR_SHAPELIB_LIB="-lshp") 
+    AC_CHECK_FILE(/sw/lib/libshp.a, XASTIR_SHAPELIB_LIB="-lshp") 
+    AC_CHECK_FILE(/sw/lib/libshp.so, XASTIR_SHAPELIB_LIB="-lshp")
     if test "$XASTIR_SHAPELIB_LIB" = "-lshp" 
     then 
       XASTIR_SHAPE_LIB_PATH="-L/sw/lib"
