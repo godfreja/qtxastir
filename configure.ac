@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.114 2005/01/20 17:51:15 tvrusso Exp $
+# $Id: configure.ac,v 1.115 2005/03/08 17:16:59 tvrusso Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -78,7 +78,7 @@ AC_ARG_WITH(errorpopups,[  --with-errorpopups       Send error popups to stderr.
 
 LIBRTREE=""
 SUBRTREE=""
-AC_ARG_WITH(rtree,[  --with-festival       Enable spatial indexing of shapefiles for faster rendering.],[use_rtree=$withval])
+AC_ARG_WITH(rtree,[  --with-rtree       Enable spatial indexing of shapefiles for faster rendering.],[use_rtree=$withval])
 if test "${use_rtree}" = "yes" ; then
     AC_DEFINE([USE_RTREE],1,[RTree spatial indexing])
     LIBRTREE="-Lrtree -lrtree"
