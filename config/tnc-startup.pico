@@ -1,4 +1,4 @@
-# $Id: tnc-startup.pico,v 1.15 2005/01/08 09:19:32 we7u Exp $
+# $Id: tnc-startup.pico,v 1.16 2005/04/11 20:07:59 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -50,10 +50,13 @@ MFILTER 0
 MONITOR 3
 MRPT on
 MSTAMP off
-MYALIAS RELAY
-#MY1ALIAS WIDE
-#MY2ALIAS SAR
-#MY3ALIAS ESAR
+#
+# Important!  Only uncomment if really needed as a fill-in digi:
+#MYALIAS WIDE1-1
+#
+#MY1ALIAS SAR
+#MY2ALIAS ESAR
+#MY3ALIAS ESAR2
 NEWMODE off
 NOMODE on
 #PACLEN 128

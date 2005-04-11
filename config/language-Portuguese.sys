@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.154 2005/03/18 21:20:36 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.155 2005/04/11 20:07:58 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -464,7 +464,7 @@ WPUPCFT039|Duplex completo (Full Duplex)||
 WPUPCFT040|Configurar o TNC em Multi-Port KISS||
 WPUPCFT041|Porta radio||
 WPUPCFT042|Dubious UNPROTO Path!||
-WPUPCFT043|Please consider a shorter path such as WIDE2-2 or RELAY,WIDE2-2||
+WPUPCFT043|Please consider a shorter path such as WIDE2-2 or WIDE1-1,WIDE2-2||
 WPUPCFT044|Dubious IGATE Path!||
 WPUPCFT045|Transmitting w/Dubious UNPROTO Path!||
 WPUPCFT046|Transmitting w/Dubious IGATE Path!||
