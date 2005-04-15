@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.155 2005/04/11 20:07:58 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.156 2005/04/15 16:01:40 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -468,6 +468,7 @@ WPUPCFT043|Please consider a shorter path such as WIDE2-2 or WIDE1-1,WIDE2-2||
 WPUPCFT044|Dubious IGATE Path!||
 WPUPCFT045|Transmitting w/Dubious UNPROTO Path!||
 WPUPCFT046|Transmitting w/Dubious IGATE Path!||
+WPUPCFT047|Init KISS-mode on startup||
 #
 # Configurar a porta da estacao meteorologica
 WPUPCFWX01|Configurar a porta da estacao meteorologica||
