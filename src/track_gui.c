@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.36 2005/02/15 19:42:27 we7u Exp $
+ * $Id: track_gui.c,v 1.37 2005/04/19 17:39:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -149,6 +149,10 @@ void Track_station_now(Widget w, XtPointer clientData, XtPointer callData) {
         if (!found) {
             xastir_snprintf(temp2, sizeof(temp2), langcode("POPEM00026"), temp);
             popup_message_always(langcode("POPEM00025"),temp2);
+        }
+        if ( track_me & !is_my_call( tracking_station_call, 1) ) {
+            XmToggleButtonSetState( trackme_button, FALSE, FALSE );
+            track_me = 0;
         }
     } else {
         tracking_station_call[0] = '\0';    // Empty it out again
