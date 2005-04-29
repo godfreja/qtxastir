@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.219 2005/04/26 18:24:01 we7u Exp $
+ * $Id: interface.c,v 1.220 2005/04/29 22:06:07 kd6zwr Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7783,7 +7783,7 @@ void output_my_aprs_data(void) {
     char data_txt_save[MAX_LINE_SIZE+5];
     char temp[MAX_LINE_SIZE+5];
     char path_txt[MAX_LINE_SIZE+5];
-    char *unproto_path = NULL;
+    char *unproto_path = "";
     char data_txt2[5];
     struct tm *day_time;
     time_t sec;
@@ -8374,11 +8374,15 @@ void output_my_data(char *message, int incoming_port, int type, int loopback_onl
     char data_txt_save[MAX_LINE_SIZE+5];
     char temp[MAX_LINE_SIZE+5];
     char path_txt[MAX_LINE_SIZE+5];
-    char *unproto_path = NULL;
+    char *unproto_path = "";
     char output_net[100];
     int ok, start, finish, port;
     int done;
 
+    //// cbell- if path is null, strlen/printf segv in solaris
+    if (path == NULL) { 
+        path = ""; 
+    }
 
     if (debug_level & 1) {
         fprintf(stderr,
@@ -8864,15 +8868,15 @@ void output_waypoint_data(char *message) {
     char data_txt_save[MAX_LINE_SIZE+5];
     int ok, start, finish, i;
 
-    if (debug_level & 1)
-        fprintf(stderr,"Sending to GPS interfaces: %s\n", message);
-
     if (message == NULL)
         return;
 
     if (message[0] == '\0')
         return;
  
+    if (debug_level & 1)
+        fprintf(stderr,"Sending to GPS interfaces: %s\n", message);
+
     data_txt_save[0] = '\0';
 
     start = 0;
