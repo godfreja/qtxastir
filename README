@@ -1,5 +1,5 @@
 
-$Id: README,v 1.22 2005/03/03 17:24:54 we7u Exp $
+$Id: README,v 1.23 2005/05/05 19:19:21 we7u Exp $
 
 README
   ------------------------------------------------------------------------
@@ -73,7 +73,7 @@ README
 
      (2) HOW TO GET XASTIR
 
-          Currently, the 1.4.x tree of Xastir is developed at
+          Xastir is currently developed at
           <http://sourceforge.net/projects/xastir/>
           You can get the latest version of Xastir from there.
 
