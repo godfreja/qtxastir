@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.220 2005/04/29 22:06:07 kd6zwr Exp $
+ * $Id: interface.c,v 1.221 2005/05/05 19:36:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7748,7 +7748,7 @@ unsigned char *select_unproto_path(int port) {
     }
     else {
         // We found no entries in the unproto fields for the
-        // interface.
+        // interface.  Set a default path of "WIDE2-2".
 
         xastir_snprintf(unproto_path_txt,
             sizeof(unproto_path_txt),
