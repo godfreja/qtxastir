@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.26 2005/05/05 19:23:54 we7u Exp $
+ * $Id: awk.c,v 1.27 2005/05/06 20:59:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -204,7 +204,7 @@ awk_symbol *awk_find_sym(awk_symtab *this,
                 // operation, case sensitive)
                 if (len == 1)
                     return s;
-                if (len > 1 && strncmp(s->name,name+1,len-1) == 0)
+                if (len > 1 && strncmp(s->name+1,name+1,len-1) == 0)
                     return s;
             }
         }
