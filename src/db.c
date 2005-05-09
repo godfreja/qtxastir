@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.454 2005/04/06 19:26:55 we7u Exp $
+ * $Id: db.c,v 1.455 2005/05/09 16:32:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14441,7 +14441,7 @@ int extract_third_party(char *call,
     if (ok) {                                         // check callsign
         (void)remove_trailing_asterisk(p_call);       // is an asterisk valid here ???
         if (valid_inet_name(p_call,(*info),origin,origin_size)) { // accept some of the names used in internet
-            // treat is as object with special origin
+            // Treat it as object with special origin
             xastir_snprintf(call,
                 MAX_CALLSIGN+1,
                 "%s",
