@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.27 2005/01/09 19:46:59 tvrusso Exp $
+# $Id: Makefile.am,v 1.28 2005/05/19 15:01:11 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -46,6 +46,7 @@ xastir_SOURCES = \
     map_shp.c \
     map_tif.c \
     map_tiger.c \
+    map_WMS.c \
     messages.c messages.h \
     messages_gui.c \
     popup.h \
