@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.4 2005/05/23 20:16:10 we7u Exp $
+ * $Id: map_WMS.c,v 1.5 2005/05/24 19:21:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -280,6 +280,20 @@ void draw_WMS_map (Widget w,
     //
     // Here we must use scale_x for both directions because we have
     // square pixels returned by the WMS server.
+
+
+// Really what we want to do here is to change our bounding box for
+// our request to fit square pixels, using scale_x for both
+// dimensions, and to change our tiepoints to match.  WMS servers
+// currently feed us back square pixels but the spec says that the
+// servers should be capable of sending back rectangular pixels, so
+// the images we get back may change if we don't request square
+// pixels each time.
+// TODO:  Change our imagesize, bounding rectangle requested, and
+// tiepoints to fit square pixels and to use scale_x for both
+// dimensions.
+
+
     //
     tp[1].img_x =  screen_width - 1; // Pixel Coordinates
     tp[1].img_y = screen_height - 1; // Pixel Coordinates 
@@ -315,30 +329,12 @@ void draw_WMS_map (Widget w,
 
 //    xastir_snprintf(WMStmp, sizeof(WMStmp),
 //        "http://mesonet.tamu.edu/cgi-bin/p-warn?SERVICE=WMS&VERSION=1.1.1&REQUEST=getmap");
+
+
     xastir_snprintf(WMStmp, sizeof(WMStmp), URL);
-
-    strncat(WMStmp, "&VERSION=1.1.1", sizeof(WMStmp) - strlen(WMStmp));
-
+    strncat(WMStmp, "&VERSION=1.0.0", sizeof(WMStmp) - strlen(WMStmp));
     strncat(WMStmp, "&REQUEST=getmap", sizeof(WMStmp) - strlen(WMStmp));
-
-
-//                                      factor, lon0, lat0
-//    strncat(WMStmp, "&CRS=AUTO2:42004,1.0,%f,%f", sizeof(WMStmp) - strlen(WMStmp));
-//    xastir_snprintf(tmpstr, sizeof(tmpstr), "&CRS=AUTO2:42004,1,%f,%f",
-//        long_center,
-//        lat_center);
-//    strncat(WMStmp, tmpstr, sizeof(WMStmp) - strlen(WMStmp));
- 
-    strncat(WMStmp, "&CRS=CRS:84", sizeof(WMStmp) - strlen(WMStmp));
-//    strncat(WMStmp, "&CRS=CRS:1", sizeof(WMStmp) - strlen(WMStmp));
-
-
-    strncat(WMStmp, "&TRANSPARENT=TRUE", sizeof(WMStmp) - strlen(WMStmp));
-
     strncat(WMStmp, "&EXCEPTIONS=INIMAGE", sizeof(WMStmp) - strlen(WMStmp));
-
-    strncat(WMStmp, "&BGCOLOR=0xffffff", sizeof(WMStmp) - strlen(WMStmp));
-
 
     xastir_snprintf(tmpstr, sizeof(tmpstr),
         "&BBOX=%8.5f,%7.5f,%8.5f,%7.5f",
@@ -348,19 +344,27 @@ void draw_WMS_map (Widget w,
         top);   // Upper right
     strncat (WMStmp, tmpstr, sizeof(WMStmp) - strlen(WMStmp));
 
-
     xastir_snprintf(tmpstr, sizeof(tmpstr), "&HEIGHT=%d", geo_image_height);
     strncat (WMStmp, tmpstr, sizeof(WMStmp) - strlen(WMStmp));
 
     xastir_snprintf(tmpstr, sizeof(tmpstr), "&WIDTH=%d", geo_image_width);    
     strncat (WMStmp, tmpstr, sizeof(WMStmp) - strlen(WMStmp));
 
-    strncat(WMStmp, "&FORMAT=image/png", sizeof(WMStmp) - strlen(WMStmp));
+
+// These should be specified in the .geo file instead of hard-coded:
+//
+//    strncat(WMStmp, "&FORMAT=image/png", sizeof(WMStmp) - strlen(WMStmp));
+//    strncat(WMStmp, "&TRANSPARENT=TRUE", sizeof(WMStmp) - strlen(WMStmp));
+//    strncat(WMStmp, "&BGCOLOR=0xffffff", sizeof(WMStmp) - strlen(WMStmp));
+//    strncat(WMStmp, "&BGCOLOR=0x000000", sizeof(WMStmp) - strlen(WMStmp));
+//    strncat(WMStmp, "&CRS=CRS:84", sizeof(WMStmp) - strlen(WMStmp));
+
+
 
 
 
 /*
-    xastir_snprintf(WMStmp, sizeof(WMStmp), "http://tiger.census.gov/cgi-bin/mapper/map.gif?");
+    xastir_snprintf(WMStmp, sizeof(WMStmp), "http://tiger.census.gov/cgi-bin/mapper/map.png?");
 
     if (tiger_show_grid)
         strncat(WMStmp, "&on=GRID", sizeof(WMStmp) - strlen(WMStmp));
