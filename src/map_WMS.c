@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.6 2005/05/24 19:49:30 we7u Exp $
+ * $Id: map_WMS.c,v 1.7 2005/05/25 18:42:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -343,7 +343,6 @@ void draw_WMS_map (Widget w,
 
 
     xastir_snprintf(WMStmp, sizeof(WMStmp), URL);
-    strncat(WMStmp, "&VERSION=1.0.0", sizeof(WMStmp) - strlen(WMStmp));
     strncat(WMStmp, "&REQUEST=getmap", sizeof(WMStmp) - strlen(WMStmp));
     strncat(WMStmp, "&EXCEPTIONS=INIMAGE", sizeof(WMStmp) - strlen(WMStmp));
 
@@ -365,6 +364,7 @@ void draw_WMS_map (Widget w,
 
 // These should be specified in the .geo file instead of hard-coded:
 //
+//    strncat(WMStmp, "&VERSION=1.0.0", sizeof(WMStmp) - strlen(WMStmp));
 //    strncat(WMStmp, "&FORMAT=image/png", sizeof(WMStmp) - strlen(WMStmp));
 //    strncat(WMStmp, "&TRANSPARENT=TRUE", sizeof(WMStmp) - strlen(WMStmp));
 //    strncat(WMStmp, "&BGCOLOR=0xffffff", sizeof(WMStmp) - strlen(WMStmp));
