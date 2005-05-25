@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.87 2005/03/16 20:15:41 we7u Exp $
+ * $Id: alert.c,v 1.88 2005/05/25 19:12:54 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -898,7 +898,7 @@ int alert_expire(void) {
         return(NULL);
     }
 
-    // Check whether this new alert has aleady expired.  If so,
+    // Check whether this new alert has already expired.  If so,
     // don't add it.
     if (entry->expiration < time(NULL)) {
         if (debug_level & 2) {
