@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.76 2005/05/19 15:01:11 we7u Exp $
+ * $Id: main.h,v 1.77 2005/05/31 19:32:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -339,7 +339,7 @@ extern void busy_cursor(Widget w);
 extern void pos_dialog(Widget w);
 extern int create_image(Widget w);
 extern void draw_tiger_map (Widget w, char *filenm, int destination_pixmap);
-extern void draw_WMS_map (Widget w, char *filenm, int destination_pixmap, char *URL);
+extern void draw_WMS_map (Widget w, char *filenm, int destination_pixmap, char *URL, int do_check_trans, unsigned long trans_color);
 
 extern void locate_gui_init(void);
 extern void geocoder_gui_init(void);
