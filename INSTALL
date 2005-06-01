@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.60 2005/02/27 02:04:08 shadow Exp $
+$Id: INSTALL,v 1.61 2005/06/01 19:24:42 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -440,6 +440,30 @@ First Time Install:
     Note that you'll have to set up /etc/sudoers file to allow those
     commands to be run by a normal user before sudo will work for
     you.  See the README.CVS file for sudo instructions.
+
+
+    Note from Gale Wilkinson, kc4pl:
+    > >
+    > > How do you get shapelib to "make" properly under cygwin?    I
+    > > have installed the latest cygwin (packages per the win32
+    > > install notes) and then downloaded and unpacked the latest
+    > > shapelib source package for compiling.  But when trying to do
+    > > the "make lib" it errors out part way through the process.
+    > > The error seems to be:
+    > >
+    > >  dbfopen.lo: In function 'DBFReadAttribute':
+    > > /home/gwilkinson/src/shapelib-1.2.10/dbfopen.c:724:undefined reference to '__getreent'
+    > > /home/gwilkinson/src/shapelib-1.2.10/dbfopen.c:716:undefined reference to '__getreent'
+    > > make: *** [lib] Error 1
+
+    Dan Brown, n8ysz, responded:
+    >
+    > I wrote this to get/make shapelib: 
+    >
+    > http://brauhaus.org/xastir/get_shapelib.sh
+    > or
+    > http://brauhaus.org/xastir/get_shapelib.sh.txt
+
 
 
    5. OPTIONAL:  Install ImageMagick graphics support.  Allows using more than
