@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.17 2005/01/08 09:27:08 we7u Exp $
+# $Id: Makefile.am,v 1.18 2005/06/01 20:11:47 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -8,6 +8,7 @@ pkglib_SCRIPTS = \
     coord-convert.pl \
     fcc-get \
     get-gnis \
+    get_shapelib.sh \
     icontable.pl \
     inf2geo.pl \
     kiss-off.pl \
