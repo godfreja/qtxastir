@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.61 2005/06/01 19:24:42 we7u Exp $
+$Id: INSTALL,v 1.62 2005/06/01 20:06:30 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -463,6 +463,10 @@ First Time Install:
     > http://brauhaus.org/xastir/get_shapelib.sh
     > or
     > http://brauhaus.org/xastir/get_shapelib.sh.txt
+
+    This script is now also in the Xastir sources as
+    "xastir/scripts/get_shapelib.sh".
+
 
 
 

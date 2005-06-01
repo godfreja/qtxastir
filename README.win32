@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.120 2005/06/01 19:24:42 we7u Exp $
+$Id: README.win32,v 1.121 2005/06/01 20:06:30 we7u Exp $
 
 
   Two companies have created simpler installs of Cygwin/Xastir than
@@ -759,6 +759,9 @@ Dan Brown, n8ysz, responded:
 > http://brauhaus.org/xastir/get_shapelib.sh
 > or
 > http://brauhaus.org/xastir/get_shapelib.sh.txt
+
+This script is now also in the Xastir sources as
+"xastir/scripts/get_shapelib.sh".
 
 
 
