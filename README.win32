@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.121 2005/06/01 20:06:30 we7u Exp $
+$Id: README.win32,v 1.122 2005/06/02 15:27:44 we7u Exp $
 
 
   Two companies have created simpler installs of Cygwin/Xastir than
@@ -43,6 +43,15 @@ home directory.  If you don't do this, you'll be referred to as
 there won't be a good place to put your Xastir startup files.  Of
 course, log in as the same user each time in order for Cygwin to use
 the proper home directory for you.
+
+CAN'T REPLACE FILES:  Every once in a while Windows will refuse to
+allow you to delete/rename one of the files.  The only way I've
+found to get around this problem is to reboot.  Also, Windows
+typically won't allow you to replace a file that Windows currently
+has open.  If you're going to be recompiling/reinstalling Xastir, or
+updating Cygwin, make sure that these applications are shut down
+before doing so.  You can get VERY strange results if only some
+files get updated.
 
 SPACES IN USERNAMES:  Cygwin specifically, and Unix boxes in
 general, don't much like spaces in filenames, directories, or login
