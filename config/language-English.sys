@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.155 2005/04/15 16:01:39 we7u Exp $
+# $Id: language-English.sys,v 1.156 2005/06/07 19:54:30 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -184,6 +184,7 @@ PULDNDP009|Display Weather Info||
 PULDNDP046|- Display Weather Text||
 PULDNDP018|-- Temperature Only||
 PULDNDP047|- Display Wind Barb||
+PULDNDP054|Disable Aloha Circle||
 PULDNDP013|Display Position Ambiguity||
 PULDNDP008|Display Power/Gain||
 PULDNDP021|- Use Default Power/Gain||

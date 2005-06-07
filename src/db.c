@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.458 2005/06/07 05:54:57 tvrusso Exp $
+ * $Id: db.c,v 1.459 2005/06/07 19:54:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3198,16 +3198,18 @@ void display_file(Widget w) {
     }
 
     // And last, draw the ALOHA circle
-    if (aloha_radius != -1) {
-          // if we actually have an aloha radius calculated already
-        long l_lat,l_lon;
-        double distance=aloha_radius;
+    if (Display_.ambiguity) {
+        if (aloha_radius != -1) {
+              // if we actually have an aloha radius calculated already
+            long l_lat,l_lon;
+            double distance=aloha_radius;
 
-        l_lat = convert_lat_s2l(my_lat);
-        l_lon = convert_lon_s2l(my_long);
-        if (!english_units)
-            distance *= 0.62137119; // convert to miles for draw routine
-        draw_aloha_circle(l_lon,l_lat,distance,colors[0x0e], pixmap_final);
+            l_lat = convert_lat_s2l(my_lat);
+            l_lon = convert_lon_s2l(my_long);
+            if (!english_units)
+                distance *= 0.62137119; // convert to miles for draw routine
+            draw_aloha_circle(l_lon,l_lat,distance,colors[0x0e], pixmap_final);
+        }
     }
 
     // Check whether currently_selected_stations has changed.  If
@@ -17294,4 +17296,5 @@ void calc_aloha()    {
         }
     }
 }
+
 

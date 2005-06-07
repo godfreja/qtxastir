@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.159 2005/04/15 16:01:40 we7u Exp $
+# $Id: language-Italian.sys,v 1.160 2005/06/07 19:54:31 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -184,6 +184,7 @@ PULDNDP009|Informazioni Meteo|W|
 PULDNDP046|- Visualizza Testo Meteo||
 PULDNDP018|-- Visualizza solo Temperatura||
 PULDNDP047|- Visualizza Vento||
+PULDNDP054|Disable Aloha Circle||
 PULDNDP013|Ambiguità di posizione|
 PULDNDP008|Potenza/Guadagno|P|
 PULDNDP021|- Potenza/Guadagno - default||

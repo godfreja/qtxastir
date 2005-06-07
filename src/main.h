@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.77 2005/05/31 19:32:50 we7u Exp $
+ * $Id: main.h,v 1.78 2005/06/07 19:54:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -207,6 +207,7 @@ typedef struct _what_to_display {
     int temperature_only;
     int wind_barb;
 
+    int aloha_circle;
     int ambiguity;
     int phg;
     int default_phg;
