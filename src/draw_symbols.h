@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.h,v 1.17 2005/02/28 17:12:00 we7u Exp $
+ * $Id: draw_symbols.h,v 1.18 2005/06/07 12:33:37 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -54,6 +54,7 @@ extern void symbol(Widget w, int ghost,char symbol_table, char symbol_id, char s
 extern void draw_symbol(Widget w, char symbol_table, char symbol_id, char symbol_overlay, long x_lon, long y_lat,char *callsign_text, char *alt_text, char *course_text, char *speed_text, char *my_distance, char *my_course, char *wx_temp, char* wx_wind, time_t sec_heard, int temp_show_last_heard, Pixmap where, char rotate, char area_type, char *signpost, char *pmin, char *pmax, int bump_count );
 
 extern void draw_pod_circle(long x_long, long y_lat, double range, int color, Pixmap where);
+extern void draw_aloha_circle(long x_long, long y_lat, double range, int color, Pixmap where);
 extern void draw_phg_rng(long x_long, long y_lat, char *phg, time_t sec_heard, Pixmap where);
 extern void draw_DF_circle(long x_long, long y_lat, char *shgd, time_t sec_heard, Pixmap where);
 extern void draw_wind_barb(long x_long, long y_lat, char *speed, char *course, time_t sec_heard, Pixmap where);
