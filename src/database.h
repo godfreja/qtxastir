@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.15 2005/06/07 05:54:57 tvrusso Exp $
+ * $Id: database.h,v 1.16 2005/06/07 06:06:36 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -596,8 +596,10 @@ extern void set_map_position(Widget w, long lat, long lon);
 // just used for aloha calcs
 typedef struct {
     double distance;
+#ifdef DEBUG_ALOHA
     char call_sign[MAX_CALLSIGN+1]; // call sign or name index or object/item
                                     // name
+#endif
     char is_mobile;
     char is_other_mobile;
     char is_wx;
