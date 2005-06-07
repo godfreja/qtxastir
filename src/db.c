@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.459 2005/06/07 19:54:31 we7u Exp $
+ * $Id: db.c,v 1.460 2005/06/07 20:01:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3198,7 +3198,7 @@ void display_file(Widget w) {
     }
 
     // And last, draw the ALOHA circle
-    if (Display_.ambiguity) {
+    if (Display_.aloha_circle) {
         if (aloha_radius != -1) {
               // if we actually have an aloha radius calculated already
             long l_lat,l_lon;
