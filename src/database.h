@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.14 2005/03/22 04:57:58 we7u Exp $
+ * $Id: database.h,v 1.15 2005/06/07 05:54:57 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -592,4 +592,20 @@ extern int  get_weather_record(DataRow *fill);
 
 extern void set_map_position(Widget w, long lat, long lon);
 
+
+// just used for aloha calcs
+typedef struct {
+    double distance;
+    char call_sign[MAX_CALLSIGN+1]; // call sign or name index or object/item
+                                    // name
+    char is_mobile;
+    char is_other_mobile;
+    char is_wx;
+    char is_digi; // can only tell this if using a digi icon!
+    char is_home; // stationary stations that are not digis
+} aloha_entry;
+double calc_aloha_distance(); //meat
+void calc_aloha(); // periodic function
+
+int comp_by_dist(const void *,const void *);// used only for qsort
 #endif /* XASTIR_DATABASE_H */

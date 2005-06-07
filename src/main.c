@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.568 2005/03/24 20:25:51 we7u Exp $
+ * $Id: main.c,v 1.569 2005/06/07 05:54:58 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10354,6 +10354,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 #ifdef USE_RTREE
             purge_shp_hash();                   // purge stale rtrees
 #endif
+            calc_aloha();
 
             //if ( (new_message_data > 0) && ( (delay_time % 2) == 0) )
             //update_messages(0);                 // Check Messages, no forced update
