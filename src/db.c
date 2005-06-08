@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.460 2005/06/07 20:01:39 we7u Exp $
+ * $Id: db.c,v 1.461 2005/06/08 05:16:45 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -17145,12 +17145,11 @@ double calc_aloha_distance() {
                 aloha_array[num_aloha_entries].distance = 
                     distance_from_my_station(p_station->call_sign,temp);
 
-                if ( p_station->newest_trackpoint != NULL ) {
-                    if ( strlen(p_station->speed) > 0) {// has a speed
+                if ( p_station->newest_trackpoint != NULL 
+                     && strlen(p_station->speed) > 0) {
                         // If the station has a track and a speed of any value 
                         // (even zero), it's a mobile.
                         aloha_array[num_aloha_entries].is_mobile = (char) TRUE;
-                    }
                 } 
                 else if  ( (p_station->aprs_symbol.aprs_type=='/' 
                             && (strchr("'<=>()*0COPRSUXY[^abefgjkpsuv",
