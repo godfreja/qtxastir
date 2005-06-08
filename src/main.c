@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.571 2005/06/07 20:01:40 we7u Exp $
+ * $Id: main.c,v 1.572 2005/06/08 15:45:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10370,8 +10370,11 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
             purge_shp_hash();                   // purge stale rtrees
 #endif
 
-            if (Display_.aloha_circle)
-                calc_aloha();
+
+            // We need to always calculate the Aloha circle so that
+            // if it is turned on by the user it will be accurate.
+            calc_aloha();
+
 
             //if ( (new_message_data > 0) && ( (delay_time % 2) == 0) )
             //update_messages(0);                 // Check Messages, no forced update
