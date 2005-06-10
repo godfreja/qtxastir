@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.462 2005/06/09 05:08:10 tvrusso Exp $
+ * $Id: db.c,v 1.463 2005/06/10 16:55:43 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -17175,7 +17175,8 @@ double calc_aloha_distance() {
                           p_station-> record_type == APRS_WX3 ||
                           p_station-> record_type == APRS_WX4 ||
                           p_station-> record_type == APRS_WX5 ||
-                          p_station-> record_type == APRS_WX6 ) {
+                          p_station-> record_type == APRS_WX6 || 
+                          p_station-> aprs_symbol.aprs_symbol=='_') {
                     // Bob B. uses the station symbol "_" to select this, but
                     // agrees that if we do it this way it's probably better
                     // -- this says if we've gotten any WX data, it's a WX 
