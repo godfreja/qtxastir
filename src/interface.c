@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.223 2005/06/14 19:59:24 we7u Exp $
+ * $Id: interface.c,v 1.224 2005/06/14 21:01:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7932,7 +7932,7 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
 //                xastir_snprintf(header_txt, sizeof(header_txt), "%c%s\r", '\3', "CONV");
 //                xastir_snprintf(header_txt, sizeof(header_txt), "%c%s\r", '\3', "k");
                 xastir_snprintf(header_txt, sizeof(header_txt), "%c%s\r", '\3', CONVERSE_MODE);
-fprintf(stderr,"%s\n", header_txt);
+//fprintf(stderr,"%s\n", header_txt);
  
                 if ( (port_data[port].device_type != DEVICE_SERIAL_KISS_TNC)
                         && (port_data[port].device_type != DEVICE_SERIAL_MKISS_TNC)
