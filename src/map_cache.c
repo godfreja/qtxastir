@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.11 2005/03/17 15:34:54 we7u Exp $
+ * $Id: map_cache.c,v 1.12 2005/06/20 20:34:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -558,12 +558,14 @@ int map_cache_del( char * map_cache_url ){
 
 // check "CACHE_SPACE_USED" record in db
 	
-            if (((mc_ret = dbp->get(dbp, NULL, &mc_size_key, &mc_size_data, 0)) == 0) &&  ( mc_size_data.data != NULL ) ) {
-                    if ( debug_level & 512 ) {
-                        fprintf(stderr, "map_cache_del: %s: key retrieved: data was %s.\n",
-                                (char *)mc_size_key.data,
-                                (char *)mc_size_data.data);
-                    }
+            if (((mc_ret = dbp->get(dbp, NULL, &mc_size_key, &mc_size_data, 0)) == 0)
+                    && ( mc_size_data.data != NULL )
+                    && ( strlen(mc_size_data.data) != 0 ) ) {
+                if ( debug_level & 512 ) {
+                    fprintf(stderr, "map_cache_del: %s: key retrieved: data was %s.\n",
+                        (char *)mc_size_key.data,
+                        (char *)mc_size_data.data);
+                }
 
 // this pukes if mc_size_data.data is null
 
