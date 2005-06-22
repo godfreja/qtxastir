@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.95 2005/06/22 19:30:35 we7u Exp $
+ * $Id: map_shp.c,v 1.96 2005/06/22 19:47:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1888,7 +1888,9 @@ void draw_shapefile_map (Widget w,
                     default:
                         // User has chosen Auto Fill for this map,
                         // so the Dbfawk file controls the fill
-                        // property.
+                        // property.  If no dbfawk file, "filled"
+                        // will take on the default setting listed
+                        // in dbfawk_default_rules[] above.
                         draw_filled = filled;
                         break;
                 }
@@ -1901,6 +1903,13 @@ void draw_shapefile_map (Widget w,
                 skip_it = (map_color_levels && (scale_y > display_level));
                 skip_label = (map_color_levels && (scale_y > label_level));
 
+            }
+#else   /* WITH_DBFAWK */
+            if (draw_filled == 2) {
+                // "Auto" fill was chosen, but dbfawk support is not
+                // compiled in.  Default to vector mode (no polygon
+                // fills)
+                draw_filled = 0;
             }
 #endif /* WITH_DBFAWK */
 
