@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.163 2005/06/21 19:43:12 we7u Exp $
+ * $Id: util.c,v 1.164 2005/06/22 01:10:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4730,5 +4730,26 @@ int check_unproto_path ( char *data ) {
     return(bad_path);
 
 }   // End of check_unproto_path
+
+
+
+
+
+// Set string printed out by segfault handler
+void set_dangerous( char *ptr ) {
+    xastir_snprintf(dangerous_operation,
+        sizeof(dangerous_operation),
+        "%s",
+        ptr);
+}
+
+
+
+
+
+// Clear string printed out by segfault handler
+void clear_dangerous(void) {
+    dangerous_operation[0] = '\0';
+}
 
 

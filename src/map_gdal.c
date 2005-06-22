@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.129 2005/01/08 10:06:53 we7u Exp $
+ * $Id: map_gdal.c,v 1.130 2005/06/22 01:10:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -2254,27 +2254,6 @@ fprintf(stderr,"Vector %d: %7.5f %8.5f  %7.5f %8.5f\n",
             }
         }
     }
-}
-
-
-
-
-
-// Set string printed out by segfault handler
-void set_dangerous( char *ptr ) {
-    xastir_snprintf(dangerous_operation,
-        sizeof(dangerous_operation),
-        "%s",
-        ptr);
-}
-
-
-
-
-
-// Clear string printed out by segfault handler
-void clear_dangerous(void) {
-    dangerous_operation[0] = '\0';
 }
 
 
