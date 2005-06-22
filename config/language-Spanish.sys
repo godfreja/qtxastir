@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.169 2005/06/09 05:08:09 tvrusso Exp $
+# $Id: language-Spanish.sys,v 1.170 2005/06/22 19:30:30 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1099,6 +1099,7 @@ MAPP007|No||
 MAPP008|Automapas->||
 MAPP009|Max Zoom->||
 MAPP010|Min Zoom->||
+MAPP011|Auto||
 #
 # Cadenas del Tiempo
 TIME001|Día||

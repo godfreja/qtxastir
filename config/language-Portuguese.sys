@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.159 2005/06/09 05:08:09 tvrusso Exp $
+# $Id: language-Portuguese.sys,v 1.160 2005/06/22 19:30:30 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1106,6 +1106,7 @@ MAPP007|Nao||
 MAPP008|Automapas->||
 MAPP009|Max Zoom->||
 MAPP010|Min Zoom->||
+MAPP011|Auto||
 #
 #
 # Marcas do tempo

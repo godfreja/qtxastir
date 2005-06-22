@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.94 2005/03/16 21:36:13 we7u Exp $
+ * $Id: map_shp.c,v 1.95 2005/06/22 19:30:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1858,7 +1858,42 @@ void draw_shapefile_map (Widget w,
                 }
                 /* set attributes */
                 (void)XSetForeground(XtDisplay(w), gc, colors[color]);
-                draw_filled = filled; /* this overrides map properties! */
+
+
+                // Let the user decide whether to make the map
+                // filled or unfilled via the Map Properties dialog.
+                // This allows things like the NOAA counties map to
+                // be used as a base map (filled) or as a vector
+                // overlay map at the user's discretion.  The
+                // choices available are:
+                // 0: Global No-Fill.  Don't fill any polygons.
+                // 1: Global Fill.  Fill all polygons.
+                // 2: Auto.  dbfawk file, if present, takes over control.
+                //
+                switch (draw_filled) {
+
+                    case 0: // Global No-Fill (Vector)
+                        // Do nothing, user has chosen Global
+                        // No_Fill for this map.  The draw_filled
+                        // variable takes precedence.
+                        break;
+
+                    case 1: // Global Fill
+                        // Do nothing, user has chosen Global
+                        // Fill for this map.  The draw_filled
+                        // variable takes precedence.
+                        break;
+
+                    case 2: // Auto
+                    default:
+                        // User has chosen Auto Fill for this map,
+                        // so the Dbfawk file controls the fill
+                        // property.
+                        draw_filled = filled;
+                        break;
+                }
+
+
                 if (weather_alert_flag) { /* XXX will this fix WX alerts? */
                     fill_style = FillStippled;
                 } 
@@ -2886,7 +2921,9 @@ void draw_shapefile_map (Widget w,
                     // Set the stipple now.  need to do here, because if
                     // done earlier the labels get stippled, too.
                     (void)XSetFillStyle(XtDisplay(w), gc, fill_style);
-                    if (filled != 0 && fill_style == FillStippled) {
+
+                    if (draw_filled != 0 && fill_style == FillStippled) {
+ 
                 
                         switch (fill_stipple) {
                         case 0:

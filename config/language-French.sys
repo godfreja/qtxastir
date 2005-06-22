@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.160 2005/06/09 05:08:09 tvrusso Exp $
+# $Id: language-French.sys,v 1.161 2005/06/22 19:30:30 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1101,6 +1101,7 @@ MAPP007|Non||
 MAPP008|AutoCartes->||
 MAPP009|Max Zoom->||
 MAPP010|Min Zoom->||
+MAPP011|Auto||
 #
 #
 # Time Strings

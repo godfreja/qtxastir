@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.51 2005/05/31 19:32:51 we7u Exp $
+ * $Id: maps.h,v 1.52 2005/06/22 19:30:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -76,8 +76,11 @@ typedef struct _map_index_record{
     int accessed;
     int max_zoom;       // Specify maximum zoom at which this layer is drawn.
     int min_zoom;       // Specify minimum zoom at which this layer is drawn.
-    int map_layer;      // For future expansion.  Specify which layer to draw the map on.
-    int draw_filled;    // For future expansion.  Specify whether to fill polygons when drawing.
+    int map_layer;      // Specify which layer to draw the map on.
+    int draw_filled;    // Specify whether to fill polygons when drawing.
+                        // 0 = Global No-Fill (Vector)
+                        // 1 = Global Fill
+                        // 2 = Auto (dbfawk controls it if present)
     int selected;       // Specifies if map is currently selected
     int temp_select;    // Temporary selection used in map properties dialog
     int auto_maps;      // Specifies if map included in automaps function
