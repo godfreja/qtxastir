@@ -1,6 +1,6 @@
                   Xastir Frequently Asked Questions
 
-$Id: FAQ,v 1.53 2005/06/08 16:00:03 we7u Exp $
+$Id: FAQ,v 1.54 2005/06/26 00:46:01 tvrusso Exp $
 
 The latest version of this FAQ is always available from the Xastir web site, at
 <http://www.xastir.org/docs/FAQ.html>, soon to be available also at:
@@ -83,8 +83,7 @@ The Questions
     4.22 ImageMagick gives me: "no decode delegate", why?
     4.23 How do I get through an http proxy server with Xastir in
          order to fetch maps?
-
-
+    4.24 Can I run multiple copies of Xastir at once?
 
 
 5.  Features
