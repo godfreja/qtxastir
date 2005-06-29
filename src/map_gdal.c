@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.130 2005/06/22 01:10:10 we7u Exp $
+ * $Id: map_gdal.c,v 1.131 2005/06/29 16:29:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -2723,6 +2723,9 @@ void draw_ogr_map( Widget w,
 // alerts in this code natively.
 //
 if (alert) {
+
+#ifdef HAVE_LIBSHP
+
     // We have a weather alert, call the original function instead.
     draw_shapefile_map(w,
         dir,
@@ -2731,6 +2734,9 @@ if (alert) {
         alert_color,
         destination_pixmap,
         draw_filled);
+
+#endif  // HAVE_LIBSHP
+
     return;
 }
 /******************************************************************/
