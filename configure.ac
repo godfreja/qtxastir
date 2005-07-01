@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.117 2005/05/09 17:09:07 we7u Exp $
+# $Id: configure.ac,v 1.118 2005/07/01 22:23:17 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -358,7 +358,11 @@ fi
 
 
 # Check for Berkeley DB.
-XASTIR_BERKELEY_DB_CHK
+use_map_cache=yes
+AC_ARG_WITH(map_cache,[  --without-map-cache       Disable Map Caching.],use_map_cache=$withval)
+if test "${use_map_cache}" = "yes"; then
+  XASTIR_BERKELEY_DB_CHK
+fi
 
 
 

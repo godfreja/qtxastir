@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.62 2005/06/01 20:06:30 we7u Exp $
+$Id: INSTALL,v 1.63 2005/07/01 22:23:15 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -199,6 +199,7 @@ features, you can add any of the following flags to configure:
     --without-gdal
     --without-pcre
     --without-dbfawk
+    --without-map-cache
     --with-errorpopups
     --with-rtree
 
