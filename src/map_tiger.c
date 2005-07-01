@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.33 2005/06/22 01:12:56 we7u Exp $
+ * $Id: map_tiger.c,v 1.34 2005/07/01 00:12:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -128,7 +128,11 @@ extern int npoints;		/* tsk tsk tsk -- globals */
 extern int mag;
 
 
+
+
+
 void get_tiger_local_file(char * local_filename, char * fileimg){
+#ifdef HAVE_IMAGEMAGICK
 
 //  char local_filename[MAX_FILENAME];
 
@@ -311,7 +315,11 @@ clear_dangerous();
     // Set permissions on the file so that any user can overwrite it.
     chmod(local_filename, 0666);
 
+#endif  //HAVE_IMAGEMAGICK
+
 } // end get_tiger_local_file
+
+
 
 
 
