@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.48 2005/07/06 19:28:03 we7u Exp $
+ * $Id: map_geo.c,v 1.49 2005/07/06 19:58:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -889,7 +889,14 @@ void draw_geo_image_map (Widget w,
     if (tigerserver_flag) {
 
 #ifdef HAVE_IMAGEMAGICK
-        draw_tiger_map(w, filenm, destination_pixmap);
+
+        // We need to send the "nocache" parameter to this function
+        // for those instances when the tigermap received is bad.
+        // Later the GUI can implement a method for refreshing the
+        // latest map and replacing the bad map in the cache.
+        //
+        draw_tiger_map(w, filenm, destination_pixmap, nocache);
+
 #endif  // HAVE_IMAGEMAGICK
 
         return;

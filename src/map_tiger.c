@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.36 2005/07/06 19:26:55 we7u Exp $
+ * $Id: map_tiger.c,v 1.37 2005/07/06 19:58:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -335,7 +335,8 @@ clear_dangerous();
 #ifdef HAVE_IMAGEMAGICK
 void draw_tiger_map (Widget w,
         char *filenm,
-        int destination_pixmap) {
+        int destination_pixmap,
+        int nocache) {  // For future implementation of a "refresh cached map" option
     char file[MAX_FILENAME];        // Complete path/name of image file
     char short_filenm[MAX_FILENAME];
     FILE *f;                        // Filehandle of image file
