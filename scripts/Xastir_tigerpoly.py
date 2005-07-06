@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 ###############################################################################
-# $Id: Xastir_tigerpoly.py,v 1.2 2005/01/08 09:27:08 we7u Exp $
+# $Id: Xastir_tigerpoly.py,v 1.3 2005/07/06 20:35:30 tvrusso Exp $
 #
 # Portions Copyright (C) 2004-2005  The Xastir Group
 #
@@ -263,17 +263,18 @@ while feat is not None:
     lpoly_id = feat.GetField( lpoly_field )
     rpoly_id = feat.GetField( rpoly_field )
 
-    try:
-        module.poly_line_links[lpoly_id].append( tlid )
-    except:
-        module.poly_line_links[lpoly_id] = [ tlid ]
-
-    try:
-        module.poly_line_links[rpoly_id].append( tlid )
-    except:
-        module.poly_line_links[rpoly_id] = [ tlid ]
-
-    link_count = link_count + 1
+    if lpoly_id != rpoly_id :
+      try:
+          module.poly_line_links[lpoly_id].append( tlid )
+      except:
+          module.poly_line_links[lpoly_id] = [ tlid ]
+  
+      try:
+          module.poly_line_links[rpoly_id].append( tlid )
+      except:
+          module.poly_line_links[rpoly_id] = [ tlid ]
+  
+      link_count = link_count + 1
 
     feat.Destroy()
 
