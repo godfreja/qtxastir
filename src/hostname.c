@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.17 2005/01/08 10:06:52 we7u Exp $
+ * $Id: hostname.c,v 1.18 2005/07/06 15:22:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -145,7 +145,7 @@ char *host_lookup(char *host, char *ip, int ip_size, int time) {
 #ifdef __linux__
                 init_set_proc_title(my_argc, my_argv, my_envp);
                 set_proc_title("%s", "hostname lookup (xastir)");
-                //printf("DEBUG: %s\n", Argv[0]);
+                //fprintf(stderr,"DEBUG: %s\n", Argv[0]);
 #endif  // __linux__
 
 

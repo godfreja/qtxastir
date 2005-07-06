@@ -1,5 +1,5 @@
 /*
- * $Id: sound.c,v 1.11 2005/01/08 10:06:54 we7u Exp $
+ * $Id: sound.c,v 1.12 2005/07/06 15:22:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -60,7 +60,7 @@ pid_t play_sound(char *sound_cmd, char *soundfile) {
 #ifdef __linux__
                     init_set_proc_title(my_argc, my_argv, my_envp);
                     set_proc_title("%s", "festival process (xastir)");
-                    //printf("DEBUG: %s\n", Argv[0]);
+                    //fprintf(stderr,"DEBUG: %s\n", Argv[0]);
 #endif  // __linux__
 
 

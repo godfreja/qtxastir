@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.574 2005/06/22 19:30:31 we7u Exp $
+ * $Id: main.c,v 1.575 2005/07/06 15:22:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8375,7 +8375,7 @@ void CAD_object_allocate(long latitude, long longitude) {
     CADRow *p_new;
 
 #ifdef CAD_DEBUG
-    printf(stderr,"Allocating a new CAD object\n");
+    fprintf(stderr,"Allocating a new CAD object\n");
 #endif
 
     // Allocate memory and link it to the top of the singly-linked
