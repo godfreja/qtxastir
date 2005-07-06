@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.35 2005/07/06 15:27:16 we7u Exp $
+ * $Id: map_tiger.c,v 1.36 2005/07/06 19:26:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -313,7 +313,7 @@ clear_dangerous();
 
 
     if (debug_level & 512) {
-        fprintf (stderr, "Query took %d seconds\n", 
+        fprintf (stderr, "Fetch or query took %d seconds\n", 
             (int) (time(&query_end_time) - query_start_time)); 
     }
 
