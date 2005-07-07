@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.9 2005/07/06 19:28:03 we7u Exp $
+ * $Id: map_WMS.c,v 1.10 2005/07/07 05:38:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -559,8 +559,8 @@ void draw_WMS_map (Widget w,
       //        curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
         curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, curlerr);
 
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, tigermap_timeout);
-        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)tigermap_timeout);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(tigermap_timeout/2));
 
         // Added in libcurl 7.9.8
 #if (LIBCURL_VERSION_NUM >= 0x070908)

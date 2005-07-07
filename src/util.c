@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.165 2005/06/25 16:02:52 we7u Exp $
+ * $Id: util.c,v 1.166 2005/07/07 05:38:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4316,8 +4316,8 @@ int curl_getfile(char *fileimg, char *local_filename) {
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_fwrite);
         curl_easy_setopt(curl, CURLOPT_URL, fileimg);
 
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30);
-        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)tigermap_timeout);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(tigermap_timeout/2));
 
         // Added in libcurl 7.9.8
 #if (LIBCURL_VERSION_NUM >= 0x070908)
