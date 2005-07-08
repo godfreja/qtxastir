@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.577 2005/07/08 07:07:59 we7u Exp $
+ * $Id: main.c,v 1.578 2005/07/08 19:24:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1725,25 +1725,26 @@ void Smart_Beacon(Widget w, XtPointer clientData, XtPointer callData) {
 
 //WE7U
 // Causes the current set of internet-based maps to be snagged from
-// the 'net instead of from cache.  Once downloaded they will get
-// written to the cache, therefore overwriting possibly corrupted
-// maps already in the cache.  This is used to get rid of corrupted
-// maps in the cache without having to wipe out the entire cache.
+// the 'net instead of from cache.  Once downloaded they get written
+// to the cache, overwriting possibly corrupted maps already in the
+// cache.  A method of getting rid of corrupted maps without having
+// to wipe out the entire cache.
 //
 void Re_Download_Maps_Now(Widget w, XtPointer clientData, XtPointer callData) {
     fprintf(stderr,"Re-download Maps (Not from cache), not implemented yet\n");
 
-    // Request that maps be redone with the "nocache" option passed
-    // down to the map draw routines.  Actually, we want to put
-    // things _into_ the cache, so we might need to define yet
-    // another flag or global variable to get this feature
-    // implemented properly.
+// Option A:  Request that maps be redrawn with the "nocache" option
+// passed down to the map draw routines.  Actually, we want to put
+// things _into_ the cache, so we might need to define yet another
+// flag or global variable to get this feature implemented properly.
+//
+// Option B:  Another way to implement this would be to unlink any
+// cached versions of these files and then reload the maps.  Might
+// be easier to do than Option A.
 
-    // Another way to implement this would be to unlink any cached
-    // versions of these files and then reload the maps.  Might be
-    // easier.
-
-    //unlink( local_filename );
+    // This function isn't implemented yet.  Remove the
+    // XtSetSensitive(FALSE) call for redownload_maps_button when
+    // this function is fully implemented.
 }
 
 
