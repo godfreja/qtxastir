@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.38 2005/07/07 05:38:28 we7u Exp $
+ * $Id: map_tiger.c,v 1.39 2005/07/08 02:21:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -218,8 +218,8 @@ clear_dangerous();
       //        curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
         curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, curlerr);
 
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)tigermap_timeout);
-        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(tigermap_timeout/2));
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)net_map_timeout);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(net_map_timeout/2));
 
         // Added in libcurl 7.9.8
 #if (LIBCURL_VERSION_NUM >= 0x070908)
@@ -280,7 +280,7 @@ clear_dangerous();
     xastir_snprintf(tempfile, sizeof(tempfile),
         "%s --server-response --timestamping --tries=1 --timeout=%d --output-document=%s \'%s\' 2> /dev/null\n",
         WGET_PATH,
-        tigermap_timeout,
+        net_map_timeout,
         local_filename,
         fileimg);
 

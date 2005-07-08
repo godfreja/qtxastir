@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.51 2005/07/07 05:38:28 we7u Exp $
+ * $Id: map_geo.c,v 1.52 2005/07/08 02:21:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -379,8 +379,8 @@ void draw_toporama_map (Widget w,
         //curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
         curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, curlerr);
 
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)tigermap_timeout);
-        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(tigermap_timeout/2));
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)net_map_timeout);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(net_map_timeout/2));
 
         // Added in libcurl 7.9.8
 #if (LIBCURL_VERSION_NUM >= 0x070908)
@@ -1483,8 +1483,8 @@ fprintf(stderr,"1 ");
           //            curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
             curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, curlerr);
 
-            curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)tigermap_timeout);
-            curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(tigermap_timeout/2));
+            curl_easy_setopt(curl, CURLOPT_TIMEOUT, (long)net_map_timeout);
+            curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, (long)(net_map_timeout/2));
 
             // Added in libcurl 7.9.8
 #if (LIBCURL_VERSION_NUM >= 0x070908)
