@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.h,v 1.5 2005/01/08 09:46:48 we7u Exp $
+ * $Id: map_cache.h,v 1.6 2005/07/09 03:27:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,6 +26,10 @@
 
 #ifndef XASTIR_MAP_CACHE_H
 #define XASTIR_MAP_CACHE_H
+
+// Global variable declarations
+extern int map_cache_fetch_disable;
+
 
 // External function declarations
 

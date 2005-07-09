@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.11 2005/07/08 02:21:30 we7u Exp $
+ * $Id: map_WMS.c,v 1.12 2005/07/09 03:27:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -490,7 +490,17 @@ void draw_WMS_map (Widget w,
 
 #ifdef USE_MAP_CACHE 
 
-    if (nocache) {
+    if (nocache || map_cache_fetch_disable) {
+
+        // Delete old copy from the cache
+        if (map_cache_fetch_disable && fileimg[0] != '\0') {
+            if (map_cache_del(fileimg)) {
+                if (debug_level & 512) {
+                    fprintf(stderr,"Couldn't delete old map from cache\n");
+                }
+            }
+        }
+
         // Simulate a cache miss
         map_cache_return = 1;
     }
