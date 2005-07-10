@@ -1,6 +1,6 @@
                   Xastir Frequently Asked Questions
 
-$Id: FAQ,v 1.56 2005/07/01 00:09:42 we7u Exp $
+$Id: FAQ,v 1.57 2005/07/10 17:56:51 tvrusso Exp $
 
 The latest version of this FAQ is always available from the Xastir web site, at
 <http://www.xastir.org/docs/FAQ.html>, soon to be available also at:
@@ -898,7 +898,7 @@ The Answers
     Snapshots will are stored under ~/.xastir/tmp/
 
 
-    5.3 What is that yellow circle on my map?
+    5.4 What is that yellow circle on my map?
 
     Somewhere around a half-hour or an hour after you start Xastir with 
     a connected TNC, you will begin to see a yellow circle surrounding your 
