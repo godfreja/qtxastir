@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 ###############################################################################
-# $Id: Xastir_tigerpoly.py,v 1.4 2005/07/10 15:36:09 tvrusso Exp $
+# $Id: Xastir_tigerpoly.py,v 1.5 2005/07/10 15:37:41 tvrusso Exp $
 #
 # Portions Copyright (C) 2004-2005  The Xastir Group
 #
@@ -91,7 +91,7 @@ class PolyMap:
 
 #############################################################################
 def Usage():
-    print 'Usage: tigerpoly.py infile [outfile].shp'
+    print 'Usage: tigerpoly.py [-d] infile [outfile].shp'
     print
     sys.exit(1)
 
