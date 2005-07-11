@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.118 2005/07/01 22:23:17 we7u Exp $
+# $Id: configure.ac,v 1.119 2005/07/11 19:25:55 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -273,6 +273,8 @@ LIBS="$LIBS -ltiff"
                AC_DEFINE(HAVE_LIBGEOTIFF, ,Define to 1 if you have the `geotiff' library (-lgeotiff).))
         fi
     fi
+else
+  use_geotiff=no
 fi 
 
 # Check for AX.25 library 
