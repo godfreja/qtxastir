@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.580 2005/07/09 03:27:15 we7u Exp $
+ * $Id: main.c,v 1.581 2005/07/11 14:55:40 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1733,8 +1733,10 @@ void Smart_Beacon(Widget w, XtPointer clientData, XtPointer callData) {
 //
 void Re_Download_Maps_Now(Widget w, XtPointer clientData, XtPointer callData) {
 
+#ifdef USE_MAP_CACHE
     // Disable reads from the map cache
     map_cache_fetch_disable = 1;
+#endif
 
     // Show a busy cursor while the map is being downloaded
     busy_cursor(appshell);
@@ -1742,8 +1744,10 @@ void Re_Download_Maps_Now(Widget w, XtPointer clientData, XtPointer callData) {
     // Cause maps to be refreshed
     new_image(da);
 
+#ifdef USE_MAP_CACHE
     //Enable reads from the map cache
     map_cache_fetch_disable = 0;
+#endif
 }
 
 
