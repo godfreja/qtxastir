@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.53 2005/07/09 03:27:16 we7u Exp $
+ * $Id: map_geo.c,v 1.54 2005/07/11 19:24:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -601,6 +601,7 @@ void draw_geo_image_map (Widget w,
     IndexPacket *index_pack;
     int l;
     XColor my_colors[256];
+    time_t query_start_time, query_end_time;
 #ifdef HAVE_LIBCURL
     CURL *curl;
     CURLcode res;
@@ -661,9 +662,6 @@ void draw_geo_image_map (Widget w,
 #ifdef TIMING_DEBUG
     time_mark(1);
 #endif  // TIMING_DEBUG
-
-    time_t query_start_time, query_end_time;
-
 #ifdef USE_MAP_CACHE 
     int map_cache_return;
 #endif  // USE_MAP_CACHE
