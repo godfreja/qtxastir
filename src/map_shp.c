@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.97 2005/06/23 05:47:04 tvrusso Exp $
+ * $Id: map_shp.c,v 1.98 2005/07/12 23:06:37 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3636,6 +3636,7 @@ if (on_screen) {
                                 }
                                 /* draw the polygon border */
                                 (void)XSetForeground(XtDisplay(w), gc, colors[color]);
+                                (void)XSetFillStyle(XtDisplay(w), gc, FillSolid);
                                 (void)XDrawLines(XtDisplay(w), pixmap, gc, points, i, CoordModeOrigin);
                             }
                             else if (weather_alert_flag) {
@@ -3735,12 +3736,14 @@ if (on_screen) {
                                 }
 #else
                                 (void)XSetForeground(XtDisplay(w), gc, colors[color]); // border
+                                (void)XSetFillStyle(XtDisplay(w), gc, FillSolid);
 #endif /* WITH_DBFAWK */
 
                                 (void)XDrawLines(XtDisplay(w), pixmap, gc, points, i, CoordModeOrigin);
                             }
                             else {  // Use whatever color is defined by this point.
                                 (void)XSetLineAttributes(XtDisplay(w), gc, 0, LineSolid, CapButt,JoinMiter);
+                                (void)XSetFillStyle(XtDisplay(w), gc, FillSolid);
                                 (void)XDrawLines(XtDisplay(w), pixmap, gc, points, i, CoordModeOrigin);
                             }
                         }
