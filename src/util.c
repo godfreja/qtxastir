@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.167 2005/07/08 02:21:30 we7u Exp $
+ * $Id: util.c,v 1.168 2005/07/13 19:37:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4304,6 +4304,25 @@ int curl_fwrite(void *buffer, size_t size, size_t nmemb, void *stream) {
 
 // Returns: 0 If file retrieved
 //          1 If there was a problem getting the file
+//
+// Currently these files use curl functions and could be modified to
+// use curl_getfile() instead:
+//
+//      map_geo.c
+//      map_geo-center.c
+//      map_tiger.c
+//      map_WMS.c
+//      util.c
+//
+// These files use wget functions and could be modifed to use
+// curl_getfile() instead (with a new name and wget functionality
+// included):
+//
+//      map_geo.c
+//      map_geo-center.c
+//      map_tiger.c
+//      map_WMS.c
+//      track_gui.c
 //
 int curl_getfile(char *fileimg, char *local_filename) {
     CURL *curl;
