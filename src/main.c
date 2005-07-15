@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.581 2005/07/11 14:55:40 tvrusso Exp $
+ * $Id: main.c,v 1.582 2005/07/15 16:30:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -29977,13 +29977,13 @@ int main(int argc, char *argv[], char *envp[]) {
     if (ag_error){
         fprintf(stderr,"\nXastir Command line Options\n\n");
         fprintf(stderr,"-i            Install private Colormap\n");
-        fprintf(stderr,"-lDutch       Set the language to Dutch\n");
-        fprintf(stderr,"-lEnglish     Set the language to English\n");
-        fprintf(stderr,"-lFrench      Set the language to French\n");
-        fprintf(stderr,"-lGerman      Set the language to German\n");
-        fprintf(stderr,"-lItalian     Set the language to Italian\n");
-        fprintf(stderr,"-lPortuguese  Set the language to Portuguese\n");
-        fprintf(stderr,"-lSpanish     Set the language to Spanish\n");
+        fprintf(stderr,"-l Dutch      Set the language to Dutch\n");
+        fprintf(stderr,"-l English    Set the language to English\n");
+        fprintf(stderr,"-l French     Set the language to French\n");
+        fprintf(stderr,"-l German     Set the language to German\n");
+        fprintf(stderr,"-l Italian    Set the language to Italian\n");
+        fprintf(stderr,"-l Portuguese Set the language to Portuguese\n");
+        fprintf(stderr,"-l Spanish    Set the language to Spanish\n");
         fprintf(stderr,"-m            Deselect Maps\n");
         fprintf(stderr,"-v level      Set the debug level\n\n");
         fprintf(stderr,"\n");
