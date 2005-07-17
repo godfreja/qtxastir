@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.88 2005/04/15 17:02:26 we7u Exp $
+ * $Id: interface_gui.c,v 1.89 2005/07/17 06:19:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4781,8 +4781,8 @@ void Config_Inet( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNcursorPositionVisible, TRUE,
                                       XmNsensitive, TRUE,
                                       XmNshadowThickness,    1,
-                                      XmNcolumns, 5,
-                                      XmNmaxLength, 5,
+                                      XmNcolumns, 20,
+                                      XmNmaxLength, 20,
                                       XmNbackground, colors[0x0f],
                                       XmNleftAttachment,XmATTACH_WIDGET,
                                       XmNleftWidget, password,
@@ -5258,8 +5258,8 @@ void Config_Database( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNcursorPositionVisible, TRUE,
                                       XmNsensitive, TRUE,
                                       XmNshadowThickness,    1,
-                                      XmNcolumns, 5,
-                                      XmNmaxLength, 5,
+                                      XmNcolumns, 20,
+                                      XmNmaxLength, 20,
                                       XmNbackground, colors[0x0f],
                                       XmNleftAttachment,XmATTACH_WIDGET,
                                       XmNleftWidget, password,
@@ -5853,7 +5853,7 @@ void Config_AGWPE( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNsensitive, TRUE,
                                       XmNshadowThickness,    1,
                                       XmNcolumns, 20,
-                                      XmNmaxLength, 20 ,
+                                      XmNmaxLength, 20,
                                       XmNbackground, colors[0x0f],
                                       XmNleftAttachment,XmATTACH_WIDGET,
                                       XmNleftWidget, password,
