@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.35 2005/07/06 15:22:48 we7u Exp $
+ * $Id: x_spider.c,v 1.36 2005/07/17 06:17:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -165,6 +165,13 @@
 #ifndef SIGRET
 #define SIGRET  void
 #endif  // SIGRET
+
+
+// Define this if you wish to use this as a standalone program
+// instead of as a function in another program.
+//
+//#define STANDALONE_PROGRAM
+
 
 
 // These are from util.h/util.c.  We can't include util.h here
@@ -858,8 +865,12 @@ void set_proc_title(char *fmt,...) {
 // socket and exit from the child process.  Notify the main process
 // as well?
 //
-//int main(int argc, char *argv[]) {
+#ifdef STANDALONE_PROGRAM
+int main(int argc, char *argv[]) {
+#else   // !STANDALONE_PROGRAM 
 void Server(int argc, char *argv[], char *envp[]) {
+#endif  // STANDALONE_PROGRAM
+
     int sockfd, newsockfd, childpid;
     socklen_t clilen;
     struct sockaddr_in cli_addr, serv_addr;
@@ -1112,6 +1123,7 @@ finis:
 // integrated with Xastir, instead of having to have a socket to
 // communicate between Xastir and the server.
 //
+#ifndef STANDALONE_PROGRAM
 int Fork_server(int argc, char *argv[], char *envp[]) {
     int childpid;
 
@@ -1215,5 +1227,6 @@ int Fork_server(int argc, char *argv[], char *envp[]) {
     // when Xastir quits or segfaults.
     return(childpid);   // Really the parent PID in this case
 }
+#endif  // STANDALONE_PROGRAM
 
 
