@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.164 2005/07/08 01:49:16 we7u Exp $
+# $Id: language-Italian.sys,v 1.165 2005/07/19 19:24:49 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -557,6 +557,7 @@ POPUPOB042|Antenna Direzionale||
 POPUPOB043|Sconosciuta||
 POPUPOB044|Adotta l'Oggetto||
 POPUPOB045|Adotte l'Item||
+POPUPOB046|DF Bearing:||
 #
 #Configure Internet
 WPUPCFI001|Configura Rete||

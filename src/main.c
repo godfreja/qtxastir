@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.582 2005/07/15 16:30:58 we7u Exp $
+ * $Id: main.c,v 1.583 2005/07/19 19:24:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26796,7 +26796,7 @@ else if (DF_object_enabled) {
 
 
         // "Bearing"
-        ob_bearing = XtVaCreateManagedWidget(langcode("WPUPSTI058"),
+        ob_bearing = XtVaCreateManagedWidget(langcode("POPUPOB046"),
                 xmLabelWidgetClass, 
                 formbeam,
                 XmNtopAttachment,           XmATTACH_WIDGET,

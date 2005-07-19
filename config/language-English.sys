@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.160 2005/07/08 01:49:16 we7u Exp $
+# $Id: language-English.sys,v 1.161 2005/07/19 19:24:33 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -558,6 +558,7 @@ POPUPOB042|Beam Antenna||
 POPUPOB043|Useless||
 POPUPOB044|Adopt Object||
 POPUPOB045|Adopt Item||
+POPUPOB046|DF Bearing:||
 #
 # PopUp "Configure Internet"
 WPUPCFI001|Configure Internet||

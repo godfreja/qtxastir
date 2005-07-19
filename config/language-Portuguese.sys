@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.161 2005/07/08 01:49:16 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.162 2005/07/19 19:24:49 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -561,6 +561,7 @@ POPUPOB042|Antena direcional||
 POPUPOB043|Inutil||
 POPUPOB044|Adoptar objecto||
 POPUPOB045|Adoptar item||
+POPUPOB046|DF Bearing:||
 #
 # Configurar Internet
 WPUPCFI001|Configurar internet||
