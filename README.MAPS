@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.62 2005/07/08 01:47:39 we7u Exp $
+$Id: README.MAPS,v 1.63 2005/07/20 04:38:03 we7u Exp $
 
 
 Recommended Configurations for:
@@ -127,7 +127,7 @@ Getting Maps and other Data Files for Xastir:
       directory.  You can organize the maps however you like. You can also
       use symbolic links to link to files/directories on other disks. Map
       files are loaded in the order that they appear in the chooser unless
-      you adjust the layering priorities in the properties dialog (it's
+      you adjust the layering priorities in the "Properties" dialog (it's
       recommended that you use these now instead of a directory hierarchy to
       choose the layering).
 
