@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.28 2005/01/08 10:19:33 we7u Exp $
+# $Id: acinclude.m4,v 1.29 2005/07/20 18:49:24 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -645,7 +645,7 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.28 2005/01/08 10:19:33 we7u Exp $
+dnl $Id: acinclude.m4,v 1.29 2005/07/20 18:49:24 we7u Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.
@@ -669,6 +669,35 @@ dnl this is unbelievably painful due to confusion over what db-3 should be
 dnl named and where the db-3 header file is located.  arg.
 AC_DEFUN([XASTIR_BERKELEY_DB_CHK_LIB],
 [
+
+
+# We need to add the following algorithm here:
+#
+#   Find the db.h file, grep for DB_VERSION_MAJOR and
+#     DB_VERSION_MINOR.  In my case I get this:
+#
+#       #define DB_VERSION_MAJOR        4
+#       #define DB_VERSION_MINOR        1
+#
+#   Find the libdb.so file that Xastir would link to.  Find the
+#     version via the target of the symlink?  In my case I have
+#     this:
+#
+#       > ls -al libdb.so
+#       lrwxrwxrwx 1 root root 12 2004-01-07 11:29 libdb.so -> libdb-4.
+#
+#   Compare the major/minor numbers.  If they match, we're good to
+#   go.  If not, don't compile in libdb support.  Perhaps we could
+#   just run ldd on the test code to get the version number of the
+#   linked library instead?
+#
+# Another possible way to do it would be to create test code and
+# compile/run it which would open/write/read/close/delete a
+# database.  That should help to prove that Xastir would run ok if
+# the library were used.
+
+
+
 	BDB_SAVE_LDFLAGS=$LDFLAGS
 
 	if test -d $with_bdb_lib; then
