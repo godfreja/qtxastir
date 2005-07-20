@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.80 2005/07/06 19:58:10 we7u Exp $
+ * $Id: main.h,v 1.81 2005/07/20 05:09:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -112,8 +112,8 @@ extern void *my_argv;
 extern void *my_envp;
 //////////////////////////////////////////////////////////////////////
 
-
-
+#define MAX_RELAY_DIGIPEATER_CALLS 50
+extern char relay_digipeater_calls[10*MAX_RELAY_DIGIPEATER_CALLS];
 extern int skip_dupe_checking;
 extern int serial_char_pacing;  // Inter-character delay in ms.
 extern int disable_all_maps;
