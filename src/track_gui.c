@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.37 2005/04/19 17:39:55 we7u Exp $
+ * $Id: track_gui.c,v 1.38 2005/07/21 02:12:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -525,6 +525,7 @@ void Reset_posit_length_max(Widget w, XtPointer clientData, XtPointer callData) 
         XtVaSetValues(posit_length_value,
             XmNvalue, posit_start,
             NULL);
+        posit_length = temp;
     }
     XtVaSetValues(posit_length_value,
         XmNmaximum, posit_start,
