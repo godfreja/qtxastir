@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.162 2005/07/19 19:24:49 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.163 2005/07/21 20:04:20 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -88,6 +88,7 @@ PULDNMP025|Fonte das etiquetas do mapa||
 PULDNMP015|Seleccionar a fonte do X||
 PULDNMP027|Re-download Maps (Not from cache)||
 PULDNMP028|Flush Entire Map Cache!||
+PULDNMP029|Find Address||
 #
 # PopUp "Configurar tigermap"
 MPUPTGR001|Grelha||

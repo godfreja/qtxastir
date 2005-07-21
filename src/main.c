@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.584 2005/07/21 02:19:12 we7u Exp $
+ * $Id: main.c,v 1.585 2005/07/21 20:04:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5448,11 +5448,10 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
             MY_BACKGROUND_COLOR,
             NULL);
 
-//    geocode_place_button = XtVaCreateManagedWidget(langcode("PULDNMP014"),
-    geocode_place_button = XtVaCreateManagedWidget("Find Address",
+    geocode_place_button = XtVaCreateManagedWidget(langcode("PULDNMP029"),
             xmPushButtonGadgetClass,
             mappane,
-            XmNmnemonic,langcode_hotkey("PULDNMP014"),
+            XmNmnemonic,langcode_hotkey("PULDNMP029"),
             MY_FOREGROUND_COLOR,
             MY_BACKGROUND_COLOR,
             NULL);
