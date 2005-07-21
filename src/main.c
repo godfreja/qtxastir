@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.583 2005/07/19 19:24:50 we7u Exp $
+ * $Id: main.c,v 1.584 2005/07/21 02:19:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -29760,6 +29760,11 @@ int main(int argc, char *argv[], char *envp[]) {
 #endif  // USING_LIBGC
 
 
+#ifdef USE_MAP_CACHE
+    map_cache_init();
+#endif  // USE_MAP_CACHE
+ 
+
     my_argc = argc;
     my_argv = (void *)&argv[0];
     my_envp = (void *)&envp[0];
@@ -30252,3 +30257,5 @@ int main(int argc, char *argv[], char *envp[]) {
     quit(0);
     return 0;
 }
+
+

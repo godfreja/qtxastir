@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.h,v 1.6 2005/07/09 03:27:16 we7u Exp $
+ * $Id: map_cache.h,v 1.7 2005/07/21 02:19:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,6 +32,8 @@ extern int map_cache_fetch_disable;
 
 
 // External function declarations
+
+extern void map_cache_init(void);
 
 // Saves file and puts entries into cache db
 extern int map_cache_put( char * map_cache_url, char * map_cache_file );

@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.15 2005/07/09 03:27:16 we7u Exp $
+ * $Id: map_cache.c,v 1.16 2005/07/21 02:19:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -61,6 +61,51 @@
 // This is used to temporarily disable fetching from the map cache.
 // Used for refreshing corrupted maps in the cache.
 int map_cache_fetch_disable = 0;
+
+
+
+
+
+// Here we do a run-time check to verify that the header file we
+// used to compile with is the same version as the shared library
+// we're currently linked with.  To do otherwise often results in
+// segfaults.
+//
+void map_cache_init(void) {
+    int warn_now = 0;
+
+    if (strcmp( DB_VERSION_STRING, db_version(NULL,NULL,NULL) ) != 0) {
+        fprintf(stderr,
+            "\n\n***** WARNING *****\n");
+        fprintf(stderr,
+            "Berkeley DB header files/shared library file do NOT match!\n");
+        warn_now++;
+    }
+
+    if (debug_level & 5 || warn_now) {
+
+        //fprintf(stderr,
+        //    "Berkeley DB Library Header File Version %d.%d.%d\n",
+        //    DB_VERSION_MAJOR,
+        //    DB_VERSION_MINOR,
+        //    DB_VERSION_PATCH);
+
+        fprintf(stderr,
+            " Header file: %s\n",
+            DB_VERSION_STRING);
+
+        fprintf(stderr,
+            "Library file: %s\n",
+            db_version(NULL,NULL,NULL) );
+    }
+
+    if (warn_now) {
+        fprintf(stderr,
+            "***** WARNING *****\n");
+    }
+}
+
+
 
 
 
