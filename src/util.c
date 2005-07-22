@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.169 2005/07/22 06:08:22 we7u Exp $
+ * $Id: util.c,v 1.170 2005/07/22 19:42:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -67,6 +67,12 @@
 #include <asm/errno.h>
 extern int pthread_mutexattr_setkind_np(pthread_mutexattr_t *attr, int kind);
 #endif  // MUTEX_DEBUG
+
+
+#ifdef HAVE_LIBCURL
+#include <curl/curl.h>
+#endif  // HAVE_LIBCURL
+
 
 
 int position_amb_chars;
@@ -4274,10 +4280,6 @@ short checkHash(char *theCall, short theHash) {
 
 /* curl routines */
 #ifdef HAVE_LIBCURL
-
-#include <curl/curl.h>
-#include <curl/types.h>
-#include <curl/easy.h>
 
 struct FtpFile {
   char *filename;
