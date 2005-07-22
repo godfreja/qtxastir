@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.434 2005/06/26 00:30:15 tvrusso Exp $
+ * $Id: maps.c,v 1.435 2005/07/22 06:08:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -100,17 +100,6 @@
 #include <X11/Xlib.h>
 
 #include <math.h>
-
-#ifdef HAVE_LIBCURL
-#include <curl/curl.h>
-#include <curl/types.h>
-#include <curl/easy.h>
-
-struct FtpFile {
-  char *filename;
-  FILE *stream;
-};
-#endif
 
 #include "xastir.h"
 #include "maps.h"

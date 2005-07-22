@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.35 2005/06/22 01:10:09 we7u Exp $
+ * $Id: util.h,v 1.36 2005/07/22 06:08:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -129,10 +129,7 @@ extern char *sec_to_loc(long longitude, long latitude);
 
 extern short checkHash(char *theCall, short theHash);
 
-#ifdef HAVE_LIBCURL
-int curl_fwrite(void *buffer, size_t size, size_t nmemb, void *stream);
-int curl_getfile(char *fileimg, char *local_filename);
-#endif
+int fetch_remote_file(char *fileimg, char *local_filename);
 
 extern void split_string( char *data, char *cptr[], int max );
 extern int check_unproto_path( char *data );
