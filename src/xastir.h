@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.44 2005/07/11 17:50:32 we7u Exp $
+ * $Id: xastir.h,v 1.45 2005/07/24 02:29:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -213,6 +213,12 @@ extern int tiger_show_water;
 extern int tiger_show_lakes;
 extern int tiger_show_misc;
 #endif  // HAVE_IMAGEMAGICK
+
+#ifdef HAVE_LIBGEOTIFF
+extern int DRG_XOR_colors;
+extern int DRG_show_colors[13];
+#endif  // HAVE_LIBGEOTIFF
+
 
 extern int net_map_timeout;
 

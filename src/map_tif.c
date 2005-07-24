@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.21 2005/07/23 01:27:47 we7u Exp $
+ * $Id: map_tif.c,v 1.22 2005/07/24 02:29:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -21,21 +21,6 @@
  *
  * Look at the README for more information on the program.
  */
-
-
-
-
-
-// Uncomment if you wish to only see the contour lines from USGS DRG
-// geoTIFF topo maps, in yellow:
-//
-//#define TOPO_CONTOURS
-//
-// Uncomment this as well if you want the topo colors to follow the
-// selected map background color.
-//#define TOPO_CONTOURS_BACKGROUND_COLOR
-
-
 
 
 
@@ -2578,28 +2563,17 @@ if (current_right >= width)
     //  16:     0     0     0   black, unused slot?
     // The rest are all 0's.
  
-// Test code to prove the concept is between the #ifdef's:
-//
-#ifdef TOPO_CONTOURS 
-//if ( (*(imageMemory + column) == 4) || (*(imageMemory + column) == 12) ) {
-if ( *(imageMemory + column) == 4) {
-#endif  // TOPO_CONTOURS
+                    if ( *(imageMemory + column) >= 13
+                            || DRG_show_colors[*(imageMemory + column)] == 1 ) {
 
-                    // Set the color for the pixel
-                    //
-#if (defined(TOPO_CONTOURS) && defined(TOPO_CONTOURS_BACKGROUND_COLOR))
-                    (void)XSetForeground(XtDisplay(w), gc, colors[(int)0xfd]);
-#else   // defined(TOPO_CONTOURS) && defined(TOPO_CONTOURS_BACKGROUND_COLOR)
-                    XSetForeground (XtDisplay (w), gc, my_colors[*(imageMemory + column)].pixel);
-#endif  // defined(TOPO_CONTOURS) && defined(TOPO_CONTOURS_BACKGROUND_COLOR)
+                        // Set the color for the pixel
+                        //
+                        //(void)XSetForeground(XtDisplay(w), gc, colors[(int)0xfd]);
+                        XSetForeground (XtDisplay (w), gc, my_colors[*(imageMemory + column)].pixel);
 
-                    // And draw the pixel
-                    XFillRectangle (XtDisplay (w), pixmap, gc, sxx, syy, stepwc, stephc);
-#ifdef TOPO_CONTOURS
-}
-#endif  // TOPO_CONTOURS
-
-
+                        // And draw the pixel
+                        XFillRectangle (XtDisplay (w), pixmap, gc, sxx, syy, stepwc, stephc);
+                    }
                 }
             }
         }

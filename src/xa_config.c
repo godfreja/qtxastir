@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.134 2005/07/20 05:09:53 we7u Exp $
+ * $Id: xa_config.c,v 1.135 2005/07/24 02:29:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -518,6 +518,23 @@ void save_data(void)  {
         store_int (fout, "TIGERMAP_SHOW_LAKES", tiger_show_lakes);
         store_int (fout, "TIGERMAP_SHOW_MISC", tiger_show_misc);
 #endif //HAVE_IMAGEMAGICK
+
+#ifdef HAVE_LIBGEOTIFF
+//        store_int (fout, "DRG_XOR_COLORS", DRG_XOR_colors);
+        store_int (fout, "DRG_SHOW_COLORS_0", DRG_show_colors[0]);
+        store_int (fout, "DRG_SHOW_COLORS_1", DRG_show_colors[1]);
+        store_int (fout, "DRG_SHOW_COLORS_2", DRG_show_colors[2]);
+        store_int (fout, "DRG_SHOW_COLORS_3", DRG_show_colors[3]);
+        store_int (fout, "DRG_SHOW_COLORS_4", DRG_show_colors[4]);
+        store_int (fout, "DRG_SHOW_COLORS_5", DRG_show_colors[5]);
+        store_int (fout, "DRG_SHOW_COLORS_6", DRG_show_colors[6]);
+        store_int (fout, "DRG_SHOW_COLORS_7", DRG_show_colors[7]);
+        store_int (fout, "DRG_SHOW_COLORS_8", DRG_show_colors[8]);
+        store_int (fout, "DRG_SHOW_COLORS_9", DRG_show_colors[9]);
+        store_int (fout, "DRG_SHOW_COLORS_10", DRG_show_colors[10]);
+        store_int (fout, "DRG_SHOW_COLORS_11", DRG_show_colors[11]);
+        store_int (fout, "DRG_SHOW_COLORS_12", DRG_show_colors[12]);
+#endif  // HAVE_LIBGEOTIFF
 
         // filter values
         // NOT SAVED: Select_.none
@@ -1262,8 +1279,51 @@ void load_data_or_default(void) {
 
     if (!get_int ("TIGERMAP_SHOW_MISC", &tiger_show_misc, 0, 1, 1))
         tiger_show_misc = 1;
-
 #endif //HAVE_IMAGEMAGICK
+
+#ifdef HAVE_LIBGEOTIFF
+//    if (!get_int ("DRG_XOR_COLORS", &DRG_XOR_colors, 0, 1, 0))
+//        DRG_XOR_colors = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_0", &DRG_show_colors[0], 0, 1, 0))
+        DRG_show_colors[0] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_1", &DRG_show_colors[1], 0, 1, 0))
+        DRG_show_colors[1] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_2", &DRG_show_colors[2], 0, 1, 0))
+        DRG_show_colors[2] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_3", &DRG_show_colors[3], 0, 1, 0))
+        DRG_show_colors[3] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_4", &DRG_show_colors[4], 0, 1, 0))
+        DRG_show_colors[4] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_5", &DRG_show_colors[5], 0, 1, 0))
+        DRG_show_colors[5] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_6", &DRG_show_colors[6], 0, 1, 0))
+        DRG_show_colors[6] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_7", &DRG_show_colors[7], 0, 1, 0))
+        DRG_show_colors[7] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_8", &DRG_show_colors[8], 0, 1, 0))
+        DRG_show_colors[8] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_9", &DRG_show_colors[9], 0, 1, 0))
+        DRG_show_colors[9] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_10", &DRG_show_colors[10], 0, 1, 0))
+        DRG_show_colors[10] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_11", &DRG_show_colors[11], 0, 1, 0))
+        DRG_show_colors[11] = 0;
+
+    if (!get_int ("DRG_SHOW_COLORS_12", &DRG_show_colors[12], 0, 1, 0))
+        DRG_show_colors[12] = 0;
+#endif  // HAVE_LIBGEOTIFF
 
     // filter values
     // NOT SAVED: Select_.none
