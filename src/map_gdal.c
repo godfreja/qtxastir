@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.133 2005/07/26 19:16:59 tvrusso Exp $
+ * $Id: map_gdal.c,v 1.134 2005/07/26 19:39:37 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -2569,7 +2569,7 @@ extern void draw_shapefile_map (Widget w,
                                 alert_entry *alert,
                                 u_char alert_color,
                                 int destination_pixmap,
-                                int draw_filled);
+                                map_draw_flags *mdf);
 #endif /* HAVE_LIBSHP */
 
 
