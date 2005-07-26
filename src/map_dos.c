@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.15 2005/01/08 10:06:53 we7u Exp $
+ * $Id: map_dos.c,v 1.16 2005/07/26 19:16:59 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -310,12 +310,12 @@ void draw_dos_map(Widget w,
              alert_entry *alert,
              u_char alert_color,
              int destination_pixmap,
-             int draw_filled) {  
+             map_draw_flags *mdf) {  
   FILE *f;
   char file[MAX_FILENAME];
   char short_filenm[MAX_FILENAME];
   char map_it[MAX_FILENAME];
-  
+
   /* map header info */
   char map_type[5];
   char map_version[5];
@@ -377,7 +377,11 @@ void draw_dos_map(Widget w,
   char symbol_id;
   char symbol_color;
   int embedded_object;
+
+  int draw_filled;
   
+  draw_filled=mdf->draw_filled;
+
   x = 0;
   y = 0;
   color = -1;

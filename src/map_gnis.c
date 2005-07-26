@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.18 2005/03/16 21:36:13 we7u Exp $
+ * $Id: map_gnis.c,v 1.19 2005/07/26 19:17:01 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -95,7 +95,7 @@ void draw_gnis_map (Widget w,
 		    alert_entry *alert,
 		    u_char alert_color,
 		    int destination_pixmap,
-		    int draw_filled)
+		    map_draw_flags *mdf)
 {
     char file[MAX_FILENAME];        // Complete path/name of GNIS file
     char short_filenm[MAX_FILENAME];

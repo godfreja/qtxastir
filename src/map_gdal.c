@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.132 2005/07/01 00:11:36 we7u Exp $
+ * $Id: map_gdal.c,v 1.133 2005/07/26 19:16:59 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -255,7 +255,7 @@ void draw_gdal_map(Widget w,
                    alert_entry *alert,
                    u_char alert_color,
                    int destination_pixmap,
-                   int draw_filled) {
+                   map_draw_flags *mdf) {
 
     GDALDatasetH hDataset;
     char file[MAX_FILENAME];    // Complete path/name of image
@@ -2683,7 +2683,7 @@ void draw_ogr_map( Widget w,
                    alert_entry *alert,
                    u_char alert_color,
                    int destination_pixmap,
-                   int draw_filled) {
+                   map_draw_flags *mdf) {
 
     OGRDataSourceH datasourceH = NULL;
     OGRSFDriverH driver = NULL;
@@ -2708,7 +2708,9 @@ void draw_ogr_map( Widget w,
     float f_latitude0, f_latitude1, f_longitude0, f_longitude1;
     char status_text[MAX_FILENAME];
     char short_filenm[MAX_FILENAME];
- 
+    int draw_filled;
+
+    draw_filled=mdf->draw_filled;
  
     if (debug_level & 16)
         fprintf(stderr,"Entered draw_ogr_map function\n");
@@ -2733,7 +2735,7 @@ if (alert) {
         alert,
         alert_color,
         destination_pixmap,
-        draw_filled);
+        mdf);
 
 #endif  // HAVE_LIBSHP
 

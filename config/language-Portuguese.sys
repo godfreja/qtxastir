@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.164 2005/07/24 02:29:57 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.165 2005/07/26 19:16:55 tvrusso Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1119,8 +1119,8 @@ GPS011|Violeta||
 #
 # Dialogo de propriedades dos mapas
 MAPP001|Propriedades dos mapas||
-MAPP002| Max   Min    Desenhar mapas||
-MAPP003| Zoom  Zoom  Camada Preenchido AutoMapa Caminho/Ficheiro||
+MAPP002| Max   Min    Desenhar mapas   USGS||
+MAPP003| Zoom  Zoom  Camada Preenchido DRG   AutoMapa Caminho/Ficheiro||
 MAPP004|Mudar camada->||
 MAPP005|Preenchido->||
 MAPP006|Sim||
@@ -1129,6 +1129,7 @@ MAPP008|Automapas->||
 MAPP009|Max Zoom->||
 MAPP010|Min Zoom->||
 MAPP011|Auto||
+MAPP012|USGS DRG->||
 #
 #
 # Marcas do tempo
