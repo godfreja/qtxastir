@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.587 2005/07/26 19:16:57 tvrusso Exp $
+ * $Id: main.c,v 1.588 2005/07/26 19:32:15 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -16708,6 +16708,10 @@ if (current->temp_select) {
                     temp_auto[5] = '\0';
                 }
 
+                //WARNING WARNING WARNING --- changing this format string
+                // REQUIRES changing the defined constant MPD_FILENAME_OFFSET
+                // at the top of this file, or all the routines that try
+                // to decode the string will be wrong!
                 xastir_snprintf(temp,
                     sizeof(temp),
                     "%s %s %s %s %s %s  %s",
