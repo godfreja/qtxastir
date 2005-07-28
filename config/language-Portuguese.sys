@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.166 2005/07/26 19:50:24 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.167 2005/07/28 20:41:17 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -113,7 +113,7 @@ MPUPTGR018|Activar Tiger Maps||
 #
 # PopUp "Configure USGS DRG"
 MPUPDRG001|Select items to be displayed:||
-MPUPDRG002|XOR?||
+MPUPDRG002|Tint Underlying Map (XOR)||
 MPUPDRG003|Black||
 MPUPDRG004|White||
 MPUPDRG005|Blue||

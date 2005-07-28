@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.177 2005/07/26 19:50:23 we7u Exp $
+# $Id: language-Dutch.sys,v 1.178 2005/07/28 20:41:17 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -125,7 +125,7 @@ MPUPTGR018|Zet Tiger Kaarten aan||
 #
 # PopUp "Configure USGS DRG"
 MPUPDRG001|Select items to be displayed:||
-MPUPDRG002|XOR?||
+MPUPDRG002|Tint Underlying Map (XOR)||
 MPUPDRG003|Black||
 MPUPDRG004|White||
 MPUPDRG005|Blue||
