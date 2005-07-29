@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.170 2005/07/22 19:42:55 we7u Exp $
+ * $Id: util.c,v 1.171 2005/07/29 19:29:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -314,6 +314,26 @@ void xastir_debug(int my_debug_level, char *debug_string) {
     if (debug_level & my_debug_level) {
         fprintf(stderr, "%s", debug_string);
     }
+}
+
+
+
+
+
+char *remove_all_spaces(char *data) {
+    char *ptr;
+    int length = strlen(data);
+
+    ptr = data;
+    while ( (ptr = strpbrk(data, " ")) ) {
+        memmove(ptr, ptr+1, strlen(ptr)+1);
+        length--;
+    }
+
+    // Terminate at the new string length
+    data[length] = '\0';
+
+    return(data);
 }
 
 
