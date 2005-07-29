@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.137 2005/07/28 20:41:19 we7u Exp $
+ * $Id: xa_config.c,v 1.138 2005/07/29 19:29:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1069,6 +1069,8 @@ void load_data_or_default(void) {
         sprintf (relay_digipeater_calls, "WIDE1-1");
     // Make them all upper-case.
     (void)to_upper(relay_digipeater_calls);
+    // And take out all spaces
+    (void)remove_all_spaces(relay_digipeater_calls);
 
 
     if (!get_int ("COORDINATE_SYSTEM", &coordinate_system, 0, 5, USE_DDMMMM))
