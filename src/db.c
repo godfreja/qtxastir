@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.467 2005/07/20 05:09:53 we7u Exp $
+ * $Id: db.c,v 1.468 2005/07/29 19:31:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14962,8 +14962,10 @@ sprintf(big_string,"\nrelay_digipeat: inputs:\n\tport: %d\n\tcall: %s\n\tpath: %
 
 
     // Split the relay digipeater calls into separate substrings.
-    // Split on comma delimiters.  We don't get rid of extra spaces
-    // here, so the original string needs to be free of them.
+    // Split on comma delimiters.  We get rid of extra spaces at the
+    // point where we read the string in from the config file
+    // (xa_config.c), so spaces between the calls are ok (but not
+    // tabs).
     split_string(relay_digipeater_calls, Relay_Calls, MAX_RELAY_DIGIPEATER_CALLS);
 
     // Check for match against my_callsign in this digipeater slot
