@@ -1,5 +1,5 @@
 /*
- * $Id: locate_gui.c,v 1.16 2005/01/08 10:06:53 we7u Exp $
+ * $Id: locate_gui.c,v 1.17 2005/07/29 19:32:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -541,7 +541,18 @@ void Locate_place_now(Widget w, XtPointer clientData, XtPointer callData) {
     (void)remove_trailing_spaces(locate_type_name);
 
     /*fprintf(stderr,"looking for %s\n",locate_place_name);*/
-    if (locate_place(da,
+
+
+// Here we need to change things around so that we have a Chooser
+// dialog if more than one match is found, plus the associated
+// callbacks.  Don't center the map unless the user chooses one of
+// the matches.  Leave the chooser dialog up so that the user can
+// click on the matches one at a time until the correct one is
+// found, then he/she can hit the Close button on that dialog to
+// make it go away.
+
+
+    if (gnis_locate_place(da,
             locate_place_name,
             locate_state_name,
             locate_county_name,
