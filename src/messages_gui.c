@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.42 2005/01/29 17:32:48 we7u Exp $
+ * $Id: messages_gui.c,v 1.43 2005/07/31 06:19:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -697,7 +697,7 @@ void Send_message_call( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*
 // function which fills in the message history information.
 //
 void Send_message( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPointer callData) {
-    Arg args[30];
+    Arg args[50];
     char temp[60];
     unsigned int n;
     int j,i;

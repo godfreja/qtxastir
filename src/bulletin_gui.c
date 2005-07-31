@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.29 2005/01/08 10:06:52 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.30 2005/07/31 06:19:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -573,7 +573,7 @@ void  Zero_Bulletin_Data_toggle( /*@unused@*/ Widget widget, XtPointer clientDat
 void Bulletins(/*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@unused@*/ XtPointer callData) {
     Widget pane, form, button_range, button_close, dist, dist_units;
     unsigned int n;
-    Arg args[20];
+    Arg args[50];
     Atom delw;
     char temp[10];
 

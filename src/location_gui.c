@@ -1,5 +1,5 @@
 /*
- * $Id: location_gui.c,v 1.14 2005/03/16 21:36:12 we7u Exp $
+ * $Id: location_gui.c,v 1.15 2005/07/31 06:19:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -358,7 +358,7 @@ void location_add(/*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPo
 void Jump_location(/*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@unused@*/ XtPointer callData) {
     static Widget  pane,form, button_ok, button_add, button_delete, button_cancel, locdata, location_name;
     int n;
-    Arg al[20];           /* Arg List */
+    Arg al[50];           /* Arg List */
     unsigned int ac = 0;           /* Arg Count */
     Atom delw;
 
