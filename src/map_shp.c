@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.99 2005/07/26 19:17:01 tvrusso Exp $
+ * $Id: map_shp.c,v 1.100 2005/08/01 22:08:12 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -728,9 +728,9 @@ void draw_shapefile_map (Widget w,
     dbfawk_field_info *fld_info = NULL;
 
 
-    int draw_filled;
     int draw_filled_orig;
 #endif
+    int draw_filled;
     static int label_color = 8; /* set by dbfawk.  Otherwise it's black. */
     static int font_size = FONT_DEFAULT; // set by dbfawk, else this default
 
