@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.172 2005/07/28 20:41:17 we7u Exp $
+# $Id: language-German.sys,v 1.173 2005/08/02 04:18:35 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -820,7 +820,7 @@ UNIOP00026|%||
 UNIOP00027|Inch Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Systemzeit durch GPS einstellen||
-UNIOP00030|RELAY Digipeater?||
+UNIOP00030|Digipeater?||
 UNIOP00031|m||
 UNIOP00032|Anwenden||
 #

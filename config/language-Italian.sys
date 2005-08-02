@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.170 2005/07/28 20:41:17 we7u Exp $
+# $Id: language-Italian.sys,v 1.171 2005/08/02 04:18:35 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -814,7 +814,7 @@ UNIOP00026|%||
 UNIOP00027|in Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Regolare il tempo del sistema dal GPS||
-UNIOP00030|Ripeti come RELAY?||
+UNIOP00030|Ripeti?||
 UNIOP00031|m||
 UNIOP00032|Apply||
 #

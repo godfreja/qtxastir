@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.178 2005/07/28 20:41:17 we7u Exp $
+# $Id: language-Dutch.sys,v 1.179 2005/08/02 04:18:34 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -825,7 +825,7 @@ UNIOP00026|%||
 UNIOP00027|in Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Stel de systeem klok in vanuit GPS?||
-UNIOP00030|RELAY Digipeat?||
+UNIOP00030|Digipeat?||
 UNIOP00031|m||
 UNIOP00032|Toepassen||
 #

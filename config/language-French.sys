@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.168 2005/07/28 20:41:17 we7u Exp $
+# $Id: language-French.sys,v 1.169 2005/08/02 04:18:35 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -813,7 +813,7 @@ UNIOP00026|%||
 UNIOP00027|pouces Hg||
 UNIOP00028|mm Hg||
 UNIOP00029|Placez le temps de système du GPS||
-UNIOP00030|RELAY Digipeat?||
+UNIOP00030|Digipeat?||
 UNIOP00031|m||
 UNIOP00032|Appliquer||
 #
