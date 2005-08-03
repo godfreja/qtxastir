@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.169 2005/08/02 04:18:35 we7u Exp $
+# $Id: language-French.sys,v 1.170 2005/08/03 20:16:58 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -256,6 +256,8 @@ PULDNTNT10|Extraire points de cheminement Garmin RINO|G|
 # Menu "Help"
 PULDNHEL01|Information|I|
 PULDNHEL02|Index de l'Aide|A|#'
+PULDNHEL03|EMERGENCY BEACON MODE ENABLE|E|
+PULDNHEL04|!!! EMERGENCY BEACON MODE !!!||
 #
 # Mouse Menu Popup
 POPUPMA001|Options|O|

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.81 2005/07/20 05:09:52 we7u Exp $
+ * $Id: main.h,v 1.82 2005/08/03 20:17:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -167,6 +167,8 @@ extern int view_zero_distance_bulletins;
 extern int warn_about_mouse_modifiers;
 
 extern int output_station_type;
+
+extern int emergency_beacon;
 
 typedef struct _selections {
     int none;

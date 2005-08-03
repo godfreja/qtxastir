@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.171 2005/08/02 04:18:35 we7u Exp $
+# $Id: language-Italian.sys,v 1.172 2005/08/03 20:16:58 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -257,6 +257,8 @@ PULDNTNT10|Ricevi Waypoints Garmin RINO|G|
 # Menù Aiuto
 PULDNHEL01|Versione di Xastir|A|
 PULDNHEL02|Indice Guida|I|
+PULDNHEL03|EMERGENCY BEACON MODE ENABLE|E|
+PULDNHEL04|!!! EMERGENCY BEACON MODE !!!||
 #
 #Mouse Menu Popup
 POPUPMA001|Opzioni||

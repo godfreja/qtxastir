@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.179 2005/08/02 04:18:34 we7u Exp $
+# $Id: language-Dutch.sys,v 1.180 2005/08/03 20:16:48 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -267,6 +267,8 @@ PULDNTNT10|Laad Garmin RINO routepunten|G|
 # Menu "Help"
 PULDNHEL01|Informatie|A|
 PULDNHEL02|Help Onderwerpen|I|
+PULDNHEL03|EMERGENCY BEACON MODE ENABLE|E|
+PULDNHEL04|!!! EMERGENCY BEACON MODE !!!||
 #
 # Mouse Menu Popup
 POPUPMA001|Opties||

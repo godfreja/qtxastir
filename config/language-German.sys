@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.173 2005/08/02 04:18:35 we7u Exp $
+# $Id: language-German.sys,v 1.174 2005/08/03 20:16:58 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -263,6 +263,8 @@ PULDNTNT10|Garmin RINO Wegpunkte holen|G|
 # Menu "Hilfe"
 PULDNHEL01|Version|V|
 PULDNHEL02|Hilfe Index|I|
+PULDNHEL03|EMERGENCY BEACON MODE ENABLE|E|
+PULDNHEL04|!!! EMERGENCY BEACON MODE !!!||
 #
 # Mauszeiger PopUp Menu
 POPUPMA001|Mauszeiger-Menu||
