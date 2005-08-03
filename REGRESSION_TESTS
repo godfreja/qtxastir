@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: REGRESSION_TESTS,v 1.4 2005/08/02 20:22:53 we7u Exp $
+# $Id: REGRESSION_TESTS,v 1.5 2005/08/03 19:15:53 we7u Exp $
 
 # Simple regression tests.  Run through various combinations of the
 # configure flags, create a lot file, then grep for "warning" or
@@ -18,10 +18,11 @@
 ./bootstrap.sh
 
 
+
 # Test with ZERO optional libraries
 echo
 echo TEST: No optional libraries...
-rm regression.log
+(rm regression.log 2>&1) >/dev/null
 (./configure --without-ax25 --without-festival --without-gpsman \
 --without-shapelib --without-imagemagick --without-libproj \
 --without-geotiff --without-gdal --without-pcre --without-dbfawk \
