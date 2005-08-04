@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.470 2005/08/03 19:01:53 we7u Exp $
+ * $Id: db.c,v 1.471 2005/08/04 19:34:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2738,6 +2738,12 @@ _do_the_drawing:
                 p_station->probability_max,
                 1); // Increment "currently_selected_stations"
 
+    // If it's a Waypoint symbol, draw a line from it to the
+    // transmitting station.
+    if (p_station->aprs_symbol.aprs_type == '\\'
+            && p_station->aprs_symbol.aprs_symbol == '/') {
+        draw_WP_line(p_station, drawing_target, w);
+    }
 
     // Draw other points associated with the station, if any.
     // KG4NBB

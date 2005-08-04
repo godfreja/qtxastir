@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.h,v 1.18 2005/06/07 12:33:37 tvrusso Exp $
+ * $Id: draw_symbols.h,v 1.19 2005/08/04 19:34:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,6 +50,8 @@ extern void load_pixmap_symbol_file(char *filename, int reloading);
 extern void insert_symbol(char table, char symbol, char *pixel, int deg, char orient, int reloading);
 extern char symbol_orient(char *course);
 extern void symbol(Widget w, int ghost,char symbol_table, char symbol_id, char symbol_overlay, Pixmap where, int mask, long x_offset, long y_offset, char rotate);
+
+extern void draw_WP_line(DataRow *p_station, Pixmap where, Widget w);
 
 extern void draw_symbol(Widget w, char symbol_table, char symbol_id, char symbol_overlay, long x_lon, long y_lat,char *callsign_text, char *alt_text, char *course_text, char *speed_text, char *my_distance, char *my_course, char *wx_temp, char* wx_wind, time_t sec_heard, int temp_show_last_heard, Pixmap where, char rotate, char area_type, char *signpost, char *pmin, char *pmax, int bump_count );
 
