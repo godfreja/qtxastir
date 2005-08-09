@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.34 2005/08/09 03:53:16 tvrusso Exp $
+# $Id: acinclude.m4,v 1.35 2005/08/09 15:57:59 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -221,6 +221,7 @@ if test "${found_gdal_config}" = "yes"; then
    LDFLAGS="$LDFLAGS `${GDAL_BIN} --libs | sed -e s/-lgdal//`"
    AC_CHECK_HEADERS(gdal.h, [AC_CHECK_LIB(gdal, GDALAllRegister,
                     [use_gdal=yes;
+                     LIBS="-lgdal $LIBS"
                      AC_DEFINE(HAVE_LIBGDAL, , 
                       [Define to 1 if you have the `gdal' library (-lgdal).])],
                     [use_gdal=no;
@@ -686,7 +687,7 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.34 2005/08/09 03:53:16 tvrusso Exp $
+dnl $Id: acinclude.m4,v 1.35 2005/08/09 15:57:59 tvrusso Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.
