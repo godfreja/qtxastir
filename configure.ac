@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.123 2005/08/06 18:01:15 tvrusso Exp $
+# $Id: configure.ac,v 1.124 2005/08/10 18:58:56 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -69,23 +69,11 @@ XASTIR_SET_SYSTEM
 use_festival=yes
 use_gpsman=yes
 use_err_popups=no
-use_rtree=no
 AC_ARG_WITH(festival,[  --without-festival       Disable festival features.],use_festival=$withval)
 
 AC_ARG_WITH(gpsman,[  --without-gpsman       Disable gpsman features.],use_gpsman=$withval)
 
 AC_ARG_WITH(errorpopups,[  --with-errorpopups       Send error popups to stderr.],use_err_popups=$withval)
-
-LIBRTREE=""
-SUBRTREE=""
-AC_ARG_WITH(rtree,[  --with-rtree       Enable spatial indexing of shapefiles for faster rendering.],[use_rtree=$withval])
-if test "${use_rtree}" = "yes" ; then
-    AC_DEFINE([USE_RTREE],1,[RTree spatial indexing])
-    LIBRTREE="-Lrtree -lrtree"
-    SUBRTREE="rtree"
-fi
-AC_SUBST(SUBRTREE)
-AC_SUBST(LIBRTREE)
 
 
 # Now that all the various "use_" variables are set, probe for binaries.
@@ -301,6 +289,24 @@ if test "${use_dbfawk}" = "yes"; then
     use_dbfawk=no
   fi
 fi
+
+
+use_rtree=no
+LIBRTREE=""
+SUBRTREE=""
+AC_ARG_WITH(rtree,[  --with-rtree       Enable spatial indexing of shapefiles for faster rendering.],[use_rtree=$withval])
+if test "${use_rtree}" = "yes" ; then
+  if test "${use_shapelib}" = "yes"; then
+    AC_DEFINE([USE_RTREE],1,[RTree spatial indexing])
+    LIBRTREE="-Lrtree -lrtree"
+    SUBRTREE="rtree"
+  else
+    echo "Warning: rtree requires shapelib."
+    use_rtree=no
+  fi
+fi
+AC_SUBST(SUBRTREE)
+AC_SUBST(LIBRTREE)
 
 
 # Check for GDAL.  Make sure that the GDAL check is towards the
