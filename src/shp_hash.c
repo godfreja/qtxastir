@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.10 2005/01/09 23:06:59 tvrusso Exp $
+ * $Id: shp_hash.c,v 1.11 2005/08/10 18:39:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -24,6 +24,8 @@
 #include "config.h"
 
 #ifdef USE_RTREE
+#ifdef HAVE_LIBSHP
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -321,4 +323,7 @@ void purge_shp_hash() {
         //fprintf(stderr,"   done Purging...\n");
     }
 }
+
+#endif  // HAVE_LIBSHP
 #endif // USE_RTREE
+
