@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.124 2005/08/10 18:58:56 we7u Exp $
+# $Id: configure.ac,v 1.125 2005/08/10 21:06:24 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -262,6 +262,7 @@ LIBS="$LIBS -ltiff"
         fi
     fi
 else
+  echo "Warning: geotiff requires libproj."
   use_geotiff=no
 fi 
 
