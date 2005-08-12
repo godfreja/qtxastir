@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.134 2005/07/26 19:39:37 tvrusso Exp $
+ * $Id: map_gdal.c,v 1.135 2005/08/12 19:36:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -4127,8 +4127,9 @@ fprintf(stderr,"Combine Hashes, Create/Draw Polygon ");
 
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_advance(iterator));
-
-            free(iterator);
+#ifndef USING_LIBGC
+            if (iterator) free(iterator);
+#endif  // USING_LIBGC
         }
 
 
@@ -4165,8 +4166,9 @@ fprintf(stderr,"               Free'ing hash memory ");
 
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_remove(iterator));
-
-            free(iterator);
+#ifndef USING_LIBGC
+            if (iterator) free(iterator);
+#endif  // USING_LIBGC
         }
         // polyid_hash should be empty at this point.
 
@@ -4190,7 +4192,9 @@ fprintf(stderr,"               Free'ing hash memory ");
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_remove(iterator));
 
-            free(iterator);
+#ifndef USING_LIBGC
+            if (iterator) free(iterator);
+#endif  // USING_LIBGC
         }
         // tlid_hash should be empty at this point.
 
@@ -4206,8 +4210,9 @@ fprintf(stderr,"               Free'ing hash memory ");
             do {
             // Free the current hash element, advance to the next
             } while (hashtable_iterator_remove(iterator));
-
-            free(iterator);
+#ifndef USING_LIBGC
+            if (iterator) free(iterator);
+#endif  // USING_LIBGC
         }
         // landmark_hash should be empty at this point.
 
