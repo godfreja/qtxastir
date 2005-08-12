@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.182 2005/08/12 19:27:21 we7u Exp $
+# $Id: language-Dutch.sys,v 1.183 2005/08/12 19:37:41 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -830,7 +830,8 @@ UNIOP00028|mm Hg||
 UNIOP00029|Stel de systeem klok in vanuit GPS?||
 UNIOP00030|Digipeat?||
 UNIOP00031|m||
-UNIOP00032|Toepassen||
+UNIOP00032|Toepassen|||
+UNIOP00033|Reset||
 #
 # PopUp "Station Chooser"
 STCHO00001|Station Kiezer||

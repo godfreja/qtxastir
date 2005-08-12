@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.170 2005/08/12 19:27:23 we7u Exp $
+# $Id: language-English.sys,v 1.171 2005/08/12 19:37:41 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -822,6 +822,7 @@ UNIOP00029|Set System Clock from GPS Data?||
 UNIOP00030|Digipeat?||
 UNIOP00031|m||
 UNIOP00032|Apply||
+UNIOP00033|Reset||
 #
 # PopUp "Station Chooser"
 STCHO00001|Station Chooser||

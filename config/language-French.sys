@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.172 2005/08/12 15:38:18 we7u Exp $
+# $Id: language-French.sys,v 1.173 2005/08/12 19:37:41 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -821,7 +821,8 @@ UNIOP00028|mm Hg||
 UNIOP00029|Placez le temps de système du GPS||
 UNIOP00030|Digipeat?||
 UNIOP00031|m||
-UNIOP00032|Appliquer||
+UNIOP00032|Appliquer|||
+UNIOP00033|Reset||
 #
 # PopUp "Station Chooser"
 STCHO00001|Choix de station||
