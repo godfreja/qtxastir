@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.171 2005/08/08 21:12:17 francais1 Exp $
+# $Id: language-French.sys,v 1.172 2005/08/12 15:38:18 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -295,6 +295,7 @@ POPUPMA030|Commencer mode de dessin||
 POPUPMA031|Fermer polygone||
 POPUPMA032|Effacer tout les polygones CAD||
 POPUPMA033|Finir mode de dessin||
+POPUPMA034|Custom Zoom Level||
 #
 # Status line labels
 BBARZM0001|Zoom %s||

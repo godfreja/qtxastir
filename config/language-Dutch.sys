@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.180 2005/08/03 20:16:48 we7u Exp $
+# $Id: language-Dutch.sys,v 1.181 2005/08/12 15:38:18 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -305,6 +305,7 @@ POPUPMA030|Zet teken modus aan||
 POPUPMA031|Sluit polygoon||
 POPUPMA032|Wis alle CAD polygonen||
 POPUPMA033|Beeindig teken modus||
+POPUPMA034|Custom Zoom Level||
 #
 # Status line labels
 BBARZM0001|Zoom %s||

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.179 2005/08/03 20:16:58 we7u Exp $
+# $Id: language-Spanish.sys,v 1.180 2005/08/12 15:38:18 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -298,6 +298,7 @@ POPUPMA030|Empiece el Modo Dibujar||
 POPUPMA031|Cierre el Polígono||
 POPUPMA032|Borre Todos los Polígonos CAD||
 POPUPMA033|Termine el Modo Dibujar||
+POPUPMA034|Custom Zoom Level||
 #
 # Menú de Estados de la líneas de Etiquetas
 BBARZM0001|Foco %s||

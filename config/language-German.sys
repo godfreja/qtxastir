@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.174 2005/08/03 20:16:58 we7u Exp $
+# $Id: language-German.sys,v 1.175 2005/08/12 15:38:18 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -301,6 +301,7 @@ POPUPMA030|Start Zeichen-Modus||
 POPUPMA031|Polygon abschließen||
 POPUPMA032|Alle CAD-Polygone löschen||
 POPUPMA033|Ende Zeichen-Modus||
+POPUPMA034|Custom Zoom Level||
 #
 # Texte in Statuszeile
 BBARZM0001|Zoom %s||

@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.168 2005/08/03 20:16:57 we7u Exp $
+# $Id: language-English.sys,v 1.169 2005/08/12 15:38:18 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -295,6 +295,7 @@ POPUPMA030|Start Draw Mode||
 POPUPMA031|Close Polygon||
 POPUPMA032|Erase All CAD Polygons||
 POPUPMA033|End Draw Mode||
+POPUPMA034|Custom Zoom Level||
 #
 # Status line labels
 BBARZM0001|Zoom %s||

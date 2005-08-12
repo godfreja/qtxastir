@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.169 2005/08/03 20:16:58 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.170 2005/08/12 15:38:18 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -299,6 +299,7 @@ POPUPMA030|Comecar modo desenho||
 POPUPMA031|Fechar poligono||
 POPUPMA032|Apagar todos os poligonos CAD||
 POPUPMA033|Fim do modo de desenho||
+POPUPMA034|Custom Zoom Level||
 #
 # Menu dos estados das linhas de etiquetas
 BBARZM0001|Foco %s||
