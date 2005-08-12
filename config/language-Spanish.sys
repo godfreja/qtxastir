@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.180 2005/08/12 15:38:18 we7u Exp $
+# $Id: language-Spanish.sys,v 1.181 2005/08/12 19:27:23 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -73,7 +73,7 @@ PULDNMP003|Rejillas sobre Mapa||
 PULDNMP004|Niveles de Mapas||
 PULDNMP010|Etiquetas de Mapas||
 PULDNMP009|Activar Areas Coloridas||
-PULDNMP007|Condados Alerta Mapa WX||
+PULDNMP007|Alerta Mapa WX||
 PULDNMP005|Color de fondo|C|
 PULDNMP006|Etiquetas de estiones|E|
 PULDNMP026|Icon Outline Style|O|
