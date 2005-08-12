@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.172 2005/08/12 19:36:57 we7u Exp $
+ * $Id: util.c,v 1.173 2005/08/12 21:37:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4831,6 +4831,28 @@ void set_dangerous( char *ptr ) {
 // Clear string printed out by segfault handler
 void clear_dangerous(void) {
     dangerous_operation[0] = '\0';
+}
+
+
+
+
+
+// Work around bug on some systems where malloc (0) fails.
+// written by Jim Meyering
+ 
+#undef malloc
+#include <sys/types.h>
+ 
+char *malloc ();
+
+ 
+/* Allocate an N-byte block of memory from the heap.
+    If N is zero, allocate a 1-byte block.  */
+ 
+char * rpl_malloc (size_t n) {
+    if (n == 0)
+    n = 1;
+    return malloc (n);
 }
 
 

@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.126 2005/08/11 01:37:14 we7u Exp $
+# $Id: configure.ac,v 1.127 2005/08/12 21:37:39 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -63,7 +63,6 @@ XASTIR_COMPILER_FLAGS
 
 # set XASTIR_SYSTEM
 XASTIR_SET_SYSTEM
-
 
 # Check for binaries
 use_festival=yes
@@ -202,7 +201,11 @@ AC_CHECK_FUNCS([strndup])
 # 
 AC_CHECK_LIB(intl, gettext, LIBS="-lintl ${LIBS}") 
 
- 
+
+# Check for functional malloc()
+JM_FUNC_MALLOC
+
+
 # Check for Shapelib
 use_shapelib=yes
 AC_ARG_WITH(shapelib,[  --without-shapelib       Disable shapelib features.],use_shapelib=$withval)
