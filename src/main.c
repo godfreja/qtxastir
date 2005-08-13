@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.596 2005/08/12 19:36:57 we7u Exp $
+ * $Id: main.c,v 1.597 2005/08/13 05:21:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -162,6 +162,15 @@
 
 #include <Xm/XmAll.h>
 #include <X11/cursorfont.h>
+
+
+// Copyright 2005.
+// Added the above "Copyright" just so that grep would find these
+// lines and we could update the years in the Help->About message
+// each time.  Otherwise it often gets missed when we're updating
+// the years.
+#define ABOUT_MSG "X Amateur Station Tracking and Information Reporting\n\nhttp://www.xastir.org\n\n1999-2005, The Xastir Group"
+
 
 #define DOS_HDR_LINES 8
 
@@ -15952,14 +15961,6 @@ void Help_About( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@un
     float version;
     char string1[100];
     char string2[100];
-
-// Copyright 2005.
-// Added the above "Copyright" just so that grep would find these
-// lines and we could update the years in the Help->About message
-// each time.  Otherwise it often gets missed when we're updating
-// the years.
-#define ABOUT_MSG "X Amateur Station Tracking and Information Reporting\n\nhttp://www.xastir.org\n\n1999-2005, The Xastir Group"
-
 
     xb = XmStringCreateLtoR("\nXastir V" VERSION "\n\n" ABOUT_MSG, XmFONTLIST_DEFAULT_TAG);
 
