@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.36 2005/08/12 21:37:39 we7u Exp $
+# $Id: acinclude.m4,v 1.37 2005/08/13 03:17:11 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -687,7 +687,7 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.36 2005/08/12 21:37:39 we7u Exp $
+dnl $Id: acinclude.m4,v 1.37 2005/08/13 03:17:11 we7u Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.
@@ -889,36 +889,4 @@ AC_DEFUN([XASTIR_GUESS_RUNPATH_SWITCH], [
     ])
   LDFLAGS="${SAVE_LDFLAGS}"
   ])])
-
-dnl From Jim Meyering.
-dnl Determine whether malloc accepts 0 as its argument.
-dnl If it doesn't, arrange to use the replacement function.
-dnl
-AC_DEFUN([JM_FUNC_MALLOC], [
- dnl xmalloc.c requires that this symbol be defined so it doesn't
- dnl mistakenly use a broken malloc -- as it might if this test were omitted.
- AC_DEFINE(HAVE_DONE_WORKING_MALLOC_CHECK, 1,
-           [Define if the malloc check has been performed. ])
-
- AC_CACHE_CHECK([whether malloc(0) returns a non-NULL pointer],
-                jm_cv_func_working_malloc,
-  [AC_TRY_RUN([
-    char *malloc ();
-    int
-    main ()
-    {
-      exit (malloc (0) ? 0 : 1);
-    }
-      ],
-     jm_cv_func_working_malloc=yes,
-     jm_cv_func_working_malloc=no,
-     dnl When crosscompiling, assume malloc(0) returns NULL.
-     jm_cv_func_working_malloc=no)
-  ])
-  if test $jm_cv_func_working_malloc = no; then
-    AC_LIBOBJ(malloc)
-    AC_DEFINE(malloc, rpl_malloc,
-      [Define to rpl_malloc if the replacement function should be used.])
-  fi
-])
 

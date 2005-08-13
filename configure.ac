@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.127 2005/08/12 21:37:39 we7u Exp $
+# $Id: configure.ac,v 1.128 2005/08/13 03:17:11 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -200,10 +200,6 @@ AC_CHECK_FUNCS([strndup])
 # Check for intl library (Needed for Cygwin) 
 # 
 AC_CHECK_LIB(intl, gettext, LIBS="-lintl ${LIBS}") 
-
-
-# Check for functional malloc()
-JM_FUNC_MALLOC
 
 
 # Check for Shapelib
