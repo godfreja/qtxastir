@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.173 2005/08/12 21:37:39 we7u Exp $
+ * $Id: util.c,v 1.174 2005/08/13 05:07:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4837,6 +4837,7 @@ void clear_dangerous(void) {
 
 
 
+#if (HAVE_MALLOC == 0)
 // Work around bug on some systems where malloc (0) fails.
 // written by Jim Meyering
  
@@ -4854,5 +4855,6 @@ char * rpl_malloc (size_t n) {
     n = 1;
     return malloc (n);
 }
+#endif  // HAVE_MALLOC==0
 
 
