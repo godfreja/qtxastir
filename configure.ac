@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.128 2005/08/13 03:17:11 we7u Exp $
+# $Id: configure.ac,v 1.129 2005/08/15 20:01:55 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -566,6 +566,11 @@ AC_OUTPUT
 
 # Write out the library information to "summary.log"
 echo "$ILIBS" >summary.log
+
+
+# Write a short summary of the configure tests/results to
+# "summary.log"
+egrep -e "checking |result:|gcc version" config.log >> summary.log
 
 
 echo ===========================================
