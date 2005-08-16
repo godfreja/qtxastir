@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.597 2005/08/13 05:21:59 we7u Exp $
+ * $Id: main.c,v 1.598 2005/08/16 00:42:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -21616,7 +21616,6 @@ void Configure_timing( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
                 MY_BACKGROUND_COLOR,
                 NULL);
 
-#ifdef HAVE_GPSMAN
         length = strlen(langcode("WPUPCFTM12")) + 1;
 
         // Time below which track segment will get drawn, in minutes
@@ -21644,6 +21643,8 @@ void Configure_timing( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
                 NULL);
+#ifndef HAVE_GPSMAN
+XtSetSensitive(RINO_download_timeout, FALSE);
 #endif  // HAVE_GPSMAN
 
        timeout_length = strlen(langcode("MPUPTGR017")) + 1;
@@ -21677,13 +21678,7 @@ void Configure_timing( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
                 xmPushButtonGadgetClass, 
                 my_form,
                 XmNtopAttachment, XmATTACH_WIDGET,
-
-#ifdef HAVE_GPSMAN
                 XmNtopWidget, RINO_download_timeout,
-#else   // HAVE_GPSMAN
-                XmNtopWidget, trail_segment_timeout,
-#endif  // HAVE_GPSMAN
-
                 XmNtopOffset, 10,
                 XmNbottomAttachment, XmATTACH_FORM,
                 XmNbottomOffset, 5,
@@ -21701,13 +21696,7 @@ void Configure_timing( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
                 xmPushButtonGadgetClass, 
                 my_form,
                 XmNtopAttachment, XmATTACH_WIDGET,
-
-#ifdef HAVE_GPSMAN
                 XmNtopWidget, RINO_download_timeout,
-#else   // HAVE_GPSMAN
-                XmNtopWidget, trail_segment_timeout,
-#endif  // HAVE_GPSMAN
-
                 XmNtopOffset, 10,
                 XmNbottomAttachment, XmATTACH_FORM,
                 XmNbottomOffset, 5,
