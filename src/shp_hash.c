@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.11 2005/08/10 18:39:24 we7u Exp $
+ * $Id: shp_hash.c,v 1.12 2005/08/16 00:45:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -209,6 +209,8 @@ void add_shp_to_hash(char *filename, SHPHandle sHP) {
     //fprintf(stderr, "  adding %s...",temp->filename);
     if (!hashtable_insert(shp_hash,temp->filename,temp)) {
         fprintf(stderr,"Insert failed on shapefile hash --- fatal\n");
+        free(temp->filename);
+        free(temp);
         exit(1);
     }
 }
