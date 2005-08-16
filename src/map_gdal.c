@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.135 2005/08/12 19:36:57 we7u Exp $
+ * $Id: map_gdal.c,v 1.136 2005/08/16 00:44:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -3543,6 +3543,7 @@ start_timer();
  
                     if (!hashtable_insert(polyid_hash,&temp->POLYID, temp)) {
                         fprintf(stderr,"Couldn't insert into polyid_hash\n");
+                        free(temp);
                     }
 //fprintf(stderr,"%i ",temp->POLYID);
                 }
@@ -3665,6 +3666,7 @@ fprintf(stderr,"                AreaLandmarks Layer ");
 // Remember to free() the hash storage later
                         if (!hashtable_insert(landmark_hash,&temp->LAND, temp)) {
                             fprintf(stderr,"Couldn't insert into landmark_hash\n");
+                            free(temp);
                         }
                     }
                 }
@@ -3983,6 +3985,7 @@ fprintf(stderr,"                CompleteChain Layer ");
 // Remember to free() the hash storage later
                     if (!hashtable_insert(tlid_hash,&temp->TLID, temp)) {
                         fprintf(stderr,"Couldn't insert into tlid_hash\n");
+                        free(temp);
                     }
                 }
 
