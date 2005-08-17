@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.18 2005/07/06 15:22:43 we7u Exp $
+ * $Id: hostname.c,v 1.19 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -45,6 +45,12 @@
 #include "xastir.h"
 #include "main.h"
 #include "lang.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
+
 
 
 #ifndef __LCLINT__

@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.14 2005/01/08 10:06:54 we7u Exp $
+// $Id: rotated.c,v 1.15 2005/08/17 19:12:05 we7u Exp $
 //
 // Portions Copyright (C) 2000-2005  The Xastir Group
 //
@@ -42,6 +42,10 @@
 #include <string.h>
 #include "rotated.h"
 #include "snprintf.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 /* ---------------------------------------------------------------------- */

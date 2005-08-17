@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.36 2005/07/17 06:17:56 we7u Exp $
+ * $Id: x_spider.c,v 1.37 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -117,7 +117,7 @@
 #include <signal.h>
 #include <termios.h>
 #include <pwd.h>
-#include <pthread.h>
+
 #include <termios.h>
 #include <setjmp.h>
 #include <sys/socket.h>
@@ -165,6 +165,10 @@
 #ifndef SIGRET
 #define SIGRET  void
 #endif  // SIGRET
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 // Define this if you wish to use this as a standalone program

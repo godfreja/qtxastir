@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.35 2005/01/08 10:06:53 we7u Exp $
+ * $Id: list_gui.c,v 1.36 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -55,6 +55,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+
+// Must be last include file
+#include "leak_detection.h"
 
 
 

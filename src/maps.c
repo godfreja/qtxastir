@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.437 2005/08/12 19:36:57 we7u Exp $
+ * $Id: maps.c,v 1.438 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -111,6 +111,11 @@
 #include "rotated.h"
 #include "color.h"
 #include "xa_config.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define GRID_MORE 5000
 
@@ -5909,10 +5914,10 @@ void fill_in_new_alert_entries(Widget w, char *dir) {
         }
         temp = get_next_wx_alert(iterator);
     }
-#ifndef USING_LIBGC
+//#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 4\n");
     if (iterator) free(iterator);
-#endif  // USING_LIBGC
+//#endif  // USING_LIBGC
 
     if (debug_level & 16)
         fprintf(stderr,"fill_in_new_alert_entries end\n");
@@ -5988,18 +5993,18 @@ void load_alert_maps (Widget w, char *dir) {
 
         HandlePendingEvents(app_context);
         if (interrupt_drawing_now) {
-#ifndef USING_LIBGC
+//#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 5\n");
             if (iterator) free(iterator);
-#endif  // USING_LIBGC
+//#endif  // USING_LIBGC
             return;
         }
 
         if (disable_all_maps) {
-#ifndef USING_LIBGC
+//#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 6\n");
             if (iterator) free(iterator);
-#endif  // USING_LIBGC
+//#endif  // USING_LIBGC
             return;
         }
 
@@ -6055,10 +6060,10 @@ void load_alert_maps (Widget w, char *dir) {
         }
         temp = get_next_wx_alert(iterator);
     }
-#ifndef USING_LIBGC
+//#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 7\n");
     if (iterator) free(iterator);
-#endif  // USING_LIBGC
+//#endif  // USING_LIBGC
 
 //    fprintf(stderr,"load_alert_maps() Done drawing all active alerts\n");
 

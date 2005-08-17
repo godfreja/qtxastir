@@ -1,5 +1,5 @@
 /*
- * $Id: location_gui.c,v 1.15 2005/07/31 06:19:12 we7u Exp $
+ * $Id: location_gui.c,v 1.16 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -36,6 +36,10 @@
 #include "util.h"
 #include "lang.h"
 #include "snprintf.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 Widget location_dialog = (Widget)NULL;

@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.47 2005/03/16 21:36:11 we7u Exp $
+ * $Id: igate.c,v 1.48 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,7 +26,6 @@
 #include "snprintf.h"
 
 #include <termios.h>
-#include <pthread.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <ctype.h>
@@ -44,6 +43,10 @@
 #include "interface.h"
 #include "xa_config.h"
 #include "util.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 time_t last_nws_stations_file_time = 0;

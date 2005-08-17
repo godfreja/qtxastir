@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.138 2005/07/29 19:29:59 we7u Exp $
+ * $Id: xa_config.c,v 1.139 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -48,6 +48,11 @@
 #include "track_gui.h"
 #include "geo.h"
 #include "snprintf.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define CONFIG_FILE      "config/xastir.cnf"
 #define CONFIG_FILE_BAK1 "config/xastir.cnf.1"

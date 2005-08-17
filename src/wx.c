@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.49 2005/03/16 21:36:15 we7u Exp $
+ * $Id: wx.c,v 1.50 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -79,6 +79,10 @@
 #include "interface.h"
 #include "lang.h"
 #include "util.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 #define MAX_RAW_WX_STRING 800

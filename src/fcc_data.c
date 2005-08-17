@@ -1,5 +1,5 @@
 /*
- * $Id: fcc_data.c,v 1.13 2005/02/04 19:36:06 we7u Exp $
+ * $Id: fcc_data.c,v 1.14 2005/08/17 19:08:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -47,6 +47,9 @@
 #include "fcc_data.h"
 #include "xa_config.h"
 #include "main.h"
+
+// Must be last include file
+#include "leak_detection.h"
 
 
 

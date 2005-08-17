@@ -1,5 +1,5 @@
 /*
- * $Id: lang.c,v 1.12 2005/01/08 10:06:53 we7u Exp $
+ * $Id: lang.c,v 1.13 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,6 +50,10 @@
 
 #include "xastir.h"
 #include "lang.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 char lang_code[MAX_LANG_ENTRIES][MAX_LANG_CODE+1];

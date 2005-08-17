@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_pdb.c,v 1.11 2005/07/26 19:17:01 tvrusso Exp $
+ * $Id: map_pdb.c,v 1.12 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -67,6 +67,11 @@
 #include "rotated.h"
 #include "color.h"
 #include "xa_config.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define CHECKMALLOC(m)  if (!m) { fprintf(stderr, "***** Malloc Failed *****\n"); exit(0); }
 

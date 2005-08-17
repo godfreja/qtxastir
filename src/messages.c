@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.56 2005/07/06 15:22:47 we7u Exp $
+ * $Id: messages.c,v 1.57 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -60,6 +60,10 @@
 #include "messages.h"
 #include "util.h"
 #include "interface.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 char group_data_file[400];

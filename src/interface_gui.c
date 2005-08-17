@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.90 2005/07/31 06:19:11 we7u Exp $
+ * $Id: interface_gui.c,v 1.91 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -29,8 +29,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <termios.h>
-#include <pthread.h>
-
 #include <Xm/XmAll.h>
 
 #include "xastir.h"
@@ -44,6 +42,11 @@
 #ifdef HAVE_DMALLOC
 #include <dmalloc.h>
 #endif  // HAVE_DMALLOC
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 Widget configure_interface_dialog = NULL;
 Widget choose_interface_dialog = NULL;

@@ -1,5 +1,5 @@
 
-// $Id: geo-find.c,v 1.8 2005/01/08 09:54:35 we7u Exp $
+// $Id: geo-find.c,v 1.9 2005/08/17 19:08:44 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -17,6 +17,11 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define D(x)
 

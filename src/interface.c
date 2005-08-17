@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.225 2005/08/03 20:16:59 we7u Exp $
+ * $Id: interface.c,v 1.226 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,7 +40,6 @@
 #include <signal.h>
 #include <termios.h>
 #include <pwd.h>
-#include <pthread.h>
 #include <termios.h>
 #include <setjmp.h>
 #include <sys/socket.h>
@@ -103,6 +102,11 @@
 #include <netax25/axlib.h>
 #include <netax25/axconfig.h>
 #endif  // HAVE_LIBAX25
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #ifndef SIGRET
 #define SIGRET  void

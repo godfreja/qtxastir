@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.12 2005/08/16 00:45:27 we7u Exp $
+ * $Id: shp_hash.c,v 1.13 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -60,6 +60,11 @@
 /// THIS ONLY FOR DEBUGGING!
 #include "hashtable_private.h"
 #include "shp_hash.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define PURGE_PERIOD 3600     // One hour, hard coded for now.
                               // This should be in a slider in the timing

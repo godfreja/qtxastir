@@ -4,7 +4,7 @@
 
    Portions Copyright (C) 2002-2005  The Xastir Group
 
-   $Id: datum.c,v 1.20 2005/01/08 10:06:52 we7u Exp $
+   $Id: datum.c,v 1.21 2005/08/17 19:08:43 we7u Exp $
 */
 
 
@@ -21,6 +21,10 @@
 #include "datum.h"
 #include "main.h"
 #include "util.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 //  ellipsoid: index into the gEllipsoid[] array, in which

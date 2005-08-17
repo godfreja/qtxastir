@@ -1,5 +1,5 @@
 /*
- * $Id: location.c,v 1.6 2005/01/08 10:06:53 we7u Exp $
+ * $Id: location.c,v 1.7 2005/08/17 19:09:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,6 +35,10 @@
 #include "xastir.h"
 #include "main.h"
 #include "track_gui.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 static long last_mid_x_long_offset;     // remember last screen settings

@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.30 2005/07/31 06:19:11 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.31 2005/08/17 19:08:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -68,6 +68,9 @@
 #include "bulletin_gui.h"
 #include "interface.h"
 #include "util.h"
+
+// Must be last include file
+#include "leak_detection.h"
 
 
 

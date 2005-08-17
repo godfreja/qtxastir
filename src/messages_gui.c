@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.43 2005/07/31 06:19:14 we7u Exp $
+ * $Id: messages_gui.c,v 1.44 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -33,6 +33,10 @@
 #include "xastir.h"
 #include "main.h"
 #include "lang.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 #define MAX_PATH 200

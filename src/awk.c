@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.27 2005/05/06 20:59:56 we7u Exp $
+ * $Id: awk.c,v 1.28 2005/08/17 19:08:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -68,6 +68,10 @@
 #include <sys/types.h>
 #include "awk.h"
 #include "snprintf.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 #define min(a,b) ((a)<(b)?(a):(b))

@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.70 2005/08/05 03:13:51 we7u Exp $
+ * $Id: draw_symbols.c,v 1.71 2005/08/17 19:08:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -38,6 +38,11 @@
 #include "util.h"
 #include "color.h"
 #include "maps.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define ANGLE_UPDOWN 30         /* prefer horizontal cars if less than 45 degrees */
 

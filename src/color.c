@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: color.c,v 1.11 2005/01/08 10:06:52 we7u Exp $
+ * $Id: color.c,v 1.12 2005/08/17 19:08:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -31,6 +31,10 @@
 #include "xastir.h"
 #include "color.h"
 #include "xa_config.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 static color_load color_choice[MAX_COLORS];

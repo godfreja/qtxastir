@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.16 2005/07/21 02:19:11 we7u Exp $
+ * $Id: map_cache.c,v 1.17 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -56,6 +56,12 @@
 #include "maps.h" 
 #include "map_cache.h" 
 #include <db.h>
+
+// Must be last include file
+#include "leak_detection.h"
+
+
+
 
 
 // This is used to temporarily disable fetching from the map cache.

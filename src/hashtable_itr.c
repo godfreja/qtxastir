@@ -1,6 +1,6 @@
 
 
-// $Id: hashtable_itr.c,v 1.5 2005/01/08 09:54:36 we7u Exp $
+// $Id: hashtable_itr.c,v 1.6 2005/08/17 19:09:40 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark  <firstname.lastname@cl.cam.ac.uk> */
@@ -16,6 +16,11 @@
 #include "hashtable.h"
 #include "hashtable_private.h"
 #include "hashtable_itr.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 
 

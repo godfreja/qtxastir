@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.472 2005/08/06 07:14:01 tvrusso Exp $
+ * $Id: db.c,v 1.473 2005/08/17 19:08:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -63,6 +63,11 @@
 #ifdef  WITH_DMALLOC
 #include <dmalloc.h>
 #endif  // WITH_DMALLOC
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define CHECKMALLOC(m)  if (!m) { fprintf(stderr, "***** Malloc Failed *****\n"); exit(0); }
 

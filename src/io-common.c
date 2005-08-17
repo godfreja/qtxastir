@@ -1,13 +1,19 @@
 
-// $Id: io-common.c,v 1.2 2005/01/08 09:54:35 we7u Exp $
+// $Id: io-common.c,v 1.3 2005/08/17 19:09:40 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
  * Portions Copyright (C) 2004-2005  The Xastir Group
  */
 #include "io.h"
-
 #include <ctype.h>
+
+// Must be last include file
+#include "leak_detection.h"
+
+
+
+
 
 int io_out_i4(struct io_file *f,int pos,int o) {
         unsigned char x[4];

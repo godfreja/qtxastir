@@ -1,6 +1,6 @@
 
 
-// $Id: hashtable.c,v 1.3 2005/01/08 09:54:36 we7u Exp $
+// $Id: hashtable.c,v 1.4 2005/08/17 19:09:40 we7u Exp $
 
 
 /* Copyright (C) 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
@@ -15,6 +15,10 @@
 #include "xastir.h" /* defines GC_MALLOC/GC_FREE */
 #include "hashtable.h"
 #include "hashtable_private.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 /*

@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.15 2005/07/21 20:04:40 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.16 2005/08/17 19:08:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,6 +40,11 @@
 #include "maps.h"
 #include "io.h"
 #include "geo.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 Widget geocoder_place_dialog = (Widget)NULL;
 Widget geocoder_zip_data = (Widget)NULL;

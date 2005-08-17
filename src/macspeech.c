@@ -1,6 +1,6 @@
 /* Copyright (C) 2004-2005  The Xastir Group                             */
 /*                                                                       */
-/* $Id: macspeech.c,v 1.2 2005/01/08 10:06:53 we7u Exp $ */
+/* $Id: macspeech.c,v 1.3 2005/08/17 19:09:40 we7u Exp $ */
 /*                                                                       */
 /*  First draft                                                          */
 /*                  KB3EGH 03/24/2004                                    */
@@ -21,6 +21,11 @@
 /* can't include this or X11's Cursor conflicts */
 /* #include "xastir.h"*/
 #include "snprintf.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 static char last_speech_text[8000];
 static time_t last_speech_time = (time_t)0;

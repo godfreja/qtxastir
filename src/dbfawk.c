@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.27 2005/07/09 03:30:45 we7u Exp $
+ * $Id: dbfawk.c,v 1.28 2005/08/17 19:08:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -61,6 +61,10 @@
 #include "maps.h"
 
 #include <sys/stat.h>
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 

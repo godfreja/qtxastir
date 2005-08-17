@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.41 2005/08/10 18:38:24 we7u Exp $
+ * $Id: track_gui.c,v 1.42 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -38,6 +38,11 @@
 #include "popup.h"
 #include "util.h"
 #include "xa_config.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 Widget track_station_dialog = (Widget)NULL;
 Widget track_station_data = (Widget)NULL;

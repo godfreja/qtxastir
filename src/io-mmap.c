@@ -1,5 +1,5 @@
 
-// $Id: io-mmap.c,v 1.3 2005/01/08 09:54:35 we7u Exp $
+// $Id: io-mmap.c,v 1.4 2005/08/17 19:09:40 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -16,6 +16,11 @@
 #include <sys/mman.h>
 #include <sys/types.h>
 #include <string.h>
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 struct io_file {
 	int fd;

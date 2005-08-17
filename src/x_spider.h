@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.h,v 1.6 2005/01/08 09:46:48 we7u Exp $
+ * $Id: x_spider.h,v 1.7 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -24,7 +24,6 @@
 #ifndef __XASTIR_SERVER_H
 #define __XASTIR_SERVER_H
 
-#include <pthread.h>
 //#include "xastir.h"
 
 

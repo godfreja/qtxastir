@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.48 2005/06/01 19:24:44 we7u Exp $
+ * $Id: gps.c,v 1.49 2005/08/17 19:08:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -55,6 +55,10 @@
 #include "interface.h"
 #include "lang.h"
 #include "util.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 char gps_gprmc[MAX_GPS_STRING+1];

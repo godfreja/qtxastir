@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.101 2005/08/15 06:43:23 we7u Exp $
+ * $Id: map_shp.c,v 1.102 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -104,6 +104,11 @@ extern int npoints;		/* tsk tsk tsk -- globals */
 #ifdef USE_RTREE
 #include <rtree/index.h>    
 #include "shp_hash.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 static int *RTree_hitarray=NULL;
 int RTree_hitarray_size=0;

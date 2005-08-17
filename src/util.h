@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.37 2005/07/29 19:29:23 we7u Exp $
+ * $Id: util.h,v 1.38 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27,7 +27,6 @@
 #define __XASTIR_UTIL_H
 
 #include "database.h"
-#include <pthread.h>
 #include "hashtable.h"
 
 // Max number of WIDE digipeaters allowed

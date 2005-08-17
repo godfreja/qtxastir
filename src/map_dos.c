@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.16 2005/07/26 19:16:59 tvrusso Exp $
+ * $Id: map_dos.c,v 1.17 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -66,6 +66,11 @@
 #include "rotated.h"
 #include "color.h"
 #include "xa_config.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #define CHECKMALLOC(m)  if (!m) { fprintf(stderr, "***** Malloc Failed *****\n"); exit(0); }
 

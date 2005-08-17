@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.18 2005/01/08 10:06:54 we7u Exp $
+ * $Id: popup_gui.c,v 1.19 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -39,6 +39,10 @@
 #include "lang.h"
 #include "rotated.h"
 #include "snprintf.h"
+
+// Must be last include file
+#include "leak_detection.h"
+
 
 
 static Popup_Window pw[MAX_POPUPS];

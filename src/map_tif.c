@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.24 2005/07/28 20:41:19 we7u Exp $
+ * $Id: map_tif.c,v 1.25 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -83,6 +83,9 @@ extern int mag;
 #include "geotiffio.h"
 #include "geo_normalize.h"
 #include "projects.h"
+
+// Must be last include file
+#include "leak_detection.h"
 
 
 

@@ -1,7 +1,7 @@
 /*
  * snprintf.c - a portable implementation of snprintf and vsnprintf
  *
- * $Id: snprintf.c,v 1.6 2005/01/08 10:06:54 we7u Exp $
+ * $Id: snprintf.c,v 1.7 2005/08/17 19:12:05 we7u Exp $
  */
 /*
  * Portions Copyright (C) 2000-2005 The Xastir Group
@@ -24,6 +24,7 @@
 
 #include "snprintf.h"
 #include "config.h"
+
 
 /*
  * Copyright Patrick Powell 1995
@@ -109,6 +110,12 @@
 #  define VA_SHIFT(v,t) v = va_arg(ap,t)
 #  define VA_END va_end(ap)
 #endif  // __STDC__
+
+
+// Must be last include file
+#include "leak_detection.h"
+
+
 
 #ifdef HAVE_LONG_DOUBLE
 #define LDOUBLE long double

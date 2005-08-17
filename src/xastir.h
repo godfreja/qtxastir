@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.45 2005/07/24 02:29:57 we7u Exp $
+ * $Id: xastir.h,v 1.46 2005/08/17 19:12:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27,55 +27,6 @@
 #ifndef _XASTIR_H
 #define _XASTIR_H
 
-
-// If libgc is installed, uncomment this next line to enable memory
-// leak detection:
-#define DETECT_MEMORY_LEAKS
-
-
-// Defines for including the libgc garbage collection library.
-// This enables automatic garbage collection of unused memory,
-// very similar to the garbage collection in Java.  Get libgc from
-// here:  http://www.hpl.hp.com/personal/Hans_Boehm/gc/
-//
-// This will cause stats to be printed every 60 seconds, 'cuz we
-// call GC_collect via a macro from UpdateTime() once per minute:
-// export GC_PRINT_STATS=1; xastir &
-//
-// Compile libgc with this option for more debugging output.  I
-// didn't do so:  --enable-full_debug 
-//
-// If we enable these thread options, Xastir won't link with the
-// library.  Since we don't allocate dynamic memory in the child
-// threads anyway, skip them.
-// --enable-threads=posix --enable-thread-local-alloc --enable-parallel-mark
-//
-// Call GC_gcollect at appropriate points to check for leaks.  We do
-// this via the CHECK_LEAKS macro called from main.c:UpdateTime.
-//
-#ifdef HAVE_GC_H
-  #ifdef HAVE_LIBGC
-
-    // We use this define to enable code in *.c files
-    #define USING_LIBGC
-
-    // Set up for threads
-//    #define GC_THREADS
-
-    // Ask for more debugging
-    #define GC_DEBUG
-
-    #include <malloc.h>
-    #include <gc.h>
-    #define malloc(n) GC_MALLOC(n)
-    #define calloc(m,n) GC_MALLOC((m)*(n))
-    #define free(p) GC_FREE(p)
-    #define realloc(p,n) GC_REALLOC((p),(n))
-    #define CHECK_LEAKS() GC_gcollect()
-
-  #endif    // HAVE_LIBGC
-#endif  // HAVE_GC_H
- 
 
 
 // Macros that help us avoid warnings on 64-bit CPU's.
