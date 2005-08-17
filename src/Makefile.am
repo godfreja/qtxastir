@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.28 2005/05/19 15:01:11 we7u Exp $
+# $Id: Makefile.am,v 1.29 2005/08/17 19:04:40 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -31,6 +31,7 @@ xastir_SOURCES = \
     interface_gui.c \
     io-common.c io-mmap.c io.h \
     lang.c lang.h \
+    leak_detection.h \
     list_gui.c list_gui.h \
     locate_gui.c \
     location.c \
