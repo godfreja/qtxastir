@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.176 2005/08/17 19:13:57 we7u Exp $
+ * $Id: util.c,v 1.177 2005/08/17 20:16:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -293,9 +293,7 @@ void destroy_tactical_hash(void) {
 
         tactical_hash = NULL;
 
-//#ifndef USING_LIBGC
-        if (iterator) free(iterator);
-//#endif  // USING_LIBGC
+//        if (iterator) free(iterator);
     }
 }
 
