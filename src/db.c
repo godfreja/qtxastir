@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.473 2005/08/17 19:08:43 we7u Exp $
+ * $Id: db.c,v 1.474 2005/08/17 20:11:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1123,7 +1123,7 @@ void alert_data_add(char *call_sign, char *from_call, char *data,
     char time_data[MAX_TIME];
 
 
-    if (debug_level & 1)
+    if (debug_level & 2)
         fprintf(stderr,"alert_data_add start\n");
 
     if ( (data != NULL) && (strlen(data) > MAX_MESSAGE_LENGTH) ) {
@@ -1181,7 +1181,7 @@ void alert_data_add(char *call_sign, char *from_call, char *data,
     // so that we can later draw it.
     fill_in_new_alert_entries(da, ALERT_MAP_DIR);
 
-    if (debug_level & 1)
+    if (debug_level & 2)
         fprintf(stderr,"alert_data_add end\n");
 
 }   // End of alert_data_add()
