@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.474 2005/08/17 20:11:32 we7u Exp $
+ * $Id: db.c,v 1.475 2005/08/18 15:22:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -59,10 +59,6 @@
 #include "track_gui.h"
 #include "xa_config.h"
 #include "x_spider.h"
-
-#ifdef  WITH_DMALLOC
-#include <dmalloc.h>
-#endif  // WITH_DMALLOC
 
 // Must be last include file
 #include "leak_detection.h"
