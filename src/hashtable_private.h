@@ -1,6 +1,6 @@
 
 
-// $Id: hashtable_private.h,v 1.4 2005/08/18 15:23:13 we7u Exp $
+// $Id: hashtable_private.h,v 1.5 2005/08/18 22:11:00 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
@@ -40,7 +40,7 @@ hash(struct hashtable *h, void *k);
 static inline unsigned int
 indexFor(unsigned int tablelength, unsigned int hashvalue) {
     return (hashvalue % tablelength);
-};
+}
 
 /* Only works if tablelength == 2^N */
 /*static inline unsigned int
