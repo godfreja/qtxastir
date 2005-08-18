@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.44 2005/08/17 19:12:05 we7u Exp $
+ * $Id: messages_gui.c,v 1.45 2005/08/18 21:43:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -473,7 +473,7 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message_n
         // We have the message text now.  Check it for illegal
         // characters, remove them and substitute spaces if found.
         // Illegal characters are '|', '{', and '~' for messaging.
-        for (jj = 0; jj < strlen(temp2); jj++) {
+        for (jj = 0; jj < (int)strlen(temp2); jj++) {
             if (       temp2[jj] == '|'
                     || temp2[jj] == '{'
                     || temp2[jj] == '~' ) {
