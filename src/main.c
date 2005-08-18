@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.599 2005/08/17 19:11:00 we7u Exp $
+ * $Id: main.c,v 1.600 2005/08/18 21:42:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -479,6 +479,7 @@ What_to_display Display_ = { 1, // callsign
                              1, // temperature_only
                              1, // wind_barb
 
+                             1, // aloha_circle
                              1, // ambiguity
                              1, // phg
                              1, // default_phg
