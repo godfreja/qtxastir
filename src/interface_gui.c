@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.91 2005/08/17 19:09:40 we7u Exp $
+ * $Id: interface_gui.c,v 1.92 2005/08/18 15:24:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -38,10 +38,6 @@
 #include "wx.h"
 #include "draw_symbols.h"
 #include "util.h"
-
-#ifdef HAVE_DMALLOC
-#include <dmalloc.h>
-#endif  // HAVE_DMALLOC
 
 // Must be last include file
 #include "leak_detection.h"
