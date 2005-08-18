@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.13 2005/08/17 19:12:05 we7u Exp $
+ * $Id: shp_hash.c,v 1.14 2005/08/18 22:56:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -333,4 +333,9 @@ void purge_shp_hash() {
 
 #endif  // HAVE_LIBSHP
 #endif // USE_RTREE
+
+
+// To get rid of "-pedantic" compiler warning:
+int NON_EMPTY_SOURCE_FILE;
+
 
