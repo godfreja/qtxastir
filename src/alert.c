@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.92 2005/08/17 20:10:06 we7u Exp $
+ * $Id: alert.c,v 1.93 2005/08/18 15:21:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -286,9 +286,6 @@
 
 #include "config.h"
 
-#ifdef  WITH_DMALLOC
-#include <dmalloc.h>
-#endif  // WITH_DMALLOC
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -825,10 +822,10 @@ int alert_expire(void) {
         temp = hashtable_iterator_value(iterator);
 
         if (!temp) {
-//#ifndef USING_LIBGC
+#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 1\n");
-//            if (iterator) free(iterator);
-//#endif  // USING_LIBGC
+            if (iterator) free(iterator);
+#endif  // USING_LIBGC
             return(expire_count);
         }
 
@@ -858,10 +855,10 @@ int alert_expire(void) {
             }
         }
     }
-//#ifndef USING_LIBGC
+#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 2\n");
-//    if (iterator) free(iterator);
-//#endif  // USING_LIBGC
+    if (iterator) free(iterator);
+#endif  // USING_LIBGC
 
     // Cause a screen redraw if we expired some alerts
     if (expire_count) {
@@ -1346,10 +1343,10 @@ int alert_on_screen(void) {
         }
         temp = get_next_wx_alert(iterator);
     }
-//#ifndef USING_LIBGC
+#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 3\n");
-//    if (iterator) free(iterator);
-//#endif  // USING_LIBGC
+    if (iterator) free(iterator);
+#endif  // USING_LIBGC
 
     return (alert_count);
 }
