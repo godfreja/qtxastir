@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.177 2005/08/17 20:16:49 we7u Exp $
+ * $Id: util.c,v 1.178 2005/08/18 15:27:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -55,10 +55,6 @@
 #include "hashtable.h"
 #include "hashtable_itr.h"
 
-
-#ifdef HAVE_DMALLOC
-#include <dmalloc.h>
-#endif  // HAVE_DMALLOC
 
 #define CHECKMALLOC(m)  if (!m) { fprintf(stderr, "***** Malloc Failed *****\n"); exit(0); }
 
@@ -293,7 +289,7 @@ void destroy_tactical_hash(void) {
 
         tactical_hash = NULL;
 
-//        if (iterator) free(iterator);
+        if (iterator) free(iterator);
     }
 }
 
