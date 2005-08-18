@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.93 2005/08/18 15:21:47 we7u Exp $
+ * $Id: alert.c,v 1.94 2005/08/18 22:27:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -394,7 +394,7 @@ void alert_fill_unique_string(alert_entry *alert) {
 //
 unsigned int wx_alert_hash_from_key(void *key) {
     alert_entry *temp = key;
-    unsigned char *jj = temp->unique_string;
+    char *jj = temp->unique_string;
     unsigned int hash = 1;
     int ii = 1;
 

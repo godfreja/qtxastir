@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.475 2005/08/18 15:22:11 we7u Exp $
+ * $Id: db.c,v 1.476 2005/08/18 22:27:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -17388,7 +17388,7 @@ double calc_aloha_distance() {
             the_aloha_stats.other_mobiles++;
         }
         if (debug_level & 2048) {
-            fprintf(stderr,"  %d:%s: d=%lf, digi=%c, mobile=%c, motion=%c, home=%c, wx=%c (cum=%d)\n",
+            fprintf(stderr,"  %d:%s: d=%f, digi=%c, mobile=%c, motion=%c, home=%c, wx=%c (cum=%d)\n",
                     ii,
                     aloha_array[ii].call_sign,
                     aloha_array[ii].distance,
@@ -17452,7 +17452,7 @@ void calc_aloha()    {
                     fprintf(stderr,"Aloha distance indeterminate\n");
                 }
                 else {
-                    fprintf(stderr,"Aloha distance is %lf",aloha_radius);
+                    fprintf(stderr,"Aloha distance is %f",aloha_radius);
                     if (english_units) {
                         fprintf(stderr," miles.\n");
                     } 
