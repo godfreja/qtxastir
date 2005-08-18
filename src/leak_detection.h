@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: leak_detection.h,v 1.1 2005/08/17 19:02:53 we7u Exp $
+ * $Id: leak_detection.h,v 1.2 2005/08/18 15:26:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2005  The Xastir Group
@@ -61,6 +61,10 @@
 // should not include pthread.h themselves.
 //
 #include <pthread.h>
+#include <malloc.h>
+#ifdef HAVE_DMALLOC
+#include <dmalloc.h>
+#endif  // HAVE_DMALLOC
 //
 #ifdef HAVE_GC_H
   #ifdef HAVE_LIBGC
@@ -80,7 +84,6 @@
     // Ask for more debugging
     #define GC_DEBUG
 
-    #include <malloc.h>
     #include <gc.h>
     #define malloc(n) GC_MALLOC(n)
     #define calloc(m,n) GC_MALLOC((m)*(n))
