@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.40 2005/08/17 19:12:05 we7u Exp $
+ * $Id: wx_gui.c,v 1.41 2005/08/18 15:28:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -406,10 +406,10 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
             alert = get_next_wx_alert(iterator);
 
         }   // End of for loop
-//#ifndef USING_LIBGC
+#ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 9\n");
         if (iterator) free(iterator);
-//#endif  // USING_LIBGC
+#endif  // USING_LIBGC
 
         // If we have fewer alerts now, delete the extras from the window
         if (ii < max_item_count) {
