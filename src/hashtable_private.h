@@ -1,6 +1,6 @@
 
 
-// $Id: hashtable_private.h,v 1.3 2005/01/08 09:46:48 we7u Exp $
+// $Id: hashtable_private.h,v 1.4 2005/08/18 15:23:13 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
@@ -11,7 +11,6 @@
 #define __HASHTABLE_PRIVATE_CWC22_H__
 
 #include "hashtable.h"
-#include "xastir.h" /* Defines GC_MALLOC/GC_FREE */
 
 
 /*****************************************************************************/
