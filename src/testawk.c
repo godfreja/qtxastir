@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testawk.c,v 1.22 2005/08/17 19:12:05 we7u Exp $
+ * $Id: testawk.c,v 1.23 2005/08/18 21:49:45 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -92,13 +92,13 @@ void print_symtbl(awk_symtab *this) {
 
 
 awk_rule rules[] = {
-    { 0, BEGIN, NULL, NULL, 0, 0, "key=\"\"; lanes=1; color=8; name=\"\"; filled=0; pattern=1; display_level=8192; label_level=32",0 },
-    { 0, REGEXP, "^TLID=(.*)$", NULL, 0, 0, "key=\"$1\"",0 },
-    { 0, REGEXP, "^FENAME=United States Highway (.*)$", NULL, 0, 0, "name=\"US $1\"; next",0 },
-    { 0, REGEXP, "^FENAME=(.*)$", NULL, 0, 0, "name=\"$1\"; next",0 },
-    { 0, REGEXP, "^CFCC=A1", NULL, 0, 0, "lanes=4; color=4; next",0 },
-    { 0, REGEXP, "^CFCC=A3", NULL, 0, 0, "lanes=2; color=8",0 },
-    { 0, REGEXP, "^CFCC=A3[1-6]", NULL, 0, 0, "display_level=256; next",0 },
+    { 0, BEGIN, NULL, NULL, 0, 0, "key=\"\"; lanes=1; color=8; name=\"\"; filled=0; pattern=1; display_level=8192; label_level=32",0 ,0 },
+    { 0, REGEXP, "^TLID=(.*)$", NULL, 0, 0, "key=\"$1\"",0,0  },
+    { 0, REGEXP, "^FENAME=United States Highway (.*)$", NULL, 0, 0, "name=\"US $1\"; next",0,0  },
+    { 0, REGEXP, "^FENAME=(.*)$", NULL, 0, 0, "name=\"$1\"; next",0,0  },
+    { 0, REGEXP, "^CFCC=A1", NULL, 0, 0, "lanes=4; color=4; next",0,0  },
+    { 0, REGEXP, "^CFCC=A3", NULL, 0, 0, "lanes=2; color=8",0,0  },
+    { 0, REGEXP, "^CFCC=A3[1-6]", NULL, 0, 0, "display_level=256; next",0,0  },
 };
 
 
