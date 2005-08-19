@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.73 2005/08/19 21:26:45 we7u Exp $
+ * $Id: draw_symbols.c,v 1.74 2005/08/19 21:31:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -145,10 +145,9 @@ void draw_nice_string(Widget w, Pixmap where, int style, long x, long y, char *t
                 + xfs_ptr->max_bounds.descent;
 
             if (xfs_ptr) {
+                // This leaks memory if the last parameter is a "0"
                 XFreeFontInfo(NULL, xfs_ptr, 1);
-//                XFreeFont(XtDisplay(w), xfs_ptr);
             }
-
 
             // Normal font returns 10 & 13.  Large system font
             // returns 13 & 20 here.
