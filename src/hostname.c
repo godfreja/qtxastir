@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.20 2005/08/18 22:56:04 we7u Exp $
+ * $Id: hostname.c,v 1.21 2005/08/19 18:33:52 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -50,7 +50,9 @@
 #include "leak_detection.h"
 
 
-
+#ifndef HAVE_SIGHANDLER_T
+typedef sig_t sighandler_t;
+#endif
 
 
 #ifndef __LCLINT__

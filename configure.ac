@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.129 2005/08/15 20:01:55 we7u Exp $
+# $Id: configure.ac,v 1.130 2005/08/19 18:33:52 tvrusso Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -166,6 +166,9 @@ AC_STRUCT_TIMEZONE
 #Some (Mac?) systems don't define this where it should be, so we kludge
 AC_CHECK_TYPES(socklen_t,,,[#include <sys/types.h>
 #include <sys/socket.h>])
+
+# some BSD systems do not define sighandler_t, but rather sig_t
+AC_CHECK_TYPES(sighandler_t,,,[#include <signal.h>])
 
 #Force this into config.h.in
 AH_BOTTOM([#ifndef HAVE_SOCKLEN_T
