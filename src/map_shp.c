@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.102 2005/08/17 19:12:05 we7u Exp $
+ * $Id: map_shp.c,v 1.103 2005/08/20 01:53:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4016,7 +4016,7 @@ if (on_screen) {
 
 // This function will delete any pre-loaded dbfawk sigs and clear Dbf_sigs
 // This will trigger a  reload the first time a shapfile is redisplayed
-void clear_dbfawk_sigs() {
+void clear_dbfawk_sigs(void) {
     //    fprintf(stderr,"Clearing signatures.\n");
     if (Dbf_sigs ) {
         dbfawk_free_sigs(Dbf_sigs);

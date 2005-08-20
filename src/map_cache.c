@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.18 2005/08/18 23:21:51 we7u Exp $
+ * $Id: map_cache.c,v 1.19 2005/08/20 01:53:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -883,7 +883,7 @@ clear_dangerous();
 
 
 
-char * map_cache_fileid(){
+char * map_cache_fileid(void) {
 
     // returns a unique identifier 
     // used for generating filenames for cached files
@@ -967,7 +967,7 @@ int map_cache_expired( char * mc_filename, time_t mc_max_age ){
 
 // Functions that need writing 
 
-int mc_check_space_used () {
+int mc_check_space_used (void) {
     
    return(0); 
 
@@ -977,7 +977,7 @@ int mc_check_space_used () {
 
 
 
-int mc_update_space_used () {
+int mc_update_space_used (void) {
     
    return(0); 
 

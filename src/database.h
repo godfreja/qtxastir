@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.17 2005/06/09 05:08:09 tvrusso Exp $
+ * $Id: database.h,v 1.18 2005/08/20 01:53:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -613,8 +613,8 @@ typedef struct {
     int total;
 } aloha_stats;
 
-double calc_aloha_distance(); //meat
-void calc_aloha(); // periodic function
+double calc_aloha_distance(void); //meat
+void calc_aloha(void); // periodic function
 void Show_Aloha_Stats(Widget w, XtPointer clientData, 
                       XtPointer callData); // popup window
 
