@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.70 2005/08/17 18:59:55 we7u Exp $
+$Id: INSTALL,v 1.71 2005/08/20 01:27:00 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -1335,6 +1335,13 @@ then invoke Xastir like this:
 
 Checking for Memory Leaks:
 --------------------------
+
+A simple method for just checking malloc's/free's is to set
+MALLOC_CHECK to a 1 or a 2, at least on Linux.  See the malloc man
+page for more info.
+
+For more thorough checks, use libgc:
+
 1) Install libgc, the conservative garbage collector for C and C++.
 Find it at:
 
