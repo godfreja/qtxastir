@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.33 2005/08/17 19:09:40 we7u Exp $
+ * $Id: interface.h,v 1.34 2005/08/22 18:45:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -223,6 +223,8 @@ extern void update_interface_list(void);
 extern int WX_rain_gauge_type;
 
 /* interface.c */
+extern int is_local_interface(int port);
+extern int is_network_interface(int port);
 extern void send_agwpe_packet(int xastir_interface, int RadioPort, unsigned char type, unsigned char *FromCall, unsigned char *ToCall, unsigned char *Path, unsigned char *Data, int length);
 
 extern unsigned char *incoming_data;

@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.229 2005/08/18 23:54:37 we7u Exp $
+ * $Id: interface.c,v 1.230 2005/08/22 18:45:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -141,6 +141,64 @@ int data_port;
 
 // interface wait time out
 int NETWORK_WAITTIME;
+
+
+
+
+
+// Returns 1 if a local interface, 0 otherwise
+//
+int is_local_interface(int port) {
+
+    switch (port_data[port].device_type) {
+
+        case DEVICE_SERIAL_TNC:
+        case DEVICE_SERIAL_TNC_HSP_GPS:
+        case DEVICE_SERIAL_GPS:
+        case DEVICE_SERIAL_WX:
+        case DEVICE_AX25_TNC:
+        case DEVICE_SERIAL_TNC_AUX_GPS:
+        case DEVICE_SERIAL_KISS_TNC:
+        case DEVICE_SERIAL_MKISS_TNC:
+            return(1);  // Found a local interface
+            break;
+
+        // Could be port -1 which signifies a spider port or port
+        // -99 which signifies "All Ports" and is used for
+        // transmitting out all ports at once.
+        default:
+            return(0);  // Unknown or network interface
+            break;
+    }
+}
+
+
+
+
+
+// Returns 1 if a network interface, 0 otherwise
+//
+int is_network_interface(int port) {
+
+    switch (port_data[port].device_type) {
+
+        case DEVICE_NET_STREAM:
+        case DEVICE_NET_GPSD:
+        case DEVICE_NET_WX:
+        case DEVICE_NET_DATABASE:
+        case DEVICE_NET_AGWPE:
+            return(1);  // Found a network interface
+            break;
+
+        // Could be port -1 which signifies a spider port or port
+        // -99 which signifies "All Ports" and is used for
+        // transmitting out all ports at once.
+        default:
+            return(0);  // Unknown or local interface
+            break;
+    }
+}
+
 
 
 
