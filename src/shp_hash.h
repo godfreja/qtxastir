@@ -1,5 +1,5 @@
 
-// $Id: shp_hash.h,v 1.3 2005/01/08 09:46:48 we7u Exp $
+// $Id: shp_hash.h,v 1.4 2005/08/22 18:37:04 we7u Exp $
 // Copyright (C) 2004-2005  The Xastir Group
 
 
@@ -29,10 +29,10 @@ typedef struct _shpinfo{
 void init_shp_hash(int clobber);
 void add_shp_to_hash(char *filename,SHPHandle sHP);
 void build_rtree(struct Node **root, SHPHandle sHP);
-void destroy_shp_hash();
+void destroy_shp_hash(void);
 void empty_shpinfo(shpinfo *si);
 void destroy_shpinfo(shpinfo *si);
-void purge_shp_hash();
+void purge_shp_hash(void);
 shpinfo *get_shp_from_hash(char *filename);
 
 #endif // USE_RTREE
