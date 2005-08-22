@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: rect.c,v 1.3 2005/01/14 04:16:10 tvrusso Exp $
+ * $Id: rect.c,v 1.4 2005/08/22 18:36:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -64,7 +64,7 @@ void RTreeInitRect(struct Rect *R)
 | Return a rect whose first low side is higher than its opposite side -
 | interpreted as an undefined rect.
 -----------------------------------------------------------------------------*/
-struct Rect RTreeNullRect()
+struct Rect RTreeNullRect(void)
 {
 	struct Rect r;
 	register int i;

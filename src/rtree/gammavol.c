@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: gammavol.c,v 1.3 2005/01/14 04:16:10 tvrusso Exp $
+ * $Id: gammavol.c,v 1.4 2005/08/22 18:36:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -54,7 +54,7 @@ double sphere_volume(double dimension)
 }
 
 
-int main()
+int main(void)
 {
 	double dim=0, delta=1;
 	while(ABS(delta) > EP)

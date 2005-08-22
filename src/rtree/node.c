@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: node.c,v 1.6 2005/01/14 04:16:10 tvrusso Exp $
+ * $Id: node.c,v 1.7 2005/08/22 18:36:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -66,7 +66,7 @@ void RTreeInitNode(struct Node *N)
 
 // Make a new node and initialize to have all branch cells empty.
 //
-struct Node * RTreeNewNode()
+struct Node * RTreeNewNode(void)
 {
 	register struct Node *n;
 

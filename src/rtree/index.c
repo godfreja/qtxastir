@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: index.c,v 1.4 2005/01/14 04:16:10 tvrusso Exp $
+ * $Id: index.c,v 1.5 2005/08/22 18:36:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,7 +41,7 @@
 
 // Make a new index, empty.  Consists of a single node.
 //
-struct Node * RTreeNewIndex()
+struct Node * RTreeNewIndex(void)
 {
 	struct Node *x;
 	x = RTreeNewNode();
@@ -207,7 +207,7 @@ int RTreeInsertRect(struct Rect *R, int Tid, struct Node **Root, int Level)
 // Allocate space for a node in the list used in DeletRect to
 // store Nodes that are too empty.
 //
-static struct ListNode * RTreeNewListNode()
+static struct ListNode * RTreeNewListNode(void)
 {
 	return (struct ListNode *) malloc(sizeof(struct ListNode));
 	//return new ListNode;

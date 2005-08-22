@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: card.c,v 1.3 2005/01/14 04:16:10 tvrusso Exp $
+ * $Id: card.c,v 1.4 2005/08/22 18:36:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -48,5 +48,5 @@ static int set_max(int *which, int new_max)
 
 int RTreeSetNodeMax(int new_max) { return set_max(&NODECARD, new_max); }
 int RTreeSetLeafMax(int new_max) { return set_max(&LEAFCARD, new_max); }
-int RTreeGetNodeMax() { return NODECARD; }
-int RTreeGetLeafMax() { return LEAFCARD; }
+int RTreeGetNodeMax(void) { return NODECARD; }
+int RTreeGetLeafMax(void) { return LEAFCARD; }
