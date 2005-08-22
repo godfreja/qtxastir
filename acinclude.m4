@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.39 2005/08/20 01:40:42 we7u Exp $
+# $Id: acinclude.m4,v 1.40 2005/08/22 22:21:44 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -77,9 +77,8 @@ done
 rm -f gccflags
 
 # add any other flags that aren't added earlier
-# "-W -pedantic -Wall -Wpointer-arith -Wstrict-prototypes"
 #
-for f in -Wall -Wpointer-arith -Wstrict-prototypes; do
+for f in -W -Wall -Wpointer-arith -Wstrict-prototypes -Wno-unused-parameter; do
 echo $CFLAGS | grep -- $f - > /dev/null || CFLAGS="$CFLAGS $f"
 done
 
@@ -689,7 +688,7 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.39 2005/08/20 01:40:42 we7u Exp $
+dnl $Id: acinclude.m4,v 1.40 2005/08/22 22:21:44 we7u Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.
