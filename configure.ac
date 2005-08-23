@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.131 2005/08/23 21:18:05 we7u Exp $
+# $Id: configure.ac,v 1.132 2005/08/23 21:23:55 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -592,6 +592,7 @@ echo "Building with ShapeLib .......................... : $use_shapelib"
 echo "Building with pcre .............................. : $use_pcre"
 echo "Building with dbfawk ............................ : $use_dbfawk"
 echo "Building with map caching ....................... : $use_map_cache"
+echo "-------------------------------------------------------"
 echo "Building with ErrorPopups (Old Method) .......... : $use_err_popups"
 echo "Building with libgc (Debug) ..................... : $use_libgc"
 echo "Building with profiling (Debug) ................. : $use_profiling"
