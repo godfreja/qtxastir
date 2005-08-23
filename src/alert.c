@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.94 2005/08/18 22:27:35 we7u Exp $
+ * $Id: alert.c,v 1.95 2005/08/23 19:32:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -836,8 +836,8 @@ int alert_expire(void) {
                 fprintf(stderr,
                     "alert_expire: Clearing %s, current: %lu, alert: %lu\n",
                     temp->unique_string,
-                    time(NULL),
-                    temp->expiration);
+                    (unsigned long)time(NULL),
+                    (unsigned long)temp->expiration);
             }
 
             // Free the storage space
@@ -925,8 +925,8 @@ clear_dangerous();
         if (debug_level & 2) {
             fprintf(stderr,
                 "Newest Alert Expired->Clearing, current: %lu, alert: %lu\n",
-                time(NULL),
-                entry->expiration );
+                (unsigned long)time(NULL),
+                (unsigned long)entry->expiration );
         }
 
 clear_dangerous();
@@ -1027,7 +1027,7 @@ return(entry);
         fprintf(stderr,"%s %s %lu\n",
             entry->to,
             entry->title,
-            entry->expiration);
+            (unsigned long)entry->expiration);
     }
 
 clear_dangerous();
