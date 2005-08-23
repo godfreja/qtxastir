@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.230 2005/08/22 18:45:58 we7u Exp $
+ * $Id: interface.c,v 1.231 2005/08/23 19:39:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1951,6 +1951,8 @@ int OpenTrac_decode_position(unsigned char *element,
 int OpenTrac_decode_timestamp(unsigned char *element,
                               int           element_len,
                               long          *rawtime) {
+    time_t rawtime_t;
+
 
     *rawtime = 0;
 
@@ -1959,7 +1961,9 @@ int OpenTrac_decode_timestamp(unsigned char *element,
 
     *rawtime = fetch32bits(element);
 
-    fprintf(stderr, "Time: %s", ctime(rawtime));
+    rawtime_t = (time_t)rawtime;
+
+    fprintf(stderr, "Time: %s", ctime(&rawtime_t));
 
     return 0;
 }
