@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.132 2005/08/23 21:23:55 we7u Exp $
+# $Id: configure.ac,v 1.133 2005/08/23 21:38:16 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -577,10 +577,10 @@ egrep -e "checking |result:|gcc version" config.log >> summary.log
 
 
 echo ===========================================
-echo AC_PACKAGE_NAME AC_PACKAGE_VERSION has been configured using the 
-echo following external libraries.
-echo  
-echo 
+echo
+echo AC_PACKAGE_NAME AC_PACKAGE_VERSION has been configured to use the following
+echo options and external libraries:
+echo
 echo "Building with AX25 .............................. : $use_ax25"
 echo "Building with Festival .......................... : $use_festival"
 echo "Building with GPSMan ............................ : $use_gpsman"
