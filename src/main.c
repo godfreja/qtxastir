@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.601 2005/08/23 19:35:25 we7u Exp $
+ * $Id: main.c,v 1.602 2005/08/24 16:50:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -31147,7 +31147,7 @@ int main(int argc, char *argv[], char *envp[]) {
         switch (ag) {
 
             case 't':
-                fprintf(stderr,"Trap segfault\n");
+                fprintf(stderr,"Internal SIGSEGV handler disabled\n");
                 trap_segfault = (int)TRUE;
                 break;
 
@@ -31215,6 +31215,7 @@ int main(int argc, char *argv[], char *envp[]) {
         fprintf(stderr,"-l Portuguese Set the language to Portuguese\n");
         fprintf(stderr,"-l Spanish    Set the language to Spanish\n");
         fprintf(stderr,"-m            Deselect Maps\n");
+        fprintf(stderr,"-t            Internal SIGSEGV handler disabled\n");
         fprintf(stderr,"-v level      Set the debug level\n\n");
         fprintf(stderr,"\n");
         exit(0);    // Exiting after dumping out command-line options
