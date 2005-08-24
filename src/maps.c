@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.441 2005/08/20 01:53:20 we7u Exp $
+ * $Id: maps.c,v 1.442 2005/08/24 02:53:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4997,7 +4997,7 @@ int index_retrieve(char *filename,
 // in the in-memory linked list for which the "accessed" variable is
 // 0 or filename is empty.
 //
-void index_save_to_file() {
+void index_save_to_file(void) {
     FILE *f;
     map_index_record *current;
     map_index_record *last;

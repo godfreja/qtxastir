@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.28 2005/08/17 19:08:43 we7u Exp $
+ * $Id: awk.c,v 1.29 2005/08/24 02:53:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -98,7 +98,7 @@
 /*
  * awk_new_symtab: alloc a symbol table with $0-$9 pre-declared.
  */
-awk_symtab *awk_new_symtab() {
+awk_symtab *awk_new_symtab(void) {
     awk_symtab *n = calloc(1,sizeof(awk_symtab));
     static char sym[MAXSUBS][2];
     int i;
@@ -640,7 +640,7 @@ int awk_exec_action(awk_symtab *this, const awk_action *code) {
 /*
  * awk_new_rule: alloc a rule
  */
-awk_rule *awk_new_rule() {
+awk_rule *awk_new_rule(void) {
     awk_rule *n = calloc(1,sizeof(awk_rule));
 
     if (!n)
@@ -681,7 +681,7 @@ void awk_free_rule(awk_rule *r) {
 /*
  * awk_new_program: alloc a program
  */
-awk_program *awk_new_program() {
+awk_program *awk_new_program(void) {
     awk_program *n = calloc(1,sizeof(awk_program));
 
     if (!n)
