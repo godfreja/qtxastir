@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.21 2005/08/19 18:33:52 tvrusso Exp $
+ * $Id: hostname.c,v 1.22 2005/08/24 04:08:48 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -56,11 +56,11 @@ typedef sig_t sighandler_t;
 
 
 #ifndef __LCLINT__
-  #ifndef sigjmp_buf
+  #ifndef HAVE_SIGJMP_BUF
     jmp_buf ret_place;
-  #else // sigjmp_buf
+  #else // HAVE_SIGJMP_BUF
     static  sigjmp_buf ret_place;       /* Jump address if alarm */
-  #endif    // sigjmp_buf
+  #endif    // HAVE_SIGJMP_BUF
 #endif // __LCLINT__
 
 
