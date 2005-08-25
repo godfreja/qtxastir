@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.43 2005/08/25 20:48:13 we7u Exp $
+# $Id: acinclude.m4,v 1.44 2005/08/25 21:29:24 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -245,10 +245,7 @@ else
                     [use_gdal="yes"
                      LIBS="-lgdal $LIBS"
                      AC_DEFINE(HAVE_LIBGDAL, , 
-                      [Define to 1 if you have the `gdal' library (-lgdal).])],
-                    [CPPFLAGS=${save_cppflags}
-                     LDFLAGS=${save_ldflags}
-                     LIBS=${save_libs}])])
+                      [Define to 1 if you have the `gdal' library (-lgdal).])],)])
 fi
 ]
 )
@@ -700,7 +697,6 @@ fi
 ])
 
 # From Cyrus imap distribution (KB3EGH)
-dnl $Id: acinclude.m4,v 1.43 2005/08/25 20:48:13 we7u Exp $
 
 dnl These are the Cyrus Berkeley DB macros.  In an ideal world these would be
 dnl identical to the above.
