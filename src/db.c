@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.479 2005/08/23 19:32:55 we7u Exp $
+ * $Id: db.c,v 1.480 2005/08/25 15:11:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8316,10 +8316,10 @@ void station_del_ptr(DataRow *p_name) {
         // A bit of debug code:  Attempting to find out if we're
         // deleting our own objects from time to time.  Leave this
         // in until we're sure the problem has been fixed.
-        if (is_my_call(p_name->origin,1)) {
-            fprintf(stderr,"station_del_ptr: Removing my own object: %s\n",
-                p_name->call_sign);
-        }
+//        if (is_my_call(p_name->origin,1)) {
+//            fprintf(stderr,"station_del_ptr: Removing my own object: %s\n",
+//                p_name->call_sign);
+//        }
 
 #ifdef EXPIRE_DEBUG
         fprintf(stderr,"Removing: %s heard %d seconds ago\n",p_name->call_sign, (int)(sec_now() - p_name->sec_heard));
