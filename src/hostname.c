@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.22 2005/08/24 04:08:48 tvrusso Exp $
+ * $Id: hostname.c,v 1.23 2005/08/26 21:12:21 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -51,7 +51,11 @@
 
 
 #ifndef HAVE_SIGHANDLER_T
-typedef sig_t sighandler_t;
+  #ifdef HAVE_SIG_T
+    typedef sig_t sighandler_t;
+  #else
+    typedef void (*sighandler_t)(int);
+  #endif
 #endif
 
 

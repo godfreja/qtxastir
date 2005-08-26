@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.134 2005/08/24 04:08:48 tvrusso Exp $
+# $Id: configure.ac,v 1.135 2005/08/26 21:12:21 tvrusso Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -169,6 +169,7 @@ AC_CHECK_TYPES(socklen_t,,,[#include <sys/types.h>
 
 # some BSD systems do not define sighandler_t, but rather sig_t
 AC_CHECK_TYPES(sighandler_t,,,[#include <signal.h>])
+AC_CHECK_TYPES(sig_t,,,[#include <signal.h>])
 
 # some BSD systems do not define sighandler_t, but rather sig_t
 AC_CHECK_TYPES(sigjmp_buf,,,[#include <setjmp.h>])
