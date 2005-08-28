@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.37 2005/08/17 19:12:05 we7u Exp $
+ * $Id: x_spider.c,v 1.38 2005/08/28 00:21:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -343,6 +343,7 @@ void str_echo(int sockfd) {
 void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
     int n;  
     char line[MAXLINE];
+    extern char my_callsign[];
 
 
     // Set socket to be non-blocking.
@@ -357,6 +358,11 @@ void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
         fprintf(stderr,"str_echo2: Couldn't set read-end of pipe_from_parent non-blocking\n");
     }
 
+
+    //Send our callsign to spider clients as "#callsign" much like APRS-IS sends "# javaAPRS"
+    // # xastir 1.5.1 callsign:<mycall>
+    sprintf(line,"# Welcome to Xastir's server port, callsign: %s\n",my_callsign);
+    writen(sockfd,line,strlen(line));
 
     // Infinite loop
     for ( ; ; ) {
