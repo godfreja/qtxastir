@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.480 2005/08/25 15:11:09 we7u Exp $
+ * $Id: db.c,v 1.481 2005/08/29 15:06:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14802,7 +14802,7 @@ int decode_ax25_header(unsigned char *incoming_data, int length) {
 
     // Add the Info field to the decoded header info
     strncat(result,
-        &incoming_data[ptr],
+        (char *)(&incoming_data[ptr]),
         sizeof(result) - strlen(result));
 
     // Copy the result onto the top of the input data.  Note that
