@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.139 2005/08/24 02:53:53 we7u Exp $
+ * $Id: map_gdal.c,v 1.140 2005/08/30 20:52:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -48,7 +48,9 @@
 //#include <errno.h>
 
 // Needed for Solaris
+//#ifdef HAVE_STRINGS_H
 //#include <strings.h>
+//#endif  // HAVE_STRINGS_H
 
 //#include <dirent.h>
 //#include <netinet/in.h>

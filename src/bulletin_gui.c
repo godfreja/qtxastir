@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.32 2005/08/24 02:53:53 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.33 2005/08/30 20:52:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,7 +32,12 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+// Needed for Solaris
+#ifdef HAVE_STRINGS_H
 #include <strings.h>
+#endif  // HAVE_STRINGS_H
+
 #include <ctype.h>
 #include <sys/types.h>
 
