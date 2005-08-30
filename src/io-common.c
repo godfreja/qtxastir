@@ -1,5 +1,5 @@
 
-// $Id: io-common.c,v 1.3 2005/08/17 19:09:40 we7u Exp $
+// $Id: io-common.c,v 1.4 2005/08/30 20:28:50 kd6zwr Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -57,9 +57,9 @@ int io_strntoi(const char *str,int len) {
 	int r = 0;
 	int sign = 1;
 	const char * const end = str + len;
-	while (end != str && isspace(*str)) ++str;
+	while (end != str && isspace((int)*str)) ++str;
 	if (end != str && *str == '-') (sign *= -1),++str;
 	if (end != str && *str == '+') ++str;
-	while (end != str && isdigit(*str)) r = *str++ - '0' + 10 * r;
+	while (end != str && isdigit((int)*str)) r = *str++ - '0' + 10 * r;
 	return r * sign;
 }
