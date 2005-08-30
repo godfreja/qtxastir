@@ -1,4 +1,4 @@
-# $Id: tnc-startup.paccomm,v 1.11 2005/04/11 20:07:59 we7u Exp $
+# $Id: tnc-startup.paccomm,v 1.12 2005/08/30 18:31:57 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -16,9 +16,12 @@ ECHO off
 # Important!  Only uncomment if really needed as a fill-in digi:
 #MYAlias WIDE1-1
 #
-MY1Alias WIDE
-MY2Alias REGION
-MY3Alias WORLD
+#
+#
+#MY1Alias LOCAL
+#MY2Alias REGION
+#MY3Alias WORLD
+#
 # B E 0 must be set to 0 or both APRS and your TNC will send BCNS
 # Which will alternate in everyones L and A lists and fill up
 # their logs.  Do NOT set B E to anything other than 0 while APRS
