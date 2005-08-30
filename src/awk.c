@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.29 2005/08/24 02:53:53 we7u Exp $
+ * $Id: awk.c,v 1.30 2005/08/30 19:41:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -64,6 +64,7 @@
 #ifdef HAVE_LIBPCRE
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 #include <ctype.h>
 #include <sys/types.h>
 #include "awk.h"
