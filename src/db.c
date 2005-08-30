@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.481 2005/08/29 15:06:40 we7u Exp $
+ * $Id: db.c,v 1.482 2005/08/30 18:33:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15349,7 +15349,16 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
                                     "%s",
                                     call_sign);
                     
-                Locate_station( (Widget)NULL, (XtPointer)NULL, (XtPointer)1 );
+                    Locate_station( (Widget)NULL,
+                        (XtPointer)NULL,
+                        (XtPointer)1 );
+
+                    // Bring up an additional popup dialog that
+                    // shows the entire packet, so the user can make
+                    // a determination as to whether the packet is
+                    // or is not a real emergency.
+                    //
+                    popup_message_always(langcode("POPEM00036"), backup);
                 }
             }
         }
