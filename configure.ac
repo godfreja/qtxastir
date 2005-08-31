@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.135 2005/08/26 21:12:21 tvrusso Exp $
+# $Id: configure.ac,v 1.136 2005/08/31 16:59:59 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -458,12 +458,16 @@ changequote([,])
 # to reduce memory usage and speed up the compile.  Here we change
 # "-O2" to "-O1" or " " in CFLAGS/CPPFLAGS to reduce the level of
 # optimization.
+# We also wish to remove "-no-undefined" from LDFLAGS on Cygwin, as
+# we use GCC for our linking instead of libtool, and GCC doesn't
+# like that flag at the link stage.
 #
 case "$host_os" in
 cygwin*)
   changequote(,) 
   CFLAGS=`echo  "$CFLAGS" | awk '{for(i=1;i<=NF;++i) {if ($i != "-O2") s = s " " $i} print s}'`
   CPPFLAGS=`echo  "$CPPFLAGS" | awk '{for(i=1;i<=NF;++i) {if ($i != "-O2") s = s " " $i} print s}'`
+  LDFLAGS=`echo  "$LDFLAGS" | awk '{for(i=1;i<=NF;++i) {if ($i != "-no-undefined") s = s " " $i} print s}'`
   changequote([,]) 
 ;;
 esac
