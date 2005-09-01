@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.604 2005/08/30 20:52:21 we7u Exp $
+ * $Id: main.c,v 1.605 2005/09/01 15:08:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -31263,7 +31263,12 @@ int main(int argc, char *argv[], char *envp[]) {
     (void) signal(SIGUSR1,usr1sig);                     // take a snapshot on demand 
 #endif  // OLD_PTHREADS
 
+#ifdef HAVE_SIGIGNORE
+    (void) sigignore(SIGPIPE);
+#else   // HAVE_SIGIGNORE
     (void) signal(SIGPIPE,SIG_IGN);                     // set sigpipe signal to ignore
+#endif  // HAVE_SIGIGNORE
+
     if (trap_segfault)
         (void) signal(SIGSEGV,segfault);                // set segfault signal to check
 
