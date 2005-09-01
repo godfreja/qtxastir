@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.179 2005/08/23 19:36:42 we7u Exp $
+ * $Id: util.c,v 1.180 2005/09/01 14:43:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,6 +40,12 @@
 #include <unistd.h>
 #include <signal.h>
 #include <string.h>
+
+// Needed for Solaris
+#ifdef HAVE_STRINGS_H
+#include <strings.h>
+#endif  // HAVE_STRINGS_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/ioctl.h>
