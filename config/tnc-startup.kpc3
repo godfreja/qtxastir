@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kpc3,v 1.15 2005/04/11 20:07:59 we7u Exp $
+# $Id: tnc-startup.kpc3,v 1.16 2005/09/01 04:16:46 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -49,7 +49,6 @@ HID off
 B E 0
 DIGI on
 ECho off
-EXP on
 FILT off
 FLow off
 FUll off
