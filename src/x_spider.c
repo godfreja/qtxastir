@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.38 2005/08/28 00:21:33 we7u Exp $
+ * $Id: x_spider.c,v 1.39 2005/09/02 15:47:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -361,7 +361,7 @@ void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
 
     //Send our callsign to spider clients as "#callsign" much like APRS-IS sends "# javaAPRS"
     // # xastir 1.5.1 callsign:<mycall>
-    sprintf(line,"# Welcome to Xastir's server port, callsign: %s\n",my_callsign);
+    sprintf(line,"# Welcome to Xastir's server port, callsign: %s\r\n",my_callsign);
     writen(sockfd,line,strlen(line));
 
     // Infinite loop
