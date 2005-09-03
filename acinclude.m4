@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.48 2005/09/02 23:00:23 we7u Exp $
+# $Id: acinclude.m4,v 1.49 2005/09/03 01:42:15 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -177,7 +177,9 @@ if test "$gv_test" != "gv"; then
 fi
 gv_test=`echo $gv_version | cut -d ' ' -f 1`
 if test "$gv_test" != "gv"; then
-  echo "No gv found"
+  # No gv found.  Put an AC_PATH_PROG here so the "then" clause has
+  # something to do and so that we get proper output to the user.
+  AC_PATH_PROG(gv, [gv], no, $BINPATH)
 else
   gv_short_version=`echo $gv_version | cut -d ' ' -f 2`
   gv_major=`echo $gv_short_version | cut -d '.' -f 1`
