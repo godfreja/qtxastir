@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.605 2005/09/01 15:08:11 we7u Exp $
+ * $Id: main.c,v 1.606 2005/09/07 19:30:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10569,6 +10569,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
     char station_num[30];
     char line[MAX_LINE_SIZE+1];
     int n;
+    time_t current_time;
 
 
     do_time = 0;
@@ -10586,7 +10587,9 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 #endif // __CYGWIN__
 
 
-    if (last_updatetime > sec_now()) {
+    current_time = sec_now();
+
+    if (last_updatetime > current_time) {
         // Time just went in the wrong direction.  Sleep for a bit
         // so that we don't use massive CPU until the time catches
         // up again.
@@ -10602,7 +10605,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 
             fprintf(stderr,"\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
             fprintf(stderr,    "!!  System time jumped backwards %d seconds!\n",
-                (int)(last_updatetime - sec_now()) );
+                (int)(last_updatetime - current_time) );
             fprintf(stderr,    "!! Xastir sleeping, else will use excessive CPU\n");
             fprintf(stderr,    "!! %s\n",
                 temp);
