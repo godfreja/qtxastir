@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.49 2005/09/03 01:42:15 we7u Exp $
+# $Id: acinclude.m4,v 1.50 2005/09/08 16:39:50 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -264,7 +264,7 @@ if test "${found_gdal_config}" = "yes"; then
    LDFLAGS="$LDFLAGS `${GDAL_BIN} --libs | sed -e s/-lgdal//`"
    AC_CHECK_HEADERS(gdal.h, [AC_CHECK_LIB(gdal, GDALAllRegister,
                     [use_gdal="yes"
-                     LIBS="-lgdal $LIBS"
+                     LIBS="$LIBS -lgdal"
                      AC_DEFINE(HAVE_LIBGDAL, , 
                       [Define to 1 if you have the `gdal' library (-lgdal).])],
                     [CPPFLAGS=${save_cppflags}
@@ -274,7 +274,7 @@ else
    AC_MSG_WARN([*** Cannot find gdal-config:  Checking standard locations ***])
    AC_CHECK_HEADERS(gdal.h, [AC_CHECK_LIB(gdal, GDALAllRegister,
                     [use_gdal="yes"
-                     LIBS="-lgdal $LIBS"
+                     LIBS="$LIBS -lgdal"
                      AC_DEFINE(HAVE_LIBGDAL, , 
                       [Define to 1 if you have the `gdal' library (-lgdal).])],)])
 fi
