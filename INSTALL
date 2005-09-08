@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.73 2005/08/23 23:25:07 we7u Exp $
+$Id: INSTALL,v 1.74 2005/09/08 16:49:31 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -739,6 +739,16 @@ First Time Install:
       To exit, press control-] and then type "quit".
 
    9. OPTIONAL:  Install GDAL/OGR for support of many more map formats.
+
+      NOTE:  There are some cases where adding GDAL can mess up support for a
+      few of the other libraries, like Shapelib, libproj, or libgeotiff.  GDAL
+      may be compiled with support these libraries internally and it is
+      possible to have Xastir linked against some of GDAL's internal libraries
+      but using the external library headers.  If the versions of each are
+      sufficiently different, things may not work right.  If you run into such
+      problems you can either reconfigure GDAL to use external libraries for
+      these three or configure Xastir without GDAL support.
+
       NOTE:  This is currently being added to Xastir:  Some support is there
       now for the vector formats, but it isn't "pretty" yet.  Should you wish
       to see what map formats your system will support once GDAL/OGR are fully
