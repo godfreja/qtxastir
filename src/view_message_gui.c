@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.29 2005/08/18 15:28:23 we7u Exp $
+ * $Id: view_message_gui.c,v 1.30 2005/09/09 04:46:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -102,10 +102,12 @@ void view_message_print_record(Message *m_fill) {
         if ((temp = malloc((size_t)my_size)) == NULL)
             return;
 
-        sprintf(temp,"%-9s>%-9s seq:%5s type:%c :%s\n",
+        sprintf(temp,"%-9s>%-9s %s:%5s %s:%c :%s\n",
             m_fill->from_call_sign,
             m_fill->call_sign,
+            langcode("WPUPMSB013"),
             m_fill->seq,
+            langcode("WPUPMSB014"),
             m_fill->type,
             m_fill->message_line);
 
@@ -182,7 +184,7 @@ void all_messages(char from, char *call_sign, char *from_call, char *message) {
         if (strncmp(call_sign, "java",4) == 0) {
             xastir_snprintf(call_sign,
                 MAX_CALLSIGN+1,
-                "Broadcast");
+                langcode("WPUPMSB015") );   // Broadcast
             xastir_snprintf(temp,
                 my_size,
                 "%s %s\t%s%s\n",
@@ -193,7 +195,7 @@ void all_messages(char from, char *call_sign, char *from_call, char *message) {
         } else if (strncmp(call_sign, "USER", 4) == 0) {
             xastir_snprintf(call_sign,
                 MAX_CALLSIGN+1,
-                "Broadcast");
+                langcode("WPUPMSB015") );   // Broadcast
             xastir_snprintf(temp,
                 my_size,
                 "%s %s\t%s%s\n",

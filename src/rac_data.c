@@ -1,5 +1,5 @@
 /*
- * $Id: rac_data.c,v 1.13 2005/08/17 19:12:05 we7u Exp $
+ * $Id: rac_data.c,v 1.14 2005/09/09 04:46:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -111,7 +111,10 @@ int build_rac_index(void) {
         if(file_time(get_data_base_dir("fcc/AMACALL.LST"))<=file_time(get_user_base_dir("data/AMACALL.ndx"))) {
             return(1);
         } else {
-            statusline("RAC index old rebuilding",1);
+
+            // RAC index old, rebuilding
+            statusline(langcode("STIFCC0103"), 1);
+
             fprintf(stderr,"RAC index is old.  Rebuilding index.\n");
 //            XmTextFieldSetString(text,"RAC Index old rebuilding");
 //            XtManageChild(text);
@@ -223,7 +226,10 @@ int search_rac_data(char *callsign, rac_record *data) {
             rc = fgets(index,(int)sizeof(index),fndx);
         }
     } else {
-        fprintf(stderr,"Search:Could not open RAC data base index: %s\n", get_user_base_dir("data/AMACALL.ndx") );
+        fprintf(stderr,
+            "Search:Could not open RAC data base index: %s\n",
+            get_user_base_dir("data/AMACALL.ndx") );
+
         return (0);
     }
     call_offset = atol(char_offset);
@@ -354,7 +360,10 @@ int search_rac_data(char *callsign, rac_record *data) {
     (void)fclose(fdb);
 
     if (!found) {
-        popup_message_always("Callsign Search", "Callsign Not Found!");
+
+        // "Callsign Search", "Callsign Not Found!"
+        popup_message_always(langcode("STIFCC0101"),
+            langcode("STIFCC0102") );
     }
 
     return(found);
