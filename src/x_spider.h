@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.h,v 1.7 2005/08/17 19:12:05 we7u Exp $
+ * $Id: x_spider.h,v 1.8 2005/09/15 04:53:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -29,14 +29,20 @@
 
 #define NET_CONNECT_TIMEOUT 20
 #define SERV_TCP_PORT       2023
+#define SERV_UDP_PORT       2024
+
 
 char *pname;
-extern int pipe_xastir_to_server;
-extern int pipe_server_to_xastir;
+extern int pipe_xastir_to_tcp_server;
+extern int pipe_tcp_server_to_xastir;
+extern int pipe_udp_server_to_xastir_rf;
+extern int pipe_udp_server_to_xastir_inet;
 
 extern int writen(register int fd, register char *ptr, register int nbytes);
 extern int readline(register int fd, register char *ptr, register int maxlen);
-extern int Fork_server(int argc, char *argv[], char *envp[]);
+extern int Fork_TCP_server(int argc, char *argv[], char *envp[]);
+extern int Fork_UDP_server(int argc, char *argv[], char *envp[]);
+
 
 #endif /* XASTIR_SERVER_H */
 
