@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.182 2005/09/15 18:56:24 we7u Exp $
+ * $Id: util.c,v 1.183 2005/09/15 19:38:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2812,11 +2812,19 @@ void log_data(char *file, char *line) {
     else {
         char temp[200];
         char timestring[100+1];
-
+        struct tm *time_now;
+        time_t secs_now;
 
         // Fetch the current date/time string
-        get_timestamp(timestring);
-        xastir_snprintf(temp, sizeof(temp), "# %s", timestring);
+//        get_timestamp(timestring);
+        secs_now=sec_now();
+        time_now = localtime(&secs_now);
+        (void)strftime(timestring,100,"%a %b %d %H:%M:%S %Z %Y",time_now);
+        xastir_snprintf(temp,
+            sizeof(temp),
+            "# %ld  %s",
+            (unsigned long)secs_now,
+            timestring);
 
         // Change back to the base directory
         chdir(get_user_base_dir(""));
