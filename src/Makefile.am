@@ -1,9 +1,9 @@
-# $Id: Makefile.am,v 1.30 2005/09/15 04:45:21 we7u Exp $
+# $Id: Makefile.am,v 1.31 2005/09/15 14:52:26 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
 
-bin_PROGRAMS = xastir udp_client
+bin_PROGRAMS = xastir xastir_udp_client
 noinst_PROGRAMS = testawk
 
 SUBDIRS = @SUBRTREE@
@@ -66,8 +66,8 @@ xastir_SOURCES = \
     xastir.h \
     x_spider.c x_spider.h
 
-udp_client_SOURCES = \
-    udp_client.c
+xastir_udp_client_SOURCES = \
+    xastir_udp_client.c
  
 testawk_SOURCES = \
     testawk.c \
@@ -78,7 +78,7 @@ xastir_LDADD=@LIBRTREE@
 
 xastir_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
-udp_client_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+xastir_udp_client_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
 testawk_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 

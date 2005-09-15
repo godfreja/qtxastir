@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.40 2005/09/15 04:53:56 we7u Exp $
+ * $Id: x_spider.c,v 1.41 2005/09/15 14:52:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -1189,7 +1189,7 @@ if (writen(pipe_udp_server_to_xastir_inet, buf, n) != n) {
 
 
 
-        // Send an ack back to the udp_client program 
+        // Send an ack back to the xastir_udp_client program 
         n = sendto(sock,
             "ACK",
             4,
