@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.181 2005/09/09 19:20:27 we7u Exp $
+ * $Id: util.c,v 1.182 2005/09/15 18:56:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2802,19 +2802,29 @@ time_t file_time(char *fn) {
 void log_data(char *file, char *line) {
     FILE *f;
 
-    // Check for "# Tickle" first, and don't log it if found.
+
+    // Check for "# Tickle" first, don't log it if found.
     // It's an idle string designed to keep the socket active.
     if ( (strncasecmp(line, "#Tickle", 7)==0)
         || (strncasecmp(line, "# Tickle", 8) == 0) ) {
         return;
     }
     else {
+        char temp[200];
+        char timestring[100+1];
+
+
+        // Fetch the current date/time string
+        get_timestamp(timestring);
+        xastir_snprintf(temp, sizeof(temp), "# %s", timestring);
+
         // Change back to the base directory
         chdir(get_user_base_dir(""));
 
         f=fopen(file,"a");
         if (f!=NULL) {
-            fprintf(f,"%s\n",line);
+            fprintf(f,"%s\n", temp); // Write the timestamp line
+            fprintf(f,"%s\n",line);  // Write the data line
             (void)fclose(f);
         }
         else {

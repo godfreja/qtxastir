@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.51 2005/08/29 15:06:40 we7u Exp $
+ * $Id: wx.c,v 1.52 2005/09/15 18:56:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -385,34 +385,6 @@ void cycle_weather(void) {
     WeatherRow *weather;
     float last_speed, computed_gust;
     time_t last_speed_time;
-    char temp[200];
-    char timestring[100+1];
-
-
-    if (debug_level & 2)
-        fprintf(stderr,
-            "%02d:%02d:%02d  ",
-            get_hours(),
-            get_minutes(),
-            get_seconds() );
-
-    // Fetch the current date/time string
-    get_timestamp(timestring);
-    xastir_snprintf(temp, sizeof(temp), "# %s", timestring);
-
-    // Timestamp the log files at a 30 second rate
-    if (log_tnc_data)
-        log_data(LOGFILE_TNC,(char *)temp);
-
-    if (log_net_data)
-        log_data(LOGFILE_NET,(char *)temp);
-
-    if (log_igate)
-        log_data(LOGFILE_IGATE,(char *)temp);
-
-    if (log_wx)
-        log_data(LOGFILE_WX,(char *)temp);
-
 
 
     // Find my own local weather data
