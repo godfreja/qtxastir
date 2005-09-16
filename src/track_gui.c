@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.43 2005/09/16 18:48:44 we7u Exp $
+ * $Id: track_gui.c,v 1.44 2005/09/16 23:45:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -59,6 +59,7 @@ Widget download_trail_station_data;
 Widget posit_start_value;
 Widget posit_length_value;
 
+int fetching_findu_trail_now = 0;
 
 int track_station_on;           /* used for tracking stations */
 int track_me;
@@ -405,8 +406,16 @@ static void* findu_transfer_thread(void *arg) {
     log_filename = ptrs[0];
     fileimg = ptrs[1];
 
+    // Set global "busy" variable
+    fetching_findu_trail_now = 1;
+ 
     if (fetch_remote_file(fileimg, log_filename)) {
+
         // Had trouble getting the file.  Abort.
+
+        // Reset global "busy" variable
+        fetching_findu_trail_now = 0;
+        
         return(NULL);
     }
 
@@ -419,11 +428,16 @@ static void* findu_transfer_thread(void *arg) {
     // tags will be ignored just fine.
     read_file_ptr = fopen(log_filename, "r");
 
-    if (read_file_ptr != NULL)
+    if (read_file_ptr != NULL) {
         read_file = 1;
-    else
+    }
+    else {
         fprintf(stderr,"Couldn't open file: %s\n", log_filename);
+    }
 
+    // Reset global "busy" variable
+    fetching_findu_trail_now = 0;
+ 
     // End the thread
     return(NULL);
 }
@@ -458,6 +472,11 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
     char *download_client_ptrs[2];
 
 
+    // If we're already fetching a trail, we shouldn't be calling
+    // this callback function.  Get out.
+    if (fetching_findu_trail_now)
+        return;
+
     download_client_ptrs[0] = log_filename;
     download_client_ptrs[1] = fileimg;
     download_client_data = (XtPointer *)download_client_ptrs;
@@ -471,7 +490,7 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
         return;
     }
  
-    busy_cursor(appshell);
+//    busy_cursor(appshell);
 
     xastir_snprintf(log_filename,
         sizeof(log_filename),
@@ -732,6 +751,8 @@ begin_critical_section(&download_findu_dialog_lock, "track_gui.c:Download_findu_
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
                 NULL);
+        if (fetching_findu_trail_now)
+            XtSetSensitive(button_ok, FALSE);
 
         button_cancel = XtVaCreateManagedWidget(langcode("UNIOP00002"),
                 xmPushButtonGadgetClass, 
