@@ -1,5 +1,5 @@
 /*
- * $Id: xastir_udp_client.c,v 1.5 2005/09/16 20:09:04 we7u Exp $
+ * $Id: xastir_udp_client.c,v 1.6 2005/09/16 20:14:33 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -182,7 +182,7 @@ int main(int argc, char *argv[]) {
         return(1);
     }
 
-    fprintf(stderr,"Received: %s\n", buffer);
+    fprintf(stdout,"Received: %s\n", buffer);
 
     if (strncmp(buffer, "NACK", 4) == 0) {
 //fprintf(stderr,"returning 1\n");
