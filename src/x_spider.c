@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.42 2005/09/15 18:47:31 we7u Exp $
+ * $Id: x_spider.c,v 1.43 2005/09/16 19:26:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -184,6 +184,9 @@ extern short checkHash(char *theCall, short theHash);
 extern void get_timestamp(char *timestring);
 extern void split_string( char *data, char *cptr[], int max );
 
+// From database.h
+extern char my_callsign[];
+
 
 typedef struct _pipe_object {
     int to_child[2];
@@ -349,7 +352,6 @@ void str_echo(int sockfd) {
 void str_echo2(int sockfd, int pipe_from_parent, int pipe_to_parent) {
     int n;  
     char line[MAXLINE];
-    extern char my_callsign[];
 
 
     // Set socket to be non-blocking.
@@ -1248,8 +1250,24 @@ void UDP_Server(int argc, char *argv[], char *envp[]) {
         }
 
 
-// Here's where we would look for the optional flags in the first
-// line.
+        // Here's where we would look for the optional flags in the
+        // first line.  Here we only implement the "-identify" flag.
+        //
+        if (strstr(buf, "-identify")) {
+            
+            // Send the callsign back to the xastir_udp_client
+            // program
+            n = sendto(sock,
+                my_callsign,
+                strlen(my_callsign)+1,
+                0,
+                (struct sockaddr *)&from,
+                fromlen);
+            if (n < 0) {
+                fprintf(stderr, "Error: sendto");
+            }
+            continue;
+        }
 
 
         // Now snag the text message from the second line using the
