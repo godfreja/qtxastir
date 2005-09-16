@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.174 2005/09/16 21:09:44 we7u Exp $
+# $Id: language-English.sys,v 1.175 2005/09/16 23:34:33 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1079,7 +1079,7 @@ SPCHSTR006|%s, distance is %.1f %s.||
 SPCHSTR007|%s, distance is %d %s %s %s.||
 SPCHSTR008|%s, distance is %.1f %s %s %s.||
 SPCHSTR009|New Weather Alert||
-SPCHSTR010|New Call||
+SPCHSTR010|New Station||
 SPCHSTR011|Heard, D X, %s, at distance of %.1f %s||
 #
 #
