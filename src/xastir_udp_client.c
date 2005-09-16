@@ -1,5 +1,5 @@
 /*
- * $Id: xastir_udp_client.c,v 1.3 2005/09/15 23:59:34 we7u Exp $
+ * $Id: xastir_udp_client.c,v 1.4 2005/09/16 14:38:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
         fprintf(stderr,
             "Usage: server port call passcode \"message\"\n");
         fprintf(stderr,
-            "Example: xastir_udp_client localhost 2024 ab7cd 1234 \"APRS packet\"\n");
+            "Example: xastir_udp_client localhost 2023 ab7cd 1234 \"APRS packet\"\n");
         return(1);
     }
 

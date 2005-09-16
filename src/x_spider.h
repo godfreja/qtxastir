@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.h,v 1.8 2005/09/15 04:53:56 we7u Exp $
+ * $Id: x_spider.h,v 1.9 2005/09/16 14:38:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -29,7 +29,7 @@
 
 #define NET_CONNECT_TIMEOUT 20
 #define SERV_TCP_PORT       2023
-#define SERV_UDP_PORT       2024
+#define SERV_UDP_PORT       2023
 
 
 char *pname;
