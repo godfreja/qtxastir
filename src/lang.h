@@ -1,5 +1,5 @@
 /*
- * $Id: lang.h,v 1.4 2005/01/08 09:46:48 we7u Exp $
+ * $Id: lang.h,v 1.5 2005/09/17 18:33:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -28,7 +28,7 @@
 #define MAX_LANG_LINE_SIZE 800
 #define MAX_LANG_CODE 10
 #define MAX_LANG_ENTRIES 3000
-#define MAX_LANG_BUFFER 20000
+#define MAX_LANG_BUFFER 30000
 
 extern int load_language_file(char *filename);
 extern char *langcode(char *code);
