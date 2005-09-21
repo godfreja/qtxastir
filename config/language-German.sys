@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.180 2005/09/16 21:09:11 we7u Exp $
+# $Id: language-German.sys,v 1.181 2005/09/21 18:51:35 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1055,6 +1055,7 @@ POPEM00040|Der nutzerspezifische Pfad ging verloren||
 POPEM00041|Erstelle andere Datei. Bitte etwas warten und danach neu versuchen||
 POPEM00042|Kein eigenes Objekt! Versuchen Sie erst das Obkekt zu übernehmen.||
 POPEM00043|Kein Objekt/Item!||
+POPEM00044|Fetch Findu Trail failed||
 #
 # Karten - Ausschnitt 
 JMLPO00001|Gespeicherte Kartenausschnitte||

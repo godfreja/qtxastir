@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.177 2005/09/09 19:19:56 we7u Exp $
+# $Id: language-Italian.sys,v 1.178 2005/09/21 18:51:35 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1049,6 +1049,7 @@ POPEM00040|Custom outgoing path was lost||
 POPEM00041|Processing another file.  Wait a bit, then try again||
 POPEM00042|Object not owned by me! Try adopting the object first.||
 POPEM00043|Not an Object/Item!||
+POPEM00044|Fetch Findu Trail failed||
 # 
 # Jump Location 
 JMLPO00001|Posizione Mappa||
