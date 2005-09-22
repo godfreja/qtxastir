@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.610 2005/09/22 20:07:13 we7u Exp $
+ * $Id: main.c,v 1.611 2005/09/22 20:32:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -31370,13 +31370,17 @@ int main(int argc, char *argv[], char *envp[]) {
                     // Find 'x' char separating width from height,
                     // if present.
                     p = strchr(geom, 'x');
-                    if (p) {    // Width/Height were specified
-                        *p = '\0';  // Terminate the first string
+                    if (p != NULL) {    // Width/Height were specified
+                        *p = '\0';      // Terminate the first string
                         // Fetch window width
                         appshell_width = atoi(geom);
                         p++;
                         // Fetch window height
                         appshell_height = atoi(p);
+                    }
+                    else {  // p was NULL, set it to the start of
+                            // the string.
+                        p = geom;
                     }
 
                     // Look for offsets, '+' or '-'
@@ -31390,7 +31394,7 @@ int main(int argc, char *argv[], char *envp[]) {
                         if (*p == '+' || *p == '-') { // Found X offset
                             if (*p == '-')
                                 appshell_offset_x_right++;
-                            p++;        // Skip over '+'/'-'
+                            p++;        // Skip over first '+'/'-'
                             if (*p == '-') {
                                 negative++;
                                 p++;    // Skip over '-'
@@ -31434,6 +31438,7 @@ int main(int argc, char *argv[], char *envp[]) {
                             p++;
                         }
                     }
+
                     fprintf(stderr,
                         "\tWidth:%d\n\tHeight:%d\n",
                         appshell_width,
@@ -31455,6 +31460,7 @@ int main(int argc, char *argv[], char *envp[]) {
                 break;
         }
     }
+
 
     if (ag_error){
         fprintf(stderr,"\nXastir Command line Options\n\n");
