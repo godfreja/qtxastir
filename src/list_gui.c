@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.36 2005/08/17 19:09:40 we7u Exp $
+ * $Id: list_gui.c,v 1.37 2005/09/24 18:00:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -972,7 +972,7 @@ end_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill" )
 void update_station_scroll_list(void) {         // called from UpdateTime() [main.c] in timing loop
     int i;
     int pos;
-    int last_h, last_w;
+    Dimension last_h, last_w;
     int last;
     int ok;
 
