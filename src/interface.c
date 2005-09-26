@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.233 2005/09/15 04:53:56 we7u Exp $
+ * $Id: interface.c,v 1.234 2005/09/26 02:35:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -88,7 +88,7 @@
 #include "symbols.h"
 #include "main.h"
 #include "xa_config.h"
-#include "maps.h"
+//#include "maps.h"
 #include "interface.h"
 #include "main.h"
 #include "util.h"

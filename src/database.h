@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.18 2005/08/20 01:53:20 we7u Exp $
+ * $Id: database.h,v 1.19 2005/09/26 02:35:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -577,11 +577,6 @@ extern int  locate_station(Widget w, char *call, int follow_case,
 extern void update_station_info(Widget w);
 
 // objects/items
-extern void compute_DR_position(long x_long, long y_lat, double range, double course, long *x_long2, long *y_lat2);
-extern void compute_current_DR_position(DataRow *p_station, long *x_long, long *y_lat);
-extern void check_and_transmit_objects_items(time_t time);
-extern int Create_object_item_tx_string(DataRow *p_station, char *line, 
-                                        int line_length);
 extern time_t last_object_check;
 
 // trails

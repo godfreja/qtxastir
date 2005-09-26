@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.22 2005/01/23 20:49:58 we7u Exp $
+ * $Id: alert.h,v 1.23 2005/09/26 02:35:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -39,7 +39,7 @@
 
 
 #include "database.h"
-#include "maps.h"
+//#include "maps.h"
 
 
 // How many alerts we add storage for each time we're short.

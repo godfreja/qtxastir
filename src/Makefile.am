@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.31 2005/09/15 14:52:26 we7u Exp $
+# $Id: Makefile.am,v 1.32 2005/09/26 02:35:39 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -50,6 +50,7 @@ xastir_SOURCES = \
     map_WMS.c \
     messages.c messages.h \
     messages_gui.c \
+    objects.h objects.c \
     popup.h \
     popup_gui.c \
     rac_data.c rac_data.h \

@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.83 2005/09/22 05:29:58 we7u Exp $
+ * $Id: main.h,v 1.84 2005/09/26 02:35:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -111,6 +111,9 @@ extern int my_argc;
 extern void *my_argv;
 extern void *my_envp;
 //////////////////////////////////////////////////////////////////////
+
+extern int input_x;
+extern int input_y;
 
 #define MAX_RELAY_DIGIPEATER_CALLS 50
 extern char relay_digipeater_calls[10*MAX_RELAY_DIGIPEATER_CALLS];
@@ -322,6 +325,18 @@ extern int coordinate_system;
 #define USE_UTM         3
 #define USE_UTM_SPECIAL 4
 #define USE_MGRS        5
+
+typedef struct {
+    Widget calling_dialog;  // NULL if the calling dialog has been closed.
+    Widget input_lat_deg;   // Pointers to calling dialog's widgets
+    Widget input_lat_min;   // (Where to get/put the data)
+    Widget input_lat_dir;
+    Widget input_lon_deg;
+    Widget input_lon_min;
+    Widget input_lon_dir;
+} coordinate_calc_array_type;
+extern coordinate_calc_array_type coordinate_calc_array;
+extern void Coordinate_calc(Widget w, XtPointer clientData, XtPointer callData);
 
 
 extern void HandlePendingEvents(XtAppContext app);

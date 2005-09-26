@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.75 2005/09/09 04:46:56 we7u Exp $
+ * $Id: draw_symbols.c,v 1.76 2005/09/26 02:35:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -37,7 +37,7 @@
 #include "main.h"
 #include "util.h"
 #include "color.h"
-#include "maps.h"
+//#include "maps.h"
 
 // Must be last include file
 #include "leak_detection.h"

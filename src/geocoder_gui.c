@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.17 2005/09/09 04:46:56 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.18 2005/09/26 02:35:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -37,7 +37,7 @@
 #include "xastir.h"
 #include "main.h"
 #include "lang.h"
-#include "maps.h"
+//#include "maps.h"
 #include "io.h"
 #include "geo.h"
 
