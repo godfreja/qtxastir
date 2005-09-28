@@ -1,5 +1,5 @@
 /*
- * $Id: xastir_udp_client.c,v 1.7 2005/09/16 23:46:59 we7u Exp $
+ * $Id: xastir_udp_client.c,v 1.8 2005/09/28 16:22:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -61,8 +61,8 @@
 //      callsign    (argv[3])
 //      passcode    (argv[4])
 //      optional flags:  -identify
-//                       -to_rf (not implemented yet)
-//                       -to_inet (not implemented yet)
+//                       -to_rf
+//                       -to_inet
 //      APRS Packet (argv[5])
 // Returns:
 //      0: Message sent, ack received
