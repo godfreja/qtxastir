@@ -1,5 +1,5 @@
 /*
- * $Id: location.c,v 1.7 2005/08/17 19:09:40 we7u Exp $
+ * $Id: location.c,v 1.8 2005/09/29 19:19:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -95,7 +95,7 @@ void map_pos(long mid_y, long mid_x, long sz) {
     
 //    if (create_image(da)) {
 //        // We don't care whether or not this succeeds?
-//        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+//        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,(unsigned int)screen_width,(unsigned int)screen_height,0,0);
 //        display_zoom_status();
 //    }
 }

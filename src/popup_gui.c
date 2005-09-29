@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.19 2005/08/17 19:12:05 we7u Exp $
+ * $Id: popup_gui.c,v 1.20 2005/09/29 19:19:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -291,7 +291,13 @@ void popup_ID_message(char *banner, char *message) {
         // be seen.
         (void)XSetForeground(XtDisplay(da),gc,MY_BG_COLOR); // Not a mistake!
         (void)XSetBackground(XtDisplay(da),gc,MY_BG_COLOR);
-        (void)XFillRectangle(XtDisplay(appshell),pixmap_alerts,gc,0,0,screen_width,screen_height);
+        (void)XFillRectangle(XtDisplay(appshell),
+            pixmap_alerts,
+            gc,
+            0,
+            0,
+            (unsigned int)screen_width,
+            (unsigned int)screen_height);
 
         /* load font */
         if(!id_font) {
@@ -339,7 +345,16 @@ void popup_ID_message(char *banner, char *message) {
 
         // Write it to the screen.  Symbols/tracks will disappear during
         // this short interval time.
-        (void)XCopyArea(XtDisplay(da),pixmap_alerts,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+        (void)XCopyArea(XtDisplay(da),
+            pixmap_alerts,
+            XtWindow(da),
+            gc,
+            0,
+            0,
+            (unsigned int)screen_width,
+            (unsigned int)screen_height,
+            0,
+            0);
     }
     else {  // ATV Screen ID is not enabled
         pending_ID_message = 0;

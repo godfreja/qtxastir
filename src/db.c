@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.488 2005/09/26 02:35:38 we7u Exp $
+ * $Id: db.c,v 1.489 2005/09/29 19:19:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15680,7 +15680,7 @@ void set_map_position(Widget w, long lat, long lon) {
     request_new_image++;
 
 //    if (create_image(w)) {
-//        (void)XCopyArea(XtDisplay(w),pixmap_final,XtWindow(w),gc,0,0,screen_width,screen_height,0,0);
+//        (void)XCopyArea(XtDisplay(w),pixmap_final,XtWindow(w),gc,0,0,(unsigned int)screen_width,(unsigned int)screen_height,0,0);
 //    }
 }
 

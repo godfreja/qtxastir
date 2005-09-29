@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.1 2005/09/26 02:26:01 we7u Exp $
+ * $Id: objects.c,v 1.2 2005/09/29 19:19:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4045,7 +4045,16 @@ void Object_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
         // Getting a segfault here on a Move operation, so just
         // comment it out.  A redraw will occur shortly anyway.
         //redraw_symbols(da);
-        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+        (void)XCopyArea(XtDisplay(da),
+            pixmap_final,
+            XtWindow(da),
+            gc,
+            0,
+            0,
+            (unsigned int)screen_width,
+            (unsigned int)screen_height,
+            0,
+            0);
     } else {
         // error message
         popup_message_always(langcode("POPEM00022"),langcode("POPEM00027"));
@@ -4087,7 +4096,16 @@ void Item_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
         // Getting a segfault here on a Move operation, so just
         // comment it out.  A redraw will occur shortly anyway.
         //redraw_symbols(da);
-        (void)XCopyArea(XtDisplay(da),pixmap_final,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+        (void)XCopyArea(XtDisplay(da),
+            pixmap_final,
+            XtWindow(da),
+            gc,
+            0,
+            0,
+            (unsigned int)screen_width,
+            (unsigned int)screen_height,
+            0,
+            0);
     } else {
         // error message
         popup_message_always(langcode("POPEM00022"),langcode("POPEM00027"));
