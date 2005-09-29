@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.51 2005/09/21 00:35:27 tvrusso Exp $
+# $Id: acinclude.m4,v 1.52 2005/09/29 18:00:24 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -266,7 +266,7 @@ if test "${found_gdal_config}" = "yes"; then
 #   LIBS="$LIBS `${GDAL_BIN} --libs`"
 # Remove the -lgdal from what gdal-config --libs returns, because AC_CHECK_LIB
 # will put it into LIBS for us.
-   LDFLAGS="$LDFLAGS `${GDAL_BIN} --libs | sed -e s/-lgdal//`"
+   LDFLAGS="$LDFLAGS `${GDAL_BIN} --libs | sed -e 's/-lgdal[^ ]*//'`"
    AC_CHECK_HEADERS(gdal.h, [AC_CHECK_LIB(gdal, GDALAllRegister,
                     [use_gdal="yes"
                      LIBS="$LIBS -lgdal"
