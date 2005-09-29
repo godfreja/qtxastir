@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.27 2005/09/08 15:58:55 we7u Exp $
+ * $Id: map_tif.c,v 1.28 2005/09/29 19:19:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1180,7 +1180,16 @@ void draw_geotiff_image_map (Widget w,
         GTIFFree (gtif);
         XTIFFClose (tif);
         // Update to screen
-        (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+        (void)XCopyArea(XtDisplay(da),
+            pixmap,
+            XtWindow(da),
+            gc,
+            0,
+            0,
+            (unsigned int)screen_width,
+            (unsigned int)screen_height,
+            0,
+            0);
         return;
     }
 
@@ -1345,7 +1354,16 @@ Samples Per Pixel: 1
             GTIFFree (gtif);
             XTIFFClose (tif);
             // Update to screen
-            (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+            (void)XCopyArea(XtDisplay(da),
+                pixmap,
+                XtWindow(da),
+                gc,
+                0,
+                0,
+                (unsigned int)screen_width,
+                (unsigned int)screen_height,
+                0,
+                0);
             return;
         }
 
