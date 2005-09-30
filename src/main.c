@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.630 2005/09/30 18:02:44 we7u Exp $
+ * $Id: main.c,v 1.631 2005/09/30 18:25:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5030,9 +5030,9 @@ fprintf(stderr,
 //        sizehints.width =  (int)global_width; // Obsolete, X11R3
 //        sizehints.height = (int)global_height;// Obsolete, X11R3
         sizehints.flags |= USSize;  // We still need this
-        sizehints.base_width =  (int)global_width;
-        sizehints.base_height = (int)global_height;
-        sizehints.flags |= PBaseSize;
+//        sizehints.base_width =  (int)global_width;  // Takes priority over min_width
+//        sizehints.base_height = (int)global_height; // Takes priority over min_height
+//        sizehints.flags |= PBaseSize;
         sizehints.min_width  = 100; // Minimum size
         sizehints.min_height = 100; // Minimum size
         sizehints.flags |= PMinSize;
@@ -5052,9 +5052,9 @@ fprintf(stderr,
 //        sizehints.width =  (int)screen_width;        // Obsolete, X11R3
 //        sizehints.height = (int)(screen_height + 60);// Obsolete, X11R3
         sizehints.flags |= PSize;   // We still need this
-        sizehints.base_width =  (int)screen_width;
-        sizehints.base_height = (int)(screen_height + 60);
-        sizehints.flags |= PBaseSize;
+//        sizehints.base_width =  (int)screen_width;         // Takes priority over min_width
+//        sizehints.base_height = (int)(screen_height + 60); // Takes priority over min_height
+//        sizehints.flags |= PBaseSize;
         sizehints.min_width  = 100; // Minimum size
         sizehints.min_height = 100; // Minimum size
         sizehints.flags |= PMinSize;
