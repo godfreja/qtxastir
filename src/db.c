@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.489 2005/09/29 19:19:10 we7u Exp $
+ * $Id: db.c,v 1.490 2005/09/30 12:26:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14353,6 +14353,9 @@ void decode_info_field(char *call, char *path, char *message, char *origin,
             case 'T':   // Telemetry data                           [APRS Reference, chapter 13]
                 // We treat these as status packets currently.
                 ok_igate_rf = 1;
+                if (debug_level & 1)
+                    fprintf(stderr,"decode_info_field: T (telem)\n");
+                 done = data_add(APRS_STATUS,call,path,message,from,port,origin,third_party);
                 break;
  
             case '{':   // User-defined APRS packet format     //}
