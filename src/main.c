@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.631 2005/09/30 18:25:11 we7u Exp $
+ * $Id: main.c,v 1.632 2005/09/30 20:16:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4981,8 +4981,8 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
     // Set the minimum width that Xastir can be shrunk to.  We use
     // XSizeHints for this now instead.
-//    XtSetArg(al[ac], XmNminWidth,         100);             ac++;
-//    XtSetArg(al[ac], XmNminHeight,        100);             ac++;
+    XtSetArg(al[ac], XmNminWidth,         100);             ac++;
+    XtSetArg(al[ac], XmNminHeight,        100);             ac++;
 
     XtSetArg(al[ac], XmNdefaultPosition,  FALSE);           ac++;
  
@@ -5033,9 +5033,9 @@ fprintf(stderr,
 //        sizehints.base_width =  (int)global_width;  // Takes priority over min_width
 //        sizehints.base_height = (int)global_height; // Takes priority over min_height
 //        sizehints.flags |= PBaseSize;
-        sizehints.min_width  = 100; // Minimum size
-        sizehints.min_height = 100; // Minimum size
-        sizehints.flags |= PMinSize;
+//        sizehints.min_width  = 100; // Minimum size
+//        sizehints.min_height = 100; // Minimum size
+//        sizehints.flags |= PMinSize;
 
 fprintf(stderr,
     "       appshell:               Width:%4d  Height:%4d",
@@ -5055,9 +5055,9 @@ fprintf(stderr,
 //        sizehints.base_width =  (int)screen_width;         // Takes priority over min_width
 //        sizehints.base_height = (int)(screen_height + 60); // Takes priority over min_height
 //        sizehints.flags |= PBaseSize;
-        sizehints.min_width  = 100; // Minimum size
-        sizehints.min_height = 100; // Minimum size
-        sizehints.flags |= PMinSize;
+//        sizehints.min_width  = 100; // Minimum size
+//        sizehints.min_height = 100; // Minimum size
+//        sizehints.flags |= PMinSize;
 
 fprintf(stderr,
     "       appshell:               Width:%4d  Height:%4d",
