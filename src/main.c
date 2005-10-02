@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.632 2005/09/30 20:16:02 we7u Exp $
+ * $Id: main.c,v 1.633 2005/10/02 00:46:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4981,8 +4981,8 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
     // Set the minimum width that Xastir can be shrunk to.  We use
     // XSizeHints for this now instead.
-    XtSetArg(al[ac], XmNminWidth,         100);             ac++;
-    XtSetArg(al[ac], XmNminHeight,        100);             ac++;
+//    XtSetArg(al[ac], XmNminWidth,         100);             ac++;
+//    XtSetArg(al[ac], XmNminHeight,        100);             ac++;
 
     XtSetArg(al[ac], XmNdefaultPosition,  FALSE);           ac++;
  
