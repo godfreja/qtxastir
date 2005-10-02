@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.46 2005/08/17 19:12:05 we7u Exp $
+ * $Id: xastir.h,v 1.47 2005/10/02 06:26:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -83,12 +83,8 @@ extern Pixmap  pixmap_13pct_stipple;
 extern Pixmap  pixmap_wx_stipple;
 
 
-typedef struct XastirGlobal {
-    Widget  top;    // top level shell
-} XastirGlobal;
-
-extern XastirGlobal Global;
 extern Widget appshell;
+
 
 extern int wait_to_redraw;
 /*extern char my_callsign[MAX_CALLSIGN+1];*/

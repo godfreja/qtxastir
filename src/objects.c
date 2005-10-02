@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.2 2005/09/29 19:19:11 we7u Exp $
+ * $Id: objects.c,v 1.3 2005/10/02 06:26:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5274,8 +5274,7 @@ void Set_Del_Object( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, X
         (void)XRaiseWindow(XtDisplay(object_dialog), XtWindow(object_dialog));
     else {                      // create new popup window
         object_dialog = XtVaCreatePopupShell(langcode("POPUPOB001"),
-                xmDialogShellWidgetClass,
-                Global.top,
+                xmDialogShellWidgetClass,   appshell,
                 XmNdeleteResponse,          XmDESTROY,
                 XmNdefaultPosition,         FALSE,
                 NULL);

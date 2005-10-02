@@ -1,5 +1,5 @@
 /*
- * $Id: view_message_gui.c,v 1.30 2005/09/09 04:46:56 we7u Exp $
+ * $Id: view_message_gui.c,v 1.31 2005/10/02 06:26:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -299,9 +299,8 @@ void view_all_messages( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData
 begin_critical_section(&All_messages_dialog_lock, "view_message_gui.c:view_all_messages" );
 
         All_messages_dialog = XtVaCreatePopupShell(langcode("AMTMW00001"),
-                xmDialogShellWidgetClass,
-                Global.top,
-                XmNdeleteResponse,XmDESTROY,
+                xmDialogShellWidgetClass, appshell,
+                XmNdeleteResponse, XmDESTROY,
                 XmNdefaultPosition, FALSE,
                 NULL);
 

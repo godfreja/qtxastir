@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.448 2005/09/29 19:19:11 we7u Exp $
+ * $Id: maps.c,v 1.449 2005/10/02 06:26:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2326,10 +2326,11 @@ void Print_properties( Widget w, XtPointer clientData, XtPointer callData ) {
 begin_critical_section(&print_properties_dialog_lock, "maps.c:Print_properties" );
 
 
-        print_properties_dialog = XtVaCreatePopupShell(langcode("PRINT0001"),xmDialogShellWidgetClass,Global.top,
-                                  XmNdeleteResponse,XmDESTROY,
-                                  XmNdefaultPosition, FALSE,
-                                  NULL);
+        print_properties_dialog = XtVaCreatePopupShell(langcode("PRINT0001"),
+            xmDialogShellWidgetClass, appshell,
+            XmNdeleteResponse, XmDESTROY,
+            XmNdefaultPosition, FALSE,
+            NULL);
 
 
         pane = XtVaCreateWidget("Print_properties pane",xmPanedWindowWidgetClass, print_properties_dialog,

@@ -1,5 +1,5 @@
 /*
- * $Id: geocoder_gui.c,v 1.18 2005/09/26 02:35:38 we7u Exp $
+ * $Id: geocoder_gui.c,v 1.19 2005/10/02 06:26:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -273,7 +273,7 @@ begin_critical_section(&geocoder_place_dialog_lock, "geocoder_gui.c:Geocoder_pla
 
         // Find Address
         geocoder_place_dialog = XtVaCreatePopupShell(langcode("PULDNMP029"),
-                xmDialogShellWidgetClass,Global.top,
+                xmDialogShellWidgetClass, appshell,
                 XmNdeleteResponse,XmDESTROY,
                 XmNdefaultPosition, FALSE,
                 NULL);

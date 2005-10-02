@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.76 2005/09/26 02:35:38 we7u Exp $
+ * $Id: draw_symbols.c,v 1.77 2005/10/02 06:26:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2771,8 +2771,7 @@ begin_critical_section(&select_symbol_dialog_lock, "draw_symbols.c:Select_symbol
 
 
         select_symbol_dialog = XtVaCreatePopupShell(langcode("SYMSEL0001"),
-                xmDialogShellWidgetClass,
-                Global.top,
+                xmDialogShellWidgetClass, appshell,
                 XmNdeleteResponse,XmDESTROY,
                 XmNdefaultPosition, FALSE,
                 NULL);

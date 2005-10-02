@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.47 2005/09/26 02:35:38 we7u Exp $
+ * $Id: track_gui.c,v 1.48 2005/10/02 06:26:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -190,9 +190,8 @@ void Track_station( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*
 begin_critical_section(&track_station_dialog_lock, "track_gui.c:Track_station" );
 
         track_station_dialog = XtVaCreatePopupShell(langcode("WPUPTSP001"),
-                xmDialogShellWidgetClass,
-                Global.top,
-                XmNdeleteResponse,XmDESTROY,
+                xmDialogShellWidgetClass, appshell,
+                XmNdeleteResponse, XmDESTROY,
                 XmNdefaultPosition, FALSE,
                 NULL);
 
@@ -620,8 +619,7 @@ void Download_findu_trail( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientD
 begin_critical_section(&download_findu_dialog_lock, "track_gui.c:Download_findu_trail" );
 
         download_findu_dialog = XtVaCreatePopupShell(langcode("WPUPTSP007"),
-                xmDialogShellWidgetClass,
-                Global.top,
+                xmDialogShellWidgetClass, appshell,
                 XmNdeleteResponse,XmDESTROY,
                 XmNdefaultPosition, FALSE,
                 NULL);
