@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.639 2005/10/03 20:05:06 we7u Exp $
+ * $Id: main.c,v 1.640 2005/10/03 20:11:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11781,11 +11781,11 @@ void Zoom_level( /*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPoi
 // make sure the world fits in both).  We should probably center at
 // 0.0N/0.0W as well.
 
-                new_scale_y = 262144;
+                new_scale_y = 500000;
 
                 // Center on Earth (0/0)
-                new_mid_x = 12900000l / 2;
-                new_mid_y = 6480000l  / 2;
+//                new_mid_x = 12900000l / 2;
+//                new_mid_y = 6480000l  / 2;
                 break;
 
             case(8):    // 10% out
