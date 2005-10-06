@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.177 2005/09/22 05:29:57 we7u Exp $
+# $Id: language-French.sys,v 1.178 2005/10/06 19:37:25 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -307,6 +307,7 @@ POPUPMA041|Bearing||
 POPUPMA042|degrees||
 POPUPMA043|Modify ambiguous position||
 POPUPMA044|Position abiguity is on, your new position may appear to jump.||
+POPUPMA045|Create SAR Objects||
 #
 # Status line labels
 BBARZM0001|Zoom %s||

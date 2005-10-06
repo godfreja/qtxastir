@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.183 2005/09/28 14:50:55 we7u Exp $
+# $Id: language-German.sys,v 1.184 2005/10/06 19:37:25 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -313,6 +313,7 @@ POPUPMA041|Peilung||
 POPUPMA042|Grad||
 POPUPMA043|Bearbeite mehrdeutige Position||
 POPUPMA044|Mehrdeutige Position, Ihre Position kann sich sprunghaft verändern.||
+POPUPMA045|Create SAR Objects||
 #
 # Texte in Statuszeile
 BBARZM0001|Zoom %s||
