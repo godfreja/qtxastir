@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.5 2005/10/06 19:46:19 we7u Exp $
+ * $Id: objects.c,v 1.6 2005/10/06 20:50:48 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5095,8 +5095,9 @@ void Populate_predefined_objects(predefinedObject *predefinedObjects) {
 
     // could implement using multiple optional sets of predefined objects (SAR/public service event)
 
-    number_of_predefined_objects = 0;
     int j = 0;
+
+    number_of_predefined_objects = 0;
 
     // command post
     xastir_snprintf(predefinedObjects[j].call,sizeof(predefinedObjects[j].call),"ICP");

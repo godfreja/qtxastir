@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.648 2005/10/06 19:39:21 we7u Exp $
+ * $Id: main.c,v 1.649 2005/10/06 20:50:48 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4939,6 +4939,9 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 #endif // ARROWS
 
         help_button, help_about, help_help;
+
+    Widget predefined_object_menu_items[number_of_predefined_objects];
+
     char *title, *t;
 //    XWMHints *wm_hints; // Used for window manager hints
     Dimension my_appshell_width, my_appshell_height;
@@ -8123,7 +8126,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     XtSetArg(al[ac], XmNbackground, MY_BG_COLOR); ac++;
     XtSetArg(al[ac], XmNnavigationType, XmTAB_GROUP); ac++;
     XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
-    Widget predefined_object_menu_items[number_of_predefined_objects];
+
     for (i=0; i<number_of_predefined_objects; i++) {
         // Walk through array of predefined objects and
         // build a menu item for each predefined object.
