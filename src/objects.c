@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.4 2005/10/06 19:39:21 we7u Exp $
+ * $Id: objects.c,v 1.5 2005/10/06 19:46:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5297,7 +5297,7 @@ void Create_SAR_Object(/*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
         c_lon,
         symbol_plus);
 
-fprintf(stderr,"Packet:%s\n", data);
+//fprintf(stderr,"Packet:%s\n", data);
 
     log_object_item(data,0,last_object);
 
