@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.33 2005/10/07 18:15:01 we7u Exp $
+# $Id: Makefile.am,v 1.34 2005/10/07 18:16:50 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -10,7 +10,6 @@ SUBDIRS = @SUBRTREE@
 DIST_SUBDIRS = rtree
 
 EXTRA_DIST=icon.xbm
-xastir_DATA= icon.xbm
 
 xastir_SOURCES = \
     alert.c alert.h \
