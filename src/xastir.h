@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.47 2005/10/02 06:26:48 we7u Exp $
+ * $Id: xastir.h,v 1.48 2005/10/07 19:26:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -118,6 +118,8 @@ extern float f_center_latitude;
 extern float f_center_longitude;
 extern long screen_width;
 extern long screen_height;
+extern Position screen_x_offset;
+extern Position screen_y_offset;
 extern int long_lat_grid;
 //extern Pixmap  pixmap;
 //extern Pixmap  pixmap_final;
