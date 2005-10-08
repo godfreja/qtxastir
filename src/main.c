@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.650 2005/10/07 19:26:12 we7u Exp $
+ * $Id: main.c,v 1.651 2005/10/08 01:13:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10673,7 +10673,8 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                 *strchr(temp_call,'>') = '\0';
                             }
 
-//                            if (is_my_call(temp_call, 0)) {
+//                            if (is_my_call(temp_call, 0)) { // Match ignoring SSID
+//                            exact match
                                 // Send to RF as direct packet
 //fprintf(stderr,"\tBase callsigns Match!  Send to RF as direct packet\n");
 //fprintf(stderr,"\t%s\n", line);
