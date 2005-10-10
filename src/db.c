@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.492 2005/10/08 01:10:04 we7u Exp $
+ * $Id: db.c,v 1.493 2005/10/10 16:31:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13818,7 +13818,7 @@ else {
             fprintf(stderr,"found Msg w line: |%s| |%s| |%s|\n",
                 addr,
                 message,
-                msg_id);
+                orig_msg_id);
 
         (void)msg_data_add(addr,
             call,
@@ -13873,7 +13873,7 @@ else {
                 my_callsign,
                 addr9,
                 message,
-                msg_id);
+                orig_msg_id);
 
 //fprintf(stderr,"Attempting to send message to RF\n");
 
