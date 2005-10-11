@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.495 2005/10/10 19:11:13 we7u Exp $
+ * $Id: db.c,v 1.496 2005/10/11 01:29:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13490,19 +13490,20 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
         // REPLY-ACK protocol or a single ACK sequence number plus
         // perhaps an extra '}' on the end.  They should have one of
         // these formats:
-        //      ack1
-        //      ackY
-        //      ack23
-        //      ackfH
-        //      ack23{
-        //      ack2Q}3d
+        //      ack1        Normal ACK
+        //      ackY        Normal ACK
+        //      ack23       Normal ACK
+        //      ackfH       Normal ACK
+        //      ack23{      REPLY-ACK Protocol
+        //      ack2Q}3d    REPLY-ACK Protocol
 
         substr(msg_id,message+3,5);
         // fprintf(stderr,"ACK: %s: |%s| |%s|\n",call,addr,msg_id);
         if (is_my_call(addr,1)) { // Check SSID also
 
             // Note:  This function handles REPLY-ACK protocol just
-            // fine, stripping off the 2nd ack if present.
+            // fine, stripping off the 2nd ack if present.  It uses
+            // only the first sequence number.
             clear_acked_message(call,addr,msg_id);  // got an ACK for me
 
             // This one also handles REPLY-ACK protocol just fine.
@@ -13556,8 +13557,12 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
     //--------------------------------------------------------------------------
     if (!done && len > 3 && strncmp(message,"rej",3) == 0) {              // REJ
         substr(msg_id,message+3,5);
-fprintf(stderr,"Received a REJ packet from %s: |%s| |%s|\n",call,addr,msg_id);
-        // we ignore it
+
+        if ( is_my_call(addr,1) ) { // Check SSID also
+            fprintf(stderr,"Received a REJ packet from %s: |%s| |%s|\n",call,addr,msg_id);
+        }
+
+        // We ignore it
         done = 1;
     }
     if (debug_level & 1)
