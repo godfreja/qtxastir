@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.496 2005/10/11 01:29:44 we7u Exp $
+ * $Id: db.c,v 1.497 2005/10/11 05:07:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13530,12 +13530,13 @@ int decode_message(char *call,char *path,char *message,char from,int port,int th
 
                 xastir_snprintf(ipacket_message,
                     sizeof(ipacket_message),
-                    "}%s>%s,TCPIP,%s*::%s:%s",
+                    "}%s>%s,TCPIP,%s*::%s:%s}%s",
                     call,
                     short_path,
                     my_callsign,
                     addr9,
-                    message);
+                    message,
+                    ack_string);
 
 //fprintf(stderr,"Attempting to send ACK to RF\n");
 
