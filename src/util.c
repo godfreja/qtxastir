@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.184 2005/09/26 02:35:39 we7u Exp $
+ * $Id: util.c,v 1.185 2005/10/12 18:33:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -544,6 +544,41 @@ char *remove_trailing_asterisk(char *data) {
     for(i=strlen(data)-1;i>0;i--) {
         if(data[i] == '*')
             data[i] = '\0';
+    }
+    return(data);
+}
+
+
+
+
+
+// Removes trailing zeroes from string, then removes trailing
+// dashes.  If multiple zeroes it removes them all.  Same for
+// multiple dashes.
+//
+// Modifies "data" variable.
+//
+char *remove_trailing_dash_zero(char *data) {
+    char *ptr;
+
+    // Check for '-' character in string.
+    if (strchr(data, '-')) {
+
+        // Check for trailing zeroes and remove.
+ 
+        ptr = data + (strlen(data) - 1);
+
+        // Remove trailing zeroes
+        while (ptr >= data && *ptr == '0') {
+            *ptr = '\0'; // Terminate at zero char
+            ptr--;
+        }
+
+        // Remove trailing dashes
+        while (ptr >= data && *ptr == '-') {
+            *ptr = '\0';  // Terminate at dash
+            ptr--;
+        }
     }
     return(data);
 }
