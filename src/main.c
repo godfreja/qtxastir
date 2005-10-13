@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.654 2005/10/12 18:33:22 we7u Exp $
+ * $Id: main.c,v 1.655 2005/10/13 15:39:32 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4945,6 +4945,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     Widget predefined_object_menu_items[number_of_predefined_objects];
 
     char *title, *t;
+    int t_size;
 //    XWMHints *wm_hints; // Used for window manager hints
     Dimension my_appshell_width, my_appshell_height;
     Dimension da_width, da_height;
@@ -4968,17 +4969,12 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
 
     t = _("X Amateur Station Tracking and Information Reporting");
-    title = (char *)malloc(strlen(t) + 42 + strlen(PACKAGE));
+    title = (char *)malloc(t_size = (strlen(t) + 42 + strlen(PACKAGE)));
     if (!title) {
         fprintf(stderr,"Couldn't allocate memory for title\n");
     }
     else {
-        int t_size;
-
-        t_size = strlen(t) + 42 + strlen(PACKAGE);
-        xastir_snprintf(title,
-            t_size,
-            "XASTIR");
+        xastir_snprintf(title, t_size, "XASTIR");
         strncat(title, " - ", t_size - strlen(title));
         strncat(title, t, t_size - strlen(title));
         strncat(title, " @ ", t_size - strlen(title));
@@ -5124,9 +5120,6 @@ fprintf(stderr,"Setting up widget's X/Y position at X:%d  Y:%d\n",
     //
     XtSetValues(appshell, al, ac);
  
-
-    free(title);
-
 
     // Make at least one Motif call so that the next function won't
     // result in this problem:  'Error: atttempt to add non-widget
@@ -8488,11 +8481,14 @@ fprintf(stderr,"Setting up widget's X/Y position at X:%d  Y:%d\n",
 
     XSetStandardProperties(display,
         XtWindow(appshell),
-        "Xastir",       // window name
+        title ? title: "Xastir", // window name
         "Xastir",       // icon name
         icon_pixmap,    // pixmap for icon
         0, 0,           // argv and argc for restarting
         NULL);          // size hints
+
+    if (title)
+        free(title);
 
     if (track_me)
         XmToggleButtonSetState(trackme_button,TRUE,TRUE);
