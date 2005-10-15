@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.30 2005/10/15 16:42:49 we7u Exp $
+ * $Id: map_tif.c,v 1.31 2005/10/15 17:30:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -84,11 +84,12 @@ extern int mag;
 #include "xtiffio.h"
 //#include "geotiffio.h"
 #include "geo_normalize.h"
-#include "projects.h"
 
-#ifdef USE_PROJUV
-#  define UV projUV
-#endif
+
+// Needed for GTIFProj4FromLatLong() replacement below
+#ifdef HAVE_LIBGDAL
+#  include "projects.h"
+#endif  // HAVE_LIBGDAL
 
 
 // Must be last include file
@@ -341,8 +342,9 @@ int read_fgd_file ( char* tif_filename,
 
 
 #ifndef HAVE_LIBGDAL
-#define my_GTIFProj4FromLatLong GTIFProj4FromLatLong
+#  define my_GTIFProj4FromLatLong GTIFProj4FromLatLong
 #else
+
 // If we have libgdal included then the GTIFProj4FromLatLong()
 // functions may not work.  In this case we use the function below
 // instead.
@@ -402,7 +404,7 @@ int my_GTIFProj4FromLatLong( GTIFDefn * psDefn,
 // --------------------------------------------------------------------
 
     for( i = 0; i < nPoints; i++ ) {
-        UV  sUV;
+        projUV  sUV;
 
         sUV.u = padfX[i] * DEG_TO_RAD;
         sUV.v = padfY[i] * DEG_TO_RAD;
