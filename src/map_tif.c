@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.29 2005/10/14 18:06:21 we7u Exp $
+ * $Id: map_tif.c,v 1.30 2005/10/15 16:42:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -340,6 +340,14 @@ int read_fgd_file ( char* tif_filename,
 
 
 
+#ifndef HAVE_LIBGDAL
+#define my_GTIFProj4FromLatLong GTIFProj4FromLatLong
+#else
+// If we have libgdal included then the GTIFProj4FromLatLong()
+// functions may not work.  In this case we use the function below
+// instead.
+
+
 // This next function was borrowed from the libgeotiff project.  We
 // have permission from Frank Warmerdam to use any code from
 // geotiff_proj4.c and relicense it under GPL, per private message
@@ -409,6 +417,7 @@ int my_GTIFProj4FromLatLong( GTIFDefn * psDefn,
 
     return TRUE;
 }
+#endif  // HAVE_LIBGDAL
 
 
 
