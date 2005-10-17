@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.187 2005/10/06 19:37:25 we7u Exp $
+# $Id: language-Spanish.sys,v 1.188 2005/10/17 20:41:55 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1230,9 +1230,9 @@ RANGE001|RANGE SCALE||
 GPSS001|3D||
 GPSS002|2D||
 GPSS003|Valid||
-GPSS004|Invalid|
-GPSS005|Sats/View|
-GPSS006|Fix|
+GPSS004|Invalid||
+GPSS005|Sats/View||
+GPSS006|Fix||
 GPSS007|!GPS data is older than 30 seconds!||
 #
 #
