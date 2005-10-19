@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.235 2005/10/19 20:19:30 we7u Exp $
+ * $Id: interface.c,v 1.236 2005/10/19 20:24:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8405,7 +8405,7 @@ end_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
     }
 
 
-    if (enable_server_port && !loopback_only) {
+    if (enable_server_port && !transmit_disable) {
 // Send data to the x_spider server
 
         xastir_snprintf(data_txt, sizeof(data_txt), "%s>%s,TCPIP*:%s", my_callsign,
