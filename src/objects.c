@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.10 2005/10/08 01:16:47 we7u Exp $
+ * $Id: objects.c,v 1.11 2005/10/19 19:54:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1481,7 +1481,7 @@ void check_and_transmit_objects_items(time_t time) {
                     int new_increment;
 
 
-                    if (first) {    // "Transmitting objects/items"
+                    if (first && !object_tx_disable) {    // "Transmitting objects/items"
                         statusline(langcode("BBARSTA042"),1);
                         first = 0;
                     }
