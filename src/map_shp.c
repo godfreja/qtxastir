@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.105 2005/09/29 19:19:11 we7u Exp $
+ * $Id: map_shp.c,v 1.106 2005/10/20 20:08:40 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1847,10 +1847,6 @@ void draw_shapefile_map (Widget w,
                 fprintf(stderr,"Shape %d is visible, drawing it.", structure);
                 fprintf(stderr,"  Parts in shape: %d\n", object->nParts );    // Number of parts in this structure
             }
-
-            if (alert)
-                alert->flags[0] = 'Y';
-
 
             if (debug_level & 16) {
                 // Print the field contents
@@ -3975,10 +3971,6 @@ if (on_screen) {
                     break;
 
             }   // End of switch
-        }
-        else {  // Shape not currently visible
-            if (alert)
-                alert->flags[0] = 'N';
         }
         SHPDestroyObject( object ); // Done with this structure
     }
