@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.180 2005/10/17 20:46:27 francais1 Exp $
+# $Id: language-French.sys,v 1.181 2005/10/20 21:40:13 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -414,6 +414,7 @@ WPUPCFD027|Afficher bulletins nouveaux||
 WPUPCFD028|Alerter si il y a des clés modificatrices||
 WPUPCFD029|Voir bulletins avec distance zéro||
 WPUPCFD030|Désactiver identif. de duplic. posit.||
+WPUPCFD031|Load SAR objects menu from file||
 #
 # PopUp "Configure - Timing"
 WPUPCFTM01|Configurer temporisation||
@@ -1251,3 +1252,9 @@ GPSS006|Fix||
 GPSS007|! Les données GPS ont plus de 30 secondes !||
 #
 #
+# Popup cad_dialog to obtain CAD object data
+CADPUD001|Area Object||
+CADPUD002|Area Label:||
+CADPUD003|Comment:||
+CADPUD004|Probability:||
+CADPUD005|OK||

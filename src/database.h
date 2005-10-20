@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.19 2005/09/26 02:35:38 we7u Exp $
+ * $Id: database.h,v 1.20 2005/10/20 21:41:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -454,6 +454,8 @@ typedef struct _VerticeRow{
     struct  _VerticeRow *next;  // Pointer to next record in list
 } VerticeRow;
 
+#define CAD_LABEL_MAX_SIZE 40
+#define CAD_COMMENT_MAX_SIZE 256
 
 
 // CAD Objects
@@ -469,8 +471,8 @@ typedef struct _CADRow {
                                 // detection (POD)
     long label_latitude;        // Latitude for label placement
     long label_longitude;       // Longitude for label placement
-    char label[40];             // Name of polygon
-    char comment[256];          // Comments associated with polygon
+    char label[CAD_LABEL_MAX_SIZE];             // Name of polygon
+    char comment[CAD_COMMENT_MAX_SIZE];          // Comments associated with polygon
 } CADRow;
 
 

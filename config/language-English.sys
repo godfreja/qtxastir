@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.180 2005/10/17 20:41:55 we7u Exp $
+# $Id: language-English.sys,v 1.181 2005/10/20 21:40:13 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -412,6 +412,7 @@ WPUPCFD027|Pop up new bulletins||
 WPUPCFD028|Warn if Modifier Keys||
 WPUPCFD029|View zero-distance bulletins||
 WPUPCFD030|Disable Posit Dupe-Checks||
+WPUPCFD031|Load SAR objects menu from file||
 #
 # PopUp "Configure - Timing"
 WPUPCFTM01|Configure Timing||
@@ -1249,3 +1250,9 @@ GPSS006|Fix||
 GPSS007|!GPS data is older than 30 seconds!||
 #
 #
+# Popup cad_dialog to obtain CAD object data
+CADPUD001|Area Object||
+CADPUD002|Area Label:||
+CADPUD003|Comment:||
+CADPUD004|Probability:||
+CADPUD005|OK||
