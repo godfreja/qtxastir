@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.656 2005/10/20 21:41:05 we7u Exp $
+ * $Id: main.c,v 1.657 2005/10/20 22:02:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9007,10 +9007,7 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
     // Start of CAD Objects code.  We have both ButtonPress and
     // ButtonRelease code handlers here, for this mode only.
     // Check whether we're in CAD Object draw mode first
-    if (draw_CAD_objects_flag
-            && (event->xbutton.button == Button2 || event->xbutton.button == Button1)) {
-            //two button mice are mapped to Button1 and Button3, and may lack Button2
-            //&& event->xbutton.button == Button2) {
+    if (draw_CAD_objects_flag && event->xbutton.button == Button2) {
 
         if (event->type == ButtonRelease) {
             // We don't want to do anything for ButtonRelease.  Most
