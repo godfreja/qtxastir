@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.185 2005/10/12 18:33:22 we7u Exp $
+ * $Id: util.c,v 1.186 2005/10/20 12:35:10 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -187,40 +187,44 @@ int convert_to_xastir_coordinates ( unsigned long* x,
                                     float f_longitude,
                                     float f_latitude ) {
 
-/*
+    int ok = 1;
+
+    *y = (unsigned long)(32400000l + (360000.0 * (-f_latitude)));
+    *x = (unsigned long)(64800000l + (360000.0 * f_longitude));
+
     if (f_longitude < -180.0) {
         fprintf(stderr,
             "convert_to_xastir_coordinates:Longitude out-of-range (too low):%f\n",
             f_longitude);
-        return(0);
+        *x = 0;
+        ok = 0;
     }
 
     if (f_longitude >  180.0) {
         fprintf(stderr,
             "convert_to_xastir_coordinates:Longitude out-of-range (too high):%f\n",
             f_longitude);
-        return(0);
+        *x = 129600000l;
+        ok = 0;
     }
 
     if (f_latitude <  -90.0) {
         fprintf(stderr,
             "convert_to_xastir_coordinates:Latitude out-of-range (too low):%f\n",
             f_latitude);
-        return(0);
+        *y = 0;
+        ok = 0;
     }
 
     if (f_latitude >   90.0) {
         fprintf(stderr,
             "convert_to_xastir_coordinates:Latitude out-of-range (too high):%f\n",
             f_latitude);
-        return(0);
+        *y = 64800000l;
+        ok =0;
     }
-*/
 
-    *y = (unsigned long)(32400000l + (360000.0 * (-f_latitude)));
-    *x = (unsigned long)(64800000l + (360000.0 * f_longitude));
-
-    return(1);
+    return(ok);
 }
 
 
