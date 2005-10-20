@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: color.c,v 1.13 2005/10/19 19:20:17 we7u Exp $
+ * $Id: color.c,v 1.14 2005/10/20 20:34:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -119,6 +119,7 @@ Pixel GetPixelByName( Widget w, char *colorname) {
 
     found=-1;
     i=0;
+
     do {
         if (strcmp(color_choice[i].colorname, colorname)==0)
             found=i;
@@ -132,14 +133,16 @@ Pixel GetPixelByName( Widget w, char *colorname) {
         // "BadAccess (attempt to access private resource denied)"
         // XFreeColors(dpy, cmap, &(color_choice[found].color.pixel),1,0);
 
-        if (XAllocColor(dpy,cmap,&color_choice[found].color))
+        if (XAllocColor(dpy,cmap,&color_choice[found].color)) {
             return(color_choice[found].color.pixel);
+        }
         else {
             xastir_snprintf(warning, sizeof(warning), "Couldn't allocate color %s", colorname);
             XtWarning(warning);
             return(BlackPixel(dpy,scr));
         }
-    } else {
+    }
+    else {
         xastir_snprintf(warning, sizeof(warning), "Couldn't find color %s", colorname);
         XtWarning(warning);
         return(BlackPixel(dpy,scr));
