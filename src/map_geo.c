@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.61 2005/10/19 19:21:46 we7u Exp $
+ * $Id: map_geo.c,v 1.62 2005/10/20 01:29:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1967,7 +1967,7 @@ fprintf(stderr,"2 ");
 
                 // Get the color allocated on < 8bpp displays. pixel color is written to my_colors.pixel
                 if (visual_type == NOT_TRUE_NOR_DIRECT) {
-                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
+//                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
                     XAllocColor(XtDisplay(w), cmap, &my_colors[l]);
                 }
                 else {
@@ -1995,7 +1995,7 @@ fprintf(stderr,"2 ");
 
             // Get the color allocated on < 8bpp displays. pixel color is written to my_colors.pixel
             if (visual_type == NOT_TRUE_NOR_DIRECT) {
-                XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
+//                XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
                 XAllocColor(XtDisplay(w), cmap, &my_colors[l]);
             }
             else {

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.32 2005/10/19 19:21:46 we7u Exp $
+ * $Id: map_tif.c,v 1.33 2005/10/20 01:29:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1894,7 +1894,7 @@ right_crop = width - 1;
                 my_colors[l].blue  =  (uint16)(blue_orig[l] * raster_map_intensity);
 
                 if (visual_type == NOT_TRUE_NOR_DIRECT) {
-                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
+//                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
                     XAllocColor(XtDisplay(w), cmap, &my_colors[l]);
                 }
                 else {
@@ -1911,7 +1911,7 @@ right_crop = width - 1;
                     (uint16)(v * raster_map_intensity) << 8;
 
                 if (visual_type == NOT_TRUE_NOR_DIRECT) {
-                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
+//                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
                     XAllocColor(XtDisplay(w), cmap, &my_colors[l]);
                 }
                 else {
@@ -1928,7 +1928,7 @@ right_crop = width - 1;
                   (uint16)(v * raster_map_intensity) << 8;
 
                 if (visual_type == NOT_TRUE_NOR_DIRECT) {
-                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
+//                    XFreeColors(XtDisplay(w), cmap, &(my_colors[l].pixel),1,0);
                     XAllocColor(XtDisplay(w), cmap, &my_colors[l]);
                 }
                 else {
