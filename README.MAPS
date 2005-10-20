@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.66 2005/10/20 17:57:10 we7u Exp $
+$Id: README.MAPS,v 1.67 2005/10/20 17:58:02 we7u Exp $
 
 
 Recommended Configurations for:
@@ -992,7 +992,7 @@ Getting Maps and other Data Files for Xastir:
 
        The download and installation of these is automated in the fcc-get
        script included with Xastir, but you may install them by hand
-       individually if you wish.
+       individually if you wish as described here:
 
        To use the FCC lookup:
        ----------------------
