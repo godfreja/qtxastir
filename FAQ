@@ -1,6 +1,6 @@
                   Xastir Frequently Asked Questions
 
-$Id: FAQ,v 1.57 2005/07/10 17:56:51 tvrusso Exp $
+$Id: FAQ,v 1.58 2005/10/21 19:27:55 we7u Exp $
 
 The latest version of this FAQ is always available from the Xastir web site, at
 <http://www.xastir.org/docs/FAQ.html>, soon to be available also at:
@@ -98,6 +98,9 @@ The Questions
     5.3  How do I take a snapshot of my current view? 
 
     5.4  What is that yellow circle on my map?
+
+    5.5 How can I restart Xastir remotely?
+
 
 The Answers
 -----------
@@ -916,6 +919,18 @@ The Answers
     other non-RF sources are not included in the calculation.  The
     circle can be turned off from the Station->Filter Display menu
     but it will be enabled again each time you restart Xastir.
+
+    5.5 How can I restart Xastir remotely?
+
+    Send a SIGHUP to the process.  This will cause Xastir to save
+    it's configs, exit, and restart with the same enviroment as it
+    was initially started with.  Unfortunately the command-line
+    parameters aren't saved at present, but everything else should
+    be identical to the earlier run of Xastir.
+
+    For Example, from the shell you can do: 
+        kill -SIGHUP `cat ~/.xastir/xastir.pid`
+
 
 ----------------------------------------------------------------
 
