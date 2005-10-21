@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.94 2005/10/20 16:35:43 we7u Exp $
+ * $Id: interface_gui.c,v 1.95 2005/10/21 17:41:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7438,12 +7438,13 @@ end_critical_section(&devices_lock, "interface_gui.c:control_interface" );
         delw = XmInternAtom(XtDisplay(control_interface_dialog),"WM_DELETE_WINDOW", FALSE);
         XmAddWMProtocolCallback(control_interface_dialog, delw, Control_interface_destroy_shell, (XtPointer)control_interface_dialog);
 
-        XtManageChild(control_iface_list);
         XtVaSetValues(control_iface_list, XmNbackground, colors[0x0f], NULL);
+ 
+        pos_dialog(control_interface_dialog);
+
+        XtManageChild(control_iface_list);
         XtManageChild(form);
         XtManageChild(rowcol);
-
-        pos_dialog(control_interface_dialog);
 
 end_critical_section(&control_interface_dialog_lock, "interface_gui.c:control_interface" );
 
