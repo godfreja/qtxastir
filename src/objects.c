@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.14 2005/10/21 14:27:51 tvrusso Exp $
+ * $Id: objects.c,v 1.15 2005/10/21 18:02:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5476,8 +5476,11 @@ void Populate_predefined_objects(predefinedObject *predefinedObjects) {
         // exists, if it does, open it and try to read the definitions
         // if this fails, use the hardcoded SAR default instead.
         fprintf(stderr,"Checking for predefined objects menu file\n");
-        if (filethere(get_user_base_dir(predefined_object_definition_file))) {
-            fp_file = fopen(get_user_base_dir(predefined_object_definition_file),"r");
+//        if (filethere(get_user_base_dir(predefined_object_definition_file))) {
+//            fp_file = fopen(get_user_base_dir(predefined_object_definition_file),"r");
+        if (filethere(get_data_base_dir(predefined_object_definition_file))) {
+            fp_file = fopen(get_data_base_dir(predefined_object_definition_file),"r");
+ 
     
             fprintf(stderr,"Loading from %s \n",predefined_object_definition_file);
             while (!feof(fp_file)) {
@@ -5569,7 +5572,8 @@ void Populate_predefined_objects(predefinedObject *predefinedObjects) {
              xastir_snprintf(error_correct_location,
                         sizeof(error_correct_location),
                         "File should be in %s\n",
-                        get_user_base_dir("config"));
+//                        get_user_base_dir("config"));
+                        get_data_base_dir("config"));
              fprintf(stderr,error_correct_location);
         }
     }
