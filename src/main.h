@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.85 2005/10/20 21:41:05 we7u Exp $
+ * $Id: main.h,v 1.86 2005/10/24 19:29:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -108,8 +108,8 @@ extern void init_set_proc_title(int argc, char *argv[], char *envp[]);
 
 // New stuff defined by Xastir project:
 extern int my_argc;
-extern void *my_argv;
-extern void *my_envp;
+extern char **my_argv;
+extern char **my_envp;
 //////////////////////////////////////////////////////////////////////
 
 extern int input_x;
