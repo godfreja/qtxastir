@@ -1,6 +1,6 @@
                   Xastir Frequently Asked Questions
 
-$Id: FAQ,v 1.59 2005/10/21 19:33:46 we7u Exp $
+$Id: FAQ,v 1.60 2005/10/25 03:36:07 we7u Exp $
 
 The latest version of this FAQ is always available from the Xastir web site, at
 <http://www.xastir.org/docs/FAQ.html>, soon to be available also at:
@@ -924,10 +924,8 @@ The Answers
     5.5 How can I restart Xastir remotely/from a script/command-line?
 
     Send a SIGHUP to the process.  This will cause Xastir to save
-    its configs, exit, then restart with the same enviroment as it
-    initially had.  Unfortunately the command-line parameters aren't
-    saved at present but everything else should be identical to the
-    initial run of Xastir.
+    its configs, exit, then restart with the same environment and
+    command-line parameters as it initially had.
 
     For Example, from the shell you can do: 
 
