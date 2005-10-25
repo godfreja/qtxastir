@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.664 2005/10/25 20:04:35 we7u Exp $
+ * $Id: main.c,v 1.665 2005/10/25 20:08:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -167,6 +167,7 @@
 
 #include <Xm/XmAll.h>
 #include <X11/cursorfont.h>
+#include <Xm/ComboBox.h>
 
 // Must be last include file
 #include "leak_detection.h"
