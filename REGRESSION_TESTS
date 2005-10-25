@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: REGRESSION_TESTS,v 1.11 2005/08/31 21:42:52 we7u Exp $
+# $Id: REGRESSION_TESTS,v 1.12 2005/10/25 03:37:13 we7u Exp $
 
 # Simple regression tests.  Run through various combinations of the
 # configure flags, create a lot file, then grep for "warning" or
@@ -13,6 +13,15 @@
 # Licensed under the GPL license.  See the file "COPYING" for more
 # information.
 
+
+# NOTE:  It might be wise to move, rename, or change permissions on
+# select header and/or library files when doing these tests, in
+# order to verify that the code does the right thing when these
+# libraries or headers are unavailable.  Perhaps add a series of
+# tests just before the very last current test which do this.  This
+# series of tests would probably by necessity be Linux-specific, and
+# perhaps even distribution-specific, so perhaps we should have a
+# command-line flag to enable those tests too.
 
 
 nice ./bootstrap.sh
