@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.663 2005/10/25 19:53:40 we7u Exp $
+ * $Id: main.c,v 1.664 2005/10/25 20:04:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -20863,7 +20863,8 @@ void Configure_defaults( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientDat
                 XmNrightAttachment, XmATTACH_NONE,
                 XmNnavigationType, XmTAB_GROUP,
                 XmNcomboBoxType, XmDROP_DOWN_LIST,
-                XmNpositionMode, XmONE_BASED,
+                XmNpositionMode, XmONE_BASED, 
+                XmNvisibleItemCount, 3,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
                 NULL);
