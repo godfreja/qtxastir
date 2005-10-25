@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.186 2005/10/20 12:35:10 gstueve Exp $
+ * $Id: util.c,v 1.187 2005/10/25 15:18:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4925,8 +4925,15 @@ void clear_dangerous(void) {
 
 
 #if (HAVE_MALLOC == 0)
+//
 // Work around bug on some systems where malloc (0) fails.
 // written by Jim Meyering
+//
+// configure.ac calls out AC_FUNC_MALLOC which checks the malloc()
+// function.  If malloc() is determined to do the wrong thing when
+// passed a 0 value, the Autoconf macro will do this:
+//      #define malloc rpl_malloc
+// We then need to have an rpl_malloc function defined.  Here it is:
  
 #undef malloc
 #include <sys/types.h>
@@ -4934,8 +4941,8 @@ void clear_dangerous(void) {
 char *malloc ();
 
  
-/* Allocate an N-byte block of memory from the heap.
-    If N is zero, allocate a 1-byte block.  */
+// Allocate an N-byte block of memory from the heap.
+// If N is zero, allocate a 1-byte block.
  
 char * rpl_malloc (size_t n) {
     if (n == 0)
