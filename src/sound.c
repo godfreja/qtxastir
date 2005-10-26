@@ -1,5 +1,5 @@
 /*
- * $Id: sound.c,v 1.13 2005/08/17 19:12:05 we7u Exp $
+ * $Id: sound.c,v 1.14 2005/10/26 19:11:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -55,6 +55,11 @@ pid_t play_sound(char *sound_cmd, char *soundfile) {
             if (sound_pid!=-1) {
                 if(sound_pid==0) {
 // This is the child process
+
+
+                    // Go back to default signal handler instead of
+                    // calling restart() on SIGHUP
+                    (void) signal(SIGHUP,SIG_DFL);
 
 
                     // Change the name of the new child process.  So

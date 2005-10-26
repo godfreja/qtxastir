@@ -1,6 +1,6 @@
 /* Copyright (C) 2004-2005  The Xastir Group                             */
 /*                                                                       */
-/* $Id: macspeech.c,v 1.4 2005/10/24 19:27:12 we7u Exp $ */
+/* $Id: macspeech.c,v 1.5 2005/10/26 19:11:37 we7u Exp $ */
 /*                                                                       */
 /*  First draft                                                          */
 /*                  KB3EGH 03/24/2004                                    */
@@ -89,6 +89,12 @@ int SayText(char *text) {
     if (child_pid == 0) {   // Child process
 
         macspeech_processes++;
+
+
+        // Go back to default signal handler instead of calling
+        // restart() on SIGHUP
+        (void) signal(SIGHUP,SIG_DFL);
+
 
         // Wait for the speech system to be freed up.  Note that if
         // we have multiple processes queued up we don't know in

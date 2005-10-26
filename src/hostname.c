@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.23 2005/08/26 21:12:21 tvrusso Exp $
+ * $Id: hostname.c,v 1.24 2005/10/26 19:11:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -148,6 +148,11 @@ char *host_lookup(char *host, char *ip, int ip_size, int time) {
 
 //---------------------------------------------------------------------------------------
             if (host_pid==0) {  // We're in the child process
+
+
+                // Go back to default signal handler instead of
+                // calling restart() on SIGHUP
+                (void) signal(SIGHUP,SIG_DFL);
 
 
                 // Change the name of the new child process.  So far
