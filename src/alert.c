@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.96 2005/10/20 20:12:59 gstueve Exp $
+ * $Id: alert.c,v 1.97 2005/11/01 19:21:31 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1194,7 +1194,8 @@ void alert_build_list(Message *fill) {
                 &title[4][0]);       // ...
 
         if (ret < 3)
-          fprintf(stderr,"sscanf parsed %d values in alert.c (3-7 ok) %s, %s\n", ret, fill->from_call_sign, fill->message_line);
+          fprintf(stderr,"sscanf parsed %d values in alert.c (3-7 ok) %s->%s: %s\n", ret, 
+			fill->from_call_sign, fill->call_sign, fill->message_line);
 
         // Force a termination for each
         entry.activity[20]  = '\0';
