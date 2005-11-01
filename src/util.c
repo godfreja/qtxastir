@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.190 2005/11/01 19:18:43 gstueve Exp $
+ * $Id: util.c,v 1.191 2005/11/01 21:32:00 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4563,9 +4563,6 @@ void split_string( char *data, char *cptr[], int max ) {
 
   for (ii = 1; ii < max; ii++) {
     temp = strchr(current,',');  // Find next comma
-    if (!temp) {
-	temp = strchr(current, '/'); // Find / for band separator
-    }
 
     if(!temp) { // No commas found 
       return; // All done with string
