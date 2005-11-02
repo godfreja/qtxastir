@@ -1,5 +1,5 @@
 /*
- * $Id: xastir_udp_client.c,v 1.8 2005/09/28 16:22:41 we7u Exp $
+ * $Id: xastir_udp_client.c,v 1.9 2005/11/02 15:40:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2005  The Xastir Group
@@ -71,7 +71,8 @@
 // 
 //
 int main(int argc, char *argv[]) {
-    int sockfd, length, n;
+    int sockfd, n;
+    socklen_t length;
     struct sockaddr_in server, from;
     struct hostent *hostinfo;
     char buffer[512];
@@ -114,7 +115,7 @@ int main(int argc, char *argv[]) {
 
     server.sin_port = htons(atoi(argv[2]));
 
-    length = sizeof(struct sockaddr_in);
+    length = (socklen_t)sizeof(struct sockaddr_in);
 
     // Fetch the callsign
     snprintf(callsign, sizeof(callsign), "%s", argv[3]);
