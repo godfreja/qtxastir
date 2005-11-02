@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.499 2005/10/11 17:12:09 we7u Exp $
+ * $Id: db.c,v 1.500 2005/11/02 19:01:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14824,7 +14824,16 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 // digipeated through.  A few other TNC's put out this same sort of
 // format.
 //
-//WE7U
+// Note about KISS & CRC's:  The TNC checks the CRC.  If bad, it
+// drops the packet.  If good, it sends it to the computer WITHOUT
+// the CRC bytes.  There's no way at the computer end to check
+// whether the packet was corrupted over the serial channel between
+// the TNC and the computer.  Upon sending a KISS packet to the TNC,
+// the TNC itself adds the CRC bytes back on before sending it over
+// the air.  In Xastir we can just assume that we're getting
+// error-free packets from the TNC, ignoring possible corruption
+// over the serial line.
+//
 // Some versions of KISS can encode the radio channel (for
 // multi-port TNC's) in the command byte.  How do we know we're
 // running those versions of KISS though?  Here are the KISS
