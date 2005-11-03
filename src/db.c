@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.500 2005/11/02 19:01:19 we7u Exp $
+ * $Id: db.c,v 1.501 2005/11/03 20:15:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15044,6 +15044,11 @@ void relay_digipeat(char *call, char *path, char *info, int port) {
     char small_string[200];
     char big_string[2000];
 
+
+    // Check whether transmits are disabled globally
+    if (transmit_disable) {
+        return;
+    }
 
     // Check whether relay_digipeat has been enabled for this interface.
     // If not, get out while the gettin's good.
