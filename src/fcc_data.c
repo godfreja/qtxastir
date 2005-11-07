@@ -1,5 +1,5 @@
 /*
- * $Id: fcc_data.c,v 1.15 2005/09/09 04:46:56 we7u Exp $
+ * $Id: fcc_data.c,v 1.16 2005/11/07 14:14:00 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -56,12 +56,13 @@
 
 
 char *call_only(char *callsign) {
-    int i;
+    int i, len;
 
-    for (i=0; i<(int)strlen(callsign); i++) {
+    len = strlen(callsign);
+    for (i = 0; i < len; i++) {
          if (!isalnum((int)callsign[i])) {
             callsign[i]='\0';
-            i=strlen(callsign)+1;
+            i=len;
         }
     }
     return(callsign);
@@ -71,9 +72,9 @@ char *call_only(char *callsign) {
 
 
 
-/* ====================================================================    */
-/*    build a new (or newer if I check the file date) index file    */
-/*    check for current ic index file                    */
+/* ====================================================================  */
+/*    build a new (or newer if I check the file date) index file	 */
+/*    check for current ic index file					 */
 /*    FG: added a date check in case the FCC file has been updated.    */
 /*      appl.dat must have a time stamp newer than the index file time  */
 /*      stamp. Use the touch command on the appl.dat file to make the   */
