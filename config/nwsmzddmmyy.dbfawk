@@ -1,4 +1,4 @@
-# $Id: nwsmzddmmyy.dbfawk,v 1.11 2005/06/21 15:05:44 we7u Exp $
+# $Id: nwsmzddmmyy.dbfawk,v 1.12 2005/11/07 14:12:14 gstueve Exp $
 #
 # Copyright (C) 2003-2005  The Xastir Group
 #
@@ -26,7 +26,7 @@
 BEGIN {
 # dbfinfo is the "signature" of the dbf file listing the column names in order.
 # dbfinfo should match the dbf file that we say this dbfawk file goes with.
-dbfinfo="ID:WFO:NAME:WFO_AREA:LON:LAT";
+dbfinfo="ID:WFO:NAME:LON:LAT";
 # dbffields is which of the above fields we actually want to look at.
 # Note that the order we list these is important since we are appending the
 # word County or Parish depending on what state the county is in.
