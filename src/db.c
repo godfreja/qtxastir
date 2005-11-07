@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.501 2005/11/03 20:15:46 we7u Exp $
+ * $Id: db.c,v 1.502 2005/11/07 20:33:58 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14850,6 +14850,7 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 // Multi-Drop KISS    8-bit XOR Checksum, multiport TNC's -,
 // G8BPQ KISS         8-bit XOR Checksum, multiport TNC's -|-- All the same!
 // XKISS (Kantronics) 8-bit XOR Checksum, multiport TNC's -'
+// JKISS (G8BPQ KISS)
 //
 // MKISS              Linux driver which supports KISS/BPQ and
 //                    hardware handshaking?  Also Paccomm command to
