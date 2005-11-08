@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.25 2005/09/29 19:19:11 we7u Exp $
+ * $Id: map_gnis.c,v 1.26 2005/11/08 14:35:36 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -529,8 +529,8 @@ Cell Name
                         // lines will get you into trouble.
                         x = coord_lon - x_long_offset;
                         y = coord_lat - y_lat_offset;
-                        x = x / scale_x;
-                        y = y / scale_y;
+                        x /= scale_x;
+                        y /= scale_y;
 
                         ok = 1;
                         if (x >  16000) ok = 0;     // Skip this point
