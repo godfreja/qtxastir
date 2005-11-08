@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.668 2005/11/07 17:04:48 we7u Exp $
+ * $Id: main.c,v 1.669 2005/11/08 14:52:35 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25178,7 +25178,6 @@ int main(int argc, char *argv[], char *envp[]) {
 
     delay_time = 0;
     last_weather_cycle = sec_now();
-    packet_data_display = 0;
     redraw_on_new_packet_data = 0;
     next_file_read = sec_now();         // init file replay timing
     redraw_on_new_data = 0;
