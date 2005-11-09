@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.451 2005/10/20 20:08:42 gstueve Exp $
+ * $Id: maps.c,v 1.452 2005/11/09 01:40:08 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5929,8 +5929,7 @@ void load_alert_maps (Widget w, char *dir) {
 		}
 
             // Attempt to draw alert
-            if ( (temp->alert_level != 'C')             // Alert not cancelled
-                    && (temp->index != -1) ) {          // Shape found in shapefile
+            if ( temp->index != -1 ) {          // Shape found in shapefile
 
                 if (map_visible_lat_lon(temp->bottom_boundary, // Shape visible
                         temp->top_boundary,
@@ -5938,33 +5937,29 @@ void load_alert_maps (Widget w, char *dir) {
                         temp->right_boundary,
                         temp->title) ) {    // Error text if failure
 
-                    mdf.draw_filled=1; 
-                    mdf.usgs_drg=0;
-
-                    if (debug_level & 16)
-                        fprintf(stderr,"load_alert_maps: Calling draw_map\n");
- 
-                    draw_map (w,
-                        dir,
-                        temp->filename,
-                        temp,
-                        fill_color[level],
-                        DRAW_TO_PIXMAP_ALERTS,
-                        &mdf);  // draw filled
+                    if (temp->alert_level != 'C') {     // Alert not cancelled
+                        mdf.draw_filled=1;
+                        mdf.usgs_drg=0;
+  
+                        if (debug_level & 16)
+                          fprintf(stderr,"load_alert_maps: Calling draw_map\n");
+  
+                        draw_map (w, dir, temp->filename, temp,
+                                  fill_color[level], DRAW_TO_PIXMAP_ALERTS, &mdf);  // draw filled
+                    }
                     if (temp) temp->flags[on_screen] = 'Y';
                 }
                 else {
-			if (debug_level & 16) fprintf(stderr,"load_alert_maps() Alert not visible\n");
-                        if (temp) temp->flags[on_screen] = 'N';
+                    if (debug_level & 16) fprintf(stderr,"load_alert_maps() Alert not visible\n");
+                    if (temp) temp->flags[on_screen] = 'N';
                 }
             }
             else {
-                // Cancelled alert, can't find the shapefile, or not
-                // in our viewport, don't draw it!
-		if (debug_level & 16) fprintf(stderr,"load_alert_maps() Alert cancelled or shape not found\n");
-            }
-        }
-        temp = get_next_wx_alert(iterator);
+                  // Can't find the shapefile, or not in our viewport, don't draw it!
+                  if (debug_level & 16) fprintf(stderr,"load_alert_maps() Shape not found\n");
+              }
+          }
+          temp = get_next_wx_alert(iterator);
     }
 #ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 7\n");
