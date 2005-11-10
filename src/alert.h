@@ -1,5 +1,5 @@
 /*
- * $Id: alert.h,v 1.24 2005/10/20 20:12:59 gstueve Exp $
+ * $Id: alert.h,v 1.25 2005/11/10 15:28:29 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -87,7 +87,7 @@ extern int alert_active(alert_entry *alert, alert_match_level match_level);
 extern int alert_display_request(void);
 extern int alert_on_screen(void);
 extern int alert_redraw_on_update;
-extern int alert_expire(void);
+extern int alert_expire(int curr_sec);
 extern void alert_build_list(Message *fill);
 extern struct hashtable_itr *create_wx_alert_iterator(void);
 extern alert_entry *get_next_wx_alert(struct hashtable_itr *iterator);

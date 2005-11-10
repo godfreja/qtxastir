@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.21 2005/10/02 06:26:49 we7u Exp $
+ * $Id: popup_gui.c,v 1.22 2005/11/10 15:28:30 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -109,12 +109,12 @@ end_critical_section(&popup_message_dialog_lock, "popup_gui.c:popup_message_dest
 
 time_t popup_time_out_check_last = (time_t)0l;
 
-void popup_time_out_check(void) {
+void popup_time_out_check(int curr_sec) {
     int i;
 
     // Check only every two minutes or so
-    if (popup_time_out_check_last + 120 < sec_now()) {
-        popup_time_out_check_last = sec_now();
+    if (popup_time_out_check_last + 120 < curr_sec) {
+        popup_time_out_check_last = curr_sec;
 
         for (i=0;i<MAX_POPUPS;i++) {
             if (pw[i].popup_message_dialog!=NULL) {

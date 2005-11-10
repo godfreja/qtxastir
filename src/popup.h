@@ -1,5 +1,5 @@
 /*
- * $Id: popup.h,v 1.4 2005/01/08 09:46:48 we7u Exp $
+ * $Id: popup.h,v 1.5 2005/11/10 15:28:30 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -41,7 +41,7 @@ typedef struct
 /* from popup_gui.c */
 extern void popup_gui_init(void);
 extern void clear_popup_message_windows(void);
-extern void popup_time_out_check(void);
+extern void popup_time_out_check(int curr_sec);
 
 #endif /* XASTIR_POPUP_H */
 
