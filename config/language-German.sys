@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.188 2005/10/20 22:47:39 we7u Exp $
+# $Id: language-German.sys,v 1.189 2005/11/16 19:33:43 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -316,6 +316,7 @@ POPUPMA042|Grad||
 POPUPMA043|Bearbeite mehrdeutige Position||
 POPUPMA044|Mehrdeutige Position, Ihre Position kann sich sprunghaft verändern.||
 POPUPMA045|Predefined-Objekte||
+POPUPMA046|List All CAD Polygons||
 #
 # Texte in Statuszeile
 BBARZM0001|Zoom %s||
@@ -1255,3 +1256,9 @@ CADPUD002|Area Label:||
 CADPUD003|Comment:||
 CADPUD004|Probability:||
 CADPUD005|OK||
+CADPUD006|CAD Dialog||
+CADPUD007|Show/Edit Details||
+CADPUD008|Cancel||
+CADPUD009|Delete CAD objects?||
+CADPUD010|Delete All||
+CADPUD011|Delete Selected||

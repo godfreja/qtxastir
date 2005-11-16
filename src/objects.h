@@ -1,5 +1,5 @@
 /*
- * $Id: objects.h,v 1.4 2005/10/24 15:52:24 we7u Exp $
+ * $Id: objects.h,v 1.5 2005/11/16 19:34:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -49,7 +49,8 @@ extern Widget object_symbol_data;
 extern void updateObjectPictureCallback(Widget w,XtPointer clientData,XtPointer callData);
 
 extern void Draw_All_CAD_Objects(Widget w);
-extern void Draw_CAD_Objects_erase_dialog(Widget w, XtPointer clientData, XtPointer callData) ;
+extern void Draw_CAD_Objects_erase_dialog(Widget w, XtPointer clientData, XtPointer callData);
+extern void Draw_CAD_Objects_list_dialog(Widget w, XtPointer clientData, XtPointer callData);
 extern int draw_CAD_objects_flag;
 extern int polygon_last_x;
 extern int polygon_last_y;

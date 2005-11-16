@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.86 2005/10/24 19:29:23 we7u Exp $
+ * $Id: main.h,v 1.87 2005/11/16 19:34:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -48,6 +48,10 @@
 //
 //#define TRANSMIT_RAW_WX
 
+// To use predefined object configuration files from within the 
+// user's base directory e.g. ~/.xastir/config/predefined_SAR.sys
+// rather than from the main base directory, enable this definition.
+//#define OBJECT_DEF_FILE_USER_BASE
 
 extern int enable_server_port;
 
