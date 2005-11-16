@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.673 2005/11/16 20:19:03 we7u Exp $
+ * $Id: main.c,v 1.674 2005/11/16 21:50:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8259,7 +8259,7 @@ fprintf(stderr,"Setting up widget's X/Y position at X:%d  Y:%d\n",
 //    XtSetArg(al[ac], XmNmnemonic, langcode_hotkey("POPUPMA032")); ac++;
 
 
-    // "Erase All CAD Polygons"
+    // "Erase CAD Polygons"
     CAD3=XtCreateManagedWidget(langcode("POPUPMA032"),
             xmPushButtonGadgetClass,
             CAD_sub,
