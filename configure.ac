@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.139 2005/10/17 21:35:22 we7u Exp $
+# $Id: configure.ac,v 1.140 2005/11/16 18:09:02 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 
@@ -557,7 +557,8 @@ AC_CONFIG_FILES([Makefile \
     src/Makefile \
     src/rtree/Makefile \
     symbols/Makefile \
-    xastir.spec]) 
+    xastir.spec \
+    xastir-min.spec]) 
  
 AC_OUTPUT 
 
