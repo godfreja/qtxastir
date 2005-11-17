@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.194 2005/11/16 21:50:56 we7u Exp $
+# $Id: language-Dutch.sys,v 1.195 2005/11/17 06:55:14 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -319,7 +319,7 @@ POPUPMA042|Graden||
 POPUPMA043|Pas meerduidige positie aan||# origineel ambigious mag ook meervoudige zijn?
 POPUPMA044|Positie meerduidigheid is aan, uw nieuwe positie kan verspringen.||
 POPUPMA045|Predefined Objecten||
-POPUPMA046|List All CAD Polygons||
+POPUPMA046|CAD Polygons||
 #
 # Status line labels
 BBARZM0001|Zoom %s||

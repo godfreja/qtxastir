@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.184 2005/11/16 21:50:56 we7u Exp $
+# $Id: language-French.sys,v 1.185 2005/11/17 06:55:14 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -310,7 +310,7 @@ POPUPMA042|degrés||
 POPUPMA043|Modifier ambiguïté de position||
 POPUPMA044|Ambiguïté de position est active, votre nouvelle position pourra sauter.||
 POPUPMA045|Objets predefined||
-POPUPMA046|List All CAD Polygons||
+POPUPMA046|CAD Polygons||
 #
 #
 # Status line labels

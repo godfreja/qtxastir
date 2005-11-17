@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.182 2005/11/16 21:50:56 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.183 2005/11/17 06:55:14 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -312,7 +312,7 @@ POPUPMA042|degrees||
 POPUPMA043|Modify ambiguous position||
 POPUPMA044|Position abiguity is on, your new position may appear to jump.||
 POPUPMA045|Predefined Objects||
-POPUPMA046|List All CAD Polygons||
+POPUPMA046|CAD Polygons||
 #
 # Menu dos estados das linhas de etiquetas
 BBARZM0001|Foco %s||

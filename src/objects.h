@@ -1,5 +1,5 @@
 /*
- * $Id: objects.h,v 1.5 2005/11/16 19:34:04 we7u Exp $
+ * $Id: objects.h,v 1.6 2005/11/17 06:55:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -137,10 +137,9 @@ extern int valid_item(char *name);
 extern void Object_History_Refresh( Widget w, XtPointer clientData, XtPointer callData);
 extern void Object_History_Clear( Widget w, XtPointer clientData, XtPointer callData);
 extern void  Move_Object( Widget widget, XtPointer clientData, XtPointer callData);
-extern void Draw_CAD_Objects_start_mode(Widget w, XtPointer clientData, XtPointer calldata);
+extern void Draw_CAD_Objects_mode( Widget widget, XtPointer clientData, XtPointer callData);
 extern void Draw_CAD_Objects_close_polygon(Widget w, XtPointer clientData, XtPointer calldata);
 extern void Draw_CAD_Objects_erase(Widget w, XtPointer clientData, XtPointer calldata);
-extern void Draw_CAD_Objects_end_mode(Widget w, XtPointer clientData, XtPointer calldata);
 extern void CAD_vertice_allocate(long latitude, long longitude);
 extern void CAD_object_allocate(long latitude, long longitude);
 extern void Modify_object( Widget w, XtPointer clientData, XtPointer calldata);
