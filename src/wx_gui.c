@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.43 2005/10/20 20:12:59 gstueve Exp $
+ * $Id: wx_gui.c,v 1.44 2005/11/18 15:48:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -426,7 +426,7 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
                 alert->activity[4],
                 alert->activity[5],
                 alert->flags[on_screen],
-		alert->flags[source],
+                alert->flags[source],
                 alert->title,
                 alert->alert_tag,
                 alert->desc0,
