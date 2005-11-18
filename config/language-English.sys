@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.185 2005/11/17 06:55:14 we7u Exp $
+# $Id: language-English.sys,v 1.186 2005/11/18 19:59:40 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -292,10 +292,10 @@ POPUPMA026|Center & Zoom||
 POPUPMA027|  Latitude||
 POPUPMA028| Longitude||
 POPUPMA029|Draw CAD Objects||
-POPUPMA030|Start Draw Mode||
+POPUPMA030|Draw||
 POPUPMA031|Close Polygon||
 POPUPMA032|Erase CAD Polygons||
-POPUPMA033|End Draw Mode||
+POPUPMA033|**NOT USED**||
 POPUPMA034|Custom Zoom Level||
 POPUPMA035|10% out||
 POPUPMA036|10% in||

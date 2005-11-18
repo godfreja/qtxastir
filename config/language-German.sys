@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.191 2005/11/17 06:55:14 we7u Exp $
+# $Id: language-German.sys,v 1.192 2005/11/18 19:59:40 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -300,10 +300,10 @@ POPUPMA026|Zentrieren & Zoom||
 POPUPMA027|    Breite||
 POPUPMA028|     Länge||
 POPUPMA029|CAD-Objekte zeichnen||
-POPUPMA030|Start Zeichen-Modus||
+POPUPMA030|Draw||
 POPUPMA031|Polygon abschließen||
 POPUPMA032|Erase CAD Polygons||
-POPUPMA033|Ende Zeichen-Modus||
+POPUPMA033|**NOT USED**||
 POPUPMA034|Selbstdefinierter Zoom||
 POPUPMA035|10% verkleinern||
 POPUPMA036|10% vergrößern||
