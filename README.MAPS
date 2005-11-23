@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.67 2005/10/20 17:58:02 we7u Exp $
+$Id: README.MAPS,v 1.68 2005/11/23 19:33:39 we7u Exp $
 
 
 Recommended Configurations for:
@@ -938,6 +938,16 @@ Getting Maps and other Data Files for Xastir:
        filled map for drawing county lands and borders.  Either make a link
        to these files from your maps directory, or copy the files there so
        that they show up in the Map Chooser.
+
+      To test whether the weather alerts are working (whether weather?), copy
+      the NWS-TEST.log file to your ~/.xastir/logs/ directory and then bring it
+      in to Xastir using the File->Open Log File option.  Zoom in to the
+      WA/OR/ID area (Pacific Northwest) and you should see a picture that looks
+      like this:  <http://www.eskimo.com/~archer/xastir/xastir-wx-alerts.png>
+      Note that you may have to change the dates embedded in the file if Xastir
+      thinks they are expired.  See the notes at the top of that file.  If the
+      alerts are still active they should appear in the View->Weather Alerts
+      dialog.
 
      Raw Tiger/Line format maps (requires GDAL/OGR):
 
