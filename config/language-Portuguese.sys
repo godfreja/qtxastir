@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.184 2005/11/18 19:59:41 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.185 2005/11/23 19:34:49 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1059,6 +1059,7 @@ POPEM00042|Object not owned by me! Try adopting the object first.||
 POPEM00043|Not an Object/Item!||
 POPEM00044|Fetch Findu Trail: Failed||
 POPEM00045|Fetch Findu Trail: Complete||
+POPEM00046|Berkeley DB header/shared library do NOT match! Disabling map cache.||
 #
 # Salto de localizacao
 JMLPO00001|Localizacao de mapa||
