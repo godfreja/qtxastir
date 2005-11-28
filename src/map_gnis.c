@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.26 2005/11/08 14:35:36 gstueve Exp $
+ * $Id: map_gnis.c,v 1.27 2005/11/28 20:43:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -237,6 +237,24 @@ Cell Name
     f = fopen (file, "r");
     if (f != NULL) {
         while (!feof (f)) {     // Loop through entire file
+
+            // Check whether map drawing should be interrupted
+            HandlePendingEvents(app_context);
+            if (interrupt_drawing_now) {
+                (void)fclose (f);
+                // Update to screen
+                (void)XCopyArea(XtDisplay(da),
+                    pixmap,
+                    XtWindow(da),
+                    gc,
+                    0,
+                    0,
+                    (unsigned int)screen_width,
+                    (unsigned int)screen_height,
+                    0,
+                    0);
+                return;
+            }
 
             if ( get_line (f, line, MAX_FILENAME) ) {  // Snag one line of data
 
