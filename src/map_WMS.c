@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.18 2005/10/20 01:29:56 we7u Exp $
+ * $Id: map_WMS.c,v 1.19 2005/11/29 03:16:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -892,6 +892,27 @@ void draw_WMS_map (Widget w,
 
     // loop over map pixel rows
     for (map_y_0 = map_y_min, c_y = (double)c_y_min; (map_y_0 <= map_y_max); map_y_0++, c_y += map_c_dy) {
+
+        HandlePendingEvents(app_context);
+        if (interrupt_drawing_now) {
+            (void)fclose (f);
+            if (image)
+                DestroyImage(image);
+            if (image_info)
+                DestroyImageInfo(image_info);
+            // Update to screen
+            (void)XCopyArea(XtDisplay(da),
+                pixmap,
+                XtWindow(da),
+                gc,
+                0,
+                0,
+                (unsigned int)screen_width,
+                (unsigned int)screen_height,
+                0,
+                0);
+            return;
+        }
 
         scr_y = (c_y - y_lat_offset) / scale_y;
         if (scr_y != scr_yp) {                  // don't do a row twice

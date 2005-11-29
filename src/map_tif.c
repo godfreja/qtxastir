@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.33 2005/10/20 01:29:56 we7u Exp $
+ * $Id: map_tif.c,v 1.34 2005/11/29 03:16:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2529,6 +2529,17 @@ right_crop = width - 1;
     {
         int skip = 0;
 
+
+        HandlePendingEvents(app_context);
+        if (interrupt_drawing_now) {
+            if (imageMemory)
+                free(imageMemory);
+            GTIFFree (gtif);
+            XTIFFClose (tif);
+            // Update to screen
+            (void)XCopyArea(XtDisplay(da),pixmap,XtWindow(da),gc,0,0,screen_width,screen_height,0,0);
+            return;
+        }
 
         // Our offset from the top row of the map neatline
         // (kind of... ignoring rotation anyway).

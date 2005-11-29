@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.140 2005/08/30 20:52:21 we7u Exp $
+ * $Id: map_gdal.c,v 1.141 2005/11/29 03:16:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -470,6 +470,17 @@ scr_s_x_min = 0;
     /* The raster is */
 
 
+
+
+    // Check for map draw interrupts.  Clean up and exit if found.
+    // Put this also inside the raster-line processing loop so that
+    // it gets check once per raster line.  That makes for fast
+    // zooming/panning even with a lot of maps selected.
+    //
+    HandlePendingEvents(app_context);
+    if (interrupt_drawing_now) {
+        return; // Exit early
+    }
 
 
 
