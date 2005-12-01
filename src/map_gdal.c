@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.141 2005/11/29 03:16:40 we7u Exp $
+ * $Id: map_gdal.c,v 1.142 2005/12/01 17:22:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2005  The Xastir Group
@@ -117,7 +117,7 @@
 #include "gdal.h"
 #include "ogr_api.h"
 #include "ogr_srs_api.h"
-#include "cpl_string.h"
+//#include "cpl_string.h"
 
 #undef PACKAGE_BUGREPORT
 #define PACKAGE_BUGREPORT XASTIR_PACKAGE_BUGREPORT
