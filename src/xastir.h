@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.48 2005/10/07 19:26:12 we7u Exp $
+ * $Id: xastir.h,v 1.49 2005/12/05 03:05:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -70,6 +70,8 @@
 #ifndef M_PI                      /* if not defined in math.h */
 #define M_PI 3.14159265358979323846
 #endif  // M_PI
+
+#define SPEECH_TEST_STRING      "Greeteengz frum eggzaster"
 
 /* GLOBAL DEFINES */
 extern char dangerous_operation[200];

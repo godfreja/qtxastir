@@ -2,7 +2,7 @@
 //
 // Portions Copyright (C) 2000-2005  The Xastir Group
 //
-// $Id: festival.c,v 1.16 2005/08/17 19:08:44 we7u Exp $
+// $Id: festival.c,v 1.17 2005/12/05 03:05:32 we7u Exp $
 //
 // End of modification
 
@@ -424,8 +424,11 @@ int SayText(char *text) {
         fprintf(stderr,"SayText: %s\n",text);
 
     // Check whether the last text was the same and it hasn't been
-    // enough time between them (30 seconds).
+    // enough time between them (30 seconds).  We include our speech
+    // system test string here so that we don't have to wait 30
+    // seconds between Test button-presses.
     if ( (strcmp(last_speech_text,text) == 0) // Strings match
+            && (strcmp(text,SPEECH_TEST_STRING) != 0)
             && (last_speech_time + 30 > sec_now()) ) {
 
 /*
