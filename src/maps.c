@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.452 2005/11/09 01:40:08 gstueve Exp $
+ * $Id: maps.c,v 1.453 2005/12/06 20:50:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5955,11 +5955,17 @@ void load_alert_maps (Widget w, char *dir) {
                 }
             }
             else {
-                  // Can't find the shapefile, or not in our viewport, don't draw it!
-                  if (debug_level & 16) fprintf(stderr,"load_alert_maps() Shape not found\n");
-              }
-          }
-          temp = get_next_wx_alert(iterator);
+                // Can't find the shapefile, or not in our viewport, don't draw it!
+                if (debug_level & 16) {
+                    fprintf(stderr,
+                        "load_alert_maps() Shape %s, strlen=%d, not found in %s\n",
+                        temp->title,
+                        strlen(temp->title),
+                        temp->filename );
+                }
+            }
+        }
+        temp = get_next_wx_alert(iterator);
     }
 #ifndef USING_LIBGC
 //fprintf(stderr,"free iterator 7\n");
