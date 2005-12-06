@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.453 2005/12/06 20:50:38 we7u Exp $
+ * $Id: maps.c,v 1.454 2005/12/06 20:53:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5950,12 +5950,13 @@ void load_alert_maps (Widget w, char *dir) {
                     if (temp) temp->flags[on_screen] = 'Y';
                 }
                 else {
+                    // Not in our viewport, don't draw it!
                     if (debug_level & 16) fprintf(stderr,"load_alert_maps() Alert not visible\n");
                     if (temp) temp->flags[on_screen] = 'N';
                 }
             }
             else {
-                // Can't find the shapefile, or not in our viewport, don't draw it!
+                // Can't find this shape in the shapefile.
                 if (debug_level & 16) {
                     fprintf(stderr,
                         "load_alert_maps() Shape %s, strlen=%d, not found in %s\n",
