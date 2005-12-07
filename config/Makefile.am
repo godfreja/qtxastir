@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.26 2005/12/07 17:32:59 tvrusso Exp $
+# $Id: Makefile.am,v 1.27 2005/12/07 20:40:22 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -52,4 +52,7 @@ EXTRA_DIST = \
     tnc-stop.tnc2-ui
 
 config_DATA = ${EXTRA_DIST}
+
+install-exec-hook:
+	rm -f \$(configdir)/nwsfzddmmyy.dbfawk
 
