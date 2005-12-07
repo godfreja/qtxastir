@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.111 2005/12/06 21:35:26 we7u Exp $
+ * $Id: map_shp.c,v 1.112 2005/12/07 06:41:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1295,15 +1295,19 @@ void draw_shapefile_map (Widget w,
                 // 'Z' temporarily (modified_title) for our
                 // compares.
                 //
-                if (alert->title[3] == 'F' && strncmp(alert->filename, "fz", 2) == 0) {
+                if (modified_title[3] == 'F' && strncmp(alert->filename, "fz", 2) == 0) {
                     modified_title[3] = 'Z';
                 }
 
-                // If fine using keylen, try using titlelen as well
+                // If match using keylen number of chars, try the
+                // same match but using titlelen number of chars
                 if (strncmp(modified_title,key,keylen) == 0) {
                     int titlelen;
 
-                    titlelen = strlen(alert->title);
+                    titlelen = strlen(modified_title);
+
+                    // Try the same match with titlelen number of
+                    // chars
                     if (strncmp(modified_title,key,titlelen) == 0) {
  
                         found_shape = i;
@@ -1315,8 +1319,9 @@ void draw_shapefile_map (Widget w,
                         }
                     }
                     else {
-                        // Match using keylen, but no match using
-                        // titlelen
+                        // Found a match using keylen number of
+                        // characters, but it's not a match using
+                        // titlelen number of characters.
                         if (debug_level & 16) {
                             fprintf(stderr,
                                 "dbfawk alert: match w/keylen, not w/titlelen: %s=%d %s=%d\n",
