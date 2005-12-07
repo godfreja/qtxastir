@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.25 2005/11/09 05:57:46 gstueve Exp $
+# $Id: Makefile.am,v 1.26 2005/12/07 17:32:59 tvrusso Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -32,7 +32,6 @@ EXTRA_DIST = \
     nwsw_ddmmyy.dbfawk \
     nwsz_ddmmyy.dbfawk \
     nwszoddmmyy.dbfawk \
-    nwsfz_ddmmyy.dbfawk \
     predefined_EVENT.sys \
     predefined_SAR.sys \
     tnc-startup.aea \
