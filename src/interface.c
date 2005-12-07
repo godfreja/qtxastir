@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.241 2005/12/06 20:26:43 we7u Exp $
+ * $Id: interface.c,v 1.242 2005/12/07 18:38:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8750,7 +8750,7 @@ void output_my_data(char *message, int incoming_port, int type, int loopback_onl
 
 
     // Check whether transmits are disabled globally
-    if (transmit_disable) {
+    if (transmit_disable && !loopback_only) {
         return;
     }
 
