@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.24 2005/11/17 15:41:41 we7u Exp $
+ * $Id: objects.c,v 1.25 2005/12/08 01:02:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6661,7 +6661,7 @@ fprintf(stderr, "No more iterations left\n");
     log_object_item(data,0,last_object);
 
     if (object_tx_disable)
-            output_my_data(data,-1,0,1,0,NULL); // Local loopback only, not igating
+        output_my_data(data,-1,0,1,0,NULL); // Local loopback only, not igating
     else
         output_my_data(data,-1,0,0,0,NULL); // Transmit/loopback object data, not igating
 }
