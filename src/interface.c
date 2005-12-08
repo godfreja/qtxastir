@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.242 2005/12/07 18:38:44 we7u Exp $
+ * $Id: interface.c,v 1.243 2005/12/08 01:04:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8811,7 +8811,7 @@ begin_critical_section(&devices_lock, "interface.c:output_my_data" );
                     break;
 
                 case DEVICE_SERIAL_TNC_HSP_GPS:
-                    if (port_data[port].status == DEVICE_UP && !loopback_only) {
+                    if (port_data[port].status == DEVICE_UP && !loopback_only && !transmit_disable) {
                         port_dtr(port,0);           // make DTR normal (talk to TNC)
                     }
 
