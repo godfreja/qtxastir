@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.679 2005/12/05 03:05:29 we7u Exp $
+ * $Id: main.c,v 1.680 2005/12/11 18:20:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7168,8 +7168,8 @@ fprintf(stderr,"Setting up widget's X/Y position at X:%d  Y:%d\n",
     XtSetArg(al[ac], XmNtraversalOn, TRUE); ac++;
     XtSetArg(al[ac], XmNtearOffModel, XmTEAR_OFF_ENABLED); ac++;
 
-    station_config_pane  = XmCreatePulldownMenu(mappane,
-            "map_config_pane",
+    station_config_pane  = XmCreatePulldownMenu(stationspane,
+            "stations_config_pane",
             al,
             ac);
 
