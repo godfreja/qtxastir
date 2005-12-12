@@ -1,5 +1,5 @@
 /*
- * $Id: objects.h,v 1.6 2005/11/17 06:55:17 we7u Exp $
+ * $Id: objects.h,v 1.7 2005/12/12 22:56:08 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -58,6 +58,11 @@ extern int doing_move_operation;
 extern char last_object[9+1];
 extern char last_obj_grp;
 extern char last_obj_sym;
+extern int CAD_draw_objects;
+extern int CAD_show_label;
+extern int CAD_show_raw_probability;
+extern int CAD_show_comment;
+extern int CAD_show_area; 
 
 
 /* JMT - works in FreeBSD */

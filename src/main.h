@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.87 2005/11/16 19:34:04 we7u Exp $
+ * $Id: main.h,v 1.88 2005/12/12 22:56:08 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -92,7 +92,6 @@ extern int interrupt_drawing_now;
 #define MAX_NET_CHARS 128
 #define MAX_GPS_CHARS 128
 #define MAX_WX_CHARS 4
-
 
 
 //////////////////////////////////////////////////////////////////////
@@ -396,7 +395,6 @@ extern Widget object_symbol_data;
 extern void updateObjectPictureCallback(Widget w,XtPointer clientData,XtPointer callData);
 
 extern void Draw_All_CAD_Objects(Widget w);
-
 
 // unit conversion
 extern char un_alt[2+1];
