@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.188 2005/12/12 22:56:06 chicoreus Exp $
+# $Id: language-English.sys,v 1.189 2005/12/13 02:50:04 chicoreus Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -309,6 +309,11 @@ POPUPMA043|Modify ambiguous position||
 POPUPMA044|Position ambiguity is on, your new position may appear to jump.||
 POPUPMA045|Predefined Objects||
 POPUPMA046|CAD Polygons||
+POPUPMA047|Enable CAD objects||
+POPUPMA048|Enable CAD labels||
+POPUPMA049|Enable CAD comments||
+POPUPMA050|Enable CAD probability||
+POPUPMA051|Enable CAD area size||
 #
 #
 # Status line labels
