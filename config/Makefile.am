@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.27 2005/12/07 20:40:22 we7u Exp $
+# $Id: Makefile.am,v 1.28 2005/12/13 22:11:08 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -54,5 +54,5 @@ EXTRA_DIST = \
 config_DATA = ${EXTRA_DIST}
 
 install-exec-hook:
-	rm -f \$(configdir)/nwsfzddmmyy.dbfawk
+	rm -f \$(configdir)/nwsfz_ddmmyy.dbfawk
 
