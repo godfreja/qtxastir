@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.26 2005/12/12 22:56:08 chicoreus Exp $
+ * $Id: objects.c,v 1.27 2005/12/13 15:54:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3582,7 +3582,7 @@ void Draw_All_CAD_Objects(Widget w) {
             x_long = object_ptr->label_longitude;
             y_lat = object_ptr->label_latitude;
     #ifdef CAD_DEBUG
-            fprintf(stderr,"Drawing object %s\n", object_ptr->label);
+            fprintf(stderr,"Drawing object %s\n", (object_ptr->label) ? object_ptr->label : "NULL" );
     #endif
             //fprintf(stderr,"Lat: %d\n", y_lat);
             //fprintf(stderr,"Long: %d\n", x_long);
