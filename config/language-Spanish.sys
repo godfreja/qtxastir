@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.197 2005/12/13 02:50:04 chicoreus Exp $
+# $Id: language-Spanish.sys,v 1.198 2005/12/15 18:24:13 chicoreus Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -90,6 +90,7 @@ PULDNMP027|Re-download Maps (Not from cache)||
 PULDNMP028|Flush Entire Map Cache!||
 PULDNMP029|Find Address||
 PULDNMP030|Configure USGS DRG||
+PULDNMP031|Enable Map Border||
 #
 # Menú "Configurar Tigermapa"
 MPUPTGR001|Rejilla||
