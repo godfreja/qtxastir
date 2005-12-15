@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.126 2005/10/17 18:51:04 we7u Exp $
+$Id: README.win32,v 1.127 2005/12/15 18:31:44 we7u Exp $
 
 
   Two companies have created simpler installs of Cygwin/Xastir than
@@ -677,7 +677,7 @@ weather alert maps.
     
 [ ] Fetch "shapelib-1.2.10.tar.gz" from one of these sites:
 
-    http:///shapelib.maptools.org/
+    http://shapelib.maptools.org/
 or  http://wetnet.net/~we7u/xastir/shapelib/
 
 [ ] Put it in the C:\cygwin\home\<user>\src\shapelib directory.
