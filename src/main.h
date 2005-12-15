@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.88 2005/12/12 22:56:08 chicoreus Exp $
+ * $Id: main.h,v 1.89 2005/12/15 22:10:47 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -172,6 +172,8 @@ extern int pop_up_new_bulletins;
 extern int view_zero_distance_bulletins;
 extern int warn_about_mouse_modifiers;
 extern int predefined_menu_from_file;
+
+extern int draw_labeled_grid_border;  // used to turn on or off border on map
 
 extern int output_station_type;
 
