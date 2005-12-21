@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.683 2005/12/15 22:10:46 chicoreus Exp $
+ * $Id: main.c,v 1.684 2005/12/21 02:01:31 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9304,6 +9304,8 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
                     &lat,
                     &lon);
                 CAD_vertice_allocate(lat, lon);
+                // Reload symbols/tracks/CAD objects
+                redraw_symbols(da);
             }
             else {  // First point of a polygon.  Save it.
 

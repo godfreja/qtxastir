@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.27 2005/12/13 15:54:08 we7u Exp $
+ * $Id: objects.c,v 1.28 2005/12/21 02:01:32 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1660,9 +1660,12 @@ void CAD_vertice_allocate(long latitude, long longitude) {
         p_new->next = CAD_list_head->start;
         CAD_list_head->start = p_new;
     }
-
+    
+    // Call redraw_symbols outside this function, as 
+    // verticies may be allocated both when loading lots of them from a file
+    // and when the user is drawing objects in the user interface
     // Reload symbols/tracks/CAD objects
-    redraw_symbols(da);
+    //redraw_symbols(da);
 }
 
 
@@ -2885,6 +2888,8 @@ void Restore_CAD_Objects_from_file(void) {
         }
     }
     (void)fclose(f);
+    // Reload symbols/tracks/CAD objects to draw the loaded objects
+    redraw_symbols(da);
 }
 
 
@@ -3505,6 +3510,8 @@ void Draw_CAD_Objects_close_polygon( /*@unused@*/ Widget widget,
             }
         }
     }
+    // Reload symbols/tracks/CAD objects and redraw the polygon
+    redraw_symbols(da);
 
 #ifdef CAD_DEBUG
     fprintf(stderr,"Points in closed polygon: n = %d\n",n);
