@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.190 2005/12/15 18:24:13 chicoreus Exp $
+# $Id: language-French.sys,v 1.191 2006/01/07 02:45:38 we7u Exp $
 #
 # Copyright (C) 2000-2005  The Xastir Group
 #
@@ -1251,13 +1251,18 @@ RANGE001|ECHELLE||
 #
 #
 # GPS Status
-GPSS001|3D||
-GPSS002|2D||
-GPSS003|Valide||
+GPSS001|WAAS or PPS||
+GPSS002|DGPS||
+GPSS003|Valide SPS||
 GPSS004|Invalide||
 GPSS005|Sats/View||
 GPSS006|Fix||
 GPSS007|! Les données GPS ont plus de 30 secondes !||
+GPSS008|Simulation||
+GPSS009|Manual||
+GPSS010|Estimated||
+GPSS011|Float RTK||
+GPSS012|RTK||
 #
 #
 # Popup cad_dialog to obtain CAD object data
