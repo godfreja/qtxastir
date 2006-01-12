@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.198 2006/01/12 15:25:59 we7u Exp $
+# $Id: language-German.sys,v 1.199 2006/01/12 16:58:02 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -316,7 +316,6 @@ POPUPMA041|Peilung||
 POPUPMA042|Grad||
 POPUPMA043|Bearbeite mehrdeutige Position||
 POPUPMA044|Mehrdeutige Position, Ihre Position kann sich sprunghaft verändern.||
-POPUPMA045|SAR-Objekte erstellen||
 POPUPMA045|Vordefinierte Objekte||
 POPUPMA046|CAD-Polygone||
 POPUPMA047|CAD-Objekte ein||
