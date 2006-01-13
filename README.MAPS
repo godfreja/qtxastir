@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.69 2005/12/19 17:40:08 chicoreus Exp $
+$Id: README.MAPS,v 1.70 2006/01/13 00:06:37 tvrusso Exp $
 
 
 Recommended Configurations for:
@@ -1033,7 +1033,7 @@ Getting Maps and other Data Files for Xastir:
          To sort the file, make sure you have plenty of disk space for this as
          the file is BIG!
 
-         cat EN.dat | /usr/bin/perl -pe 's/\r\r\n//g' | sort +4 -t > EN.dat.sorted
+         cat EN.dat | /usr/bin/perl -pe 's/\r\r\n//g' | sort +4 -t \| > EN.dat.sorted
 
          Install it in the xastir/fcc directory:
 
