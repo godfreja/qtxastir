@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $Id: do_xastir_release_stable,v 1.1 2005/11/23 22:37:14 we7u Exp $
+# $Id: do_xastir_release_stable,v 1.2 2006/01/16 17:04:41 we7u Exp $
 
 # This is an example script used by one of the developers to ease
 # the workload.  It's not intended to be used by the general
@@ -17,7 +17,7 @@
 #   Admin
 #   Edit/Add File Releases
 #   Edit Releases (xastir-stable)
-#   Edit This Release (xastir-1.7.0)
+#   Edit This Release (xastir-1.8.0)
 #
 
 
@@ -103,7 +103,7 @@ printf("\n*** Removing xastir/ directory\n");
 
 
 sub Get_release {
-  printf("\nRelease number (i.e. 1.7.0)?\n");
+  printf("\nRelease number (i.e. 1.8.0)?\n");
   $release = <>;
   chomp($release);
 }
