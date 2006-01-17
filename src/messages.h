@@ -1,9 +1,9 @@
 /*
- * $Id: messages.h,v 1.17 2005/11/10 15:28:30 gstueve Exp $
+ * $Id: messages.h,v 1.18 2006/01/17 21:05:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2005  The Xastir Group
+ * Copyright (C) 2000-2006  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

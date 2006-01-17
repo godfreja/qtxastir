@@ -1,8 +1,8 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: leak_detection.h,v 1.3 2005/08/18 21:00:22 we7u Exp $
+ * $Id: leak_detection.h,v 1.4 2006/01/17 21:05:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2005  The Xastir Group
+ * Copyright (C) 2005-2006  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

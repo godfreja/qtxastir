@@ -1,10 +1,10 @@
 /*
  * snprintf.c - a portable implementation of snprintf and vsnprintf
  *
- * $Id: snprintf.c,v 1.7 2005/08/17 19:12:05 we7u Exp $
+ * $Id: snprintf.c,v 1.8 2006/01/17 21:07:21 we7u Exp $
  */
 /*
- * Portions Copyright (C) 2000-2005 The Xastir Group
+ * Portions Copyright (C) 2000-2006 The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

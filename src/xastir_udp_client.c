@@ -1,8 +1,8 @@
 /*
- * $Id: xastir_udp_client.c,v 1.9 2005/11/02 15:40:48 we7u Exp $
+ * $Id: xastir_udp_client.c,v 1.10 2006/01/17 21:07:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2003-2005  The Xastir Group
+ * Copyright (C) 2003-2006  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

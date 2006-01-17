@@ -1,10 +1,10 @@
 
 
-// $Id: hashtable.h,v 1.2 2005/01/08 09:46:48 we7u Exp $
+// $Id: hashtable.h,v 1.3 2006/01/17 21:05:20 we7u Exp $
 
 
 /* Copyright (C) 2002 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
-// Portions Copyright (C) 2004-2005  The Xastir Project
+// Portions Copyright (C) 2004-2006  The Xastir Project
 
 
 

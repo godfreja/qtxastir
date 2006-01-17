@@ -1,9 +1,9 @@
 /*
- * $Id: track_gui.c,v 1.50 2005/10/12 18:33:22 we7u Exp $
+ * $Id: track_gui.c,v 1.51 2006/01/17 21:07:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2005  The Xastir Group
+ * Copyright (C) 2000-2006  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

@@ -1,8 +1,8 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.32 2005/08/30 20:52:21 we7u Exp $
+ * $Id: awk.c,v 1.33 2006/01/17 21:06:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2003-2005  The Xastir Group
+ * Copyright (C) 2003-2006  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

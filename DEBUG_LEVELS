@@ -1,5 +1,5 @@
 
-$Id: DEBUG_LEVELS,v 1.12 2005/09/30 14:44:15 tvrusso Exp $
+$Id: DEBUG_LEVELS,v 1.13 2006/01/17 21:08:05 we7u Exp $
 
 This file has three parts.  The first part describes the new structure for
 debug levels.  The second part describes the debug_level definitions that
@@ -119,5 +119,5 @@ That way you won't miss anything.
 
 
 ------------------------------------------------------------------
-Copyright (C) 2002-2005 The Xastir Group
+Copyright (C) 2002-2006 The Xastir Group
 

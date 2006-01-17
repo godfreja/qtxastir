@@ -1,9 +1,9 @@
 /*
- * $Id: main.h,v 1.89 2005/12/15 22:10:47 chicoreus Exp $
+ * $Id: main.h,v 1.90 2006/01/17 21:05:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2005  The Xastir Group
+ * Copyright (C) 2000-2006  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

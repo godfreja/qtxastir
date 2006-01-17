@@ -1,9 +1,9 @@
 
-// $Id: io-common.c,v 1.4 2005/08/30 20:28:50 kd6zwr Exp $
+// $Id: io-common.c,v 1.5 2006/01/17 21:06:28 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
- * Portions Copyright (C) 2004-2005  The Xastir Group
+ * Portions Copyright (C) 2004-2006  The Xastir Group
  */
 #include "io.h"
 #include <ctype.h>

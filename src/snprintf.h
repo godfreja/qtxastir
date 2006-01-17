@@ -2,10 +2,10 @@
  * snprintf.h
  *   header file for snprintf.c
  *
- * $Id: snprintf.h,v 1.8 2005/01/08 09:46:48 we7u Exp $
+ * $Id: snprintf.h,v 1.9 2006/01/17 21:05:20 we7u Exp $
  */
 /*
- * Copyright (C) 2000-2005 The Xastir Group
+ * Copyright (C) 2000-2006 The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

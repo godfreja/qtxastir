@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
-# Copyright (C) 2001-2005 Curt Mills, WE7U
+# Copyright (C) 2001-2006 Curt Mills, WE7U
 # Released to the public domain.
 # Modified from the earlier inf2geo.pl script.
 #
-# $Id: ozi2geo.pl,v 1.3 2005/01/08 09:27:08 we7u Exp $
+# $Id: ozi2geo.pl,v 1.4 2006/01/17 21:08:55 we7u Exp $
 #
 # Read in .map file (an OziExplorer file in this case).
 # Check the version of the map format (1st line).  My example is
