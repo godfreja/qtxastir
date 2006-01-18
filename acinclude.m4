@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.53 2006/01/17 21:08:53 we7u Exp $
+# $Id: acinclude.m4,v 1.54 2006/01/18 15:11:11 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -240,6 +240,10 @@ fi
 
 if test "$use_err_popups" != "no"; then
  AC_DEFINE_UNQUOTED(HAVE_ERROR_POPUPS, 1, [Define if you have error popups enabled])
+fi
+
+if test "$use_lsb" != "no"; then
+ AC_DEFINE_UNQUOTED(__LSB__, 1, [Define if you're compiling for Linux Standard Base])
 fi
 
 ])
