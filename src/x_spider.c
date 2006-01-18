@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.47 2006/01/17 21:07:22 we7u Exp $
+ * $Id: x_spider.c,v 1.48 2006/01/18 14:48:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2006  The Xastir Group
@@ -1160,7 +1160,8 @@ void send_udp_nack(int sock, struct sockaddr_in from, int fromlen) {
 // programs to inject packets into Xastir via UDP protocol.
 //
 void UDP_Server(int argc, char *argv[], char *envp[]) {
-    int sock, length, fromlen, n1, n2;
+    int sock, length, n1, n2;
+    socklen_t fromlen;
     struct sockaddr_in server;
     struct sockaddr_in from;
     char buf[1024];
@@ -1200,7 +1201,8 @@ void UDP_Server(int argc, char *argv[], char *envp[]) {
             buf,
             1024,
             0,
-            (struct sockaddr *)&from, &fromlen);
+            (struct sockaddr *)&from,
+            &fromlen);
         if (n1 < 0) {
             fprintf(stderr, "Error: recvfrom");
         }
