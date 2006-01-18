@@ -1,6 +1,6 @@
 /******************************************************************
  *
- * @(#)$Id: db2APRS.c,v 1.4 2006/01/17 21:04:56 we7u Exp $
+ * @(#)$Id: db2APRS.c,v 1.5 2006/01/18 16:49:15 we7u Exp $
  *
  * Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
  * Portions Copyright (C) 2004-2006 The Xastir Group
@@ -695,7 +695,8 @@ int main(int argc, char **argv)
     double airpressure;
     unsigned int valid_data_flgs;
     int Metric_Data = 1, dsts = 0;
-    int  pid, s, clen = sizeof(struct sockaddr_in), fd[CONNECTIONS];
+    int  pid, s, fd[CONNECTIONS];
+    socklen_t clen = sizeof(struct sockaddr_in);
     int *max = 0,  c, dly_cnt = 1;
     int not_a_daemon = 0, repetitive = 0, tcp_wx_port = PORT;
     int  i, index = 0;
