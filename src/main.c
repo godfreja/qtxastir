@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.686 2006/01/17 21:06:29 we7u Exp $
+ * $Id: main.c,v 1.687 2006/01/18 15:00:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25436,12 +25436,6 @@ int main(int argc, char *argv[], char *envp[]) {
 #endif  // USING_LIBGC
 
 
-#ifdef USE_MAP_CACHE
-    map_cache_init();
-#endif  // USE_MAP_CACHE
-
-
-
     // Make copies of argc/argv/envp so that we can start other
     // processes and know the environment we were started with. 
     //
@@ -25736,6 +25730,10 @@ fprintf(stderr,
 // We should probably protect redraw_on_new_data, alert_redraw_on_update, and
 // redraw_on_new_packet_data variables as well?
 // Also need to protect dialogs.
+
+#ifdef USE_MAP_CACHE
+    map_cache_init();
+#endif  // USE_MAP_CACHE
 
     (void)bulletin_gui_init();
     (void)db_init();

@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.22 2006/01/17 21:06:29 we7u Exp $
+ * $Id: map_cache.c,v 1.23 2006/01/18 15:00:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -93,7 +93,13 @@ void map_cache_init(void) {
             "Berkeley DB header files/shared library file do NOT match!\n");
         fprintf(stderr,
             "Disabling use of the map cache.\n");
-        popup_message_always(langcode("POPEM00034"),langcode("POPEM00046"));
+
+
+// Can't bring up a popup here 'cuz we don't have any GUI running
+// yet by this point.
+// popup_message_always(langcode("POPEM00034"),langcode("POPEM00046"));
+
+
         warn_now++;
         map_cache_disabled++;
     }
