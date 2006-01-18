@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.36 2006/01/18 16:49:47 we7u Exp $
+ * $Id: map_tif.c,v 1.37 2006/01/18 22:40:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -81,8 +81,9 @@ extern int mag;
 
 #ifdef HAVE_LIBGEOTIFF
 
-// Needed for CSLTokenizeStringComplex define
-#include "cpl_csv.h"
+// Needed for CSLTokenizeStringComplex define (to get rid of warning
+// in gcc-4.0) but causes errors with Cygwin if left active.
+//#include "cpl_csv.h"
 
 #include "xtiffio.h"
 //#include "geotiffio.h"
