@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.688 2006/01/23 20:02:48 we7u Exp $
+ * $Id: main.c,v 1.689 2006/01/23 23:47:11 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4494,7 +4494,7 @@ void Map_font(Widget w, XtPointer clientData, XtPointer callData) {
 
         for (i = 0; i < FONT_MAX; i++) {
             char *fonttitle[FONT_MAX] = {"MAPFONT003","MAPFONT004","MAPFONT005",
-                                         "MAPFONT006","MAPFONT007"};
+                                         "MAPFONT006","MAPFONT007","MAPFONT008"};
             ac = 0;
             if (i == 0) {
                 XtSetArg(al[ac], XmNtopAttachment, XmATTACH_FORM); ac++;

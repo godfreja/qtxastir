@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.50 2006/01/17 21:05:20 we7u Exp $
+ * $Id: xastir.h,v 1.51 2006/01/23 23:47:12 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -144,7 +144,8 @@ extern int index_maps_on_startup;
 #define FONT_MEDIUM 2
 #define FONT_LARGE 3
 #define FONT_HUGE 4
-#define FONT_MAX 5
+#define FONT_BORDER 5
+#define FONT_MAX 6
 #define FONT_DEFAULT FONT_MEDIUM
 extern char rotated_label_fontname[FONT_MAX][MAX_LABEL_FONTNAME];
 

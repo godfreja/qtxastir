@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.192 2006/01/17 21:03:52 we7u Exp $
+# $Id: language-English.sys,v 1.193 2006/01/23 23:47:10 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -1191,6 +1191,7 @@ MAPFONT004|Small||
 MAPFONT005|Medium||
 MAPFONT006|Large||
 MAPFONT007|Huge||
+MAPFONT008|Border Labels||
 #
 #
 #
