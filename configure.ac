@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.144 2006/01/18 15:11:11 we7u Exp $
+# $Id: configure.ac,v 1.145 2006/01/23 20:00:20 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -204,6 +204,10 @@ AC_CHECK_FUNCS([putenv select setenv setlocale settimeofday signal sigignore])
 AC_CHECK_FUNCS([snprintf socket sqrt stpcpy strcasecmp strchr strdup])
 AC_CHECK_FUNCS([strerror strncasecmp strpbrk strptime strrchr strstr])
 AC_CHECK_FUNCS([strtol strtoul tzset vsnprintf])
+
+# Check for deprecated/current pthread functions
+AC_CHECK_FUNCS([pthread_mutexattr_setkind_np pthread_mutexattr_settype])
+
 # this is a GNU extension and not present on all systems.
 AC_CHECK_FUNCS([strndup])
  
