@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.687 2006/01/18 15:00:17 we7u Exp $
+ * $Id: main.c,v 1.688 2006/01/23 20:02:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25771,7 +25771,9 @@ fprintf(stderr,
 
 
 #ifndef OLD_PTHREADS
-    (void) signal(SIGUSR1,usr1sig);     // take a snapshot on demand 
+    (void) signal(SIGUSR1,usr1sig);     // take a snapshot on demand
+#else   // OLD_PTHREADS
+#   warning ***** Old kernel detected: Disabling SIGUSR1 handler (snapshot on demand) *****
 #endif  // OLD_PTHREADS
 
 #ifdef HAVE_SIGIGNORE
