@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.57 2006/01/17 21:05:20 we7u Exp $
+ * $Id: maps.h,v 1.58 2006/01/24 05:46:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -166,6 +166,7 @@ extern int map_inside_viewport_lat_lon(double map_min_y,
                                        double map_max_x);
 extern void draw_label_text (Widget w, int x, int y, int label_length, int color, char *label_text);
 extern void draw_rotated_label_text (Widget w, int rotation, int x, int y, int label_length, int color, char *label_text, int fontsize);
+extern int get_rotated_label_text_length_pixels(Widget w, char *label_text, int fontsize);
 extern void draw_centered_label_text (Widget w, int rotation, int x, int y, int label_length, int color, char *label_text, int fontsize);
 extern void  Monochrome( /*@unused@*/ Widget widget, XtPointer clientData, XtPointer callData);
 extern void Snapshot(void);

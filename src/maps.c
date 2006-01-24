@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.461 2006/01/23 23:47:12 chicoreus Exp $
+ * $Id: maps.c,v 1.462 2006/01/24 05:46:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -137,7 +137,6 @@
 
 
 void draw_rotated_label_text_to_target (Widget w, int rotation, int x, int y, int label_length, int color, char *label_text, int fontsize, Pixmap target_pixmap, int draw_outline, int outline_bg_color);
-int get_rotated_label_text_length_pixels(Widget w, char *label_text, int fontsize);
 int get_rotated_label_text_height_pixels(Widget w, char *label_text, int fontsize);
 
 // Print options
@@ -811,7 +810,7 @@ void draw_grid(Widget w) {
     int last_line_labeled;      // Marks lines that were labeled when alternate lines
                                 // are not being labeled.
     char seven_zeroes[7] = "0000000";
-    int string_width_pixels;    // Width of the unrotated seven_zeroes label string in pixels.
+    int string_width_pixels = 0;// Width of the unrotated seven_zeroes label string in pixels.
     int string_height_pixels;   // Height of the unrotated seven_zeroes label string in pixels
     int grid_spacing_pixels;    // Spacing of fine grid lines in pixels.
     int easting_color;          // Colors for the grid labels
