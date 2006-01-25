@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.194 2006/01/25 16:46:17 chicoreus Exp $
+# $Id: language-Italian.sys,v 1.195 2006/01/25 19:33:40 n0vh Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -975,6 +975,7 @@ WXPUPSI023|Temp. Massima||
 WXPUPSI024|Temp. Minima||
 WXPUPSI025|Radio Shack Meteo-200/Oregon Scientific WM-918||
 WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
+WXPUPSI027|LaCrosse WX-23xx||
 #
 # Stn Lists
 LHPUPNI000|Lista stazioni||

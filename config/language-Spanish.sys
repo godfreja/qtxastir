@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.201 2006/01/25 16:46:17 chicoreus Exp $
+# $Id: language-Spanish.sys,v 1.202 2006/01/25 19:33:40 n0vh Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -978,6 +978,7 @@ WXPUPSI023|Alta Temperat.||
 WXPUPSI024|Baja Temperat.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
 WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
+WXPUPSI027|LaCrosse WX-23xx||
 #
 # Listas de Estaciones
 LHPUPNI000|Todas las estaciones||
