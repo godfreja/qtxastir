@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.199 2006/01/12 16:58:02 we7u Exp $
+# $Id: language-German.sys,v 1.200 2006/01/25 16:46:17 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -1192,6 +1192,7 @@ MAPFONT004|Klein||
 MAPFONT005|Mittel||
 MAPFONT006|Groﬂ||
 MAPFONT007|Riesig||
+MAPFONT008|Border Labels||
 #
 # Entfernung/Richtung auf der Statuszeile
 PULDNDB001|Entf./Richtung in Status||

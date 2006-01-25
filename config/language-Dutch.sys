@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.203 2006/01/17 21:03:52 we7u Exp $
+# $Id: language-Dutch.sys,v 1.204 2006/01/25 16:46:17 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -1199,6 +1199,7 @@ MAPFONT004|Klein||
 MAPFONT005|Gemiddeld||
 MAPFONT006|Groot||
 MAPFONT007|Enorm||
+MAPFONT008|Border Labels||
 #
 #
 #

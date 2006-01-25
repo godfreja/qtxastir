@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.190 2006/01/17 21:03:52 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.191 2006/01/25 16:46:17 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -1188,6 +1188,7 @@ MAPFONT004|Pequeno||
 MAPFONT005|Medio||
 MAPFONT006|Grande||
 MAPFONT007|Enorme||
+MAPFONT008|Border Labels||
 #
 # Distancia/rumo na linha de estados
 PULDNDB001|Estado dist/rumo||
