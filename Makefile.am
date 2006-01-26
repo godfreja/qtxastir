@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.35 2006/01/17 21:08:05 we7u Exp $
+# $Id: Makefile.am,v 1.36 2006/01/26 20:39:20 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -20,7 +20,7 @@ EXTRA_DIST = xastir.spec.in xastir.spec xastir-min.spec.in xastir-min.spec confi
         DEBUG_LEVELS bootstrap.sh INSTALL UPGRADE xastir.1 terraserver.geo \
         terraserver-reflectivity.geo terraserver-urban.geo \
         terraserver-topo.geo tigermap.geo USRadar.geo CanadaTopo250k.geo \
-        CanadaTopo50k.geo TXRadar.geo WMSRadar.geo Davis
+        CanadaTopo50k.geo TXRadar.geo WMSRadar.geo Davis LaCrosse
 
 MAINTAINERCLEANFILES = configure aclocal.m4 Makefile.in Makefile \
         config.guess config.sub install-sh missing mkinstalldirs \
