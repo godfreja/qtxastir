@@ -1,5 +1,5 @@
 #
-# $Id: configure.ac,v 1.1 2006/01/25 19:36:27 n0vh Exp $
+# $Id: configure.ac,v 1.2 2006/01/26 15:38:00 n0vh Exp $
 #
 # Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
 # Portions Copyright (C) 2004-2005  The Xastir Group
@@ -29,6 +29,7 @@ then
     MYSQL_LIBS=`${MYSQL_CONFIG} --libs`
     LIBS=`${MYSQL_CONFIG} --libs`
     MYSQL_CFLAGS=`${MYSQL_CONFIG} --cflags`
+    CFLAGS="$CFLAGS $MYSQL_CFLAGS"
     AC_SUBST(MYSQL_LIBS)
     AC_SUBST(MYSQL_CFLAGS)
     AC_MSG_RESULT(...found ${MYSQL_VERSION})
