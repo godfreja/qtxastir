@@ -1,10 +1,10 @@
-# $Id: Makefile.am,v 1.3 2006/01/17 21:04:56 we7u Exp $
+# $Id: Makefile.am,v 1.4 2006/01/26 22:51:07 we7u Exp $
 #
 # Copyright (C) 2004-2006  The Xastir Group
 #
 
-bin_PROGRAMS =
-noinst_PROGRAMS = db2APRS
+bin_PROGRAMS = db2APRS
+noinst_PROGRAMS =
 
 db2APRS_SOURCES = \
     db2APRS.c defs.h
