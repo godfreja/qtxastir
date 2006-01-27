@@ -1,5 +1,5 @@
 
-$Id: README,v 1.30 2006/01/20 17:58:37 we7u Exp $
+$Id: README,v 1.31 2006/01/27 14:57:40 we7u Exp $
 
 README
   ------------------------------------------------------------------------
@@ -346,7 +346,8 @@ README
         ftp://ftp.suse.com/pub/projects/ham/10.0-i386
 
         Adding these sites will allow you to find and install the ax25
-        libraries/devel headers and the OpenMotif development headers.
+        libraries/devel headers, the OpenMotif development headers, and the
+        libcurl headers.
 
         You'll see this warning if you run ./bootstrap.sh:
 
