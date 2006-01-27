@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: bootstrap.sh,v 1.14 2006/01/27 16:05:00 we7u Exp $
+# $Id: bootstrap.sh,v 1.15 2006/01/27 16:10:06 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -10,20 +10,20 @@
 #
 
 echo "    6) Removing autom4te.cache directory..."
-#rm -rf autom4te.cache
+rm -rf autom4te.cache
 
 echo "    5) Running aclocal..."
-#aclocal
+aclocal
 
 echo "    4) Running autoheader..."
-#autoheader
+autoheader
 
 echo "    3) Running autoconf..."
-#autoconf
+autoconf
 
 # Cygwin needs these parameters to be separate.
 echo "    2) Running automake..."
-#automake -a -c
+automake -a -c
 
 # Automake-1.9 on SuSE 10 doesn't copy over "mkinstalldirs" if
 # missing.  Check whether it is missing and copy it over ourselves
