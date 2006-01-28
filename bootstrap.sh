@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: bootstrap.sh,v 1.15 2006/01/27 16:10:06 we7u Exp $
+# $Id: bootstrap.sh,v 1.16 2006/01/28 19:21:22 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -28,7 +28,7 @@ automake -a -c
 # Automake-1.9 on SuSE 10 doesn't copy over "mkinstalldirs" if
 # missing.  Check whether it is missing and copy it over ourselves
 # if so.
-if [ -e "mkinstalldirs" ]
+if test -x "mkinstalldirs"
 then
   echo "    1) Checking for 'mkinstalldirs'... Found!"
 else
@@ -43,7 +43,7 @@ else
   fi
   # Check whether we have the file now in our current directory and
   # that it is executable.
-  if [ -x "mkinstalldirs" ]
+  if test -x "mkinstalldirs"
   then
     echo "       Checking for 'mkinstalldirs'... Found!"
   else
