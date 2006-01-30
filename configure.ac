@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.145 2006/01/23 20:00:20 we7u Exp $
+# $Id: configure.ac,v 1.146 2006/01/30 15:31:27 tvrusso Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -210,6 +210,9 @@ AC_CHECK_FUNCS([pthread_mutexattr_setkind_np pthread_mutexattr_settype])
 
 # this is a GNU extension and not present on all systems.
 AC_CHECK_FUNCS([strndup])
+
+#this is also a recent extension that should not be counted on
+AC_CHECK_FUNCS([roundf])
  
 # Check for intl library (Needed for Cygwin) 
 # 
