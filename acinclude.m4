@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.54 2006/01/18 15:11:11 we7u Exp $
+# $Id: acinclude.m4,v 1.55 2006/02/01 16:42:55 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -809,7 +809,7 @@ AC_DEFUN([XASTIR_BERKELEY_DB_CHK_LIB],
 # to specify the function call with the full prototype for it to be found.
         BDB_LIB_FOUND="none"
         AC_MSG_CHECKING([for a library containing db_create])
-        for dbname in db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db
+        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db
           do
 	    LIBS="$saved_LIBS -l$dbname"
 	    AC_TRY_LINK(
