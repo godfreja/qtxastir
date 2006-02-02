@@ -1,5 +1,5 @@
 
-$Id: README.Getting-Started,v 1.24 2006/01/17 21:08:05 we7u Exp $
+$Id: README.Getting-Started,v 1.25 2006/02/02 16:49:48 we7u Exp $
 
 
 Hello new user, and welcome to Xastir!
@@ -433,7 +433,7 @@ you'll see this:
   -lPortuguese       Set the language to Portuguese
   -lSpanish          Set the language to Spanish
   -m                 Deselect Maps
-  -t                 Internal SIGSEGV handler disabled
+  -t                 Internal SIGSEGV handler enabled
   -v level           Set the debug level
 
 
