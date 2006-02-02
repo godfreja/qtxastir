@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.196 2006/01/23 20:00:20 we7u Exp $
+ * $Id: util.c,v 1.197 2006/02/02 15:10:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2129,7 +2129,7 @@ void convert_xastir_to_UTM(double *easting, double *northing, char *zone, int zo
         easting,
         zone,
         zone_len);
-    zone[zone_len] = '\0';
+    zone[zone_len-1] = '\0';
 }
 
 
