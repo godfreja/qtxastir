@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.198 2006/02/02 18:59:22 chicoreus Exp $
+ * $Id: util.c,v 1.199 2006/02/03 17:47:53 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2179,8 +2179,8 @@ void convert_xastir_to_MGRS_str(char *str, int str_len, long x, long y, int nice
     char NorthingL[3] = "  ";
     char utmZone[10];
     convert_xastir_to_MGRS_str_components(utmZone, strlen(utmZone), 
-       EastingL, strlen(EastingL), 
-       NorthingL, strlen(NorthingL), 
+       EastingL, sizeof(EastingL), 
+       NorthingL, sizeof(NorthingL), 
        &intEasting, &intNorthing, 
        x,  y, 
        nice_format, space_string, strlen(space_string)) ;
