@@ -1,5 +1,5 @@
 
-$Id: UPGRADE,v 1.12 2006/01/17 21:08:05 we7u Exp $
+$Id: UPGRADE,v 1.13 2006/02/07 02:33:20 we7u Exp $
 
 
 Previous Install Notes:
@@ -55,7 +55,7 @@ Previous Install Notes:
         su
         ./xastir-migrate.sh (this will move the Xastir system directories)
         make install (or make install-strip)
-        chmod 4555 /usr/local/bin/xastir
+        chmod 4555 /usr/local/bin/xastir (only if required)
         exit (from root)
         ./xastir-fixcfg.sh (run this for each user that has ever run Xastir)
 
