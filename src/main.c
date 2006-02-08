@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.691 2006/02/02 18:58:43 chicoreus Exp $
+ * $Id: main.c,v 1.692 2006/02/08 14:28:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14665,11 +14665,8 @@ static void* gps_transfer_thread(void *arg) {
 
 //            fprintf(stderr,"Fetch Garmin RINO waypoints\n");
 
-            // Set up the postfix string.  The files will be created in the
-            // "~/.xastir/gps/" directory.
-            xastir_snprintf(postfix, sizeof(postfix),
-                "Shapefile_2D %s/",
-                get_user_base_dir("gps"));
+            // The files will be created in the "~/.xastir/gps/"
+            // directory.
 
             xastir_snprintf(gps_temp_map_filename,
                 sizeof(gps_temp_map_filename),
