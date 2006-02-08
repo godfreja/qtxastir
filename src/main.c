@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.692 2006/02/08 14:28:11 we7u Exp $
+ * $Id: main.c,v 1.693 2006/02/08 15:11:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11587,7 +11587,7 @@ void pid_file_check(void){
                 "Other Xastir process, pid: %d does not appear be running. \n",
                 other_pid);
 	    // nuke from orbit
-	    if (! unlink(pidfile_name)) {
+	    if (unlink(pidfile_name)) {
 	            fprintf(stderr,"Error unlinking pid file: %s, %d\n",
                         pidfile_name,errno);
             }
