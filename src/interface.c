@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.244 2006/01/17 21:06:28 we7u Exp $
+ * $Id: interface.c,v 1.245 2006/02/13 20:30:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -135,7 +135,8 @@ int ax25_ports_loaded = 0;
 // decode data
 unsigned char *incoming_data;
 int incoming_data_length;               // Used for binary strings such as KISS
-unsigned char incoming_data_copy[MAX_LINE_SIZE];    // Used for debug
+unsigned char incoming_data_copy[MAX_LINE_SIZE];            // Used for debug
+unsigned char incoming_data_copy_previous[MAX_LINE_SIZE];   // Used for debug
 int data_avail = 0;
 int data_port;
 
@@ -1204,9 +1205,13 @@ void channel_data(int port, unsigned char *string, int length) {
 
     //fprintf(stderr,"channel_data: %x %d\n",string[0],length);
 
-    // Save a backup copy of the incoming string.  Used for
-    // debugging purposes.  If we get a segfault, we can print out
-    // the last message received.
+    // Save backup copies of the incoming string and the previous
+    // string.  Used for debugging purposes.  If we get a segfault,
+    // we can print out the last two messages received.
+    xastir_snprintf((char *)incoming_data_copy_previous,
+        sizeof(incoming_data_copy_previous),
+        "%s",
+        incoming_data_copy);
     xastir_snprintf((char *)incoming_data_copy,
         sizeof(incoming_data_copy),
         "Port%d:%s",

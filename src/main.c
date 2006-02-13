@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.693 2006/02/08 15:11:10 we7u Exp $
+ * $Id: main.c,v 1.694 2006/02/13 20:30:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11631,7 +11631,8 @@ void pid_file_check(void){
 /* handle segfault signal */
 void segfault(/*@unused@*/ int sig) {
     fprintf(stderr, "Caught Segfault! Xastir will terminate\n");
-    fprintf(stderr, "Last incoming line was: %s\n", incoming_data_copy);
+    fprintf(stderr, "Previous incoming line was: %s\n", incoming_data_copy_previous);
+    fprintf(stderr, "    Last incoming line was: %s\n", incoming_data_copy);
     if (dangerous_operation[0] != '\0')
         fprintf(stderr, "Possibly died at: %s\n", dangerous_operation);
     fprintf(stderr, "%02d:%02d:%02d\n", get_hours(), get_minutes(), get_seconds() );
