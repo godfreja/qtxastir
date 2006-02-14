@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.521 2006/02/14 21:11:23 we7u Exp $
+ * $Id: db.c,v 1.522 2006/02/14 22:00:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8047,6 +8047,10 @@ void delete_station_memory(DataRow *p_del) {
     p_new = (DataRow *)malloc(sizeof(DataRow));
     if (p_new != NULL) {                // we really got the memory
         p_new->call_sign[0] = '\0';     // just to be sure
+        p_new->n_next = NULL;
+        p_new->n_prev = NULL;
+        p_new->t_next = NULL;
+        p_new->t_prev = NULL;
         insert_name(p_new,p_name);      // insert element into name ordered list
         insert_time(p_new,p_time);      // insert element into time ordered list
     }
