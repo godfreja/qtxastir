@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.50 2006/01/17 21:06:28 we7u Exp $
+ * $Id: igate.c,v 1.51 2006/02/14 21:11:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -65,7 +65,7 @@ int check_NWS_stations(char *call);
 // pointer set to NULL.
 //
 typedef struct _DupeRecord{
-    char    data[MAX_TNC_LINE_SIZE+15]; // Packet data
+    char    data[MAX_LINE_SIZE+15]; // Packet data
     time_t  time;                       // The time the record was inserted
     struct  _DupeRecord *next;          // pointer to next record in list
 } DupeRecord;
@@ -142,8 +142,8 @@ int not_a_dupe(int queue_type, int port, char *line, int insert_mode) {
     int insert_new;
     time_t time_cutoff;
     int found_dupe = 0;
-    char match_line[MAX_TNC_LINE_SIZE*2];
-    char line2[MAX_TNC_LINE_SIZE+1];
+    char match_line[MAX_LINE_SIZE*2];
+    char line2[MAX_LINE_SIZE+1];
     char *c0, *c1, *c2;
 
 
@@ -158,7 +158,7 @@ int not_a_dupe(int queue_type, int port, char *line, int insert_mode) {
     // Fill the destination string with zeroes.  This is a nice
     // segfault-prevention technique.  Whatever strings we throw in here
     // will be automatically terminated.
-    memset(match_line, 0, MAX_TNC_LINE_SIZE*2);
+    memset(match_line, 0, MAX_LINE_SIZE*2);
 
 
     switch (queue_type) {

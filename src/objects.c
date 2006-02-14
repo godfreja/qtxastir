@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.29 2006/01/17 21:07:21 we7u Exp $
+ * $Id: objects.c,v 1.30 2006/02/14 21:11:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6621,7 +6621,7 @@ void Create_SAR_Object(/*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
     char call[MAX_CALLSIGN+1];
     long x_lat,x_lon;
     char origin[MAX_CALLSIGN+1];  // mycall
-    char data[MAX_TNC_LINE_SIZE];
+    char data[MAX_LINE_SIZE];
     char page[2];
     // reserve space for probability circle as well as symbol /Pmin0.25,Pmax0.5,
     char symbol_plus[PREDEFINED_OBJECT_DATA_LENGTH];

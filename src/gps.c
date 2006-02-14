@@ -1,5 +1,5 @@
 /*
- * $Id: gps.c,v 1.50 2006/01/17 21:06:28 we7u Exp $
+ * $Id: gps.c,v 1.51 2006/02/14 21:11:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -111,7 +111,7 @@ int decode_gps_rmc( char *data,
 
     char *temp_ptr;
     char *temp_ptr2;
-    char temp_data[MAX_TNC_LINE_SIZE+1];    // Big in case we get concatenated packets (it happens!)
+    char temp_data[MAX_LINE_SIZE+1];    // Big in case we get concatenated packets (it happens!)
     char sampletime[7]; // We ignore fractional seconds
     char long_pos_x[11];
     char long_ew;
@@ -373,7 +373,7 @@ int decode_gps_gga( char *data,
 
     char *temp_ptr;
     char *temp_ptr2;
-    char temp_data[MAX_TNC_LINE_SIZE+1];    // Big in case we get concatenated packets (it happens!)
+    char temp_data[MAX_LINE_SIZE+1];    // Big in case we get concatenated packets (it happens!)
     char long_pos_x[11];
     char long_ew;
     char lat_pos_y[10];

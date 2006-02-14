@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.24 2006/01/17 21:05:20 we7u Exp $
+ * $Id: database.h,v 1.25 2006/02/14 21:11:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -36,9 +36,6 @@
 #define MAX_TACTICAL_CALL 20 // Up to XX chars for tactical calls
 #define MAX_COMMENT_LINES 20  // Save XX unique comment strings per station
 #define MAX_STATUS_LINES 20   // Save XX unique status strings per station
-
-/* define max tnc line size (should be from tnc.h) */
-#define MAX_TNC_LINE_SIZE 300
 
 /* define max size of info field */
 #define MAX_INFO_FIELD_SIZE 256
