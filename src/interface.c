@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.245 2006/02/13 20:30:55 we7u Exp $
+ * $Id: interface.c,v 1.246 2006/02/14 19:33:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7967,10 +7967,10 @@ void output_my_aprs_data(void) {
     char data_txt2[5];
     struct tm *day_time;
     time_t sec;
-    char my_pos[100];
+    char my_pos[256];
     char my_output_lat[MAX_LAT];
     char my_output_long[MAX_LONG];
-    char output_net[100];
+    char output_net[256];
     char wx_data[200];
     char output_phg[10];
     char output_cs[10];
@@ -8749,7 +8749,7 @@ void output_my_data(char *message, int incoming_port, int type, int loopback_onl
     char temp[MAX_LINE_SIZE+5];
     char path_txt[MAX_LINE_SIZE+5];
     char *unproto_path = "";
-    char output_net[100];
+    char output_net[256];
     int ok, start, finish, port;
     int done;
 
