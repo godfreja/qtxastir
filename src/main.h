@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.91 2006/01/23 20:02:48 we7u Exp $
+ * $Id: main.h,v 1.92 2006/02/14 19:32:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -100,12 +100,6 @@ extern int interrupt_drawing_now;
 #define MAX_PHG      8
 #define MAX_COMMENT  80
 
-#define MAX_UNPROTO  100
-
-#define MAX_TNC_CHARS 128
-#define MAX_NET_CHARS 128
-#define MAX_GPS_CHARS 128
-#define MAX_WX_CHARS 4
 
 
 //////////////////////////////////////////////////////////////////////
