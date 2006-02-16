@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.62 2006/01/17 21:07:21 we7u Exp $
+ * $Id: messages.c,v 1.63 2006/02/16 20:44:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -749,7 +749,7 @@ void output_message(char *from, char *to, char *message, char *path) {
 // this lock.
 end_critical_section(&send_message_dialog_lock, "db.c:update_messages" );
 
-                msg_data_add(to,
+                (void)msg_data_add(to,
                     from,
                     message_out,
                     message_pool[i].seq,
