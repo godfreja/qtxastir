@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.40 2006/01/17 21:06:29 we7u Exp $
+ * $Id: list_gui.c,v 1.41 2006/02/17 05:50:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -138,7 +138,7 @@ void get_list_member(int type, DataRow **p_station, int skip, int forward) {
 
     if ((*p_station) == NULL) {                         // default start value
         if (type == LST_TIM)
-            (*p_station) = t_last;
+            (*p_station) = t_newest;
         else
             (*p_station) = n_first;
     }
@@ -231,14 +231,14 @@ void get_list_member(int type, DataRow **p_station, int skip, int forward) {
                     if (((*p_station)->flag & ST_ACTIVE) != 0)  // ignore deleted objects
                         found = (char)TRUE;
                     else
-                        (*p_station) = (*p_station)->t_prev;
+                        (*p_station) = (*p_station)->t_older;
                 }
             else
                 while (!found && (*p_station) != NULL) {
                     if (((*p_station)->flag & ST_ACTIVE) != 0)
                         found = (char)TRUE;
                     else
-                        (*p_station) = (*p_station)->t_next;
+                        (*p_station) = (*p_station)->t_newer;
                 }
             break;
         case LST_OBJ:

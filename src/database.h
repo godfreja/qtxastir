@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.25 2006/02/14 21:11:23 we7u Exp $
+ * $Id: database.h,v 1.26 2006/02/17 05:50:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -340,9 +340,9 @@ typedef struct _DataRow {
     struct _DataRow *n_next;    // pointer to next element in name ordered list
     struct _DataRow *n_prev;    // pointer to previous element in name ordered
                                 // list
-    struct _DataRow *t_next;    // pointer to next element in time ordered
+    struct _DataRow *t_newer;   // pointer to next element in time ordered
                                 // list (newer)
-    struct _DataRow *t_prev;    // pointer to previous element in time ordered
+    struct _DataRow *t_older;   // pointer to previous element in time ordered
                                 // list (older)
 
     char call_sign[MAX_CALLSIGN+1]; // call sign or name index or object/item
@@ -553,9 +553,9 @@ extern DataRow *n_first;  // pointer to first element in name ordered station
                           // list
 extern DataRow *n_last;   // pointer to last element in name ordered station
                           // list
-extern DataRow *t_first;  // pointer to first element in time ordered station
+extern DataRow *t_oldest; // pointer to first element in time ordered station
                           // list
-extern DataRow *t_last;   // pointer to last element in time ordered station
+extern DataRow *t_newest; // pointer to last element in time ordered station
                           // list
 extern void init_station_data(void);
 extern int station_data_auto_update;
