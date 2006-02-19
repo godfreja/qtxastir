@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# $Id: object2shp.pl,v 1.1 2006/02/19 19:48:23 tvrusso Exp $
+# $Id: object2shp.pl,v 1.2 2006/02/19 20:02:06 tvrusso Exp $
 #
 #  Copyright (C) 2006 Tom Russo
 
@@ -87,6 +87,10 @@ while (<INOBJ>)
     $long=substr($_,27,9);
     $sym=substr($_,36,1);
 
+#sanity check --- don't try to convert if the line doesn't conform to what
+# it should, or if it represents a killed object.  Sometimes objects get
+# commented out with #, etc.
+    next if ($semicolon ne ";");
     next if ($live_or_dead eq "_");
 
     $lat_deg=substr($lat,0,2);
