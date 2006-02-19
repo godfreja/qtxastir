@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.19 2006/01/17 21:08:54 we7u Exp $
+# $Id: Makefile.am,v 1.20 2006/02/19 19:48:23 tvrusso Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -14,6 +14,7 @@ pkglib_SCRIPTS = \
     kiss-off.pl \
     mapblast2geo.pl \
     mapfgd.pl \
+    object2shp.pl \
     overlay.pl \
     ozi2geo.pl \
     permutations.pl \
