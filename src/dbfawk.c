@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.29 2006/01/17 21:06:28 we7u Exp $
+ * $Id: dbfawk.c,v 1.30 2006/02/19 20:50:49 rzg Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2006  The Xastir Group
@@ -200,6 +200,7 @@ dbfawk_sig_info *dbfawk_load_sigs(const char *dir, /* directory path */
         // Check for hidden files or directories
         if (e->d_name[0] == '.') {
             // Hidden, skip it
+            free(path);
             continue;
         }
 
@@ -213,11 +214,13 @@ dbfawk_sig_info *dbfawk_load_sigs(const char *dir, /* directory path */
 
         if (stat(fullpath, &nfile) != 0) {
             // Couldn't stat file
+            free(path);
             continue;
         }
 
         if ((nfile.st_mode & S_IFMT) != S_IFREG) {
             // Not a regular file
+            free(path);
             continue;
         }
  
