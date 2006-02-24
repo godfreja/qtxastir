@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.151 2006/01/23 23:47:12 chicoreus Exp $
+ * $Id: xa_config.c,v 1.152 2006/02/24 00:01:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1261,7 +1261,7 @@ void load_data_or_default(void) {
 
 //N0VH
 #if defined(HAVE_IMAGEMAGICK)
-    net_map_timeout = get_int ("NET_MAP_TIMEOUT", 10, 300, 90);
+    net_map_timeout = get_int ("NET_MAP_TIMEOUT", 10, 300, 120);
 
     tiger_show_grid = get_int ("TIGERMAP_SHOW_GRID", 0, 1, 0);
     tiger_show_counties = get_int ("TIGERMAP_SHOW_COUNTIES", 0, 1, 1);
