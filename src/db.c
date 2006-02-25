@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.526 2006/02/24 18:38:47 tvrusso Exp $
+ * $Id: db.c,v 1.527 2006/02/25 03:01:29 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12685,9 +12685,6 @@ void display_packet_data(void) {
         // area.
         last_char = XmTextGetLastPosition(Display_data_text);
 
-        pos=0;
-        XtVaSetValues(Display_data_text,XmNcursorPosition,&pos,NULL);
-
         //fprintf(stderr,"In display_packet_data: first_line=%d,next_line=%d,ncharsdel=%d,nlinesadd=%d\n",first_line,next_line,ncharsdel,nlinesadd);
 
         if (first_line != -1) { // there is data in the array
@@ -12701,13 +12698,12 @@ void display_packet_data(void) {
                 // display all the data in the ring
                 for (i=first_line;i != next_line;
                      i=(i+1)%MAX_PACKET_DATA_DISPLAY) {
-                    last_char=XmTextGetLastPosition(Display_data_text);
                     XmTextReplace(Display_data_text,last_char,last_char,
                                   packet_data_string[i]);
                     last_char=XmTextGetLastPosition(Display_data_text);
                     pos=last_char;
                     XtVaSetValues(Display_data_text,XmNcursorPosition,
-                                  &pos,NULL);
+                                  pos,NULL);
                 }
                 // Now clear counters so they're always the number of lines to
                 // add or characters to delete *since last display*
@@ -12716,9 +12712,6 @@ void display_packet_data(void) {
             } else { // there is stuff left over after we delete old stuff
                 if (ncharsdel) { // we have something to delete off the top
                     //fprintf(stderr,"  Must delete %d characters\n",ncharsdel);
-                    pos=0;
-                    XtVaSetValues(Display_data_text,XmNcursorPosition,
-                                  &pos,NULL);
                     XmTextReplace(Display_data_text,0,ncharsdel,"");
                     ncharsdel=0;
                 }
@@ -12730,12 +12723,12 @@ void display_packet_data(void) {
                          i != next_line;
                          i=(i+1)%MAX_PACKET_DATA_DISPLAY) {
                         //fprintf(stderr,"     Adding data from line %d\n",i);
-                    pos=last_char;
-                    XtVaSetValues(Display_data_text,XmNcursorPosition,
-                                  &pos,NULL);
-                    XmTextReplace(Display_data_text,last_char,last_char,
-                                  packet_data_string[i]);
-                    last_char=XmTextGetLastPosition(Display_data_text);
+                        XmTextReplace(Display_data_text,last_char,last_char,
+                                      packet_data_string[i]);
+                        last_char=XmTextGetLastPosition(Display_data_text);
+                        pos=last_char;
+                        XtVaSetValues(Display_data_text,XmNcursorPosition,
+                                  pos,NULL);
                     }
                     nlinesadd=0;
                 }
