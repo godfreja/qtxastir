@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.51 2006/01/17 21:07:21 we7u Exp $
+ * $Id: track_gui.c,v 1.52 2006/02/28 08:01:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -415,9 +415,19 @@ static void* findu_transfer_thread(void *arg) {
 
         // Had trouble getting the file.  Abort.
 
-        // Fetch Findu Trail: Failed
-        popup_message_always(langcode("POPEM00035"),
+// Unfortunately we cannot do any GUI stuff from multiple
+// threads/processes at the same time.  We have to can the
+// popup_message stuff here and just write to STDERR instead.
+ 
+        // Dump a message to STDERR
+        fprintf(stderr,
+            "%s  %s\n",
+            langcode("POPEM00035"),
             langcode("POPEM00044"));
+
+        // Fetch Findu Trail: Failed
+//        popup_message_always(langcode("POPEM00035"),
+//            langcode("POPEM00044"));
 
         // Reset global "busy" variable
         fetching_findu_trail_now = 0;
