@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.481 2006/02/22 16:53:18 chicoreus Exp $
+ * $Id: maps.c,v 1.482 2006/02/28 19:30:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -167,6 +167,7 @@ int   print_invert = 0;                 // Reverses black/white
 
 time_t last_snapshot = 0;               // Used to determine when to take next snapshot
 int doing_snapshot = 0;
+int snapshot_interval = 0;
 
 
 int mag;
@@ -4271,7 +4272,9 @@ void Snapshot(void) {
         return;
 
     // Time to take another snapshot?
-    if (sec_now() < (last_snapshot + 300) ) // New snapshot every five minutes
+    // New snapshot interval based on slider in Configure Timing
+    // dialog (in minutes)
+    if (sec_now() < (last_snapshot + (snapshot_interval * 60)) )
         return;
 
     last_snapshot = sec_now(); // Set up timer for next time

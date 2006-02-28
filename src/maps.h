@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.59 2006/02/15 16:46:58 chicoreus Exp $
+ * $Id: maps.h,v 1.60 2006/02/28 19:30:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -189,6 +189,7 @@ enum map_onscreen_enum {MAP_NOT_VIS=0,MAP_IS_VIS,MAP_NOT_INDEXED};
 extern enum map_onscreen_enum map_onscreen(long left, long right, long top, long bottom, int checkpercentage);
 extern enum map_onscreen_enum map_onscreen_index(char *filename);
 extern time_t last_snapshot;
+extern int snapshot_interval;
 
 extern int grid_size;
 

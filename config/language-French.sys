@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.198 2006/02/22 16:51:40 chicoreus Exp $
+# $Id: language-French.sys,v 1.199 2006/02/28 19:29:59 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -436,6 +436,7 @@ WPUPCFTM09|Délai inter-char port série (ms)||
 WPUPCFTM10|Délai nouvelle piste (min)||
 WPUPCFTM11|Espace nouvelle piste (degrés)||
 WPUPCFTM12|RINO -> Intervalle d'objets (min), 0 = Désactivé||
+WPUPCFTM13|Snapshot Interval (min)||
 #
 # PopUp "Configure Coordinate System"
 WPUPCFC001|Configurer système des coordonnées||

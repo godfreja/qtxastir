@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.195 2006/02/22 16:51:40 chicoreus Exp $
+# $Id: language-Portuguese.sys,v 1.196 2006/02/28 19:29:59 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -436,6 +436,7 @@ WPUPCFTM09|Serie de atraso de inter-char (ms)||
 WPUPCFTM10|Novo tempo de pista (min)||
 WPUPCFTM11|Novo intervado de pista (degrees)||
 WPUPCFTM12|RINO -> Intervalo de objectos (min), 0 = Desactivado||
+WPUPCFTM13|Snapshot Interval (min)||
 #
 # PopUp "Sistema de configuracao de coordenadas"
 WPUPCFC001|Sistema de configuracao de coordenadas||
