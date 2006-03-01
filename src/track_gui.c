@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.52 2006/02/28 08:01:41 we7u Exp $
+ * $Id: track_gui.c,v 1.53 2006/03/01 16:02:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -434,6 +434,11 @@ static void* findu_transfer_thread(void *arg) {
         
         return(NULL);
     }
+
+// We need to move this message up to the main thread if possible so
+// that we don't have multiple threads writing to the GUI.  This
+// sort of operation can cause segfaults.  In practice I haven't
+// seen any segfaults due to this particular popup though.
 
     // Fetch Findu Trail: Complete
     popup_message_always(langcode("POPEM00036"),
