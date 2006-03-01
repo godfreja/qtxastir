@@ -1,5 +1,5 @@
 
-$Id: README.Contributing,v 1.11 2006/02/10 19:13:46 tvrusso Exp $
+$Id: README.Contributing,v 1.12 2006/03/01 16:30:53 we7u Exp $
 
 
 Hello possible new developer, and welcome to the Xastir project!
@@ -191,6 +191,15 @@ of ddd, it's Status->Backtrace, then you click on one of the entries
 to make the source code window display the exact location.
 
 Another good debugger to try is "UPS".
+
+Another note about core files:  Sometimes they get written where you
+don't expect.  I just had one appear in ~/.xastir/tmp, so if you
+think you should have a core file and can't find it, try:
+
+    find . -type f | grep core
+
+The core file may be written to a directory that Xastir is currently
+in, instead of where you started Xastir from.
 
 Customized debugging builds
 ---------------------------
