@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.128 2006/01/17 21:08:05 we7u Exp $
+$Id: README.win32,v 1.129 2006/03/02 22:53:21 we7u Exp $
 
 
   Two companies have created simpler installs of Cygwin/Xastir than
@@ -1264,6 +1264,11 @@ to the xastir directory and start with the ./configure command.  It
 should pick up the fact that GDAL/OGR has been installed and compile
 support for it into Xastir.  Follow with the rest of the commands to
 make/install Xastir.
+
+One user required the below GDAL configure line as otherwise it
+complained about not finding libproj:
+
+    ./configure --with-jpeg=internal --with-libtiff=internal --with-static-proj4
 
 
 APRS(tm) is a Trademark of Bob Bruninga
