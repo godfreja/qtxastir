@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.72 2006/02/19 19:56:59 tvrusso Exp $
+$Id: README.MAPS,v 1.73 2006/03/07 17:05:24 we7u Exp $
 
 
 Recommended Configurations for:
@@ -950,6 +950,12 @@ Getting Maps and other Data Files for Xastir:
        or more easily found here (but not guaranteed to be the most
        current:
          http://wetnet.net/~we7u/xastir/Counties/
+
+       We now have a script in the xastir/scripts directory called
+       "get-NWSdata" which fetches the files you need and plops them
+       into the correct directory and unzips them.  Run that script
+       as root.  You may then try the NWS-TEST.log test shown below
+       to verify proper operation.
 
         --------------------------
         The files of interest are:
