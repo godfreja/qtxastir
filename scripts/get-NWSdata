@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: get-NWSdata,v 1.2 2006/03/07 17:04:20 we7u Exp $
+# $Id: get-NWSdata,v 1.3 2006/03/07 17:56:18 we7u Exp $
 #
 # Script to retrieve NWS data files. 
 #
@@ -60,6 +60,10 @@ rm *.zip
 
 wget http://www.weather.gov/geodata/catalog/county/data/c_10fe06.zip
 unzip c_*.zip
+rm *.zip
+
+wget http://www.weather.gov/geodata/catalog/wsom/data/fz12fe06.zip
+unzip fz*.zip
 rm *.zip
 
 
