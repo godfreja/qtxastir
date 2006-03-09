@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.38 2006/01/23 20:41:49 we7u Exp $
+ * $Id: map_tif.c,v 1.39 2006/03/09 20:46:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -814,7 +814,7 @@ void draw_geotiff_image_map (Widget w,
     proj_is_latlong=FALSE;
 
     if( !GTIFKeyGet(gtif,ProjectedCSTypeGeoKey, &PCS,0,1)) {
-          //fprintf(stderr,"Warning: no PCS in geotiff file %s, assuming map is in lat/lon!\n", filenm);
+        // fprintf(stderr,"Warning: no PCS in geotiff file %s, assuming map is in lat/lon!\n", filenm);
         proj_is_latlong=TRUE;
     }
 
@@ -899,7 +899,9 @@ void draw_geotiff_image_map (Widget w,
             }
         }
         else {
-            fprintf(stderr,"Failed GTIFProj4LatLong() call\n");
+            if (!proj_is_latlong) {
+                fprintf(stderr,"Failed GTIFProj4ToLatLong() call\n");
+            }
         }
 
         f_NW_x_bounding = (float)xxx;
@@ -926,7 +928,9 @@ void draw_geotiff_image_map (Widget w,
             }
         }
         else {
-            fprintf(stderr,"Failed GTIFProj4LatLong() call\n");
+            if (!proj_is_latlong) {
+                fprintf(stderr,"Failed GTIFProj4ToLatLong() call\n");
+            }
         }
 
         f_NE_x_bounding = (float)xxx;
@@ -952,7 +956,9 @@ void draw_geotiff_image_map (Widget w,
             }
         }
         else {
-            fprintf(stderr,"Failed GTIFProj4LatLong() call\n");
+            if (!proj_is_latlong) {
+                fprintf(stderr,"Failed GTIFProj4ToLatLong() call\n");
+            }
         }
 
         f_SW_x_bounding = (float)xxx;
@@ -978,7 +984,9 @@ void draw_geotiff_image_map (Widget w,
             }
         }
         else {
-            fprintf(stderr,"Failed GTIFProj4LatLong() call\n");
+            if (!proj_is_latlong) {
+                fprintf(stderr,"Failed GTIFProj4ToLatLong() call\n");
+            }
         }
 
         f_SE_x_bounding = (float)xxx;
