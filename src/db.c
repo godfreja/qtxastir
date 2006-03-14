@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.529 2006/03/09 02:43:12 we7u Exp $
+ * $Id: db.c,v 1.530 2006/03/14 01:32:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15988,7 +15988,16 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
                     // Check whether the station is near enough to
                     // us to require that we alert on the packet.
                     //
-                    if ( (float)distance <= emergency_range ) {
+                    // This may be slightly controversial, but if we
+                    // don't know WHERE a station is, we can't help
+                    // much in an emergency, can we?  The
+                    // zero-distance check helps in the case where
+                    // we haven't yet or never get a position packet
+                    // for a station.  As soon as we have a position
+                    // and it is within a reasonable range, we do
+                    // our emergency popups.
+                    //
+                    if ( distance != 0.0 && (float)distance <= emergency_range ) {
 
 // Do the conversion for emergency_range to mi or km as needed.
 //                        if (english_units) {
