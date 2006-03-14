@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.209 2006/02/28 19:29:59 we7u Exp $
+# $Id: language-Dutch.sys,v 1.210 2006/03/14 01:40:06 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -327,6 +327,10 @@ POPUPMA048|Zet CAD labels aan||
 POPUPMA049|Zet CAD opemerkingen aan||
 POPUPMA050|Zet CAD waarschijnlijkheid aan||
 POPUPMA051|Zet CAD omgevingsgrootte aan||
+POPUPMA052|sq||
+POPUPMA053|ft||
+POPUPMA054|meters||
+POPUPMA055|mi|
 #
 # Status line labels
 BBARZM0001|Zoom %s||

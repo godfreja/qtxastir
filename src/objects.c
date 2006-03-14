@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.30 2006/02/14 21:11:23 we7u Exp $
+ * $Id: objects.c,v 1.31 2006/03/14 01:40:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3419,30 +3419,29 @@ void Format_area_for_output(double *area_km2, char *area_description, int sizeof
             area = area * 5280 * 5280;
             xastir_snprintf(area_description,
                 sizeof_area_description,
-                "%s: %0.2f %s",
-                langcode("POPUPMA037"), // Area
+                "A:%0.2f %s %s",
                 area,
-                langcode("POPUPMA039") ); // square feet
+                langcode("POPUPMA052"),     // sq
+                langcode("POPUPMA053") );   // ft
             //popup_message_always(langcode("POPUPMA020"),area_description);
         }
         else {  // Square meters
             area = area * 1000 * 1000;  // Square meters
             xastir_snprintf(area_description,
                 sizeof_area_description,
-                "%s: %0.2f %s",
-                langcode("POPUPMA037"), // Area
+                "A:%0.2f %s %s",
                 area,
-                langcode("POPUPMA040") ); // square meters
+                langcode("POPUPMA052"),     // sq
+                langcode("POPUPMA054") );   // meters
             //popup_message_always(langcode("POPUPMA020"),area_description);
         }
     }
     else {  // Not small
         xastir_snprintf(area_description,
             sizeof_area_description,
-            "%s: %0.2f %s %s",
-            langcode("POPUPMA037"), // Area
+            "A:%0.2f %s %s",
             area,
-            langcode("POPUPMA038"), // square
+            langcode("POPUPMA052"), // sq
             un_dst);
         //popup_message_always(langcode("POPUPMA020"),area_description);
     }

@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.206 2006/02/28 19:29:59 we7u Exp $
+# $Id: language-Spanish.sys,v 1.207 2006/03/14 01:40:06 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -318,6 +318,10 @@ POPUPMA048|Enable CAD labels||
 POPUPMA049|Enable CAD comments||
 POPUPMA050|Enable CAD probability||
 POPUPMA051|Enable CAD area size||
+POPUPMA052|sq||
+POPUPMA053|ft||
+POPUPMA054|meters||
+POPUPMA055|mi|
 #
 # Menú de Estados de la líneas de Etiquetas
 BBARZM0001|Foco %s||
