@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.20 2006/02/19 19:48:23 tvrusso Exp $
+# $Id: Makefile.am,v 1.21 2006/04/05 16:13:41 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -8,6 +8,8 @@ pkglib_SCRIPTS = \
     coord-convert.pl \
     fcc-get \
     get-gnis \
+    get-maptools.sh \
+    get-NWSdata \
     get_shapelib.sh \
     icontable.pl \
     inf2geo.pl \
