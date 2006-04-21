@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.531 2006/04/21 19:58:35 we7u Exp $
+ * $Id: db.c,v 1.532 2006/04/21 20:51:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -14147,7 +14147,12 @@ if (reply_ack) { // For debugging, so we only have reply-ack
 
         if ( is_my_call(addr,1) ) { // Check SSID also
             // REJ is for me!
-            fprintf(stderr,"Received a REJ packet from %s: |%s| |%s|\n",call,addr,msg_id);
+//            fprintf(stderr,"Received a REJ packet from %s: |%s| |%s|\n",call,addr,msg_id);
+
+            // Note:  This function handles REPLY-ACK protocol just
+            // fine, stripping off the 2nd ack if present.  It uses
+            // only the first sequence number.
+            clear_acked_message(call,addr,msg_id);  // got an REJ for me
 
             // This one also handles REPLY-ACK protocol just fine.
             msg_record_rej(call,addr,msg_id);   // Record the REJ for this message
