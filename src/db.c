@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.532 2006/04/21 20:51:13 we7u Exp $
+ * $Id: db.c,v 1.533 2006/04/21 21:01:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -950,7 +950,7 @@ void msg_record_ack(char *to_call_sign,
 
 // Called when we receive a REJ packet (reject).  Sets the "acked"
 // field in a Message to 4 to indicate that the message has been
-// rejected by the remove station.  This gets rid of the
+// rejected by the remote station.  This gets rid of the
 // highlighting in the Send Message dialog for that message line.
 // This lets us know which messages have been rejected and which
 // have not.  We use this in update_messages() to flag that
