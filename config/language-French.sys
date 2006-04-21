@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.200 2006/03/14 01:40:06 we7u Exp $
+# $Id: language-French.sys,v 1.201 2006/04/21 19:57:52 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -724,6 +724,7 @@ WPUPMSB014|type||
 WPUPMSB015|Broadcast||
 WPUPMSB016|*EXPIRATION*||
 WPUPMSB017|*ANNULE*||
+WPUPMSB018|*REJECTED*||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Modifier réponse automatique||

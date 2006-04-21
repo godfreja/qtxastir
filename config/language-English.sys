@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.199 2006/03/14 01:40:06 we7u Exp $
+# $Id: language-English.sys,v 1.200 2006/04/21 19:57:52 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -722,6 +722,7 @@ WPUPMSB014|type||
 WPUPMSB015|Broadcast||
 WPUPMSB016|*TIMEOUT*||
 WPUPMSB017|*CANCELLED*||
+WPUPMSB018|*REJECTED*||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Change Auto Reply||
