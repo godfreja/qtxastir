@@ -1,11 +1,16 @@
 /* Copyright (C) 2004-2006  The Xastir Group                             */
 /*                                                                       */
-/* $Id: macspeech.c,v 1.6 2006/01/17 21:06:29 we7u Exp $ */
+/* $Id: macspeech.c,v 1.7 2006/04/24 19:21:41 we7u Exp $ */
 /*                                                                       */
 /*  First draft                                                          */
 /*                  KB3EGH 03/24/2004                                    */
 /* needs -I/Developer/Headers/FlatCarbon                                 */
 /*=======================================================================*/
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

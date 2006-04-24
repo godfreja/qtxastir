@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: rpl_malloc.c,v 1.1 2006/04/24 17:19:56 we7u Exp $
+ * $Id: rpl_malloc.c,v 1.2 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -23,15 +23,19 @@
  */
 
 
+/*
+//
+// We DON'T want config.h to redefine malloc in this file else we'll
+// get an infinite loop.
+//
+#ifdef HAVE_CONFIG_H
 #include "config.h"
-#include <unistd.h>
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <sys/stat.h>
-//#include <ctype.h>
+#endif  // HAVE_CONFIG_H
+*/
 
+#include <stdlib.h>
 
-
+#include "rpl_malloc.h"
 
 //
 // Work around bug on some systems where malloc (0) fails.

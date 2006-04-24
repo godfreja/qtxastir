@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.18 2006/04/24 17:20:44 we7u Exp $
+// $Id: rotated.c,v 1.19 2006/04/24 19:21:42 we7u Exp $
 //
 // Portions Copyright (C) 2000-2006  The Xastir Group
 //
@@ -32,6 +32,9 @@
 
 /* ********************************************************************** */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -40,9 +43,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+
 #include "rotated.h"
 #include "snprintf.h"
-#include "rpl_malloc.h"
 
 // Must be last include file
 #include "leak_detection.h"

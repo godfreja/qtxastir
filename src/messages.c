@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.63 2006/02/16 20:44:21 we7u Exp $
+ * $Id: messages.c,v 1.64 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,7 +22,10 @@
  * Look at the README for more information on the program.
  */
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #include <Xm/XmAll.h>

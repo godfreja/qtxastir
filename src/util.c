@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.201 2006/04/24 17:20:44 we7u Exp $
+ * $Id: util.c,v 1.202 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -23,7 +23,10 @@
  */
 
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #if TIME_WITH_SYS_TIME

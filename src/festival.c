@@ -2,7 +2,7 @@
 //
 // Portions Copyright (C) 2000-2006  The Xastir Group
 //
-// $Id: festival.c,v 1.19 2006/04/24 17:20:44 we7u Exp $
+// $Id: festival.c,v 1.20 2006/04/24 19:21:41 we7u Exp $
 //
 // End of modification
 
@@ -79,6 +79,10 @@
 /*                                                                       */
 /*=======================================================================*/
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -91,11 +95,9 @@
 #include <fcntl.h>
 #include <errno.h>
 
-
 #include "xastir.h"
 #include "festival.h"
 #include "snprintf.h"
-#include "rpl_malloc.h"
 
 // Must be last include file
 #include "leak_detection.h"

@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.50 2006/02/16 20:45:03 we7u Exp $
+ * $Id: x_spider.c,v 1.51 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2006  The Xastir Group
@@ -101,7 +101,10 @@
 // multiplexer, repeater.
 
 
-//#include "config.h"
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "x_spider.h"
 #include "snprintf.h"
 

@@ -1,11 +1,14 @@
 
 
-// $Id: hashtable.c,v 1.6 2006/01/17 21:06:28 we7u Exp $
+// $Id: hashtable.c,v 1.7 2006/04/24 19:21:41 we7u Exp $
 
 
 /* Copyright (C) 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
 /* Portions Copyright (C) 2004-2006  The Xastir Group */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
 
 #include <stdlib.h>
 #include <stdio.h>

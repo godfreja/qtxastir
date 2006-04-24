@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.39 2006/03/09 20:46:49 we7u Exp $
+ * $Id: map_tif.c,v 1.40 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -24,7 +24,10 @@
 
 
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #include <stdio.h>

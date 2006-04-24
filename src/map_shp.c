@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.113 2006/01/17 21:07:20 we7u Exp $
+ * $Id: map_shp.c,v 1.114 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -36,7 +36,10 @@
  *  - do more config/ *.dbfawk files!
  *
  */
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #include <stdio.h>

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: awk.c,v 1.33 2006/01/17 21:06:26 we7u Exp $
+ * $Id: awk.c,v 1.34 2006/04/24 19:21:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2006  The Xastir Group
@@ -60,7 +60,11 @@
  *   implement \t, \n, \0[x]nn etc.
  *   instantiate new symbols instead of ignoring them?
  */
+
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #ifdef HAVE_LIBPCRE
 #include <stdio.h>
 #include <string.h>

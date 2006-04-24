@@ -4,12 +4,14 @@
 
    Portions Copyright (C) 2002-2006  The Xastir Group
 
-   $Id: datum.c,v 1.22 2006/01/17 21:06:26 we7u Exp $
+   $Id: datum.c,v 1.23 2006/04/24 19:21:41 we7u Exp $
 */
 
 
-
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #include <math.h>

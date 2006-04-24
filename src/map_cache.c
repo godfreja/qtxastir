@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.23 2006/01/18 15:00:17 we7u Exp $
+ * $Id: map_cache.c,v 1.24 2006/04/24 19:21:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -36,7 +36,10 @@
 
 // Need this one before the #ifdef in order to get the definition of
 // USE_MAP_CACHE, if defined.
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 
 #ifdef  USE_MAP_CACHE
 //#warning USE_MAP_CACHE Defined

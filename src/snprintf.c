@@ -1,7 +1,7 @@
 /*
  * snprintf.c - a portable implementation of snprintf and vsnprintf
  *
- * $Id: snprintf.c,v 1.8 2006/01/17 21:07:21 we7u Exp $
+ * $Id: snprintf.c,v 1.9 2006/04/24 19:21:42 we7u Exp $
  */
 /*
  * Portions Copyright (C) 2000-2006 The Xastir Group
@@ -21,9 +21,11 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
 
 #include "snprintf.h"
-#include "config.h"
 
 
 /*

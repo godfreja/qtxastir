@@ -1,5 +1,5 @@
 
-// $Id: geo-find.c,v 1.11 2006/01/17 21:06:28 we7u Exp $
+// $Id: geo-find.c,v 1.12 2006/04/24 19:21:41 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
@@ -9,6 +9,10 @@
  * geo-*-to-* to parse an address and convert it to geographical
  * coordinates.
  */
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
 
 #include "geo.h"
 #include "io.h"

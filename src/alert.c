@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.99 2006/01/17 21:06:24 we7u Exp $
+ * $Id: alert.c,v 1.100 2006/04/24 19:21:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -284,7 +284,9 @@
 
 
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
 
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,10 +1,15 @@
 
-// $Id: io-common.c,v 1.5 2006/01/17 21:06:28 we7u Exp $
+// $Id: io-common.c,v 1.6 2006/04/24 19:21:41 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
  * Portions Copyright (C) 2004-2006  The Xastir Group
  */
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "io.h"
 #include <ctype.h>
 

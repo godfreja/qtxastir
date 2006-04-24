@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testawk.c,v 1.25 2006/01/17 21:07:21 we7u Exp $
+ * $Id: testawk.c,v 1.26 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2006  The Xastir Group
@@ -23,11 +23,13 @@
  */
 
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "config.h"
 
 #ifdef WITH_DBFAWK
 

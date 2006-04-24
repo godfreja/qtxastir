@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.246 2006/02/14 19:33:03 we7u Exp $
+ * $Id: interface.c,v 1.247 2006/04/24 19:21:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,7 +26,10 @@
  AX.25 Parts adopted from: aprs_tty.c by Henk de Groot - PE1DNN
 */
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #include <stdio.h>

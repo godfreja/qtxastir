@@ -1,5 +1,5 @@
 /*
- * $Id: lang.c,v 1.14 2006/01/17 21:06:29 we7u Exp $
+ * $Id: lang.c,v 1.15 2006/04/24 19:21:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,7 +22,10 @@
  * Look at the README for more information on the program.
  */
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #include <stdio.h>

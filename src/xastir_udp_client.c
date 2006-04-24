@@ -1,5 +1,5 @@
 /*
- * $Id: xastir_udp_client.c,v 1.10 2006/01/17 21:07:22 we7u Exp $
+ * $Id: xastir_udp_client.c,v 1.11 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2006  The Xastir Group
@@ -23,7 +23,10 @@
 
 
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.56 2006/04/20 15:05:07 we7u Exp $
+ * $Id: wx.c,v 1.57 2006/04/24 19:21:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -51,7 +51,10 @@
 
 
 
+#ifdef HAVE_CONFIG_H
 #include "config.h"
+#endif  // HAVE_CONFIG_H
+
 #include "snprintf.h"
 
 #include <stdlib.h>
