@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.200 2006/02/23 23:59:45 we7u Exp $
+ * $Id: util.c,v 1.201 2006/04/24 17:20:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5093,29 +5093,6 @@ void set_dangerous( char *ptr ) {
 // Clear string printed out by segfault handler
 void clear_dangerous(void) {
     dangerous_operation[0] = '\0';
-}
-
-
-
-
-
-//
-// Work around bug on some systems where malloc (0) fails.
-// written by Jim Meyering
-//
-// configure.ac calls out AC_FUNC_MALLOC which checks the malloc()
-// function.  If malloc() is determined to do the wrong thing when
-// passed a 0 value, the Autoconf macro will do this:
-//      #define malloc rpl_malloc
-// We then need to have an rpl_malloc function defined.  Here it is:
-//
-// Allocate an N-byte block of memory from the heap.
-// If N is zero, allocate a 1-byte block.
-// 
-void *rpl_malloc (size_t size) {
-    if (size == 0)
-        size++;
-    return malloc (size);
 }
 
 

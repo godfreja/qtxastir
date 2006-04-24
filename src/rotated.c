@@ -1,5 +1,5 @@
 
-// $Id: rotated.c,v 1.17 2006/01/27 23:40:25 chicoreus Exp $
+// $Id: rotated.c,v 1.18 2006/04/24 17:20:44 we7u Exp $
 //
 // Portions Copyright (C) 2000-2006  The Xastir Group
 //
@@ -42,6 +42,7 @@
 #include <string.h>
 #include "rotated.h"
 #include "snprintf.h"
+#include "rpl_malloc.h"
 
 // Must be last include file
 #include "leak_detection.h"

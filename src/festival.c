@@ -2,7 +2,7 @@
 //
 // Portions Copyright (C) 2000-2006  The Xastir Group
 //
-// $Id: festival.c,v 1.18 2006/01/17 21:06:28 we7u Exp $
+// $Id: festival.c,v 1.19 2006/04/24 17:20:44 we7u Exp $
 //
 // End of modification
 
@@ -95,6 +95,7 @@
 #include "xastir.h"
 #include "festival.h"
 #include "snprintf.h"
+#include "rpl_malloc.h"
 
 // Must be last include file
 #include "leak_detection.h"
