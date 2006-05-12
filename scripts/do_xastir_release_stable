@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $Id: do_xastir_release_stable,v 1.2 2006/01/16 17:04:41 we7u Exp $
+# $Id: do_xastir_release_stable,v 1.3 2006/05/12 20:00:57 we7u Exp $
 
 # This is an example script used by one of the developers to ease
 # the workload.  It's not intended to be used by the general
@@ -50,7 +50,8 @@ printf("\n*** Removing xastir/, $file_prefix/ directories, $filename, xastir.tgz
 
 printf("\n*** CVS Checkout\n\n");
 #`cvs -z3 -d:pserver:anonymous\@cvs.xastir.sourceforge.net:/cvsroot/xastir co xastir`;
-`export CVS_RSH=ssh;cvs -z3 -d:ext:we7u\@cvs.sourceforge.net:/cvsroot/xastir co xastir`;
+#`export CVS_RSH=ssh;cvs -z3 -d:ext:we7u\@cvs.sourceforge.net:/cvsroot/xastir co xastir`;
+`export CVS_RSH=ssh;cvs -z3 -d:ext:we7u\@xastir.cvs.sourceforge.net:/cvsroot/xastir co xastir`;
 &Proceed;
 
 printf("\n*** Bootstrapping\n\n");
