@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.36 2006/04/24 17:20:44 we7u Exp $
+# $Id: Makefile.am,v 1.37 2006/05/13 16:27:58 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -68,7 +68,7 @@ xastir_SOURCES = \
     xa_config.c xa_config.h \
     xastir.h \
     x_spider.c x_spider.h \
-    rpl_malloc.c
+    rpl_malloc.c rpl_malloc.h
 
 xastir_udp_client_SOURCES = \
     xastir_udp_client.c
@@ -77,7 +77,7 @@ testawk_SOURCES = \
     testawk.c \
     awk.c \
     dbfawk.c \
-    rpl_malloc.c
+    rpl_malloc.c rpl_malloc.h
 
 xastir_LDADD=@LIBRTREE@
 
