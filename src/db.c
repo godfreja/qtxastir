@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.536 2006/05/30 15:18:07 we7u Exp $
+ * $Id: db.c,v 1.537 2006/05/30 16:07:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15528,7 +15528,7 @@ int decode_ax25_address(char *string, char *callsign, int asterisk) {
 //
 //
 // Inputs:  incoming_data       Raw string (must be MAX_LINE_SIZE or bigger)
-//          length              Length of raw string
+//          length              Length of raw string (may get changed here)
 //
 // Outputs: int                 0 if it is a bad packet,
 //                              1 if it is good
