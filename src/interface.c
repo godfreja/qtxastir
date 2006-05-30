@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.248 2006/05/30 15:18:07 we7u Exp $
+ * $Id: interface.c,v 1.249 2006/05/30 18:50:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1308,7 +1308,7 @@ void channel_data(int port, unsigned char *string, int length) {
 
         // Copy the data across
         xastir_snprintf((char *)incoming_data,
-            length,
+            length+1,
             "%s",
             string);
 
