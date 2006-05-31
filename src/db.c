@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.538 2006/05/31 19:57:56 we7u Exp $
+ * $Id: db.c,v 1.539 2006/05/31 20:36:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13622,6 +13622,12 @@ int process_directed_query(char *call,char *path,char *message,char from) {
 /*
  *  Station Capabilities, Queries and Responses      [APRS Reference, chapter 15]
  */
+//
+// According to Bob Bruninga we should wait a random time between 0
+// and 120 seconds before responding to a general query.  We don't
+// currently do this.  Perhaps we could use the delayed-ack
+// mechanism to add this randomness?
+//
 int process_query( /*@unused@*/ char *call_sign, /*@unused@*/ char *path,char *message,char from,int port, /*@unused@*/ int third_party) {
     char temp[100];
     int ok = 0;
