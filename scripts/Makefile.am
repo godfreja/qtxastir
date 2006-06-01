@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.21 2006/04/05 16:13:41 we7u Exp $
+# $Id: Makefile.am,v 1.22 2006/06/01 17:04:38 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -11,6 +11,7 @@ pkglib_SCRIPTS = \
     get-maptools.sh \
     get-NWSdata \
     get_shapelib.sh \
+    gpx2shape \
     icontable.pl \
     inf2geo.pl \
     kiss-off.pl \
