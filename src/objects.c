@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.32 2006/04/24 19:21:42 we7u Exp $
+ * $Id: objects.c,v 1.33 2006/06/08 21:04:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1594,7 +1594,7 @@ void check_and_transmit_objects_items(time_t time) {
 // Local loopback only, not igating
                         }
                         else { // Send to all active tx-enabled interfaces
-                            output_my_data(line,-1,0,0,0,NULL);
+                            output_my_data(line,-1,0,0,0,NULL); // GPROF:2.17%
 // Transmit/loopback object data, not igating
                         }
                     }
