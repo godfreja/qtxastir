@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.27 2006/05/30 15:18:06 we7u Exp $
+ * $Id: database.h,v 1.28 2006/06/14 20:50:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -369,6 +369,16 @@ typedef struct _DataRow {
     short flag;                 // several flags, see below
     char pos_amb;               // Position ambiguity, 0 = none,
                                 // 1 = 0.1 minute...
+
+    unsigned int error_elipse_radius;    // Degrades precision for
+                                // this station, from 0 to 65535 cm
+                                // or 655.35 meters.  Assigned when
+                                // we decode each type of packet.
+                                // Default is 6.0 meters (600 cm)
+                                // unless we know the GPS position
+                                // is augmented, or is degraded by
+                                // less precision in the packet.
+
     int trail_color;            // trail color (when assigned)
     char record_type;
     char data_via;              // L local, T TNC, I internet, F file
