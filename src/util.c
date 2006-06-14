@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.202 2006/04/24 19:21:42 we7u Exp $
+ * $Id: util.c,v 1.203 2006/06/14 14:10:55 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3544,7 +3544,7 @@ void reload_tactical_calls(void) {
 
 
 
-// Returns time in seconds since the Unix epoc.
+// Returns time in seconds since the Unix epoch.
 //
 time_t sec_now(void) {
     time_t timenw;
