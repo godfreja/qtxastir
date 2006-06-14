@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.203 2006/06/14 14:10:55 gstueve Exp $
+ * $Id: util.c,v 1.204 2006/06/14 14:13:36 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4111,7 +4111,7 @@ char *to_upper(char *data) {
     int i;
 
     for(i=strlen(data)-1;i>=0;i--)
-        if(isalpha((int)data[i]))
+        if(islower((int)data[i]))
             data[i]=toupper((int)data[i]);
 
     return(data);
