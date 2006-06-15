@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.79 2006/04/24 19:21:41 we7u Exp $
+ * $Id: draw_symbols.c,v 1.80 2006/06/15 14:33:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1494,8 +1494,25 @@ void draw_ambiguity(long x_long, long y_lat, char amb, time_t sec_heard, Pixmap 
                         else
                             (void)XSetStipple(XtDisplay(da), gc, pixmap_50pct_stipple);
                             (void)XSetFillStyle(XtDisplay(da), gc, FillStippled);
-                            (void)XFillRectangle(XtDisplay(da), where, gc,
-                                             left, top, width, height);
+
+
+                            // Old code.  Draws filled-in stippled
+                            // rectangle:
+                            //
+                            //(void)XFillRectangle(XtDisplay(da), where, gc,
+                            //                 left, top, width, height);
+                            //
+                            // New code.  Draws unfilled rectangle +
+                            // lines from symbol to corners:
+                            //
+                            (void)XDrawRectangle(XtDisplay(da), where, gc,
+                                                left, top, width, height);
+                            (void)XDrawLine(XtDisplay(da), where, gc,
+                                left, top, left+width, top+height);
+                            (void)XDrawLine(XtDisplay(da), where, gc,
+                                left+width, top, left, top+height);
+
+ 
                             (void)XSetFillStyle(XtDisplay(da), gc, FillSolid);
                     }
                 }
