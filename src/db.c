@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.543 2006/06/16 19:58:57 we7u Exp $
+ * $Id: db.c,v 1.544 2006/06/16 20:29:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2875,7 +2875,16 @@ _do_the_drawing:
              && speed_ok
              && atof(dr_speed) > 0) ) {
         if ( (secs_now-temp_sec_heard) < dead_reckoning_timeout ) {
+
+// TODO:  Pass ambiguity_coord_lon/ambiguity_coord_lat off to this
+// function when necessary.  Fix up the underlying routines to
+// handle it properly.  Write back the new position to p_station as
+// well?
+ 
             draw_deadreckoning_features(p_station,
+                                        ambiguity_flag,
+                                        ambiguity_coord_lon,
+                                        ambiguity_coord_lat,
                                         drawing_target,
                                         w);
         }
@@ -3015,7 +3024,13 @@ _do_the_drawing:
     // transmitting station.
     if (p_station->aprs_symbol.aprs_type == '\\'
             && p_station->aprs_symbol.aprs_symbol == '/') {
-        draw_WP_line(p_station, drawing_target, w);
+
+        draw_WP_line(p_station,
+            ambiguity_flag,
+            ambiguity_coord_lon,
+            ambiguity_coord_lat,
+            drawing_target,
+            w);
     }
 
     // Draw other points associated with the station, if any.
