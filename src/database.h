@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.30 2006/06/16 19:06:01 we7u Exp $
+ * $Id: database.h,v 1.31 2006/06/16 19:58:57 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -370,7 +370,7 @@ typedef struct _DataRow {
     char pos_amb;               // Position ambiguity, 0 = none,
                                 // 1 = 0.1 minute...
 
-//    unsigned int error_elipse_radius; // Degrades precision for this
+//    unsigned int error_ellipse_radius; // Degrades precision for this
                                 // station, from 0 to 65535 cm or
                                 // 655.35 meters.  Assigned when we
                                 // decode each type of packet.
