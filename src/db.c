@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.546 2006/06/20 12:55:58 we7u Exp $
+ * $Id: db.c,v 1.547 2006/06/21 11:51:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12770,7 +12770,7 @@ void my_station_gps_change(char *pos_long, char *pos_lat, char *course, char *sp
     pos_long_temp = convert_lon_s2l(pos_long);
     pos_lat_temp  = convert_lat_s2l(pos_lat);
 
-    /* convert to back to clean string for config data */
+    /* convert back to clean string for config data */
     convert_lon_l2s(pos_long_temp, temp_data, sizeof(temp_data), CONVERT_HP_NORMAL);
     xastir_snprintf(temp_long, sizeof(temp_long), "%c%c%c%c%c.%c%c%c%c",temp_data[0],temp_data[1],temp_data[2], temp_data[4],temp_data[5],
             temp_data[7],temp_data[8], temp_data[9], temp_data[10]);
