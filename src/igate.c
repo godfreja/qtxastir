@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.54 2006/06/23 15:31:55 we7u Exp $
+ * $Id: igate.c,v 1.55 2006/06/27 14:25:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -856,14 +856,29 @@ void output_igate_rf(char *from, char *call, char *path, char *line,
     }
 
 
-    // Check whether gating of packets from this station has been
-    // specifically authorized via the nws-stations.txt mechanism.
+    // Check whether gating of packets from this station/object/item
+    // has been specifically authorized via the nws-stations.txt
+    // mechanism.
     //
-    if ( (!object_name && check_NWS_stations(from)) // Source call in nws-stations.txt
-         || (object_name && check_NWS_stations(object_name))) { // Object/item in nws-stations.txt
+    if (object_name) {  // It's an object or item name
 
-        found_in_nws_file++;
+        if ( check_NWS_stations( object_name ) ) {
+
+            found_in_nws_file++; // Object/Item is in nws-stations.txt
+        }
     }
+    else {              // It's a station callsign
+
+        if ( check_NWS_stations( from ) ) {
+
+            found_in_nws_file++; // Source callsign is in nws-stations.txt
+        }
+    }
+// The above is really the same as the following code, but less
+// confusing:
+//    if (check_NWS_stations( (object_name) ? object_name : from ) ) {
+//        found_in_nws_file++;
+//    }      
 
  
     // Check for TCPXX in string only if station wasn't found in the
@@ -877,7 +892,7 @@ void output_igate_rf(char *from, char *call, char *path, char *line,
     // the string if they are authorized via the nws-stations.txt
     // mechanism.
     //
-    if (!found_in_nws_file) {
+    if (!found_in_nws_file) { // Skip this check if they're always authorized via the file
 
         if (strstr(path,"TCPXX") != NULL) {
 
@@ -919,7 +934,7 @@ void output_igate_rf(char *from, char *call, char *path, char *line,
 
     // Check whether the source and destination calls have been
     // heard on local RF.
-    if ( !found_in_nws_file // Station not authorized to gate ALWAYS via nws-stations.txt file
+    if ( !found_in_nws_file // Skip this check if they're always authorized via the file
          && ( !heard_via_tnc_in_past_hour(call)==1    // Haven't heard destination call in previous hour
             || heard_via_tnc_in_past_hour(from)) ) {  // Have heard source call in previous hour
 
