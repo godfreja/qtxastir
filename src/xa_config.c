@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.153 2006/02/28 19:30:00 we7u Exp $
+ * $Id: xa_config.c,v 1.154 2006/06/29 17:04:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1439,8 +1439,10 @@ void load_data_or_default(void) {
             "%s",
             name_temp);
         strncat (name, "UNPROTO_IGATE", sizeof(name) - strlen(name));
-        if (!get_string (name, devices[i].unproto_igate, sizeof(devices[i].unproto_igate)))
-            devices[i].unproto_igate[0] = '\0';
+        if (!get_string (name, devices[i].unproto_igate, sizeof(devices[i].unproto_igate))
+                || devices[i].unproto_igate[0] == '\0') {
+            xastir_snprintf(devices[i].unproto_igate, sizeof(devices[i].unproto_igate), "WIDE2-1");
+        }
 
         xastir_snprintf(name,
             sizeof(name),
