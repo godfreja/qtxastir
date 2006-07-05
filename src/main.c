@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.697 2006/05/30 15:18:07 we7u Exp $
+ * $Id: main.c,v 1.698 2006/07/05 14:17:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -167,6 +167,7 @@
 #include "x_spider.h"
 #include "map_cache.h"
 
+extern char compiledate[];
 
 #include <Xm/XmAll.h>
 #include <X11/cursorfont.h>
@@ -16062,7 +16063,6 @@ void  Server_port_toggle( /*@unused@*/ Widget widget, XtPointer clientData, XtPo
 
 
 
-
 void Help_About( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@unused@*/ XtPointer callData) {
     Widget d;
     XmString xms, xa, xb;
@@ -16071,16 +16071,15 @@ void Help_About( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@un
     float version;
     char string1[100];
     char string2[100];
-
-    xb = XmStringCreateLtoR("\nXastir V" VERSION "\n\n" ABOUT_MSG, XmFONTLIST_DEFAULT_TAG);
-
-    xa = XmStringCreateLtoR("\n\n\nLibraries used: " XASTIR_INSTALLED_LIBS, XmFONTLIST_DEFAULT_TAG);
+   
+    xb = XmStringCreateLtoR("\nXastir V" VERSION "\n", XmFONTLIST_DEFAULT_TAG);
+    xa = XmStringCreateLtoR(compiledate, XmFONTLIST_DEFAULT_TAG);
     xms = XmStringConcat(xb, xa);
     XmStringFree(xa);
     XmStringFree(xb);
     //xms is still defined
 
-    xa = XmStringCreateLtoR("\n\n", XmFONTLIST_DEFAULT_TAG);  // Add some newlines
+    xa = XmStringCreateLtoR("\n\n" ABOUT_MSG "\n\n\nLibraries used: " XASTIR_INSTALLED_LIBS,XmFONTLIST_DEFAULT_TAG);  // Add some newlines
     xb = XmStringConcat(xms, xa);
     XmStringFree(xa);
     XmStringFree(xms);
@@ -26052,5 +26051,4 @@ fprintf(stderr,
     quit(0);
     return 0;
 }
-
 
