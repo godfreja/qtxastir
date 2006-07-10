@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.549 2006/06/23 16:03:08 we7u Exp $
+ * $Id: db.c,v 1.550 2006/07/10 17:24:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4235,7 +4235,7 @@ static void PosTestExpose(Widget parent, XtPointer clientData, XEvent *event, Bo
 
     // Get rid of the event handler and the test dialog
     XtRemoveEventHandler(parent, ExposureMask, True, (XtEventHandler) PosTestExpose, (XtPointer)NULL);
-    XtRemoveGrab(XtParent(parent));
+//    XtRemoveGrab(XtParent(parent));  // Not needed?
     XtDestroyWidget(XtParent(parent));
 }
 
