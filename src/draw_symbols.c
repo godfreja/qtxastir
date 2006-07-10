@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.87 2006/06/20 12:55:59 we7u Exp $
+ * $Id: draw_symbols.c,v 1.88 2006/07/10 17:23:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3214,22 +3214,28 @@ void draw_deadreckoning_features(DataRow *p_station,
             //(void)XSetForeground(XtDisplay(da),gc,colors[0x44]); // red3
             (void)XSetForeground(XtDisplay(da),gc,color);
 
-/*
+///*
 // Commenting out the arc until the math is correct for it.  It
-// draws in the wrong places currently.
+// draws at the wrong angle currently.
+// TODO:  Compute angle from the two screen positions.
+my_course = (int)( 57.29578 * asin(ydiff/xdiff) );
+
+
+
             (void)XDrawArc(XtDisplay(da),where,gc,
                 (int)(x-(diameter/2)),
                 (int)(y-(diameter/2)),
                 (unsigned int)diameter, (unsigned int)diameter,
                 -64*my_course,
-                64/2*arc_degrees);
-            (void)XDrawArc(XtDisplay(da),where,gc,
-                (int)(x-(diameter/2)),
-                (int)(y-(diameter/2)),
-                (unsigned int)diameter, (unsigned int)diameter,
-                -64*my_course,
-                -64/2*arc_degrees);
-*/
+//                64/2*arc_degrees);
+                64*360);    // Draw a full circle for now
+//            (void)XDrawArc(XtDisplay(da),where,gc,
+//                (int)(x-(diameter/2)),
+//                (int)(y-(diameter/2)),
+//                (unsigned int)diameter, (unsigned int)diameter,
+//                -64*my_course,
+//                -64/2*arc_degrees);
+//*/
             }
         }
     }
