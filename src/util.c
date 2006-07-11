@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.208 2006/07/10 11:09:14 we7u Exp $
+ * $Id: util.c,v 1.209 2006/07/11 11:01:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3469,7 +3469,7 @@ void log_data(char *file, char *line) {
 //                fprintf(stderr, "log_data(): logfile size: %ld \n",(long) file_status.st_size);
 //            }
 
-            if (file_status.st_size > MAX_LOGFILE_SIZE){
+            if ((file_status.st_size + strlen(temp) + strlen(line) )> MAX_LOGFILE_SIZE){
                 if (debug_level & 1) {
                     fprintf(stderr, "log_data(): calling rotate_file()\n");
                 }       
