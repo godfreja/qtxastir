@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: get-NWSdata,v 1.5 2006/06/05 19:20:27 we7u Exp $
+# $Id: get-NWSdata,v 1.6 2006/07/12 17:47:54 we7u Exp $
 #
 # Script to retrieve NWS data files. 
 #
@@ -31,11 +31,18 @@
 
 
 FILE1="z_16mr06"
-FILE2="w_06oc05"
+
+#FILE2="w_06oc05"
+FILE2="w_28fe06"
+
 FILE3="mz10ja06"
+
 FILE4="oz15de04"
+
 FILE5="hz28au04"
+
 FILE6="c_16mr06"
+
 FILE7="fz24my06"
 
 
