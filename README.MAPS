@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.83 2006/06/05 17:14:20 we7u Exp $
+$Id: README.MAPS,v 1.84 2006/07/12 17:47:32 we7u Exp $
 
 
 Recommended Configurations for:
@@ -1088,10 +1088,10 @@ Getting Maps and other Data Files for Xastir:
 
         NWSI Libraries:
         ---------------
-        County Warning Areas (c_*.zip)
-        Zone Forecast Areas (z_*.zip)
-        Fire Weather Zones (fz*.zip)
+        County Warning Area Boundaries (c_*.zip)
+        Public Zone Boundaries (z_*.zip)
         Coastal and Offshore Marine Zones (mz*.zip, oz*.zip, hz*.zip)
+        Fire Weather Zone Boundaries (fz*.zip)
 
         County Libraries:
         -----------------
