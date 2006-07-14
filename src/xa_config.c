@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.154 2006/06/29 17:04:27 we7u Exp $
+ * $Id: xa_config.c,v 1.155 2006/07/14 15:53:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -63,7 +63,7 @@
 
 #define MAX_VALUE 300
 
-
+extern char xa_config_dir[];
 
 
 
@@ -264,16 +264,26 @@ char *get_user_base_dir(char *dir) {
     static char base[MAX_VALUE];
     char *env_ptr;
 
-    xastir_snprintf(base,
-        sizeof(base),
-        "%s",
-        ((env_ptr = getenv ("XASTIR_USER_BASE")) != NULL) ? env_ptr : user_dir);
 
-    if (base[strlen (base) - 1] != '/')
+    if (xa_config_dir[0] != '\0' ) {
+        xastir_snprintf(base,sizeof(base),"%s", xa_config_dir);
+	if (base[strlen (base) - 1] != '/')
         strncat (base, "/", sizeof(base) - strlen(base));
 
-    strncat (base, ".xastir/", sizeof(base) - strlen(base));
+    } else {
+        xastir_snprintf(base,
+            sizeof(base),
+            "%s",
+            ((env_ptr = getenv ("XASTIR_USER_BASE")) != NULL) ? env_ptr : user_dir);
+    
+        if (base[strlen (base) - 1] != '/')
+            strncat (base, "/", sizeof(base) - strlen(base));
+
+        strncat (base, ".xastir/", sizeof(base) - strlen(base));
+    }
+
     return strncat(base, dir, sizeof(base) - strlen(base));
+
 }
 
 
@@ -1841,5 +1851,3 @@ void load_data_or_default(void) {
 
     input_close();
 }
-
-
