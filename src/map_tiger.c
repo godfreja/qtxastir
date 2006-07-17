@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.49 2006/04/24 19:21:42 we7u Exp $
+ * $Id: map_tiger.c,v 1.50 2006/07/17 16:12:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -550,6 +550,17 @@ void draw_tiger_map (Widget w,
     if (f == NULL) {
         if (debug_level & 512)
             fprintf(stderr,"File could not be read\n");
+
+#ifdef USE_MAP_CACHE
+
+        // clear from cache if bad    
+        if (map_cache_del(fileimg)) {
+            if (debug_level & 512) {
+                fprintf(stderr,"Couldn't delete unreadable map from cache\n");
+            }
+        }
+#endif
+         
         return;
     }
     (void)fclose (f);
@@ -560,6 +571,16 @@ void draw_tiger_map (Widget w,
     if (image == (Image *) NULL) {
         MagickWarning(exception.severity, exception.reason, exception.description);
         //fprintf(stderr,"MagickWarning\n");
+
+#ifdef USE_MAP_CACHE
+        // clear from cache if bad    
+        if (map_cache_del(fileimg)) {
+            if (debug_level & 512) {
+                fprintf(stderr,"Couldn't delete map from cache\n");
+            }
+        }
+#endif
+
         return;
     }
 
