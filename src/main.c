@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.702 2006/07/14 15:53:56 we7u Exp $
+ * $Id: main.c,v 1.703 2006/07/17 11:57:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -962,7 +962,6 @@ float f_center_longitude;       // Floating point map center longitude
 float f_center_latitude;        // Floating point map center latitude
 
 char user_dir[1000];            /* user directory file */
-char xa_config_dir[1000];       /* cmdline option user config dir */
 int delay_time;                 /* used to delay display data */
 time_t last_weather_cycle;      // Time of last call to cycle_weather()
 int colors[256];                /* screen colors */

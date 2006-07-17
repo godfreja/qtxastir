@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.h,v 1.7 2006/01/17 21:05:20 we7u Exp $
+ * $Id: xa_config.h,v 1.8 2006/07/17 11:57:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -32,3 +32,4 @@ char *get_data_base_dir(char *dir);
 void save_data(void);
 void load_data_or_default(void);
 
+char xa_config_dir[1000];       /* cmdline option user config dir */
