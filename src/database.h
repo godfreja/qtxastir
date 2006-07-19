@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.33 2006/07/18 00:38:18 we7u Exp $
+ * $Id: database.h,v 1.34 2006/07/19 11:27:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -505,7 +505,8 @@ extern CADRow *CAD_list_head;
 #define ST_MSGCAP       0x80    // message capable (not used yet)
 #define ST_STATUS       0x100   // got real status message
 #define ST_INVIEW       0x200   // station is in current screen view
-#define ST_MYCALL       0x400   // station/object/item is owned by my call-SSID
+#define ST_MYSTATION    0x400   // station is owned by my call-SSID
+#define ST_MYOBJITEM    0x800   // object/item owned by me
 
 
 #ifdef DATA_DEBUG
@@ -522,6 +523,9 @@ extern void db_init(void);
 
 //
 extern int is_my_call(char *call, int exact);
+extern int is_my_station(DataRow *p_station);
+extern int is_my_object_item(DataRow *p_station);
+
 void mscan_file(char msg_type, void (*function)(Message *fill));
 extern void msg_record_ack(char *to_call_sign, char *my_call, char *seq,
                            int timeout, int cancel);
