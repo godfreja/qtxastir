@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.251 2006/07/11 10:59:14 we7u Exp $
+ * $Id: interface.c,v 1.252 2006/07/19 14:40:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8763,7 +8763,7 @@ end_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
     if (log_net_data) {
         xastir_snprintf(data_txt, sizeof(data_txt), "%s>%s,TCPIP*:%s", my_callsign,
                 VERSIONFRM, data_txt_save);
-        log_data(LOGFILE_NET,(char *)data_txt);
+        log_data( get_user_base_dir(LOGFILE_NET), (char *)data_txt );
     }
 
 
@@ -8797,7 +8797,7 @@ end_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
     if (log_tnc_data) {
         if (header_txt_save[0] != '\0') {
             xastir_snprintf(data_txt, sizeof(data_txt), "%s%s", header_txt_save, data_txt_save);
-            log_data(LOGFILE_TNC,(char *)data_txt);
+            log_data( get_user_base_dir(LOGFILE_TNC), (char *)data_txt );
         }
     }
 
@@ -9246,7 +9246,7 @@ end_critical_section(&devices_lock, "interface.c:output_my_data" );
         fprintf(stderr,"output_my_data: Transmitting and decoding: %s\n", data_txt);
 
     if (log_net_data)
-        log_data(LOGFILE_NET,(char *)data_txt);
+        log_data( get_user_base_dir(LOGFILE_NET), (char *)data_txt );
 
 
     // Note that this will only log one TNC line per transmission now matter
@@ -9256,7 +9256,7 @@ end_critical_section(&devices_lock, "interface.c:output_my_data" );
     if (data_txt_save[0] != '\0') {
         xastir_snprintf(data_txt, sizeof(data_txt), "%s%s", data_txt_save, message);
         if (log_tnc_data)
-            log_data(LOGFILE_TNC,(char *)data_txt);
+            log_data( get_user_base_dir(LOGFILE_TNC), (char *)data_txt );
     }
 
 

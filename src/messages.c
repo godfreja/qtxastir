@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.64 2006/04/24 19:21:42 we7u Exp $
+ * $Id: messages.c,v 1.65 2006/07/19 14:40:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -63,6 +63,7 @@
 #include "messages.h"
 #include "util.h"
 #include "interface.h"
+#include "xa_config.h"
 
 // Must be last include file
 #include "leak_detection.h"
@@ -218,12 +219,12 @@ static int group_active(char *from) {
     (void)remove_trailing_spaces(from);
 
     // If we cycle to/from special group or file changes, rebuild group list.
-    if ((!stat(group_data_file, &group_stat)
+    if ((!stat( get_user_base_dir(group_data_file), &group_stat )
             && (current_group_stat.st_size != group_stat.st_size
                 || current_group_stat.st_mtime != group_stat.st_mtime
                 || current_group_stat.st_ctime != group_stat.st_ctime))
                 || (altgroup && strcasecmp(altgroup, VERSIONFRM))) {
-        group_build_list(group_data_file);
+        group_build_list( get_user_base_dir(group_data_file) );
         current_group_stat = group_stat;
         xastir_snprintf(altgroup,sizeof(altgroup),"%s",VERSIONFRM);
     }
