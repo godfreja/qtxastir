@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.705 2006/07/20 19:23:31 we7u Exp $
+ * $Id: main.c,v 1.706 2006/07/20 19:28:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10289,7 +10289,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 #else
     // Changed from 2 to 10 to fix high CPU usage problems on
     // FreeBSD.
-    nexttime = 50;
+    nexttime = 25;
 #endif // __CYGWIN__
 
 
