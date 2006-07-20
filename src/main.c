@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.704 2006/07/19 14:40:46 we7u Exp $
+ * $Id: main.c,v 1.705 2006/07/20 19:23:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10289,7 +10289,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 #else
     // Changed from 2 to 10 to fix high CPU usage problems on
     // FreeBSD.
-    nexttime = 10;
+    nexttime = 50;
 #endif // __CYGWIN__
 
 
@@ -10527,7 +10527,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                 }
 
                 redraw_on_new_data = 0;
-                next_redraw = current_time+60;     // redraw every minute, do we need that?
+                next_redraw = current_time+60; // redraw every minute
                 last_redraw = current_time;
 
                 // This assures that we periodically check for expired alerts
