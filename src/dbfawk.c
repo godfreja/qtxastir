@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.31 2006/04/24 19:21:41 we7u Exp $
+ * $Id: dbfawk.c,v 1.32 2006/07/22 14:47:51 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2006  The Xastir Group
@@ -144,7 +144,8 @@ dbfawk_field_info *dbfawk_field_list(DBFHandle dbf, char *dbffields) {
     d = fi->name;
     while (*p && *p != ':') *d++ = *p++;
     if (*p == ':')
-      *d = *p++ = '\0';
+      *p++ = '\0';
+    *d='\0';
     fi->num = DBFGetFieldIndex(dbf, fi->name);
     fi->type = DBFGetFieldInfo(dbf, fi->num, junk, &w, &prec);
     sp = p;
