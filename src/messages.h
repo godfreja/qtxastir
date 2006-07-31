@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.18 2006/01/17 21:05:20 we7u Exp $
+ * $Id: messages.h,v 1.19 2006/07/31 13:28:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -54,7 +54,7 @@ typedef struct {
     int wait_on_first_ack;
 } Message_transmit;
 
-#define MAX_MESSAGE_WINDOWS 10
+#define MAX_MESSAGE_WINDOWS 25
 
 typedef struct {
     char win[10];
