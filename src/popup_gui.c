@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.24 2006/08/01 12:40:02 we7u Exp $
+ * $Id: popup_gui.c,v 1.25 2006/08/01 12:49:26 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -165,8 +165,8 @@ begin_critical_section(&popup_message_dialog_lock, "popup_gui.c:popup_message" )
                 XmNtitleString,banner,
 // An half-hearted attempt at fixing the problem where a popup
 // comes up extremely small.  Setting a minimum size for the popup.
-XmNminWidth, 200,
-XmNminHeight, 70,
+XmNminWidth, 220,
+XmNminHeight, 80,
                 NULL);
 
             pw[i].pane = XtVaCreateWidget("popup_message pane",xmPanedWindowWidgetClass, pw[i].popup_message_dialog,
