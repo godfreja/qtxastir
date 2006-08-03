@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.34 2006/07/19 11:27:59 we7u Exp $
+ * $Id: database.h,v 1.35 2006/08/03 10:46:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -378,6 +378,9 @@ typedef struct _DataRow {
                                 // unless we know the GPS position
                                 // is augmented, or is degraded by
                                 // less precision in the packet.
+
+    unsigned int lat_precision;	// In 100ths of a second latitude
+    unsigned int lon_precision;	// In 100ths of a second longitude
 
     int trail_color;            // trail color (when assigned)
     char record_type;
