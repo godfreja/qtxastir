@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.557 2006/08/03 10:46:50 we7u Exp $
+ * $Id: db.c,v 1.558 2006/08/03 15:57:32 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12116,7 +12116,11 @@ int data_add(int type,
 
             // Do nothing else.  We don't want to update the
             // last-heard time so that it'll expire from the queue
-            // normally.
+            // normally, unless it is a new object/item.
+            //
+            if (new_station) {
+                p_station->sec_heard = curr_sec;
+            }
 
             // We need an exception later in this function for the
             // case where we've moved an object/item (by how much?).
