@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.560 2006/08/04 10:55:04 we7u Exp $
+ * $Id: db.c,v 1.561 2006/08/04 11:42:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13356,6 +13356,19 @@ void my_station_add(char *my_callsign, char my_group, char my_symbol, char *my_l
     p_station->data_via = 'L';
     p_station->flag &= (~ST_3RD_PT);            // clear "third party" flag
     p_station->record_type = NORMAL_APRS;
+
+    if (transmit_compressed_posit) {
+        // Compressed posit
+        p_station->error_ellipse_radius = 600; // Default of 6m
+        p_station->lat_precision = 6;
+        p_station->lon_precision = 6;
+    }
+    else {
+        // Standard APRS posit
+        p_station->error_ellipse_radius = 2550; // 25.5m, or about 60ft resolution
+        p_station->lat_precision = 60;
+        p_station->lon_precision = 60;
+    }
  
     // Free any old path we might have
     if (p_station->node_path_ptr != NULL)
