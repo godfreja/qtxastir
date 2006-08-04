@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.559 2006/08/03 23:32:00 we7u Exp $
+ * $Id: db.c,v 1.560 2006/08/04 10:55:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3629,7 +3629,7 @@ void display_file(Widget w) {
 
         // Skip if we're running an altnet and this station's not in
         // it
-        if ( altnet && is_altnet(p_station) ) {
+        if ( altnet && !is_altnet(p_station) ) {
 
             if (debug_level & 64) {
                 fprintf(stderr,"display_file: Station %s skipped altnet\n",
