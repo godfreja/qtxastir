@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_pdb.c,v 1.17 2006/04/24 19:21:42 we7u Exp $
+ * $Id: map_pdb.c,v 1.18 2006/08/07 19:52:39 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -517,7 +517,7 @@ void draw_palm_image_map(Widget w,
                         //
                         // For now KISS, just put it on the map.
  
-                        x = ((label_x_cord - x_long_offset) / scale_x);
+                        x = ((label_x_cord - NW_corner_longitude) / scale_x);
  
                         /* examine bits 4 and 5 of treatment */
                         if((label_record.treatment & 0x30) == 0x00) {
@@ -530,10 +530,10 @@ void draw_palm_image_map(Widget w,
                         }
                         else {
                             /* right of coords */
-                            x = ((label_x_cord - x_long_offset) / scale_x);
+                            x = ((label_x_cord - NW_corner_longitude) / scale_x);
                         }
  
-                        y = ((label_y_cord - y_lat_offset) / scale_y);
+                        y = ((label_y_cord - NW_corner_latitude) / scale_y);
  
                         // Color selection
                         switch (label_record.color) {

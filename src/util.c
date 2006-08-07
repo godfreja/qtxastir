@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.213 2006/08/03 23:26:29 we7u Exp $
+ * $Id: util.c,v 1.214 2006/08/07 19:54:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1861,8 +1861,8 @@ void convert_screen_to_xastir_coordinates(int x,
         long *lat,
         long *lon) {
 
-    *lon = (mid_x_long_offset - ((screen_width  * scale_x)/2) + (x * scale_x));
-    *lat = (mid_y_lat_offset  - ((screen_height * scale_y)/2) + (y * scale_y));
+    *lon = (center_longitude - ((screen_width  * scale_x)/2) + (x * scale_x));
+    *lat = (center_latitude  - ((screen_height * scale_y)/2) + (y * scale_y));
 
     if (*lon < 0)
     *lon = 0l;                 // 180°W
