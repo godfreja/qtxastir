@@ -1,4 +1,4 @@
-# $Id: nwsmzddmmyy.dbfawk,v 1.14 2006/01/17 21:03:53 we7u Exp $
+# $Id: nwsmzddmmyy.dbfawk,v 1.15 2006/08/07 20:19:22 tvrusso Exp $
 #
 # Copyright (C) 2003-2006  The Xastir Group
 #
@@ -30,7 +30,8 @@ dbfinfo="ID:WFO:NAME:LON:LAT";
 # dbffields is which of the above fields we actually want to look at.
 # Note that the order we list these is important since we are appending the
 # word County or Parish depending on what state the county is in.
-dbffields="ID:NAME"}
+dbffields="ID:NAME";
+}
 
 # BEGIN_RECORD is called once per dbf record which contains multiple fields.
 # Use this rule to re-initialize variables between records.

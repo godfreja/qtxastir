@@ -1,4 +1,4 @@
-# $Id: tgrkgl.dbfawk,v 1.8 2006/01/17 21:03:53 we7u Exp $
+# $Id: tgrkgl.dbfawk,v 1.9 2006/08/07 20:19:22 tvrusso Exp $
 #
 # Copyright (C) 2003-2006  The Xastir Group
 #
@@ -28,7 +28,8 @@ BEGIN {
 # dbfinfo should match the dbf file that we say this dbfawk file goes with.
 dbfinfo="ID:POLYID:COUNTY:CFCC:KGLNAME";
 # dbffields is which of the above fields we actually want to look at.
-dbffields="KGLNAME:CFCC"}
+dbffields="KGLNAME:CFCC";
+}
 
 # BEGIN_RECORD is called once per dbf record which contains multiple fields.
 # Use this rule to re-initialize variables between records.

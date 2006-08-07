@@ -1,4 +1,4 @@
-# $Id: 24kgrid.dbfawk,v 1.3 2006/01/17 21:03:52 we7u Exp $
+# $Id: 24kgrid.dbfawk,v 1.4 2006/08/07 20:19:22 tvrusso Exp $
 #
 # Copyright (C) 2003-2006  The Xastir Group
 #
@@ -29,7 +29,8 @@ BEGIN {
 dbfinfo="NAME:STATE:LAT:LONG:MRC";
 # dbffields is which of the above fields we actually want to look at.
 # No point reading dbffields that are not looked at further.
-dbffields="NAME:STATE"}
+dbffields="NAME:STATE";
+}
 
 # BEGIN_RECORD is called once per dbf record which contains multiple fields.
 # Use this rule to re-initialize variables between records.
