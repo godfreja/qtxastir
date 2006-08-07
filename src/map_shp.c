@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.114 2006/04/24 19:21:42 we7u Exp $
+ * $Id: map_shp.c,v 1.115 2006/08/07 13:28:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3608,10 +3608,10 @@ if (on_screen) {
 
                                 // Here we check for really wacko points that will cause problems
                                 // with the X drawing routines, and fix them.
-                                if (x >  15000l) x =  15000l;
-                                if (x < -15000l) x = -15000l;
-                                if (y >  15000l) y =  15000l;
-                                if (y < -15000l) y = -15000l;
+                                if (x >  16000l) x =  16000l;
+                                if (x < -16000l) x = -16000l;
+                                if (y >  16000l) y =  16000l;
+                                if (y < -16000l) y = -16000l;
 
                                 points[i].x = (short)x;
                                 points[i].y = (short)y;
