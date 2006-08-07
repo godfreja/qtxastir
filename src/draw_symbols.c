@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.98 2006/08/04 12:57:25 we7u Exp $
+ * $Id: draw_symbols.c,v 1.99 2006/08/07 11:13:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3181,7 +3181,7 @@ void draw_deadreckoning_features(DataRow *p_station,
     int ghosted_symbol_on_screen = 0;
 
 
-// This function takes a bit of CPU if we are zoomed out.  It'd b
+// This function takes a bit of CPU if we are zoomed out.  It'd be
 // best to check first whether the zoom level and the speed make it
 // worth computing DR at all for this station.  As a first
 // approximation, we could turn off DR if we're at zoom 8000 or
@@ -3364,7 +3364,7 @@ void draw_deadreckoning_features(DataRow *p_station,
         //
         draw_vector(w,
             x_long,
-                y_lat,
+            y_lat,
             x_long2,
             y_lat2,
             gc,
