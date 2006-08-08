@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.38 2006/07/05 14:17:28 we7u Exp $
+# $Id: Makefile.am,v 1.39 2006/08/08 22:32:44 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -82,6 +82,7 @@ testawk_SOURCES = \
     rpl_malloc.c rpl_malloc.h
 
 compiledate.c: $(XASTIR_SRC)
+	rm -f compiledate.c compiledate.o
 	echo 'char compiledate[] = "'"Compiled: `date`"'";' > compiledate.c
 
 remove_compiledate:
