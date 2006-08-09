@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.565 2006/08/08 19:41:34 we7u Exp $
+ * $Id: db.c,v 1.566 2006/08/09 11:36:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -17696,6 +17696,10 @@ void calc_aloha(int secs_now)    {
         aloha_time = secs_now+ALOHA_CALC_INTERVAL; 
         aloha_status_time = secs_now+ALOHA_STATUS_INTERVAL;
         aloha_radius = -1.0;
+
+// Debug:  Let's us play with/display aloha circles right away:
+//aloha_radius = 40.0;
+
         the_aloha_stats.digis=0;
         the_aloha_stats.wxs = 0;
         the_aloha_stats.other_mobiles = 0;
@@ -17820,3 +17824,5 @@ void Show_Aloha_Stats(Widget w, XtPointer clientData, XtPointer callData)  {
         popup_message_always(langcode("PULDNVI016"),langcode("WPUPALO666"));
     }
 }
+
+
