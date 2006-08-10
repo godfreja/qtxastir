@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.491 2006/08/10 04:02:23 we7u Exp $
+ * $Id: maps.c,v 1.492 2006/08/10 13:01:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3396,6 +3396,13 @@ static void draw_rotated_label_text_common (Widget w, float my_rotation, int x, 
 //    int i;
     int x_outline;
     int y_outline;
+
+
+    // Do some sanity checking
+    if (fontsize < 0 || fontsize >= FONT_MAX) {
+        fprintf(stderr,"Font size is out of range: %d\n", fontsize);
+        return;
+    }
 
     /* see if fontname has changed */
     if (rotated_label_font[fontsize] && 
