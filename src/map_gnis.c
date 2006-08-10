@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.31 2006/08/07 19:52:39 we7u Exp $
+ * $Id: map_gnis.c,v 1.32 2006/08/10 04:02:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -573,10 +573,10 @@ FINISH:
                         y /= scale_y;
 
                         ok = 1;
-                        if (x >  16000) ok = 0;     // Skip this point
-                        if (x < -16000) ok = 0;     // Skip this point
-                        if (y >  16000) ok = 0;     // Skip this point
-                        if (y < -16000) ok = 0;     // Skip this point
+                        if (x >  32767) ok = 0;     // Skip this point
+                        if (x < -32768) ok = 0;     // Skip this point
+                        if (y >  32767) ok = 0;     // Skip this point
+                        if (y < -32768) ok = 0;     // Skip this point
 
                         /* set default symbol */
                         symbol_table = '/';
