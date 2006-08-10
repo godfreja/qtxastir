@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.569 2006/08/10 16:09:29 we7u Exp $
+ * $Id: db.c,v 1.570 2006/08/10 16:15:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7764,6 +7764,10 @@ void draw_trail(Widget w, DataRow *fill, int solid) {
                 // label_all_trackpoints=1
                 //
                 if (Display_.callsign && Display_.label_all_trackpoints) {
+
+                    // Convert to screen coordinates
+                    lon0_screen = (lon0 - NW_corner_longitude) / scale_x;
+                    lat0_screen = (lat0 - NW_corner_latitude) / scale_y;
 
                     // Convert to screen coordinates.
                     lon1_screen = (lon1 - NW_corner_longitude) / scale_x;
