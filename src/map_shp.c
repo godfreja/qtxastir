@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.117 2006/08/10 04:02:23 we7u Exp $
+ * $Id: map_shp.c,v 1.118 2006/08/10 16:09:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2076,11 +2076,6 @@ void draw_shapefile_map (Widget w,
                             y = my_lat - NW_corner_latitude;
                             x = x / scale_x;
                             y = y / scale_y;
-
-                            if (x > 32767) ok = 0; // Skip this point
-                            if (x < 0) ok = 0;     // Skip this point
-                            if (y > 32767) ok = 0; // Skip this point
-                            if (y < 0) ok = 0;     // Skip this point
                         }
 
                         if (ok == 1) {
@@ -4012,11 +4007,6 @@ if (on_screen) {
                             y = my_lat - NW_corner_latitude;
                             x = x / scale_x;
                             y = y / scale_y;
-
-                            if (x > 32767) ok = 0; // Skip this point
-                            if (x < 0) ok = 0;     // Skip this point
-                            if (y > 32767) ok = 0; // Skip this point
-                            if (y < 0) ok = 0;     // Skip this point
 
                             if (ok == 1 && ok_to_draw) {
                                 if (quad_overlay_flag) {
