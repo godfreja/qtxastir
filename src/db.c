@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.567 2006/08/10 04:02:22 we7u Exp $
+ * $Id: db.c,v 1.568 2006/08/10 11:35:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7751,27 +7751,14 @@ void draw_trail(Widget w, DataRow *fill, int solid) {
                 int lon0_screen, lat0_screen, lon1_screen, lat1_screen;
 
                 // draw trail segment
+                //
                 (void)XSetForeground(XtDisplay(w),gc,col_trail);
-
                 draw_vector(da, lon0, lat0, lon1, lat1, gc, pixmap_final);
 
-                // Convert to screen coordinates.
-                lon0_screen = (lon0 - NW_corner_longitude) / scale_x;
-                lat0_screen = (lat0 - NW_corner_latitude)  / scale_y;
-
                 // draw position point itself
-                // Check that screen coordinates are within limits.
-                if (lon0_screen >= 0 && lon0_screen < 32767
-                            && lat0_screen >= 0 && lat0_screen < 32767) {
-
-                        (void)XSetForeground(XtDisplay(w),gc,col_dot);
-
-                        (void)XDrawPoint(XtDisplay(w),
-                            pixmap_final,
-                            gc,
-                            l16(lon0_screen),
-                            l16(lat0_screen));
-                }
+                //
+                (void)XSetForeground(XtDisplay(w),gc,col_dot);
+                draw_point(w, lon0, lat0, gc, pixmap_final);
 
                 // Draw the callsign to go with the point if
                 // label_all_trackpoints=1
