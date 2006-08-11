@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.60 2006/02/28 19:30:00 we7u Exp $
+ * $Id: maps.h,v 1.61 2006/08/11 12:04:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -99,8 +99,6 @@ typedef struct {
     unsigned long x_long;
     unsigned long y_lat;
 } tiepoint;
-
-extern void recompute_lat_long(void);
 
 void draw_point(Widget w,
                  unsigned long x1,
