@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.43 2006/08/10 16:09:29 we7u Exp $
+ * $Id: objects.c,v 1.44 2006/08/11 23:58:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3912,7 +3912,8 @@ void Draw_All_CAD_Objects(Widget w) {
                         vertice->next->longitude,
                         vertice->next->latitude, 
                         gc_tint,
-                        pixmap_final);
+                        pixmap_final,
+                        0);
                 }
                 vertice = vertice->next;
             }
