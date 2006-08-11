@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.214 2006/08/07 19:54:14 we7u Exp $
+ * $Id: util.c,v 1.215 2006/08/11 12:03:41 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -174,8 +174,6 @@ int convert_from_xastir_coordinates ( float *f_longitude,
 //fprintf(stderr,"latitude: %f\tlongitude: %f\n",
 //    *f_latitude,
 //    *f_longitude);
-
-    recompute_lat_long();
 
     return(1);
 }
