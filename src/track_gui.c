@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.58 2006/08/14 19:34:07 we7u Exp $
+ * $Id: track_gui.c,v 1.59 2006/08/14 19:38:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -458,7 +458,7 @@ static void* findu_transfer_thread(void *arg) {
     // there due to findu.com filtering them out.
     //
     sprintf(sys_cmd,
-        "sed --in-place -e \"s/<br>/   <br>/\" %s",
+        "sed -i -e \"s/<br>/   <br>/\" %s",
         log_filename);
     system(sys_cmd);
 //fprintf(stderr,"%s\n", sys_cmd);
