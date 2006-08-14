@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.86 2006/03/17 02:32:24 tvrusso Exp $
+$Id: INSTALL,v 1.87 2006/08/14 12:24:45 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -1395,6 +1395,10 @@ then invoke Xastir like this:
 
     LD_PRELOAD=xastir/src/gprof-helper.so xastir &
 
+
+    mv gmon.out gmon.old; gprof /usr/local/bin/xastir gmon.old \
+    | tee profile.txt; gprof -l /usr/local/bin/xastir gmon.old \
+    | tee profile2.txt
 
 
 Checking for Memory Leaks:
