@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.121 2006/08/14 20:06:41 we7u Exp $
+ * $Id: map_shp.c,v 1.122 2006/08/15 10:38:35 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1830,7 +1830,11 @@ void draw_shapefile_map (Widget w,
         // 0.5% CPU at 64 (according to gprof).  That appears to be
         // the break-even point where CPU is minimal.
         //
-        if (structure % 64 == 0) {
+#ifdef USE_RTREE
+        if ( (RTree_hitarray_index % 64) == 0 ) {
+#else
+        if ( (structure % 64) == 0 ) {
+#endif
         
             HandlePendingEvents(app_context);
             if (interrupt_drawing_now) {
