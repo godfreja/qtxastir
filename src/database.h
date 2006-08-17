@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.35 2006/08/03 10:46:50 we7u Exp $
+ * $Id: database.h,v 1.36 2006/08/17 12:59:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -544,7 +544,7 @@ extern void sort_display_file(char *filename, int size);
 extern void clear_sort_file(char *filename);
 extern void display_packet_data(void);
 extern int  redraw_on_new_packet_data;
-extern int decode_ax25_header(unsigned char *incoming_data, int *length);
+extern int decode_ax25_header(unsigned char *data_string, int *length);
 extern int decode_ax25_line(char *line, char from, int port, int dbadd);
 
 // utilities
