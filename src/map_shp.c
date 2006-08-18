@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.123 2006/08/18 13:57:27 we7u Exp $
+ * $Id: map_shp.c,v 1.124 2006/08/18 15:28:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2917,6 +2917,7 @@ void draw_shapefile_map (Widget w,
 // only count a string as written if the start of it is onscreen and
 // the angle is correct for it to be written on the screen.
 
+//#ifndef WITH_DBFAWK
                                         // Draw a number of labels
                                         // appropriate for the zoom
                                         // level.
@@ -2924,6 +2925,7 @@ void draw_shapefile_map (Widget w,
                                         if ( ((ptr2->found - 1) % mod_number) != 0) {
                                             skip_label++;
                                         }
+//#endif  // WITH_DBFAWK
                                         ptr2 = NULL; // End the loop
                                     }
                                     else {
