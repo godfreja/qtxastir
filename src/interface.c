@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.257 2006/08/19 22:19:36 we7u Exp $
+ * $Id: interface.c,v 1.258 2006/08/21 11:42:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -181,9 +181,10 @@ int pop_incoming_data(unsigned char *data_string, int *port) {
 
 //fprintf(stderr,"\n\t<- EMPTY!\n");
 
+        queue_depth = 0;
+ 
         if (end_critical_section(&data_lock, "interface.c:pop_incoming_data" ) > 0)
             fprintf(stderr,"data_lock\n");
-        queue_depth = 0;
         return(0);
     }
 
