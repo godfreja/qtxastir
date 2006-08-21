@@ -1,5 +1,5 @@
 /*
- * $Id: popup.h,v 1.6 2006/01/17 21:05:20 we7u Exp $
+ * $Id: popup.h,v 1.7 2006/08/21 13:58:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25,7 +25,7 @@
 #ifndef XASTIR_POPUP_H
 #define XASTIR_POPUP_H
 
-#define MAX_POPUPS 20
+#define MAX_POPUPS 30
 #define MAX_POPUPS_TIME 600 /* Max time popups will display 600=10min*/
 
 typedef struct
