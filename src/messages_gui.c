@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.59 2006/08/22 15:27:00 we7u Exp $
+ * $Id: messages_gui.c,v 1.60 2006/08/22 18:20:55 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -286,9 +286,11 @@ static Widget current_path = NULL;
 
 void Send_message_change_path_destroy_shell(Widget widget, XtPointer clientData, XtPointer callData) {
 
-    XtPopdown(change_path_dialog);
+    if (change_path_dialog) {
+        XtPopdown(change_path_dialog);
 
-    XtDestroyWidget(change_path_dialog);
+        XtDestroyWidget(change_path_dialog);
+    }
     change_path_dialog = (Widget)NULL;
 }
 
