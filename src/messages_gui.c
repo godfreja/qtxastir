@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.57 2006/08/22 14:12:31 we7u Exp $
+ * $Id: messages_gui.c,v 1.58 2006/08/22 14:20:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1403,6 +1403,22 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message" 
                 MY_BACKGROUND_COLOR,
                 NULL);
 
+        mw[i].send_message_change_path = XtVaCreateManagedWidget(langcode("WPUPMSB019"),
+                xmPushButtonGadgetClass, 
+                mw[i].form,
+                XmNleftAttachment, XmATTACH_NONE,
+                XmNrightAttachment, XmATTACH_FORM,
+                XmNrightOffset, 5,
+                XmNtopAttachment, XmATTACH_NONE,
+                XmNbottomAttachment, XmATTACH_WIDGET,
+                XmNbottomWidget, mw[i].message,
+                XmNbottomOffset, 7,
+                XmNnavigationType, XmTAB_GROUP,
+                XmNtraversalOn, TRUE,
+                MY_FOREGROUND_COLOR,
+                MY_BACKGROUND_COLOR,
+                NULL);
+
         mw[i].send_message_path = XtVaCreateManagedWidget("Send_message path", 
                 xmTextFieldWidgetClass, 
                 mw[i].form,
@@ -1421,25 +1437,11 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message" 
                 XmNleftAttachment, XmATTACH_WIDGET,
                 XmNleftWidget, mw[i].path,
                 XmNleftOffset, 10,
-                XmNrightAttachment,XmATTACH_NONE,
+                XmNrightAttachment,XmATTACH_WIDGET,
+                XmNrightWidget, mw[i].send_message_change_path,
+                XmNrightOffset, 10,
                 XmNnavigationType, XmTAB_GROUP,
                 XmNtraversalOn, FALSE,
-                MY_FOREGROUND_COLOR,
-                MY_BACKGROUND_COLOR,
-                NULL);
-
-        mw[i].send_message_change_path = XtVaCreateManagedWidget(langcode("WPUPMSB019"),
-                xmPushButtonGadgetClass, 
-                mw[i].form,
-                XmNleftAttachment, XmATTACH_WIDGET,
-                XmNleftWidget, mw[i].send_message_path,
-                XmNrightAttachment, XmATTACH_NONE,
-                XmNtopAttachment, XmATTACH_NONE,
-                XmNbottomAttachment, XmATTACH_WIDGET,
-                XmNbottomWidget, mw[i].message,
-                XmNbottomOffset, 7,
-                XmNnavigationType, XmTAB_GROUP,
-                XmNtraversalOn, TRUE,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
                 NULL);
