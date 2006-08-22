@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.203 2006/08/22 11:40:09 we7u Exp $
+# $Id: language-Italian.sys,v 1.204 2006/08/22 11:55:44 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -706,7 +706,7 @@ WPUPMSB001|Casella messaggi %d||
 WPUPMSB002|Casella messaggi a gruppo %d||
 WPUPMSB003|Nominativi stazioni:||
 WPUPMSB004|Nominativo gruppo:||
-WPUPMSB005|Nuovo nominativo||
+WPUPMSB005|Nuovo/Refresh nominativo||
 WPUPMSB006|Nuovo gruppo||
 WPUPMSB007|Cancella storico Msg||
 WPUPMSB008|Messaggio:||
@@ -723,7 +723,7 @@ WPUPMSB018|*REJECTED*||
 WPUPMSB019|Change Path||
 WPUPMSB020|Use Default Path(s)||
 WPUPMSB021|Direct (No path)||
-WPUPMSB022|Reverse Path:||
+WPUPMSB022|Reverse Path (Hint):||
 #
 #Auto Reply
 WPUPARM001|Cambia risposta automatica||
