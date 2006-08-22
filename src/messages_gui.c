@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.55 2006/08/22 11:55:44 we7u Exp $
+ * $Id: messages_gui.c,v 1.56 2006/08/22 12:35:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -522,6 +522,7 @@ void Send_message_change_path( Widget widget, XtPointer clientData, XtPointer ca
                 XmNleftWidget, reverse_path_label,
                 XmNleftOffset, 5,
                 XmNrightAttachment,XmATTACH_FORM,
+                XmNrightOffset, 5,
                 XmNnavigationType, XmTAB_GROUP,
                 XmNtraversalOn, FALSE,
                 MY_FOREGROUND_COLOR,
@@ -1485,7 +1486,8 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message" 
                 XmNleftAttachment, XmATTACH_WIDGET,
                 XmNleftWidget, mw[i].reverse_path_label,
                 XmNleftOffset, 5,
-                XmNrightAttachment,XmATTACH_NONE,
+                XmNrightAttachment,XmATTACH_FORM,
+                XmNrightOffset, 5,
                 XmNnavigationType, XmTAB_GROUP,
                 XmNtraversalOn, FALSE,
                 MY_FOREGROUND_COLOR,
