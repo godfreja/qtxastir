@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.212 2006/07/31 13:25:10 we7u Exp $
+# $Id: language-Dutch.sys,v 1.213 2006/08/22 11:40:08 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -732,6 +732,10 @@ WPUPMSB015|Zend uit||
 WPUPMSB016|*TIMEOUT*||
 WPUPMSB017|*AFGEBROKEN*||
 WPUPMSB018|*REJECTED*||
+WPUPMSB019|Change Path||
+WPUPMSB020|Use Default Path(s)||
+WPUPMSB021|Direct (No path)||
+WPUPMSB022|Reverse Path:||
 #
 # PopUp "Auto Reply"
 WPUPARM001|Automatich antwoord bericht||

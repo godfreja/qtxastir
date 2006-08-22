@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.209 2006/07/31 13:25:10 we7u Exp $
+# $Id: language-German.sys,v 1.210 2006/08/22 11:40:09 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -728,6 +728,10 @@ WPUPMSB015|Rundmeldung||
 WPUPMSB016|*TIMEOUT*||
 WPUPMSB017|*ABBRUCH*||
 WPUPMSB018|*REJECTED*||
+WPUPMSB019|Change Path||
+WPUPMSB020|Use Default Path(s)||
+WPUPMSB021|Direct (No path)||
+WPUPMSB022|Reverse Path:||
 #
 # PopUp "Automatische Antwort"
 WPUPARM001|Automatische Antwort ändern||

@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.20 2006/08/22 01:01:52 we7u Exp $
+ * $Id: messages.h,v 1.21 2006/08/22 11:40:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -71,7 +71,7 @@ typedef struct {
     Widget button_clear_old_msgs, button_submit_call;
     Widget button_clear_pending_msgs;
     Widget button_kick_timer;
-    Widget call, message, path;
+    Widget call, message, path, reverse_path_label;
 } Message_Window;
 
 
