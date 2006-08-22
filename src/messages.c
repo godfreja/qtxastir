@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.65 2006/07/19 14:40:46 we7u Exp $
+ * $Id: messages.c,v 1.66 2006/08/22 01:01:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1203,7 +1203,7 @@ void check_and_transmit_messages(time_t time) {
                             //
                             // Change all messages to that callsign
                             // to match the new path.
-                            // 
+                            //
                             change_path_outgoing_messages_to(to_call,new_path);
                         }
 
