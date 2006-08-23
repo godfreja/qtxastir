@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.714 2006/08/23 14:12:17 we7u Exp $
+ * $Id: main.c,v 1.715 2006/08/23 15:53:30 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9619,6 +9619,9 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
 //    x_distance_real * y_distance_real,
 //    area);
 
+// NOTE:  Angles currently change at zoom==1, so we purposely don't
+// give an angle in that measurement instance below.
+//
                         xastir_snprintf(temp,
                             sizeof(temp),
                             "%0.2f %s, x=%0.2f %s, y=%0.2f %s, %0.2f %s %s, %s: %s %s",
@@ -9629,7 +9632,7 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
                             langcode("POPUPMA038"), // square
                             un_alt,
                             langcode("POPUPMA041"), // Bearing
-                            temp_course,
+                            (scale_y == 1) ? "??" : temp_course, // Fix for zoom==1
                             langcode("POPUPMA042") );   // degrees
                     }
                     else {
