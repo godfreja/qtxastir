@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.71 2006/08/23 14:14:19 we7u Exp $
+ * $Id: map_geo.c,v 1.72 2006/08/23 15:09:48 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -970,6 +970,19 @@ void draw_geo_image_map (Widget w,
             &right_e,
             zstr1,
             sizeof(zstr1) );
+
+
+//
+// NOTE:
+// POSSIBLE FUTURE ENHANCEMENT:
+// If zstr0 != zstr1, we have a viewscreen that crosses a UTM zone
+// boundary.  Terraserver/Toposerver will only feed us a map for one
+// side of it or the other.  It'd be VERY nice if some day we could
+// check for this condition and do two map loads instead of the one.
+// We'd need to stop drawing right at the boundary for each map
+// also, so that they'd tile together nicely.
+//
+
 
         map_top_n  = (int)((top_n  / t_scale) + 1) * t_scale;
         map_left_e = (int)((left_e / t_scale) + 0) * t_scale;
