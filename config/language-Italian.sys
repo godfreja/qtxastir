@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.204 2006/08/22 11:55:44 we7u Exp $
+# $Id: language-Italian.sys,v 1.205 2006/08/24 23:49:45 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -381,6 +381,8 @@ WPUPDPD003|Solo dati dalla Rete||
 WPUPDPD004|Dati da TNC e Rete||
 WPUPDPD005|TNC||
 WPUPDPD006|RETE||
+WPUPDPD007|Station Capabilities||
+WPUPDPD008|Mine Only||
 #
 #Menu' localizza stazione
 WPUPLSP001|Localizza Stazione||

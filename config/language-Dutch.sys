@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.214 2006/08/22 11:55:44 we7u Exp $
+# $Id: language-Dutch.sys,v 1.215 2006/08/24 23:49:45 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -393,6 +393,8 @@ WPUPDPD003|Alleen Net gegevens||
 WPUPDPD004|TNC en Net gegevens||
 WPUPDPD005|TNC||
 WPUPDPD006|NET||
+WPUPDPD007|Station Capabilities||
+WPUPDPD008|Mine Only||
 #
 # PopUp "View - Find Station"
 WPUPLSP001|Lokaliseer station||

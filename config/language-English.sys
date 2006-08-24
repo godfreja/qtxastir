@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.203 2006/08/22 11:55:44 we7u Exp $
+# $Id: language-English.sys,v 1.204 2006/08/24 23:49:45 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -383,6 +383,8 @@ WPUPDPD003|Net Data only|N|
 WPUPDPD004|TNC and Net Data|a|
 WPUPDPD005|TNC||
 WPUPDPD006|NET||
+WPUPDPD007|Station Capabilities||
+WPUPDPD008|Mine Only||
 #
 # PopUp "View - Find Station"
 WPUPLSP001|Locate Station||

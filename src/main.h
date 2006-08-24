@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.92 2006/02/14 19:32:12 we7u Exp $
+ * $Id: main.h,v 1.93 2006/08/24 23:49:46 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -311,6 +311,8 @@ extern int dead_reckoning_timeout;
 extern char bando_min[30];
 extern char bando_max[30];
 extern int Display_packet_data_type;
+extern int show_only_station_capabilities;
+extern int Display_packet_data_mine_only;
 extern int menu_x;
 extern int menu_y;
 extern long my_last_altitude;
