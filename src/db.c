@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.575 2006/08/24 23:49:45 we7u Exp $
+ * $Id: db.c,v 1.576 2006/08/25 11:42:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13652,8 +13652,12 @@ void packet_data_add(char *from, char *line, int data_port) {
     // Check the Capabilities toggle to see if we only want to show
     // Station Capability packets
     if (show_only_station_capabilities) {
-        if (!strstr(line, ":<"))
+        if (!strstr(line, ":<") // Not a capabilities response
+                && !( strstr(line, my_callsign) && strstr(line, "?IGATE?") ) ) {
+            // Not a capabilities response and not my ?IGATE?
+            // request, don't display the packet.
             return;
+        }
     }
 
     // Check the "Mine Only" toggle to see if we only want to show
@@ -16110,7 +16114,11 @@ void decode_info_field(char *call,
             case '%':   // Agrelo DFJr / MicroFinder Radio Direction Finding
                  if (debug_level & 1)
                     fprintf(stderr,"decode_info_field: %%\n");
+
 fprintf(stderr,"RDF:  %10s:  %s\n", call, message);
+// Saw this:
+// RDF:     FUKDE-4:  4807.20N/00320.05W#/aPRS DIIPEATEP qth PlOURAY 56 2
+
 
 // Here is where we'd add a call to an RDF decode function so that
 // we could display vectors on the map for each RDF position.
