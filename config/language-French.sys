@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.205 2006/08/24 23:49:45 we7u Exp $
+# $Id: language-French.sys,v 1.206 2006/08/25 22:24:50 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -1087,6 +1087,9 @@ POPEM00048|Emergency Beacon Mode!||
 POPEM00049|EMERGENCY BEACON MODE, transmitting every 60 seconds!||
 POPEM00050|Interfaces or posits/transmits DISABLED.  Emergency beacons are NOT going out!||
 POPEM00051|Altnet is enabled (Configure->Defaults dialog)||
+POPEM00052|Callsign is EMPTY!||
+POPEM00053|Message is EMPTY!||
+POPEM00054|We're trying to talk to ourselves!||
 #
 # Jump Location
 JMLPO00001|Lieu de la carte||
