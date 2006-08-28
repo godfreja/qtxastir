@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.22 2006/08/25 22:33:00 we7u Exp $
+ * $Id: messages.h,v 1.23 2006/08/28 19:29:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -64,6 +64,7 @@ typedef struct {
     Widget send_message_call_data;
     Widget D700_mode;
     Widget D7_mode;
+    Widget HamHUD_mode;
     Widget message_data_line1;
     Widget message_data_line2;
     Widget message_data_line3;
