@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.67 2006/08/29 14:31:30 we7u Exp $
+ * $Id: messages_gui.c,v 1.68 2006/08/29 22:26:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1669,8 +1669,12 @@ void select_station_type(int ii) {
         }
 
         // If not D700 or D7, check for HamHUD in the TOCALL.
+        // APHH2/APRHH2.  We'll skip the version number soas to
+        // catch future versions as well.
+        //
         if (!d700 && !d7) {
-            if (strncmp(p_station->node_path_ptr,"APRHH2",6) == 0) {
+            if (strncmp(p_station->node_path_ptr,"APRHH",5) == 0
+                    || strncmp(p_station->node_path_ptr,"APHH",4) == 0) {
                 hamhud++;
             }
         }
