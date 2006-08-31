@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.718 2006/08/30 19:29:40 we7u Exp $
+ * $Id: main.c,v 1.719 2006/08/31 21:36:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10369,7 +10369,8 @@ void check_pointer_position(void) {
 
 
 time_t stations_status_time = 0;
-
+static int last_alert_on_screen = -1;
+ 
 
 // This is the periodic process that updates the maps/symbols/tracks.
 // At the end of the function it schedules itself to be run again.
@@ -10379,7 +10380,6 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
     int do_time;
     int max;
     int i;
-    static int last_alert_on_screen;
     char station_num[30];
     char line[MAX_LINE_SIZE+1];
     int line_offset = 0;
@@ -10489,6 +10489,12 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
             my_station_add(my_callsign,my_group,my_symbol,my_long,my_lat,my_phg,my_comment,(char)position_amb_chars);
             da_resize(w, NULL,NULL);            // make sure the size is right after startup & create image
             set_last_position();                // init last map position
+
+            // Restore weather alerts so that we have a clear
+            // picture of the current state.  Do this before we
+            // start the interfaces.
+            load_wx_alerts_from_log();
+
             statusline(langcode("BBARSTA048"), 1); // Start interfaces...
             startup_all_or_defined_port(-1);    // start interfaces
         }
