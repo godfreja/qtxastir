@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.46 2006/04/24 19:21:42 we7u Exp $
+ * $Id: wx_gui.c,v 1.47 2006/08/31 21:27:08 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -396,10 +396,10 @@ begin_critical_section(&wx_alert_shell_lock, "wx_gui.c:wx_alert_update_list" );
             // we're expiring records from our hash properly we
             // probably don't need this anymore.
             //
-            if (alert->title[0] == '\0') {    // It's empty
-		fprintf(stderr, "wx_gui:alert->title NULL\n");
-                break;
-            }
+//            if (alert->title[0] == '\0') {    // It's empty
+//		fprintf(stderr, "wx_gui:alert->title NULL\n");
+//                break;
+//            }
 	    alert_list[nn++] = alert;
 	}
 	qsort(alert_list, nn, sizeof(alert_entry *), alert_comp);
