@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.581 2006/08/31 21:36:06 we7u Exp $
+ * $Id: db.c,v 1.582 2006/09/01 11:46:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -16208,6 +16208,8 @@ void decode_info_field(char *call,
 fprintf(stderr,"RDF:  %10s:  %s\n", call, message);
 // Saw this:
 // RDF:     FUKDE-4:  4807.20N/00320.05W#/aPRS DIIPEATEP qth PlOURAY 56 2
+// Looking on findu, this is the raw packet:
+// FUKDE-4>AXZ186,WIDE3,qAo,F8CIY:%4807.20N/00320.05W#/aPRS DIPEATEP qth PlOURAY 56 2
 
 
 // Here is where we'd add a call to an RDF decode function so that
