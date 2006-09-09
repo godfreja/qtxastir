@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.59 2006/08/14 19:38:47 we7u Exp $
+ * $Id: track_gui.c,v 1.60 2006/09/09 00:35:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -65,7 +65,7 @@ Widget posit_length_value;
 
 int fetching_findu_trail_now = 0;
 
-int track_station_on;           /* used for tracking stations */
+int track_station_on = 0;       /* used for tracking stations */
 int track_me;
 int track_case;                 /* used for tracking stations */
 int track_match;                /* used for tracking stations */
@@ -88,7 +88,17 @@ void track_gui_init(void)
 {
     init_critical_section( &track_station_dialog_lock );
     init_critical_section( &download_findu_dialog_lock );
-    tracking_station_call[0] = '\0';
+
+    if (temp_tracking_station_call[0] != '\0') {
+        xastir_snprintf(tracking_station_call,
+            sizeof(tracking_station_call),
+            "%s",
+            temp_tracking_station_call);
+        track_station_on = 1;
+    }
+    else {
+        tracking_station_call[0] = '\0';
+    }
 }
 
 

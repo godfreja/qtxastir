@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.26 2006/08/24 23:29:31 we7u Exp $
+ * $Id: popup_gui.c,v 1.27 2006/09/09 00:35:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -146,6 +146,9 @@ void popup_message_always(char *banner, char *message) {
     Atom delw;
 
 
+    if (disable_all_popups)
+        return;
+
     if (banner == NULL || message == NULL)
         return;
 
@@ -252,6 +255,9 @@ end_critical_section(&popup_message_dialog_lock, "popup_gui.c:popup_message" );
 void popup_message(char *banner, char *message) {
     char timestring[110];
 
+
+    if (disable_all_popups)
+        return;
 
     if (banner == NULL || message == NULL)
         return;

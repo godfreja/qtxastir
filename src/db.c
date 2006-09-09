@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.586 2006/09/08 18:10:35 we7u Exp $
+ * $Id: db.c,v 1.587 2006/09/09 00:35:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8142,7 +8142,6 @@ void init_station_data(void) {
     next_time_sn = 0;                   // serial number for unique time index
     current_trail_color = 0x00;         // first trail color used will be 0x01
     last_station_remove = sec_now();    // last time we checked for stations to remove
-    track_station_on = 0;               // no tracking at startup
 }
 
 

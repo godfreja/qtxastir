@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.68 2006/08/28 19:29:52 we7u Exp $
+ * $Id: messages.c,v 1.69 2006/09/09 00:35:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -365,7 +365,9 @@ end_critical_section(&send_message_dialog_lock, "messages.c:check_popup_window2"
                 from_call_sign,
                 sizeof(temp1) - strlen(temp1));
 
-            Send_message(appshell, temp1, NULL);
+            if (!disable_all_popups) {
+                Send_message(appshell, temp1, NULL);
+            }
 
             update_messages(1);
 
