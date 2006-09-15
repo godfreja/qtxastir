@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.260 2006/08/30 11:12:52 we7u Exp $
+ * $Id: interface.c,v 1.261 2006/09/15 16:59:50 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8299,7 +8299,7 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
                     sizeof(header_txt),
                     "%c%s %s\r",
                     '\3',
-                    "MYCALL",
+                    "\rMYCALL",
                     my_callsign);
 
                 // Send the callsign out to the TNC only if the interface is up and tx is enabled???
