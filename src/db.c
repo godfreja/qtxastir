@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.588 2006/09/11 01:03:46 we7u Exp $
+ * $Id: db.c,v 1.589 2006/09/19 13:55:54 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -16435,14 +16435,11 @@ void decode_info_field(char *call,
                 && (strlen(orig_message) > 0) ) { // Not empty
 
             // Here's where we inject our own callsign like this:
-            // "WE7U-15*,I" in order to provide injection ID for our
-            // igate.  We need to add a '*' character after our
-            // callsign as we inject, to show it came through us.
-            // On the way back out of the internet it can get a '*'
-            // added after the 'I' perhaps.
+            // "WE7U-15,I" in order to provide injection ID for our
+            // igate.
             xastir_snprintf(line,
                 sizeof(line),
-                "%s>%s,%s*,I:%s",
+                "%s>%s,%s,I:%s",
                 (strlen(origin)) ? origin : call,
                 path,
                 my_callsign,
@@ -17700,14 +17697,11 @@ int decode_ax25_line(char *line, char from, int port, int dbadd) {
 //fprintf(stderr,"Retransmitting x_spider packet: %s\n", line);
 
             // Here's where we inject our own callsign like this:
-            // "WE7U-15*,I" in order to provide injection ID for our
-            // igate.  We need to add a '*' character after our
-            // callsign as we inject, to show it came through us.
-            // On the way back out of the internet it can get a '*'
-            // added after the 'I' perhaps.
+            // "WE7U-15,I" in order to provide injection ID for our
+            // igate.
             xastir_snprintf(tmp_line,
                 sizeof(tmp_line),
-                "%s>%s,%s*,I:%s",
+                "%s>%s,%s,I:%s",
                 call_sign,
                 path,
                 my_callsign,
