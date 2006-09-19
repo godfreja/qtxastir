@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.45 2006/09/19 15:58:56 chicoreus Exp $
+ * $Id: list_gui.c,v 1.46 2006/09/19 16:12:29 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -607,7 +607,7 @@ begin_critical_section(&station_list_dialog_lock, "list_gui.c:Station_List_fill"
                 XtManageChild(SL_da[type][row]);
 
                 // Pressing the icon button centers the map on the station.
-                XtAddCallback( (XtPointer)(XmPushButtonWidget)SL_da[type][row],
+                XtAddCallback( (XtPointer)SL_da[type][row],
                       XmNactivateCallback, 
                       Call_locate_station, 
                       XmTextFieldGetString(SL_call[type][row])
