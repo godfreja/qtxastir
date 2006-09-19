@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.590 2006/09/19 14:43:46 chicoreus Exp $
+ * $Id: db.c,v 1.591 2006/09/19 15:58:56 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,6 +22,10 @@
  * Look at the README for more information on the program.
  */
 
+/* Note: the header file for db.c should be called db.h, 
+ * but is named database.h to avoid conflicts with the 
+ * Berkeley DB package.  
+ */
 
 // NOTE:  decode_info_field() is a good place to start for decoding.
 
