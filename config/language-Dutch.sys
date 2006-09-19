@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.216 2006/08/25 22:24:50 we7u Exp $
+# $Id: language-Dutch.sys,v 1.217 2006/09/19 14:43:45 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -436,6 +436,7 @@ WPUPCFD028|Waarschuw als speciale functie toetsen aanstaan||
 WPUPCFD029|Geef bulletins zonder afstand weer||
 WPUPCFD030|Zet positie duplicaat controle uit||
 WPUPCFD031|Laad voor gedefinierde objecten uit bestand||
+WPUPCFD032|My trails in one color||
 #
 # PopUp "Configure - Timing"
 WPUPCFTM01|Configureer tijdsinstelling|||

@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.206 2006/08/25 22:24:50 we7u Exp $
+# $Id: language-Italian.sys,v 1.207 2006/09/19 14:43:46 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -424,6 +424,7 @@ WPUPCFD028|Avvisa per utilizzo tasti inadatti||
 WPUPCFD029|Vedi bollettini a distanza zero||
 WPUPCFD030|Disattiva Posit Dupe-Checks||
 WPUPCFD031|Load predefined objects from file||
+WPUPCFD032|My trails in one color||
 #
 # PopUp "Configure - Timing"
 WPUPCFTM01|Configura Temporizzazioni||

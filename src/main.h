@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.95 2006/09/09 00:35:50 we7u Exp $
+ * $Id: main.h,v 1.96 2006/09/19 14:43:46 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -184,6 +184,8 @@ extern int warn_about_mouse_modifiers;
 extern int predefined_menu_from_file;
 
 extern int draw_labeled_grid_border;  // used to turn on or off border on map
+
+extern int my_trail_diff_color;  // trails for mycall with different ssids have the same or a different color
 
 extern int output_station_type;
 

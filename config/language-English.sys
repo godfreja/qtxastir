@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.205 2006/08/25 22:24:50 we7u Exp $
+# $Id: language-English.sys,v 1.206 2006/09/19 14:43:45 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -426,6 +426,7 @@ WPUPCFD028|Warn if Modifier Keys||
 WPUPCFD029|View zero-distance bulletins||
 WPUPCFD030|Disable Posit Dupe-Checks||
 WPUPCFD031|Load predefined objects from file||
+WPUPCFD032|My trails in one color||
 #
 # PopUp "Configure - Timing"
 WPUPCFTM01|Configure Timing||

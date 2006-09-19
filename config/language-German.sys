@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.213 2006/08/25 22:24:50 we7u Exp $
+# $Id: language-German.sys,v 1.214 2006/09/19 14:43:46 chicoreus Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -432,6 +432,7 @@ WPUPCFD028|Warnung bei Modifikationstasten||
 WPUPCFD029|Anzeige bei Entfernung Null||
 WPUPCFD030|Position Dubletten-Prüfung aus||
 WPUPCFD031|Vordefinierte Objekte aus Datei laden||
+WPUPCFD032|My trails in one color||
 #
 # PopUp "Zeitverhalten"
 WPUPCFTM01|Einstellung des Zeitverhaltens|||
