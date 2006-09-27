@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.217 2006/09/19 14:43:45 chicoreus Exp $
+# $Id: language-Dutch.sys,v 1.218 2006/09/27 19:23:26 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -460,7 +460,7 @@ WPUPCFC003|dd.dddddd|d|
 WPUPCFC004|dd mm.mmm|m|
 WPUPCFC005|dd mm ss.s|s|
 WPUPCFC006|UTM|U|
-WPUPCFC007|MGRS||
+WPUPCFC007|USNG/MGRS||
 WPUPCFC008|UTM w/speciale zones||
 #
 # PopUp "Configure GPS"

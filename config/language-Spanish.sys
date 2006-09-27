@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.214 2006/09/19 14:43:46 chicoreus Exp $
+# $Id: language-Spanish.sys,v 1.215 2006/09/27 19:23:26 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -451,7 +451,7 @@ WPUPCFC003|dd.ddddd|d|
 WPUPCFC004|dd mm.mmm|m|
 WPUPCFC005|dd mm ss.s|s|
 WPUPCFC006|UTM|U|
-WPUPCFC007|MGRS||
+WPUPCFC007|USNG/MGRS||
 WPUPCFC008|UTM con zonas especiales||
 #
 # Configurar GPS
