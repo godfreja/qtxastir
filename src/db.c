@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.592 2006/10/05 14:46:39 we7u Exp $
+ * $Id: db.c,v 1.593 2006/10/05 15:29:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1973,9 +1973,9 @@ void overlay_symbol(char symbol, char data, DataRow *fill) {
 
         if (data >= 'a' && data <= 'j') {
             // Found a compressed posit numerical overlay
-            data = data - 'a';  // Convert to a digit
+            data = data - 'a'+'0';  // Convert to a digit
         }
-        else if ( (data >= '0' && data <= '9')
+        if ( (data >= '0' && data <= '9')
                 || (data >= 'A' && data <= 'Z') ) {
             // Found normal overlay character
             fill->aprs_symbol.aprs_type = '\\';
