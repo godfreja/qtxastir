@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.593 2006/10/05 15:29:31 we7u Exp $
+ * $Id: db.c,v 1.594 2006/10/05 16:11:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -17796,7 +17796,10 @@ void  read_file_line(FILE *f) {
                         "%s",
                         line);
 
-                    decode_ax25_line(line,'F',-1, 1);   // Decode the packet
+                    if (line[0] != '#') {
+                        decode_ax25_line(line,'F',-1, 1);   // Decode the packet
+                    }
+
                     return;                             // only read line by line
                 }
             }
