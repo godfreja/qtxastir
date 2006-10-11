@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.594 2006/10/05 16:11:00 we7u Exp $
+ * $Id: db.c,v 1.595 2006/10/11 21:39:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4971,7 +4971,7 @@ end_critical_section(&db_station_info_lock, "db.c:Station_data" );
     else if (english_units) {
         xastir_snprintf(temp,
             sizeof(temp),
-            "%s %s (9W @ 20ft %s, 3dB %s, %s 10.0km)",
+            "%s %s (9W @ 20ft %s, 3dB %s, %s 6.2mi)",
             langcode("WPUPSTI014"), // "Current Power Gain:"
             langcode("WPUPSTI069"), // "default"
             langcode("WPUPSTI070"), // "HAAT"
