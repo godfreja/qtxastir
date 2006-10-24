@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.72 2006/08/23 15:09:48 we7u Exp $
+ * $Id: map_geo.c,v 1.73 2006/10/24 18:02:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -732,20 +732,27 @@ void draw_geo_image_map (Widget w,
                     // Apparently, if QuantumDepth is 16 bits, r, g, and b
                     // values are duplicated in the high and low byte, which
                     // is just bizarre
+#ifdef HAVE_IMAGEMAGICK
                     if (QuantumDepth == 16) {
                         r=r|(r<<8);
                         g=g|(g<<8);
                         b=b|(b<<8);
                     }
+#endif  // HAVE_IMAGEMAGICK
                     //fprintf(stderr,"Original Transparent %lx\n",trans_color);
                     //fprintf(stderr,"Transparent r,g,b=%x,%x,%x\n",r,g,b);
                     if (visual_type == NOT_TRUE_NOR_DIRECT) {
                         XColor junk;
+
+#ifdef HAVE_IMAGEMAGICK
                         if (QuantumDepth == 16) {
                             junk.red=r;
                             junk.green=g;
                             junk.blue=b;
-                        } else {
+                        }
+                        else
+#endif  // HAVE_IMAGEMAGICK
+                        {
                             junk.red= r<<8;
                             junk.green = g<<8;
                             junk.blue = b<<8;
