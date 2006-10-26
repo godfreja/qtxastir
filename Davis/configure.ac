@@ -1,5 +1,5 @@
 #
-# $Id: configure.ac,v 1.3 2006/01/17 21:04:56 we7u Exp $
+# $Id: configure.ac,v 1.4 2006/10/26 15:52:42 we7u Exp $
 #
 # Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
 # Portions Copyright (C) 2004-2006  The Xastir Group
@@ -10,8 +10,8 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.53)
-AC_INIT(db2APRS, 0.1.1, bruts@adelphia.net)
-AM_INIT_AUTOMAKE(db2APRS, 0.1.1)
+AC_INIT(db2APRS, 0.2.0, bruts@adelphia.net)
+AM_INIT_AUTOMAKE(db2APRS, 0.2.0)
 AC_CONFIG_SRCDIR([src/db2APRS.c])
 AM_CONFIG_HEADER([config.h])
 
@@ -62,6 +62,5 @@ AC_FUNC_SELECT_ARGTYPES
 AC_TYPE_SIGNAL
 AC_FUNC_STRTOD
 AC_CHECK_FUNCS([memset select socket strrchr strtol])
-AC_CONFIG_FILES([Makefile \
-    src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT
