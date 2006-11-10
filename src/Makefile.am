@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.40 2006/08/30 19:21:05 we7u Exp $
+# $Id: Makefile.am,v 1.41 2006/11/10 21:48:09 tvrusso Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -6,8 +6,8 @@
 bin_PROGRAMS = xastir xastir_udp_client
 noinst_PROGRAMS = testawk
 
-SUBDIRS = @SUBRTREE@
-DIST_SUBDIRS = rtree
+SUBDIRS = @SUBRTREE@ @SUBSHP@
+DIST_SUBDIRS = rtree shapelib
 
 EXTRA_DIST=icon.xbm
 
@@ -88,7 +88,7 @@ compiledate.c: $(XASTIR_SRC)
 remove_compiledate:
 	rm -f compiledate.c compiledate.o
 
-xastir_LDADD=@LIBRTREE@
+xastir_LDADD=@LIBRTREE@ @LIBSHP@
 
 xastir_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
