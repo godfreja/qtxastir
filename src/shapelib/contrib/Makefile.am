@@ -1,3 +1,7 @@
+
+# $Id: Makefile.am,v 1.2 2006/11/12 00:26:20 tvrusso Exp $
+# Copyright (C) 2004-2006  The Xastir Group
+
 EXTRA_DIST=Makefile_orig ShapeFileII.pas dbfcat.c dbfinfo.c makefile.vc \
 	my_nan.h shpcat.c shpcentrd.c shpdata.c shpdxf.c shpfix.c \
 	shpgeo.c shpgeo.h shpinfo.c shpproj.c shpwkb.c
