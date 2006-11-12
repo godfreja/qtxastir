@@ -1,5 +1,5 @@
 
-$Id: README.MAPS,v 1.84 2006/07/12 17:47:32 we7u Exp $
+$Id: README.MAPS,v 1.85 2006/11/12 00:11:13 we7u Exp $
 
 
 Recommended Configurations for:
@@ -81,6 +81,9 @@ MapInfo             GDAL/OGR.  Preliminary.
 Tiger/Line Raw      GDAL/OGR.  Preliminary.
 Microstation DGN    GDAL/OGR.  Preliminary.
 S57                 GDAL/OGR.  Preliminary.
+
+
+The default map, "worldhi.map", is used with permission of its creator, Keith Sproul, WU2Z.
 
 
 Getting Maps and other Data Files for Xastir:
