@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.41 2006/11/10 21:48:09 tvrusso Exp $
+# $Id: Makefile.am,v 1.42 2006/11/13 14:48:35 tvrusso Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -89,6 +89,8 @@ remove_compiledate:
 	rm -f compiledate.c compiledate.o
 
 xastir_LDADD=@LIBRTREE@ @LIBSHP@
+
+testawk_LDADD=@LIBSHP@
 
 xastir_LINK=$(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 
