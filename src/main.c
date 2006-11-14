@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.724 2006/11/13 01:36:10 we7u Exp $
+ * $Id: main.c,v 1.725 2006/11/14 15:41:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -16472,13 +16472,13 @@ void Help_About( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@un
     XmStringFree(xb);
     //xms is still defined
 
-    xa = XmStringCreateLtoR("\n\n" ABOUT_MSG "\n\n\nLibraries used: " XASTIR_INSTALLED_LIBS,XmFONTLIST_DEFAULT_TAG);  // Add some newlines
+    xa = XmStringCreateLtoR("\n\n" ABOUT_MSG "\n\n\nLibraries used: " XASTIR_INSTALLED_LIBS, XmFONTLIST_DEFAULT_TAG);  // Add some newlines
     xb = XmStringConcat(xms, xa);
     XmStringFree(xa);
     XmStringFree(xms);
     //xb is still defined
 
-    xa = XmStringCreateLtoR(XmVERSION_STRING, XmFONTLIST_DEFAULT_TAG);  // Add the Motif version string
+    xa = XmStringCreateLtoR("\n" XmVERSION_STRING, XmFONTLIST_DEFAULT_TAG);  // Add the Motif version string
     xms = XmStringConcat(xb, xa);
     XmStringFree(xa);
     XmStringFree(xb);
