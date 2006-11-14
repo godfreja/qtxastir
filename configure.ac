@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.154 2006/11/11 23:46:44 tvrusso Exp $
+# $Id: configure.ac,v 1.155 2006/11/14 08:19:35 tvrusso Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -239,7 +239,7 @@ if test "${use_shapelib}" = "no"; then
  AC_MSG_WARN([an internal version, which will lead to larger executable])
  AC_MSG_WARN([ file size.  To eliminate this warning, install shapelib on your system.])
  LIBSHP="-Lshapelib -lshape"
- CPPFLAGS="-Ishapelib $CPPFLAGS"
+ CPPFLAGS="-I\$(top_srcdir)/src/shapelib $CPPFLAGS"
  SUBSHP="shapelib" 
  use_shapelib=yes
  AC_DEFINE(HAVE_DBFGETFIELDINDEX, , Define to 1 if your `shp' library has DBFGetFieldIndex. ) 
