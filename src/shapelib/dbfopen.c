@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: dbfopen.c,v 1.2 2006/11/14 21:28:02 we7u Exp $
+ * $Id: dbfopen.c,v 1.3 2006/11/14 21:30:18 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Implementation of .dbf access API documented in dbf_api.html.
@@ -34,6 +34,10 @@
  ******************************************************************************
  *
  * $Log: dbfopen.c,v $
+ * Revision 1.3  2006/11/14 21:30:18  we7u
+ * The last revision also commented out an unused variable that I forgot to
+ * mention in the cvs log.
+ *
  * Revision 1.2  2006/11/14 21:28:02  we7u
  * Casting a couple of variables to int's to get rid of compiler warnings.
  *
@@ -209,7 +213,8 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: dbfopen.c,v 1.2 2006/11/14 21:28:02 we7u Exp $";
+//  "$Id: dbfopen.c,v 1.3 2006/11/14 21:30:18 we7u Exp $";
+
 
 #include "shapefil.h"
 
