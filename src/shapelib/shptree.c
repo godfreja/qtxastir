@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shptree.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $
+ * $Id: shptree.c,v 1.2 2006/11/14 21:28:48 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Implementation of quadtree building and searching functions.
@@ -34,6 +34,9 @@
  ******************************************************************************
  *
  * $Log: shptree.c,v $
+ * Revision 1.2  2006/11/14 21:28:48  we7u
+ * Commenting out some variables that give off compiler warnings.
+ *
  * Revision 1.1  2006/11/10 21:48:10  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -86,8 +89,8 @@
  *
  */
 
-static char rcsid[] = 
-  "$Id: shptree.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $";
+//static char rcsid[] = 
+//  "$Id: shptree.c,v 1.2 2006/11/14 21:28:48 we7u Exp $";
 
 #include "shapefil.h"
 
