@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: dbfopen.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $
+ * $Id: dbfopen.c,v 1.2 2006/11/14 21:28:02 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Implementation of .dbf access API documented in dbf_api.html.
@@ -34,6 +34,9 @@
  ******************************************************************************
  *
  * $Log: dbfopen.c,v $
+ * Revision 1.2  2006/11/14 21:28:02  we7u
+ * Casting a couple of variables to int's to get rid of compiler warnings.
+ *
  * Revision 1.1  2006/11/10 21:48:10  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -205,8 +208,8 @@
  * Added header.
  */
 
-static char rcsid[] = 
-  "$Id: dbfopen.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $";
+//static char rcsid[] = 
+//  "$Id: dbfopen.c,v 1.2 2006/11/14 21:28:02 we7u Exp $";
 
 #include "shapefil.h"
 
@@ -1091,7 +1094,7 @@ static int DBFWriteAttribute(DBFHandle psDBF, int hEntity, int iField,
 	{
             int		nWidth = psDBF->panFieldSize[iField];
 
-            if( sizeof(szSField)-2 < nWidth )
+            if( (int)sizeof(szSField)-2 < nWidth )
                 nWidth = sizeof(szSField)-2;
 
 	    sprintf( szFormat, "%%%dd", nWidth );
@@ -1109,7 +1112,7 @@ static int DBFWriteAttribute(DBFHandle psDBF, int hEntity, int iField,
 	{
             int		nWidth = psDBF->panFieldSize[iField];
 
-            if( sizeof(szSField)-2 < nWidth )
+            if( (int)sizeof(szSField)-2 < nWidth )
                 nWidth = sizeof(szSField)-2;
 
 	    sprintf( szFormat, "%%%d.%df", 
