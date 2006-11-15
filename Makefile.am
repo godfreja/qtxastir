@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.39 2006/11/15 19:49:13 we7u Exp $
+# $Id: Makefile.am,v 1.40 2006/11/15 20:11:56 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -56,10 +56,13 @@ doc_DATA=AUTHORS FAQ ChangeLog LICENSE README README.CVS \
         README.Getting-Started README.Contributing
 
 # It'd be nice to remove the directory and contents at
-# "${prefix}/doc" then install a symlink called "doc" there pointing
+# "${pkgdatadir}/doc" then install a symlink called "doc" there pointing
 # to "${prefix}/share/doc/xastir/".  The new location for the
 # documentation is FHS compliant.
 
+install-exec-hook:
+	-rm -rf ${pkgdatadir}/doc ; \
+	ln -s ${prefix}/share/doc/xastir ${pkgdatadir}/doc
  
 mandir=${prefix}/share/man
 man_MANS=xastir.1
