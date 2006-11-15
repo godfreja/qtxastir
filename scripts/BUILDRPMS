@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: BUILDRPMS,v 1.10 2006/11/02 18:34:06 we7u Exp $
+# $Id: BUILDRPMS,v 1.11 2006/11/15 15:08:44 we7u Exp $
 
 # This is an example script used by one of the developers to ease
 # the workload.  It's not intended to be used by the general
@@ -45,9 +45,9 @@ rm -rf /usr/src/packages/SOURCES/xastir*
 cp xastir-*.tar.gz /usr/src/packages/SOURCES/.
 #
 #
-# Build minimum system (only ImageMagick included), binary package
-# only.  Rename this file so that the following rpmbuild doesn't
-# overwrite it.
+# Build minimum system (only ImageMagick and internal Shapelib
+# included), binary package only.  Rename this file so that the
+# following rpmbuild doesn't overwrite it.
 echo
 echo
 echo "*******************************************"
