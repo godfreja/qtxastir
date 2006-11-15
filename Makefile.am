@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.37 2006/11/11 23:01:36 we7u Exp $
+# $Id: Makefile.am,v 1.38 2006/11/15 16:45:58 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -55,7 +55,7 @@ doc_DATA=AUTHORS FAQ ChangeLog LICENSE README README.CVS \
         README.MAPS README.win32 COPYING INSTALL UPGRADE \
         README.Getting-Started README.Contributing
 
-mandir=${prefix}/man
+mandir=${prefix}/share/man
 man_MANS=xastir.1
 
 ChangeLog::
