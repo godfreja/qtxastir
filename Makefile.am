@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.40 2006/11/15 20:11:56 we7u Exp $
+# $Id: Makefile.am,v 1.41 2006/11/16 17:12:16 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -61,8 +61,7 @@ doc_DATA=AUTHORS FAQ ChangeLog LICENSE README README.CVS \
 # documentation is FHS compliant.
 
 install-exec-hook:
-	-rm -rf ${pkgdatadir}/doc ; \
-	ln -s ${prefix}/share/doc/xastir ${pkgdatadir}/doc
+	-rm -rf ${pkgdatadir}/doc
  
 mandir=${prefix}/share/man
 man_MANS=xastir.1
