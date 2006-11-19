@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.141 2006/11/19 22:00:55 tvrusso Exp $
+$Id: README.win32,v 1.142 2006/11/19 22:05:24 tvrusso Exp $
 
 
   Two companies have created simpler installs of Cygwin/Xastir than
@@ -1027,6 +1027,9 @@ follow the instructions below carefully.
 
 Adding libproj to Cygwin (tested with proj-4.4.7):
 --------------------------------------------------
+
+Again, if you installed everything suggested in step 1, you already
+have this and building libproj from source is unnecessary.
 
 NOTE: You must install libproj BEFORE compiling libgeotiff, because
 libgeotiff uses libproj to do the datum translations. If you install
