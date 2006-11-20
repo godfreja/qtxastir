@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-LESSTIF,v 1.1 2006/11/20 22:52:32 we7u Exp $
+# $Id: LSB-BUILD-LESSTIF,v 1.2 2006/11/20 23:37:10 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # Compile lesstif-0.95.0 under Linux Standard Base 3.0.  Install
@@ -15,7 +15,11 @@
 
 export PATH=${PATH}:/opt/lsb/bin
 export LSBCC_WARN=1
-export LSBCC_SHAREDLIBS=
+
+# A colon-separated list of "extra" shared libraries to link with
+# the application.  Each shared lib must be LSB-compliant and must
+# be distributed along with the application.
+#export LSBCC_SHAREDLIBS=
 
 # Edit lib/Xm/ImageCache.c: Change "_XInitImageFuncPtrs" to
 # "XInitImage" in two places, then comment out the first instance:
@@ -27,11 +31,12 @@ sed -i -e 's/^typedef void ..sighandler_t/\/\/typedef void (*sighandler_t/' lib/
 CC=lsbcc ./configure \
     --prefix=/opt/lsb-lesstif \
     --enable-static \
-    --disable-shared \
     --x-libraries=/opt/lsb/lib \
     --x-includes=/opt/lsb/include \
     --with-motif-includes=/opt/lsb/include \
     --with-motif-libraries=/opt/lsb/lib
+
+#    --disable-shared
 
 make clean
 
