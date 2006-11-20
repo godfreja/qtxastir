@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD,v 1.1 2006/11/20 22:52:32 we7u Exp $
+# $Id: LSB-BUILD,v 1.2 2006/11/20 23:33:50 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # The trick here:  Compile Lesstif as an LSB package, installed at
@@ -29,7 +29,11 @@
 
 export PATH=${PATH}:/opt/lsb/bin
 export LSBCC_WARN=1
-export LSBCC_SHAREDLIBS=
+
+# A colon-separated list of "extra" shared libraries to link with
+# the application.  Each shared lib must be LSB-compliant and must
+# be distributed along with the application.
+#export LSBCC_SHAREDLIBS=libXm.so
 
 CC=lsbcc ./configure \
     --prefix=/opt/lsb-xastir \
