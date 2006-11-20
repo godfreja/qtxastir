@@ -1,6 +1,6 @@
 
-# $Id: Makefile.am,v 1.2 2006/11/11 23:46:44 tvrusso Exp $
-# Copyright (C) 2004-2005  The Xastir Group
+# $Id: Makefile.am,v 1.3 2006/11/20 18:31:19 we7u Exp $
+# Copyright (C) 2004-2006  The Xastir Group
 
 noinst_LIBRARIES=libshape.a
 libshape_a_SOURCES=shpopen.c \
