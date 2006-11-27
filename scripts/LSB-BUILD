@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD,v 1.5 2006/11/22 19:46:01 we7u Exp $
+# $Id: LSB-BUILD,v 1.6 2006/11/27 16:18:25 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # The trick:  First compile Lesstif as an LSB package, installed at
@@ -86,4 +86,10 @@ strip src/testawk
 strip callpass/callpass
 (sudo make install 2>&1) | tee install.log
 
+/opt/lsb/bin/lsbappchk -A /opt/lsb-xastir/bin/xastir
+
+#tar czf xastir.tgz /opt/lsb-xastir
+#sudo rm -rf /usr/src/packages/SOURCES/xastir*
+#sudo cp xastir.tgz /usr/src/packages/SOURCES/.
+#rpmbuild -bb --clean xastir-lsb.spec
 
