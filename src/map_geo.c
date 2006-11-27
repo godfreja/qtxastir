@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.73 2006/10/24 18:02:24 we7u Exp $
+ * $Id: map_geo.c,v 1.74 2006/11/27 16:06:49 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -444,7 +444,7 @@ void draw_geo_image_map (Widget w,
 			 int destination_pixmap,
 			 map_draw_flags *mdf) {
 #ifdef NO_GRAPHICS
-    fprintf(stderr,"XPM and/or ImageMagick support have not been compiled in.");
+    fprintf(stderr,"XPM and/or ImageMagick support have not been compiled in.\n");
 #else   // NO_GRAPHICS
     char file[MAX_FILENAME+1];      // Complete path/name of image file
     char short_filenm[MAX_FILENAME+1];
