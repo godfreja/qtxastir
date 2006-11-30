@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-LESSTIF,v 1.6 2006/11/27 16:19:44 we7u Exp $
+# $Id: LSB-BUILD-LESSTIF,v 1.7 2006/11/30 20:04:57 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # Compile lesstif-0.95.0 under Linux Standard Base 3.0.  Install
@@ -74,6 +74,7 @@ find . -type f -name Makefile -print | while read i
 
 (make 2>&1) | tee make.log
 
+#make -n install
 sudo make install
 
 
