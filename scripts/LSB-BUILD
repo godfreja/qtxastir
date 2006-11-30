@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD,v 1.9 2006/11/30 20:04:14 we7u Exp $
+# $Id: LSB-BUILD,v 1.10 2006/11/30 20:33:48 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # The trick:  First compile Lesstif as an LSB package, installed at
@@ -21,7 +21,10 @@
 #   cp PATH/libXt.a .      (lib from LSB CVS: "lsb/appbat" module)
 #   ln -s /opt/lsb-lesstif/lib/libXm.a (from our Lesstif compile)
 #   ln -s /opt/lsb-zlib/lib/libz.a
+#   ln -s /opt/lsb-jpeg/lib/libjpeg.a
+#   ln -s /usr/local/lib/libtiff.a
 #   ln -s /usr/local/lib/libproj.a
+#   ln -s /usr/local/lib/libgeotiff.a
 #
 #   cd /opt/lsb
 #   cp -R include include.xastir
