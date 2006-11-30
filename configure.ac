@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.159 2006/11/24 19:57:56 we7u Exp $
+# $Id: configure.ac,v 1.160 2006/11/30 20:02:25 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -297,21 +297,31 @@ fi
 
 
 #check for libtiff, libgeotiff
+# libjpeg.a and libz.a need to be compiled under LSB
+
 use_geotiff=yes
 AC_ARG_WITH(geotiff, [  --without-geotiff       Disable geotiff features.], use_geotiff=$withval)
 if test "${use_geotiff}" = "yes"; then
     if test "${use_proj}" = "yes" ; then
-        AC_CHECK_LIB(tiff, TIFFClose, use_tiff=yes
-        LIBS="$LIBS -ltiff"
-        AC_DEFINE(HAVE_TIFF, ,Define to 1 if you have the 'tiff' library (-ltiff)))
-        if test "${use_tiff}" = "yes"; then
-            use_geotiff=no
-            AC_CHECK_LIB(geotiff, GTIFNew, use_geotiff=yes
-	        LIBS="$LIBS -lgeotiff"
-            AC_DEFINE(HAVE_LIBGEOTIFF, ,Define to 1 if you have the `geotiff' library (-lgeotiff).))
+        if test "${use_lsb}" = "yes" ; then
+            use_tiff=yes
+            use_geotiff=yes
+            LIBS="$LIBS -lgeotiff -ltiff -ljpeg -lz -lproj"
+            AC_DEFINE(HAVE_TIFF, ,Define to 1 if you have the 'tiff' library (-ltiff))
+            AC_DEFINE(HAVE_LIBGEOTIFF, ,Define to 1 if you have the `geotiff' library (-lgeotiff).)
         else
-            echo "*** Warning: geotiff requires libtiff."
-            use_geotiff=no
+            AC_CHECK_LIB(tiff, TIFFClose, use_tiff=yes
+            LIBS="$LIBS -ltiff"
+            AC_DEFINE(HAVE_TIFF, ,Define to 1 if you have the 'tiff' library (-ltiff)))
+            if test "${use_tiff}" = "yes"; then
+                use_geotiff=no
+                AC_CHECK_LIB(geotiff, GTIFNew, use_geotiff=yes
+  	          LIBS="$LIBS -lgeotiff"
+                AC_DEFINE(HAVE_LIBGEOTIFF, ,Define to 1 if you have the `geotiff' library (-lgeotiff).))
+            else
+                echo "*** Warning: geotiff requires libtiff."
+                use_geotiff=no
+            fi
         fi
     else
         echo "*** Warning: geotiff requires libproj."
