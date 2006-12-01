@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.160 2006/11/30 20:02:25 we7u Exp $
+# $Id: configure.ac,v 1.161 2006/12/01 05:01:12 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -112,8 +112,19 @@ AC_SEARCH_LIBS(tan,math m)
 AC_CHECK_LIB([Xext], [XextAddDisplay])
 AC_CHECK_LIB([Xp], [XpGetDocumentData]) 
 AC_CHECK_LIB([Xt], [XtDisplay]) 
-AC_CHECK_LIB([Xm], [XmTextFindString]) 
-AC_CHECK_LIB([curl], [curl_global_init])
+AC_CHECK_LIB([Xm], [XmTextFindString])
+
+
+
+if test "${use_lsb}" = "no"; then 
+  AC_CHECK_LIB([curl], [curl_global_init])
+else
+  AC_DEFINE(HAVE_LIBCURL, , Define to 1 if your `shp' library has DBFGetFieldIndex. )
+  LIBS="${LIBS} -lcurl"
+fi
+
+
+
 # JMT - XXX - why is this here?
 AC_CHECK_LIB(compat, main, 
     [LIBCOMPAT="-lcompat"
