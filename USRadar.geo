@@ -1,5 +1,5 @@
 #
-# $Id: USRadar.geo,v 1.4 2004/03/15 17:08:23 we7u Exp $
+# $Id: USRadar.geo,v 1.5 2006/12/01 21:47:11 we7u Exp $
 #
 #US Composite Radar image (Unidata/LDM/Gempak) n5jxs 2003 08 25
 # Modified for accuracy, comments:  n5jxs 2004 03 15 1400UTC
@@ -32,5 +32,6 @@ REFRESH 720
 # The following should work for a 16-bit color map.
 #TRANSPARENT 0x0ffff
 # The following should work for all color maps, now.
-TRANSPARENT 0x0ffffffff
+#TRANSPARENT 0x0ffffffff
+TRANSPARENT 0x000000000
 
