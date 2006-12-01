@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.162 2006/12/01 19:32:37 we7u Exp $
+# $Id: configure.ac,v 1.163 2006/12/01 21:47:38 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -569,7 +569,11 @@ else
   ILIBS="$ILIBS       "
 fi
 if test "${use_imagemagick}" = "yes"; then
-  ILIBS="$ILIBS ImageMagick"
+  if test "${use_lsb}" = "yes"; then 
+    ILIBS="$ILIBS GraphicsMagick"
+  else
+    ILIBS="$ILIBS ImageMagick"
+  fi 
 else
   ILIBS="$ILIBS            "
 fi
@@ -724,7 +728,13 @@ echo
 echo "Building with AX25 ................................. : $use_ax25"
 echo "Building with Festival ............................. : $use_festival"
 echo "Building with GPSMan ............................... : $use_gpsman"
+
+if test "${use_lsb}" = "yes"; then 
+echo "Building with GraphicsMagick ....................... : $use_imagemagick"
+else
 echo "Building with ImageMagick .......................... : $use_imagemagick"
+fi
+
 echo "Building with libproj .............................. : $use_proj"
 echo "Building with GeoTiff .............................. : $use_geotiff"
 echo "Building with GDAL/OGR ............................. : $use_gdal"
