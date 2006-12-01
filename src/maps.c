@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.499 2006/08/31 21:36:06 we7u Exp $
+ * $Id: maps.c,v 1.500 2006/12/01 21:38:52 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -377,7 +377,7 @@ void maps_init(void)
     fprintf(stderr,"\nSupport for these additional map types has been compiled in: \n");
  
 #ifdef HAVE_IMAGEMAGICK
-    fprintf(stderr,"%10s   Image Map (ImageMagick library, many formats allowed)\n","geo");
+    fprintf(stderr,"%10s   Image Map (ImageMagick/GraphicsMagick library, many formats allowed)\n","geo");
 #endif  // HAVE_IMAGEMAGICK
 
 #ifndef NO_GRAPHICS
