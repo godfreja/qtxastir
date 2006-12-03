@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.60 2006/09/09 00:35:50 we7u Exp $
+ * $Id: track_gui.c,v 1.61 2006/12/03 21:50:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -445,7 +445,8 @@ static void* findu_transfer_thread(void *arg) {
 
         // Reset global "busy" variable
         fetching_findu_trail_now = 0;
-        
+
+        // End the thread
         return(NULL);
     }
 
