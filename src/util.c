@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.217 2006/11/03 20:31:50 we7u Exp $
+ * $Id: util.c,v 1.218 2006/12/03 21:54:07 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5023,8 +5023,15 @@ int fetch_remote_file(char *fileimg, char *local_filename) {
         curl_easy_setopt(curl, CURLOPT_PROXYAUTH, CURLAUTH_ANY);
 #endif  // LIBCURL_VERSION_NUM
 
-// Only newer libcurl has this?
-// curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
+
+#ifdef __LSB__
+        // This prevents a segfault for the case where we get a timeout on
+        // domain name lookup or file transfer.
+
+        // Only newer libcurl has this?
+        curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
+#endif // __LSB__
+
 
         ftpfile.filename = local_filename;
         ftpfile.stream = NULL;
