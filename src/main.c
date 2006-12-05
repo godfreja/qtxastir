@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.725 2006/11/14 15:41:19 we7u Exp $
+ * $Id: main.c,v 1.726 2006/12/05 20:45:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26664,7 +26664,7 @@ int main(int argc, char *argv[], char *envp[]) {
             // Check whether we're running Xastir for the first time.
             // If so, my_callsign will be "NOCALL".   In this case
             // write "worldhi.map" into ~/.xastir/config/selected_maps.sys
-            // so that we get the efault map on startup.  Also
+            // so that we get the default map on startup.  Also
             // request to bring up the Configure->Station dialog in
             // this case.
             //
