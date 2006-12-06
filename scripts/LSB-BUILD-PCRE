@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-PCRE,v 1.1 2006/11/30 21:14:45 we7u Exp $
+# $Id: LSB-BUILD-PCRE,v 1.2 2006/12/06 19:46:07 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # Compile pcre-6.7 under Linux Standard Base 3.0.  Install into
@@ -14,12 +14,14 @@ export LSBCC_WARN=1
 # be distributed along with the application.
 #export LSBCC_SHAREDLIBS=
 
+#CC=lsbcc CXX=lsbc++ ./configure \
 CC=lsbcc ./configure \
     --prefix=/opt/lsb-pcre \
     --exec_prefix=/opt/lsb-pcre \
-    --enable-static
+    --enable-static \
+    --disable-shared
 
-#make clean
+make clean
 
 (make 2>&1) | tee make.log
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-CURL,v 1.1 2006/12/01 05:05:18 we7u Exp $
+# $Id: LSB-BUILD-CURL,v 1.2 2006/12/06 19:46:07 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # Compile curl-7.16.0 under Linux Standard Base 3.0.  Install into
@@ -14,12 +14,13 @@ export LSBCC_WARN=1
 # be distributed along with the application.
 #export LSBCC_SHAREDLIBS=
 
-CC=lsbcc ./configure \
+CC=lsbcc CXX=lsbc++ ./configure \
     --prefix=/opt/lsb-curl \
     --exec_prefix=/opt/lsb-curl \
     --enable-static \
     --disable-ldap \
-    --without-libidn
+    --without-libidn \
+    --disable-shared
 
 make clean
 

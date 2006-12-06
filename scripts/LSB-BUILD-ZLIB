@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-ZLIB,v 1.1 2006/11/30 20:03:25 we7u Exp $
+# $Id: LSB-BUILD-ZLIB,v 1.2 2006/12/06 19:46:07 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
 
 # Compile zlib-1.2.3 0 under Linux Standard Base 3.0.  Install into
@@ -18,7 +18,7 @@ export LSBCC_WARN=1
 #
 sed -i -e 's/\$exec_prefix#/$prefix#/g' configure
 
-CC=lsbcc ./configure \
+CC=lsbcc CXX=lsbc++ ./configure \
     --prefix=/opt/lsb-zlib \
     --exec_prefix=/opt/lsb-zlib \
     --enable-static
