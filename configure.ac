@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.166 2006/12/07 17:33:25 we7u Exp $
+# $Id: configure.ac,v 1.167 2006/12/08 20:13:40 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -679,6 +679,21 @@ if test "${force_internal_shapelib}" = "yes"; then
   ILIBS=`echo $ILIBS | sed -e 's/ShapeLib/ShapeLib(internal)/g'`
   use_shapelib="yes (internal)"
 fi
+
+
+
+tmp_path="$ac_default_prefix"
+tmp_bin_path="$ac_default_prefix"
+if test "x$prefix" != xNONE; then
+  tmp_path="$prefix"
+  tmp_bin_path="$prefix"
+fi
+if test "x$exec_prefix" != xNONE; then
+  tmp_bin_path="$exec_prefix"
+fi
+AC_DEFINE_UNQUOTED(XASTIR_PATH, "`echo $tmp_path`", [Path to installed Xastir files.])
+AC_DEFINE_UNQUOTED(XASTIR_BIN_PATH, "`echo $tmp_bin_path`", [Path to installed Xastir binaries.])
+
 
 
 AC_DEFINE_UNQUOTED(XASTIR_INSTALLED_LIBS, "`echo $ILIBS`", [Defines the installed libs])
