@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.57 2006/12/08 14:44:23 we7u Exp $
+# $Id: acinclude.m4,v 1.58 2006/12/08 20:12:48 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -163,11 +163,16 @@ if test "$wget" != "no"; then
   AC_DEFINE_UNQUOTED(WGET_PATH, "${wget}", [Path to wget]) 
 fi
 
-AC_PATH_PROG(convert, [convert --version], no, $BINPATH)
-AC_CHECK_FILE(/usr/bin/convert.exe, convert="/usr/bin/convert")
-if test "$convert" != "no"; then
+if test "$use_lsb" = "yes"; then
   AC_DEFINE_UNQUOTED(HAVE_CONVERT, 1, [Define if you have convert]) 
-  AC_DEFINE_UNQUOTED(CONVERT_PATH, "${convert}", [Path to convert]) 
+  AC_DEFINE_UNQUOTED(CONVERT_PATH, "/opt/Xastir/bin/gm convert", [Path to convert]) 
+else
+  AC_PATH_PROG(convert, [convert --version], no, $BINPATH)
+  AC_CHECK_FILE(/usr/bin/convert.exe, convert="/usr/bin/convert")
+  if test "$convert" != "no"; then
+    AC_DEFINE_UNQUOTED(HAVE_CONVERT, 1, [Define if you have convert]) 
+    AC_DEFINE_UNQUOTED(CONVERT_PATH, "${convert}", [Path to convert]) 
+  fi
 fi
  
 AC_PATH_PROG(finger, [finger], no, $BINPATH)
