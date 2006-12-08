@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.56 2006/02/09 21:27:57 tvrusso Exp $
+# $Id: acinclude.m4,v 1.57 2006/12/08 14:44:23 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -170,6 +170,12 @@ if test "$convert" != "no"; then
   AC_DEFINE_UNQUOTED(CONVERT_PATH, "${convert}", [Path to convert]) 
 fi
  
+AC_PATH_PROG(finger, [finger], no, $BINPATH)
+if test "$finger" != "no"; then
+  AC_DEFINE_UNQUOTED(HAVE_FINGER, 1, [Define if you have finger]) 
+  AC_DEFINE_UNQUOTED(FINGER_PATH, "${finger}", [Path to finger]) 
+fi
+
 AC_PATH_PROG(lpr, [lpr /dev/null], no, $BINPATH)
 if test "$lpr" != "no"; then
   AC_DEFINE_UNQUOTED(HAVE_LPR, 1, [Define if you have lpr]) 
