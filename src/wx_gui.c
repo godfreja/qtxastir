@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.47 2006/08/31 21:27:08 we7u Exp $
+ * $Id: wx_gui.c,v 1.48 2006/12/08 14:45:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -232,7 +232,8 @@ end_critical_section(&wx_detailed_alert_shell_lock, "wx_gui.c:wx_alert_double_cl
     // Perform a "finger" command in another process
     xastir_snprintf(temp,
         sizeof(temp),
-        "/usr/bin/finger %s@wxsvr.net",
+        "%s %s@wxsvr.net",
+        FINGER_PATH,
         handle);
     if (!(pp = popen (temp, "r"))) {    // Go do the finger command
         perror (temp);  // Print an error message if it failed
