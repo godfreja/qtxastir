@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.167 2006/12/08 20:13:40 we7u Exp $
+# $Id: configure.ac,v 1.168 2006/12/08 21:10:18 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -293,6 +293,10 @@ fi
 if test "${use_lsb}" = "no"; then 
   AC_CHECK_HEADERS(X11/xpm.h, AC_SEARCH_LIBS(XpmWriteFileFromPixmap, Xpm, AC_DEFINE(HAVE_LIBXPM, , Define to 1 if you have the `Xpm' library (-lXpm). )))
   AC_CHECK_HEADERS(Xm/XpmI.h, AC_SEARCH_LIBS(XmeXpmWriteFileFromPixmap, Xm, AC_DEFINE(HAVE_LIBXPM_IN_XM, , Define to 1 if the `Xm' library (-lXm) is used for Xpm. )))
+else
+  AC_DEFINE(HAVE_LIBXPM, , Define to 1 if you have the `Xpm' library (-lXpm). )
+  AC_DEFINE(HAVE_LIBXPM_IN_XM, , Define to 1 if the `Xm' library (-lXm) is used for Xpm. )
+  AC_DEFINE(HAVE_X11_XPM_H, , Define to 1 if you have 'X11/xpm.h' )
 fi
  
  
