@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.58 2006/12/08 20:12:48 we7u Exp $
+# $Id: acinclude.m4,v 1.59 2006/12/12 15:49:39 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -175,12 +175,6 @@ else
   fi
 fi
  
-AC_PATH_PROG(finger, [finger], no, $BINPATH)
-if test "$finger" != "no"; then
-  AC_DEFINE_UNQUOTED(HAVE_FINGER, 1, [Define if you have finger]) 
-  AC_DEFINE_UNQUOTED(FINGER_PATH, "${finger}", [Path to finger]) 
-fi
-
 AC_PATH_PROG(lpr, [lpr /dev/null], no, $BINPATH)
 if test "$lpr" != "no"; then
   AC_DEFINE_UNQUOTED(HAVE_LPR, 1, [Define if you have lpr]) 
