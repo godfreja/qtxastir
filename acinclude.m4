@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.59 2006/12/12 15:49:39 we7u Exp $
+# $Id: acinclude.m4,v 1.60 2006/12/12 16:36:04 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -239,7 +239,6 @@ if test "$use_festival" != "no"; then
  AC_PATH_PROG(festival, [festival], no, $BINPATH)
  if test "$festival" != "no"; then
    AC_DEFINE_UNQUOTED(HAVE_FESTIVAL, 1, [Define if you have festival])
-   AC_DEFINE_UNQUOTED(FESTIVAL_PATH, "${festival}", [Path to festival])
  fi
 fi
 
