@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.596 2006/10/26 13:50:57 we7u Exp $
+ * $Id: db.c,v 1.597 2006/12/12 14:35:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3904,7 +3904,7 @@ void Station_data_destroy_track( /*@unused@*/ Widget widget, XtPointer clientDat
 
 
 // This function merely reformats the button callback in order to
-// call wx_alert_double_click_action, which expects the paramter in
+// call wx_alert_double_click_action, which expects the parameter in
 // calldata instead of in clientData.
 //
 void Station_data_wx_alert(Widget w, XtPointer clientData, /*@unused@*/ XtPointer calldata) {
