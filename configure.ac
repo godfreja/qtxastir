@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.169 2006/12/13 03:06:43 we7u Exp $
+# $Id: configure.ac,v 1.170 2006/12/13 06:46:09 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -479,7 +479,8 @@ if test "${use_graphicsmagick}" = "yes"; then
     LIBS="${MAGIC_LIB_DIR} `${MAGIC_BIN} --libs` $LIBS"
     AC_DEFINE(HAVE_GRAPHICSMAGICK, 1, [GraphicsMagick image library])
   fi
-else
+fi
+if test "${use_graphicsmagick}" = "no"; then
   use_imagemagick=yes
   AC_ARG_WITH(imagemagick,[  --without-imagemagick   Disable imagemagick features.],use_imagemagick=$withval)
   if test "${use_imagemagick}" = "yes"; then
@@ -488,6 +489,8 @@ else
 fi
 if test "${use_imagemagick}" = "yes" -o "${use_graphicsmagick}" = "yes"; then
   AC_DEFINE(HAVE_MAGICK, 1, [GraphicsMagick or ImageMagick library])
+else
+  AC_MSG_WARN(*** Building w/o GraphicsMagick or ImageMagick support. ***)
 fi
 
 

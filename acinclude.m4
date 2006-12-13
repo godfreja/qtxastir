@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.61 2006/12/13 03:06:43 we7u Exp $
+# $Id: acinclude.m4,v 1.62 2006/12/13 06:46:09 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -327,7 +327,7 @@ save_ldflags="$LDFLAGS"
 # First look for the needed Magick-config script, which tells us all
 # of the build options we need.
 #
-AC_CHECK_PROG(use_imagemagick, [Magick-config --version], yes, no) 
+AC_CHECK_PROG(use_imagemagick, [Magick-config], yes, no) 
 if test "$use_imagemagick" = "yes"; then
   MAGIC_BIN="Magick-config"
 else
@@ -408,7 +408,6 @@ fi
 
 
 
-# JMT - this is pure evil and will not be edited at the present time
 AC_DEFUN([XASTIR_CHECK_GRAPHICSMAGICK],
 [
 
@@ -422,6 +421,7 @@ save_ldflags="$LDFLAGS"
 # First look for the needed GraphicsMagick-config script, which tells us all
 # of the build options we need.
 #
+#use_graphicsmagick="no"
 AC_CHECK_PROG(use_graphicsmagick, [GraphicsMagick-config --version], yes, no) 
 if test "$use_graphicsmagick" = "yes"; then
   MAGIC_BIN="GraphicsMagick-config"
