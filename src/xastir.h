@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.53 2006/08/07 19:49:31 we7u Exp $
+ * $Id: xastir.h,v 1.54 2006/12/13 03:06:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -163,7 +163,7 @@ extern int index_maps_on_startup;
 #define FONT_DEFAULT FONT_MEDIUM
 extern char rotated_label_fontname[FONT_MAX][MAX_LABEL_FONTNAME];
 
-#ifdef HAVE_IMAGEMAGICK  //N0VH
+#ifdef HAVE_MAGICK  //N0VH
 extern int tiger_show_grid;
 extern int tiger_show_counties;
 extern int tiger_show_cities;
@@ -178,7 +178,7 @@ extern int tiger_show_statehwy;
 extern int tiger_show_water;
 extern int tiger_show_lakes;
 extern int tiger_show_misc;
-#endif  // HAVE_IMAGEMAGICK
+#endif  // HAVE_MAGICK
 
 #ifdef HAVE_LIBGEOTIFF
 extern int DRG_XOR_colors;

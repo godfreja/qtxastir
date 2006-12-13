@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.64 2006/08/31 21:36:06 we7u Exp $
+ * $Id: maps.h,v 1.65 2006/12/13 03:06:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -195,9 +195,9 @@ extern int snapshot_interval;
 extern int grid_size;
 
 #if !defined(NO_GRAPHICS)
-  #if defined(HAVE_IMAGEMAGICK)
+  #if defined(HAVE_MAGICK)
     extern float imagemagick_gamma_adjust;
-  #endif    // HAVE_IMAGEMAGICK
+  #endif    // HAVE_MAGICK
 #endif  // NO_GRAPHICS
 
 extern float raster_map_intensity;
