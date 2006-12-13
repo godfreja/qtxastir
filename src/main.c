@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.729 2006/12/13 03:06:46 we7u Exp $
+ * $Id: main.c,v 1.730 2006/12/13 06:50:49 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -683,7 +683,7 @@ char gps_map_filename_base[MAX_FILENAME];   // Same minus ".shp"
 char gps_map_filename_base2[MAX_FILENAME];   // Same minus ".shp" and color
 char gps_temp_map_filename[MAX_FILENAME];
 char gps_temp_map_filename_base[MAX_FILENAME];  // Same minus ".shp"
-char gps_dbfawk_format[]="BEGIN_RECORD {key=\"\"; lanes=1; color=%d; name=\"%s\"; filled=0; pattern=0; display_level=65536; label_level=128; label_color=8; symbol=\"\"}\n";
+char gps_dbfawk_format[]="BEGIN_RECORD {key=\"\"; lanes=3; color=%d; name=\"%s\"; filled=0; pattern=1; display_level=65536; label_level=128; label_color=8; symbol=\"\"}\n";
 int gps_map_color = 0;              // Chosen color of gps map
 int gps_map_color_offset;           // offset into colors array of that color.
 char gps_map_type[30];              // Type of GPS download
