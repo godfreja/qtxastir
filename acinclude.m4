@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.64 2006/12/14 05:34:41 we7u Exp $
+# $Id: acinclude.m4,v 1.65 2006/12/14 17:06:15 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -236,11 +236,11 @@ if test "$cp" != "no"; then
   AC_DEFINE_UNQUOTED(CP_PATH, "${cp}", [Path to cp]) 
 fi
  
-AC_PATH_PROG(cat, [cat], no, $BINPATH)
-if test "$cat" != "no"; then
-  AC_DEFINE_UNQUOTED(HAVE_CAT, 1, [Define if you have cat])
-  AC_DEFINE_UNQUOTED(CAT_PATH, "${cat}", [Path to cat])
-fi
+#AC_PATH_PROG(cat, [cat], no, $BINPATH)
+#if test "$cat" != "no"; then
+#  AC_DEFINE_UNQUOTED(HAVE_CAT, 1, [Define if you have cat])
+#  AC_DEFINE_UNQUOTED(CAT_PATH, "${cat}", [Path to cat])
+#fi
 
 if test "$use_festival" != "no"; then 
  AC_PATH_PROG(festival, [festival], no, $BINPATH)
