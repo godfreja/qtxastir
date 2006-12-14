@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.63 2006/12/14 05:02:15 we7u Exp $
+# $Id: acinclude.m4,v 1.64 2006/12/14 05:34:41 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -347,8 +347,8 @@ else
   if test "${found_im_config2}" = "yes"; then
     use_imagemagick=yes
     MAGIC_BIN="/sw/bin/Magick-config"
-  else
-    AC_MSG_WARN(*** Cannot find Magick-config:  Building w/o ImageMagick support. ***) 
+#  else
+#    AC_MSG_WARN(*** Cannot find Magick-config:  Building w/o ImageMagick support. ***) 
   fi
 fi
 #
@@ -450,8 +450,8 @@ else
   if test "${found_gm_config2}" = "yes"; then
     use_graphicsmagick=yes
     MAGIC_BIN="/sw/bin/GraphicsMagick-config"
-  else
-    AC_MSG_WARN(*** Cannot find GraphicsMagick-config:  Building w/o GraphicsMagick support. ***) 
+#  else
+#    AC_MSG_WARN(*** Cannot find GraphicsMagick-config:  Building w/o GraphicsMagick support. ***) 
   fi
 fi
 #
