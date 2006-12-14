@@ -1,7 +1,12 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD,v 1.29 2006/12/12 16:38:13 we7u Exp $
+# $Id: LSB-BUILD,v 1.30 2006/12/14 20:17:40 we7u Exp $
 # Copyright (C) 2006  The Xastir Group
+
+# TODO:
+# Check for a link at /opt/Xastir/share/xastir.  If found, remove it
+# until we're done creating the .tar.bz2 file.  Perhaps do an rm -rf
+# there and symlink it to /usr/local/share/xastir when done.
 
 # NOTE:
 # "Free Standards Group, FSG, Linux Standard Base, LSB, Free
