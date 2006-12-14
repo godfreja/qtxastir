@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.48 2006/08/31 21:36:06 we7u Exp $
+ * $Id: util.h,v 1.49 2006/12/14 20:14:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -115,6 +115,7 @@ extern void compute_current_DR_position(DataRow *p_station, long *x_long, long *
 
 extern int  filethere(char *fn);
 extern int  filecreate(char *fn);
+extern int copy_file(char *infilename, char *outfilename);
 extern time_t file_time(char *fn);
 extern void load_wx_alerts_from_log(void);
 extern void log_data(char *file, char *line);

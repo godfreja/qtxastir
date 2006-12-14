@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.219 2006/12/04 16:27:37 we7u Exp $
+ * $Id: util.c,v 1.220 2006/12/14 20:14:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3447,6 +3447,49 @@ time_t file_time(char *fn) {
 
     return(-1);
 }
+
+
+
+
+
+// Function written by Adam Hahn, AI4QB.  Contributed to the public
+// domain.  We've modified it from his initial code so any bugs are
+// our fault.
+int copy_file(char *infilename, char *outfilename) {
+    FILE *infile, *outfile;
+    char *buffer;
+    size_t numread = 0;
+
+
+    if ((infile = fopen(infilename,"rb")) > (FILE *)0) {
+
+        if ((outfile = fopen(outfilename,"wb")) > (FILE *)0) {
+            buffer = (char *)malloc(1024);
+
+            while (!feof(infile)) {
+                numread = fread(buffer, 1, 1024, infile);
+                fwrite(buffer, 1, numread, outfile);
+            }
+            free(buffer);
+            fflush(outfile);
+            fclose(outfile);
+        }
+        else {
+            fprintf(stderr,"Error opening destination file %s for writing", outfilename);
+            fclose(infile);
+            return(1);
+        }
+        fclose(infile);
+    }
+    else {
+        fprintf(stderr,"Error opening source file %s for reading", infilename);
+        return(1);
+    }
+    return 0;
+}
+
+
+
 
 
 // used by log_data 
