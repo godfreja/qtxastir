@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.65 2006/12/14 17:06:15 we7u Exp $
+# $Id: acinclude.m4,v 1.66 2006/12/14 20:17:18 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -157,11 +157,6 @@ test -d $d/bin && echo $BINPATH | grep -- $d/bin > /dev/null || BINPATH="$BINPAT
 done
 
 # it would be much nicer to do this in a for loop
-AC_PATH_PROG(wget, [wget --version], no, $BINPATH)
-if test "$wget" != "no"; then
-  AC_DEFINE_UNQUOTED(HAVE_WGET, 1, [Define if you have wget]) 
-  AC_DEFINE_UNQUOTED(WGET_PATH, "${wget}", [Path to wget]) 
-fi
 
 if test "$use_lsb" = "yes"; then
   AC_DEFINE_UNQUOTED(HAVE_CONVERT, 1, [Define if you have gm or convert]) 
@@ -230,17 +225,6 @@ if test "$gv" != "no"; then
     fi
   fi
 fi
-AC_PATH_PROG(cp, [cp], no, $BINPATH)
-if test "$cp" != "no"; then
-  AC_DEFINE_UNQUOTED(HAVE_CP, 1, [Define if you have cp]) 
-  AC_DEFINE_UNQUOTED(CP_PATH, "${cp}", [Path to cp]) 
-fi
- 
-#AC_PATH_PROG(cat, [cat], no, $BINPATH)
-#if test "$cat" != "no"; then
-#  AC_DEFINE_UNQUOTED(HAVE_CAT, 1, [Define if you have cat])
-#  AC_DEFINE_UNQUOTED(CAT_PATH, "${cat}", [Path to cat])
-#fi
 
 if test "$use_festival" != "no"; then 
  AC_PATH_PROG(festival, [festival], no, $BINPATH)

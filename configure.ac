@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.170 2006/12/13 06:46:09 we7u Exp $
+# $Id: configure.ac,v 1.171 2006/12/14 20:17:18 we7u Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 
@@ -121,6 +121,19 @@ if test "${use_lsb}" = "no"; then
 else
   AC_DEFINE(HAVE_LIBCURL, , Define to 1 if your `shp' library has DBFGetFieldIndex. )
   LIBS="${LIBS} -lcurl"
+fi
+#
+# If no libcurl found, test for wget binary.  This test doesn't work
+# yet and the wget code below always gets run.  Eventually I'd like
+# to make this work so we don't do unnecessary tests, plus we don't
+# define things we don't use in "config.h".
+#
+if test "x${HAVE_LIBCURL}" = "x" -a "${use_lsb}" = "no"; then
+  AC_PATH_PROG(wget, [wget --version], no, $BINPATH)
+  if test "$wget" != "no"; then
+    AC_DEFINE_UNQUOTED(HAVE_WGET, 1, [Define if you have wget]) 
+    AC_DEFINE_UNQUOTED(WGET_PATH, "${wget}", [Path to wget]) 
+  fi
 fi
 
 
