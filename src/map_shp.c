@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.126 2006/12/13 06:50:50 tvrusso Exp $
+ * $Id: map_shp.c,v 1.127 2006/12/15 06:02:31 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -903,6 +903,7 @@ void draw_shapefile_map (Widget w,
 #ifdef WITH_DBFAWK
     if (Dbf_sigs) {   /* see if we have a .dbfawk file that matches */
         sig_info = dbfawk_find_sig(Dbf_sigs,dbfsig,file);
+        if (sig_info) gps_flag = 0; // trump gps_flag-- use dbfawk
         if (!sig_info) {
             fprintf(stderr,"No DBFAWK signature for %s!  Using default.\n",filenm);
             sig_info = dbfawk_default_sig;
@@ -1937,11 +1938,6 @@ void draw_shapefile_map (Widget w,
 #ifdef WITH_DBFAWK
             if (sig_info) {
                 dbfawk_parse_record(sig_info->prog,hDBF,fld_info,structure);
-                // If we are a GPS file, we disable gps_flag because we've 
-                // found a matching dbfawk file.  dbfawk always trumps 
-                // hard-coded GPS directory behavior.
-                gps_flag = 0;
-
                 if (debug_level & 16) {
                     fprintf(stderr,"dbfawk parse of structure %d: ",structure);
                     fprintf(stderr,"color=%d ",color);
