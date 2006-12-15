@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.66 2006/12/14 20:17:18 we7u Exp $
+# $Id: acinclude.m4,v 1.67 2006/12/15 16:06:44 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -458,8 +458,7 @@ if test "${use_graphicsmagick}" = "yes"; then
     if test "${use_graphicsmagick}" = "no"; then
       AC_MSG_WARN(*** Cannot find GraphicsMagick include files: Building w/o GraphicsMagick support. ***)
     else
-      AC_CHECK_LIB([GraphicsMagick], [WriteImage],
-AC_DEFINE(HAVE_GRAPHICSMAGICK, 1, [GraphicsMagick image library]), use_graphicsmagick="no")
+      AC_CHECK_LIB([GraphicsMagick], [WriteImage], AC_DEFINE(HAVE_GRAPHICSMAGICK, 1, [GraphicsMagick image library]), use_graphicsmagick="no")
       if test "${use_graphicsmagick}" = "no"; then
         AC_MSG_WARN(*** Cannot find GraphicsMagick library files: Building w/o GraphicsMagick support. ***)
       fi
