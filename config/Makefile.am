@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.29 2006/01/17 21:03:53 we7u Exp $
+# $Id: Makefile.am,v 1.30 2006/12/15 18:32:34 tvrusso Exp $
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
@@ -16,6 +16,7 @@ EXTRA_DIST = \
     xastir.rgb \
     gps_wpt.dbfawk \
     24kgrid.dbfawk \
+    stored_track.dbfawk \
     tgr2shp.dbfawk \
     tgr2shppoly.dbfawk \
     tgrcty.dbfawk \
