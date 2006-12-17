@@ -1,6 +1,6 @@
 #!/bin/bash +x
 #
-# $Id: get-maptools.sh,v 1.4 2006/11/17 08:53:57 tvrusso Exp $
+# $Id: get-maptools.sh,v 1.5 2006/12/17 06:55:43 we7u Exp $
 #
 #
 # Script originally to retrieve and install Shapelib. 
@@ -28,9 +28,9 @@
 # Look at the README for more information on the program.
 #
 
-# uncomment as appropriate. You'll want gnu tar
-#TAR=/usr/local/bin/tar 
-TAR=/bin/tar
+# You'll want it to find gnu tar here
+#TAR=gtar
+TAR=tar
 
 MAPTOOLS=http://dl.maptools.org/dl
 
