@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2006  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.69 2006/12/18 19:35:52 we7u Exp $
+# $Id: acinclude.m4,v 1.70 2006/12/18 19:45:56 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -120,9 +120,9 @@ cygwin*)
 ;;
 darwin*)
   system=Darwin
-  LDFLAGS="-L/sw/lib -L/opt/lib -L/opt/local/lib $LDFLAGS"
-  CPPFLAGS="-I/sw/include -I/opt/include -I/opt/local/include $CPPFLAGS"
-  EXTRA_BIN_PATH=":/opt/bin:/opt/local/bin:/sw/bin"
+  LDFLAGS="-L/sw/lib -L/opt/local/lib $LDFLAGS"
+  CPPFLAGS="-I/sw/include -I/opt/local/include $CPPFLAGS"
+  EXTRA_BIN_PATH=":/opt/local/bin:/sw/bin"
 ;;
 freebsd*)
   system=FreeBSD
@@ -135,7 +135,7 @@ linux*)
 #
 #
 # Useful for testing MacOSX paths on a Linux development box:
-#  EXTRA_BIN_PATH=":/opt/bin:/opt/local/bin:/sw/bin"
+#  EXTRA_BIN_PATH=":/opt/local/bin:/sw/bin"
 #
 #
 ;;
