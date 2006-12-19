@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.220 2006/12/14 20:14:16 we7u Exp $
+ * $Id: util.c,v 1.221 2006/12/19 21:39:20 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5555,4 +5555,24 @@ void set_dangerous( char *ptr ) {
 // Clear string printed out by segfault handler
 void clear_dangerous(void) {
     dangerous_operation[0] = '\0';
+}
+
+
+// Write out a WKT file
+void xastirWriteWKT(char *filename)
+{
+    // This "WKT" string describes the coordinate system we use in Xastir.
+    // We'll use this string to write out ".prj" files to associate with 
+    // shapefiles we create from GPS or APRS tracks.
+    char Xastir_WKT[] = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_84\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]]";
+
+    FILE *f;
+
+    f=fopen(filename,"w"); // open for write
+    if (f != NULL) {
+        fprintf(f,"%s\n",Xastir_WKT);
+        fclose(f);
+    } else {
+        fprintf(stderr,"Could not open file %s for writing\n",filename);
+    }        
 }

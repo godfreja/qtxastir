@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.128 2006/12/15 18:32:34 tvrusso Exp $
+ * $Id: map_shp.c,v 1.129 2006/12/19 21:39:20 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -120,9 +120,6 @@ int RTree_hitarray_size=0;
 int RTree_hitarray_index=0;
 
 
-
-
-
 //This trivial routine is used by the RTreeSearch as a callback when it finds
 // a match.
 int RTreeSearchCallback(int id, void* arg) 
@@ -184,7 +181,8 @@ void create_shapefile_map(char *dir, char *shapefile_name, int type,
     int max_objects = 1;
     char credit_string[] = "Created by Xastir, http://www.xastir.org";
     char temp_shapefile_name[MAX_FILENAME];
-
+    char temp_prj_name[MAX_FILENAME];
+    FILE *f;
 
     if (debug_level & 16) {
         fprintf(stderr,"create_shapefile_map\n");
@@ -246,6 +244,13 @@ void create_shapefile_map(char *dir, char *shapefile_name, int type,
             temp_shapefile_name);
         return;
     }
+
+    // Write out a WKT in a .prj file to go with this shapefile.
+    xastir_snprintf(temp_prj_name,
+                    sizeof(temp_prj_name),
+                    "%s.prj",
+                    temp_shapefile_name);
+    xastirWriteWKT(temp_prj_name);
 
     // Create the different fields we'll use to store the
     // attributes:
