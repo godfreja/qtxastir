@@ -1,6 +1,6 @@
 #!/bin/bash +x
 #
-# $Id: get-maptools.sh,v 1.6 2006/12/20 01:38:18 we7u Exp $
+# $Id: get-maptools.sh,v 1.7 2006/12/20 06:54:33 we7u Exp $
 #
 #
 # Script originally to retrieve and install Shapelib. 
@@ -28,21 +28,56 @@
 # Look at the README for more information on the program.
 #
 
-TAR=gtar
-if ($TAR --version | grep "GNU")
+#
+# Figure out whether we have bsdtar or gnutar on the system.  Either
+# should work.  If not, we'll have to check for "gunzip" and then do
+# "gunzip -c file.tar.gz | tar xf -" instead.
+#
+echo
+echo Checking for necessary utilities...
+if (wget --version 2>&1 | grep "GNU")
 then
-  echo Found GNU tar
+    echo ***Found wget.  Good!
 else
-  echo Did not find gtar, checking for tar
-  TAR=tar
-  if ($TAR --version | grep "GNU")
-  then
-    echo Found GNU tar
-  else
-    echo Did not find GNU tar
-    exit
-  fi
+    echo ***Did not find wget.  Exiting...
 fi
+TAR=gtar
+if ($TAR --version 2>&1 | grep "GNU")
+then
+    echo ***Found GNU tar as \'gtar\'.  Good!
+else
+    echo Did not find gtar, checking for tar...
+    TAR=tar
+    if ($TAR --version 2>&1 | grep "GNU")
+    then
+        echo ***Found GNU tar as \'tar\'.  Good!
+    else
+        echo Did not find GNU tar.  Checking for bsdtar...
+        if ($TAR --version 2>&1 | grep "bsdtar")
+        then
+            echo ***Found bsdtar as \'tar\'.  Good!
+        else
+            echo Did not find bsdtar.  Checking for gunzip...
+            if (gunzip --version 2>&1 | grep "GNU")
+            then
+                echo ***Found gunzip.  Good!
+                echo Checking for tar...
+                if test -e /usr/local/bin/tar -o -e /usr/bin/tar -o -e /bin/tar
+                then
+                    echo ***Found tar.  Good!
+                    TAR=""
+                else
+                    echo ***Did not find tar.  Exiting...
+                    exit
+                fi
+            else
+                echo ***Did not find gunzip.  Exiting...
+                exit
+            fi
+        fi
+    fi
+fi
+#echo $TAR
 
 
 MAPTOOLS=http://dl.maptools.org/dl
@@ -201,12 +236,22 @@ do
 
 	if (wget $XA_LIB_URL)
 	then
-	    if ($TAR -xzf $XA_LIB_FILE )
-	    then 
-	        printf "%s successfully downloaded.\n" $XA_LIB_FILE
-	    else 
-	        printf "ERROR: %s not successfully downloaded - skipping.\n" $XA_LIB_FILE
-	    fi 
+            if test x"$TAR" != x
+            then
+                if ($TAR -xzf $XA_LIB_FILE )
+                then 
+                    printf "%s successfully downloaded.\n" $XA_LIB_FILE
+                else 
+                    printf "ERROR: %s not successfully downloaded - skipping.\n" $XA_LIB_FILE
+                fi 
+            else
+                if (gunzip -c $XA_LIB_FILE | tar xf - )
+                then 
+                    printf "%s successfully downloaded.\n" $XA_LIB_FILE
+                else 
+                    printf "ERROR: %s not successfully downloaded - skipping.\n" $XA_LIB_FILE
+                fi 
+            fi
 	fi 
 
 	printf "Building %s\n\n" $XA_LIB
