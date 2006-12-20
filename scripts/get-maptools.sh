@@ -1,6 +1,6 @@
 #!/bin/bash +x
 #
-# $Id: get-maptools.sh,v 1.5 2006/12/17 06:55:43 we7u Exp $
+# $Id: get-maptools.sh,v 1.6 2006/12/20 01:38:18 we7u Exp $
 #
 #
 # Script originally to retrieve and install Shapelib. 
@@ -28,9 +28,22 @@
 # Look at the README for more information on the program.
 #
 
-# You'll want it to find gnu tar here
-#TAR=gtar
-TAR=tar
+TAR=gtar
+if ($TAR --version | grep "GNU")
+then
+  echo Found GNU tar
+else
+  echo Did not find gtar, checking for tar
+  TAR=tar
+  if ($TAR --version | grep "GNU")
+  then
+    echo Found GNU tar
+  else
+    echo Did not find GNU tar
+    exit
+  fi
+fi
+
 
 MAPTOOLS=http://dl.maptools.org/dl
 
