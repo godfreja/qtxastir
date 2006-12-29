@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.165 2006/12/13 03:06:43 we7u Exp $
+ * $Id: xa_config.c,v 1.166 2006/12/29 06:37:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -539,6 +539,9 @@ fprintf(stderr,"X:%d  y:%d\n", (int)x_return, (int)y_return);
         sprintf (name, "%f", raster_map_intensity);
         store_string(fout, "RASTER_MAP_INTENSITY", name);
 #endif  // NO_GRAPHICS
+
+        store_string(fout, "PRINT_PROGRAM", printer_program);
+        store_string(fout, "PREVIEWER_PROGRAM", previewer_program);
 
         store_int (fout, "MAP_LETTERSTYLE", letter_style);
         store_int (fout, "MAP_ICONOUTLINESTYLE", icon_outline_style);
@@ -1191,6 +1194,19 @@ void load_data_or_default(void) {
         }
     }
 #endif  // NO_GRAPHICS
+
+    if (!get_string ("PRINT_PROGRAM", printer_program, sizeof(printer_program))
+            || printer_program[0] == '\0') {
+        xastir_snprintf(printer_program,
+            sizeof(printer_program),
+            LPR_PATH);
+    }
+    if (!get_string ("PREVIEWER_PROGRAM", previewer_program, sizeof(previewer_program))
+            || previewer_program[0] == '\0') {
+        xastir_snprintf(previewer_program,
+            sizeof(previewer_program),
+            GV_PATH);
+    }
 
     letter_style = get_int ("MAP_LETTERSTYLE", 0, 2, 1);
 
