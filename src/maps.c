@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.504 2006/12/29 07:27:03 we7u Exp $
+ * $Id: maps.c,v 1.505 2006/12/29 18:10:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3849,7 +3849,13 @@ begin_critical_section(&print_postscript_dialog_lock, "maps.c:Print_postscript_d
             xastir_snprintf(printer_program,
                 sizeof(printer_program),
                 "%s",
+#ifdef LPR_PATH
+                // Path to LPR if defined
                 LPR_PATH);
+#else // LPR_PATH
+                // Empty path
+                "");
+#endif // LPR_PATH
         }
 
 //fprintf(stderr,"%s\n", printer_program);
@@ -3868,7 +3874,13 @@ begin_critical_section(&print_postscript_dialog_lock, "maps.c:Print_postscript_d
             xastir_snprintf(previewer_program,
                 sizeof(previewer_program),
                 "%s",
+#ifdef GV_PATH
+                // Path to GV if defined
                 GV_PATH);
+#else // GV_PATH
+                // Empty string
+                "");
+#endif // GV_PATH
         }
 //fprintf(stderr,"%s\n", previewer_program);
     }

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.166 2006/12/29 06:37:18 we7u Exp $
+ * $Id: xa_config.c,v 1.167 2006/12/29 18:10:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1199,13 +1199,27 @@ void load_data_or_default(void) {
             || printer_program[0] == '\0') {
         xastir_snprintf(printer_program,
             sizeof(printer_program),
+            "%s",
+#ifdef LPR_PATH
+            // Path to LPR if defined
             LPR_PATH);
+#else // LPR_PATH
+            // Empty path
+            "");
+#endif // LPR_PATH
     }
     if (!get_string ("PREVIEWER_PROGRAM", previewer_program, sizeof(previewer_program))
             || previewer_program[0] == '\0') {
         xastir_snprintf(previewer_program,
             sizeof(previewer_program),
+            "%s",
+#ifdef GV_PATH
+            // Path to GV if defined
             GV_PATH);
+#else // GV_PATH
+            // Empty path
+            "");
+#endif // GV_PATH
     }
 
     letter_style = get_int ("MAP_LETTERSTYLE", 0, 2, 1);
