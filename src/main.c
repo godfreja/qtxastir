@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.733 2006/12/19 21:39:20 tvrusso Exp $
+ * $Id: main.c,v 1.734 2006/12/29 00:14:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5386,7 +5386,7 @@ fprintf(stderr,"Setting up widget's X/Y position at X:%d  Y:%d\n",
             MY_FOREGROUND_COLOR,
             MY_BACKGROUND_COLOR,
             NULL);
-    XtAddCallback( print_button, XmNactivateCallback, Print_properties, NULL );
+    XtAddCallback( print_button, XmNactivateCallback, Print_Postscript, NULL );
 
     config_button = XtVaCreateManagedWidget(langcode("PULDNFI001"),
             xmCascadeButtonGadgetClass,
