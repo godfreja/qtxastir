@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.506 2006/12/29 18:57:37 we7u Exp $
+ * $Id: maps.c,v 1.507 2006/12/30 02:35:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3829,8 +3829,10 @@ void draw_centered_label_text (Widget w, int rotation, int x, int y, int label_l
 //WE7U3
 static void Print_postscript_destroy_shell(/*@unused@*/ Widget widget, XtPointer clientData, /*@unused@*/ XtPointer callData) {
     Widget shell = (Widget) clientData;
-    XtPopdown(shell);
     char *temp_ptr;
+
+
+    XtPopdown(shell);
 
 begin_critical_section(&print_postscript_dialog_lock, "maps.c:Print_postscript_destroy_shell" );
 
