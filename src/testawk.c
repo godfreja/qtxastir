@@ -1,8 +1,8 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testawk.c,v 1.26 2006/04/24 19:21:42 we7u Exp $
+ * $Id: testawk.c,v 1.27 2007/01/03 19:39:12 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2003-2006  The Xastir Group
+ * Copyright (C) 2003-2007  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

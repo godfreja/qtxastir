@@ -1,8 +1,8 @@
 # acinclude.m4 for Xastir
 #
-# Copyright (C) 2000-2006  The Xastir Group
+# Copyright (C) 2000-2007  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.72 2006/12/21 02:51:50 we7u Exp $
+# $Id: acinclude.m4,v 1.73 2007/01/03 19:41:06 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.

@@ -1,10 +1,10 @@
 
 
-// $Id: hashtable_itr.h,v 1.4 2006/01/17 21:05:20 we7u Exp $
+// $Id: hashtable_itr.h,v 1.5 2007/01/03 19:39:08 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
-// Portions Copyright (C) 2004-2006  The Xastir Project
+// Portions Copyright (C) 2004-2007  The Xastir Group
 
 
 #ifndef __HASHTABLE_ITR_CWC22__

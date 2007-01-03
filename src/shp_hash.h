@@ -1,6 +1,6 @@
 
-// $Id: shp_hash.h,v 1.5 2006/01/17 21:05:20 we7u Exp $
-// Copyright (C) 2004-2006  The Xastir Group
+// $Id: shp_hash.h,v 1.6 2007/01/03 19:39:12 we7u Exp $
+// Copyright (C) 2004-2007  The Xastir Group
 
 
 #ifndef __XASTIR_SHP_HASH_H

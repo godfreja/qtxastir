@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.7 2006/01/17 21:08:53 we7u Exp $
+# $Id: Makefile.am,v 1.8 2007/01/03 19:41:07 we7u Exp $
 #
-# Copyright (C) 2000-2006  The Xastir Group
+# Copyright (C) 2000-2007  The Xastir Group
 #
 helpdir = ${pkgdatadir}/help
 EXTRA_DIST = \

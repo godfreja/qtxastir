@@ -1,9 +1,9 @@
 
-// $Id: geo-find.c,v 1.12 2006/04/24 19:21:41 we7u Exp $
+// $Id: geo-find.c,v 1.13 2007/01/03 19:39:08 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
- * Portions Copyright (C) 2004-2006  The Xastir Group
+ * Portions Copyright (C) 2004-2007  The Xastir Group
  *
  * The geo_find() function defined here uses an address map built by 
  * geo-*-to-* to parse an address and convert it to geographical

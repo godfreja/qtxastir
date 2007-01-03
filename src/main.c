@@ -1,9 +1,9 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.734 2006/12/29 00:14:01 we7u Exp $
+ * $Id: main.c,v 1.735 2007/01/03 19:39:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2006  The Xastir Group
+ * Copyright (C) 2000-2007  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -187,12 +187,12 @@ extern char compiledate[];
 
 
 
-// Copyright 2006.
+// Copyright 2007.
 // Added the above "Copyright" just so that grep would find these
 // lines and we could update the years in the Help->About message
 // each time.  Otherwise it often gets missed when we're updating
 // the years.
-#define ABOUT_MSG "X Amateur Station Tracking and Information Reporting\n\nhttp://www.xastir.org\n\n1999-2006, The Xastir Group"
+#define ABOUT_MSG "X Amateur Station Tracking and Information Reporting\n\nhttp://www.xastir.org\n\n1999-2007, The Xastir Group"
 
 
 // Define this if you want an xastir.pid file created in the

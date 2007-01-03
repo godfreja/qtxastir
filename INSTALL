@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.90 2006/12/08 20:12:10 we7u Exp $
+$Id: INSTALL,v 1.91 2007/01/03 19:41:06 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -1480,5 +1480,5 @@ amount of memory while you're debugging memory leaks with libgc.
 APRS(tm) is a Trademark of Bob Bruninga
 
 Copyright (C) 1999 Frank Giannandrea
-Copyright (C) 2000-2006 The Xastir Group
+Copyright (C) 2000-2007 The Xastir Group
 

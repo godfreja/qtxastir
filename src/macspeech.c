@@ -1,6 +1,6 @@
-/* Copyright (C) 2004-2006  The Xastir Group                             */
+/* Copyright (C) 2004-2007  The Xastir Group                             */
 /*                                                                       */
-/* $Id: macspeech.c,v 1.7 2006/04/24 19:21:41 we7u Exp $ */
+/* $Id: macspeech.c,v 1.8 2007/01/03 19:39:09 we7u Exp $ */
 /*                                                                       */
 /*  First draft                                                          */
 /*                  KB3EGH 03/24/2004                                    */

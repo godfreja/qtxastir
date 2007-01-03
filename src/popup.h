@@ -1,9 +1,9 @@
 /*
- * $Id: popup.h,v 1.7 2006/08/21 13:58:47 we7u Exp $
+ * $Id: popup.h,v 1.8 2007/01/03 19:39:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2006  The Xastir Group
+ * Copyright (C) 2000-2007  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

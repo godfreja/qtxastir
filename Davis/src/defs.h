@@ -1,8 +1,8 @@
 
-// $Id: defs.h,v 1.4 2006/10/26 15:52:42 we7u Exp $
+// $Id: defs.h,v 1.5 2007/01/03 19:41:06 we7u Exp $
 //
 // Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
-// Portions Copyright (C) 2004-2006 The Xastir Group
+// Portions Copyright (C) 2004-2007 The Xastir Group
 //
 //
 // Dummy info here for now...

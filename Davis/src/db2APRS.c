@@ -1,9 +1,9 @@
 /******************************************************************
  *
- * @(#)$Id: db2APRS.c,v 1.7 2006/10/26 15:52:42 we7u Exp $
+ * @(#)$Id: db2APRS.c,v 1.8 2007/01/03 19:41:06 we7u Exp $
  *
  * Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
- * Portions Copyright (C) 2004-2006 The Xastir Group
+ * Portions Copyright (C) 2004-2007 The Xastir Group
  *
  * (see the files README and COPYING for more details)
  *

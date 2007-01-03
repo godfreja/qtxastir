@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $Id: xastir-migrate.sh,v 1.6 2006/01/17 21:08:55 we7u Exp $
+# $Id: xastir-migrate.sh,v 1.7 2007/01/03 19:40:50 we7u Exp $
 #
-# Copyright (C) 2003-2006  The Xastir Group
+# Copyright (C) 2003-2007  The Xastir Group
 #
 # migrate from old xastir USER FILES to new directory structure.
 # Stuff that was under /usr/local/xastir is now under /usr/local/share/xastir/

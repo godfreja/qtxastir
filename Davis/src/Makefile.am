@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.4 2006/01/26 22:51:07 we7u Exp $
+# $Id: Makefile.am,v 1.5 2007/01/03 19:41:06 we7u Exp $
 #
-# Copyright (C) 2004-2006  The Xastir Group
+# Copyright (C) 2004-2007  The Xastir Group
 #
 
 bin_PROGRAMS = db2APRS

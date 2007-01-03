@@ -1,6 +1,6 @@
 #!/bin/bash +x
 #
-# $Id: get-maptools.sh,v 1.7 2006/12/20 06:54:33 we7u Exp $
+# $Id: get-maptools.sh,v 1.8 2007/01/03 19:40:49 we7u Exp $
 #
 #
 # Script originally to retrieve and install Shapelib. 
@@ -8,7 +8,7 @@
 # Modified 20060321 to generalize for all maptools - N8YSZ. 
 #
 #
-# Copyright (C) 2000-2006  The Xastir Group
+# Copyright (C) 2000-2007  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

@@ -1,9 +1,9 @@
 /*
- * $Id: util.h,v 1.50 2006/12/19 21:39:20 tvrusso Exp $
+ * $Id: util.h,v 1.51 2007/01/03 19:39:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2006  The Xastir Group
+ * Copyright (C) 2000-2007  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
