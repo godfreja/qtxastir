@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.219 2007/01/03 19:40:19 we7u Exp $
+# $Id: language-Dutch.sys,v 1.220 2007/01/05 19:52:35 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -1157,6 +1157,10 @@ PRINT0012|Bezig met printen naar bestand...||
 PRINT0013|Converteren naar postscript...||
 PRINT0014|Gereed met aanmaken print bestand||
 PRINT0015|Printer status||
+#
+# Print Dialog
+PRINT1001|Direct to:||
+PRINT1002|Via Previewer:||
 #
 # Locate Feature Dialog
 FEATURE001|Naam:||

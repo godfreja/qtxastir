@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.208 2007/01/03 19:40:20 we7u Exp $
+# $Id: language-English.sys,v 1.209 2007/01/05 19:52:35 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -1149,6 +1149,10 @@ PRINT0012|Dumping image to file...||
 PRINT0013|Converting to Postscript...||
 PRINT0014|Finished creating print file||
 PRINT0015|Print Status||
+#
+# Print Dialog
+PRINT1001|Direct to:||
+PRINT1002|Via Previewer:||
 #
 # Locate Feature and Find Address Dialogs
 FEATURE001|Name:||

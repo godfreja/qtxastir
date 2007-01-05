@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.216 2007/01/03 19:40:21 we7u Exp $
+# $Id: language-Spanish.sys,v 1.217 2007/01/05 19:52:35 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -1146,6 +1146,10 @@ PRINT0012|Guardar imagen a un archivo...||
 PRINT0013|Convirtiendo a Postscript...||
 PRINT0014|Creando archivo de impresión Finalizado||
 PRINT0015|Estado de Impresora||
+#
+# Print Dialog
+PRINT1001|Direct to:||
+PRINT1002|Via Previewer:||
 #
 # Diálogo de localizar forma
 FEATURE001|Nombre:||

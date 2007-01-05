@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.209 2007/01/03 19:40:20 we7u Exp $
+# $Id: language-French.sys,v 1.210 2007/01/05 19:52:35 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -1151,6 +1151,10 @@ PRINT0012|Sauvegarde de l'image dans un fichier...||
 PRINT0013|Conversion Postscript...||
 PRINT0014|Création du fichier d'impression finie||#'
 PRINT0015|Etat d'impression||#'
+#
+# Print Dialog
+PRINT1001|Direct to:||
+PRINT1002|Via Previewer:||
 #
 # Locate Feature Dialog
 FEATURE001|Nom:||

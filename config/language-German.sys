@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.217 2007/01/03 19:40:20 we7u Exp $
+# $Id: language-German.sys,v 1.218 2007/01/05 19:52:35 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -1152,6 +1152,10 @@ PRINT0012|Gebe Bild auf Datei aus...||
 PRINT0013|Konvertiere in Postscript...||
 PRINT0014|Erstellen der Druckdatei beendet||
 PRINT0015|Druckerstatus||
+#
+# Print Dialog
+PRINT1001|Direct to:||
+PRINT1002|Via Previewer:||
 #
 # Locate Feature Dialog
 FEATURE001|Name:||
