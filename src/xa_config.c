@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.168 2007/01/03 19:39:13 we7u Exp $
+ * $Id: xa_config.c,v 1.169 2007/01/08 21:47:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -319,7 +319,12 @@ char *get_data_base_dir(char *dir) {
     char *env_ptr;
 
     // Snag this variable from the environment if it exists there,
-    // else grab it from the define in config.h
+    // else grab it from the define from the compile command-line
+    // that should look like one of these:
+    //
+    // -DXASTIR_DATA_BASE=\"/opt/Xastir/share/xastir\"
+    // -DXASTIR_DATA_BASE=\"/usr/local/share/xastir\"
+    //
     xastir_snprintf(base,
         sizeof(base),
         "%s",
