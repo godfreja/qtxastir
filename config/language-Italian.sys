@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.210 2007/01/05 19:52:35 we7u Exp $
+# $Id: language-Italian.sys,v 1.211 2007/01/12 16:49:17 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -242,6 +242,7 @@ PULDQUS003|Cerca le stazioni meteo|W|
 PULDNMG004|Imposta risposta automatica ai messaggi in arrivo|S|
 PULDNMG005|Risposta automatica ai messaggi in arrivo|R|
 PULDNMG006|Modalità Satellite Ack|M|
+PULDNMG007|Show Pending Messages|P|
 #
 # Menu "Interfaces"
 PULDNTNT04|Interface Control||
