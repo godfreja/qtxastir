@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.73 2007/01/03 19:41:06 we7u Exp $
+# $Id: acinclude.m4,v 1.74 2007/01/12 17:13:30 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -329,7 +329,6 @@ use_imagemagick=no
 AC_PATH_PROG(MAGIC_BIN, [Magick-config], no, $BINPATH)
 if test "$MAGIC_BIN" != "no"; then
   use_imagemagick=yes
-  AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library])
 #else
 #  AC_MSG_WARN(*** Cannot find Magick-config:  Building w/o ImageMagick support. ***)
 fi
@@ -415,7 +414,6 @@ use_graphicsmagick=no
 AC_PATH_PROG(GMAGIC_BIN, [GraphicsMagick-config], no, $BINPATH)
 if test "$GMAGIC_BIN" != "no"; then
   use_graphicsmagick=yes
-  AC_DEFINE(HAVE_GRAPHICSMAGICK, 1, [GraphicsMagick image library])
 #else
 #  AC_MSG_WARN(*** Cannot find GraphicsMagick-config:  Building w/o GraphicsMagick support. ***)
 fi
