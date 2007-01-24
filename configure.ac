@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.176 2007/01/03 19:41:06 we7u Exp $
+# $Id: configure.ac,v 1.177 2007/01/24 21:19:40 tvrusso Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 
@@ -110,7 +110,11 @@ LIBS="$LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
 
 AC_SEARCH_LIBS(tan,math m)
 AC_CHECK_LIB([Xext], [XextAddDisplay])
-AC_CHECK_LIB([Xp], [XpGetDocumentData]) 
+# TVR: commented this out.  It appears that XpGetDocumentData is not used
+# *anywhere* in Xastir, and the fact that this is being probed for has 
+# confused at least one user into thinking he needed to install the X Printing
+# Extension library when it was completely unnecessary.
+# AC_CHECK_LIB([Xp], [XpGetDocumentData]) 
 AC_CHECK_LIB([Xt], [XtDisplay]) 
 AC_CHECK_LIB([Xm], [XmTextFindString])
 
