@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.219 2007/01/12 16:49:16 we7u Exp $
+# $Id: language-German.sys,v 1.220 2007/02/06 14:14:37 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -457,7 +457,7 @@ WPUPCFC003|dd.ddddd|d|
 WPUPCFC004|dd mm.mmm|m|
 WPUPCFC005|dd mm ss.s|s|
 WPUPCFC006|UTM|U|
-WPUPCFC007|USNG/MGRS||
+WPUPCFC007|USNG/MGRS2||
 WPUPCFC008|UTM mit Spezialzonen||
 #
 # PopUp "GPS Einstellungen"
