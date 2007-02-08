@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.77 2007/01/03 19:39:10 we7u Exp $
+ * $Id: map_geo.c,v 1.78 2007/02/08 21:02:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -339,7 +339,8 @@ void draw_toporama_map (Widget w,
         my_zoom = 0.02;
              
     xastir_snprintf(fileimg, sizeof(fileimg),
-        "http://mm.aprs.net/toporama.cgi?set=%d|lat=%f|lon=%f|width=%d|height=%d|zoom=%0.3f",
+//        "http://mm.aprs.net/toporama.cgi?set=%d|lat=%f|lon=%f|width=%d|height=%d|zoom=%0.3f",
+        "http://www2.findu.com/toporama.cgi?set=%d|lat=%f|lon=%f|width=%d|height=%d|zoom=%0.3f",
         toporama_flag,  // Scale, 50 or 250
         lat_center,
         long_center,
