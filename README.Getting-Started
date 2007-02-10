@@ -1,5 +1,5 @@
 
-$Id: README.Getting-Started,v 1.31 2007/01/03 19:41:06 we7u Exp $
+$Id: README.Getting-Started,v 1.32 2007/02/10 06:52:50 we7u Exp $
 
 
 Hello new user, and welcome to Xastir!
@@ -567,6 +567,7 @@ Global Operations:
 LeftClick       Select Menu or GUI Item (when in menus or dialogs)
 LeftDblClick    FetchAlertText (when in View->Wx Alerts dialog)
 RightClick      OptionsMenu
+Home            Center the map on your home station
 PageUp          ZoomOut
 PageDown        ZoomIn
 ArrowUp         PanUp
