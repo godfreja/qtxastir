@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.512 2007/02/06 20:30:49 we7u Exp $
+ * $Id: maps.c,v 1.513 2007/02/13 20:22:07 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3517,7 +3517,7 @@ int map_visible_lat_lon (double map_min_y,    // f_bottom_map_boundary
     // The quick rejection algorithm:
     //
     if (map_max_y < f_SE_corner_latitude ) return(0); // map below view
-    if (map_min_x > f_SE_corner_longitude) return(0); // view left of  map
+    if (map_max_x < f_NW_corner_longitude) return(0); // map left of view
     if (map_min_y > f_NW_corner_latitude ) return(0); // view below map
     if (map_min_x > f_SE_corner_longitude) return(0); // view left of  map
 
@@ -5679,6 +5679,7 @@ void draw_map (Widget w, char *dir, char *filenm, alert_entry *alert,
         // See if map is visible.  If not, skip it.
         if (onscreen == MAP_NOT_VIS) {  // Map is not visible, skip it.
             //fprintf(stderr,"map not visible\n");
+	    if (alert) alert->flags[on_screen] = 'N';
             return;
         }
     }
