@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.513 2007/02/13 20:22:07 gstueve Exp $
+ * $Id: maps.c,v 1.514 2007/02/14 15:20:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3499,6 +3499,17 @@ int map_inside_viewport_lat_lon(double map_min_y,
 //
 //          64,800,000 (-90 deg. or 90S)
 //
+// *******************                  ******************* max_y
+// *NW               * +                *                 * +
+// *                 *                  *                 *
+// *                 *                  *                 *
+// *      View       * latitude (y)     *       Map       *
+// *                 *                  *                 *
+// *                 *                  *                 *
+// *               SE* -                *                 * -
+// *******************                  ******************* min_y
+// -  longitude(x)   +                  - min_x     max_x +
+
 /////////////////////////////////////////////////////////////////////
 int map_visible_lat_lon (double map_min_y,    // f_bottom_map_boundary
                          double map_max_y,    // f_top_map_boundary
