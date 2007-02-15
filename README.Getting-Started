@@ -1,5 +1,5 @@
 
-$Id: README.Getting-Started,v 1.32 2007/02/10 06:52:50 we7u Exp $
+$Id: README.Getting-Started,v 1.33 2007/02/15 16:41:39 we7u Exp $
 
 
 Hello new user, and welcome to Xastir!
@@ -772,6 +772,12 @@ Install a command-line audio player.  Call out the path/name of that
 player in the File->Configure->Audio Alarms dialog.  Common ones are
 vplay and auplay, but there are many others.  Enable the types of
 alarms you desire in that same dialog.
+
+You should be able to test it manually from a shell by typing the
+command in something like this:  vplay filename
+
+Once you find a command that works, type it into Xastir's Audio
+Alarms dialog exactly the same except omit the filename.
 
 
 Enabling Synthesized Speech:
