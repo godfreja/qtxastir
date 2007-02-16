@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.79 2007/02/10 03:31:04 we7u Exp $
+ * $Id: map_geo.c,v 1.80 2007/02/16 19:48:31 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2002,7 +2002,7 @@ fprintf(stderr,"2 ");
     }
 
     if (debug_level & 16)
-        fprintf(stderr,"Colors = %ld\n", image->colors);
+        fprintf(stderr,"Colors = %d\n", image->colors);
 
     // Set up our own version of the color map.
     if (image->storage_class == PseudoClass && image->colors <= 256) {
