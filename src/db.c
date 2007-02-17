@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.599 2007/01/05 20:20:48 we7u Exp $
+ * $Id: db.c,v 1.600 2007/02/17 04:11:30 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7030,11 +7030,11 @@ static void extract_multipoints(DataRow *p_station,
     int data_size;
 
 
-    if (debug_level && MULTI_DEBUG)
+    if (debug_level & MULTI_DEBUG)
         fprintf(stderr,"extract_multipoints: start\n");
 
     if (data == NULL) {
-        if (debug_level && MULTI_DEBUG)
+        if (debug_level & MULTI_DEBUG)
             fprintf(stderr,"extract_multipoints: Return\n");
         return;
     }
@@ -7172,7 +7172,7 @@ static void extract_multipoints(DataRow *p_station,
                     if (p_station->multipoint_data == NULL) {
                         p_station->num_multipoints = 0;
                         fprintf(stderr,"Couldn't malloc MultipointRow'\n");
-                        if (debug_level && MULTI_DEBUG)
+                        if (debug_level & MULTI_DEBUG)
                             fprintf(stderr,"extract_multipoints: Return\n");
                         return;
                     }
@@ -7235,7 +7235,7 @@ static void extract_multipoints(DataRow *p_station,
             fprintf(stderr,"    station has %d points\n", p_station->num_multipoints);
     }
 
-    if (debug_level && MULTI_DEBUG)
+    if (debug_level & MULTI_DEBUG)
         fprintf(stderr,"extract_multipoints: Return\n");
 }
 
