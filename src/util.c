@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.222 2007/01/03 19:39:13 we7u Exp $
+ * $Id: util.c,v 1.223 2007/02/21 16:47:31 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1490,6 +1490,9 @@ time_t time_from_aprsstring(char *aprs_time) {
  
         default:
             break;
+    }
+    if (day > 31) {
+        day = 31; // Wierd, can't have too many days in the month!
     }
 
     // We set up our alert_time so that it points into the same
