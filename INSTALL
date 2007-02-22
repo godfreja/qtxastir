@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.93 2007/02/16 21:01:58 we7u Exp $
+$Id: INSTALL,v 1.94 2007/02/22 16:14:55 we7u Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -668,7 +668,7 @@ First Time Install:
      compile:
 
         cd Gr*
-        ./configure --with-quantum-depth=16 --without-magick-plus-plus --without-perl --without-gslib
+        ./configure --with-quantum-depth=16 --enable-shared
         make
         su -c 'make install'
 
