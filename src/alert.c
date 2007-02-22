@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.102 2007/02/22 15:20:08 gstueve Exp $
+ * $Id: alert.c,v 1.103 2007/02/22 15:26:52 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1239,7 +1239,7 @@ void alert_build_list(Message *fill) {
                 entry.alert_tag,
                 compressed_wx);     // Stick the long string in here
 
-            if (ret < 3) {
+            if (ret != 3) {
                 fprintf(stderr,"sscanf parsed %d/3 values in alert.c\n", ret);
                 compressed_wx[0] = '\0';  // Remove stale compressed alerts.
             }
