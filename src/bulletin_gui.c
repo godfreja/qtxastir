@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.38 2007/01/03 19:39:07 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.39 2007/02/27 23:19:08 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -237,12 +237,6 @@ void bulletin_data_add(char *call_sign, char *from_call, char *data,
         char *seq, char type, char from) {
     int distance = -1;
 
-    // Update the View->Bulletins dialog if it's up
-    bulletin_message(from_call,
-        call_sign,
-        data,
-        sec_now());
-
     // Add to the message database
     (void)msg_data_add(call_sign,
         from_call,
@@ -302,6 +296,12 @@ void bulletin_data_add(char *call_sign, char *from_call, char *data,
 //            fprintf(stderr,", but distance didn't work out!\n");
         }
     }
+    // Update the View->Bulletins dialog if it's up
+    bulletin_message(from_call,
+        call_sign,
+        data,
+        sec_now());
+
 }
 
 
