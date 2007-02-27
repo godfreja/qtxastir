@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.103 2007/02/22 15:26:52 gstueve Exp $
+ * $Id: alert.c,v 1.104 2007/02/27 21:33:03 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1060,7 +1060,7 @@ void alert_build_list(Message *fill) {
     }
 
     // Empty this string first
-    uncompressed_wx[0] = '\0';
+    uncompressed_wx[0] = uncompressed_wx[1] = '\0';
 
     // Check for "SKY" text in the "call_sign" field.
     if (strncmp(fill->call_sign,"SKY",3) == 0) {
@@ -1242,6 +1242,7 @@ void alert_build_list(Message *fill) {
             if (ret != 3) {
                 fprintf(stderr,"sscanf parsed %d/3 values in alert.c\n", ret);
                 compressed_wx[0] = '\0';  // Remove stale compressed alerts.
+                compressed_wx_packet = 0; //Clear flag in error condition.
             }
 
             compressed_wx[255] = '\0';
