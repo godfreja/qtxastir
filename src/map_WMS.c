@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.25 2007/01/03 19:39:10 we7u Exp $
+ * $Id: map_WMS.c,v 1.26 2007/03/06 19:31:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -101,7 +101,8 @@
 #define XASTIR_PACKAGE_VERSION PACKAGE_VERSION
 #undef PACKAGE_VERSION
 #ifdef HAVE_GRAPHICSMAGICK
-#include <GraphicsMagick/magick/api.h>
+/*#include <GraphicsMagick/magick/api.h>*/
+#include <magick/api.h>
 #else   // HAVE_GRAPHICSMAGICK
 #include <magick/api.h>
 #endif  // HAVE_GRAPHICSMAGICK 
