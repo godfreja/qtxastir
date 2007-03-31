@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.39 2007/03/08 05:17:10 tvrusso Exp $
+ * $Id: database.h,v 1.40 2007/03/31 19:49:40 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -640,4 +640,6 @@ void Show_Aloha_Stats(Widget w, XtPointer clientData,
                       XtPointer callData); // popup window
 
 int comp_by_dist(const void *,const void *);// used only for qsort
+DataRow * sanity_check_time_list(time_t); // used only for debugging
+
 #endif /* XASTIR_DATABASE_H */
