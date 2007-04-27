@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.607 2007/04/27 13:52:12 we7u Exp $
+ * $Id: db.c,v 1.608 2007/04/27 16:55:18 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -18427,7 +18427,7 @@ void dump_time_sorted_list(void) {
         time = localtime(&p_station->sec_heard);
 
         fprintf(stderr,"\t%s\t%ld\t%02d/%02d %02d:%02d:%02d\n",
-                p_station->call_sign, p_station->sec_heard,
+                p_station->call_sign, (long int) p_station->sec_heard,
                 time->tm_mon+1,time->tm_mday,
                 time->tm_hour, time->tm_min, time->tm_sec);
     }
