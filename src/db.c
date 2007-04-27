@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.604 2007/04/16 18:17:23 tvrusso Exp $
+ * $Id: db.c,v 1.605 2007/04/27 13:45:15 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -18416,7 +18416,7 @@ DataRow * sanity_check_time_list(time_t remove_time)  {
 // Debugging tool
 // dump out the entire time-sorted list starting from oldest and proceeding
 // to newest
-void dump_time_sorted_list() {
+void dump_time_sorted_list(void) {
     DataRow *p_station, *p_station_t_newer;
     struct tm *time;
     fprintf(stderr,"\tTime-sorted list dump \n");
