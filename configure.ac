@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.178 2007/01/27 18:41:12 tvrusso Exp $
+# $Id: configure.ac,v 1.179 2007/05/02 19:14:11 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 
@@ -9,14 +9,14 @@
 # SET VERSION HERE!
 #
 # AC_INIT():
-# It should look something like this:  (xastir, 1.8.5, xastir@xastir.org)
+# It should look something like this:  (xastir, 1.9.0, xastir@xastir.org)
 # The revision number must contain at least one '.' and two digits.
 # AM_INIT_AUTOMAKE():
-# It should look something like this:  (xastir, 1.8.5)
+# It should look something like this:  (xastir, 1.9.0)
 # The revision number must contain at least one '.' and two digits.
 #
-AC_INIT(xastir, 1.8.5, xastir@xastir.org)
-AM_INIT_AUTOMAKE(xastir, 1.8.5)
+AC_INIT(xastir, 1.9.0, xastir@xastir.org)
+AM_INIT_AUTOMAKE(xastir, 1.9.0)
 #########################################################################
 
 
