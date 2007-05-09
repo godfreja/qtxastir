@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.31 2007/01/03 19:40:19 we7u Exp $
+# $Id: Makefile.am,v 1.32 2007/05/09 17:36:43 tvrusso Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -19,6 +19,7 @@ EXTRA_DIST = \
     stored_track.dbfawk \
     tgr2shp.dbfawk \
     tgr2shppoly.dbfawk \
+    tgr2shppoly_2006.dbfawk \
     tgrcty.dbfawk \
     tgrkgl.dbfawk \
     tgrlk.dbfawk \
