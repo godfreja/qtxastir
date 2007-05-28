@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.97 2007/01/03 19:39:10 we7u Exp $
+ * $Id: main.h,v 1.98 2007/05/28 23:59:20 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -133,6 +133,7 @@ extern int serial_char_pacing;  // Inter-character delay in ms.
 extern int disable_all_maps;
 extern int re_sort_maps;
 extern Widget trackme_button;
+extern Widget CAD_close_polygon_menu_item;
 extern int debug_level;
 extern int my_position_valid;
 extern int using_gps_position;
