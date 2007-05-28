@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.225 2007/05/28 19:51:31 tvrusso Exp $
+ * $Id: util.c,v 1.226 2007/05/28 19:53:52 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5627,7 +5627,10 @@ char * makeMultiline(int numPairs, double *lon, double *lat, char colorStyle,
     
     // the APRS spec requires a max of 43 chars in the comment section of 
     // objects, which leaves room for only so many vertices in a multiline 
-    //   number allowed= (43-(6-4))/2=16
+    //   number allowed= (43-(6-5))/2=16
+    // 43chars - 6 for the sequence number- 5 for the starting pattern leaves
+    // 32 characters for lat/lon pairs, or 16 pairs
+
     if ( numPairs > 16) {
         returnString = NULL;
     } else {
