@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.51 2007/01/03 19:39:13 we7u Exp $
+ * $Id: util.h,v 1.52 2007/05/28 19:51:31 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -169,6 +169,9 @@ extern void set_dangerous( char *ptr );
 extern void clear_dangerous(void);
 
 void xastirWriteWKT(char *name);
+char * makeMultiline(int numPairs, double *lon, double *lat, char colorStyle,
+                     int lineType, char* sqnc,
+                     double *lonCentr, double *latCentr );
 
 #endif // __XASTIR_UTIL_H
 
