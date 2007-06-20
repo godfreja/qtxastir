@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.26 2007/03/06 19:31:13 we7u Exp $
+ * $Id: map_WMS.c,v 1.27 2007/06/20 15:42:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -143,8 +143,7 @@ void draw_WMS_map (Widget w,
         char *filenm,
         int destination_pixmap,
         char *URL,
-        int do_check_trans,
-        unsigned long trans_color,
+        transparent_color_record *c_trans_color_head,
         int nocache) {  // If non-zero, don't use cached version
 
 
@@ -963,8 +962,8 @@ void draw_WMS_map (Widget w,
                         l = map_x + map_y * image->columns;
                         trans_skip = 1; // possibily transparent
                         if (image->storage_class == PseudoClass) {
-                            if ( do_check_trans &&
-                                    check_trans(my_colors[index_pack[l]],trans_color)) {
+                            if ( c_trans_color_head &&
+                                    check_trans(my_colors[index_pack[l]],c_trans_color_head)) {
                                 trans_skip = 1; // skip it
                             }
                             else {
@@ -977,8 +976,8 @@ void draw_WMS_map (Widget w,
                                             pixel_pack[l].green * raster_map_intensity,
                                             pixel_pack[l].blue * raster_map_intensity,
                                             &my_colors[0].pixel);
-                            if ( do_check_trans &&
-                                    check_trans(my_colors[0],trans_color)) {
+                            if ( c_trans_color_head &&
+                                    check_trans(my_colors[0],c_trans_color_head)) {
                                 trans_skip = 1; // skip it
                             }
                             else {

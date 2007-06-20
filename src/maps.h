@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.68 2007/01/03 19:39:11 we7u Exp $
+ * $Id: maps.h,v 1.69 2007/06/20 15:42:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -209,8 +209,6 @@ extern void Print_Postscript(Widget widget, XtPointer clientData, XtPointer call
 extern void map_plot (Widget w, long max_x, long max_y, long x_long_cord, long y_lat_cord, unsigned char color, long object_behavior, int destination_pixmap, int draw_filled); 
 
 extern void map_gdal_init(void);
-
-extern int check_trans (XColor c, unsigned long c_trans_color);
 
 // A struct to pass down in to map driver functions so they can have 
 // driver-specific flags.  Most drivers won't care about any (or even all)
