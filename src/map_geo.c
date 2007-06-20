@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.83 2007/06/20 15:42:55 we7u Exp $
+ * $Id: map_geo.c,v 1.84 2007/06/20 16:11:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -181,7 +181,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm,
     void new_trans_color(unsigned long trans_color) {
         transparent_color_record *p;
 
-fprintf(stderr,"New transparent color: %lx\n", trans_color);
+//fprintf(stderr,"New transparent color: %lx\n", trans_color);
         p = (transparent_color_record *)malloc( sizeof(transparent_color_record) );
         // Fill in value
         p->trans_color = trans_color;
