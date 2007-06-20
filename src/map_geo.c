@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.84 2007/06/20 16:11:43 we7u Exp $
+ * $Id: map_geo.c,v 1.85 2007/06/20 16:25:47 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -164,6 +164,7 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm,
 
 
 
+    // Empty out the linked list containing transparent colors
     void empty_trans_color_list(void) {
         transparent_color_record *p;
 
@@ -178,13 +179,17 @@ void draw_geo_image_map (Widget w, char *dir, char *filenm,
 
 
 
+    // Add a new transparent color to the linked list
     void new_trans_color(unsigned long trans_color) {
         transparent_color_record *p;
 
 //fprintf(stderr,"New transparent color: %lx\n", trans_color);
+
         p = (transparent_color_record *)malloc( sizeof(transparent_color_record) );
+
         // Fill in value
         p->trans_color = trans_color;
+
         // Link it to transparent color list
         p->next = trans_color_head;
         trans_color_head = p;
@@ -644,7 +649,11 @@ void draw_geo_image_map (Widget w,
 
 
     // Read the .geo file to find out map filename and tiepoint info
+
+    // Empty the transparent color list before we start reading in a
+    // new .geo file.
     empty_trans_color_list();
+
     n_tp = 0;
     geo_datum[0]      = '\0';
     geo_projection[0] = '\0';
