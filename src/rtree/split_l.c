@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: split_l.c,v 1.5 2007/01/03 19:38:41 we7u Exp $
+ * $Id: split_l.c,v 1.6 2007/06/29 20:22:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -61,10 +61,10 @@ static void RTreeGetBranches(struct Node *N, struct Branch *B)
 	BranchCount = MAXKIDS(n) + 1;
 
 	/* calculate rect containing all in the set */
-	CoverSplit = BranchBuf[0].rect;
+	l_CoverSplit = BranchBuf[0].rect;
 	for (i=1; i<MAXKIDS(n)+1; i++)
 	{
-		CoverSplit = RTreeCombineRect(&CoverSplit, &BranchBuf[i].rect);
+		l_CoverSplit = RTreeCombineRect(&l_CoverSplit, &BranchBuf[i].rect);
 	}
 
 	RTreeInitNode(n);
@@ -159,8 +159,8 @@ static void RTreePickSeeds(struct PartitionVars *P)
 		}
 
 		/* find width of the whole collection along this dimension */
-		width[dim] = CoverSplit.boundary[high] -
-			     CoverSplit.boundary[dim];
+		width[dim] = l_CoverSplit.boundary[high] -
+			     l_CoverSplit.boundary[dim];
 	}
 
 	/* pick the best separation dimension and the two seed rects */
@@ -397,7 +397,7 @@ static void RTreePrintPVars(struct PartitionVars *p)
 	printf("count[1] = %d  area = %f\n", p->count[1], p->area[1]);
 	printf("total area = %f  effectiveness = %3.2f\n",
 		p->area[0] + p->area[1],
-		RTreeRectSphericalVolume(&CoverSplit)/(p->area[0]+p->area[1]));
+		RTreeRectSphericalVolume(&l_CoverSplit)/(p->area[0]+p->area[1]));
 
 	printf("cover[0]:\n");
 	RTreePrintRect(&p->cover[0], 0);
