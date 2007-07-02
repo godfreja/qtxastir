@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.131 2007/01/03 19:39:10 we7u Exp $
+ * $Id: map_shp.c,v 1.132 2007/07/02 23:37:47 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1795,7 +1795,7 @@ void draw_shapefile_map (Widget w,
             RTree_hitarray_index=0;
             // the callback will be executed every time the search finds a 
             // shape whose bounding box overlaps the viewport.
-            nhits = RTreeSearch(si->root, &viewportRect, 
+            nhits = Xastir_RTreeSearch(si->root, &viewportRect, 
                                 RTreeSearchCallback, 0);
             //fprintf(stderr,"Found %d hits in %s\n",nhits,file);
         } else {

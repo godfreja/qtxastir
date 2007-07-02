@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: card.h,v 1.4 2007/01/03 19:38:41 we7u Exp $
+ * $Id: card.h,v 1.5 2007/07/02 23:37:48 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -35,15 +35,15 @@
 #ifndef __CARD__
 #define __CARD__
 
-extern int NODECARD;
-extern int LEAFCARD;
+extern int Xastir_NODECARD;
+extern int Xastir_LEAFCARD;
 
 /* balance criteria for node splitting */
 /* NOTE: can be changed if needed. */
-#define MinNodeFill (NODECARD / 2)
-#define MinLeafFill (LEAFCARD / 2)
+#define MinNodeFill (Xastir_NODECARD / 2)
+#define MinLeafFill (Xastir_LEAFCARD / 2)
 
-#define MAXKIDS(n) ((n)->level > 0 ? NODECARD : LEAFCARD)
+#define MAXKIDS(n) ((n)->level > 0 ? Xastir_NODECARD : Xastir_LEAFCARD)
 #define MINFILL(n) ((n)->level > 0 ? MinNodeFill : MinLeafFill)
 
 #endif

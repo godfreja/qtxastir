@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: split_l.h,v 1.6 2007/07/02 12:55:45 tvrusso Exp $
+ * $Id: split_l.h,v 1.7 2007/07/02 23:37:48 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -38,9 +38,9 @@
 
 #define METHODS 1
 
-struct Branch BranchBuf[MAXCARD+1];
-int BranchCount;
-struct Rect CoverSplit;
+struct Branch Xastir_BranchBuf[MAXCARD+1];
+int Xastir_BranchCount;
+struct Rect Xastir_CoverSplit;
 
 /* variables for finding a partition */
 struct PartitionVars
@@ -51,4 +51,4 @@ struct PartitionVars
 	int count[2];
 	struct Rect cover[2];
 	RectReal area[2];
-} Partitions[METHODS];
+} Xastir_Partitions[METHODS];
