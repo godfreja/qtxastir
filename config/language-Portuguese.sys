@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.209 2007/02/06 14:14:37 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.210 2007/07/02 19:12:53 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -430,6 +430,7 @@ WPUPCFD029|Ver boletins de distancia zero||
 WPUPCFD030|Desactivar dupe-checks de  posit||
 WPUPCFD031|Load predefined objects from file||
 WPUPCFD032|My trails in one color||
+WPUPCFD033|ALTNET:||
 #
 # PopUp "Configurar - momento certo"
 WPUPCFTM01|Configurar momento certo|||

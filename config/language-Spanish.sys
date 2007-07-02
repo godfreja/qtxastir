@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.219 2007/02/06 14:14:37 we7u Exp $
+# $Id: language-Spanish.sys,v 1.220 2007/07/02 19:12:53 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -429,6 +429,7 @@ WPUPCFD029|Ver boletines de zero-distancia||
 WPUPCFD030|Disable Posit Dupe-Checks||
 WPUPCFD031|Load predefined objects from file||
 WPUPCFD032|My trails in one color||
+WPUPCFD033|ALTNET:||
 #
 # Menu "Configurar - Cronómetro"
 WPUPCFTM01|Configurar Cronómetro||
