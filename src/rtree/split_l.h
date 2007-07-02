@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: split_l.h,v 1.5 2007/06/29 20:22:45 we7u Exp $
+ * $Id: split_l.h,v 1.6 2007/07/02 12:55:45 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -40,7 +40,7 @@
 
 struct Branch BranchBuf[MAXCARD+1];
 int BranchCount;
-struct Rect l_CoverSplit;
+struct Rect CoverSplit;
 
 /* variables for finding a partition */
 struct PartitionVars
