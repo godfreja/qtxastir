@@ -1,6 +1,6 @@
                   Xastir Frequently Asked Questions
 
-$Id: FAQ,v 1.75 2007/07/02 21:34:27 we7u Exp $
+$Id: FAQ,v 1.76 2007/07/02 22:08:09 we7u Exp $
 
 The latest version of this FAQ is always available from the Xastir
 project's CVS repository on SourceForge, at
@@ -1038,6 +1038,17 @@ The Answers
     if so.  Check the File->Configure->Timing dialog for the
     "Internet Map Timeout" setting: Adjust it upwards if Xastir is
     timing out fetching the remove map.
+
+    If all else fails, try removing the ~/.xastir directory and all
+    contents.  Warning:  This will cause you to lose all of your
+    personal Xastir configuration, including callsign, location,
+    bookmarks, map levels and other map settings, etc.  Once you've
+    done this, verify that your LANG setting is either "C" or
+    "en_US", with no additional characters in there, then start
+    Xastir from that same shell with the correct LANG setting.
+    Xastir should index all of your maps on startup. After it is
+    complete, bring up the Map Chooser and all available maps should
+    be listed.
 
 5.  Features
 
