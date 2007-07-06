@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.184 2007/07/06 19:04:07 we7u Exp $
+# $Id: configure.ac,v 1.185 2007/07/06 19:17:44 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 
@@ -702,6 +702,15 @@ if test "${use_lsb}" = "yes"; then
 else
   ILIBS="$ILIBS    "
 fi
+if test "${use_curl}" = "yes"; then
+  ILIBS="$ILIBS libcurl"
+else
+  if test "${use_wget}" = "yes"; then
+  ILIBS="$ILIBS wget   "
+  else
+    ILIBS="$ILIBS        "
+  fi
+fi
 
 # Write out the library information to "summary.log".  Here we want
 # the spaces for the undefined pieces, so REGRESSION_TESTS formats
@@ -826,7 +835,7 @@ echo "  Building with map caching .......................... : $use_map_cache"
 echo "  Building with rtree indexing ....................... : $use_rtree"
 echo "  Building with internet map retrieval ............... : $use_retrieval"
 echo
-echo FOR THE ADVENTUROUS
+echo FOR THE ADVENTUROUS:
 echo "  Building with AX25 ................................. : $use_ax25"
 echo "  Building with Festival ............................. : $use_festival"
 echo "  Building with GPSMan ............................... : $use_gpsman"
