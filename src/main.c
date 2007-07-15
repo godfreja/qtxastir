@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.741 2007/07/06 19:24:21 we7u Exp $
+ * $Id: main.c,v 1.742 2007/07/15 03:39:33 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -168,6 +168,7 @@ static int DISPLAY_XASTIR_COORDINATES = 0;
 #include "datum.h"
 #include "igate.h"
 #include "objects.h"
+#include "db_gis.h"
 
 #ifdef HAVE_LIBSHP
   #include "shp_hash.h"
