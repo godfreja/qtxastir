@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.43 2007/01/03 19:39:07 we7u Exp $
+# $Id: Makefile.am,v 1.44 2007/07/15 03:37:32 chicoreus Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -18,6 +18,7 @@ XASTIR_SRC = \
     color.c color.h \
     datum.c datum.h \
     db.c database.h \
+    db_gis.c db_gis.h \
     dbfawk.c dbfawk.h \
     draw_symbols.c draw_symbols.h \
     fcc_data.c fcc_data.h \
