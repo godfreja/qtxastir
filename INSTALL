@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.95 2007/02/22 16:29:45 we7u Exp $
+$Id: INSTALL,v 1.96 2007/07/16 14:38:42 chicoreus Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -664,7 +664,7 @@ First Time Install:
 
         tar -xzvf Gr*
 
-     Change directory to the newly created ImageMagick directory and
+     Change directory to the newly created GraphicsMagick directory and
      compile:
 
         cd Gr*
