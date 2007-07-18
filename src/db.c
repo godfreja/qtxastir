@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.609 2007/05/28 19:51:31 tvrusso Exp $
+ * $Id: db.c,v 1.610 2007/07/18 16:20:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3214,7 +3214,7 @@ void display_station(Widget w, DataRow *p_station, int single) {
     // Draw other points associated with the station, if any.
     // KG4NBB
     if (debug_level & 128)
-        fprintf(stderr,"  Number of multiponts = %d\n",p_station->num_multipoints);
+        fprintf(stderr,"  Number of multipoints = %d\n",p_station->num_multipoints);
     if (p_station->num_multipoints != 0) {
         draw_multipoints( (ambiguity_flag) ? ambiguity_coord_lon : p_station->coord_lon,
                           (ambiguity_flag) ? ambiguity_coord_lat : p_station->coord_lat,
