@@ -32,6 +32,9 @@
  * use -DPROJ4 to compile in Projection support
  *
  * $Log: shpgeo.c,v $
+ * Revision 1.2  2007/07/25 15:45:27  we7u
+ * Adding includes necessary for warning-free compiles.
+ *
  * Revision 1.1  2006/11/10 21:48:10  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -79,6 +82,7 @@
  */
 
 #include "shapefil.h"
+#include <string.h>
 
 #ifndef NAN
 #include "my_nan.h"
@@ -566,7 +570,7 @@ int SHPWriteOGisPolygon ( WKBStreamObj *stream_obj, SHPObject *psCShape ) {
    nextring = 0;
    cParts=0;
    while ( nextring >= 0 ) {
-     (SHPObject*) ppsC[cParts] = SHPUnCompound ( psCShape, &nextring ); 
+     ppsC[cParts] = SHPUnCompound ( psCShape, &nextring ); 
      cParts++;
     }
    

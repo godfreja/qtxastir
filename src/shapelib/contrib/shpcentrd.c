@@ -28,6 +28,9 @@
  *
  *
  * $Log: shpcentrd.c,v $
+ * Revision 1.2  2007/07/25 15:45:27  we7u
+ * Adding includes necessary for warning-free compiles.
+ *
  * Revision 1.1  2006/11/10 21:48:10  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -68,6 +71,7 @@
 
 #include "shapefil.h"
 #include "shpgeo.h"
+#include <string.h>
 
 int main( int argc, char ** argv )
 
