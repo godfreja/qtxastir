@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shpcreate.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $
+ * $Id: shpcreate.c,v 1.2 2007/07/25 15:37:50 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Sample application for creating a new shapefile.
@@ -34,6 +34,10 @@
  ******************************************************************************
  *
  * $Log: shpcreate.c,v $
+ * Revision 1.2  2007/07/25 15:37:50  we7u
+ * Added shprewind.c to the "clean" target of the original Makefile.  Added
+ * stdlib.h includes to some of the utilities to get a clean compile.
+ *
  * Revision 1.1  2006/11/10 21:48:10  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -72,9 +76,10 @@
  */
 
 static char rcsid[] = 
-  "$Id: shpcreate.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $";
+  "$Id: shpcreate.c,v 1.2 2007/07/25 15:37:50 we7u Exp $";
 
 #include "shapefil.h"
+#include <stdlib.h>
 
 int main( int argc, char ** argv )
 
