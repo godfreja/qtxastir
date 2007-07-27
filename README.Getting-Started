@@ -1,5 +1,5 @@
 
-$Id: README.Getting-Started,v 1.34 2007/07/27 15:48:05 we7u Exp $
+$Id: README.Getting-Started,v 1.35 2007/07/27 15:55:16 we7u Exp $
 
 
 Hello new user, and welcome to Xastir!
@@ -436,7 +436,10 @@ This is what you'd like to see at the end of the "./configure" run
 
 Note:  You may see "ImageMagick" instead of "GraphicsMagick" and/or
 "wget" instead of "libcurl" for your installation of Xastir.  Those
-are alternative packages that give similar functionality.
+are alternative packages that give similar functionality.  You may
+also see "(internal)" at the end of the Shapelib line, which is fine
+also.
+
 
 TBD
 
@@ -482,7 +485,9 @@ This is what you'd like to see at the end of the "./configure" run:
 
 Note:  You may see "ImageMagick" instead of "GraphicsMagick" and/or
 "wget" instead of "libcurl" for your installation of Xastir.  Those
-are alternative packages that give similar functionality.
+are alternative packages that give similar functionality.  You may
+also see "(internal)" at the end of the Shapelib line, which is fine
+also.
 
 
 TBD
