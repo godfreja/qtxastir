@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.103 2007/08/07 16:24:45 chicoreus Exp $
+ * $Id: interface_gui.c,v 1.104 2007/08/07 17:29:35 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6369,10 +6369,8 @@ void Config_sql_Database( /*@unused@*/ Widget w, int config_type, int port) {
 begin_critical_section(&devices_lock, "interface_gui.c:Config_sql_Database" );
 
             // *** need to look up localized string for database_type ***
-fprintf(stderr,"Loading parameters %s\n",devices[Sql_Database_port].comment);
             cb_item = XmStringCreateLtoR(&xastir_dbms_type[devices[Sql_Database_port].database_type][0], XmFONTLIST_DEFAULT_TAG);
             XmComboBoxSelectItem(Sql_Database_dbms_data,cb_item);
-fprintf(stderr,"After first combobox\n");
             XmStringFree(cb_item);
             cb_item = XmStringCreateLtoR(&xastir_schema_type[devices[Sql_Database_port].database_schema_type][0], XmFONTLIST_DEFAULT_TAG);
             XmComboBoxSelectItem(Sql_Database_schema_type_data,cb_item);  
