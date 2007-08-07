@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.42 2007/04/27 13:44:00 we7u Exp $
+ * $Id: database.h,v 1.43 2007/08/07 01:06:33 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -337,7 +337,6 @@ typedef struct _MultipointRow{
 //
 // todo: check the string length!
 //
-
 typedef struct _DataRow {
 
     struct _DataRow *n_next;    // pointer to next element in name ordered list

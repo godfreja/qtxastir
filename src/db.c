@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.610 2007/07/18 16:20:50 we7u Exp $
+ * $Id: db.c,v 1.611 2007/08/07 01:06:33 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13038,6 +13038,11 @@ fprintf(stderr,"Cleared ST_VIATNC flag (2): %s\n", p_station->call_sign);
                 SayText(station_id);
             }
 #endif  // HAVE_FESTIVAL
+
+#ifdef HAVE_DB
+            // write station data to sql database
+            //ok = storeStationSimpleToGisDb(&conn, p_station);
+#endif /* HAVE_DB */
         } // end found_pos
 
     }   // valid data into database
