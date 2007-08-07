@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.223 2007/08/07 01:06:33 chicoreus Exp $
+# $Id: language-German.sys,v 1.224 2007/08/07 16:05:02 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -943,6 +943,7 @@ IFDNL00010|Serieller KISS TNC||
 IFDNL00011|Datenbank über Netz (Noch nicht implementiert)||
 IFDNL00012|AGWPE über Netz||
 IFDNL00013|Serieller Multi-Port KISS TNC||
+IFDNL00014|SQL Database (Experimental)||
 #
 # Interface device info 
 IFDIN00000|%s %2d %s an ser. Schnittstelle %s   %s||

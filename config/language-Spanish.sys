@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.221 2007/08/07 01:06:33 chicoreus Exp $
+# $Id: language-Spanish.sys,v 1.222 2007/08/07 16:05:02 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 #
@@ -938,6 +938,7 @@ IFDNL00010|Serial KISS TNC||
 IFDNL00011|Red Base de Datos (Aun No Implementada)||
 IFDNL00012|Red AGWPE||
 IFDNL00013|Serial Multi-Port KISS TNC||
+IFDNL00014|SQL Database (Experimental)||
 #
 # Info dispositivo Interfáz
 IFDIN00000|%s %2d %s sobre serial %s   %s||
