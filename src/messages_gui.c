@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.78 2007/08/07 01:06:33 chicoreus Exp $
+ * $Id: messages_gui.c,v 1.79 2007/08/07 15:31:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1797,7 +1797,7 @@ void select_station_type(int ii) {
         int hamhud = 0;
         int d700 = 0;
         int d7 = 0;
-        int tx_only = 0;
+//        int tx_only = 0;
 
 
 //fprintf(stderr,"Found callsign: %s\n", call_sign);
