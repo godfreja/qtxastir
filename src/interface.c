@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.270 2007/08/07 16:24:45 chicoreus Exp $
+ * $Id: interface.c,v 1.271 2007/08/08 15:29:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6989,9 +6989,10 @@ void init_device_names(void) {
         sizeof(dtype[DEVICE_SQL_DATABASE].device_name),
         "%s",
         langcode("IFDNL00014"));
-#endif /* HAVE_DB */
 
 fprintf(stderr,"Initialized sql type: %s\n",dtype[DEVICE_SQL_DATABASE].device_name);
+#endif /* HAVE_DB */
+
 }
 
 
