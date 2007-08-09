@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.132 2007/07/02 23:37:47 tvrusso Exp $
+ * $Id: map_shp.c,v 1.133 2007/08/09 20:12:37 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3478,6 +3478,7 @@ if (on_screen) {
 
                                     // Draw the hole polygon
                                     if (num_vertices >= 3) {
+                                        XDestroyRegion(region[temp_region2]); // Release the old
                                         region[temp_region2] = XPolygonRegion(points,
                                             num_vertices,
                                             WindingRule);
