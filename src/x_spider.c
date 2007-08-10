@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.54 2007/08/10 14:06:50 gstueve Exp $
+ * $Id: x_spider.c,v 1.55 2007/08/10 22:48:16 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2007  The Xastir Group
@@ -788,7 +788,7 @@ line[n] = '\0';
 
 
 
-// The below two functions init_set_proc_title() and
+// The below three functions init_set_proc_title() and
 // set_proc_title() are from:
 // http://lightconsulting.com/~thalakan/process-title-notes.html
 // They seems to work fine on Linux, but they only change the "ps"
@@ -796,6 +796,8 @@ line[n] = '\0';
 
 // Here's another good web page for Linux:
 // http://www.uwsg.iu.edu/hypermail/linux/kernel/0006.1/0610.html 
+
+// clear_proc_title is to clean up internal pointers for environment.
 
 /* Globals */
 static char **Argv = ((void *)0);
@@ -805,12 +807,12 @@ extern char *__progname, *__progname_full;
 #endif  // __LSB__
 #endif  // __linux__
 static char *LastArgv = ((void *)0);
+extern char **environ;
 
 
 
 void init_set_proc_title(int argc, char *argv[], char *envp[]) {
     int i, envpsize;
-    extern char **environ;
     char **p;
 
     for(i = envpsize = 0; envp[i] != NULL; i++)
@@ -846,7 +848,14 @@ void init_set_proc_title(int argc, char *argv[], char *envp[]) {
 }
 
 
-
+void clear_proc_title(void)
+{
+  int i;
+  for(i = 0; environ[i] != NULL; i++) {
+    free(environ[i]);
+  }
+  free(environ);
+}
 
 
 void set_proc_title(char *fmt,...) {
@@ -872,6 +881,7 @@ void set_proc_title(char *fmt,...) {
     while(p < LastArgv)
         *p++ = '\0';
     Argv[1] = ((void *)0) ;
+    atexit(clear_proc_title);
 }
 
 
