@@ -1,5 +1,5 @@
 /*
- * $Id: rac_data.c,v 1.16 2007/01/03 19:39:11 we7u Exp $
+ * $Id: rac_data.c,v 1.17 2007/08/13 19:54:04 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -139,6 +139,7 @@ int build_rac_index(void) {
     /* ====================================================================    */
     /*    Skip past the header to the first callsign (VA2AA)        */
     /*                                    */
+    memset(racdata, 0, sizeof(racdata));
     while (!feof(fdb) && strncmp(racdata,"VA",2)) {
         call_offset = (unsigned long)ftell(fdb);
         if (fgets(racdata, (int)sizeof(racdata), fdb)==NULL) {
