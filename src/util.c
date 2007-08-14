@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.228 2007/08/10 23:15:33 gstueve Exp $
+ * $Id: util.c,v 1.229 2007/08/14 16:41:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5410,8 +5410,10 @@ int check_unproto_path ( char *data ) {
                 if (is_wide) {
                     if (debug_level & 1)
                         fprintf(stderr,"Found wideN-n at slot %d\n", ii);
+
                     if (strcmp(ViaCalls[ii], "WIDE1-1") !=0) // Home station, RELAY replacement
-			have_widen++;
+                        have_widen++;  // Note: We mark "have_relay" for
+                                       // "WIDE1-1" instead of "have_widen"
 
                     // We know its a WIDEn-N, time to find out what n is
                     if (strlen(ViaCalls[ii]) != 7) {
