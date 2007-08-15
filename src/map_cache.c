@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.27 2007/08/10 23:11:32 gstueve Exp $
+ * $Id: map_cache.c,v 1.28 2007/08/15 15:44:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -393,7 +393,6 @@ int map_cache_put( char * map_cache_url, char * map_cache_file ){
         }
     }
 
-    free(dbp); 
 /* end map_cache_put */
 
     return (0) ; 
