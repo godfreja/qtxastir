@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.55 2007/01/03 19:39:13 we7u Exp $
+ * $Id: xastir.h,v 1.56 2007/08/15 17:41:52 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -111,7 +111,7 @@ extern void fix_dialog_vsize(Widget w);
 
 extern int debug_level;
 extern GC gc;
-extern int colors[];
+extern Pixel colors[];
 
 
 extern float f_center_longitude;   // Floating point map center longitude
