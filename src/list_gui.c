@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: list_gui.c,v 1.48 2007/08/16 17:01:11 gstueve Exp $
+ * $Id: list_gui.c,v 1.49 2007/08/16 19:26:33 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1209,6 +1209,7 @@ void Station_List(/*@unused@*/ Widget w, XtPointer clientData, /*@unused@*/ XtPo
     char temp[400];
 
     if (station_list_first) {
+        memset(&SL_scroll, 0, sizeof(SL_scroll));
         init_station_lists();           // init icons at very first list call
         station_list_first=0;
     }
