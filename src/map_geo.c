@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.86 2007/08/16 17:36:34 gstueve Exp $
+ * $Id: map_geo.c,v 1.87 2007/08/17 22:08:10 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -622,6 +622,7 @@ void draw_geo_image_map (Widget w,
 #ifdef HAVE_MAGICK
   #ifdef USE_MAP_CACHE 
     int map_cache_return;
+    char *cache_file_id;
   #endif  // USE_MAP_CACHE
 #endif  // HAVE_MAGICK
 
@@ -1515,12 +1516,14 @@ fprintf(stderr,"1 ");
                     get_user_base_dir("tmp"),ext);
             }
             else {
+                cache_file_id = map_cache_fileid();
                 xastir_snprintf(local_filename,
                     sizeof(local_filename),
                     "%s/map_%s.%s",
                     get_user_base_dir("map_cache"),
-                    map_cache_fileid(),
+                    cache_file_id,
                     ext);
+                free(cache_file_id);
             }
 
 #else   // USE_MAP_CACHE

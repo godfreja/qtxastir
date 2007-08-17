@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.28 2007/08/15 15:44:38 we7u Exp $
+ * $Id: map_cache.c,v 1.29 2007/08/17 22:08:10 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -507,6 +507,12 @@ clear_dangerous();
             }
 set_dangerous("map_cache_get: map_cache_del 1");
             map_cache_del(map_cache_url);
+            if (dbp != NULL) {
+                if ((mc_t_ret = dbp->close(dbp, 0)) != 0 && mc_ret == 0){
+                    mc_ret = mc_t_ret;
+                   // db_strerror(mc_ret);
+                }
+            }
 clear_dangerous();
   
             return (-1 * mc_ret); 
@@ -527,6 +533,12 @@ set_dangerous("map_cache_get: map_cache_expired");
             }
 set_dangerous("map_cache_get: map_cache_del 2");
             map_cache_del(map_cache_url);
+            if (dbp != NULL) {
+                if ((mc_t_ret = dbp->close(dbp, 0)) != 0 && mc_ret == 0){
+                    mc_ret = mc_t_ret;
+                   // db_strerror(mc_ret);
+                }
+            }
 clear_dangerous();
             return (mc_ret);
         } 
@@ -617,6 +629,15 @@ clear_dangerous();
 
         // Map not found in cache...
         statusline(langcode("CACHE003"), 1);
+	set_dangerous("map_cache_get: dbp->close 3");
+	// Only try the close if we have a valid handle
+	if (dbp != NULL) {
+	    if ((mc_t_ret = dbp->close(dbp, 0)) != 0 && mc_ret == 0){
+		mc_ret = mc_t_ret;
+		// db_strerror(mc_ret);
+	    }
+	}
+	clear_dangerous();
         return (mc_ret); 
     }
 
