@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.104 2007/08/07 17:29:35 chicoreus Exp $
+ * $Id: interface_gui.c,v 1.105 2007/08/21 03:10:14 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8493,8 +8493,11 @@ begin_critical_section(&devices_lock, "interface_gui.c:interface_status" );
                     s='3';  // Select icon for status bar
                     break;
 
-                case DEVICE_NET_DATABASE:
                 case DEVICE_SQL_DATABASE:
+                    s='8';  // Select icon for status bar
+                    break;
+
+                case DEVICE_NET_DATABASE:
                 case DEVICE_NET_STREAM:
                 case DEVICE_NET_AGWPE:
                     s='4';  // Select icon for status bar

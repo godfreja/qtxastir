@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.747 2007/08/20 19:22:25 we7u Exp $
+ * $Id: main.c,v 1.748 2007/08/21 03:10:14 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10853,6 +10853,9 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                 // This implements persistent objects.
                 reload_object_item();
 
+#ifdef HAVE_DB
+                // load data from SQL database connections
+#endif /* HAVE_DB */
 
                 // Reload any CAD objects from file.  This implements
                 // persistent objects.
