@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.104 2007/02/27 21:33:03 gstueve Exp $
+ * $Id: alert.c,v 1.105 2007/08/22 15:42:11 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1296,7 +1296,8 @@ void alert_build_list(Message *fill) {
                     temp_suffix[1] = '\0';
                     ptr += 1;
                 }
-                else if (temp_suffix[2] == '-' || temp_suffix[2] == '>') {
+                else if (temp_suffix[1] != '\0' && 
+                         (temp_suffix[2] == '-' || temp_suffix[2] == '>')) {
                     temp_suffix[2] = '\0';
                     ptr += 2;
                 }
