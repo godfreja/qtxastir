@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.70 2007/01/03 19:39:11 we7u Exp $
+ * $Id: messages.c,v 1.71 2007/08/24 13:42:46 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -217,7 +217,7 @@ void group_build_list(char *filename) {
 
 
 
-static int group_active(char *from) {
+int group_active(char *from) {
     static struct stat current_group_stat;
     struct stat group_stat;
     static char altgroup[10];

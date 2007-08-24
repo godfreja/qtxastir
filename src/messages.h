@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.25 2007/01/12 16:49:18 we7u Exp $
+ * $Id: messages.h,v 1.26 2007/08/24 13:42:46 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -98,6 +98,7 @@ extern void check_delayed_transmit_queue(int curr_sec);
 //extern void output_message(char *from, char *to, char *message);
 extern int check_popup_window(char *from_call_sign, int group);
 extern int look_for_open_group_data(char *to);
+extern int group_active(char *from);
 extern void send_queued(char *to);
 extern void clear_outgoing_messages_to(char *callsign);
 extern void change_path_outgoing_messages_to(char *callsign, char *new_path);
