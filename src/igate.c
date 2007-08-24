@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.57 2007/01/03 19:39:08 we7u Exp $
+ * $Id: igate.c,v 1.58 2007/08/24 13:44:21 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -862,14 +862,14 @@ void output_igate_rf(char *from, char *call, char *path, char *line,
     //
     if (object_name) {  // It's an object or item name
 
-        if ( check_NWS_stations( object_name ) ) {
+        if ( check_NWS_stations( object_name ) || group_active(object_name)) {
 
             found_in_nws_file++; // Object/Item is in nws-stations.txt
         }
     }
     else {              // It's a station callsign
 
-        if ( check_NWS_stations( from ) ) {
+        if ( check_NWS_stations( from ) || group_active(from)) {
 
             found_in_nws_file++; // Source callsign is in nws-stations.txt
         }
@@ -1307,7 +1307,7 @@ void output_nws_igate_rf(char *from, char *path, char *line, int port, int third
     }
 
     // Look for NWS station in file data
-    if (!check_NWS_stations(from)){ // Couldn't find the station
+    if (!check_NWS_stations(from) || !group_active(from)){ // Couldn't find the station
 
         if (log_igate && (debug_level & 1024) ) {
             xastir_snprintf(temp,
