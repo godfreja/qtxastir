@@ -1,6 +1,6 @@
 #!/usr/bin/perl -n
 
-# $Id: PigLatin.pl,v 1.1 2007/08/28 22:32:00 we7u Exp $
+# $Id: PigLatin.pl,v 1.2 2007/08/28 23:16:24 we7u Exp $
 
 # Copyright (C) 2007  The Xastir Group
 #
@@ -32,8 +32,9 @@
 #
 # If you would like, replace the language-English.sys file in the
 # destination directory (usually "/usr/local/share/xastir/config")
-# with this new file, then restart Xastir and you'll have it
-# displaying in Pig Latin!
+# with this new file (renaming it to "language-English.sys" of
+# course), then restart Xastir and you'll have it displaying in Pig
+# Latin!
 
 
 if (m/^#/) { print; next; }
