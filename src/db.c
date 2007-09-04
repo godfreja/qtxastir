@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.613 2007/08/21 03:10:13 chicoreus Exp $
+ * $Id: db.c,v 1.614 2007/09/04 20:09:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11430,7 +11430,10 @@ int data_add(int type,
     int object_is_mine_previous = 0;
     int new_origin_is_mine = 0;
     int num_digits = 0; // Number of digits after decimal point in NMEA string
-    int i;  // loop counter for intefaces list
+
+#ifdef HAVE_DB
+    int ii;  // loop counter for interfaces list
+#endif /* HAVE_DB */
 
 
     // call and path had been validated before
@@ -13044,10 +13047,10 @@ fprintf(stderr,"Cleared ST_VIATNC flag (2): %s\n", p_station->call_sign);
 /* ************************************** */
         // Clumsy way of doing things - needs a more elegant approach
         // iterate through interfaces 
-        for(i = 0; i < MAX_IFACE_DEVICES; i++) {
-           if (connections[i].iface != NULL){
-               if (connections[i].conn != NULL) { 
-                   ok = storeStationSimpleToGisDb(connections[i].conn, p_station);
+        for(ii = 0; ii < MAX_IFACE_DEVICES; ii++) {
+           if (connections[ii].iface != NULL){
+               if (connections[ii].conn != NULL) { 
+                   ok = storeStationSimpleToGisDb(connections[ii].conn, p_station);
                }
                // if interface is a sql server interface 
                // write station data to sql database
