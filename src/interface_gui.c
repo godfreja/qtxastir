@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.105 2007/08/21 03:10:14 chicoreus Exp $
+ * $Id: interface_gui.c,v 1.106 2007/09/17 01:31:45 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8083,9 +8083,8 @@ end_critical_section(&devices_lock, "interface_gui.c:interface_option" );
                                 fprintf(stderr,"Modify SQL DATABASE\n");
                             Config_sql_Database(w, 1, port);
                             break;
-
-                        case DEVICE_NET_AGWPE:
 #endif /* HAVE_DB */
+                        case DEVICE_NET_AGWPE:
  
 end_critical_section(&devices_lock, "interface_gui.c:interface_option" );
 
