@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.64 2007/09/22 10:24:02 we7u Exp $
+ * $Id: track_gui.c,v 1.65 2007/09/22 10:53:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -413,7 +413,7 @@ end_critical_section(&track_station_dialog_lock, "track_gui.c:Track_station" );
 static void* findu_transfer_thread(void *arg) {
     char *fileimg;
     char *log_filename;
-    char log_filename_tmp[210];
+//    char log_filename_tmp[210];
     char **ptrs;
     char sys_cmd[128];
 
