@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.192 2007/09/22 10:25:09 we7u Exp $
+# $Id: configure.ac,v 1.193 2007/09/22 10:25:48 we7u Exp $
 #
 # Copyright (C) 2000-2007  The Xastir Group
 
@@ -126,13 +126,13 @@ AC_CHECK_LIB([Xm], [XmTextFindString])
 
 
 
-use_html2text=no
-AC_PATH_PROG(html2text, [html2text --version], no, $BINPATH)
-if test "$html2text" != "no"; then
-  AC_DEFINE_UNQUOTED(HAVE_HTML2TEXT, 1, [Define if you have html2text]) 
-  AC_DEFINE_UNQUOTED(HTML2TEXT_PATH, "${html2text}", [Path to html2text]) 
-  use_html2text=yes
-fi
+#use_html2text=no
+#AC_PATH_PROG(html2text, [html2text --version], no, $BINPATH)
+#if test "$html2text" != "no"; then
+#  AC_DEFINE_UNQUOTED(HAVE_HTML2TEXT, 1, [Define if you have html2text]) 
+#  AC_DEFINE_UNQUOTED(HTML2TEXT_PATH, "${html2text}", [Path to html2text]) 
+#  use_html2text=yes
+#fi
 
 
 
