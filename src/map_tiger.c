@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.55 2007/08/17 22:08:10 gstueve Exp $
+ * $Id: map_tiger.c,v 1.56 2007/11/07 21:37:07 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -89,6 +89,15 @@
 # endif // HAVE_SYS_TIME_H
 #endif  // TIME_WITH_SYS_TIME
 #undef RETSIGTYPE
+// TVR: "stupid ImageMagick"
+// The problem is that magick/api.h includes Magick's config.h file, and that
+// pulls in all the same autoconf-generated defines that we use.
+// plays those games below, but I don't think in the end that they actually 
+// make usable macros with our own data in them.
+// Fortunately, we don't need them, so I'll just undef the ones that are
+// causing problems today.  See main.c for fixes that preserve our values.
+#undef PACKAGE
+#undef VERSION
 /* JMT - stupid ImageMagick */
 #define XASTIR_PACKAGE_BUGREPORT PACKAGE_BUGREPORT
 #undef PACKAGE_BUGREPORT

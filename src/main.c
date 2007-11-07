@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.748 2007/08/21 03:10:14 chicoreus Exp $
+ * $Id: main.c,v 1.749 2007/11/07 21:37:01 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -70,6 +70,12 @@ static int DISPLAY_XASTIR_COORDINATES = 0;
 #  include <time.h>
 # endif // HAVE_SYS_TIME_H
 #endif  // TIME_WITH_SYS_TIME
+
+// TVR -- stupid, stupid ImageMagick
+char *xastir_package=PACKAGE;
+char *xastir_version=VERSION;
+#undef PACKAGE
+#undef VERSION
 
 #ifdef HAVE_MAGICK
 #include <sys/types.h>
@@ -5111,7 +5117,7 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
 
 
     t = _("X Amateur Station Tracking and Information Reporting");
-    title = (char *)malloc(t_size = (strlen(t) + 42 + strlen(PACKAGE)));
+    title = (char *)malloc(t_size = (strlen(t) + 42 + strlen(xastir_package)));
     if (!title) {
         fprintf(stderr,"Couldn't allocate memory for title\n");
     }
@@ -16507,7 +16513,8 @@ void Help_About( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData, /*@un
     char string2[100];
     extern char compiledate[];
    
-    xb = XmStringCreateLtoR("\nXastir V" VERSION "\n", XmFONTLIST_DEFAULT_TAG);
+    xastir_snprintf(string2, sizeof(string2),"\nXastir V%s \n",xastir_version);
+    xb = XmStringCreateLtoR(string2, XmFONTLIST_DEFAULT_TAG);
     xa = XmStringCreateLtoR(compiledate, XmFONTLIST_DEFAULT_TAG);
     xms = XmStringConcat(xb, xa);
     XmStringFree(xa);
