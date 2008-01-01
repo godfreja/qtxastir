@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.39 2007/08/07 01:06:33 chicoreus Exp $
+ * $Id: interface.h,v 1.40 2008/01/01 22:58:51 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -207,7 +207,7 @@ typedef struct {
     // device_host_name = hostname for database server 
     // sp = port on which to connect to database server 
     // device_host_pswd =  password to use to connect to database -- security issue needs to be addressed
-#endif /* HAVE_DB */
+#endif  // HAVE_DB
 } ioparam;
 
 

@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.43 2007/08/07 01:06:33 chicoreus Exp $
+ * $Id: database.h,v 1.44 2008/01/01 22:58:50 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -105,6 +105,7 @@ enum APRS_Types {
 #define DATA_VIA_TNC   'T'
 #define DATA_VIA_NET   'I'
 #define DATA_VIA_FILE  'F'
+#define DATA_VIA_DATABASE  'D'
 
 
 /* define Heard info type */
@@ -641,5 +642,10 @@ void Show_Aloha_Stats(Widget w, XtPointer clientData,
 int comp_by_dist(const void *,const void *);// used only for qsort
 DataRow * sanity_check_time_list(time_t); // used only for debugging
 void dump_time_sorted_list(void);
+
+#ifdef HAVE_DB
+extern int add_simple_station(DataRow *p_new_station,char *station, char *origin, char *symbol, char *overlay, char *aprs_type, char *latitude, char *longitude, char *record_type, char *node_path, char *transmit_time);
+
+#endif /* HAVE_DB */
 
 #endif /* XASTIR_DATABASE_H */

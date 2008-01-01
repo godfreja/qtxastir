@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.170 2007/08/07 01:06:34 chicoreus Exp $
+ * $Id: xa_config.c,v 1.171 2008/01/01 22:58:52 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1584,7 +1584,8 @@ void load_data_or_default(void) {
             "%s",
             name_temp);
         strncat (name, "DATABASE_TYPE", sizeof(name) - strlen(name));
-        devices[i].database_type = get_int (name, 0,MAX_DB_TYPE,DB_MYSQL);
+        
+        devices[i].database_type = get_int (name, 0,MAX_DB_TYPE,MAX_DB_TYPE);
         
         xastir_snprintf(name,
             sizeof(name),
