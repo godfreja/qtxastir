@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db_gis.c,v 1.9 2008/01/01 22:58:51 chicoreus Exp $
+ * $Id: db_gis.c,v 1.10 2008/01/08 04:35:46 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2007  The Xastir Group
@@ -594,10 +594,9 @@ int openConnection(ioparam *anIface, Connection *connection) {
                        // add connection status feedback here if desired
                     }
                     if (PQstatus(connection->phandle)==CONNECTION_OK) {
-                        if (debug_level & 1)
+                        //if (debug_level & 1)
                             fprintf(stderr,"Connected to Postgresql database on %s\n",anIface->device_host_name);
                         // connection successfull
-                        //connection->phandle = postgres_connection;
                         connection->type=DB_POSTGIS;
                         connection->descriptor = *anIface;
                         xastir_snprintf(connection->errormessage, sizeof(connection->errormessage), " ");
