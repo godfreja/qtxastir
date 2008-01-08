@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db_gis.h,v 1.7 2008/01/01 22:58:51 chicoreus Exp $
+ * $Id: db_gis.h,v 1.8 2008/01/08 15:00:54 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2007  The Xastir Group
@@ -142,7 +142,7 @@ ConnectionList connections[MAX_IFACE_DEVICES];
 
 // connection management
 extern int openConnection (ioparam *aioparm, Connection *conn);
-extern void closeConnection (Connection *aDbConnection);
+extern int closeConnection (Connection *aDbConnection, int port_number);
 extern int testConnection(Connection *aDbConnection);
 
 extern char xastir_dbms_type[4][51];
