@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.49 2008/01/08 04:35:46 chicoreus Exp $
+ * $Id: objects.c,v 1.50 2008/01/10 15:35:42 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1637,13 +1637,11 @@ void check_and_transmit_objects_items(time_t time) {
 
 //fprintf(stderr,"Transmitting: %s\n",line);
                         // Attempt to transmit the object/item again
-                        if (object_tx_disable) {    // Send to loopback only
-                            output_my_data(line,-1,0,1,0,NULL);
-// Local loopback only, not igating
+                        if (object_tx_disable || transmit_disable) {    // Send to loopback only
+                            output_my_data(line,-1,0,1,0,NULL); // Local loopback only, not igating
                         }
                         else { // Send to all active tx-enabled interfaces
-                            output_my_data(line,-1,0,0,0,NULL);
-// Transmit/loopback object data, not igating
+                            output_my_data(line,-1,0,0,0,NULL); // Transmit/loopback object data, not igating
                         }
                     }
                     else {
@@ -5617,7 +5615,7 @@ void Object_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
 //fprintf(stderr,"Object_change_data_set(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
 
-        if (object_tx_disable)
+        if (object_tx_disable || transmit_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
         else
             output_my_data(line,-1,0,0,0,NULL);    // Transmit/loopback object data, not igating
@@ -5672,7 +5670,7 @@ void Item_change_data_set(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
 //fprintf(stderr,"Item_change_data_set(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
  
-        if (object_tx_disable)
+        if (object_tx_disable || transmit_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
         else
             output_my_data(line,-1,0,0,0,NULL);    // Transmit/loopback item data, not igating
@@ -5808,7 +5806,7 @@ void Object_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer c
 //fprintf(stderr,"Object_change_data_del(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
 
-        if (object_tx_disable)
+        if (object_tx_disable || transmit_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
         else
             output_my_data(line,-1,0,0,0,NULL);    // Transmit object data, not igating
@@ -5854,7 +5852,7 @@ void Item_change_data_del(/*@unused@*/ Widget widget, /*@unused@*/ XtPointer cli
 //fprintf(stderr,"Item_change_data_del(): Setting transmit increment to %d\n", OBJECT_CHECK_RATE);
         }
 
-        if (object_tx_disable)
+        if (object_tx_disable || transmit_disable)
             output_my_data(line,-1,0,1,0,NULL);    // Local loopback only, not igating
         else
             output_my_data(line,-1,0,0,0,NULL);    // Transmit item data, not igating
@@ -7200,7 +7198,7 @@ fprintf(stderr, "No more iterations left\n");
 // *********** New objects not being displayed on map untill restart
 
 
-    if (object_tx_disable)
+    if (object_tx_disable || transmit_disable)
         output_my_data(data,-1,0,1,0,NULL); // Local loopback only, not igating
     else
         output_my_data(data,-1,0,0,0,NULL); // Transmit/loopback object data, not igating

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.751 2008/01/08 15:00:54 chicoreus Exp $
+ * $Id: main.c,v 1.752 2008/01/10 15:35:41 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9122,8 +9122,8 @@ void BuildPredefinedSARMenu_UI(Widget *parent_menu) {
 
             if(debug_level & 1)
                 fprintf(stderr,
-                    "Menu item with name: %s \n",
-                    predefinedObjects[i].menu_call);
+                    "Menu item with name: %s and index_of_child=%d\n",
+                    predefinedObjects[i].menu_call, predefinedObjects[i].index_of_child);
 
             predefined_object_menu_items[i]=XtCreateManagedWidget(predefinedObjects[i].menu_call,
                 xmPushButtonGadgetClass,
