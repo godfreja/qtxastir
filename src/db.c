@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.615 2008/01/01 22:58:50 chicoreus Exp $
+ * $Id: db.c,v 1.616 2008/01/10 05:06:05 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11518,7 +11518,6 @@ int data_add(int type,
 #ifdef HAVE_DB
     int ii;  // loop counter for interfaces list
 #endif /* HAVE_DB */
-
 
     // call and path had been validated before
     // Check "data" against the max APRS length, and dump the packet if too long.
