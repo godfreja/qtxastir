@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-GDAL,v 1.6 2007/01/03 19:40:49 we7u Exp $
-# Copyright (C) 2006-2007  The Xastir Group
+# $Id: LSB-BUILD-GDAL,v 1.7 2008/01/16 19:33:59 we7u Exp $
+# Copyright (C) 2006-2008  The Xastir Group
 # <http://gdal.org/>
 
 # Compile gdal-1.3.2b2 under Linux Standard Base 3.0.  Install into

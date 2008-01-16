@@ -1,9 +1,9 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.42 2007/01/03 19:39:10 we7u Exp $
+ * $Id: map_tif.c,v 1.43 2008/01/16 19:34:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2007  The Xastir Group
+ * Copyright (C) 2000-2008  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.44 2007/07/15 03:37:32 chicoreus Exp $
+# $Id: Makefile.am,v 1.45 2008/01/16 19:34:00 we7u Exp $
 #
-# Copyright (C) 2000-2007  The Xastir Group
+# Copyright (C) 2000-2008  The Xastir Group
 #
 
 bin_PROGRAMS = xastir xastir_udp_client

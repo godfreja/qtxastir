@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $Id: get-gnis,v 1.4 2007/01/03 19:40:49 we7u Exp $
+# $Id: get-gnis,v 1.5 2008/01/16 19:33:59 we7u Exp $
 #
 # Script to retrieve GNIS files by state. 
 #
 # Written 20041205 Dan Brown N8YSZ
 #
-# Copyright (C) 2000-2007  The Xastir Group
+# Copyright (C) 2000-2008  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

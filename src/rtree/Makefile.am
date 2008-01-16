@@ -1,6 +1,6 @@
 
-# $Id: Makefile.am,v 1.4 2007/01/03 19:38:41 we7u Exp $
-# Copyright (C) 2004-2007  The Xastir Group
+# $Id: Makefile.am,v 1.5 2008/01/16 19:34:03 we7u Exp $
+# Copyright (C) 2004-2008  The Xastir Group
 
 noinst_LIBRARIES=librtree.a
 librtree_a_SOURCES=index.c \

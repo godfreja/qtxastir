@@ -1,6 +1,6 @@
-# $Id: tnc-startup.paccomm,v 1.14 2007/01/03 19:40:22 we7u Exp $
+# $Id: tnc-startup.paccomm,v 1.15 2008/01/16 19:33:59 we7u Exp $
 #
-# Copyright (C) 2000-2007  The Xastir Group
+# Copyright (C) 2000-2008  The Xastir Group
 #
 # This is the TNC Startup file for a Pac-Comm TNC with v5.x firmware.
 # Adapted from Kantronics startup file by Kurt Freiberger, WB5BBW

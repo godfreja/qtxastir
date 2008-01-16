@@ -1,8 +1,8 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.196 2008/01/16 18:32:41 we7u Exp $
+# $Id: configure.ac,v 1.197 2008/01/16 19:33:57 we7u Exp $
 #
-# Copyright (C) 2000-2007  The Xastir Group
+# Copyright (C) 2000-2008  The Xastir Group
 
 
 #########################################################################

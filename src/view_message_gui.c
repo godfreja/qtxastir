@@ -1,9 +1,9 @@
 /*
- * $Id: view_message_gui.c,v 1.36 2007/01/03 19:39:13 we7u Exp $
+ * $Id: view_message_gui.c,v 1.37 2008/01/16 19:34:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2007  The Xastir Group
+ * Copyright (C) 2000-2008  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

@@ -2,9 +2,9 @@
    See the top of datum.h for information on this code.
    N7TAP
 
-   Portions Copyright (C) 2002-2007  The Xastir Group
+   Portions Copyright (C) 2002-2008  The Xastir Group
 
-   $Id: datum.c,v 1.24 2007/01/03 19:39:07 we7u Exp $
+   $Id: datum.c,v 1.25 2008/01/16 19:34:00 we7u Exp $
 */
 
 

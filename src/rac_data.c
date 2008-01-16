@@ -1,9 +1,9 @@
 /*
- * $Id: rac_data.c,v 1.17 2007/08/13 19:54:04 gstueve Exp $
+ * $Id: rac_data.c,v 1.18 2008/01/16 19:34:02 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2007  The Xastir Group
+ * Copyright (C) 2000-2008  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

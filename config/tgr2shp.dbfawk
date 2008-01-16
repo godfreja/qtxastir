@@ -1,6 +1,6 @@
-# $Id: tgr2shp.dbfawk,v 1.7 2007/12/14 06:23:52 tvrusso Exp $
+# $Id: tgr2shp.dbfawk,v 1.8 2008/01/16 19:33:58 we7u Exp $
 #
-# Copyright (C) 2003-2007  The Xastir Group
+# Copyright (C) 2003-2008  The Xastir Group
 #
 # This dbfawk file is used to map arbitrary dbf data that accompanies
 # a shapefile into Xastir canoncical values of:

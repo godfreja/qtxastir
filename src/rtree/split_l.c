@@ -1,9 +1,9 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: split_l.c,v 1.8 2007/07/02 23:37:48 tvrusso Exp $
+ * $Id: split_l.c,v 1.9 2008/01/16 19:34:03 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2007  The Xastir Group
+ * Copyright (C) 2000-2008  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
