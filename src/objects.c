@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.51 2008/01/16 19:34:02 we7u Exp $
+ * $Id: objects.c,v 1.52 2008/01/17 04:33:11 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2656,6 +2656,12 @@ void Set_CAD_object_parameters_dialog(char *area_description, CADRow *CAD_object
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
                 NULL);
+
+        // lesstif as of 0.95 in 2008 doesn't fully support combo boxes
+        // 
+        // Need to replace combo boxes with a pull down menu when lesstif is used.
+        // See xpdf's  XPDFViewer.cc/XPDFViewer.h for an example.
+
         // Combo box to pick line style
         cad_line_style_data = XtVaCreateManagedWidget("select line style",
                 xmComboBoxWidgetClass,

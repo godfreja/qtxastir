@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.753 2008/01/16 19:34:00 we7u Exp $
+ * $Id: main.c,v 1.754 2008/01/17 04:33:10 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -21773,6 +21773,12 @@ void Configure_defaults( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientDat
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
                 NULL);
+         
+        // lesstif as of 0.95 in 2008 doesn't fully support combo boxes
+        // 
+        // Need to replace combo boxes with a pull down menu when lesstif is used.
+        // See xpdf's  XPDFViewer.cc/XPDFViewer.h for an example.
+
 
         // Combo box to pick file from which to load predefined objects menu
         load_predefined_objects_menu_from_file = XtVaCreateManagedWidget("Load objects menu filename ComboBox",

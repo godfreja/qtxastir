@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.45 2008/01/16 19:34:00 we7u Exp $
+ * $Id: database.h,v 1.46 2008/01/17 04:33:10 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -134,6 +134,9 @@ enum APRS_Types {
 #define MAX_MESSAGE_LENGTH  100
 #define MAX_MESSAGE_ORDER    10
 
+// track export file formats
+#define EXPORT_XASTIR_TRACK 0
+#define EXPORT_KML_TRACK 1
 
 extern char *get_most_recent_ack(char *callsign);
  
