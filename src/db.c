@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.618 2008/01/17 04:33:10 chicoreus Exp $
+ * $Id: db.c,v 1.619 2008/01/18 03:21:45 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13350,7 +13350,7 @@ fprintf(stderr,"Cleared ST_VIATNC flag (2): %s\n", p_station->call_sign);
                                 fprintf(stderr,"Trying interface %d\n",ii);
                             // if interface is a sql server interface 
                             // write station data to sql database
-                            ok = storeStationSimpleToGisDb(&connections[ii].conn, p_station);
+                            ok = storeStationSimpleToGisDb((Connection*)&connections[ii].conn, p_station);
                             if (ok==1) { 
                                if (debug_level & 1) {
                                     fprintf(stderr,"Stored station %s to database interface %d.\n",p_station->call_sign,ii);
