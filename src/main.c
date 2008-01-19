@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.755 2008/01/18 03:21:45 chicoreus Exp $
+ * $Id: main.c,v 1.756 2008/01/19 02:48:08 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10886,10 +10886,18 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                      // if interface is a database and is set to load on start then load
                      if (devices[i].device_type == DEVICE_SQL_DATABASE && devices[i].query_on_startup) { 
                           // load data
-                          connections[i].conn = &conn;
-                          if (debug_level & 1) 
-                              fprintf(stderr,"Opening (in main) connection [%d] with new connection [%p]",i,&connections[i].conn);                          
-                          got_conn = openConnection(&devices[i],&connections[i].conn); 
+                          if (devices[i].connect_on_startup == 1) { 
+                              // there should be an open connection already
+                              if (debug_level & 1) 
+                                  fprintf(stderr,"Opening (in main) connection [%d] with existing connection [%p]",i,&connections[i].conn); 
+                              // TODO: Replace with a connection status test
+                              got_conn = 1;
+                          } else { 
+                              connections[i].conn = &conn;
+                              if (debug_level & 1) 
+                                  fprintf(stderr,"Opening (in main) connection [%d] with new connection [%p]",i,&connections[i].conn);                          
+                              got_conn = openConnection(&devices[i],&connections[i].conn); 
+                          }
                           if ((got_conn == 1) && (!(&connections[i].conn->type==NULL))) { 
                               getAllSimplePositions(&connections[i].conn);
                               // if connection worked, it is a oneshot upload of data, so we don't 
