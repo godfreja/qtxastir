@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.154 2008/01/16 19:34:01 we7u Exp $
+ * $Id: map_gdal.c,v 1.155 2008/01/23 04:47:37 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2008  The Xastir Group
@@ -1090,7 +1090,9 @@ void Draw_OGR_Labels( Widget w,
     // draw labels for more minor objects as we zoom out is another
     // problem that must be solved.
     //
-    if (label && map_labels /* && !skip_label */ ) {
+    // Here "label" will always evaluate as true:  It's an address!
+    //if (label && map_labels /* && !skip_label */ ) {
+    if (map_labels /* && !skip_label */ ) {
 
         // Check that we're not trying to draw the label out of
         // bounds for the X11 calls.
