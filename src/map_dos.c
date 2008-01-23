@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_dos.c,v 1.26 2008/01/16 19:34:01 we7u Exp $
+ * $Id: map_dos.c,v 1.27 2008/01/23 04:46:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -354,7 +354,7 @@ void draw_dos_map(Widget w,
     char file_name[33];
 //    char *ext;
     char map_title[33];
-    char map_creator[8];
+    char map_creator[9];
     unsigned long creation_date;
     unsigned long left_boundary;
     unsigned long right_boundary;
