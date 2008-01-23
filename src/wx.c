@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.65 2008/01/16 19:34:02 we7u Exp $
+ * $Id: wx.c,v 1.66 2008/01/23 04:49:14 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2741,7 +2741,7 @@ void wx_fill_data(int from, int type, unsigned char *data, DataRow *fill) {
                     sizeof(weather->wx_station),
                     "%s",
                     temp_conv+1);
-                weather->wx_station[MAX_WXSTATION] = '\0';
+                weather->wx_station[MAX_WXSTATION-1] = '\0';
             }
 
             // now compute wind chill
