@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.30 2008/01/16 19:34:01 we7u Exp $
+ * $Id: map_WMS.c,v 1.31 2008/01/23 04:45:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -594,8 +594,10 @@ void draw_WMS_map (Widget w,
 #endif // USE_MAP_CACHE
 
 
-    (debug_level & 512) && fprintf (stderr, "Fetch or query took %d seconds\n", 
-                            (int) (time(&query_end_time) - query_start_time)); 
+    if (debug_level & 512) {
+        fprintf (stderr, "Fetch or query took %d seconds\n", 
+            (int) (time(&query_end_time) - query_start_time)); 
+    }
 
     // Set permissions on the file so that any user can overwrite it.
     chmod(local_filename, 0666);
