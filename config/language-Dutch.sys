@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.226 2008/01/16 19:33:58 we7u Exp $
+# $Id: language-Dutch.sys,v 1.227 2008/01/25 06:21:26 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -239,6 +239,8 @@ PULDNDP049|Wis alle gemarkeerde bijnamen||
 PULDNDP050|Wis gemarkeerde bijnamen geschiedenis||
 PULDNDP051|Selecteer alleen gemarkeerde bijnamen||
 PULDNDP052|- Label route punten||
+PULDNDP055|Export all|E|
+PULDNDP056|Export to KML File||
 #
 # Units
 PULDNUT001|Engels||

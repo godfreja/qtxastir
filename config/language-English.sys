@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.214 2008/01/16 19:33:58 we7u Exp $
+# $Id: language-English.sys,v 1.215 2008/01/25 06:21:26 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -226,6 +226,8 @@ PULDNDP049|Clear All Tactical Calls||
 PULDNDP050|Clear Tactical Call History||
 PULDNDP051|Select Tactical Calls Only||
 PULDNDP052|- Label Trailpoints||
+PULDNDP055|Export all|E|
+PULDNDP056|Export to KML File||
 #
 # Units
 PULDNUT001|Enable English Units|E|

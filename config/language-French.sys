@@ -1,4 +1,4 @@
-# $Id: language-French.sys,v 1.216 2008/01/16 19:33:58 we7u Exp $
+# $Id: language-French.sys,v 1.217 2008/01/25 06:21:26 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -228,6 +228,8 @@ PULDNDP049|Effacer indicatifs tactiques||
 PULDNDP050|Effacer historique des indicatifs tactiques||
 PULDNDP051|Choisir seulement les indicatifs tactiques||
 PULDNDP052|- Annoter les points de piste||
+PULDNDP055|Export all|E|
+PULDNDP056|Export to KML File||
 #
 # Units
 PULDNUT001|Activer mesures anglaises||
