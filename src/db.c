@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.619 2008/01/18 03:21:45 chicoreus Exp $
+ * $Id: db.c,v 1.620 2008/01/25 06:18:24 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -184,7 +184,7 @@ CADRow *CAD_list_head = NULL;   // pointer to first element in CAD objects list
 
 void draw_trail(Widget w, DataRow *fill, int solid);
 void export_trail(DataRow *p_station);          // export trail of one or all stations to xastir export file
-void export_trail_as_kml(DataRow *p_station);   // export trail of one or all stations to kml file
+//void export_trail_as_kml(DataRow *p_station);   // export trail of one or all stations to kml file
 
 int decoration_offset_x = 0;
 int decoration_offset_y = 0;

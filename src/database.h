@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.46 2008/01/17 04:33:10 chicoreus Exp $
+ * $Id: database.h,v 1.47 2008/01/25 06:18:24 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -529,6 +529,7 @@ extern void copy_data(DataRow *to, DataRow *from);
 
 
 extern void db_init(void);
+extern void export_trail_as_kml(DataRow *p_station);   // export trail of one or all stations to kml file
 
 //
 extern int is_my_call(char *call, int exact);
