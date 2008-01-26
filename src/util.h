@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.54 2008/01/16 19:34:02 we7u Exp $
+ * $Id: util.h,v 1.55 2008/01/26 05:45:14 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -71,6 +71,7 @@ extern void stop_timer(void);
 extern void print_timer_results(void);
 extern void get_timestamp(char *timestring);
 extern int get_iso_datetime(time_t aTime, char *timestring, int nowIfNotSet, int nowIfInvalid);
+extern int get_w3cdtf_datetime(time_t aTime, char *timestring,int nowIfNotSet, int nowIfInvalid);
 extern int get_hours(void);
 extern int get_minutes(void);
 extern int get_seconds(void);
