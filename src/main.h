@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.102 2008/01/16 19:34:01 we7u Exp $
+ * $Id: main.h,v 1.103 2008/02/08 02:47:21 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -273,6 +273,7 @@ extern int log_message_data;
 extern int log_wx_alert_data;
 extern int log_wx;
 extern int snapshots_enabled;
+extern int kmlsnapshots_enabled;
 extern char user_dir[];
 extern char lang_to_use[30];
 extern char my_group;
