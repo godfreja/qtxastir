@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.226 2008/01/25 06:21:26 chicoreus Exp $
+# $Id: language-German.sys,v 1.227 2008/02/08 02:33:01 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -44,6 +44,7 @@ PULDNFI012|IGate protokollieren||
 PULDNFI013|Wetter protokollieren||
 PULDNFI014|PNG-Schnapschüsse||
 PULDNFI015|Karte drucken|d|
+PULDNFI016|KML Snapshots||
 #
 # Menu "Zeige"
 PULDNVI001|Bekanntmachungen|B|

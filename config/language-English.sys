@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.215 2008/01/25 06:21:26 chicoreus Exp $
+# $Id: language-English.sys,v 1.216 2008/02/08 02:33:01 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -37,6 +37,7 @@ PULDNFI012|IGate Logging||
 PULDNFI013|WX Logging||
 PULDNFI014|PNG Snapshots||
 PULDNFI015|Print|P|
+PULDNFI016|KML Snapshots||
 #
 # Menu "View"
 PULDNVI001|Bulletins|B|

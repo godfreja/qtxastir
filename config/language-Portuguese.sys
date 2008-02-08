@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.214 2008/01/25 06:21:26 chicoreus Exp $
+# $Id: language-Portuguese.sys,v 1.215 2008/02/08 02:33:01 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -36,6 +36,7 @@ PULDNFI012|Abre o log da I-Gate|G|
 PULDNFI013|Abre o log do tempo|W|
 PULDNFI014|Activa PNG instantanea||
 PULDNFI015|Imprimir mapa|P|
+PULDNFI016|KML Snapshots||
 #
 # Menu visor
 PULDNVI001|Boletins|B|

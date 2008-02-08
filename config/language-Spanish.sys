@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.224 2008/01/25 06:21:26 chicoreus Exp $
+# $Id: language-Spanish.sys,v 1.225 2008/02/08 02:33:01 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -37,6 +37,7 @@ PULDNFI012|Bitácora del I-Gate|G|
 PULDNFI013|Bitácora del WX|W|
 PULDNFI014|Activa PNG Instantánea||
 PULDNFI015|Imprimir Mapa|P|
+PULDNFI016|KML Snapshots||
 #
 # Menú visor
 PULDNVI001|Boletines|B|

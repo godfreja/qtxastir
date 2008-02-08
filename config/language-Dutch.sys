@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.227 2008/01/25 06:21:26 chicoreus Exp $
+# $Id: language-Dutch.sys,v 1.228 2008/02/08 02:33:01 chicoreus Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -49,6 +49,7 @@ PULDNFI012|IGate Loggen|G|
 PULDNFI013|WX Loggen|W|
 PULDNFI014|Activeer PNG Snapshots|A|
 PULDNFI015|Kaart Afdrukken|K|
+PULDNFI016|KML Snapshots||
 #
 # Menu "View"
 PULDNVI001|Bulletins|B|
