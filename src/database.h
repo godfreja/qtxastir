@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.48 2008/02/22 04:57:52 chicoreus Exp $
+ * $Id: database.h,v 1.49 2008/02/29 16:54:42 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -94,6 +94,12 @@ enum APRS_Types {
 #define NORMAL_GPS_RMC  'C'
 #define NORMAL_GPS_GGA  'A'
 #define NORMAL_GPS_GLL  'L'
+#define APRS_WX1        '1'
+#define APRS_WX2        '2'
+#define APRS_WX3        '3'
+#define APRS_WX4        '4'
+#define APRS_WX5        '5'
+#define APRS_WX6        '6'
 
 /* define RECORD ACTIVES */
 #define RECORD_ACTIVE    'A'
@@ -650,7 +656,7 @@ void dump_time_sorted_list(void);
 extern int store_trail_point(DataRow *p_station, long lon, long lat, time_t sec, char *alt, char *speed, char *course, short stn_flag);
 
 #ifdef HAVE_DB
-extern int add_simple_station(DataRow *p_new_station,char *station, char *origin, char *symbol, char *overlay, char *aprs_type, char *latitude, char *longitude, char *record_type, char *node_path, char *transmit_time);
+extern int add_simple_station(DataRow *p_new_station,char *station, char *origin, char *symbol, char *overlay, char *aprs_type, char *latitude, char *longitude, char *record_type, char *node_path, char *transmit_time, char *timeformat);
 
 #endif /* HAVE_DB */
 
