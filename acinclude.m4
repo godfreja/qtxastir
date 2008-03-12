@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.76 2008/01/16 19:33:57 we7u Exp $
+# $Id: acinclude.m4,v 1.77 2008/03/12 03:27:00 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -1018,7 +1018,7 @@ AC_DEFUN([XASTIR_BERKELEY_DB_CHK_LIB],
 	    AC_TRY_LINK(
             [#include <db.h>],
 	    [db_create(NULL, NULL, 0);],
-	    [BDB_LIBADD="$BDB_LIBADD -l$dbname"; dblib="berkeley"; dbname=db;
+	    [BDB_LIBADD="$BDB_LIBADD -l$dbname"; dblib="berkeley"; 
                 BDB_LIB_FOUND="-l$dbname"],
             dblib="no")
 #         STOP if we find one.  Otherwise we'll keep stepping through the 
