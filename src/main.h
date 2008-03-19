@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.103 2008/02/08 02:47:21 chicoreus Exp $
+ * $Id: main.h,v 1.104 2008/03/19 02:10:48 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,7 +26,6 @@
 #define XASTIR_MAIN_H
 
 #include <X11/Intrinsic.h>
-
 
 // For mutex debugging with Linux threads only
 #ifdef __linux__

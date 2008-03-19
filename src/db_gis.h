@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db_gis.h,v 1.9 2008/01/16 19:34:00 we7u Exp $
+ * $Id: db_gis.h,v 1.10 2008/03/19 02:10:46 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2007-2008  The Xastir Group
@@ -24,7 +24,6 @@
 #include "xastir.h"
 #include "interface.h"  // ioparam struct is used to store descriptions of databases
                         // to which to connect.
-
 extern int xastirCoordToLatLongWKT(long x, long y, char *wkt);
 extern int xastirCoordToLatLongPoint(long x, long y, char *wkt);
 extern float xastirWKTPointToLatitude(char *wkt);
@@ -120,7 +119,7 @@ typedef struct {
 // a database connection 
 typedef struct {
    int type;          // type of dbms (postgresql, mysql, etc, redundant from descriptor->type)
-   ioparam descriptor;  // connection parameters used to establish this connnection
+   ioparam *descriptor;  // connection parameters used to establish this connnection
                       // stored in ioparam struct defined in interface.h
 #ifdef HAVE_MYSQL
    MYSQL  *mhandle;   // mysql connection
@@ -132,18 +131,21 @@ typedef struct {
 } Connection; 
 
 // list of database connections
-typedef struct{
-   Connection *conn;  // a database connection
-   ioparam *iface;    // interface definition for the connection
-} ConnectionList;
+//typedef struct{
+//   Connection *conn;  // a database connection
+//   ioparam *iface;    // interface definition for the connection
+//} ConnectionList;
 
-ConnectionList connections[MAX_IFACE_DEVICES];
+//extern ConnectionList connections[MAX_IFACE_DEVICES];
+extern Connection *connections[MAX_IFACE_DEVICES];
+extern int connections_initialized;
 
 
 // connection management
 extern int openConnection (ioparam *aioparm, Connection *conn);
 extern int closeConnection (Connection *aDbConnection, int port_number);
 extern int testConnection(Connection *aDbConnection);
+int pingConnection(Connection *aDbConnection);
 
 extern char xastir_dbms_type[4][51];
 extern char xastir_schema_type[5][51];
@@ -158,6 +160,7 @@ extern ioparam simpleDbTest(void);
 
 #endif /* HAVE_SPATIAL_DB */
 
+extern int initConnections(void);
 #endif /* HAVE_DB */
 
 // structure to hold a latutude and longitude in decimal degrees

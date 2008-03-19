@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.760 2008/02/16 16:15:20 we7u Exp $
+ * $Id: main.c,v 1.761 2008/03/19 02:10:46 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1246,6 +1246,7 @@ char temp_tracking_station_call[30] = "";
 time_t program_start_time;
 int measuring_distance = 0;
 int moving_object = 0;
+
 
 
 
@@ -10991,18 +10992,23 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                           // load data
                           if (devices[i].connect_on_startup == 1) { 
                               // there should be an open connection already
-                              if (debug_level & 1) 
-                                  fprintf(stderr,"Opening (in main) connection [%d] with existing connection [%p]",i,&connections[i].conn); 
-                              // TODO: Replace with a connection status test
-                              got_conn = 1;
+                              if (debug_level & 4096) 
+                                  fprintf(stderr,"Opening (in main) connection [%d] with existing connection [%p]",i,connections[i]); 
+                              if (pingConnection(connections[i])==True) { 
+                                  got_conn = 1;
+                              } else { 
+                                // if (debug_level & 4096) 
+                                     fprintf(stderr,"Ping failed opening new connection [%p]",connections[i]);                          
+                                 //Connection *conn = connections[i];
+                                 got_conn = openConnection(&devices[i],connections[i]); 
+                              }
                           } else { 
-                              connections[i].conn = &conn;
-                              if (debug_level & 1) 
-                                  fprintf(stderr,"Opening (in main) connection [%d] with new connection [%p]",i,&connections[i].conn);                          
-                              got_conn = openConnection(&devices[i],&connections[i].conn); 
+                              if (debug_level & 4096) 
+                                  fprintf(stderr,"Opening (in main) connection [%d] with new connection [%p]",i,connections[i]);                          
+                              got_conn = openConnection(&devices[i],connections[i]); 
                           }
-                          if ((got_conn == 1) && (!(&connections[i].conn->type==NULL))) { 
-                              getAllSimplePositions(&connections[i].conn);
+                          if ((got_conn == 1) && (!(connections[i]->type==NULL))) { 
+                              getAllSimplePositions(connections[i]);
                               // if connection worked, it is a oneshot upload of data, so we don't 
                               // need to set port_data[].active and .status values here.
                           } else {
