@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.624 2008/03/19 02:10:45 chicoreus Exp $
+ * $Id: db.c,v 1.625 2008/03/21 04:00:00 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13453,6 +13453,8 @@ fprintf(stderr,"Cleared ST_VIATNC flag (2): %s\n", p_station->call_sign);
                                    if (debug_level & 4096) {
                                        fprintf(stderr,"Stored station %s to database interface %d.\n",p_station->call_sign,ii);
                                    }
+                                } else {
+                                   pingConnection(connections[ii]);
                                 }
                             }
                         }
