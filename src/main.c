@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.762 2008/03/21 04:00:01 chicoreus Exp $
+ * $Id: main.c,v 1.763 2008/03/21 04:11:58 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10695,7 +10695,6 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
     int data_port;
     unsigned char data_string[MAX_LINE_SIZE];
 #ifdef HAVE_DB
-    Connection *conn;
     int got_conn;   // holds result from openConnection() 
 #endif // HAVE_DB
 
@@ -11002,7 +11001,6 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                               } else { 
                                 // if (debug_level & 4096) 
                                      fprintf(stderr,"Ping failed opening new connection [%p]",connections[i]);                          
-                                 //Connection *conn = connections[i];
                                  got_conn = openConnection(&devices[i],connections[i]); 
                               }
                           } else { 

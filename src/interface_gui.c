@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.113 2008/03/21 04:00:01 chicoreus Exp $
+ * $Id: interface_gui.c,v 1.114 2008/03/21 04:11:58 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5666,7 +5666,6 @@ void Sql_Database_change_data(Widget widget, XtPointer clientData, XtPointer cal
         was_up=1;
 
         // close connection
-        // TODO: Unstable if more than one database interface is open.
         (void)closeConnection((Connection*)connections[Sql_Database_port],Sql_Database_port); 
 
     }
