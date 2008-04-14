@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.231 2008/01/26 05:45:14 chicoreus Exp $
+ * $Id: util.c,v 1.232 2008/04/14 04:31:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5124,6 +5124,7 @@ int fetch_remote_file(char *fileimg, char *local_filename) {
     CURLcode res;
     char curlerr[CURL_ERROR_SIZE];
     struct FtpFile ftpfile;
+    char agent_string[15];
 
     curl = curl_easy_init();
 
@@ -5133,6 +5134,9 @@ int fetch_remote_file(char *fileimg, char *local_filename) {
         //curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
 
         curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, curlerr);
+
+        xastir_snprintf(agent_string,sizeof(agent_string),"Xastir");
+        curl_easy_setopt(curl, CURLOPT_USERAGENT, agent_string);
 
         // write function
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_fwrite);
@@ -5210,7 +5214,7 @@ int fetch_remote_file(char *fileimg, char *local_filename) {
     char tempfile[500];
 
     xastir_snprintf(tempfile, sizeof(tempfile),
-        "%s --server-response --timestamping --tries=1 --timeout=%d --output-document=%s \'%s\' 2> /dev/null\n",
+        "%s --server-response --timestamping --user-agent=Xastir --tries=1 --timeout=%d --output-document=%s \'%s\' 2> /dev/null\n",
         WGET_PATH,
         net_map_timeout,
         local_filename,
