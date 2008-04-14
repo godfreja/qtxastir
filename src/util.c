@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.232 2008/04/14 04:31:45 we7u Exp $
+ * $Id: util.c,v 1.233 2008/04/14 05:31:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5213,8 +5213,9 @@ int fetch_remote_file(char *fileimg, char *local_filename) {
 
     char tempfile[500];
 
+    //"%s --server-response --timestamping --user-agent=Xastir --tries=1 --timeout=%d --output-document=%s \'%s\' 2> /dev/null\n",
     xastir_snprintf(tempfile, sizeof(tempfile),
-        "%s --server-response --timestamping --user-agent=Xastir --tries=1 --timeout=%d --output-document=%s \'%s\' 2> /dev/null\n",
+        "%s --server-response --user-agent=Xastir --tries=1 --timeout=%d --output-document=%s \'%s\' 2> /dev/null\n",
         WGET_PATH,
         net_map_timeout,
         local_filename,
