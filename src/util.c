@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.234 2008/05/09 18:18:58 gstueve Exp $
+ * $Id: util.c,v 1.235 2008/05/21 16:08:21 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5812,7 +5812,14 @@ char * makeMultiline(int numPairs, double *lon, double *lat, char colorStyle,
                 
                 for ( iPair=0; iPair<numPairs; ++iPair) {
                     double latOffset=lat[iPair]-*latCentr;
-                    double lonOffset=lon[iPair]-*lonCentr;
+                    // the wxsvr protocol is Western Hemisphere-Centric,
+                    // and treats positive offsets in longitude as being
+                    // west of the reference point.  So have to reverse
+                    // the sense of direction here.
+                    // This will yield positive offsets if lonCenter is
+                    // negative (west) and lon[iPair] is more negative 
+                    // (more west)
+                    double lonOffset=*lonCentr-lon[iPair];
                     
                     returnString[stringOffset++]=
                         (char)((int)(latOffset/scale)+78);
