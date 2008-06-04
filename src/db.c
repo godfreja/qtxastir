@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.627 2008/05/30 15:32:25 gstueve Exp $
+ * $Id: db.c,v 1.628 2008/06/04 11:23:19 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -6097,7 +6097,8 @@ begin_critical_section(&db_station_popup_lock, "db.c:Station_info_select_destroy
         if (found) {
             xastir_snprintf(temp2, sizeof(temp2), "%s", temp);
             // Only keep the station info, remove Tactical Call Sign
-            temp2[strcspn(temp2, " ")] = '\0';
+            temp2[strcspn(temp2, "(")] = '\0';
+            remove_trailing_spaces(temp2);
 
             // Call it with the global parameter at the last, so we
             // can pass special parameters down that we couldn't
