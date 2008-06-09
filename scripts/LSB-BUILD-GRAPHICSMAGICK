@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-GRAPHICSMAGICK,v 1.10 2008/01/16 19:33:59 we7u Exp $
+# $Id: LSB-BUILD-GRAPHICSMAGICK,v 1.11 2008/06/09 19:28:10 we7u Exp $
 # Copyright (C) 2006-2008  The Xastir Group
 # <http://www.graphicsmagick.org/>
 
@@ -41,6 +41,11 @@ export LSBCC_WARN=1
 # Change freetype2 to LSB include directory in configure.
 sed -i -e 's@{freetype_prefix}/include/freetype2@/opt/lsb/include@g' configure
 
+# Remove "-std=gnu99 -c99" from configure else we'll get a some
+# libraries compiled in that we don't wish 'cuz the lsbcc compiler
+# won't get used.
+sed -i -e 's/-std=gnu99 -c99//g' configure
+
 CC=lsbcc CXX=lsbc++ ./configure \
     --prefix=/opt/lsb-tmp \
     --exec_prefix=/opt/lsb-tmp \
@@ -56,8 +61,7 @@ CC=lsbcc CXX=lsbc++ ./configure \
     --without-freetype2 \
     --without-gslib \
     --with-quantum-depth=16
-#
-    --disable-installed
+# --disable-installed
 
 make clean
 
