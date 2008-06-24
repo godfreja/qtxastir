@@ -1,5 +1,5 @@
 
-$Id: README.Getting-Started,v 1.37 2008/05/29 17:15:25 we7u Exp $
+$Id: README.Getting-Started,v 1.38 2008/06/24 15:52:26 we7u Exp $
 
 
 Hello new user, and welcome to Xastir!
@@ -756,7 +756,7 @@ as regular Xastir maps as well.
 
 Enabling FCC/RAC Callsign Lookup:
 ---------------------------------
-Run the /usr/local/lib/xastir/fcc-get script as root, which will
+Run the /usr/local/lib/xastir/get-fcc-rac.pl script as root, which will
 download and install the proper databases into the
 /usr/local/share/xastir/fcc/ directory.  At that point the callsign
 lookup features in the Station Info dialog and in the "Station->Find
