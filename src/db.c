@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.628 2008/06/04 11:23:19 gstueve Exp $
+ * $Id: db.c,v 1.629 2008/06/25 13:37:10 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5668,8 +5668,23 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
         // Check whether it is a non-weather alert object/item.  If
         // so, try to use the origin callsign instead of the object
         // for FCC/RAC lookups.
+        //
         if ( (p_station->flag & ST_OBJECT) || (p_station->flag & ST_ITEM) ) {
-            xastir_snprintf(local_station,sizeof(local_station),"%s",p_station->origin);
+
+            // It turns out that objects transmitted by a station
+            // called "WINLINK" are what mess up the RAC button for
+            // Canadian stations.  Xastir sees the 'W' of WINLINK
+            // (the originating station) and assumes it is a U.S.
+            // station.  Here's a sample packet:
+            //
+// WINLINK>APWL2K,TCPIP*,qAC,T2MIDWEST:;VE7SEP-10*240521z4826.2 NW12322.5 Wa145.690MHz 1200b R11m RMSPacket EMCOMM
+            //
+            // If match on "WINLINK":  Don't copy origin callsign
+            // into local_station.  Use the object name instead
+            // which should be a callsign.
+            if (strncmp(p_station->origin,"WINLINK",7)) {
+                xastir_snprintf(local_station,sizeof(local_station),"%s",p_station->origin);
+            }
         }
 
 
@@ -5740,6 +5755,7 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
         // Add FCC button only if probable match
         else if ((! strncmp(local_station,"A",1)) || (!  strncmp(local_station,"K",1)) ||
             (! strncmp(local_station,"N",1)) || (! strncmp(local_station,"W",1))  ) {
+
             button_fcc = XtVaCreateManagedWidget(langcode("WPUPSTI003"),xmPushButtonGadgetClass, form,
                             XmNtopAttachment, XmATTACH_NONE,
                             XmNbottomAttachment, XmATTACH_WIDGET,
