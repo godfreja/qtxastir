@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.764 2008/06/25 23:30:02 we7u Exp $
+ * $Id: main.c,v 1.765 2008/06/26 19:10:00 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9277,7 +9277,7 @@ void create_gc(Widget w) {
 
 #ifdef USE_LARGE_STATION_FONT
     XFontStruct *font = NULL;
-    char fonttext[40] = "-*-*-*-*-*-*-20-*-*-*-*-*-*-*";
+    char fonttext[40] = "-misc-fixed-*-*-*-*-20-*-*-*-*-*-*-*";
 #endif  // USE_LARGE_STATION_FONT
 
 
