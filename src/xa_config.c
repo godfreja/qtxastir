@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.173 2008/02/08 02:47:21 chicoreus Exp $
+ * $Id: xa_config.c,v 1.174 2008/06/27 19:48:59 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -579,10 +579,14 @@ fprintf(stderr,"X:%d  y:%d\n", (int)x_return, (int)y_return);
         store_string (fout, "MAPS_LABEL_FONT_TINY", rotated_label_fontname[FONT_TINY]);
         store_string (fout, "MAPS_LABEL_FONT_SMALL", rotated_label_fontname[FONT_SMALL]);
         store_string (fout, "MAPS_LABEL_FONT_MEDIUM", rotated_label_fontname[FONT_MEDIUM]);
+        // NOTE:  FONT_DEFAULT points to FONT_MEDIUM.
         store_string (fout, "MAPS_LABEL_FONT_LARGE", rotated_label_fontname[FONT_LARGE]);
         store_string (fout, "MAPS_LABEL_FONT_HUGE", rotated_label_fontname[FONT_HUGE]);
         store_string (fout, "MAPS_LABEL_FONT_BORDER", rotated_label_fontname[FONT_BORDER]);
-        store_string (fout, "MAPS_LABEL_FONT", rotated_label_fontname[FONT_DEFAULT]);
+        store_string (fout, "SYSTEM_FIXED_FONT", default_system_fontname);
+        store_string (fout, "STATION_FONT", station_label_fontname);
+        store_string (fout, "ATV_ID_FONT", atv_id_fontname);
+
 //N0VH
 #if defined(HAVE_MAGICK)
         store_int (fout, "NET_MAP_TIMEOUT", net_map_timeout);
@@ -1431,6 +1435,7 @@ void load_data_or_default(void) {
             sizeof(rotated_label_fontname[FONT_MEDIUM]),
             "-adobe-helvetica-medium-r-normal--12-*-*-*-*-*-iso8859-1");
     }
+    // NOTE:  FONT_DEFAULT points to FONT_MEDIUM
 
     if (!get_string ("MAPS_LABEL_FONT_LARGE", rotated_label_fontname[FONT_LARGE], sizeof(rotated_label_fontname[FONT_LARGE]))
             || rotated_label_fontname[FONT_LARGE][0] == '\0') {
@@ -1453,12 +1458,28 @@ void load_data_or_default(void) {
             "-adobe-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1");
     }
 
-    if (!get_string ("MAPS_LABEL_FONT", rotated_label_fontname[FONT_DEFAULT], sizeof(rotated_label_fontname[FONT_DEFAULT]))
-            || rotated_label_fontname[FONT_DEFAULT][0] == '\0') {
-        xastir_snprintf(rotated_label_fontname[FONT_DEFAULT],
-            sizeof(rotated_label_fontname[FONT_DEFAULT]),
-            "-adobe-helvetica-bold-r-normal--12-*-*-*-*-*-iso8859-1");
+    if (!get_string ("SYSTEM_FIXED_FONT", default_system_fontname, sizeof(default_system_fontname))
+            || default_system_fontname[0] == '\0') {
+        xastir_snprintf(default_system_fontname,
+            sizeof(default_system_fontname),
+            "-misc-fixed-*-r-*-*-10-*-*-*-*-*-*-*");
     }
+
+    if (!get_string ("STATION_FONT", station_label_fontname, sizeof(station_label_fontname))
+            || station_label_fontname[0] == '\0') {
+        xastir_snprintf(station_label_fontname,
+            sizeof(station_label_fontname),
+            "-misc-fixed-*-r-*-*-10-*-*-*-*-*-*-*");
+    }
+
+    if (!get_string ("ATV_ID_FONT", atv_id_fontname, sizeof(atv_id_fontname))
+            || atv_id_fontname[0] == '\0') {
+        xastir_snprintf(atv_id_fontname,
+            sizeof(atv_id_fontname),
+            "-*-helvetica-*-*-*-*-*-240-*-*-*-*-*-*");
+    }
+
+
 
 //N0VH
 #if defined(HAVE_MAGICK)
