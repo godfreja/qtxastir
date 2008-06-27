@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.197 2008/01/16 19:33:57 we7u Exp $
+# $Id: configure.ac,v 1.198 2008/06/27 13:41:53 we7u Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 
@@ -133,6 +133,36 @@ AC_CHECK_LIB([Xm], [XmTextFindString])
 #  AC_DEFINE_UNQUOTED(HTML2TEXT_PATH, "${html2text}", [Path to html2text]) 
 #  use_html2text=yes
 #fi
+
+
+
+use_sed=no
+AC_PATH_PROG(sed, [sed --version], no, $BINPATH)
+if test "$sed" != "no"; then
+  AC_DEFINE_UNQUOTED(HAVE_SED, 1, [Define if you have sed]) 
+  AC_DEFINE_UNQUOTED(SED_PATH, "${sed}", [Path to sed]) 
+  use_sed=yes
+fi
+
+
+
+use_mv=no
+AC_PATH_PROG(mv, [mv --version], no, $BINPATH)
+if test "$mv" != "no"; then
+  AC_DEFINE_UNQUOTED(HAVE_MV, 1, [Define if you have mv]) 
+  AC_DEFINE_UNQUOTED(MV_PATH, "${mv}", [Path to mv]) 
+  use_mv=yes
+fi
+
+
+
+use_xfontsel=no
+AC_PATH_PROG(xfontsel, xfontsel, no, $BINPATH)
+if test "$xfontsel" != "no"; then
+  AC_DEFINE_UNQUOTED(HAVE_XFONTSEL, 1, [Define if you have xfontsel]) 
+  AC_DEFINE_UNQUOTED(XFONTSEL_PATH, "${xfontsel}", [Path to xfontsel]) 
+  use_xfontsel=yes
+fi
 
 
 
