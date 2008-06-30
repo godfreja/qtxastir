@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.58 2008/06/27 19:48:59 we7u Exp $
+ * $Id: xastir.h,v 1.59 2008/06/30 23:40:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -153,19 +153,19 @@ extern int redraw_on_new_data;
 extern int tiger_flag;
 extern int index_maps_on_startup;
 #define MAX_LABEL_FONTNAME 256
-#define FONT_TINY 0
-#define FONT_SMALL 1
-#define FONT_MEDIUM 2
-#define FONT_LARGE 3
-#define FONT_HUGE 4
-#define FONT_BORDER 5
-#define FONT_MAX 6
+#define FONT_SYSTEM  0
+#define FONT_STATION 1
+#define FONT_TINY    2
+#define FONT_SMALL   3
+#define FONT_MEDIUM  4
+#define FONT_LARGE   5
+#define FONT_HUGE    6
+#define FONT_BORDER  7
+#define FONT_ATV_ID  8
+#define FONT_MAX     9
 #define FONT_DEFAULT FONT_MEDIUM
 #define MAX_FONTNAME 256
 extern char rotated_label_fontname[FONT_MAX][MAX_LABEL_FONTNAME];
-extern char default_system_fontname[MAX_FONTNAME];
-extern char station_label_fontname[MAX_FONTNAME];
-extern char atv_id_fontname[MAX_FONTNAME];
 
 #ifdef HAVE_MAGICK  //N0VH
 extern int tiger_show_grid;

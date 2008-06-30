@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.30 2008/06/27 19:48:59 we7u Exp $
+ * $Id: popup_gui.c,v 1.31 2008/06/30 23:40:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -314,11 +314,11 @@ void popup_ID_message(char *banner, char *message) {
 
         /* load font */
         if(!id_font) {
-            id_font=(XFontStruct *)XLoadQueryFont (XtDisplay(da), atv_id_fontname);
+            id_font=(XFontStruct *)XLoadQueryFont (XtDisplay(da), rotated_label_fontname[FONT_ATV_ID]);
  
             if (id_font == NULL) {    // Couldn't get the font!!!
-                fprintf(stderr,"popup_ID_message: Couldn't get font %s\n",
-                    atv_id_fontname);
+                fprintf(stderr,"popup_ID_message: Couldn't get ATV ID font %s\n",
+                    rotated_label_fontname[FONT_ATV_ID]);
                 pending_ID_message = 0;
                 return;
             }
