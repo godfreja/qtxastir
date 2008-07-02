@@ -1,5 +1,5 @@
 /*
- * $Id: location_gui.c,v 1.21 2008/01/16 19:34:00 we7u Exp $
+ * $Id: location_gui.c,v 1.22 2008/07/02 03:04:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -42,7 +42,7 @@
 // Must be last include file
 #include "leak_detection.h"
 
-
+extern XmFontList fontlist1;    // Menu/System fontlist
 
 Widget location_dialog = (Widget)NULL;
 Widget location_list;
@@ -378,6 +378,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
                 XmNdeleteResponse,XmDESTROY,
                 XmNdefaultPosition, FALSE,
                 XmNresize, FALSE,
+                XmNfontList, fontlist1,
                 NULL);
 
         pane = XtVaCreateWidget("Jump_location pane",
@@ -414,6 +415,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
         XtSetArg(al[ac], XmNleftOffset, 5); ac++;
         XtSetArg(al[ac], XmNforeground, MY_FG_COLOR); ac++;
         XtSetArg(al[ac], XmNbackground, MY_BG_COLOR); ac++;
+        XtSetArg(al[ac], XmNfontList, fontlist1); ac++;
  
         location_list = XmCreateScrolledList(form,
                 "Jump_location list",
@@ -437,6 +439,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
                 XmNrightAttachment, XmATTACH_NONE,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
+                XmNfontList, fontlist1,
                 NULL);
 
         location_name = XtVaCreateManagedWidget("Jump_location Location_name", 
@@ -457,6 +460,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
                 XmNleftWidget,locdata,
                 XmNrightAttachment,XmATTACH_FORM,
                 XmNrightOffset, 5,
+                XmNfontList, fontlist1,
                 NULL);
 
         button_ok = XtVaCreateManagedWidget(langcode("JMLPO00002"),
@@ -473,6 +477,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
                 XmNrightAttachment, XmATTACH_POSITION,
                 XmNrightPosition, 1,
                 XmNnavigationType, XmTAB_GROUP,
+                XmNfontList, fontlist1,
                 NULL);
 
         button_add = XtVaCreateManagedWidget(langcode("UNIOP00007"),
@@ -488,6 +493,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
                 XmNrightAttachment, XmATTACH_POSITION,
                 XmNrightPosition, 2,
                 XmNnavigationType, XmTAB_GROUP,
+                XmNfontList, fontlist1,
                 NULL);
 
         button_delete = XtVaCreateManagedWidget(langcode("UNIOP00008"),
@@ -503,6 +509,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
                 XmNrightAttachment, XmATTACH_POSITION,
                 XmNrightPosition, 3,
                 XmNnavigationType, XmTAB_GROUP,
+                XmNfontList, fontlist1,
                 NULL);
 
         button_cancel = XtVaCreateManagedWidget(langcode("UNIOP00003"),
@@ -519,6 +526,7 @@ begin_critical_section(&location_dialog_lock, "location_gui.c:Jump_location" );
                 XmNrightPosition, 5,
                 XmNrightOffset, 3,
                 XmNnavigationType, XmTAB_GROUP,
+                XmNfontList, fontlist1,
                 NULL);
 
         XtAddCallback(button_cancel, XmNactivateCallback, location_destroy_shell, location_dialog);

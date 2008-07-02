@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.91 2008/01/23 04:48:37 we7u Exp $
+ * $Id: map_geo.c,v 1.92 2008/07/02 03:04:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1921,7 +1921,7 @@ fprintf(stderr,"2 ");
 
     if (debug_level & 16)
 #ifdef HAVE_GRAPHICSMAGICK
-        fprintf(stderr,"Colors = %d\n", image->colors);
+        fprintf(stderr,"Colors = %d\n", (int)image->colors);
 #else   // HAVE_GRAPHICSMAGICK
         fprintf(stderr,"Colors = %ld\n", image->colors);
 #endif  // HAVE_GRAPHICSMAGICK

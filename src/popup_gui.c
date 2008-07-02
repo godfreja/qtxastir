@@ -1,5 +1,5 @@
 /*
- * $Id: popup_gui.c,v 1.31 2008/06/30 23:40:45 we7u Exp $
+ * $Id: popup_gui.c,v 1.32 2008/07/02 03:04:44 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -44,6 +44,7 @@
 #include "leak_detection.h"
 
 
+extern XmFontList fontlist1;    // Menu/System fontlist
 
 static Popup_Window pw[MAX_POPUPS];
 static Popup_Window pwb;
@@ -174,6 +175,7 @@ begin_critical_section(&popup_message_dialog_lock, "popup_gui.c:popup_message" )
 // comes up extremely small.  Setting a minimum size for the popup.
 XmNminWidth, 220,
 XmNminHeight, 80,
+                XmNfontList, fontlist1,
                 NULL);
 
             pw[i].pane = XtVaCreateWidget("popup_message pane",xmPanedWindowWidgetClass, pw[i].popup_message_dialog,
@@ -196,6 +198,7 @@ XmNminHeight, 80,
                                       XmNrightAttachment, XmATTACH_FORM,
                                       XmNrightOffset, 10,
                                       XmNbackground, colors[0xff],
+                                      XmNfontList, fontlist1,
                                       NULL);
 
             pw[i].button_close = XtVaCreateManagedWidget(langcode("UNIOP00003"),xmPushButtonGadgetClass, pw[i].form,
@@ -209,6 +212,7 @@ XmNminHeight, 80,
                                       XmNrightAttachment, XmATTACH_POSITION,
                                       XmNrightPosition, 3,
                                       XmNbackground, colors[0xff],
+                                      XmNfontList, fontlist1,
                                       NULL);
 
             sprintf(pw[i].name,"%d",i);

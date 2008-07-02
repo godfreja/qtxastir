@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.112 2008/06/30 23:40:43 we7u Exp $
+ * $Id: draw_symbols.c,v 1.113 2008/07/02 03:04:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -45,6 +45,8 @@
 // Must be last include file
 #include "leak_detection.h"
 
+
+extern XmFontList fontlist1;    // Menu/System fontlist
 
 
 #define ANGLE_UPDOWN 30         /* prefer horizontal cars if less than 45 degrees */
@@ -3080,6 +3082,7 @@ begin_critical_section(&select_symbol_dialog_lock, "draw_symbols.c:Select_symbol
                 xmDialogShellWidgetClass, appshell,
                 XmNdeleteResponse,XmDESTROY,
                 XmNdefaultPosition, FALSE,
+                XmNfontList, fontlist1,
                 NULL);
 
         pane = XtVaCreateWidget("Select_symbol pane",
@@ -3118,6 +3121,7 @@ begin_critical_section(&select_symbol_dialog_lock, "draw_symbols.c:Select_symbol
                 XmNchildType, XmFRAME_TITLE_CHILD,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
+                XmNfontList, fontlist1,
                 NULL);
 
         frame2 = XtVaCreateManagedWidget("Select_symbol frame", 
@@ -3141,6 +3145,7 @@ begin_critical_section(&select_symbol_dialog_lock, "draw_symbols.c:Select_symbol
                 XmNchildType, XmFRAME_TITLE_CHILD,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
+                XmNfontList, fontlist1,
                 NULL);
 
         my_form2 =  XtVaCreateWidget("Select_symbol my_form2",
@@ -3187,6 +3192,7 @@ begin_critical_section(&select_symbol_dialog_lock, "draw_symbols.c:Select_symbol
                     XmNnavigationType, XmTAB_GROUP,
                     MY_FOREGROUND_COLOR,
                     MY_BACKGROUND_COLOR,
+                    XmNfontList, fontlist1,
                     NULL);
 
             symbol(b1,0,'/',(char)i,' ',select_icons[i-33],0,0,0,' ');  // create icon
@@ -3216,6 +3222,7 @@ begin_critical_section(&select_symbol_dialog_lock, "draw_symbols.c:Select_symbol
                     XmNnavigationType, XmTAB_GROUP,
                     MY_FOREGROUND_COLOR,
                     MY_BACKGROUND_COLOR,
+                    XmNfontList, fontlist1,
                     NULL);
 
             symbol(b1,0,'\\',(char)i-94,' ',select_icons[i-33],0,0,0,' ');  // create icon
@@ -3243,6 +3250,7 @@ begin_critical_section(&select_symbol_dialog_lock, "draw_symbols.c:Select_symbol
                 XmNnavigationType, XmTAB_GROUP,
                 MY_FOREGROUND_COLOR,
                 MY_BACKGROUND_COLOR,
+                XmNfontList, fontlist1,
                 NULL);
 
         XtAddCallback(button_cancel, XmNactivateCallback, Select_symbol_destroy_shell, select_symbol_dialog);
