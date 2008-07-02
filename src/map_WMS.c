@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.31 2008/01/23 04:45:44 we7u Exp $
+ * $Id: map_WMS.c,v 1.32 2008/07/02 19:06:26 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -134,13 +134,6 @@
 
 // Must be last include file
 #include "leak_detection.h"
-
-
-
-extern int npoints;		/* tsk tsk tsk -- globals */
-extern int mag;
-
-
 
 
 
@@ -936,7 +929,6 @@ void draw_WMS_map (Widget w,
 
         HandlePendingEvents(app_context);
         if (interrupt_drawing_now) {
-            (void)fclose (f);
             if (image)
                 DestroyImage(image);
             if (image_info)
