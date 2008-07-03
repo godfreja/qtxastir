@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.633 2008/07/02 18:03:47 we7u Exp $
+ * $Id: db.c,v 1.634 2008/07/03 13:12:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3614,6 +3614,21 @@ void draw_ruler(Widget w) {
             border_offset = get_rotated_label_text_length_pixels(w, "0", FONT_BORDER) + 3;
             dy = dy - border_offset - 3;
             dx = dx - border_offset - 3;
+        }
+
+        // If text on black background style selected, draw a black
+        // rectangle in that corner of the map first so that the
+        // scale lines show up well.
+        //
+        // If first time through and text-on-black style
+        if ( (i == 8) && (letter_style == 2) ) {
+            XSetForeground(XtDisplay(w),gc,colors[0x10]);   // black
+            (void)XSetLineAttributes(XtDisplay(w),gc,20,LineSolid,CapProjecting,JoinMiter);
+            draw_test_line(w, dx, dy+5, ruler_pix, 0, ruler_pix);
+
+            // Reset to needed parameters for drawing the scale
+            (void)XSetLineAttributes(XtDisplay(w),gc,1,LineSolid,CapRound,JoinRound);
+            (void)XSetForeground(XtDisplay(w),gc,colors[0x20]);         // white
         }
 
         if (i == 0)
