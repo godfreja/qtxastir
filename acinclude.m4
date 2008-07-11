@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.78 2008/05/02 16:58:24 tvrusso Exp $
+# $Id: acinclude.m4,v 1.79 2008/07/11 22:03:36 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -489,7 +489,7 @@ if test "${use_imagemagick}" = "yes"; then
   if test "${use_imagemagick}" = "no"; then
     AC_MSG_WARN(*** Cannot find ImageMagick include files:  Building w/o ImageMagick support. ***)
   else
-    AC_SEARCH_LIBS([WriteImage],[Magick MagicCore], AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library]), use_imagemagick="no")
+    AC_SEARCH_LIBS([WriteImage],[Magick MagickCore], AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library]), use_imagemagick="no")
     if test "${use_imagemagick}" = "no"; then
       AC_MSG_WARN(*** Cannot find ImageMagick library files:  Building w/o ImageMagick support. ***)
     fi
