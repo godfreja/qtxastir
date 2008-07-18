@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: get-NWSdata,v 1.15 2008/06/13 13:43:38 gstueve Exp $
+# $Id: get-NWSdata,v 1.16 2008/07/18 15:26:39 gstueve Exp $
 #
 # Script to retrieve NWS data files. 
 #
@@ -34,7 +34,7 @@
 
 FILE1="z_01ap08"  # NWSM Libraries: Public Zone Boundaries
 FILE2="w_16mr06"  # NWSM Libraries: County Warning Area Boundaries
-FILE3="mz03jn08"  # NWSM Libraries: Coastal and Offshore Marine Zones
+FILE3="mz08jl08"  # NWSM Libraries: Coastal and Offshore Marine Zones
 FILE4="oz02jn08"  # NWSM Libraries: Coastal and Offshore Marine Zones
 FILE5="hz28au04"  # NWSM Libraries: Coastal and Offshore Marine Zones
 FILE6="fz25jn08"  # NWSM Libraries: Fire Weather Zone Boundaries
