@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.635 2008/07/28 08:37:34 we7u Exp $
+ * $Id: db.c,v 1.636 2008/07/28 09:10:05 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -15523,9 +15523,21 @@ void shorten_path( char *path, char *short_path, int short_path_size ) {
 
 
 
+// TODO:
+// Use valid_call(call)?
+//
 int fill_in_tactical_callsign(char *call, char *tactical_call) {
     DataRow *p_station;
 
+
+    // Convert callsign to upper-case
+    (void)to_upper(call);
+
+    // Get rid of white space on either end
+    (void)remove_leading_spaces(call);
+    (void)remove_trailing_spaces(call);
+    (void)remove_leading_spaces(tactical_call);
+    (void)remove_trailing_spaces(tactical_call);
  
     // Find the station record.
     if (!search_station_name(&p_station, call, 1)) {
