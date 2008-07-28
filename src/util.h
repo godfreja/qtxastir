@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.56 2008/05/09 18:18:58 gstueve Exp $
+ * $Id: util.h,v 1.57 2008/07/28 08:37:36 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -165,6 +165,7 @@ extern short checkHash(char *theCall, short theHash);
 int fetch_remote_file(char *fileimg, char *local_filename);
 
 extern void split_string( char *data, char *cptr[], int max );
+extern void split_string_char ( char *data, char *cptr[], int max, char search_char );
 extern int check_unproto_path( char *data );
 
 extern void set_dangerous( char *ptr );
