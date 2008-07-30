@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.236 2008/07/28 08:37:36 we7u Exp $
+ * $Id: util.c,v 1.237 2008/07/30 15:24:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3942,7 +3942,8 @@ void log_data(char *file, char *line) {
 // Tactical callsign logging
 //
 // Logging function called from the Assign Tactical Call right-click
-// menu option.  Each tactical assignment is logged as one line.
+// menu option and also from db.c:fill_in_tactical_call.  Each
+// tactical assignment is logged as one line.
 //
 // We need to check for identical callsigns in the file, deleting
 // lines that have the same name and adding new records to the end.

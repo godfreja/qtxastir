@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.49 2008/02/29 16:54:42 chicoreus Exp $
+ * $Id: database.h,v 1.50 2008/07/30 15:24:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -36,7 +36,7 @@
 
 #define MSG_INCREMENT 200
 #define MAX_CALLSIGN 9       // Objects are up to 9 chars
-#define MAX_TACTICAL_CALL 20 // Up to XX chars for tactical calls
+#define MAX_TACTICAL_CALL 57 // Up to XX chars for tactical calls
 #define MAX_COMMENT_LINES 20  // Save XX unique comment strings per station
 #define MAX_STATUS_LINES 20   // Save XX unique status strings per station
 
