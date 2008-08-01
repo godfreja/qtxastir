@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gdal.c,v 1.155 2008/01/23 04:47:37 we7u Exp $
+ * $Id: map_gdal.c,v 1.156 2008/08/01 06:21:43 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2004-2008  The Xastir Group
@@ -240,6 +240,7 @@ void map_gdal_init(void) {
     }
     fprintf(stderr,"\n");
 
+    atexit(GDALDestroyDriverManager);
 #endif  // HAVE_LIBGDAL
 
 }
