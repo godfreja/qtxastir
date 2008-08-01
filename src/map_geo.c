@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.92 2008/07/02 03:04:42 we7u Exp $
+ * $Id: map_geo.c,v 1.93 2008/08/01 12:42:58 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1318,7 +1318,10 @@ fprintf(stderr,"1 ");
 	        }
             }
 #endif
-                return;
+               if (image_info)
+                 DestroyImageInfo(image_info);
+               DestroyExceptionInfo(&exception);
+               return;
             }
             (void)fclose (f);
             
@@ -1337,6 +1340,9 @@ fprintf(stderr,"1 ");
             }
 #endif
 
+               if (image_info)
+                 DestroyImageInfo(image_info);
+               DestroyExceptionInfo(&exception);
                 return;
             }
             
@@ -1664,6 +1670,9 @@ fprintf(stderr,"1 ");
     if (f == NULL) {
 fprintf(stderr,"2 ");
         fprintf(stderr,"File %s could not be read\n",image_info->filename);
+        if (image_info)
+          DestroyImageInfo(image_info);
+        DestroyExceptionInfo(&exception);
         return;
     }
     (void)fclose (f);
@@ -1681,6 +1690,9 @@ fprintf(stderr,"2 ");
             (unsigned int)screen_height,
             0,
             0);
+        if (image_info)
+          DestroyImageInfo(image_info);
+        DestroyExceptionInfo(&exception);
         return;
     }
 
@@ -1689,6 +1701,9 @@ fprintf(stderr,"2 ");
     if (image == (Image *) NULL) {
         MagickWarning(exception.severity, exception.reason, exception.description);
         //fprintf(stderr,"MagickWarning\n");
+        if (image_info)
+          DestroyImageInfo(image_info);
+        DestroyExceptionInfo(&exception);
         return;
     }
 
@@ -1897,7 +1912,7 @@ fprintf(stderr,"2 ");
             DestroyImage(image);
         if (image_info)
             DestroyImageInfo(image_info);
-       DestroyExceptionInfo(&exception);
+        DestroyExceptionInfo(&exception);
          return;
     }
 

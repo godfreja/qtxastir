@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.33 2008/08/01 03:24:14 gstueve Exp $
+ * $Id: map_WMS.c,v 1.34 2008/08/01 12:42:59 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -633,6 +633,9 @@ void draw_WMS_map (Widget w,
         }
 #endif
          
+        if (image_info)
+            DestroyImageInfo(image_info);
+	DestroyExceptionInfo(&exception);
         return;
     }
     (void)fclose (f);
@@ -653,6 +656,9 @@ void draw_WMS_map (Widget w,
         }
 #endif
 
+        if (image_info)
+            DestroyImageInfo(image_info);
+	DestroyExceptionInfo(&exception);
         return;
     }
 
