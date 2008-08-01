@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.175 2008/06/30 23:40:45 we7u Exp $
+ * $Id: xa_config.c,v 1.176 2008/08/01 00:09:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1463,7 +1463,7 @@ void load_data_or_default(void) {
             || rotated_label_fontname[FONT_SYSTEM][0] == '\0') {
         xastir_snprintf(rotated_label_fontname[FONT_SYSTEM],
             sizeof(rotated_label_fontname[FONT_SYSTEM]),
-            "-misc-fixed-*-r-*-*-10-*-*-*-*-*-*-*");
+            "fixed");
             // NOTE:  This same default font is hard-coded into
             // main.c, to be used for the case when the user enters
             // an invalid font (so the program won't crash).
@@ -1473,7 +1473,7 @@ void load_data_or_default(void) {
             || rotated_label_fontname[FONT_STATION][0] == '\0') {
         xastir_snprintf(rotated_label_fontname[FONT_STATION],
             sizeof(rotated_label_fontname[FONT_STATION]),
-            "-*-helvetica-medium-r-*-*-10-*-*-*-*-*-*-*");
+            "fixed");
             // NOTE:  This same default font is hard-coded into
             // main.c, to be used for the case when the user enters
             // an invalid font (so the program won't crash).
