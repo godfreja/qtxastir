@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: BUILDRPMS,v 1.17 2008/08/03 16:18:36 we7u Exp $
+# $Id: BUILDRPMS,v 1.18 2008/08/04 14:27:32 we7u Exp $
 
 # This is an example script used by one of the developers to ease
 # the workload.  It's not intended to be used by the general
@@ -71,11 +71,11 @@ mv /usr/src/packages/RPMS/i586/xastir-1.9.3-1.i586.rpm /usr/src/packages/RPMS/i5
 
 # Run these commands as "archer":
 #
-#echo
-#echo
-#echo "**************************************************************"
-#echo "***** Copying packages to Eskimo and setting permissions *****"
-#echo "**************************************************************"
+echo
+echo
+echo "**************************************************************"
+echo "***** Copying packages to Eskimo and setting permissions *****"
+echo "**************************************************************"
 su -c " cd /usr/bin;scp /usr/src/packages/RPMS/i586/xastir-1.9.3-max.i586.rpm eskimo:ftp/aprs/xastir/SUSE-RPM/SuSE-11.0/." archer
 su -c " cd /usr/bin;scp /usr/src/packages/RPMS/i586/xastir-1.9.3-min.i586.rpm eskimo:ftp/aprs/xastir/SUSE-RPM/SuSE-11.0/." archer
 su -c " cd /usr/bin;scp /usr/src/packages/SRPMS/xastir-1.9.3-1.src.rpm eskimo:ftp/aprs/xastir/SUSE-RPM/SuSE-11.0/." archer
