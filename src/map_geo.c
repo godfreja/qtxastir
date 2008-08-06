@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.93 2008/08/01 12:42:58 gstueve Exp $
+ * $Id: map_geo.c,v 1.94 2008/08/06 03:03:54 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1927,6 +1927,7 @@ fprintf(stderr,"2 ");
             DestroyImage(image);
         if (image_info)
             DestroyImageInfo(image_info);
+        DestroyExceptionInfo(&exception);
         return;
     }
 
