@@ -1,6 +1,6 @@
 #!/usr/bin/perl -W
 #
-# $Id: get-fcc-rac.pl,v 1.1 2008/06/24 15:48:59 we7u Exp $
+# $Id: get-fcc-rac.pl,v 1.2 2008/08/19 02:02:35 gstueve Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -41,11 +41,9 @@ if (-e $file && -r $file && -f $file) {
   print STDERR "*** Filtering/sorting/installing the FCC database ***\n";
   print STDERR "*****************************************************\n";
 
-  `unzip $file $file2`;
-
   my %from = ();
  
-  open FILE, "< $file2" or die "Can't open $file2 : $!";
+  open FILE, "unzip -p $file $file2|" or die "Can't open $file2 in $file : $!";
   while( <FILE> ) {
     if (/^EN\|(\d+)\|\|\|(\w+)\|.*/) {
       $x = $1;
@@ -80,7 +78,7 @@ if (-e $file && -r $file && -f $file) {
 }
 
 # Remove the FCC download files
-unlink $file, $file2;
+unlink $file;
 
 
 
