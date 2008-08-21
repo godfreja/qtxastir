@@ -1,5 +1,5 @@
 /*
- * $Id: bulletin_gui.c,v 1.41 2008/07/02 03:04:40 we7u Exp $
+ * $Id: bulletin_gui.c,v 1.42 2008/08/21 16:50:57 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -164,7 +164,7 @@ void bulletin_message(char *call_sign, char *tag, char *packet_message, time_t s
 
 begin_critical_section(&display_bulletins_dialog_lock, "bulletin_gui.c:bulletin_message" );
 
-        if ((Display_bulletins_dialog != NULL)) {   // Dialog is up
+        if ((Display_bulletins_dialog != NULL) && Display_bulletins_text != NULL) {   // Dialog is up
 
             xastir_snprintf(temp_text,
                 sizeof(temp_text),
