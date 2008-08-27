@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.81 2008/08/27 13:23:18 tvrusso Exp $
+# $Id: acinclude.m4,v 1.82 2008/08/27 13:25:31 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -1130,7 +1130,7 @@ AC_DEFUN([XASTIR_ADD_LIBPATH_TO], [
 dnl runpath initialization
 AC_DEFUN([XASTIR_GUESS_RUNPATH_SWITCH], [
    # XASTIR GUESS RUNPATH SWITCH
-  AC_CACHE_CHECK(for runpath switch, xastir_cv_runpath_switch, [
+  AC_CACHE_CHECK([for runpath switch], [xastir_cv_runpath_switch], [
     # first, try -R
     SAVE_LDFLAGS="${LDFLAGS}"
     LDFLAGS="-R /usr/lib"
