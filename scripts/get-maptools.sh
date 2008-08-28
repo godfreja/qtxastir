@@ -1,6 +1,6 @@
 #!/bin/bash +x
 #
-# $Id: get-maptools.sh,v 1.9 2008/01/16 19:33:59 we7u Exp $
+# $Id: get-maptools.sh,v 1.10 2008/08/28 14:22:58 gstueve Exp $
 #
 #
 # Script originally to retrieve and install Shapelib. 
@@ -168,6 +168,7 @@ else
         printf "Warning: /usr/local/lib not in %s - adding it\n" $LDCONF_FILE
 	if [ -f $LDCONF_FILE ]
 	then
+	        $SUDO rm -f /tmp/ldconfig.tmp
 	        cp $LDCONF_FILE /tmp/ldconfig.tmp
 	        $SUDO cp $LDCONF_FILE $LDCONF_FILE.orig.$$
 	fi
