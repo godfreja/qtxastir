@@ -1,6 +1,6 @@
 #!/usr/bin/perl -n
 
-# $Id: langPigLatin.pl,v 1.1 2008/08/30 05:12:08 we7u Exp $
+# $Id: langPigLatin.pl,v 1.2 2008/08/30 05:19:14 we7u Exp $
 
 # Copyright (C) 2007-2008  The Xastir Group
 #
@@ -38,8 +38,8 @@
 # http://www.perlmonks.org/?node_id=3586
 
 
-# Change the "$Id: langPigLatin.pl,v 1.1 2008/08/30 05:12:08 we7u Exp $" RCS tag to show that we translated the file.
-if (m/^#.*\$Id: langPigLatin.pl,v 1.1 2008/08/30 05:12:08 we7u Exp $/) {
+# Change the "$Id: langPigLatin.pl,v 1.2 2008/08/30 05:19:14 we7u Exp $" RCS tag to show that we translated the file.
+if (m/^#.*\$Id:/) {
     print "# language-PigLatin.sys, translated from language-English.sys\n";
     print "# Please do not edit this derived file.\n";
     next;
