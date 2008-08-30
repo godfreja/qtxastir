@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.145 2008/01/16 19:33:57 we7u Exp $
+$Id: README.win32,v 1.146 2008/08/30 23:30:33 we7u Exp $
 
 
   Two companies have created simpler installs of Cygwin/Xastir than
@@ -499,6 +499,7 @@ this command line instead from inside an Xterm:
 Current choices are:
 
     Dutch English French German Italian Portuguese Spanish
+    ElmerFudd MuppetsChef OldeEnglish PigLatin PirateEnglish
 
 This option will be stored in the users config file for the next
 time Xastir is run. On new installs Xastir will default to English
