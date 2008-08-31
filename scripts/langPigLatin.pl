@@ -1,6 +1,6 @@
 #!/usr/bin/perl -W
 
-# $Id: langPigLatin.pl,v 1.4 2008/08/31 20:52:34 we7u Exp $
+# $Id: langPigLatin.pl,v 1.5 2008/08/31 23:27:32 we7u Exp $
 
 # Copyright (C) 2007-2008  The Xastir Group
 #
@@ -67,14 +67,17 @@ while ( <> ) {
     @pieces = split /\|/;
 
     # Translate the second portion of each line only
-    $pieces[1] =~ s/\b(qu|y(?=[^t])|[^\W\daeiouy]*)([a-z']+)/$2.($1||"w")."ay"/eg;
+    $_ = $pieces[1];
+  }
 
+  s/\b(qu|y(?=[^t])|[^\W\daeiouy]*)([a-z']+)/$2.($1||"w")."ay"/eg;
+
+  if ($do_split) {
     # Combine the line again for output to STDOUT
+    $pieces[1] = $_;
     print join '|', @pieces;
   }
   else {
-    # Translate the entire line of text
-    s/\b(qu|y(?=[^t])|[^\W\daeiouy]*)([a-z']+)/$2.($1||"w")."ay"/eg;
     print;
   }
 }
