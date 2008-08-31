@@ -1,6 +1,6 @@
 #!/usr/bin/perl -n
 
-# $Id: langPirateEnglish.pl,v 1.4 2008/08/31 01:56:03 we7u Exp $
+# $Id: langPirateEnglish.pl,v 1.5 2008/08/31 16:26:00 we7u Exp $
 
 # Copyright (C) 2008  The Xastir Group
 #
@@ -95,10 +95,12 @@ my @regexs = (
   "\\bsnapshot:etching",
 #  "\\bObject:",
 #  "\\bobject:",
-#  "\\Item:",
-#  "\\item:",
-  "\\Interface:Grapple",
-  "\\interface:grapple",
+#  "\\bItem:",
+#  "\\bitem:",
+  "\\bInterface:Grapple",
+  "\\binterface:grapple",
+  "\\bConfigure:Provision me' ship",
+  "\\bconfigure:provision me' ship",
 
   # From userscripts:
   "About:\'bout",
