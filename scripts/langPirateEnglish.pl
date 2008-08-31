@@ -1,6 +1,6 @@
 #!/usr/bin/perl -n
 
-# $Id: langPirateEnglish.pl,v 1.3 2008/08/31 01:14:56 we7u Exp $
+# $Id: langPirateEnglish.pl,v 1.4 2008/08/31 01:56:03 we7u Exp $
 
 # Copyright (C) 2008  The Xastir Group
 #
@@ -72,6 +72,8 @@ my @regexs = (
   "\\bprint:affix to parchment",
   "\\bCancel:Nay",
   "\\bcancel:nay",
+  "Close:Nay",
+  "close:nay",
   "\\bOK:Aye",
   "\\bOk:Aye",
   "\\bok:aye",
@@ -91,6 +93,12 @@ my @regexs = (
   "\\bsatellite:heavenly body",
   "\\bSnapshot:Etching",
   "\\bsnapshot:etching",
+#  "\\bObject:",
+#  "\\bobject:",
+#  "\\Item:",
+#  "\\item:",
+  "\\Interface:Grapple",
+  "\\interface:grapple",
 
   # From userscripts:
   "About:\'bout",
@@ -273,8 +281,10 @@ my @regexs = (
   "\\bsword\\b:cutlass",
   "\\bshe\\b:the lass",
   "\\bshut up\\b:pipe down",
-  "\\bspeech:parlance",
-  "\\bSpeech:Parlance",
+#  "\\bspeech:parlance",
+#  "\\bSpeech:Parlance",
+  "\\bspeech:parley",
+  "\\bSpeech:Parley",
   "\\bsteal\\b:commandeer",
   "\\bdownload\\b:plunder",
   "\\bDownload\\b:Plunder",
