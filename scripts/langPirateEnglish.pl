@@ -1,6 +1,6 @@
 #!/usr/bin/perl -n
 
-# $Id: langPirateEnglish.pl,v 1.1 2008/08/30 23:28:11 we7u Exp $
+# $Id: langPirateEnglish.pl,v 1.2 2008/08/31 00:31:56 we7u Exp $
 
 # Copyright (C) 2008  The Xastir Group
 #
@@ -40,6 +40,36 @@
 
 
 my @regexs = (
+
+  # Custom for Xastir:
+  "\\bham\\b:matey",
+  "\\bhi hi\\b:it be a joke, matey",
+  "\\bk7gps\\b:Th\' Good Cap\'n", 
+  "\\bDave Dobbins\\b:Th\' Good Cap\'n", 
+  "\\bAPRS\'er\\b:Fellow Pirate",  
+  "\\b[Aa]prs\'er\\b:fellow pirate", 
+  "\\bHerb Gerhardt\\b:scurvy dog",
+  "\\bkb7uvc\\b:scurvy dog",
+  "\\bwa7nwp\\b:cabin boy",
+  "\\b[Mm]ap\\b:Treasure Map",
+  "\\b([xX]astir)\\b:HMS $1",
+  "\\bXASTIR\\b:HMS XASTIR",
+  "\\bStation:Ship",
+  "\\bstation:ship",
+  "\\bView:Gander",
+  "\\bview:gander",
+  "\\bFile:Scroll",
+  "\\bfile:scroll",
+#  "\\bFile:Parchment",
+#  "\\bfile:parchment",
+  "\\bMessage:Dispatch",
+  "\\bmessage:dispatch",
+  "\\bLogging:Scribblin'",
+  "\\blogging:scribblin'",
+  "\\bLog:Scribble",
+  "\\blog:scribble",
+  "\\bPrint:Affix to parchment",
+  "\\bprint:affix to parchment",
 
   # From userscripts:
   "About:\'bout",
@@ -291,19 +321,6 @@ my @regexs = (
   "\\bNext Page|/ \\b:Next Map",
   "\\bTagged|/ \\b:X\'d",
   "\\bTag|/ \\b:X",
-
-  "\\bham\\b:matey",
-  "\\bhi hi\\b:it be a joke, matey",
-  "\\bk7gps\\b:Th\' Good Cap\'n", 
-  "\\bDave Dobbins\\b:Th\' Good Cap\'n", 
-  "\\bAPRS\'er\\b:Fellow Pirate",  
-  "\\b[Aa]prs\'er\\b:fellow pirate", 
-  "\\bHerb Gerhardt\\b:scurvy dog",
-  "\\bkb7uvc\\b:scurvy dog",
-  "\\bwa7nwp\\b:cabin boy",
-  "\\b[Mm]ap\\b:Treasure Map",
-  "\\b([xX]astir)\\b:HMS $1",
-  "\\bXASTIR\\b:HMS XASTIR",
 
   # From text-filter-suite:
   "\\bmy\\b:me",
