@@ -1,6 +1,6 @@
 #!/usr/bin/perl -W
 
-# $Id: langPirateEnglish.pl,v 1.7 2008/08/31 23:27:32 we7u Exp $
+# $Id: langPirateEnglish.pl,v 1.8 2008/09/03 13:06:40 we7u Exp $
 
 # Copyright (C) 2008  The Xastir Group
 #
@@ -81,7 +81,7 @@ while ( <> ) {
   s/\bHerb Gerhardt\b/scurvy dog/g;
   s/\bkb7uvc\b/scurvy dog/g;
   s/\bwa7nwp\b/cabin boy/g;
-  s/\b[Mm]ap\b/Treasure Map/g;
+  s/\b[Mm]ap(s*)\b/Treasure Map/g;
   s/\bXastir\b/HMS Xastir/g;
   s/\bxastir\b/HMS xastir/g;
   s/\bXASTIR\b/HMS XASTIR/g;
