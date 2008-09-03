@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.772 2008/08/30 23:30:34 we7u Exp $
+ * $Id: main.c,v 1.773 2008/09/03 15:43:14 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11094,6 +11094,17 @@ void check_pointer_position(void) {
 
 
 
+// Release ApplicationContext when we are asked to leave
+//
+void clear_application_context(void)
+{
+    if (app_context)
+      XtDestroyApplicationContext(app_context);
+    app_context = NULL;
+}
+
+
+
 time_t stations_status_time = 0;
 static int last_alert_on_screen = -1;
  
@@ -11141,6 +11152,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
     if (restart_xastir_now) {
         char bin_path[250];
 
+        clear_application_context();
         // Restart Xastir in this process space.  This is triggered
         // by receiving a SIGHUP signal to the main process, which
         // causes the signal handler restart() to run.  restart()
@@ -12510,6 +12522,7 @@ void quit(int sig) {
     curl_global_cleanup();
 #endif
 
+    clear_application_context();
 #ifdef USING_LIBGC
     CHECK_LEAKS();
 #endif  // USING LIBGC
