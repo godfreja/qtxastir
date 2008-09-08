@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.26 2008/06/24 15:48:59 we7u Exp $
+# $Id: Makefile.am,v 1.27 2008/09/08 16:13:53 we7u Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -15,6 +15,11 @@ pkglib_SCRIPTS = \
     icontable.pl \
     inf2geo.pl \
     kiss-off.pl \
+    langElmerFudd.pl \
+    langMuppetsChef.pl \
+    langOldeEnglish.pl \
+    langPigLatin.pl \
+    langPirateEnglish.pl \
     mapblast2geo.pl \
     mapfgd.pl \
     object2shp.pl \
@@ -35,7 +40,5 @@ pkglib_SCRIPTS = \
 
 
 EXTRA_DIST = $(pkglib_SCRIPTS)
-
-
 
 
