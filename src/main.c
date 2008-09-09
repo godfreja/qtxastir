@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.773 2008/09/03 15:43:14 gstueve Exp $
+ * $Id: main.c,v 1.774 2008/09/09 15:20:34 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4580,9 +4580,11 @@ void Query_xfontsel_pipe (void) {
 
  
 void Map_font_xfontsel(Widget widget, XtPointer clientData, XtPointer callData) {
+
+#if defined(HAVE_XFONTSEL)
+ 
     int fontsize = XTPOINTER_TO_INT(clientData);
     char xfontsel[50];
-
 
     /* invoke xfontsel -print and stick into map_font_text */
     sprintf(xfontsel,
@@ -4599,6 +4601,7 @@ void Map_font_xfontsel(Widget widget, XtPointer clientData, XtPointer callData) 
     } else {
         perror("xfontsel");
     }
+#endif  // HAVE_XFONTSEL
 }
 
 
