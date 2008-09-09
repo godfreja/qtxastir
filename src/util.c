@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.237 2008/07/30 15:24:56 we7u Exp $
+ * $Id: util.c,v 1.238 2008/09/09 15:47:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5097,7 +5097,7 @@ struct FtpFile {
 
 
 
-int curl_fwrite(void *buffer, size_t size, size_t nmemb, void *stream) {
+size_t curl_fwrite(void *buffer, size_t size, size_t nmemb, void *stream) {
   struct FtpFile *out = (struct FtpFile *)stream;
   if (out && !out->stream) {
     out->stream=fopen(out->filename, "wb");
