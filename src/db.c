@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.640 2008/09/10 05:11:33 we7u Exp $
+ * $Id: db.c,v 1.641 2008/09/10 05:17:38 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5890,7 +5890,7 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
                             NULL);
         XtAddCallback(button_cancel, XmNactivateCallback, Station_data_destroy_shell, db_station_info);
 
-        button_track_station = XtVaCreateManagedWidget(langcode("UNIOP00999"),xmPushButtonGadgetClass, form,
+        button_track_station = XtVaCreateManagedWidget(langcode("WPUPTSP001"),xmPushButtonGadgetClass, form,
                             XmNtopAttachment, XmATTACH_NONE,
                             XmNbottomAttachment, XmATTACH_WIDGET,
                             XmNbottomWidget, button_store_track,
