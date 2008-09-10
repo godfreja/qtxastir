@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.176 2008/08/01 00:09:18 we7u Exp $
+ * $Id: xa_config.c,v 1.177 2008/09/10 05:38:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1081,6 +1081,7 @@ fprintf(stderr,"X:%d  y:%d\n", (int)x_return, (int)y_return);
         }
 
         store_int (fout, "TRACK_ME", track_me);
+        store_string (fout, "TRACKING_STATION_CALLSIGN", tracking_station_call);
         store_int (fout, "MAP_CHOOSER_EXPAND_DIRS", map_chooser_expand_dirs);
         store_int (fout, "ST_DIRECT_TIMEOUT", st_direct_timeout);
         store_int (fout, "DEAD_RECKONING_TIMEOUT", dead_reckoning_timeout);
@@ -2213,6 +2214,12 @@ void load_data_or_default(void) {
 
     // 0 = no tracking
     track_me = get_int ("TRACK_ME", 0,1,0);
+
+//    store_string (fout, "TRACKING_STATION_CALLSIGN", tracking_station_call);
+    if (!get_string ("TRACKING_STATION_CALLSIGN", tracking_station_call, sizeof(tracking_station_call))) {
+        tracking_station_call[0] = '\0';
+    }
+
 
     map_chooser_expand_dirs = get_int ("MAP_CHOOSER_EXPAND_DIRS", 0,1,1);
 
