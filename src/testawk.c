@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testawk.c,v 1.29 2008/08/25 15:19:25 gstueve Exp $
+ * $Id: testawk.c,v 1.30 2008/09/10 03:09:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2008  The Xastir Group
@@ -79,7 +79,7 @@ void print_symtbl(awk_symtab *this) {
 
 //    fprintf(stderr,"symtbl 0%0x dump:\n",(u_int)this);
     fprintf(stderr,"symtbl 0x%0x dump:\n",
-        (unsigned int *)this);
+        (unsigned int)this);
     for (i = 0; i < AWK_SYMTAB_HASH_SIZE; i++) {
       for (s = this->hash[i]; s; s = s->next_sym) {
         *buf = '\0';
