@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.82 2008/08/27 13:25:31 tvrusso Exp $
+# $Id: acinclude.m4,v 1.83 2008/09/10 03:07:38 we7u Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -161,7 +161,7 @@ AC_DEFUN([XASTIR_DETECT_BINARIES],
 [
 BINPATH=$PATH
 
-for d in / /usr /usr/local /usr/X11 /usr/X11R6 /usr/sfw /opt/sfw /sw; do
+for d in / /usr /usr/local /usr/X11 /usr/X11R6 /usr/sfw /opt/sfw /opt/local /sw; do
 test -d $d/bin && echo $BINPATH | grep -- $d/bin > /dev/null || BINPATH="$BINPATH:$d/bin"
 done
 
@@ -550,9 +550,9 @@ if test "${use_graphicsmagick}" = "yes"; then
   #
   # Figure out the build options using the GraphicsMagick-config script
   #
-  CPPFLAGS="$CPPFLAGS `${GMAGIC_BIN} --cppflags`" 
-  CXXFLAGS="$CXXFLAGS `${GMAGIC_BIN} --cflags`" 
-  LDFLAGS="$LDFLAGS `${GMAGIC_BIN} --ldflags`" 
+  CPPFLAGS="`${GMAGIC_BIN} --cppflags` $CPPFLAGS" 
+  CXXFLAGS="`${GMAGIC_BIN} --cflags` $CXXFLAGS" 
+  LDFLAGS="`${GMAGIC_BIN} --ldflags` $LDFLAGS" 
   LIBS="${MAGIC_LIB_DIR} `${GMAGIC_BIN} --libs` $LIBS" 
   # 
   AC_CHECK_HEADER(GraphicsMagick/magick/api.h, use_graphicsmagick="yes", use_graphicsmagick="no")
