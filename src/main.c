@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.775 2008/09/09 15:37:58 we7u Exp $
+ * $Id: main.c,v 1.776 2008/09/11 13:07:04 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4764,6 +4764,12 @@ void Map_font(Widget w, XtPointer clientData, XtPointer callData) {
                                                          xmPushButtonGadgetClass, my_form,
                                                          al,ac);
 
+#if defined(HAVE_XFONTSEL)
+            XtSetSensitive(button_xfontsel[i],TRUE);
+#else   // HAVE_FONTSEL
+            XtSetSensitive(button_xfontsel[i],FALSE);
+#endif  // HAVE_FONTSEL
+ 
             XtAddCallback(button_xfontsel[i],
                 XmNactivateCallback,
                 Map_font_xfontsel,
