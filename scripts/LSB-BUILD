@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD,v 1.41 2008/08/15 19:50:04 we7u Exp $
+# $Id: LSB-BUILD,v 1.42 2008/09/24 16:16:41 tvrusso Exp $
 # Copyright (C) 2006-2008  The Xastir Group
 
 # TODO:
@@ -134,7 +134,7 @@ find . -type f -name Makefile -print | while read i
 (make 2>&1) | tee make.log
 strip src/xastir
 strip src/xastir_udp_client
-strip src/testawk
+strip src/testdbfawk
 strip callpass/callpass
 
 # Get rid of the LSB-Xastir install files so that we get a clean

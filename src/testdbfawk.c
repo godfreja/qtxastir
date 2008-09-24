@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testawk.c,v 1.30 2008/09/10 03:09:06 we7u Exp $
+ * $Id: testdbfawk.c,v 1.1 2008/09/24 16:16:42 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2008  The Xastir Group
@@ -110,7 +110,7 @@ awk_rule rules[] = {
 int nrules = sizeof(rules)/sizeof(rules[0]);
 
 void usage(void) {
-  fprintf(stderr,"Usage: testawk [-f file.awk| -D dir] -d file.dbf\n");
+  fprintf(stderr,"Usage: testdbfawk [-f file.awk| -D dir] -d file.dbf\n");
   fprintf(stderr," -D for dir containing *.dbfawk files.\n");
   fprintf(stderr," or -f for file containing awk rules.\n");
   fprintf(stderr," -d for dbf file to parse \n");
