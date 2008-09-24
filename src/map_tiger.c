@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tiger.c,v 1.59 2008/08/01 12:42:59 gstueve Exp $
+ * $Id: map_tiger.c,v 1.60 2008/09/24 18:03:07 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -898,6 +898,7 @@ void draw_tiger_map (Widget w,
                 (unsigned int)screen_height,
                 0,
                 0);
+            DestroyExceptionInfo(&exception);
             return;
         }
 
