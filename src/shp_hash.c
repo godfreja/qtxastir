@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.22 2008/10/08 05:59:11 we7u Exp $
+ * $Id: shp_hash.c,v 1.23 2008/10/08 06:10:29 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -236,9 +236,9 @@ void add_shp_to_hash(char *filename, SHPHandle sHP) {
     temp->filename = (char *) malloc(sizeof(char)*(filenm_len+1));
     CHECKMALLOC(temp->filename);
 
-    //strncpy(temp->filename,filename,filenm_len+1);
-    //temp->filename[filenm_len]='\0';  // just to be safe
-    xastir_snprintf(temp->filename,sizeof(shpinfo),"%s",filename);
+    strncpy(temp->filename,filename,filenm_len+1);
+    temp->filename[filenm_len]='\0';  // just to be safe
+//    xastir_snprintf(temp->filename,sizeof(shpinfo),"%s",filename);
 
     temp->root = Xastir_RTreeNewIndex();  
     temp->creation = sec_now();
