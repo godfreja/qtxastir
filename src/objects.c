@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.55 2008/10/08 05:14:16 we7u Exp $
+ * $Id: objects.c,v 1.56 2008/10/08 05:41:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -7169,7 +7169,7 @@ void Create_SAR_Object(/*@unused@*/ Widget w, /*@unused@*/ XtPointer clientData,
     if ((int)'-'==(int)*(call+(strlen(call)-1))) {
         // make sure that we don't write past the end of call
         if (strlen(call)<MAX_CALLSIGN) {
-            strcat(call,"1");
+            strncat(call,"1",1);
         }
     }
     // Check object names against our station database until we find
