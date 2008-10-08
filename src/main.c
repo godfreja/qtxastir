@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.777 2008/10/07 05:04:44 we7u Exp $
+ * $Id: main.c,v 1.778 2008/10/08 04:42:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3732,11 +3732,11 @@ static void TrackMouse( /*@unused@*/ Widget w, XtPointer clientData, XEvent *eve
 
     strncat(my_text,
         "  ",
-        sizeof(my_text) - strlen(my_text) - 1);
+        sizeof(my_text) - 1 - strlen(my_text));
 
     strncat(my_text,
         sec_to_loc(x,y),
-        sizeof(my_text) - strlen(my_text) - 1);
+        sizeof(my_text) - 1 - strlen(my_text));
 
     // begin dist/bearing
     if ( do_dbstatus ) {
@@ -3785,19 +3785,19 @@ static void TrackMouse( /*@unused@*/ Widget w, XtPointer clientData, XEvent *eve
 
         strncat(my_text,
             " ",
-            sizeof(my_text) - strlen(my_text) - 1);
+            sizeof(my_text) - 1 - strlen(my_text));
 
         strncat(my_text,
             temp_my_distance,
-            sizeof(my_text) - strlen(my_text) - 1);
+            sizeof(my_text) - 1 - strlen(my_text));
 
         strncat(my_text,
             " ",
-            sizeof(my_text) - strlen(my_text) - 1);
+            sizeof(my_text) - 1 - strlen(my_text));
 
         strncat(my_text,
             temp_my_course,
-            sizeof(my_text) - strlen(my_text) - 1);
+            sizeof(my_text) - 1 - strlen(my_text));
     }
 
     XmTextFieldSetString(textarea, my_text);
@@ -5279,9 +5279,9 @@ void create_appshell( /*@unused@*/ Display *display, char *app_name, /*@unused@*
     }
     else {
         xastir_snprintf(title, t_size, "XASTIR");
-        strncat(title, " - ", t_size - strlen(title));
-        strncat(title, t, t_size - strlen(title));
-        strncat(title, " @ ", t_size - strlen(title));
+        strncat(title, " - ", t_size - 1 - strlen(title));
+        strncat(title, t, t_size - 1 - strlen(title));
+        strncat(title, " @ ", t_size - 1 - strlen(title));
         (void)gethostname(&title[strlen(title)], 28);
     }
 
@@ -11633,7 +11633,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                         "GPS:GPRMC,GPGGA ");
                                     strncat(temp,
                                         report_gps_status(),
-                                        sizeof(temp) - strlen(temp));
+                                        sizeof(temp) - 1 - strlen(temp));
                                     statusline(temp, 0);
                                 }
                                 else if (ret1) {
@@ -11644,7 +11644,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                         "GPS:GPRMC ");
                                     strncat(temp,
                                         report_gps_status(),
-                                        sizeof(temp) - strlen(temp));
+                                        sizeof(temp) - 1 - strlen(temp));
                                     statusline(temp, 0);
                                 }
                                 else if (ret2) {
@@ -11655,7 +11655,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                         "GPS:GPGGA ");
                                     strncat(temp,
                                         report_gps_status(),
-                                        sizeof(temp) - strlen(temp));
+                                        sizeof(temp) - 1 - strlen(temp));
                                     statusline(temp, 0);
                                 }
                                 else {
@@ -11666,7 +11666,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
                                         "GPS: ");
                                     strncat(temp,
                                         report_gps_status(),
-                                        sizeof(temp) - strlen(temp));
+                                        sizeof(temp) - 1 - strlen(temp));
                                     statusline(temp, 0);
                                 }
 
@@ -12211,7 +12211,7 @@ if (!skip_decode) {
                                     "GPS: ");
                                 strncat(temp,
                                     report_gps_status(),
-                                    sizeof(temp) - strlen(temp));
+                                    sizeof(temp) - 1 - strlen(temp));
                                 statusline(temp, 0);
                             }
                             else {
@@ -12266,7 +12266,7 @@ if (!skip_decode) {
                                     "GPS: ");
                                 strncat(temp,
                                     report_gps_status(),
-                                    sizeof(temp) - strlen(temp));
+                                    sizeof(temp) - 1 - strlen(temp));
                                 statusline(temp, 0);
                             }
                             else {          // APRS Data
@@ -12320,7 +12320,7 @@ if (!skip_decode) {
                                     "GPS: ");
                                 strncat(temp,
                                     report_gps_status(),
-                                    sizeof(temp) - strlen(temp));
+                                    sizeof(temp) - 1 - strlen(temp));
                                 statusline(temp, 0);
                             }
                             break;

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.107 2008/07/03 14:55:12 gstueve Exp $
+ * $Id: alert.c,v 1.108 2008/10/08 04:42:22 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1340,13 +1340,13 @@ if (debug_level & 2)
                 // overrunning our destination string.
                 strncat(uncompressed_wx,
                     ",",
-                    sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                    sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx));
                 strncat(uncompressed_wx,
                     prefix,
-                    sizeof(uncompressed_wx) - strlen(uncompressed_wx)); 
+                    sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx)); 
                 strncat(uncompressed_wx,
                     suffix,
-                    sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                    sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx));
                 // Terminate it every time
                 uncompressed_wx[9999] = '\0';
 
@@ -1431,13 +1431,13 @@ if (debug_level & 2)
                             // our destination string.
                             strncat(uncompressed_wx,
                                 ",",
-                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                                sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx));
                             strncat(uncompressed_wx,
                                 prefix,
-                                sizeof(uncompressed_wx) - strlen(uncompressed_wx)); 
+                                sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx)); 
                             strncat(uncompressed_wx,
                                 suffix,
-                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                                sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx));
                             // Terminate it every time
                             uncompressed_wx[9999] = '\0';
                         }
@@ -1515,13 +1515,13 @@ if (debug_level & 2)
                             // our destination string.
                             strncat(uncompressed_wx,
                                 ",",
-                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                                sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx));
                             strncat(uncompressed_wx,
                                 prefix,
-                                sizeof(uncompressed_wx) - strlen(uncompressed_wx)); 
+                                sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx)); 
                             strncat(uncompressed_wx,
                                 suffix,
-                                sizeof(uncompressed_wx) - strlen(uncompressed_wx));
+                                sizeof(uncompressed_wx) - 1 - strlen(uncompressed_wx));
                             // Terminate it every time
                             uncompressed_wx[9999] = '\0';
                         }
