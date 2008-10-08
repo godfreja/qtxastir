@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.21 2008/10/08 05:42:38 we7u Exp $
+ * $Id: shp_hash.c,v 1.22 2008/10/08 05:59:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -63,6 +63,7 @@
 /// THIS ONLY FOR DEBUGGING!
 #include "hashtable_private.h"
 #include "shp_hash.h"
+#include "snprintf.h"
 
 // Must be last include file
 #include "leak_detection.h"
@@ -235,8 +236,9 @@ void add_shp_to_hash(char *filename, SHPHandle sHP) {
     temp->filename = (char *) malloc(sizeof(char)*(filenm_len+1));
     CHECKMALLOC(temp->filename);
 
-    strncpy(temp->filename,filename,filenm_len+1);
-    temp->filename[filenm_len]='\0';  // just to be safe
+    //strncpy(temp->filename,filename,filenm_len+1);
+    //temp->filename[filenm_len]='\0';  // just to be safe
+    xastir_snprintf(temp->filename,sizeof(shpinfo),"%s",filename);
 
     temp->root = Xastir_RTreeNewIndex();  
     temp->creation = sec_now();
