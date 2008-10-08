@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.94 2008/08/06 03:03:54 gstueve Exp $
+ * $Id: map_geo.c,v 1.95 2008/10/08 05:14:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -721,7 +721,7 @@ void draw_geo_image_map (Widget w,
                     if (strlen(temp) < (MAX_FILENAME - 1 - strlen(fileimg)))
                         strncat(temp,
                             fileimg,
-                            sizeof(temp) - strlen(temp));
+                            sizeof(temp) - 1 - strlen(temp));
                     xastir_snprintf(fileimg,sizeof(fileimg),"%s",temp);
                 }
             }

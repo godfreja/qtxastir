@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.522 2008/07/07 22:26:04 tvrusso Exp $
+ * $Id: maps.c,v 1.523 2008/10/08 05:14:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8234,7 +8234,7 @@ void fill_in_new_alert_entries() {
         dir);
     strncat(alert_scan, // Complete alert directory is now set up in the string
         "/",
-        sizeof(alert_scan) - strlen(alert_scan));
+        sizeof(alert_scan) - 1 - strlen(alert_scan));
     dir_ptr = &alert_scan[strlen (alert_scan)]; // Point to end of path
 
     // Iterate through the weather alerts.  It looks like we wish to

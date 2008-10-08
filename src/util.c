@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.238 2008/09/09 15:47:04 we7u Exp $
+ * $Id: util.c,v 1.239 2008/10/08 05:14:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2719,7 +2719,7 @@ long convert_lat_s2l(char *lat) {      /* N=0°, Ctr=90°, S=180° */
  
         // Extend the digits to full precision by adding zeroes on
         // the end.
-        strncat(n, "0000", sizeof(n) - strlen(n));
+        strncat(n, "0000", sizeof(n) - 1 - strlen(n));
 
         // Get rid of the N/S character
         if (!isdigit((int)n[2]))
@@ -2838,7 +2838,7 @@ long convert_lon_s2l(char *lon) {     /* W=0°, Ctr=180°, E=360° */
  
         // Extend the digits to full precision by adding zeroes on
         // the end.
-        strncat(n, "0000", sizeof(n) - strlen(n));
+        strncat(n, "0000", sizeof(n) - 1 - strlen(n));
 
         // Get rid of the E/W character
         if (!isdigit((int)n[2]))

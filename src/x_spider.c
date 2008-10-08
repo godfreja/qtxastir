@@ -1,5 +1,5 @@
 /*
- * $Id: x_spider.c,v 1.61 2008/09/26 14:30:14 gstueve Exp $
+ * $Id: x_spider.c,v 1.62 2008/10/08 05:14:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2008  The Xastir Group
@@ -576,7 +576,7 @@ int pipe_check(char *client_address) {
                 // Add white space to the end.
                 strncat(line2,
                     "                                    ",
-                    sizeof(line2) - strlen(line2));
+                    sizeof(line2) - 1 - strlen(line2));
 
                 // Find the "user" string position
                 callsign = strstr(line2,"user");

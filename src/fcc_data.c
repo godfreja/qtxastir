@@ -1,5 +1,5 @@
 /*
- * $Id: fcc_data.c,v 1.20 2008/01/16 19:34:00 we7u Exp $
+ * $Id: fcc_data.c,v 1.21 2008/10/08 05:14:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -269,7 +269,7 @@ int search_fcc_data_appl(char *callsign, FccAppl *data) {
 // calltemp doesn't appear to get used anywhere...
 
     /* add end of field data */
-    strncat(temp, "|", sizeof(temp) - strlen(temp));
+    strncat(temp, "|", sizeof(temp) - 1 - strlen(temp));
     len=(int)strlen(temp);
     found=0;
     line_pos=0;

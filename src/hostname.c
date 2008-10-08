@@ -1,5 +1,5 @@
 /*
- * $Id: hostname.c,v 1.28 2008/01/16 19:34:00 we7u Exp $
+ * $Id: hostname.c,v 1.29 2008/10/08 05:14:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -246,12 +246,12 @@ char *host_lookup(char *host, char *ip, int ip_size, int time) {
                                         if (ips>0) {
                                             strncat(ip_addr,
                                                 " ",
-                                                sizeof(ip_addr) - strlen(ip_addr));
+                                                sizeof(ip_addr) - 1 - strlen(ip_addr));
                                         }
 
                                         strncat(ip_addr,
                                             temp,
-                                            sizeof(ip_addr) - strlen(ip_addr));
+                                            sizeof(ip_addr) - 1 - strlen(ip_addr));
 
                                         ips++;
                                     }
