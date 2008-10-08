@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.523 2008/10/08 05:14:16 we7u Exp $
+ * $Id: maps.c,v 1.524 2008/10/08 15:11:18 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3917,9 +3917,7 @@ begin_critical_section(&print_postscript_dialog_lock, "maps.c:Print_postscript_d
                 GV_PATH);
 #else // GV_PATH
             // Empty string
-            xastir_snprintf(previewer_program,
-                sizeof(previewer_program),
-                "");
+            previewer_program[0] = '\0';
 #endif // GV_PATH
         }
 //fprintf(stderr,"%s\n", previewer_program);
@@ -8436,7 +8434,7 @@ void load_alert_maps (Widget w, char *dir) {
                     fprintf(stderr,
                         "load_alert_maps() Shape %s, strlen=%d, not found in %s\n",
                         temp->title,
-                        strlen(temp->title),
+                        (int)strlen(temp->title),
                         temp->filename );
                 }
             }
