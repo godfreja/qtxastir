@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.135 2008/10/08 05:14:16 we7u Exp $
+ * $Id: map_shp.c,v 1.136 2008/10/09 04:57:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -904,7 +904,7 @@ void draw_shapefile_map (Widget w,
         
     }
     recordcount = DBFGetRecordCount(hDBF);
-    if (recordcount == (int)NULL) {
+    if (recordcount == 0) {
         DBFClose( hDBF );   // Clean up open file descriptors
         return;     // Should have at least one record
     }
