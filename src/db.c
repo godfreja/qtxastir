@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.643 2008/10/08 05:41:13 we7u Exp $
+ * $Id: db.c,v 1.644 2008/10/09 04:56:21 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3789,8 +3789,8 @@ void display_file(Widget w) {
         }
         else {
             if (debug_level & 256) {
-                fprintf(stderr,"Station trails %d, track data %x\n",
-                    Display_.trail, (int)p_station->newest_trackpoint);
+                fprintf(stderr,"Station trails %d, track data %lx\n",
+                    Display_.trail, (long int)p_station->newest_trackpoint);
             }
         }
 
