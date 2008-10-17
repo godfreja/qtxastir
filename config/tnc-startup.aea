@@ -1,4 +1,4 @@
-# $Id: tnc-startup.aea,v 1.15 2008/01/16 19:33:58 we7u Exp $
+# $Id: tnc-startup.aea,v 1.16 2008/10/17 07:18:22 we7u Exp $
 #
 # Copyright (C) 2000-2008  The Xastir Group
 #
@@ -9,7 +9,7 @@
 # Please modify it and send the patches to the mailing lists.
 # Thanks.
 #
-HID off
+HID on
 #CWID off
 EXP on
 ECHO off
