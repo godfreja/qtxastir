@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.95 2008/10/08 05:14:16 we7u Exp $
+ * $Id: map_geo.c,v 1.96 2008/11/12 23:26:14 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1859,10 +1859,10 @@ fprintf(stderr,"2 ");
     //         lower loops to speed them up... 
     if ( do_crop) {
         int x, y;
-        PixelPacket target;
+        //        PixelPacket target;
         register PixelPacket *q;
-        
-        target=GetOnePixel(image,0,0);
+      
+        //        target=GetOnePixel(image,0,0);
         for (y=0; y < (long) image->rows; y++) {
             q=GetImagePixels(image,0,y,image->columns,1);
             if (q == (PixelPacket *) NULL)
