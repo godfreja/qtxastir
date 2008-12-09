@@ -1,5 +1,5 @@
 
-$Id: README.Contributing,v 1.16 2008/01/16 19:33:57 we7u Exp $
+$Id: README.Contributing,v 1.17 2008/12/09 16:10:21 we7u Exp $
 
 
 Hello possible new developer, and welcome to the Xastir project!
@@ -67,7 +67,8 @@ This creates mypatch.gz, which you can attach to an e-mail or put up
 on an ftp or http site for download.
 
 *) Contribute patches either directly to one of the active
-developers or to the Xastir-Dev mailing list.
+developers or to the Xastir-Dev mailing list (you must be subscribed
+in order to post messages there).
 
 *) To apply a patch I typically do this:
 
