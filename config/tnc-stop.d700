@@ -1,6 +1,6 @@
-# $Id: tnc-stop.d700,v 1.5 2008/01/16 19:33:59 we7u Exp $
+# $Id: tnc-stop.d700,v 1.6 2009/01/02 07:53:58 we7u Exp $
 #
-# Copyright (C) 2004-2008  The Xastir Group
+# Copyright (C) 2004-2009  The Xastir Group
 #
 #TNC STOP FILE
 # Undo any settings make in tnc-startup.sys

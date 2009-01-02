@@ -1,6 +1,6 @@
-# $Id: tnc-startup.d700,v 1.11 2008/01/16 19:33:58 we7u Exp $
+# $Id: tnc-startup.d700,v 1.12 2009/01/02 07:53:58 we7u Exp $
 #
-# Copyright (C) 2004-2008  The Xastir Group
+# Copyright (C) 2004-2009  The Xastir Group
 #
 # TNC Init file for KENWOOD D700.  Also reported to work with the
 # Alinco DR-135TP radio (with the EJ-41U TNC which also uses a Tasco
