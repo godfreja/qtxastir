@@ -1,10 +1,10 @@
 
 
-// $Id: hashtable_private.h,v 1.8 2008/01/16 19:34:00 we7u Exp $
+// $Id: hashtable_private.h,v 1.9 2009/01/02 08:15:12 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
-/* Portions Copyright (C) 2004-2008  The Xastir Group */
+/* Portions Copyright (C) 2004-2009  The Xastir Group */
 
 
 #ifndef __HASHTABLE_PRIVATE_CWC22_H__

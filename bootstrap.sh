@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $Id: bootstrap.sh,v 1.20 2008/08/31 20:52:34 we7u Exp $
+# $Id: bootstrap.sh,v 1.21 2009/01/02 08:16:37 we7u Exp $
 #
-# Copyright (C) 2000-2008  The Xastir Group
+# Copyright (C) 2000-2009  The Xastir Group
 #
 #
 # This simple routine will run autostuff in the appropriate

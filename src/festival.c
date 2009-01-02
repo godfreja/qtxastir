@@ -1,8 +1,8 @@
 // Modification for Xastir CVS purposes
 //
-// Portions Copyright (C) 2000-2008  The Xastir Group
+// Portions Copyright (C) 2000-2009  The Xastir Group
 //
-// $Id: festival.c,v 1.22 2008/01/16 19:34:00 we7u Exp $
+// $Id: festival.c,v 1.23 2009/01/02 08:15:12 we7u Exp $
 //
 // End of modification
 

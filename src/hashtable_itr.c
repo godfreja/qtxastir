@@ -1,10 +1,10 @@
 
 
-// $Id: hashtable_itr.c,v 1.11 2008/01/16 19:34:00 we7u Exp $
+// $Id: hashtable_itr.c,v 1.12 2009/01/02 08:15:12 we7u Exp $
 
 
 /* Copyright (C) 2002, 2004 Christopher Clark  <firstname.lastname@cl.cam.ac.uk> */
-/* Portions Copyright (C) 2004-2008  The Xastir Group */
+/* Portions Copyright (C) 2004-2009  The Xastir Group */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"

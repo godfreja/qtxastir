@@ -1,8 +1,8 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db_gis.c,v 1.21 2008/07/10 15:46:21 chicoreus Exp $
+ * $Id: db_gis.c,v 1.22 2009/01/02 08:15:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2007-2008  The Xastir Group
+ * Copyright (C) 2007-2009  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

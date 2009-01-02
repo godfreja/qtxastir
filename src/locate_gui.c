@@ -1,9 +1,9 @@
 /*
- * $Id: locate_gui.c,v 1.28 2008/10/08 05:14:16 we7u Exp $
+ * $Id: locate_gui.c,v 1.29 2009/01/02 08:15:13 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2008  The Xastir Group
+ * Copyright (C) 2000-2009  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
