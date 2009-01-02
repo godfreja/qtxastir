@@ -1,8 +1,8 @@
 #!/usr/bin/perl -W
 #
-# $Id: get-fcc-rac.pl,v 1.2 2008/08/19 02:02:35 gstueve Exp $
+# $Id: get-fcc-rac.pl,v 1.3 2009/01/02 07:56:30 we7u Exp $
 #
-# Copyright (C) 2000-2008  The Xastir Group
+# Copyright (C) 2000-2009  The Xastir Group
 #
 # Updated on 7/5/03 to reflect the new directory structure
 # N0VH

@@ -1,8 +1,8 @@
 #!/usr/bin/perl -W
 
-# $Id: langPigLatin.pl,v 1.5 2008/08/31 23:27:32 we7u Exp $
+# $Id: langPigLatin.pl,v 1.6 2009/01/02 07:56:31 we7u Exp $
 
-# Copyright (C) 2007-2008  The Xastir Group
+# Copyright (C) 2007-2009  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

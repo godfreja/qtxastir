@@ -1,8 +1,8 @@
 #!/usr/bin/perl -W
 
-# $Id: toporama50k.pl,v 1.9 2008/06/25 13:39:01 we7u Exp $
+# $Id: toporama50k.pl,v 1.10 2009/01/02 07:56:31 we7u Exp $
 
-# Copyright (C) 2004-2008 The Xastir Group.
+# Copyright (C) 2004-2009 The Xastir Group.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

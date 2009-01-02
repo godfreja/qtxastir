@@ -1,8 +1,8 @@
 #!/usr/bin/perl -W
 
-# $Id: langElmerFudd.pl,v 1.3 2008/08/31 23:27:32 we7u Exp $
+# $Id: langElmerFudd.pl,v 1.4 2009/01/02 07:56:31 we7u Exp $
 
-# Copyright (C) 2008  The Xastir Group
+# Copyright (C) 2008-2009  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

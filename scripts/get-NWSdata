@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $Id: get-NWSdata,v 1.16 2008/07/18 15:26:39 gstueve Exp $
+# $Id: get-NWSdata,v 1.17 2009/01/02 07:56:30 we7u Exp $
 #
 # Script to retrieve NWS data files. 
 #
 # Originally written 2006/03/07 by Steven, WM5Z, and Curt, WE7U.
 #
-# Copyright (C) 2000-2008  The Xastir Group
+# Copyright (C) 2000-2009  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
