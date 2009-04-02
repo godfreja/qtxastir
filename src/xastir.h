@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.61 2009/01/02 08:15:17 we7u Exp $
+ * $Id: xastir.h,v 1.62 2009/04/02 22:09:02 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -103,7 +103,6 @@ extern void Send_message(Widget w, XtPointer clientData, XtPointer callData);
 extern void create_gc(Widget w);
 
 extern void Station_info(Widget w, XtPointer clientData, XtPointer calldata);
-extern void Window_Quit(Widget w, XtPointer client, XtPointer call);
 
 extern void fix_dialog_size(Widget w);
 extern void fix_dialog_vsize(Widget w);
