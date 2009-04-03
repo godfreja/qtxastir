@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.286 2009/01/02 08:15:13 we7u Exp $
+ * $Id: interface.c,v 1.287 2009/04/03 01:22:03 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -85,7 +85,6 @@
 #endif  // HAVE_LIBINTL_H
 
 #include <Xm/XmAll.h>
-#include <X11/cursorfont.h>
 
 #include "xastir.h"
 #include "symbols.h"
