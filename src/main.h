@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.106 2009/01/02 08:15:14 we7u Exp $
+ * $Id: main.h,v 1.107 2009/04/03 14:08:52 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -368,7 +368,6 @@ extern void HandlePendingEvents(XtAppContext app);
 extern void create_gc(Widget w);
 extern void Station_info(Widget w, XtPointer clientData, XtPointer calldata);
 extern void Station_List(Widget w, XtPointer clientData, XtPointer calldata);
-extern void Window_Quit(Widget w, XtPointer client, XtPointer call);
 extern void Tracks_All_Clear(Widget w, XtPointer clientData, XtPointer callData);
 extern void Locate_station(Widget w, XtPointer clientData, XtPointer callData);
 extern void Locate_place(Widget w, XtPointer clientData, XtPointer callData);
