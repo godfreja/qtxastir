@@ -6,7 +6,7 @@
 # Released to the public domain.
 #
 #
-# $Id: coord-convert.pl,v 1.7 2002/08/26 21:52:03 we7u Exp $
+# $Id: coord-convert.pl,v 1.8 2009/04/04 18:37:57 gstueve Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS
@@ -26,7 +26,7 @@
 #
 
 
-use lib "/usr/local/lib";
+use lib "${prefix}/lib";
 use Coordinate;         # WE7U's Coordinate.pm module
 
 

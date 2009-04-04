@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: get-NWSdata,v 1.18 2009/02/06 16:51:23 gstueve Exp $
+# $Id: get-NWSdata,v 1.19 2009/04/04 18:37:57 gstueve Exp $
 #
 # Script to retrieve NWS data files. 
 #
@@ -40,7 +40,8 @@ FILE5="hz28au04"  # NWSM Libraries: Coastal and Offshore Marine Zones
 FILE6="fz19nv08"  # NWSM Libraries: Fire Weather Zone Boundaries
 FILE7="c_03oc08"  # County Libraries: AWIPS Counties
 
-cd /usr/local/share/xastir/Counties
+. `dirname $0`/values
+cd ${prefix}/share/xastir/Counties
 
 
 # Remove any old zip files hanging around in this directory

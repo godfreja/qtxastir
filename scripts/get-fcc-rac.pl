@@ -1,6 +1,6 @@
 #!/usr/bin/perl -W
 #
-# $Id: get-fcc-rac.pl,v 1.3 2009/01/02 07:56:30 we7u Exp $
+# $Id: get-fcc-rac.pl,v 1.4 2009/04/04 18:37:57 gstueve Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -9,7 +9,11 @@
 #
 # Note: Run this script as root in order to write the files into the
 # destination directory listed below, or change directory write access.
-my $XASTIR_BASE="/usr/local/share/xastir";
+use File::Basename;
+$dirname=dirname($0);
+require ($dirname."/values.pl");
+
+my $XASTIR_BASE="${prefix}/share/xastir";
 
 
 # This script uses temporary storage space in /var/tmp to do its work.

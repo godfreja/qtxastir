@@ -1,16 +1,17 @@
 #!/bin/sh
 #
-# $Id: xastir-migrate.sh,v 1.9 2009/01/02 07:56:31 we7u Exp $
+# $Id: xastir-migrate.sh,v 1.10 2009/04/04 18:38:03 gstueve Exp $
 #
 # Copyright (C) 2003-2009  The Xastir Group
 #
 # migrate from old xastir USER FILES to new directory structure.
-# Stuff that was under /usr/local/xastir is now under /usr/local/share/xastir/
+# Stuff that was under /usr/local/xastir is now under ${prefix}/share/xastir/
 # fixed up the .xastir/config/xastir.cfg as well.
 # XXX Do we throw away the xastir non-user files (config, doc, help)?
+. `dirname $0`/values
 PREFIX=
 OLD=$PREFIX/usr/local/xastir
-NEW=$PREFIX/usr/local/share/xastir
+NEW=$PREFIX${prefix}/share/xastir
 rr=0
 if [ -d $OLD ]; then
         if [ ! -d $NEW ]; then

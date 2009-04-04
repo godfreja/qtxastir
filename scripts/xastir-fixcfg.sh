@@ -1,11 +1,12 @@
 #!/bin/sh
 #
-# $Id: xastir-fixcfg.sh,v 1.9 2009/01/02 07:56:31 we7u Exp $
+# $Id: xastir-fixcfg.sh,v 1.10 2009/04/04 18:38:03 gstueve Exp $
 #
 # Copyright (C) 2003-2009  The Xastir Group
 #
 # fix up a user's .xastir/config/xastir.cnf to rewrite /usr/local/xastir
-# to /usr/local/share/xastir.  NOTE: This only works when -prefix=/usr/local!
+# to ${prefix}/share/${name}.
+. `dirname $0`/values
 CNF=.xastir/config/xastir.cnf
 INDEX=.xastir/config/map_index.sys
 SELECT=.xastir/config/selected_maps.sys
@@ -18,7 +19,7 @@ if [ -f $CNF ]; then
 	echo "$CNF: unable to rename!"
 	exit 1
     fi
-    sed -e 's:/usr/local/xastir/:/usr/local/share/xastir/:' <$CNF.backup >$CNF
+    sed -e 's:/usr/local/xastir/:${prefix}/share/xastir/:' <$CNF.backup >$CNF
     if [ $? -ne 0 ]; then
 	echo "$CNF: sed failed!"
 	mv $CNF.backup $CNF
