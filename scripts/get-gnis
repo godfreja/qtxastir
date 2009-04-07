@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: get-gnis,v 1.9 2009/04/04 18:37:57 gstueve Exp $
+# $Id: get-gnis,v 1.10 2009/04/07 21:17:29 gstueve Exp $
 #
 # Script to retrieve GNIS files by state. 
 #
@@ -27,7 +27,7 @@
 #
 
 GNIS_SITE=http://geonames.usgs.gov/docs/stategaz
-SUFFIX=_Features_20090203
+SUFFIX=_Features_20090401
 
 . `dirname $0`/values
 
