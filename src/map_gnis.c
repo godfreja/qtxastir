@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_gnis.c,v 1.38 2009/04/06 00:28:48 gstueve Exp $
+ * $Id: map_gnis.c,v 1.39 2009/04/13 17:32:24 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -95,7 +95,7 @@
 //
 // These types of files are available from http://geonames.usgs.gov/
 // under "Download State Gazetteer Data - Available Via Anonymous FTP".
-// A typical filename would be: "WA.deci.gz".   Do not get the other
+// A typical filename would be: "WA_Features_20090401.zip".   Do not get the other
 // types of files which are columnar.  The files that we parse are
 // pipe-delimited.
 //
@@ -485,6 +485,8 @@ FINISH:
                     // "Federal Status" and "Cell Name".  We ignore
                     // those for now.
  
+		    if (strlen(latitude) < 7) 
+			continue;	// We really don't have any latitude here.
                     lat_dd[0] = latitude[0];
                     lat_dd[1] = latitude[1];
                     lat_dd[2] = '\0';
@@ -532,6 +534,8 @@ FINISH:
                         }
                     }
 
+		    if (strlen(longitude) < 8) 
+			continue;	// We really don't have any longitude here.
                     long_dd[0] = longitude[0];
                     long_dd[1] = longitude[1];
                     long_dd[2] = longitude[2];
@@ -1321,6 +1325,8 @@ int gnis_locate_place( Widget w,
 // "Found It!"
 //popup_message_always( langcode("POPEM00029"), name );
 
+		    if (strlen(latitude) < 7) 
+			continue;	// We really don't have any latitude here.
                     lat_dd[0] = latitude[0];
                     lat_dd[1] = latitude[1];
                     lat_dd[2] = '\0';
@@ -1336,6 +1342,8 @@ int gnis_locate_place( Widget w,
                     lat_dir[0] = latitude[6];
                     lat_dir[1] = '\0';
 
+		    if (strlen(longitude) < 8) 
+			continue;	// We really don't have any longitude here.
                     long_dd[0] = longitude[0];
                     long_dd[1] = longitude[1];
                     long_dd[2] = longitude[2];
