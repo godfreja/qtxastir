@@ -1,5 +1,5 @@
 /*
- * $Id: locate_gui.c,v 1.29 2009/01/02 08:15:13 we7u Exp $
+ * $Id: locate_gui.c,v 1.30 2009/04/13 18:34:19 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -800,18 +800,20 @@ void Locate_place_now(Widget w, XtPointer clientData, XtPointer callData) {
 
     /*fprintf(stderr,"looking for %s\n",locate_place_name);*/
 
-    match_quantity = gnis_locate_place(da,
-        locate_place_name,
-        locate_state_name,
-        locate_county_name,
-        locate_quad_name,
-        locate_type_name,
-        locate_gnis_filename,
+    match_quantity = gnis_locate_place(da, locate_place_name,
+        locate_state_name, locate_county_name, locate_quad_name,
+        locate_type_name, locate_gnis_filename,
         (int)XmToggleButtonGetState(locate_place_case_data),
         (int)XmToggleButtonGetState(locate_place_match_data),
-        match_array_name,
-        match_array_lat,
-        match_array_long);
+        match_array_name, match_array_lat, match_array_long);
+
+    if (0 == match_quantity) // Try population centers.
+	    match_quantity = pop_locate_place(da, locate_place_name,
+        	locate_state_name, locate_county_name, locate_quad_name,
+        	locate_type_name, locate_gnis_filename,
+		(int)XmToggleButtonGetState(locate_place_case_data),
+       		(int)XmToggleButtonGetState(locate_place_match_data),
+        	match_array_name, match_array_lat, match_array_long);
 
     if (match_quantity) {
         // Found some matches!

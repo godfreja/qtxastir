@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.h,v 1.72 2009/01/02 08:15:15 we7u Exp $
+ * $Id: maps.h,v 1.73 2009/04/13 18:34:19 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -182,6 +182,11 @@ extern char printer_program[MAX_FILENAME+1];
 extern char previewer_program[MAX_FILENAME+1];
 
 extern int  gnis_locate_place(Widget w, char *name, char *state,
+char *county, char *quad, char* type, char *filename, int
+follow_case, int get_match, char match_array_name[50][200], long
+match_array_lat[50], long match_array_long[50]);
+
+extern int  pop_locate_place(Widget w, char *name, char *state,
 char *county, char *quad, char* type, char *filename, int
 follow_case, int get_match, char match_array_name[50][200], long
 match_array_lat[50], long match_array_long[50]);
