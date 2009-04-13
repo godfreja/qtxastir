@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.29 2009/04/04 18:37:57 gstueve Exp $
+# $Id: Makefile.am,v 1.30 2009/04/13 17:16:34 gstueve Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -8,6 +8,7 @@ pkglib_SCRIPTS = \
     coord-convert.pl \
     get-fcc-rac.pl \
     get-gnis \
+    get-pop \
     get-maptools.sh \
     get-NWSdata \
     get_shapelib.sh \

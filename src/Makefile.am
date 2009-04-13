@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.47 2009/01/02 08:15:10 we7u Exp $
+# $Id: Makefile.am,v 1.48 2009/04/13 17:16:35 gstueve Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -45,6 +45,7 @@ XASTIR_SRC = \
     map_gdal.c \
     map_geo.c \
     map_gnis.c \
+    map_pop.c \
     map_pdb.c \
     map_shp.c \
     map_tif.c \
