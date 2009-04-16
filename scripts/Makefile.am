@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.31 2009/04/16 16:25:08 we7u Exp $
+# $Id: Makefile.am,v 1.32 2009/04/16 18:56:31 gstueve Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -59,9 +59,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
               exit 1;; \
           esac; \
         done; \
-        echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  Makefile'; \
+        echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu $(srcdir)/Makefile'; \
         cd $(top_srcdir) && \
-          $(AUTOMAKE) --gnu  Makefile
+          $(AUTOMAKE) --gnu $(srcdir)/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
