@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.203 2009/01/02 08:16:37 we7u Exp $
+# $Id: configure.ac,v 1.204 2009/04/16 19:34:11 tvrusso Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 
@@ -864,6 +864,8 @@ AC_CONFIG_FILES([Makefile \
     help/Makefile \
     m4/Makefile \
     scripts/Makefile \
+    scripts/values \
+    scripts/values.pl \
     src/Makefile \
     src/rtree/Makefile \
     src/shapelib/Makefile \
