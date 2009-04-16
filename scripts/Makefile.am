@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.32 2009/04/16 18:56:31 gstueve Exp $
+# $Id: Makefile.am,v 1.33 2009/04/16 19:26:56 gstueve Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -59,18 +59,18 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
               exit 1;; \
           esac; \
         done; \
-        echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu $(srcdir)/Makefile'; \
+        echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu scripts/Makefile.in \
         cd $(top_srcdir) && \
-          $(AUTOMAKE) --gnu $(srcdir)/Makefile
+          $(AUTOMAKE) --gnu scripts/Makefile.in
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
           *config.status*) \
-            echo ' $(SHELL) ./config.status'; \
-            $(SHELL) ./config.status;; \
+            echo ' cd $(top_builddir) && $(SHELL) ./config.status'; \
+            cd $(top_builddir) && $(SHELL) ./config.status;; \
           *) \
-            echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
-            cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
+            echo ' cd $(top_builddir) && $(SHELL) ./config.status scripts/$@ $(am__depfiles_maybe)'; \
+            cd $(top_builddir) && $(SHELL) ./config.status scripts/$@ $(am__depfiles_maybe);; \
         esac;
 
 %:	%.in
