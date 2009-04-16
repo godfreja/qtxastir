@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.30 2009/04/13 17:16:34 gstueve Exp $
+# $Id: Makefile.am,v 1.31 2009/04/16 16:25:08 we7u Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -27,6 +27,7 @@ pkglib_SCRIPTS = \
     overlay.pl \
     ozi2geo.pl \
     permutations.pl \
+    slideshow.pl \
     split_gnis.bash \
     split_gnis.pl \
     test_coord.pl \
