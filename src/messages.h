@@ -1,5 +1,5 @@
 /*
- * $Id: messages.h,v 1.28 2009/01/02 08:15:15 we7u Exp $
+ * $Id: messages.h,v 1.29 2009/04/16 18:39:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -116,6 +116,8 @@ extern void Send_message_call(Widget w, XtPointer clientData, XtPointer callData
 // view_message_gui.c
 extern int vm_range;
 extern int view_message_limit;
+extern int Read_messages_packet_data_type;
+extern int Read_messages_mine_only;
 
 #endif  /*  XASTIR_MESSAGES_H */
 
