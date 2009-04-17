@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.36 2009/01/02 07:53:58 we7u Exp $
+# $Id: Makefile.am,v 1.37 2009/04/17 16:12:55 we7u Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -57,7 +57,15 @@ EXTRA_DIST = \
     tnc-stop.d700 \
     tnc-stop.sys \
     tnc-stop.thd7 \
-    tnc-stop.tnc2-ui
+    tnc-stop.tnc2-ui \
+    areawater.dbfawk \
+    arealm.dbfawk \
+    tabblock.dbfawk \
+    cousub.dbfawk \
+    cousub00.dbfawk \
+    edge.dbfawk \
+    featnames.dbfawk \
+    pointlm.dbfawk
 
 config_DATA = ${EXTRA_DIST}
 
