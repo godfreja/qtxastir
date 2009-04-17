@@ -1,5 +1,5 @@
 /*
- * $Id: wx.c,v 1.68 2009/01/02 08:15:17 we7u Exp $
+ * $Id: wx.c,v 1.69 2009/04/17 02:55:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -566,8 +566,8 @@ void decode_U2000_L(int from, unsigned char *data, WeatherRow *weather) {
     // if a direction calibration has been entered.  We should zero
     // them.
     //
-    if (data[6] != '-') { // '-' signifies invalid data
-        substr(temp_data1,(char *)(data+6),2);
+    if (data[4] != '-') { // '-' signifies invalid data
+        substr(temp_data1,(char *)(data+4),4);
         temp_data1[0] = '0';
         temp_data1[1] = '0';
         xastir_snprintf(weather->wx_course,
@@ -762,8 +762,8 @@ void decode_U2000_P(int from, unsigned char *data, WeatherRow *weather) {
     // if a direction calibration has been entered.  We should zero
     // them.
     //
-    if (data[6] != '-') { // '-' signifies invalid data
-        substr(temp_data1,(char *)(data+6),2);
+    if (data[4] != '-') { // '-' signifies invalid data
+        substr(temp_data1,(char *)(data+4),4);
         temp_data1[0] = '0';
         temp_data1[1] = '0';
         xastir_snprintf(weather->wx_course,
@@ -1419,8 +1419,9 @@ void wx_fill_data(int from, int type, unsigned char *data, DataRow *fill) {
             // be FF if a direction calibration has been entered.
             // We should zero them.
             //
-            if (data[8]!='-') { // '-' signifies invalid data
-                substr(temp_data1,(char *)(data+8),2);
+            if (data[6]!='-') { // '-' signifies invalid data
+                substr(temp_data1,(char *)(data+6),4);
+                // Zero out the first two bytes
                 temp_data1[0] = '0';
                 temp_data1[1] = '0';
                 xastir_snprintf(weather->wx_course,
@@ -1616,8 +1617,8 @@ void wx_fill_data(int from, int type, unsigned char *data, DataRow *fill) {
             // be FF if a direction calibration has been entered.
             // We should zero them.
             //
-            if (data[11]!='-') { // '-' signifies invalid data
-                substr(temp_data1,(char *)(data+11),2);
+            if (data[9]!='-') { // '-' signifies invalid data
+                substr(temp_data1,(char *)(data+9),4);
                 temp_data1[0] = '0';
                 temp_data1[1] = '0';
                 xastir_snprintf(weather->wx_course,
