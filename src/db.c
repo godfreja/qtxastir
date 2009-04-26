@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.645 2009/01/02 08:15:11 we7u Exp $
+ * $Id: db.c,v 1.646 2009/04/26 04:53:35 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2942,6 +2942,7 @@ void display_station(Widget w, DataRow *p_station, int single) {
                       p_station->bearing,
                       p_station->NRQ,
                       trail_colors[p_station->df_color],
+                      Display_.df_beamwidth_data, Display_.df_bearing_data,
                       temp_sec_heard,
                       drawing_target);
     }

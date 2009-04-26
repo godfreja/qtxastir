@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.218 2009/01/02 07:53:58 we7u Exp $
+# $Id: language-English.sys,v 1.219 2009/04/26 04:53:35 tvrusso Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -213,6 +213,8 @@ PULDNDP008|Display Power/Gain||
 PULDNDP021|- Use Default Power/Gain||
 PULDNDP020|- Display Mobile Power/Gain||
 PULDNDP023|Display DF Attributes||
+PULDNDP123|Display DF Beamwidth||
+PULDNDP223|Display DF Bearing||
 PULDNDP035|Enable Dead-Reckoning||
 PULDNDP036|- Display Arc||
 PULDNDP037|- Display Course||

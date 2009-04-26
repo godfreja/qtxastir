@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.h,v 1.29 2009/01/02 08:15:12 we7u Exp $
+ * $Id: draw_symbols.h,v 1.30 2009/04/26 04:53:35 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -61,7 +61,7 @@ extern void draw_aloha_circle(long x_long, long y_lat, double range, int color, 
 extern void draw_phg_rng(long x_long, long y_lat, char *phg, time_t sec_heard, Pixmap where);
 extern void draw_DF_circle(long x_long, long y_lat, char *shgd, time_t sec_heard, Pixmap where);
 extern void draw_wind_barb(long x_long, long y_lat, char *speed, char *course, time_t sec_heard, Pixmap where);
-extern void draw_bearing(long x_long, long y_lat, char *course, char *bearing, char *NRQ, int color, time_t sec_heard, Pixmap where);
+extern void draw_bearing(long x_long, long y_lat, char *course, char *bearing, char *NRQ, int color, int draw_beamwidth, int draw_bearing, time_t sec_heard, Pixmap where);
 extern void draw_ambiguity(long x_long, long y_lat, char amb, long *amb_x_long, long *amb_y_lat, time_t sec_heard, Pixmap where);
 extern void draw_area(long x_long, long y_lat, char type, char color, char sqrt_lat_off, char sqrt_lon_off, unsigned int width, time_t sec_heard, Pixmap where);
 extern void draw_multipoints(long x_long, long y_lat, int numpoints, long points[][2], char type, char style, time_t sec_heard, Pixmap where);  // KG4NBB

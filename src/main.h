@@ -1,5 +1,5 @@
 /*
- * $Id: main.h,v 1.107 2009/04/03 14:08:52 gstueve Exp $
+ * $Id: main.h,v 1.108 2009/04/26 04:53:35 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -237,6 +237,8 @@ typedef struct _what_to_display {
     int phg_of_moving;
 
     int df_data;
+    int df_beamwidth_data;
+    int df_bearing_data;
     int dr_data;
     int dr_arc;
     int dr_course;
