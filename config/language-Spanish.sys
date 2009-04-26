@@ -1,4 +1,4 @@
-# $Id: language-Spanish.sys,v 1.228 2009/04/26 04:53:35 tvrusso Exp $
+# $Id: language-Spanish.sys,v 1.229 2009/04/26 06:40:20 tvrusso Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -833,6 +833,7 @@ WPUPSTI088|DF Beamwidth||
 WPUPSTI089|DF Length||
 WPUPSTI090|Not Valid||
 WPUPSTI091|Change Trail Color||
+WPUPSTI092|Clear DF Bearing||
 #
 #
 # PopUp "ALOHA Statistics"

@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.230 2009/04/26 04:53:35 tvrusso Exp $
+# $Id: language-German.sys,v 1.231 2009/04/26 06:40:20 tvrusso Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -843,6 +843,7 @@ WPUPSTI088|DF Öffnungswinkel||
 WPUPSTI089|DF Länge||
 WPUPSTI090|ungültig||
 WPUPSTI091|Wegfarbe ändern||
+WPUPSTI092|Clear DF Bearing||
 #
 #
 # PopUp "ALOHA Statistics"
