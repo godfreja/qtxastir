@@ -1,6 +1,6 @@
 #!/usr/bin/perl -W
 #
-# $Id: get-fcc-rac.pl,v 1.5 2009/04/24 20:10:15 gstueve Exp $
+# $Id: get-fcc-rac.pl,v 1.6 2009/04/30 03:08:41 gstueve Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -18,73 +18,6 @@ my $XASTIR_BASE="${prefix}/share/xastir";
 
 # This script uses temporary storage space in /var/tmp to do its work.
 chdir "/var/tmp";
-
-
-#####################################################################
-# Get the FCC database, process it.
-#   Download size:  ~84MB
-# Final file size: ~101MB
-#####################################################################
-#
-my $file  = "l_amat.zip";
-my $file2 = "EN.dat";
-
- 
-print STDERR "*********************************\n";
-print STDERR "*** Fetching the FCC database ***\n";
-print STDERR "*********************************\n";
-`wget -c http://wireless.fcc.gov/uls/data/complete/$file`;
-
-if (-e $file && -r $file && -f $file) {
-
-  my $file_out = "$XASTIR_BASE/fcc/$file2";
-
-  # Get rid of characters "^M^M^J" which are sometimes present, sort
-  # the file by callsign & remove old entries for vanity call access.
-  print STDERR "*****************************************************\n";
-  print STDERR "*** Filtering/sorting/installing the FCC database ***\n";
-  print STDERR "*****************************************************\n";
-
-  my %from = ();
- 
-  open FILE, "unzip -p $file $file2|" or die "Can't open $file2 in $file : $!";
-  while( <FILE> ) {
-    if (/^EN\|(\d+)\|\|\|(\w+)\|.*/) {
-      $x = $1;
-      $z = $2;
-      chop;
-      chop;
-      $y = $_;
-      if (defined $from{$2}) { # check for vanity reassignment
-        if ($from{$z} =~ /^EN\|(\d+)\|\|\|(\w+)\|.*/) {
-          if ($1 < $x) {
-            $replaced++;
-            $from{$2} = $y;
-          }
-        }
-      }
-      else {
-        $from{$2} = $_;
-      }
-    }
-  }
-  close FILE;
- 
-  open FILE_OUT, "|sort -k 5,5 -t \\| > $file_out" or die "Can't sort $file_out : $!";
-  for my $callsign ( keys %from ) {
-    $total++;
-    print FILE_OUT "$from{$callsign}\n";
-  }
-  close FILE_OUT;
-
-  print STDERR "Total callsigns:  " . $total . ".\n";
-  print STDERR " Replaced callsigns:  " . $replaced . ".\n";
-}
-
-# Remove the FCC download files
-unlink $file;
-
-
 
 
 #####################################################################
@@ -115,6 +48,73 @@ if (-e $file && -r $file && -f $file) {
 
 # Remove the RAC download files
 unlink $file, $file2;
+
+
+#####################################################################
+# Get the FCC database, process it.
+#   Download size:  ~84MB
+# Final file size: ~101MB
+#####################################################################
+#
+my $file  = "l_amat.zip";
+my $file2 = "EN.dat";
+
+ 
+print STDERR "*********************************\n";
+print STDERR "*** Fetching the FCC database ***\n";
+print STDERR "*********************************\n";
+`wget -c http://wireless.fcc.gov/uls/data/complete/$file`;
+
+if (-e $file && -r $file && -f $file) {
+
+  my $file_out = "$XASTIR_BASE/fcc/$file2";
+
+  # Get rid of characters "^M^M^J" which are sometimes present, sort
+  # the file by callsign & remove old entries for vanity call access.
+  print STDERR "*****************************************************\n";
+  print STDERR "*** Filtering/sorting/installing the FCC database ***\n";
+  print STDERR "*****************************************************\n";
+
+  my %from = ();
+ 
+  open FILE, "unzip -p $file $file2|" or die "Can't open $file2 in $file : $!";
+  open FILE_OUT, '|-', "sort -k 5,5 -t \\| -o $file_out" or die "Can't sort $file_out : $!";
+  while( <FILE> ) {
+    if (/^EN\|(\d+)\|\|\|(\w+)\|.*/) {
+      $x = $1;
+      $z = $2;
+      chop;
+      chop;
+      $y = $_;
+      if (defined $from{$2}) { # check for vanity reassignment
+        if ($from{$z} =~ /^EN\|(\d+)\|\|\|(\w+)\|.*/) {
+          if ($1 < $x) {
+            $replaced++;
+            $from{$2} = $y;
+          }
+        }
+      }
+      else {
+        $from{$2} = $_;
+      }
+    }
+  }
+  close FILE;
+ 
+  for my $callsign ( keys %from ) {
+    $total++;
+    print FILE_OUT "$from{$callsign}\n";
+  }
+  close FILE_OUT;
+
+  print STDERR "Total callsigns:  " . $total . ".\n";
+  print STDERR " Replaced callsigns:  " . $replaced . ".\n";
+}
+
+# Remove the FCC download files
+unlink $file;
+
+
 
 
 print STDERR "*************\n";
