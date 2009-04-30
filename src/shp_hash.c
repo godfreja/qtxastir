@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: shp_hash.c,v 1.24 2009/01/02 08:15:16 we7u Exp $
+ * $Id: shp_hash.c,v 1.25 2009/04/30 18:52:53 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -318,16 +318,12 @@ void build_rtree (struct Node **root, SHPHandle sHP) {
 
 
 
-void purge_shp_hash(void) {
+void purge_shp_hash(time_t secs_now) {
     struct hashtable_itr *iterator=NULL;
     shpinfo *si;
-    time_t secs_now;
-    //struct tm *time_now;
     int ret;
-    //    char timestring[256];
 
 
-    secs_now = sec_now();
     if (secs_now > purge_time) {  // Time to purge
         //time_now = localtime(&secs_now);
         //(void)strftime(timestring,100,"%a %b %d %H:%M:%S %Z %Y",time_now);

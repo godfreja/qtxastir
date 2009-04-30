@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.783 2009/04/26 04:53:35 tvrusso Exp $
+ * $Id: main.c,v 1.784 2009/04/30 18:52:53 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11320,7 +11320,7 @@ void UpdateTime( XtPointer clientData, /*@unused@*/ XtIntervalId id ) {
 
 #ifdef USE_RTREE
   #ifdef HAVE_LIBSHP
-            purge_shp_hash();                   // purge stale rtrees
+            purge_shp_hash(current_time);               // purge stale rtrees
   #endif // HAVE_LIBSHP
 #endif // USE_RTREE
 

@@ -1,5 +1,5 @@
 
-// $Id: shp_hash.h,v 1.8 2009/01/02 08:15:16 we7u Exp $
+// $Id: shp_hash.h,v 1.9 2009/04/30 18:52:53 gstueve Exp $
 // Copyright (C) 2004-2009  The Xastir Group
 
 
@@ -32,7 +32,7 @@ void build_rtree(struct Node **root, SHPHandle sHP);
 void destroy_shp_hash(void);
 void empty_shpinfo(shpinfo *si);
 void destroy_shpinfo(shpinfo *si);
-void purge_shp_hash(void);
+void purge_shp_hash(time_t secs_now);
 shpinfo *get_shp_from_hash(char *filename);
 
 #endif // USE_RTREE
