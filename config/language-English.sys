@@ -1,4 +1,4 @@
-# $Id: language-English.sys,v 1.220 2009/04/26 06:40:20 tvrusso Exp $
+# $Id: language-English.sys,v 1.221 2009/05/19 20:47:51 tvrusso Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -1003,6 +1003,7 @@ WXPUPSI024|Low Temp.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
 WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 WXPUPSI027|LaCrosse WX-23xx||
+WXPUPSI028|Davis APRS Data Logger||
 #
 # Station Lists
 LHPUPNI000|All Stations||

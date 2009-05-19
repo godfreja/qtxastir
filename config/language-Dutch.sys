@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.232 2009/04/26 06:40:20 tvrusso Exp $
+# $Id: language-Dutch.sys,v 1.233 2009/05/19 20:47:51 tvrusso Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -1011,6 +1011,7 @@ WXPUPSI024|Min Temp.||
 WXPUPSI025|Radio Shack WX-200/Oregon Scientific WM-918||
 WXPUPSI026|Davis Weather Monitor II/Wizard III/Vantage Pro||
 WXPUPSI027|LaCrosse WX-23xx||
+WXPUPSI028|Davis APRS Data Logger||
 #
 # Station Lists
 LHPUPNI000|Alle stations||
