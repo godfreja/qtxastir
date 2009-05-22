@@ -1,8 +1,9 @@
 
-# $Id: Makefile.am,v 1.6 2009/01/02 07:58:32 we7u Exp $
+# $Id: Makefile.am,v 1.7 2009/05/22 17:30:32 tvrusso Exp $
 # Copyright (C) 2004-2009  The Xastir Group
 
 noinst_LIBRARIES=libshape.a
+noinst_PROGRAMS=shpcreate dbfcreate shpadd dbfadd
 libshape_a_SOURCES=shpopen.c \
 		shptree.c \
 		dbfopen.c \
