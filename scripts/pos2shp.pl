@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# $Id: pos2shp.pl,v 1.4 2009/05/22 21:23:23 we7u Exp $
+# $Id: pos2shp.pl,v 1.5 2009/05/22 23:23:28 we7u Exp $
 #
 #  Copyright (C) 2006-2009 Tom Russo
 
@@ -101,8 +101,10 @@ while (<INOBJ>)
     $long=substr($rest,9,9);
     $sym=substr($rest,18,1);
 
-# TODO: Do something with the comment field?
+# TODO: Do something with the comment field?  It appears that if we
+# add too much here we get strange results when displayed in Xastir.
     $comment=substr($rest,19,100);
+#    $name = $name . ":" . $comment;
 
     $i++;  # bump the ID number so every point has a unique one
 
