@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.8 2009/05/22 17:44:55 tvrusso Exp $
+# $Id: Makefile.am,v 1.9 2009/06/03 21:57:12 tvrusso Exp $
 # Copyright (C) 2004-2009  The Xastir Group
 
 noinst_LIBRARIES=libshape.a
@@ -8,6 +8,12 @@ libshape_a_SOURCES=shpopen.c \
 		shptree.c \
 		dbfopen.c \
 		shapefil.h
+
+shpcreate_LDADD=libshape.a
+dbfcreate_LDADD=libshape.a
+shpadd_LDADD=libshape.a
+dbfadd_LDADD=libshape.a
+
 EXTRA_DIST=ChangeLog LICENSE.LGPL README README.tree dbf_api.html \
 	dbfadd.c dbfcreate.c dbfdump.c libtool makefile.vc makeshape.sh \
         mkinstalldirs shapelib.def shapelib.html shp_api.html \
