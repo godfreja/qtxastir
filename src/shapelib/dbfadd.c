@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: dbfadd.c,v 1.1 2006/11/10 21:48:09 tvrusso Exp $
+ * $Id: dbfadd.c,v 1.2 2009/06/03 22:24:19 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Sample application for adding a record to an existing .dbf file.
@@ -34,6 +34,9 @@
  ******************************************************************************
  *
  * $Log: dbfadd.c,v $
+ * Revision 1.2  2009/06/03 22:24:19  we7u
+ * Adding includes for string.h to get rid of compiler warnings.
+ *
  * Revision 1.1  2006/11/10 21:48:09  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -78,11 +81,12 @@
  */
 
 static char rcsid[] = 
-  "$Id: dbfadd.c,v 1.1 2006/11/10 21:48:09 tvrusso Exp $";
+  "$Id: dbfadd.c,v 1.2 2009/06/03 22:24:19 we7u Exp $";
 
 #include "shapefil.h"
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main( int argc, char ** argv )
 
