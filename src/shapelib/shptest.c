@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shptest.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $
+ * $Id: shptest.c,v 1.2 2009/06/04 04:25:19 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Application for generating sample Shapefiles of various types.
@@ -35,6 +35,9 @@
  ******************************************************************************
  *
  * $Log: shptest.c,v $
+ * Revision 1.2  2009/06/04 04:25:19  we7u
+ * Getting rid of compiler warnings due to unused variable.
+ *
  * Revision 1.1  2006/11/10 21:48:10  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -78,8 +81,8 @@
  *
  */
 
-static char rcsid[] = 
-  "$Id: shptest.c,v 1.1 2006/11/10 21:48:10 tvrusso Exp $";
+//static char rcsid[] = 
+//  "$Id: shptest.c,v 1.2 2009/06/04 04:25:19 we7u Exp $";
 
 #include <stdlib.h>
 #include <string.h>

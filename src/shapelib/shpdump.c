@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shpdump.c,v 1.2 2007/07/25 15:37:50 we7u Exp $
+ * $Id: shpdump.c,v 1.3 2009/06/04 04:25:19 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Sample application for dumping contents of a shapefile to 
@@ -35,6 +35,9 @@
  ******************************************************************************
  *
  * $Log: shpdump.c,v $
+ * Revision 1.3  2009/06/04 04:25:19  we7u
+ * Getting rid of compiler warnings due to unused variable.
+ *
  * Revision 1.2  2007/07/25 15:37:50  we7u
  * Added shprewind.c to the "clean" target of the original Makefile.  Added
  * stdlib.h includes to some of the utilities to get a clean compile.
@@ -91,8 +94,8 @@
  *
  */
 
-static char rcsid[] = 
-  "$Id: shpdump.c,v 1.2 2007/07/25 15:37:50 we7u Exp $";
+//static char rcsid[] =
+//    "$Id: shpdump.c,v 1.3 2009/06/04 04:25:19 we7u Exp $";
 
 #include "shapefil.h"
 #include <stdlib.h>
