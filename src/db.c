@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.649 2009/05/09 14:15:37 tvrusso Exp $
+ * $Id: db.c,v 1.650 2009/06/29 07:14:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5840,7 +5840,15 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
         }
 
 
-        // Add FCC button only if probable match
+        // Add FCC button only if probable match.  The U.S. has
+        // these prefixes assigned but not all are used for amateur
+        // stations:
+        //
+        //   AAA-ALZ
+        //   KAA-KZZ
+        //   NAA-NZZ
+        //   WAA-WZZ
+        //
         else if ((! strncmp(local_station,"A",1)) || (!  strncmp(local_station,"K",1)) ||
             (! strncmp(local_station,"N",1)) || (! strncmp(local_station,"W",1))  ) {
 
@@ -5867,8 +5875,18 @@ begin_critical_section(&db_station_info_lock, "db.c:Station_data" );
         }
 
 
-        // Add RAC button only if probable match
-        else if (!strncmp(local_station,"VE",2) || !strncmp(local_station,"VA",2)) {
+        // Add RAC button only if probable match.  Canada has these
+        // prefixes assigned but not all are used for amateur
+        // stations:
+        //
+        //   CFA-CKZ
+        //   CYA-CZZ
+        //   VAA-VGZ
+        //   VOA-VOZ
+        //   VXA-VYZ
+        //   XJA-XOZ
+        //
+        else if (!strncmp(local_station,"VA",2) || !strncmp(local_station,"VE",2) || !strncmp(local_station,"VO",2) || !strncmp(local_station,"VY",2)) {
             button_rac = XtVaCreateManagedWidget(langcode("WPUPSTI004"),xmPushButtonGadgetClass, form,
                             XmNtopAttachment, XmATTACH_NONE,
                             XmNbottomAttachment, XmATTACH_WIDGET,
