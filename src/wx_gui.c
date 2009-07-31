@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.56 2009/01/02 08:15:17 we7u Exp $
+ * $Id: wx_gui.c,v 1.57 2009/07/31 22:38:01 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -261,7 +261,14 @@ end_critical_section(&wx_detailed_alert_shell_lock, "wx_gui.c:wx_alert_double_cl
 
     memset(&serv_addr, 0, sizeof(serv_addr));
 
-    serverhost = gethostbyname("wxsvr.net");
+
+    // Changing Finger host because WXSVR.net has been down for a
+    // month or more and Pete, AE5PL, has a replacement online that
+    // performs this function.
+    //serverhost = gethostbyname("wxsvr.net");
+    serverhost = gethostbyname("wx.aprs-is.net");
+
+
     if (serverhost == (struct hostent *)0) {
 //        fprintf(stderr,"wx_alert_finger_output: gethostbyname failed\n");
         xastir_snprintf(temp,
