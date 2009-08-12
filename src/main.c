@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.784 2009/04/30 18:52:53 gstueve Exp $
+ * $Id: main.c,v 1.785 2009/08/12 18:59:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27100,6 +27100,10 @@ int main(int argc, char *argv[], char *envp[]) {
         <Key>c: Quit()\n\
         Ctrl <Key>n: Next()\n\
         Ctrl <Key>p: Prev()\n",
+
+        "*minWidth: 200\n",
+
+        "*minHeight: 100\n",
 
         NULL
     };
