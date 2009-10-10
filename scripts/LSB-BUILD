@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD,v 1.43 2009/01/02 07:56:30 we7u Exp $
+# $Id: LSB-BUILD,v 1.44 2009/10/10 17:41:10 we7u Exp $
 # Copyright (C) 2006-2009  The Xastir Group
 
 # TODO:
@@ -83,7 +83,7 @@
 #
 
 
-REV="1.9.5"
+REV="1.9.6"
 FILENAME=`date +xastir-lsb-$REV-%Y-%b-%d.tar.bz2`
 
 
