@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.45 2009/01/02 08:16:37 we7u Exp $
+# $Id: Makefile.am,v 1.46 2009/12/22 21:37:17 gstueve Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -16,8 +16,8 @@ SUBDIRS = src m4 config help scripts symbols callpass
 
 EXTRA_DIST = xastir.spec.in xastir.spec xastir-min.spec.in xastir-min.spec config.guess config.sub install-sh \
         missing mkinstalldirs placeholder FAQ LICENSE README README.CVS \
-        README.Getting-Started README.Contributing README.MAPS README.win32 \
-        DEBUG_LEVELS bootstrap.sh INSTALL UPGRADE xastir.1 terraserver.geo \
+        README.Getting-Started README.Contributing README.MAPS README.win32 testdbfawk.1 \
+        DEBUG_LEVELS bootstrap.sh INSTALL UPGRADE callpass.1 xastir.1 xastir_udp_client.1 terraserver.geo \
         terraserver-reflectivity.geo terraserver-urban.geo worldhi.map \
         terraserver-topo.geo tigermap.geo USRadar.geo CanadaTopo250k.geo \
         CanadaTopo50k.geo TXRadar.geo WMSRadar.geo Davis LaCrosse \
@@ -66,7 +66,7 @@ install-exec-hook:
 	-rm -rf ${pkgdatadir}/doc
  
 mandir=${prefix}/share/man
-man_MANS=xastir.1
+man_MANS=xastir.1 callpass.1 xastir_udp_client.1 testdbfawk.1
 
 ChangeLog::
 
