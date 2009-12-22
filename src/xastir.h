@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.62 2009/04/02 22:09:02 gstueve Exp $
+ * $Id: xastir.h,v 1.63 2009/12/22 10:56:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -140,6 +140,7 @@ extern int long_lat_grid;
 //extern Pixmap  pixmap_alerts;
 extern int map_color_levels;
 extern int map_labels;
+extern int map_lock_pan_zoom;
 extern int map_auto_maps;
 extern int auto_maps_skip_raster;
 extern time_t sec_remove;

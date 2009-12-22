@@ -1,4 +1,4 @@
-# $Id: language-Dutch.sys,v 1.233 2009/05/19 20:47:51 tvrusso Exp $
+# $Id: language-Dutch.sys,v 1.234 2009/12/22 10:56:25 we7u Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -81,6 +81,7 @@ PULDNCF008|Instellingen nu bewaren!|I|
 PULDNMP001|Kaart Kiezer|K|
 PULDNMP012|Ga naar Lokatie|G|
 PULDNMP014|Lokaliseer Kaart Functie|L|
+PULDNMP016|Disable Map Zoom/Pan||
 PULDNMP013|Zet alle kaarten uit|Z|
 PULDNMP002|Automatische Kaart Keuze|A|
 PULDNMP003|Kaart Graadlijnen|G|
