@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.224 2009/12/22 10:56:25 we7u Exp $
+# $Id: language-Italian.sys,v 1.225 2009/12/31 11:10:44 we7u Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -68,7 +68,7 @@ PULDNCF008|Salva la Configurazione Ora!|C|
 PULDNMP001|Scegli mappa|C|
 PULDNMP012|Vai alla posizione...|J|#NUOVA funzione dalla v. 0.3.2
 PULDNMP014|Localizza Elemento Mappa|E|
-PULDNMP016|Disable Map Zoom/Pan||
+PULDNMP016|Disable Fast Zoom/Pan/Home||
 PULDNMP013|Disattiva tutte le mappe|D|
 PULDNMP002|Mappe automatiche|A|
 PULDNMP003|Reticolato|G|

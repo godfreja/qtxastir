@@ -1,4 +1,4 @@
-# $Id: language-Portuguese.sys,v 1.221 2009/12/22 10:56:25 we7u Exp $
+# $Id: language-Portuguese.sys,v 1.222 2009/12/31 11:10:44 we7u Exp $
 #
 # Copyright (C) 2000-2009  The Xastir Group
 #
@@ -68,7 +68,7 @@ PULDNCF008|Guardar configuracao!|G|
 PULDNMP001|Seleccionar mapas|M|
 PULDNMP012|Saltar para um local do mapa|S|
 PULDNMP014|Localizar faixa no mapa|L|
-PULDNMP016|Disable Map Zoom/Pan||
+PULDNMP016|Disable Fast Zoom/Pan/Home||
 PULDNMP013|Desactivar todos os mapas||
 PULDNMP002|Activar auto mapas||
 PULDNMP003|Activar as coordenadas do mapa||
