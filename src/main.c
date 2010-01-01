@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.788 2009/12/31 11:10:44 we7u Exp $
+ * $Id: main.c,v 1.789 2010/01/01 23:04:17 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10781,10 +10781,12 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
             menu_y=input_y;
             mouse_zoom = 1;
 
-            if (!moving_object) {
-                // Not moving an object/item, so allow the zoom-in
-                // box to display.
-                possible_zoom_function++;
+            if (!moving_object) {  // Can be "Measure" or "Zoom-in"
+                if  (!map_lock_pan_zoom || (map_lock_pan_zoom && measuring_distance)) {
+                    // Not moving an object/item, so allow the
+                    // zoom-in box to display.
+                    possible_zoom_function++;
+                }
             }
         }   // End of Button1 Press code
 
