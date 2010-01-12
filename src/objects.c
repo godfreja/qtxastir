@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: objects.c,v 1.61 2010/01/12 17:47:46 tvrusso Exp $
+ * $Id: objects.c,v 1.62 2010/01/12 19:32:07 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3090,8 +3090,8 @@ void Restore_CAD_Objects_from_file(void) {
             unsigned long temp_time;
             if (1 != sscanf(line+15, "%lu",&temp_time)) {
                 fprintf(stderr,"Restore_CAD_Objects_from_file:sscanf parsing error [creation_time]\n");
-                CAD_list_head->creation_time=(time_t)temp_time;
             }
+            CAD_list_head->creation_time=(time_t)temp_time;
         }
         else if (strncasecmp(line,"line_color:",11) == 0) {
             //fprintf(stderr,"Found line_color:\n");
