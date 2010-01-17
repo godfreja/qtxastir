@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.789 2010/01/01 23:04:17 we7u Exp $
+ * $Id: main.c,v 1.790 2010/01/17 06:27:50 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22957,11 +22957,11 @@ void Configure_defaults( /*@unused@*/ Widget w, /*@unused@*/ XtPointer clientDat
                 XmStringFree(tempSelection);
 #else
                 x = -1;
-                if (predefined_object_definition_filename=="predefined_SAR.sys") 
+                if (strncmp(predefined_object_definition_filename,"predefined_SAR.sys",strlen(predefined_object_definition_filename)) == 0) 
                     x = 0;
-                if (predefined_object_definition_filename=="predefined_EVENT.sys")
+                if (strncmp(predefined_object_definition_filename,"predefined_EVENT.sys",strlen(predefined_object_definition_filename)) == 0)
                     x = 1;
-                if (predefined_object_definition_filename=="predefined_USER.sys")
+                if (strncmp(predefined_object_definition_filename,"predefined_USER.sys",strlen(predefined_object_definition_filename)) == 0)
                     x = 2;
                 i = 3;
                 // allow display of another filename from the config file.
