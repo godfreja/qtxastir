@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.35 2009/05/22 21:35:05 we7u Exp $
+# $Id: Makefile.am,v 1.36 2010/01/31 02:12:23 we7u Exp $
 #
-# Copyright (C) 2000-2009  The Xastir Group
+# Copyright (C) 2000-2010  The Xastir Group
 #
 
 pkglib_SCRIPTS = \

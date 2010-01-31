@@ -1,6 +1,6 @@
 
-# $Id: Makefile.am,v 1.9 2009/06/03 21:57:12 tvrusso Exp $
-# Copyright (C) 2004-2009  The Xastir Group
+# $Id: Makefile.am,v 1.10 2010/01/31 02:12:25 we7u Exp $
+# Copyright (C) 2004-2010  The Xastir Group
 
 noinst_LIBRARIES=libshape.a
 bin_PROGRAMS=shpcreate dbfcreate shpadd dbfadd

@@ -1,6 +1,6 @@
-# $Id: tnc-startup.tnc2,v 1.5 2009/01/02 07:53:58 we7u Exp $
+# $Id: tnc-startup.tnc2,v 1.6 2010/01/31 02:12:23 we7u Exp $
 #
-# Copyright (C) 2005-2009  The Xastir Group
+# Copyright (C) 2005-2010  The Xastir Group
 #
 # This is the TNC Startup file for a TAPR TNC2 style of TNC.  This
 # includes many TNC's from TAPR, Paccomm, MFJ, AEA, etc that were

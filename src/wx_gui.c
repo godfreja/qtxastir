@@ -1,9 +1,9 @@
 /*
- * $Id: wx_gui.c,v 1.57 2009/07/31 22:38:01 we7u Exp $
+ * $Id: wx_gui.c,v 1.58 2010/01/31 02:12:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2009  The Xastir Group
+ * Copyright (C) 2000-2010  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

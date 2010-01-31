@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
-# Copyright (C) 2001-2006 Curt Mills, WE7U
+# Copyright (C) 2001-2010 Curt Mills, WE7U
 # Released to the public domain.
 #
-# $Id: inf2geo.pl,v 1.8 2007/02/06 14:55:34 we7u Exp $
+# $Id: inf2geo.pl,v 1.9 2010/01/31 02:12:23 we7u Exp $
 #
 #
 # Invoke this script against one or more info files by typing:

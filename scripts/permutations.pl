@@ -2,11 +2,11 @@
 
 
 #
-# Copyright (C) 2002-2003 Paul Lutt, KE7XT & Curt Mills, WE7U.
+# Copyright (C) 2002-2010 Paul Lutt, KE7XT & Curt Mills, WE7U.
 # Released to the public domain.
 #
 #
-# $Id: permutations.pl,v 1.9 2005/03/25 20:53:04 we7u Exp $
+# $Id: permutations.pl,v 1.10 2010/01/31 02:12:23 we7u Exp $
 #
 #
 # Finds the different lat/long representations corresponding to the

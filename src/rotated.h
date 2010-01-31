@@ -1,7 +1,7 @@
 
-// $Id: rotated.h,v 1.10 2009/01/02 08:15:16 we7u Exp $
+// $Id: rotated.h,v 1.11 2010/01/31 02:12:25 we7u Exp $
 //
-// Portions Copyright (C) 2000-2009  The Xastir Group
+// Portions Copyright (C) 2000-2010  The Xastir Group
 //
 
 /* ************************************************************************ */

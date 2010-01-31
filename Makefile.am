@@ -1,7 +1,7 @@
 
-# $Id: Makefile.am,v 1.46 2009/12/22 21:37:17 gstueve Exp $
+# $Id: Makefile.am,v 1.47 2010/01/31 02:12:23 we7u Exp $
 #
-# Copyright (C) 2000-2009  The Xastir Group
+# Copyright (C) 2000-2010  The Xastir Group
 #
 
 AUTOMAKE_OPTIONS = gnu dist-bzip2

@@ -1,8 +1,8 @@
 #!/usr/bin/perl -W
 
-# $Id: langPirateEnglish.pl,v 1.9 2009/01/02 07:56:31 we7u Exp $
+# $Id: langPirateEnglish.pl,v 1.10 2010/01/31 02:12:23 we7u Exp $
 
-# Copyright (C) 2008-2009  The Xastir Group
+# Copyright (C) 2008-2010  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

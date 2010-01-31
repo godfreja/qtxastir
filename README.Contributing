@@ -1,5 +1,5 @@
 
-$Id: README.Contributing,v 1.18 2009/01/02 08:16:37 we7u Exp $
+$Id: README.Contributing,v 1.19 2010/01/31 02:12:23 we7u Exp $
 
 
 Hello possible new developer, and welcome to the Xastir project!
@@ -323,4 +323,5 @@ be expanded in this document.  Thanks!
 
 APRS(tm) is a Trademark of Bob Bruninga
 
-Copyright (C) 2006-2009 The Xastir Group
+Copyright (C) 2006-2010 The Xastir Group
+

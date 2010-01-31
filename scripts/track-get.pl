@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
-# $Id: track-get.pl,v 1.3 2003/01/06 22:42:18 we7u Exp $
+# $Id: track-get.pl,v 1.4 2010/01/31 02:12:23 we7u Exp $
 
-# Copyright (C) 2000-2003  Curt Mills, WE7U
+# Copyright (C) 2000-2010  Curt Mills, WE7U
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

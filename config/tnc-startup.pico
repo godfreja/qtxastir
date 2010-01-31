@@ -1,6 +1,6 @@
-# $Id: tnc-startup.pico,v 1.20 2009/01/02 07:53:58 we7u Exp $
+# $Id: tnc-startup.pico,v 1.21 2010/01/31 02:12:23 we7u Exp $
 #
-# Copyright (C) 2000-2009  The Xastir Group
+# Copyright (C) 2000-2010  The Xastir Group
 #
 # This is the TNC Startup file for a dual-port Paccomm PicoPacket TNC.
 # lines that begin with a pound sign are comments.

@@ -1,8 +1,8 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: dbfawk.c,v 1.36 2009/01/02 08:15:11 we7u Exp $
+ * $Id: dbfawk.c,v 1.37 2010/01/31 02:12:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2003-2009  The Xastir Group
+ * Copyright (C) 2003-2010  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

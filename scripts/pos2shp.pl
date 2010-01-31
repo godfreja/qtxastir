@@ -1,8 +1,8 @@
 #!/usr/bin/env perl
 #
-# $Id: pos2shp.pl,v 1.5 2009/05/22 23:23:28 we7u Exp $
+# $Id: pos2shp.pl,v 1.6 2010/01/31 02:12:23 we7u Exp $
 #
-#  Copyright (C) 2006-2009 Tom Russo
+#  Copyright (C) 2006-2010 Tom Russo
 
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

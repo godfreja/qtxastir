@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.13 2009/01/02 07:51:28 we7u Exp $
+# $Id: Makefile.am,v 1.14 2010/01/31 02:12:25 we7u Exp $
 #
-# Copyright (C) 2000-2009  The Xastir Group
+# Copyright (C) 2000-2010  The Xastir Group
 #
 
 symbolsdir=${pkgdatadir}/symbols

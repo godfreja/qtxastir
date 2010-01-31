@@ -1,9 +1,9 @@
 
-// $Id: io.h,v 1.6 2009/01/02 08:15:13 we7u Exp $
+// $Id: io.h,v 1.7 2010/01/31 02:12:24 we7u Exp $
 
 
 /* Copyright 2002 Daniel Egnor.  See LICENSE.geocoder file.
- * Portions Copyright (C)  2004-2009  The Xastir Group
+ * Portions Copyright (C)  2004-2010  The Xastir Group
  *
  * This file defines the I/O interface used for access to index files.
  * There are two implementations of this interface; io-mmap.c uses Unix

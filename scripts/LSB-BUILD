@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD,v 1.44 2009/10/10 17:41:10 we7u Exp $
-# Copyright (C) 2006-2009  The Xastir Group
+# $Id: LSB-BUILD,v 1.45 2010/01/31 02:12:23 we7u Exp $
+# Copyright (C) 2006-2010  The Xastir Group
 
 # TODO:
 # Check for a link at /opt/Xastir/share/xastir.  If found, remove it
