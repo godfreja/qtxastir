@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $Id: do_xastir_release_dev,v 1.12 2009/10/10 18:28:16 we7u Exp $
+# $Id: do_xastir_release_dev,v 1.13 2010/01/31 07:41:01 we7u Exp $
 
 # This is an example script used by one of the developers to ease
 # the workload.  It's not intended to be used by the general
@@ -17,7 +17,7 @@
 #   Admin
 #   Edit/Add File Releases
 #   Edit Releases (xastir-development)
-#   Edit This Release (xastir-1.9.7)
+#   Edit This Release (xastir-1.9.9)
 #
 
 
@@ -94,7 +94,7 @@ printf("\n*** Consider running the STABLE script to update that tag, if appropri
 
 
 sub Get_release {
-  printf("\nRelease number (i.e. 1.9.7)?\n");
+  printf("\nRelease number (i.e. 1.9.9)?\n");
   $release = <>;
   chomp($release);
 }
