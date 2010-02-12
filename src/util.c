@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.242 2010/01/31 02:12:25 we7u Exp $
+ * $Id: util.c,v 1.243 2010/02/12 05:13:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5459,6 +5459,16 @@ int check_unproto_path ( char *data ) {
                     fprintf(stderr,"WIDE1-1 appears later in the path\n");
                 break;
             }
+        }
+
+        // Check whether WIDE2-1 appears first in the path.  This is
+        // fine, but don't trigger an error later because of another
+        // WIDEn-N after an initial WIDE2-1.  This is to allow paths
+        // like "WIDE2-1,WIDE-2-2" or "WIDE2-1,MD2-2"
+        else if ( (ii == 0) && (!strncmp(ViaCalls[ii], "WIDE2-1", 7)) ) {
+            total_digi_length++;
+            if (debug_level & 1)
+                fprintf(stderr,"Found initial WIDE2-1 (a good thing)\n");
         }
 
         // Check for WIDE/TRACE/WIDEn-N/TRACEn-N in the path
