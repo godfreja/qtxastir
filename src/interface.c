@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.288 2010/01/31 02:12:24 we7u Exp $
+ * $Id: interface.c,v 1.289 2010/02/20 01:33:25 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2673,7 +2673,7 @@ int OpenTrac_decode_radio_capabilities(unsigned char *element,
 //WE7U: Need to decode/pass back values.  This element is still
 //being defined in the spec.
 
-    fprintf(stderr, "Radio Capabilites\n");
+    fprintf(stderr, "Radio Capabilities\n");
 
     return 0;
 }
