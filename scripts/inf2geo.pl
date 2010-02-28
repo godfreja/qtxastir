@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2010 Curt Mills, WE7U
 # Released to the public domain.
 #
-# $Id: inf2geo.pl,v 1.9 2010/01/31 02:12:23 we7u Exp $
+# $Id: inf2geo.pl,v 1.10 2010/02/28 15:47:21 we7u Exp $
 #
 #
 # Invoke this script against one or more info files by typing:
@@ -14,7 +14,12 @@
 #
 # To process all .inf files in that directory.
 #
+# Note:  This script requires GraphicsMagick or ImageMagick packages
+# to be installed before it will function properly.  Install one of
+# these via your package manager.
 #
+#
+# What the script does for you:
 # Read in .inf file (from Ui-View)
 # Convert the lat/long coordinates into dd.dddd format
 # Get the image extents via "identify -ping filename" or
@@ -240,3 +245,5 @@ sub findImageFile {
     print "Found this image: $image_size\n";
     return ($filename, $image_size);
 }
+
+
