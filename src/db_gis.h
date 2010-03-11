@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db_gis.h,v 1.13 2010/01/31 02:12:24 we7u Exp $
+ * $Id: db_gis.h,v 1.14 2010/03/11 04:03:58 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2007-2010  The Xastir Group
@@ -123,7 +123,7 @@ typedef struct {
    ioparam *descriptor;  // connection parameters used to establish this connnection
                       // stored in ioparam struct defined in interface.h
 #ifdef HAVE_MYSQL
-   MYSQL  *mhandle;   // mysql connection
+   MYSQL mhandle;   // mysql connection
 #endif /* HAVE_MYSQL */
 #ifdef HAVE_POSTGIS
    PGconn  *phandle;  // postgres connection
@@ -140,12 +140,13 @@ typedef struct {
 //} ConnectionList;
 
 //extern ConnectionList connections[MAX_IFACE_DEVICES];
-extern Connection *connections[MAX_IFACE_DEVICES];
+extern Connection connections[MAX_IFACE_DEVICES];
 extern int connections_initialized;
 
 
 // connection management
 extern int openConnection (ioparam *aioparm, Connection *conn);
+int initAConnection(Connection *connection, int x);
 extern int closeConnection (Connection *aDbConnection, int port_number);
 extern int testConnection(Connection *aDbConnection);
 int pingConnection(Connection *aDbConnection);

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: db.c,v 1.655 2010/01/31 02:12:23 we7u Exp $
+ * $Id: db.c,v 1.656 2010/03/11 04:03:57 chicoreus Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -13805,27 +13805,27 @@ fprintf(stderr,"Cleared ST_VIATNC flag (2): %s\n", p_station->call_sign);
             for (ii=0;ii<MAX_IFACE_DEVICES;ii++) {
                 if (debug_level & 4096) {
                    fprintf(stderr,"Trying interface [%d] ",ii);
-                   fprintf(stderr,"connection [%p]\n",connections[ii]);
+                   fprintf(stderr,"connection [%p]\n",&connections[ii]);
                 }
-                if (connections[ii] != NULL){
+                if (&connections[ii] != NULL){
                     // Note < 4 is an artificial upper limit that may catch cases where the memmory 
                     // for the connection has been overwritten.  
-                    if (connections[ii]->type > 0 && connections[ii]->type < 4){
+                    if (connections[ii].type > 0 && connections[ii].type < 4){
                         if (debug_level & 4096) 
-                            fprintf(stderr,"type=[%d]\n",connections[ii]->type);                
+                            fprintf(stderr,"type=[%d]\n",connections[ii].type);                
                         if (port_data[ii].status == DEVICE_UP) { 
-                            if (connections[ii]->descriptor->device_type==DEVICE_SQL_DATABASE) { 
+                            if (connections[ii].descriptor->device_type==DEVICE_SQL_DATABASE) { 
                                 if (debug_level & 4096) 
                                     fprintf(stderr,"Trying interface %d\n",ii);
                                 // if interface is a sql server interface 
                                 // write station data to sql database
-                                ok = storeStationSimpleToGisDb(connections[ii], p_station);
+                                ok = storeStationSimpleToGisDb(&connections[ii], p_station);
                                 if (ok==1) { 
                                    if (debug_level & 4096) {
                                        fprintf(stderr,"Stored station %s to database interface %d.\n",p_station->call_sign,ii);
                                    }
                                 } else {
-                                   pingConnection(connections[ii]);
+                                   pingConnection(&connections[ii]);
                                 }
                             }
                         }
