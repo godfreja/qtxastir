@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.41 2010/04/19 17:45:33 gstueve Exp $
+# $Id: Makefile.am,v 1.42 2010/04/19 17:48:29 gstueve Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -78,4 +78,19 @@ config_DATA = ${EXTRA_DIST}
 
 install-exec-hook:
 	rm -f \$(configdir)/nwsfz_ddmmyy.dbfawk
+
+language-ElmerFudd.sys: language-English.sys
+	$(top_srcdir)/scripts/langElmerFudd.pl -split >$@ <$<
+
+language-MuppetsChef.sys: language-English.sys
+	$(top_srcdir)/scripts/langMuppetsChef.pl -split >$@ <$<
+
+language-OldeEnglish.sys: language-English.sys
+	$(top_srcdir)/scripts/langOldeEnglish.pl -split >$@ <$<
+
+language-PigLatin.sys: language-English.sys
+	$(top_srcdir)/scripts/langPigLatin.pl -split >$@ <$<
+
+language-PirateEnglish.sys: language-English.sys
+	$(top_srcdir)/scripts/langPirateEnglish.pl -split >$@ <$<
 
