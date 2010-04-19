@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.40 2010/01/31 02:12:23 we7u Exp $
+# $Id: Makefile.am,v 1.41 2010/04/19 17:45:33 gstueve Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -44,6 +44,7 @@ EXTRA_DIST = \
     nwsw_ddmmyy_09.dbfawk \
     nwsz_ddmmyy.dbfawk \
     nwsz_ddmmyy_09.dbfawk \
+    nwsz_ddmmyy_10.dbfawk \
     nwsz1ddmmyy.dbfawk \
     nwszoddmmyy.dbfawk \
     predefined_EVENT.sys \
