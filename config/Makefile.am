@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.42 2010/04/19 17:48:29 gstueve Exp $
+# $Id: Makefile.am,v 1.43 2010/04/21 19:36:26 gstueve Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -80,17 +80,17 @@ install-exec-hook:
 	rm -f \$(configdir)/nwsfz_ddmmyy.dbfawk
 
 language-ElmerFudd.sys: language-English.sys
-	$(top_srcdir)/scripts/langElmerFudd.pl -split >$@ <$<
+	$(top_srcdir)/scripts/langElmerFudd.pl -split >$@ <$(srcdir)/language-English.sys
 
 language-MuppetsChef.sys: language-English.sys
-	$(top_srcdir)/scripts/langMuppetsChef.pl -split >$@ <$<
+	$(top_srcdir)/scripts/langMuppetsChef.pl -split >$@ <$(srcdir)/language-English.sys
 
 language-OldeEnglish.sys: language-English.sys
-	$(top_srcdir)/scripts/langOldeEnglish.pl -split >$@ <$<
+	$(top_srcdir)/scripts/langOldeEnglish.pl -split >$@ <$(srcdir)/language-English.sys
 
 language-PigLatin.sys: language-English.sys
-	$(top_srcdir)/scripts/langPigLatin.pl -split >$@ <$<
+	$(top_srcdir)/scripts/langPigLatin.pl -split >$@ <$(srcdir)/language-English.sys
 
 language-PirateEnglish.sys: language-English.sys
-	$(top_srcdir)/scripts/langPirateEnglish.pl -split >$@ <$<
+	$(top_srcdir)/scripts/langPirateEnglish.pl -split >$@ <$(srcdir)/language-English.sys
 
