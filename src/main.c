@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.792 2010/03/11 04:03:58 chicoreus Exp $
+ * $Id: main.c,v 1.793 2010/05/07 16:23:16 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9018,6 +9018,12 @@ fprintf(stderr,"Setting up widget's X/Y position at X:%d  Y:%d\n",
             "create_appshell Menu Popup",
             al,
             ac);
+#if XmVersion >= 2000
+    XtVaSetValues(right_menu_popup, XmNpopupEnabled, XmPOPUP_DISABLED, NULL);
+    XtUngrabButton(da, AnyButton, AnyModifier);
+#else
+    XtVaSetValues(right_menu_popup, XmNpopupEnabled, False, NULL);
+#endif
     //XtVaSetValues(right_menu_popup, XmNwhichButton, 3, NULL);
 
     ac = 0;
