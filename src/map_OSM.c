@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
  *
- * $Id: map_OSM.c,v 1.1 2010/06/09 18:51:28 we7u Exp $
+ * $Id: map_OSM.c,v 1.2 2010/06/09 23:28:56 we7u Exp $
  *
  * Copyright (C) 2010 The Xastir Group
  *
@@ -483,7 +483,7 @@ void draw_OSM_map (Widget w,
     xastir_snprintf(tmpstr, sizeof(tmpstr), "z=%d", z);
     strncat (OSMtmp, tmpstr, sizeof(OSMtmp) - 1 - strlen(OSMtmp));
 
-    xastir_snprintf(fileimg, sizeof(fileimg), OSMtmp);
+    xastir_snprintf(fileimg, sizeof(fileimg), "%s", OSMtmp);
 
     if (debug_level & 512) {
           fprintf(stderr,"left side is %f\n", left);

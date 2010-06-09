@@ -1,5 +1,5 @@
 /*
- * $Id: wx_gui.c,v 1.58 2010/01/31 02:12:25 we7u Exp $
+ * $Id: wx_gui.c,v 1.59 2010/06/09 23:28:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -318,7 +318,7 @@ end_critical_section(&wx_detailed_alert_shell_lock, "wx_gui.c:wx_alert_double_cl
         handle);
 
     // Send the request text out the socket
-    ret = fprintf(fd, temp);
+    ret = fprintf(fd, "%s", temp);
 
     if (ret == 0 || ret == -1) {
 //        fprintf(stderr,"Couldn't send finger command to wxsvr\n");

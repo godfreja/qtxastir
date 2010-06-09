@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.120 2010/03/11 04:03:58 chicoreus Exp $
+ * $Id: interface_gui.c,v 1.121 2010/06/09 23:28:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1169,7 +1169,7 @@ XmNtopWidget, (device_type == DEVICE_SERIAL_KISS_TNC || device_type == DEVICE_SE
                                       XmNfontList, fontlist1,
                                       NULL);
 
-        xastir_snprintf(temp, sizeof(temp), langcode("IGPUPCF004"));
+        xastir_snprintf(temp, sizeof(temp), "%s", langcode("IGPUPCF004"));
         igate_label = XtVaCreateManagedWidget(temp, xmLabelWidgetClass, form,
                                       XmNorientation, XmHORIZONTAL,
                                       XmNtopAttachment,XmATTACH_WIDGET,
@@ -4554,7 +4554,7 @@ void Config_AX25( /*@unused@*/ Widget w, int config_type, int port) {
                                       XmNfontList, fontlist1,
                                       NULL);
 
-        xastir_snprintf(temp, sizeof(temp), langcode("IGPUPCF004"));
+        xastir_snprintf(temp, sizeof(temp), "%s", langcode("IGPUPCF004"));
         igate_label = XtVaCreateManagedWidget(temp, xmLabelWidgetClass, form,
                                       XmNorientation, XmHORIZONTAL,
                                       XmNtopAttachment,XmATTACH_WIDGET,
@@ -7469,7 +7469,7 @@ void Config_AGWPE( /*@unused@*/ Widget w, int config_type, int port) {
                                       NULL);
 
 
-        xastir_snprintf(temp, sizeof(temp), langcode("IGPUPCF004"));
+        xastir_snprintf(temp, sizeof(temp), "%s", langcode("IGPUPCF004"));
         igate_label = XtVaCreateManagedWidget(temp, xmLabelWidgetClass, form,
                                       XmNorientation, XmHORIZONTAL,
                                       XmNtopAttachment,XmATTACH_WIDGET,

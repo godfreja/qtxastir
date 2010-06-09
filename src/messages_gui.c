@@ -1,5 +1,5 @@
 /*
- * $Id: messages_gui.c,v 1.83 2010/01/31 02:12:25 we7u Exp $
+ * $Id: messages_gui.c,v 1.84 2010/06/09 23:28:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -237,7 +237,7 @@ void get_path_data(char *callsign, char *path, int max_length) {
         char new_path[200];
 
         if (p_station->node_path_ptr) {
-            xastir_snprintf(new_path,sizeof(new_path),p_station->node_path_ptr);
+            xastir_snprintf(new_path,sizeof(new_path), "%s", p_station->node_path_ptr);
             
             if(debug_level & 2)
                 fprintf(stderr,"\nPath from %s: %s\n",
@@ -2260,7 +2260,7 @@ begin_critical_section(&send_message_dialog_lock, "messages_gui.c:Send_message" 
                 XmNfontList, fontlist1,
                 NULL);
 
-        xastir_snprintf(temp, sizeof(temp), langcode(groupon == 0 ? "WPUPMSB005": "WPUPMSB006"));
+        xastir_snprintf(temp, sizeof(temp), "%s", langcode(groupon == 0 ? "WPUPMSB005": "WPUPMSB006"));
 
         mw[i].button_submit_call = XtVaCreateManagedWidget(temp,
                 xmPushButtonGadgetClass, 

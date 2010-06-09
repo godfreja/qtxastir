@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.138 2010/01/31 02:12:24 we7u Exp $
+ * $Id: map_shp.c,v 1.139 2010/06/09 23:28:56 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2505,7 +2505,7 @@ void draw_shapefile_map (Widget w,
 
                         // Fill in the label we'll use later
                         xastir_snprintf(gps_label,
-                            sizeof(gps_label),
+                            sizeof(gps_label), "%s",
                             filename);
 
                         // Knock off the "_Color.shp" portion of the
