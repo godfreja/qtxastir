@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.793 2010/05/07 16:23:16 tvrusso Exp $
+ * $Id: main.c,v 1.794 2010/06/09 18:51:27 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -175,6 +175,8 @@ char *xastir_version=VERSION;
 #include "igate.h"
 #include "objects.h"
 #include "db_gis.h"
+
+#include "map_OSM.h"
 
 #ifdef HAVE_LIBSHP
   #include "shp_hash.h"
@@ -1029,6 +1031,7 @@ float d_screen_distance;     // Diag screen distance
 float x_screen_distance;     // x screen distance
 //---------------------------------------------------------------------------------------------
 
+int OSMserver_flag = 0;     // used to trigger rescaling to OSM levels, set in map_geo.c
 
 char user_dir[1000];            /* user directory file */
 int delay_time;                 /* used to delay display data */
@@ -13021,7 +13024,17 @@ void check_range(void) {
 
     // Adjust scaling based on latitude of new center
     new_scale_x = get_x_scale(new_mid_x,new_mid_y,new_scale_y);  // recalc x scaling depending on position
-    //fprintf(stderr,"x:%ld\ty:%ld\n\n",new_scale_x,new_scale_y);
+
+    if (debug_level & 512) {
+        fprintf(stderr,"checkrange- x:%ld\ty:%ld\n\n",new_scale_x,new_scale_y);
+    }
+
+    if (OSMserver_flag == 1) {
+        adj_to_OSM_level(&new_scale_x, &new_scale_y);
+        if (debug_level & 512) {
+            fprintf(stderr,"checkrange, rescaled for OSM- x:%ld\ty:%ld\n\n",new_scale_x,new_scale_y);
+        }
+    }
 
 //    // scale_x will always be bigger than scale_y, so no problem here...
 //    if ((width*new_scale_x) > 129600000l) {

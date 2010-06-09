@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.99 2010/01/31 02:12:24 we7u Exp $
+ * $Id: map_geo.c,v 1.100 2010/06/09 18:51:28 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -74,6 +74,8 @@
 #include "rotated.h"
 #include "color.h"
 #include "xa_config.h"
+
+#include "map_OSM.h"
 
 #define CHECKMALLOC(m)  if (!m) { fprintf(stderr, "***** Malloc Failed *****\n"); exit(0); }
 
@@ -641,6 +643,7 @@ void draw_geo_image_map (Widget w,
     int terraserver_flag = 0;   // U.S. satellite images/topo/reflectivity/urban
                                 // areas via terraserver
     int tigerserver_flag = 0;   // U.S. Street maps via census.gov
+    extern int OSMserver_flag;  // OpenStreetMaps StaticMap server, defined in main.c
     int toporama_flag = 0;      // Canadian topo's from mm.aprs.net (originally from Toporama)
     int WMSserver_flag = 0;     // WMS server
     char map_it[MAX_FILENAME];
@@ -783,6 +786,9 @@ void draw_geo_image_map (Widget w,
 
             if (strncasecmp (line, "TIGERMAP", 8) == 0)
                 tigerserver_flag = 1;
+
+            if (strncasecmp (line, "OSMSTATICMAP", 12) == 0)
+                OSMserver_flag = 1;
 
             if (strncasecmp (line, "WMSSERVER", 9) == 0)
                 WMSserver_flag = 1;
@@ -951,6 +957,25 @@ void draw_geo_image_map (Widget w,
         // latest map and replacing the bad map in the cache.
         //
         draw_tiger_map(w, filenm, destination_pixmap, nocache);
+
+#endif  // HAVE_MAGICK
+
+        return;
+    }
+    //
+    // Check whether OpenStreetMap has been selected.  If so, run off to
+    // another routine to service this request.
+    //
+    if (OSMserver_flag) {
+
+#ifdef HAVE_MAGICK
+
+        // We need to send the "nocache" parameter to this function
+        // for those instances when the received map is bad.
+        // Later the GUI can implement a method for refreshing the
+        // latest map and replacing the bad map in the cache.
+        //
+        draw_OSM_map(w, filenm, destination_pixmap, nocache);
 
 #endif  // HAVE_MAGICK
 
