@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.100 2010/06/09 18:51:28 we7u Exp $
+ * $Id: map_geo.c,v 1.101 2010/06/11 02:02:51 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -643,7 +643,7 @@ void draw_geo_image_map (Widget w,
     int terraserver_flag = 0;   // U.S. satellite images/topo/reflectivity/urban
                                 // areas via terraserver
     int tigerserver_flag = 0;   // U.S. Street maps via census.gov
-    extern int OSMserver_flag;  // OpenStreetMaps StaticMap server, defined in main.c
+    int OSMserver_flag = 0;     // OpenStreetMaps StaticMap server
     int toporama_flag = 0;      // Canadian topo's from mm.aprs.net (originally from Toporama)
     int WMSserver_flag = 0;     // WMS server
     char map_it[MAX_FILENAME];
