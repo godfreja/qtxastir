@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.101 2010/06/11 02:02:51 we7u Exp $
+ * $Id: map_geo.c,v 1.102 2010/06/15 14:28:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -554,6 +554,12 @@ void draw_geo_image_map (Widget w,
     FILE *f;                        // Filehandle of image file
     char line[MAX_FILENAME];        // One line from GEO file
     char fileimg[MAX_FILENAME+1];   // Ascii name of image file, read from GEO file
+    char OSMstyle[MAX_OSMSTYLE];
+
+    // Start with an empty fileimg[] string so that we can
+    // tell if a URL has been specified in the file. Same for OSMstyle.
+    fileimg[0] = '\0';
+    OSMstyle[0] = '\0';
 
     int width,height;
 #ifndef NO_XPM
@@ -788,7 +794,14 @@ void draw_geo_image_map (Widget w,
                 tigerserver_flag = 1;
 
             if (strncasecmp (line, "OSMSTATICMAP", 12) == 0)
+            {
                 OSMserver_flag = 1;
+                if (strlen(line) > 13) {
+                    if (1 != sscanf (line + 13, "%s", OSMstyle)) {
+                        fprintf(stderr,"draw_geo_image_map:sscanf parsing error for OSM style.\n"); 
+                    }
+                }
+            }
 
             if (strncasecmp (line, "WMSSERVER", 9) == 0)
                 WMSserver_flag = 1;
@@ -975,7 +988,7 @@ void draw_geo_image_map (Widget w,
         // Later the GUI can implement a method for refreshing the
         // latest map and replacing the bad map in the cache.
         //
-        draw_OSM_map(w, filenm, destination_pixmap, nocache);
+        draw_OSM_map(w, filenm, destination_pixmap, fileimg, OSMstyle, nocache);
 
 #endif  // HAVE_MAGICK
 
