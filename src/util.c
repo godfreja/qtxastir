@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: util.c,v 1.243 2010/02/12 05:13:56 we7u Exp $
+ * $Id: util.c,v 1.244 2010/06/17 23:24:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -5117,6 +5117,7 @@ size_t curl_fwrite(void *buffer, size_t size, size_t nmemb, void *stream) {
 //
 int fetch_remote_file(char *fileimg, char *local_filename) {
 
+
 #ifdef HAVE_LIBCURL
 
     CURL *curl;
@@ -5124,6 +5125,8 @@ int fetch_remote_file(char *fileimg, char *local_filename) {
     char curlerr[CURL_ERROR_SIZE];
     struct FtpFile ftpfile;
     char agent_string[15];
+
+//fprintf(stderr, "Fetching remote file: %s\n", fileimg);
 
     curl = curl_easy_init();
 
