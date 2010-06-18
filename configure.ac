@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.210 2010/06/18 03:07:53 we7u Exp $
+# $Id: configure.ac,v 1.211 2010/06/18 03:41:33 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 
@@ -943,7 +943,7 @@ echo "  GeoTiff (USGS Topos & Aerial Photos) ... : $use_geotiff"
 echo "  Festival (Text-to-speech) .............. : $use_festival"
 echo "  GDAL/OGR (Obtuse map formats) .......... : $use_gdal"
 echo "  GPSMan/gpsmanshp (GPS downloads) ....... : $use_gpsman"
-echo "  GPSD (Shared/Networked/USB GPS) ........ : $use_libgps"
+echo "  GPSD Client (libgps) ................... : $use_libgps"
 
 if test "${use_err_popups}" = "yes" -o "${use_libgc}" = "yes" -o "${use_profiling}" = "yes" -o "${use_lsb}" = "yes" -o "${use_spatial_db}" = "yes" -o "$use_mysql_any" = "yes"; then
   echo
