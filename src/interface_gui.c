@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.121 2010/06/09 23:28:56 we7u Exp $
+ * $Id: interface_gui.c,v 1.122 2010/06/19 05:11:06 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3996,7 +3996,7 @@ void Config_NGPS( /*@unused@*/ Widget w, int config_type, int port) {
         if (config_type==0) {
             /* first time port */
             XmTextFieldSetString(NGPS_host_name_data,"localhost");
-            XmTextFieldSetString(NGPS_host_port_data,"1234");
+            XmTextFieldSetString(NGPS_host_port_data,"2947");
             XmTextFieldSetString(NGPS_comment,"");
             XmToggleButtonSetState(NGPS_active_on_startup,TRUE,FALSE);
             XmToggleButtonSetState(NGPS_host_reconnect_data,TRUE,FALSE);
