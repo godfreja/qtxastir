@@ -1,5 +1,5 @@
 /*
- * $Id: map_OSM.h,v 1.2 2010/06/15 14:28:40 we7u Exp $
+ * $Id: map_OSM.h,v 1.3 2010/06/28 19:14:47 we7u Exp $
  *
  * Copyright (C) 2010 The Xastir Group
  *
@@ -22,6 +22,11 @@
  * Look at the README for more information on the program.
  *
  */
+#ifndef OSM_H
+#define OSM_H
+
+#include <X11/X.h>           // for KeySym
+
 #define MAX_OSMSTYLE 1000  // max characters in the a OSM style argument
 #define MAX_OSM_URL  1000  // max characters for a OSM URL
 
@@ -36,4 +41,11 @@ void draw_OSM_map (Widget w,
         char *style,
         int nocache);
 
+int osm_zoom_level(long scale_x);
+void init_OSM_values(void);
+int OSM_optimize_key(KeySym key);
+void set_OSM_optimize_key(KeySym key);
+int OSM_report_scale_key(KeySym key);
+void set_OSM_report_scale_key(KeySym key);
 
+#endif //OSM_H
