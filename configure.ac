@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.212 2010/06/19 04:57:32 we7u Exp $
+# $Id: configure.ac,v 1.213 2010/06/28 19:01:32 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 
@@ -218,16 +218,16 @@ fi
 
 
 # Test for libgps, used for accessing GPSD daemon
-use_libgps=no
-AC_CHECK_HEADER(gps.h, GPS_INC="yes", GPS_INC="no")
-if test "${GPS_INC}" = "yes"; then
-  AC_CHECK_LIB([gps], [gps_open],
-               [use_libgps="yes"
-                LIBS="${LIBS} -lgps"
-                AC_DEFINE(HAVE_LIBGPS, ,
-                          [Define to 1 if your `libgps' library has gps_open.])
-                ])
-fi
+#use_libgps=no
+#AC_CHECK_HEADER(gps.h, GPS_INC="yes", GPS_INC="no")
+#if test "${GPS_INC}" = "yes"; then
+#  AC_CHECK_LIB([gps], [gps_open],
+#               [use_libgps="yes"
+#                LIBS="${LIBS} -lgps"
+#                AC_DEFINE(HAVE_LIBGPS, ,
+#                          [Define to 1 if your `libgps' library has gps_open.])
+#                ])
+#fi
 
 
 
