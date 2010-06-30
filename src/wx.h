@@ -1,5 +1,5 @@
 /*
- * $Id: wx.h,v 1.14 2010/01/31 02:12:25 we7u Exp $
+ * $Id: wx.h,v 1.15 2010/06/30 06:25:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -54,7 +54,7 @@ extern char wx_station_type[];
 
 /* from wx.c */
 extern time_t wx_tx_data1(char *st, int st_size);
-extern void wx_decode(unsigned char *wx_line, int port);
+extern void wx_decode(unsigned char *wx_line, int data_length, int port);
 extern void fill_wx_data(void);
 extern void clear_rain_data(void);
 extern void tx_raw_wx_data(void);

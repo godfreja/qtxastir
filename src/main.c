@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.797 2010/06/28 19:14:47 we7u Exp $
+ * $Id: main.c,v 1.798 2010/06/30 06:25:24 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -12464,11 +12464,13 @@ if (!skip_decode) {
 
                         case DEVICE_NET_WX:
                             if (log_wx)
+// TODO:  Probably only logs to the first 0x00 byte...  Need another
+// logging function that accepts a size, perhaps converting it to
+// 0x00 or similar as it writes to file.
                                 log_data( get_user_base_dir(LOGFILE_WX),
                                     (char *)data_string);
 
-                            wx_decode(data_string,
-                                data_port);
+                            wx_decode(data_string, data_length, data_port);
                             break;
 
                         default:
