@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_geo.c,v 1.103 2010/06/28 19:14:47 we7u Exp $
+ * $Id: map_geo.c,v 1.104 2010/06/30 06:41:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -679,9 +679,7 @@ void draw_geo_image_map (Widget w,
   #endif  // USE_MAP_CACHE
 #endif  // HAVE_MAGICK
     
-    // Initialize values that change depending on contents of the OSM .geo file
     KeySym OSM_key = 0;
-    init_OSM_values();
 
     xastir_snprintf(file, sizeof(file), "%s/%s", dir, filenm);
 

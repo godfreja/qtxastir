@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.798 2010/06/30 06:25:24 we7u Exp $
+ * $Id: main.c,v 1.799 2010/06/30 06:41:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3387,6 +3387,10 @@ int create_image(Widget w) {
         return(0);
  
     if (display_up_first != 0) {
+        // clear the OSM function keys. If an OSM
+        // map is selected they will get re-initialized when
+        // the map is loaded.
+        init_OSM_values();
         if (map_auto_maps && !disable_all_maps)
             load_auto_maps(w,AUTO_MAP_DIR);
         else if (!disable_all_maps)
