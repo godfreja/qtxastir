@@ -1,7 +1,7 @@
 # Written for the Tiger/Line 2009 dataset
 # NB: Colors have been chosen with a black background in mind.
 #
-# $Id: tl_2009_aiannh.dbfawk,v 1.1 2010/07/02 07:12:20 we7u Exp $
+# $Id: tl_2009_aiannh.dbfawk,v 1.2 2010/07/02 07:17:29 we7u Exp $
 #
 #  Copyright (C) 2010  Peter Gamache, KC0TFB
 #
@@ -22,7 +22,7 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
 #  02111-1307  USA
 #
-#  see file COPYING for details
+#   see file COPYING for details
 #
 # color,label_color,fill_color	sets object colors
 # lanes				sets width of lines drawn (in pixels)
