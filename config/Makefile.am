@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.43 2010/04/21 19:36:26 gstueve Exp $
+# $Id: Makefile.am,v 1.44 2010/07/02 07:12:20 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -49,6 +49,17 @@ EXTRA_DIST = \
     nwszoddmmyy.dbfawk \
     predefined_EVENT.sys \
     predefined_SAR.sys \
+    tl_2009_aiannh.dbfawk \
+    tl_2009_aits.dbfawk \
+    tl_2009_arealm.dbfawk \
+    tl_2009_areawater.dbfawk \
+    tl_2009_county.dbfawk \
+    tl_2009_cousub.dbfawk \
+    tl_2009_edges.dbfawk \
+    tl_2009_mil.dbfawk \
+    tl_2009_nn_county.dbfawk \
+    tl_2009_pointlm.dbfawk \
+    tl_2009_zcta5.dbfawk \
     tnc-startup.aea \
     tnc-startup.d700 \
     tnc-startup.kam \
