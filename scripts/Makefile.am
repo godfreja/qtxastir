@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.36 2010/01/31 02:12:23 we7u Exp $
+# $Id: Makefile.am,v 1.37 2010/07/02 07:08:52 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -28,6 +28,7 @@ pkglib_SCRIPTS = \
     ozi2geo.pl \
     permutations.pl \
     pos2shp.pl \
+    ridge_radar.pl \
     slideshow.pl \
     split_gnis.bash \
     split_gnis.pl \
