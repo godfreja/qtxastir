@@ -2,11 +2,11 @@
 
 
 #
-# Copyright (C) 2002 Paul Lutt, KE7XT.
+# Written by Paul Lutt, KE7XT.
 # Released to the public domain.
 #
 #
-# $Id: coord-convert.pl,v 1.8 2009/04/04 18:37:57 gstueve Exp $
+# $Id: coord-convert.pl,v 1.9 2010/07/03 22:09:48 we7u Exp $
 #
 #
 # Converts between different lat/lon formats.  Will also give UMS

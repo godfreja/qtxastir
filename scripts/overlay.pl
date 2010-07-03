@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
 
-# Copyright (C) 2004-2010 Curt Mills, WE7U
+# Written by Curt Mills, WE7U
 # Released to the public domain.
 #
-# $Id: overlay.pl,v 1.4 2010/01/31 02:12:23 we7u Exp $
+# $Id: overlay.pl,v 1.5 2010/07/03 22:09:48 we7u Exp $
 
 
 # Script to create Xastir "Overlay" files from "CSV" files of the

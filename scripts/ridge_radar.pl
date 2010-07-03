@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 #
-# $Id: ridge_radar.pl,v 1.1 2010/07/02 07:08:52 we7u Exp $
+# $Id: ridge_radar.pl,v 1.2 2010/07/03 22:09:48 we7u Exp $
 #
-# Copyright (c) 2010  Jeremy McDermond.  Contributed to the public
-# domain.
+# Contributed to the public domain.  Authored by Jeremy McDermond
+# (NH6Z).
 #
 # This script takes a single argument:  The abbreviation of the
 # radar station off of the NWS site, and outputs to STDOUT a .geo

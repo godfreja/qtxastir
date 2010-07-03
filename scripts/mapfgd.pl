@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 # -*- perl -*-
-# Copyright (C) 2002 Derrick J Brashear, KB3EGH
+# Written by Derrick J Brashear, KB3EGH
 # Released to the public domain.
 
-# $Id: mapfgd.pl,v 1.4 2002/03/27 17:38:39 we7u Exp $
+# $Id: mapfgd.pl,v 1.5 2010/07/03 22:09:48 we7u Exp $
 
 # Usage: mapfgd <directory>
 # Creates fake fgd files for all correctly USGS-named maps which don't 
