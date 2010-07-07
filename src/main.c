@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.799 2010/06/30 06:41:20 we7u Exp $
+ * $Id: main.c,v 1.800 2010/07/07 06:16:16 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -10932,8 +10932,8 @@ void da_input(Widget w, XtPointer client_data, XtPointer call_data) {
             redraw = 1;
         }
 
-        // Additions for OSM
-        if (OSM_optimize_key(key)) {
+        // Adjust map scale, execpt when pan/zoom locked
+        if (!map_lock_pan_zoom && OSM_optimize_key(key)) {
             if (debug_level & 512) {
                 fprintf(stderr, "Initial scale, before adjustment sx/sy = %li/%li\n", scale_x, scale_y);
             }
