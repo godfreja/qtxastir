@@ -1,10 +1,10 @@
 
-# $Id: Makefile.am,v 1.14 2010/07/11 06:22:55 we7u Exp $
+# $Id: Makefile.am,v 1.15 2010/07/11 06:31:37 we7u Exp $
 # Copyright (C) 2004-2010  The Xastir Group
 
 noinst_LIBRARIES=libshape.a
 
-bin_PROGRAMS=dbfadd \
+noinst_PROGRAMS=dbfadd \
         dbfcreate \
         dbfdump \
         shpadd \

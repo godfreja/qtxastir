@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.10 2010/07/11 06:22:55 we7u Exp $
+# $Id: Makefile.am,v 1.11 2010/07/11 06:31:37 we7u Exp $
 # Copyright (C) 2004-2010  The Xastir Group
 
 EXTRA_DIST=Makefile_orig ShapeFileII.pas dbfcat.c dbfinfo.c makefile.vc \
@@ -8,7 +8,7 @@ EXTRA_DIST=Makefile_orig ShapeFileII.pas dbfcat.c dbfinfo.c makefile.vc \
 
 noinst_LIBRARIES=libshape.a
 
-bin_PROGRAMS=dbfcat \
+noinst_PROGRAMS=dbfcat \
         dbfinfo \
         shpcat \
         shpcentrd \
