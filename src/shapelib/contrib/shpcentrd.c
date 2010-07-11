@@ -28,6 +28,9 @@
  *
  *
  * $Log: shpcentrd.c,v $
+ * Revision 1.3  2010/07/11 07:24:37  we7u
+ * Fixing multiple minor warnings with Shapelib.  Still plenty left.
+ *
  * Revision 1.2  2007/07/25 15:45:27  we7u
  * Adding includes necessary for warning-free compiles.
  *
@@ -78,19 +81,20 @@ int main( int argc, char ** argv )
 {
     SHPHandle	old_SHP, new_SHP;
     DBFHandle   old_DBF, new_DBF;
-    int		nShapeType, nEntities, nVertices, nParts, *panParts, i, iPart;
-    double	*padVertices, adBounds[4];
-    const char 	*pszPlus;
-    DBFFieldType  idfld_type;
-    int		idfld, nflds;
-    char	kv[257] = "";
-    char	idfldName[120] = "";
-    char	fldName[120] = "";
-    char	shpFileName[120] = "";
-    char	dbfFileName[120] = "";
-    double	apeture[4];
+    int		nShapeType, nEntities, i;
+//    int     nVertices, nParts, *panParts, iPart;
+//    double	*padVertices, adBounds[4];
+//    const char 	*pszPlus;
+//    DBFFieldType  idfld_type;
+//    int		idfld, nflds;
+//    char	kv[257] = "";
+//    char	idfldName[120] = "";
+//    char	fldName[120] = "";
+//    char	shpFileName[120] = "";
+//    char	dbfFileName[120] = "";
+//    double	apeture[4];
     char	*DBFRow = NULL;
-    int		Cpan[2] = { 0,0 };
+//    int		Cpan[2] = { 0,0 };
     int		byRing = 1;
     PT		Centrd;
     SHPObject	*psCShape, *cent_pt;
@@ -129,7 +133,7 @@ int main( int argc, char ** argv )
 
     for( i = 0; i < nEntities; i++ )
     {
-	int		res ;
+//	int		res ;
  
 	psCShape = SHPReadObject( old_SHP, i );
 

@@ -4,6 +4,9 @@
  * This code is in the public domain.
  *
  * $Log: dbfcat.c,v $
+ * Revision 1.3  2010/07/11 07:24:37  we7u
+ * Fixing multiple minor warnings with Shapelib.  Still plenty left.
+ *
  * Revision 1.2  2007/07/25 15:45:27  we7u
  * Adding includes necessary for warning-free compiles.
  *
@@ -41,8 +44,8 @@
  *
  */
 
-static char rcsid[] = 
-  "$Id: dbfcat.c,v 1.2 2007/07/25 15:45:27 we7u Exp $";
+//static char rcsid[] = 
+//  "$Id: dbfcat.c,v 1.3 2010/07/11 07:24:37 we7u Exp $";
 
 #include "shapefil.h"
 #include <stdlib.h>
@@ -52,8 +55,9 @@ int main( int argc, char ** argv )
 
 {
     DBFHandle	hDBF;
-    int		*panWidth, i, iRecord;
-    char	szFormat[32], szField[1024];
+//    int		*panWidth;
+    int     i, iRecord;
+//    char	szFormat[32], szField[1024];
     char	cTitle[32], nTitle[32];
     int		nWidth, nDecimals;
     int		cnWidth, cnDecimals;
@@ -61,7 +65,8 @@ int main( int argc, char ** argv )
     DBFFieldType	hType,cType;
     int		ci, ciRecord;
     char	tfile[160];
-    int		hflds, j, cflds;
+    int		hflds, cflds;
+//    int     j;
     int 	verbose				= 0;
     int		force 				= 0;
     int		mismatch			= 0;
@@ -150,7 +155,7 @@ int main( int argc, char ** argv )
       ciRecord = DBFGetRecordCount( cDBF );
       for ( i = 0; i < hflds;i ++ )
 	{	
-	double	cf;
+//	double	cf;
 	ci = fld_m[i];
 	if ( ci != -1 )
 	{

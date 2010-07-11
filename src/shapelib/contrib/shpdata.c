@@ -26,6 +26,9 @@
  *
  *
  * $Log: shpdata.c,v $
+ * Revision 1.2  2010/07/11 07:24:37  we7u
+ * Fixing multiple minor warnings with Shapelib.  Still plenty left.
+ *
  * Revision 1.1  2006/11/10 21:48:10  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -63,23 +66,27 @@
 int main( int argc, char ** argv )
 
 {
-    SHPHandle	old_SHP, new_SHP;
-    DBFHandle   old_DBF, new_DBF;
-    int		nShapeType, nEntities, nVertices, nParts, *panParts, i, iPart;
-    double	*padVertices, adBounds[4];
-    const char 	*pszPlus;
-    DBFFieldType  idfld_type;
-    int		idfld, nflds;
-    char	kv[257] = "";
-    char	idfldName[120] = "";
-    char	fldName[120] = "";
-    char	shpFileName[120] = "";
-    char	dbfFileName[120] = "";
-    char	*DBFRow = NULL;
-    int		Cpan[2] = { 0,0 };
+    SHPHandle	old_SHP;
+//    SHPHandle   new_SHP;
+    DBFHandle   old_DBF;
+//    DBFHandle   new_DBF;
+    int		nShapeType, nEntities, i;
+//    int		nVertices, nParts, *panParts, iPart;
+//    double	*padVertices, adBounds[4];
+//    const char 	*pszPlus;
+//    DBFFieldType  idfld_type;
+//    int		idfld, nflds;
+//    char	kv[257] = "";
+//    char	idfldName[120] = "";
+//    char	fldName[120] = "";
+//    char	shpFileName[120] = "";
+//    char	dbfFileName[120] = "";
+//    char	*DBFRow = NULL;
+//    int		Cpan[2] = { 0,0 };
     int		byRing = 1;
     PT		oCentrd, ringCentrd;
-    SHPObject	*psCShape, *cent_pt;
+    SHPObject	*psCShape;
+//    SHPObject   *cent_pt;
     double	oArea = 0.0, oLen = 0.0;
 
     if( argc < 2 )
@@ -99,7 +106,7 @@ int main( int argc, char ** argv )
     SHPGetInfo( old_SHP, &nEntities, &nShapeType, NULL, NULL );
     for( i = 0; i < nEntities; i++ )
     {
-	int		res ;
+//	int		res ;
 
 	psCShape = SHPReadObject( old_SHP, i );
 
@@ -110,7 +117,8 @@ int main( int argc, char ** argv )
           prevStart = psCShape->nVertices;
           for ( ring = (psCShape->nParts - 1); ring >= 0; ring-- ) {
 	    SHPObject 	*psO;
-	    int		j, numVtx, rStart;
+	    int		numVtx, rStart;
+//        int     j;
             
             rStart = psCShape->panPartStart[ring];
             if ( ring == (psCShape->nParts -1) )

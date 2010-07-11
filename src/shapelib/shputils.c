@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shputils.c,v 1.3 2010/07/11 06:22:55 we7u Exp $
+ * $Id: shputils.c,v 1.4 2010/07/11 07:24:37 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  
@@ -53,6 +53,9 @@
  ******************************************************************************
  *
  * $Log: shputils.c,v $
+ * Revision 1.4  2010/07/11 07:24:37  we7u
+ * Fixing multiple minor warnings with Shapelib.  Still plenty left.
+ *
  * Revision 1.3  2010/07/11 06:22:55  we7u
  * Setting up the rest of shapelib and shapelib/contrib so that everything
  * compiles.  Had to add an include to shputils.c and add a "1" parameter to
@@ -108,7 +111,7 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: shputils.c,v 1.3 2010/07/11 06:22:55 we7u Exp $";
+//  "$Id: shputils.c,v 1.4 2010/07/11 07:24:37 we7u Exp $";
 
 #include "shapefil.h"
 #include "string.h"
@@ -718,8 +721,8 @@ char      *pt;
 		        isum = isum + itmp;
 		}
 		mean=isum/maxrec;
-		if (ilow < ihigh)       printf("%d to %d \t(%.1f)",ilow,ihigh,mean);
-		else if (ilow == ihigh) printf("= %d",ilow);
+		if (ilow < ihigh)       printf("%ld to %ld \t(%.1f)",ilow,ihigh,mean);
+		else if (ilow == ihigh) printf("= %ld",ilow);
 		                   else printf("No Values");
 		break;
 
@@ -879,7 +882,7 @@ clip_boundary()
                      {
                      if (prev_outside)
                          {
-                         /*** AddIntersection(i2);   /*** Add intersection ***/
+                         // AddIntersection(i2);   /*** Add intersection ***/
                          prev_outside=FALSE;
                          }
                      psCShape->padfX[i2]=psCShape->padfX[j2];     /** move vertex **/
@@ -889,7 +892,7 @@ clip_boundary()
                  } else {
                  if ( (! prev_outside) && (j2 > 0) )
                      {
-                     /*** AddIntersection(i2);   /*** Add intersection (Watch out for j2==i2-1) ***/
+                     // AddIntersection(i2);   /*** Add intersection (Watch out for j2==i2-1) ***/
                      /*** Also a polygon may overlap twice and will split into a several parts  ***/
                      prev_outside=TRUE;
                      }

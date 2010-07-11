@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: dbfdump.c,v 1.1 2006/11/10 21:48:09 tvrusso Exp $
+ * $Id: dbfdump.c,v 1.2 2010/07/11 07:24:37 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Sample application for dumping .dbf files to the terminal.
@@ -34,6 +34,9 @@
  ******************************************************************************
  *
  * $Log: dbfdump.c,v $
+ * Revision 1.2  2010/07/11 07:24:37  we7u
+ * Fixing multiple minor warnings with Shapelib.  Still plenty left.
+ *
  * Revision 1.1  2006/11/10 21:48:09  tvrusso
  * Add shapelib as an internal library, and use it if we don't find an external
  * one.
@@ -83,8 +86,8 @@
  *
  */
 
-static char rcsid[] = 
-  "$Id: dbfdump.c,v 1.1 2006/11/10 21:48:09 tvrusso Exp $";
+//static char rcsid[] = 
+//  "$Id: dbfdump.c,v 1.2 2010/07/11 07:24:37 we7u Exp $";
 
 #include <stdlib.h>
 #include <string.h>

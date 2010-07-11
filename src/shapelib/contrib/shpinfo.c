@@ -27,6 +27,9 @@
  * 
  *
  * $Log: shpinfo.c,v $
+ * Revision 1.3  2010/07/11 07:24:37  we7u
+ * Fixing multiple minor warnings with Shapelib.  Still plenty left.
+ *
  * Revision 1.2  2007/07/25 15:45:27  we7u
  * Adding includes necessary for warning-free compiles.
  *
@@ -72,13 +75,16 @@
 int main( int argc, char ** argv )
 
 {
-    SHPHandle	hSHP, cSHP;
-    int		nShapeType, nEntities, nVertices, nParts, *panParts, i, iPart;
-    double	*padVertices, adfBndsMin[4], adfBndsMax[4];
-    const char 	*pszPlus;
-    int		cShapeType, cEntities, cVertices, cParts, *cpanParts, ci, cPart;
-    double	*cpadVertices, cadBounds[4];
-    const char 	*cpszPlus;
+    SHPHandle	hSHP;
+//    SHPHandle   cSHP;
+    int		nShapeType, nEntities;
+//    int     nVertices, nParts, *panParts, i, iPart;
+    double	adfBndsMin[4], adfBndsMax[4];
+//    double  *padVertices;
+//    const char 	*pszPlus;
+//    int		cShapeType, cEntities, cVertices, cParts, *cpanParts, ci, cPart;
+//    double	*cpadVertices, cadBounds[4];
+//    const char 	*cpszPlus;
     char	sType [15]= "";
 /* -------------------------------------------------------------------- */
 /*      Display a usage message.                                        */
@@ -122,7 +128,7 @@ int main( int argc, char ** argv )
 
 /* -------------------------------------------------------------------- */
    printf ("Info for %s\n",argv[1]);
-   printf ("%s(%d), %ld Records in file\n",sType,nShapeType,nEntities);
+   printf ("%s(%d), %d Records in file\n",sType,nShapeType,nEntities);
 
 /* -------------------------------------------------------------------- */
 /*      Print out the file bounds.                                      */
