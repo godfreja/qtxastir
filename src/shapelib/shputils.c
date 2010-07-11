@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shputils.c,v 1.6 2010/07/11 08:01:27 we7u Exp $
+ * $Id: shputils.c,v 1.7 2010/07/11 20:30:00 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  
@@ -53,6 +53,12 @@
  ******************************************************************************
  *
  * $Log: shputils.c,v $
+ * Revision 1.7  2010/07/11 20:30:00  we7u
+ * More minor tweaks to get rid of compiler warnings.  Of particular note are
+ * some TODO entries added to a couple of files for two enumerated values that
+ * weren't being handled in "switch" statements.  There still isn't any code
+ * for those case statements, but the compiler warnings are gone.
+ *
  * Revision 1.6  2010/07/11 08:01:27  we7u
  * Adding some braces for some "if" statements so that the enclosed else
  * clause won't be ambiguous.
@@ -118,7 +124,7 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: shputils.c,v 1.6 2010/07/11 08:01:27 we7u Exp $";
+//  "$Id: shputils.c,v 1.7 2010/07/11 20:30:00 we7u Exp $";
 
 #include "shapefil.h"
 #include "string.h"
@@ -437,6 +443,15 @@ int main( int argc, char ** argv )
                     DBFWriteDoubleAttribute(hDBFappend, jRecord, pt[i],
                                             (DBFReadDoubleAttribute( hDBF, iRecord, i )) );
                     break;
+
+                  case FTLogical:
+// TODO:  Add code here
+                    break;
+
+                  case FTInvalid:
+// TODO:  Add code here
+                    break;
+ 
                 }
             }
 	}
@@ -755,6 +770,14 @@ char      *pt;
 		else printf("No Values");
 		break;
 
+          case FTLogical:
+// TODO:  Add code here
+        break;
+
+          case FTInvalid:
+// TODO:  Add code here
+        break;
+ 
 	    }
 
         }
@@ -963,30 +986,31 @@ int j,i;
 #define  NKEYS (sizeof(unitkeytab) / sizeof(struct unitkey))
 int findunit(char *unit)
    {
+
    struct unitkey {
      char   *name;
      double value;
    } unitkeytab[] = {
-     "CM",            39.37,
-     "CENTIMETER",    39.37,
-     "CENTIMETERS",   39.37,  /** # of inches * 100 in unit **/
-     "METER",          3937,
-     "METERS",         3937,
-     "KM",          3937000,
-     "KILOMETER",   3937000, 
-     "KILOMETERS",  3937000,
-     "INCH",            100,
-     "INCHES",          100,
-     "FEET",           1200,
-     "FOOT",           1200,
-     "YARD",           3600,
-     "YARDS",          3600,       
-     "MILE",        6336000,
-     "MILES",       6336000  
+     { "CM",            39.37 },
+     { "CENTIMETER",    39.37 },
+     { "CENTIMETERS",   39.37 },  /** # of inches * 100 in unit **/
+     { "METER",          3937 },
+     { "METERS",         3937 },
+     { "KM",          3937000 },
+     { "KILOMETER",   3937000 }, 
+     { "KILOMETERS",  3937000 },
+     { "INCH",            100 },
+     { "INCHES",          100 },
+     { "FEET",           1200 },
+     { "FOOT",           1200 },
+     { "YARD",           3600 },
+     { "YARDS",          3600 },       
+     { "MILE",        6336000 },
+     { "MILES",       6336000 }  
    };
 
    double unitfactor=0;
-   for (j = 0; j < NKEYS; j++) {
+   for (j = 0; j < (int)NKEYS; j++) {
     if (strncasecmp2(unit, unitkeytab[j].name, 0) == 0) unitfactor=unitkeytab[j].value;
    }
    return(unitfactor);

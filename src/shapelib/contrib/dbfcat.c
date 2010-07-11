@@ -4,6 +4,12 @@
  * This code is in the public domain.
  *
  * $Log: dbfcat.c,v $
+ * Revision 1.4  2010/07/11 20:30:00  we7u
+ * More minor tweaks to get rid of compiler warnings.  Of particular note are
+ * some TODO entries added to a couple of files for two enumerated values that
+ * weren't being handled in "switch" statements.  There still isn't any code
+ * for those case statements, but the compiler warnings are gone.
+ *
  * Revision 1.3  2010/07/11 07:24:37  we7u
  * Fixing multiple minor warnings with Shapelib.  Still plenty left.
  *
@@ -45,7 +51,7 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: dbfcat.c,v 1.3 2010/07/11 07:24:37 we7u Exp $";
+//  "$Id: dbfcat.c,v 1.4 2010/07/11 20:30:00 we7u Exp $";
 
 #include "shapefil.h"
 #include <stdlib.h>
@@ -181,6 +187,15 @@ int main( int argc, char ** argv )
 	    	DBFWriteDoubleAttribute(cDBF, ciRecord, ci, 
 			(double) DBFReadDoubleAttribute( hDBF, iRecord, i ) );
 		break;
+
+          case FTLogical:
+// TODO:  Add code here
+        break;
+
+          case FTInvalid:
+// TODO:  Add code here
+        break;
+
 	    }
 	  }
 	}   /* fields names match */

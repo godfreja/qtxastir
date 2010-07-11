@@ -33,6 +33,12 @@
  * SHPGeo must be compiled with -DPROJ4 support
  *
  * $Log: shpproj.c,v $
+ * Revision 1.5  2010/07/11 20:30:00  we7u
+ * More minor tweaks to get rid of compiler warnings.  Of particular note are
+ * some TODO entries added to a couple of files for two enumerated values that
+ * weren't being handled in "switch" statements.  There still isn't any code
+ * for those case statements, but the compiler warnings are gone.
+ *
  * Revision 1.4  2010/07/11 07:51:03  we7u
  * Fixing more compiler warnings.  There are a few left yet.
  *
@@ -93,7 +99,8 @@ int main( int argc, char ** argv )
 {
     SHPHandle	old_SHP, new_SHP;
     DBFHandle   old_DBF, new_DBF;
-    int		nShapeType, nEntities, i, j;
+    int		nShapeType, nEntities, i;
+    unsigned int j;
 //    int     nVertices, nParts *panParts, iPart;
 //    double	*padVertices, adBounds[4];
 //    const char 	*pszPlus;

@@ -32,6 +32,12 @@
  * use -DPROJ4 to compile in Projection support
  *
  * $Log: shpgeo.c,v $
+ * Revision 1.4  2010/07/11 20:30:00  we7u
+ * More minor tweaks to get rid of compiler warnings.  Of particular note are
+ * some TODO entries added to a couple of files for two enumerated values that
+ * weren't being handled in "switch" statements.  There still isn't any code
+ * for those case statements, but the compiler warnings are gone.
+ *
  * Revision 1.3  2010/07/11 07:24:37  we7u
  * Fixing multiple minor warnings with Shapelib.  Still plenty left.
  *
@@ -301,7 +307,7 @@ int SHPOGisType ( int GeomType, int toOGis) {
 int SHPReadSHPStream ( SHPObject *psCShape, char *stream_obj) {
 
 //int	obj_storage;
-int	my_order, need_swap =0, GeoType ;
+int	my_order, need_swap =0, GeoType =0 ;
 int	use_Z = 0;
 int	use_M = 0;
 
@@ -367,7 +373,9 @@ int	use_M = 0;
   need_swap = 1;
   need_swap = ((char*) (&need_swap))[0];
   
-  realloc (stream_obj, obj_storage );
+  if ( !realloc (stream_obj, obj_storage ) ) {
+    return(1);
+  }
   
   if ( need_swap ) {
   
@@ -931,13 +939,13 @@ PT*	SHPPointsinPoly_2d ( SHPObject *psCShape ) {
    int		cRing;
    SHPObject	*psO, *psInt, *CLine;
    double	*CLx, *CLy;
-   int		*CLstt, *CLst, nPIP, ring, rMpart, ring_vtx, ring_nVertices;
-   double	rLen, rLenMax;
+   int		*CLstt, *CLst, nPIP =0, ring, rMpart =0, ring_vtx, ring_nVertices;
+   double	rLen =0.0, rLenMax =0.0;
 
    if ( !(SHPDimension (psCShape->nSHPType) & SHPD_AREA) )  
       return ( NULL );
 
-   while (  psO = SHPUnCompound (psCShape, &cRing)) {
+   while ( (psO = SHPUnCompound(psCShape, &cRing)) != 0 ) {
      CLx = calloc ( 4, sizeof(double));
      CLy = calloc ( 4, sizeof(double));
      CLst = calloc ( 2, sizeof(int));
@@ -1151,7 +1159,8 @@ int RingCentroid_2d ( int nVertices, double *a, double *b, PT *C, double *Area )
  * return 0  for error
  * **************************************************************************/
 int SHPRingDir_2d ( SHPObject *psCShape, int Ring ) {
-   int		i, ti, last_vtx;
+   int      ti = 0;
+   int		i, last_vtx;
    double	tX;
    double 	*a, *b;
    double	dx0, dx1, dy0, dy1, v3;
@@ -1185,7 +1194,7 @@ int SHPRingDir_2d ( SHPObject *psCShape, int Ring ) {
    /* cross product */
    /* the sign of the cross product of two vectors indicates the right or left half-plane	*/
    /* which we can use to indicate Ring Dir													*/ 
-   if ( ti > psCShape->panPartStart[Ring] & ti < last_vtx ) 
+   if ( (ti > psCShape->panPartStart[Ring]) && (ti < last_vtx) ) 
     { dx0 = a[ti-1] - a[ti];
       dx1 = a[ti+1] - a[ti];
       dy0 = b[ti-1] - b[ti];

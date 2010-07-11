@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: dbfdump.c,v 1.2 2010/07/11 07:24:37 we7u Exp $
+ * $Id: dbfdump.c,v 1.3 2010/07/11 20:30:00 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Sample application for dumping .dbf files to the terminal.
@@ -34,6 +34,12 @@
  ******************************************************************************
  *
  * $Log: dbfdump.c,v $
+ * Revision 1.3  2010/07/11 20:30:00  we7u
+ * More minor tweaks to get rid of compiler warnings.  Of particular note are
+ * some TODO entries added to a couple of files for two enumerated values that
+ * weren't being handled in "switch" statements.  There still isn't any code
+ * for those case statements, but the compiler warnings are gone.
+ *
  * Revision 1.2  2010/07/11 07:24:37  we7u
  * Fixing multiple minor warnings with Shapelib.  Still plenty left.
  *
@@ -87,7 +93,7 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: dbfdump.c,v 1.2 2010/07/11 07:24:37 we7u Exp $";
+//  "$Id: dbfdump.c,v 1.3 2010/07/11 20:30:00 we7u Exp $";
 
 #include <stdlib.h>
 #include <string.h>
@@ -170,6 +176,8 @@ int main( int argc, char ** argv )
                 pszTypeName = "Double";
             else if( eType == FTInvalid )
                 pszTypeName = "Invalid";
+            else
+                pszTypeName = "Unknown";
 
             printf( "Field %d: Type=%s, Title=`%s', Width=%d, Decimals=%d\n",
                     i, pszTypeName, szTitle, nWidth, nDecimals );
@@ -188,7 +196,7 @@ int main( int argc, char ** argv )
 	DBFFieldType	eType;
 
 	eType = DBFGetFieldInfo( hDBF, i, szTitle, &nWidth, &nDecimals );
-	if( strlen(szTitle) > nWidth )
+	if( (int)strlen(szTitle) > nWidth )
 	    panWidth[i] = strlen(szTitle);
 	else
 	    panWidth[i] = nWidth;
