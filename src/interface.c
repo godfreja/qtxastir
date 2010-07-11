@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.295 2010/06/30 06:25:24 we7u Exp $
+ * $Id: interface.c,v 1.296 2010/07/11 23:31:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -4068,8 +4068,6 @@ int ax25_init(int port) {
     // Show the latest status in the interface control dialog
     update_interface_list();
 
-    temp[0] = proto = (int)dev;     // Converting pointer to int, then to char?????
-    // ^^^^ this doesn't do anything
 #else /* HAVE_LIBAX25 */
     fprintf(stderr,"AX.25 support not compiled into Xastir!\n");
     popup_message(langcode("POPEM00004"),langcode("POPEM00021"));

@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testdbfawk.c,v 1.3 2010/01/31 02:12:25 we7u Exp $
+ * $Id: testdbfawk.c,v 1.4 2010/07/11 23:31:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2010  The Xastir Group
@@ -30,6 +30,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #ifdef WITH_DBFAWK
 
@@ -78,8 +79,8 @@ void print_symtbl(awk_symtab *this) {
     int i;
 
 //    fprintf(stderr,"symtbl 0%0x dump:\n",(u_int)this);
-    fprintf(stderr,"symtbl 0x%0x dump:\n",
-        (unsigned int)this);
+    fprintf(stderr,"symtbl 0x%0lx dump:\n",
+        (uintptr_t)this);
     for (i = 0; i < AWK_SYMTAB_HASH_SIZE; i++) {
       for (s = this->hash[i]; s; s = s->next_sym) {
         *buf = '\0';

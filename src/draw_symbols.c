@@ -1,5 +1,5 @@
 /*
- * $Id: draw_symbols.c,v 1.118 2010/01/31 02:12:24 we7u Exp $
+ * $Id: draw_symbols.c,v 1.119 2010/07/11 23:31:40 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -3539,7 +3539,7 @@ void draw_deadreckoning_features(DataRow *p_station,
             symbol_orient(p_station->course),
             p_station->aprs_symbol.area_object.type,
             p_station->signpost,
-            (char) NULL,
+            (char) 0x00,
             0);  // Don't bump the station count
     }
 }
