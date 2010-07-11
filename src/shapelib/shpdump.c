@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shpdump.c,v 1.3 2009/06/04 04:25:19 we7u Exp $
+ * $Id: shpdump.c,v 1.4 2010/07/11 07:57:02 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Sample application for dumping contents of a shapefile to 
@@ -35,6 +35,9 @@
  ******************************************************************************
  *
  * $Log: shpdump.c,v $
+ * Revision 1.4  2010/07/11 07:57:02  we7u
+ * Fixing a few more compiler warnings.
+ *
  * Revision 1.3  2009/06/04 04:25:19  we7u
  * Getting rid of compiler warnings due to unused variable.
  *
@@ -95,10 +98,11 @@
  */
 
 //static char rcsid[] =
-//    "$Id: shpdump.c,v 1.3 2009/06/04 04:25:19 we7u Exp $";
+//    "$Id: shpdump.c,v 1.4 2010/07/11 07:57:02 we7u Exp $";
 
 #include "shapefil.h"
 #include <stdlib.h>
+#include <string.h>
 
 int main( int argc, char ** argv )
 
