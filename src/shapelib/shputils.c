@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shputils.c,v 1.2 2009/06/04 04:25:19 we7u Exp $
+ * $Id: shputils.c,v 1.3 2010/07/11 06:22:55 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  
@@ -53,6 +53,11 @@
  ******************************************************************************
  *
  * $Log: shputils.c,v $
+ * Revision 1.3  2010/07/11 06:22:55  we7u
+ * Setting up the rest of shapelib and shapelib/contrib so that everything
+ * compiles.  Had to add an include to shputils.c and add a "1" parameter to
+ * exit() in one spot.
+ *
  * Revision 1.2  2009/06/04 04:25:19  we7u
  * Getting rid of compiler warnings due to unused variable.
  *
@@ -103,10 +108,12 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: shputils.c,v 1.2 2009/06/04 04:25:19 we7u Exp $";
+//  "$Id: shputils.c,v 1.3 2010/07/11 06:22:55 we7u Exp $";
 
 #include "shapefil.h"
 #include "string.h"
+#include <stdlib.h>
+
 #ifndef FALSE
 #  define FALSE		0
 #  define TRUE		1
@@ -300,7 +307,7 @@ int main( int argc, char ** argv )
                 if (factor == 0)
                 {
                   if (infactor ==0)
-                  { puts("ERROR: Input unit must be defined before output unit"); exit(); }
+                  { puts("ERROR: Input unit must be defined before output unit"); exit(1); }
                   factor=infactor/outfactor;
                 }
                 printf("Output file coordinate values will be factored by %lg\n",factor);
