@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shputils.c,v 1.4 2010/07/11 07:24:37 we7u Exp $
+ * $Id: shputils.c,v 1.5 2010/07/11 07:51:03 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  
@@ -53,6 +53,9 @@
  ******************************************************************************
  *
  * $Log: shputils.c,v $
+ * Revision 1.5  2010/07/11 07:51:03  we7u
+ * Fixing more compiler warnings.  There are a few left yet.
+ *
  * Revision 1.4  2010/07/11 07:24:37  we7u
  * Fixing multiple minor warnings with Shapelib.  Still plenty left.
  *
@@ -111,7 +114,7 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: shputils.c,v 1.4 2010/07/11 07:24:37 we7u Exp $";
+//  "$Id: shputils.c,v 1.5 2010/07/11 07:51:03 we7u Exp $";
 
 #include "shapefil.h"
 #include "string.h"
@@ -157,11 +160,12 @@ int strncasecmp2(char *s1, char *s2, int n);
 void mergefields(void);
 void findselect(void);
 void showitems(void);
-int selectrec();
-int check_theme_bnd();
-int clip_boundary();
-void error();
-
+int selectrec(void);
+void check_theme_bnd(void);
+int clip_boundary(void);
+void error(void);
+int findunit(char *unit);
+ 
 
 /* -------------------------------------------------------------------- */
 /* Variables for the DESCRIBE function */
@@ -783,7 +787,7 @@ long int value, ty;
 }
 
 
-int check_theme_bnd()
+void check_theme_bnd()
 {
     if ( (adfBoundsMin[0] >= cxmin) && (adfBoundsMax[0] <= cxmax) &&
          (adfBoundsMin[1] >= cymin) && (adfBoundsMax[1] <= cymax) )
@@ -805,7 +809,7 @@ int check_theme_bnd()
         puts("WARNING: Theme is outside the clip area."); /** SKIP THEME  **/
 }
 
-clip_boundary()
+int clip_boundary()
 {
     int  inside;
     int  prev_outside;
@@ -910,6 +914,9 @@ clip_boundary()
              if (i2 == 0) return(0); /** SKIP  RECORD **/
                   else    return(1); /** WRITE RECORD **/
           }  /** End CUT **/
+
+//WE7U added this to remove a compiler warning
+    return(0);
 }
 
 
@@ -946,8 +953,7 @@ int j,i;
 
 
 #define  NKEYS (sizeof(unitkeytab) / sizeof(struct unitkey))
-findunit(unit)
-   char *unit;
+int findunit(char *unit)
    {
    struct unitkey {
      char   *name;

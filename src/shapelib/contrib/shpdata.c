@@ -26,6 +26,9 @@
  *
  *
  * $Log: shpdata.c,v $
+ * Revision 1.3  2010/07/11 07:51:03  we7u
+ * Fixing more compiler warnings.  There are a few left yet.
+ *
  * Revision 1.2  2010/07/11 07:24:37  we7u
  * Fixing multiple minor warnings with Shapelib.  Still plenty left.
  *
@@ -157,4 +160,5 @@ int main( int argc, char ** argv )
     DBFClose( old_DBF );
 
     printf ("\n");
+    return(0);
 }

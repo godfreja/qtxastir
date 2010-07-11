@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shptreedump.c,v 1.2 2009/06/04 04:25:19 we7u Exp $
+ * $Id: shptreedump.c,v 1.3 2010/07/11 07:51:03 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  Mainline for creating and dumping an ASCII representation of
@@ -35,6 +35,9 @@
  ******************************************************************************
  *
  * $Log: shptreedump.c,v $
+ * Revision 1.3  2010/07/11 07:51:03  we7u
+ * Fixing more compiler warnings.  There are a few left yet.
+ *
  * Revision 1.2  2009/06/04 04:25:19  we7u
  * Getting rid of compiler warnings due to unused variable.
  *
@@ -85,7 +88,7 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: shptreedump.c,v 1.2 2009/06/04 04:25:19 we7u Exp $";
+//  "$Id: shptreedump.c,v 1.3 2010/07/11 07:51:03 we7u Exp $";
 
 #include "shapefil.h"
 
@@ -100,8 +103,7 @@ static void SHPTreeNodeSearchAndDump( SHPTree *, double *, double * );
 /*                               Usage()                                */
 /************************************************************************/
 
-static void Usage()
-
+static void Usage(void)
 {
     printf( "shptreedump [-maxdepth n] [-search xmin ymin xmax ymax]\n"
             "            [-v] shp_file\n" );
