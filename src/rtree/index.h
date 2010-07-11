@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: index.h,v 1.10 2010/01/31 02:12:25 we7u Exp $
+ * $Id: index.h,v 1.11 2010/07/11 21:41:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -95,12 +95,12 @@ struct ListNode
  * It can terminate the search early by returning 0 in which case
  * the search will return the number of hits found up to that point.
  */
-typedef int (*SearchHitCallback)(int id, void* arg);
+typedef int (*SearchHitCallback)(void *id, void* arg);
 
 
 extern int Xastir_RTreeSearch(struct Node*, struct Rect*, SearchHitCallback, void*);
-extern int Xastir_RTreeInsertRect(struct Rect*, int, struct Node**, int depth);
-extern int Xastir_RTreeDeleteRect(struct Rect*, int, struct Node**);
+extern int Xastir_RTreeInsertRect(struct Rect*, void *, struct Node**, int depth);
+extern int Xastir_RTreeDeleteRect(struct Rect*, void *, struct Node**);
 extern struct Node * Xastir_RTreeNewIndex(void);
 extern struct Node * Xastir_RTreeNewNode(void);
 extern void Xastir_RTreeInitNode(struct Node*);

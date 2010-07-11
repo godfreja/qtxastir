@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: rect.c,v 1.9 2010/01/31 02:12:25 we7u Exp $
+ * $Id: rect.c,v 1.10 2010/07/11 21:41:11 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -369,7 +369,7 @@ int Xastir_RTreeContained(struct Rect *R, struct Rect *S)
 {
 	register struct Rect *r = R, *s = S;
 	register int i, j, result;
-	assert((int)r && (int)s);
+	assert(r && s);
 
  	// undefined rect is contained in any other
 	//
