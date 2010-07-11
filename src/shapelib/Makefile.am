@@ -1,8 +1,9 @@
 
-# $Id: Makefile.am,v 1.12 2010/07/11 05:39:38 we7u Exp $
+# $Id: Makefile.am,v 1.13 2010/07/11 05:52:29 we7u Exp $
 # Copyright (C) 2004-2010  The Xastir Group
 
 noinst_LIBRARIES=libshape.a
+
 bin_PROGRAMS=shpadd \
         shpcreate \
         shpdump \
@@ -25,6 +26,7 @@ shpdump_LDADD=libshape.a
 shprewind_LDADD=libshape.a
 shptest_LDADD=libshape.a
 shptreedump_LDADD=libshape.a
+shputils_LDADD=libshape.a
 dbfadd_LDADD=libshape.a
 dbfcreate_LDADD=libshape.a
 dbfdump_LDADD=libshape.a
