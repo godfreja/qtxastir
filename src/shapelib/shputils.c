@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: shputils.c,v 1.5 2010/07/11 07:51:03 we7u Exp $
+ * $Id: shputils.c,v 1.6 2010/07/11 08:01:27 we7u Exp $
  *
  * Project:  Shapelib
  * Purpose:  
@@ -53,6 +53,10 @@
  ******************************************************************************
  *
  * $Log: shputils.c,v $
+ * Revision 1.6  2010/07/11 08:01:27  we7u
+ * Adding some braces for some "if" statements so that the enclosed else
+ * clause won't be ambiguous.
+ *
  * Revision 1.5  2010/07/11 07:51:03  we7u
  * Fixing more compiler warnings.  There are a few left yet.
  *
@@ -114,7 +118,7 @@
  */
 
 //static char rcsid[] = 
-//  "$Id: shputils.c,v 1.5 2010/07/11 07:51:03 we7u Exp $";
+//  "$Id: shputils.c,v 1.6 2010/07/11 08:01:27 we7u Exp $";
 
 #include "shapefil.h"
 #include "string.h"
@@ -771,11 +775,13 @@ long int value, ty;
       case FTInteger:
         value = DBFReadIntegerAttribute( hDBF, iRecord, iselectitem );
         for (j = 0; j<selcount; j++)
-          {
+        {
           if (selectvalues[j] == value)
-               if (iunselect) return(0);  /* Keep this record */
-                        else  return(1);  /* Skip this record */
+          {
+            if (iunselect) return(0);  /* Keep this record */
+                     else  return(1);  /* Skip this record */
           }
+        }
 	break;
       case FTDouble:
         puts("Invalid Item");
@@ -856,12 +862,14 @@ int clip_boundary()
                }
                
           for( j2 = 0; j2 < psCShape->nVertices; j2++ ) 
-               {   /** At least one vertex must be inside the clip boundary **/
-               if ( (psCShape->padfX[j2] >= cxmin  &&  psCShape->padfX[j2] <= cxmax) ||
-                    (psCShape->padfY[j2] >= cymin  &&  psCShape->padfY[j2] <= cymax)  )
-                    if (ierase) return(0); /** SKIP  RECORD **/
-                         else   return(1); /** WRITE RECORD **/
-               }
+          {   /** At least one vertex must be inside the clip boundary **/
+            if ( (psCShape->padfX[j2] >= cxmin  &&  psCShape->padfX[j2] <= cxmax) ||
+                 (psCShape->padfY[j2] >= cymin  && psCShape->padfY[j2] <= cymax)  )
+            {
+              if (ierase) return(0); /** SKIP  RECORD **/
+                   else   return(1); /** WRITE RECORD **/
+            }
+          }
                
           /** All vertices are outside the clip boundary **/ 
           if (ierase) return(1); /** WRITE RECORD **/
