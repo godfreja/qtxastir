@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.800 2010/07/07 06:16:16 we7u Exp $
+ * $Id: main.c,v 1.801 2010/07/11 23:39:42 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9775,7 +9775,7 @@ void BuildPredefinedSARMenu_UI(Widget *parent_menu) {
             XtAddCallback(predefined_object_menu_items[i],
                 XmNactivateCallback,
                 Create_SAR_Object,
-                (int *)predefinedObjects[i].index);
+                (intptr_t *)predefinedObjects[i].index);
 
             if (predefinedObjects[i].index_of_child > -1) {
 
@@ -9787,7 +9787,7 @@ void BuildPredefinedSARMenu_UI(Widget *parent_menu) {
                     XtAddCallback(predefined_object_menu_items[i],
                         XmNactivateCallback,
                         Create_SAR_Object,
-                        (int *)predefinedObjects[predefinedObjects[i].index_of_child].index);
+                        (intptr_t *)predefinedObjects[predefinedObjects[i].index_of_child].index);
                 }
             }
         }
