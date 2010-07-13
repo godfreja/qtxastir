@@ -32,6 +32,9 @@
  * use -DPROJ4 to compile in Projection support
  *
  * $Log: shpgeo.c,v $
+ * Revision 1.5  2010/07/13 06:12:22  we7u
+ * Attempting to fix the "endian-ness" tests.
+ *
  * Revision 1.4  2010/07/11 20:30:00  we7u
  * More minor tweaks to get rid of compiler warnings.  Of particular note are
  * some TODO entries added to a couple of files for two enumerated values that
@@ -92,6 +95,7 @@
 
 #include "shapefil.h"
 #include <string.h>
+#include <math.h>
 
 #ifndef NAN
 #include "my_nan.h"
