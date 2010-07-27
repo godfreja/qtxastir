@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: maps.c,v 1.530 2010/06/28 19:14:47 we7u Exp $
+ * $Id: maps.c,v 1.531 2010/07/27 08:40:20 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -406,11 +406,14 @@ void maps_init(void)
 #ifndef NO_GRAPHICS
 #ifdef HAVE_LIBCURL
     fprintf(stderr,"%10s   URL (Internet maps via libcurl library)\n","geo");
-    fprintf(stderr,"%10s   URL (OpenStreetMaps via libcurl library)\n","osm");
+    fprintf(stderr,"%10s   URL (OpenStreetMaps via libcurl library\n","geo");
+    fprintf(stderr,"%10s        Copyright OpenStreetMap and contributors, CC-BY-SA)\n", "");
+
 #else
 #ifdef HAVE_WGET
     fprintf(stderr,"%10s   URL (Internet maps via wget)\n","geo");
-    fprintf(stderr,"%10s   URL (OpenStreetMaps via wget)\n","osm");
+    fprintf(stderr,"%10s   URL (OpenStreetMaps via wget\n","geo");
+    fprintf(stderr,"%10s        Copyright OpenStreetMap and contributors, CC-BY-SA)\n", "");
 #endif  // HAVE_WGET
 #endif  // HAVE_LIBCURL
 #endif  // NO_GRAPHICS
@@ -5721,7 +5724,6 @@ struct {
 #endif /* HAVE_LIBGEOTIFF */
 
   {"geo",geo,draw_geo_image_map},
-  {"osm",geo,draw_geo_image_map},
   {"gnis",gnis,draw_gnis_map},
   {"pop",pop,draw_pop_map},
 

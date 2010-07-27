@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_WMS.c,v 1.39 2010/06/09 23:28:56 we7u Exp $
+ * $Id: map_WMS.c,v 1.40 2010/07/27 08:40:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -65,6 +65,7 @@
 #include "xastir.h"
 #include "maps.h"
 #include "alert.h"
+#include "fetch_remote.h"
 #include "util.h"
 #include "main.h"
 #include "datum.h"

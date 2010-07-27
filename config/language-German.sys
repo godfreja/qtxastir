@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.235 2010/01/31 02:12:23 we7u Exp $
+# $Id: language-German.sys,v 1.236 2010/07/27 08:40:19 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -388,6 +388,9 @@ BBARSTA045|Lade Symbole...||
 BBARSTA046|Lade Symbole neu...||
 BBARSTA047|Initialisiere meine Station...||
 BBARSTA048|Starte Schnittstellen...||
+BBARSTA049|Reading tiles...||
+BBARSTA050|Downloading tiles...||
+BBARSTA051|Downloading tile %li of %li||
 #
 # PopUp "Zeige - Packet Radio"
 WPUPDPD001|Packet Radio Daten||

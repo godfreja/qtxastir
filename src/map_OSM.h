@@ -1,5 +1,5 @@
 /*
- * $Id: map_OSM.h,v 1.3 2010/06/28 19:14:47 we7u Exp $
+ * $Id: map_OSM.h,v 1.4 2010/07/27 08:40:19 we7u Exp $
  *
  * Copyright (C) 2010 The Xastir Group
  *
@@ -34,12 +34,19 @@ void adj_to_OSM_level(
         long *new_scale_x,
         long *new_scale_y);
 
-void draw_OSM_map (Widget w,
+void draw_OSM_map(Widget w,
         char *filenm,
         int destination_pixmap,
         char *url,
         char *style,
         int nocache);
+
+void draw_OSM_tiles(Widget w,
+        char *filenm,
+        int destination_pixmap,
+        char *server_url,
+        char *tileCacheDir,
+        char *mapName);
 
 int osm_zoom_level(long scale_x);
 void init_OSM_values(void);

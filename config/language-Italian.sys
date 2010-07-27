@@ -1,4 +1,4 @@
-# $Id: language-Italian.sys,v 1.226 2010/01/31 02:12:23 we7u Exp $
+# $Id: language-Italian.sys,v 1.227 2010/07/27 08:40:19 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -380,6 +380,9 @@ BBARSTA045|Loading symbols...||
 BBARSTA046|Reloading symbols...||
 BBARSTA047|Initialize my station...||
 BBARSTA048|Start interfaces...||
+BBARSTA049|Reading tiles...||
+BBARSTA050|Downloading tiles...||
+BBARSTA051|Downloading tile %li of %li||
 #
 #Visualizzazione dati packet
 WPUPDPD001|Visualizzazione dati packet||
