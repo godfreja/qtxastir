@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: fetch_remote.c,v 1.1 2010/07/27 08:40:20 we7u Exp $
+ * $Id: fetch_remote.c,v 1.2 2010/07/27 16:48:43 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -68,6 +68,7 @@
 // Must be last include file
 #include "leak_detection.h"
 
+extern int debug_level;
 extern int net_map_timeout;
 
 /* curl routines */
