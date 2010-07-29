@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
  *
- * $Id: map_OSM.c,v 1.6 2010/07/27 08:40:19 we7u Exp $
+ * $Id: map_OSM.c,v 1.7 2010/07/29 21:57:28 jedunmire Exp $
  *
  * Copyright (C) 2010 The Xastir Group
  *
@@ -1500,6 +1500,7 @@ void draw_OSM_map (Widget w,
                 fprintf(stderr,"Couldn't delete map from cache\n");
             }
         }
+#endif
         if (image) {
             DestroyImage(image);
         }
@@ -1510,7 +1511,6 @@ void draw_OSM_map (Widget w,
         return;
     }
 
-#endif
     if (debug_level & 512) {
         fprintf(stderr,"Image: %s\n", file);
         fprintf(stderr,"Image size %d %d\n", map_image_width, map_image_height);
