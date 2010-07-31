@@ -1,5 +1,5 @@
 /*
- * $Id: fetch_remote.h,v 1.1 2010/07/27 08:40:20 we7u Exp $
+ * $Id: fetch_remote.h,v 1.2 2010/07/31 03:12:34 jedunmire Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -25,6 +25,12 @@
 
 #ifndef __XASTIR_FETCH_REMOTE_H
 #define __XASTIR_FETCH_REMOTE_H
+
+#ifdef HAVE_LIBCURL
+#include <curl/curl.h>
+CURL *xastir_curl_init(char *errBuf);
+int fetch_remote_tile(CURL *session, char *tileURL, char *tileFileName);
+#endif  // HAVE_LIBCURL
 
 int fetch_remote_file(char *fileimg, char *local_filename);
 
