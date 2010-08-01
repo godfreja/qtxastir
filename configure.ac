@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.213 2010/06/28 19:01:32 we7u Exp $
+# $Id: configure.ac,v 1.214 2010/08/01 22:25:58 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 
@@ -437,8 +437,9 @@ if test "${use_geotiff}" = "yes"; then
             if test "${use_tiff}" = "yes"; then
                 use_geotiff=no
                 AC_CHECK_LIB(geotiff, GTIFNew, use_geotiff=yes
-  	          LIBS="$LIBS -lgeotiff"
-                AC_DEFINE(HAVE_LIBGEOTIFF, ,Define to 1 if you have the `geotiff' library (-lgeotiff).))
+                    LIBS="$LIBS -lgeotiff"
+                    CPPFLAGS="$CPPFLAGS -I/usr/include/libgeotiff"
+                    AC_DEFINE(HAVE_LIBGEOTIFF, ,Define to 1 if you have the `geotiff' library (-lgeotiff).))
             else
                 echo "*** Warning: geotiff requires libtiff."
                 use_geotiff=no
@@ -449,6 +450,7 @@ if test "${use_geotiff}" = "yes"; then
         use_geotiff=no
     fi
 fi 
+ 
 
 # Check for spatial database support
 use_postgis=no
