@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.44 2010/07/02 07:12:20 we7u Exp $
+# $Id: Makefile.am,v 1.45 2010/08/04 11:12:18 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -47,6 +47,11 @@ EXTRA_DIST = \
     nwsz_ddmmyy_10.dbfawk \
     nwsz1ddmmyy.dbfawk \
     nwszoddmmyy.dbfawk \
+    OSM_Cloudmade_administrative.dbfawk \
+    OSM_Cloudmade_highway.dbfawk \
+    OSM_Cloudmade_natural.dbfawk \
+    OSM_Cloudmade_poi.dbfawk \
+    OSM_Cloudmade_water_and_coastline.dbfawk \
     predefined_EVENT.sys \
     predefined_SAR.sys \
     tl_2009_aiannh.dbfawk \
