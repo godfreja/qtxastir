@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.43 2010/01/31 02:12:24 we7u Exp $
+ * $Id: interface.h,v 1.44 2010/08/10 08:22:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -26,6 +26,7 @@
 #define __XASTIR_INTERFACE_H
 
 #include <termios.h>
+#include <unistd.h>
 #include "util.h"
 #include "xastir.h"
 

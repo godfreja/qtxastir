@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: alert.c,v 1.111 2010/01/31 02:12:23 we7u Exp $
+ * $Id: alert.c,v 1.112 2010/08/10 08:22:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1696,7 +1696,8 @@ if (debug_level & 2)
             // an array with the various zone names.
             split_string(&uncompressed_wx[1],
                 title_ptr,
-                MAX_SUB_ALERTS);
+                MAX_SUB_ALERTS,
+                ',');
         }
         else {  // Handle non-compressed packet
             // We have up to five alerts to process.

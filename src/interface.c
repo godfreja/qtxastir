@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.296 2010/07/11 23:31:40 we7u Exp $
+ * $Id: interface.c,v 1.297 2010/08/10 08:22:53 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -553,7 +553,7 @@ fprintf(stderr,"Length bytes:  %02x %02x %02x %02x\n",
 
 //fprintf(stderr,"path_string: %s\n", path_string);
 
-        split_string((char *)path_string, ViaCall, 10);
+        split_string((char *)path_string, ViaCall, 10, ',');
 
         // Write the type character into the frame
         output_string[4] = 'V'; // Unproto, via calls present
