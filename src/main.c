@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.802 2010/07/27 08:40:19 we7u Exp $
+ * $Id: main.c,v 1.803 2010/08/10 08:07:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27256,6 +27256,9 @@ int main(int argc, char *argv[], char *envp[]) {
 
     program_start_time = sec_now(); // For use by "Display Uptime"
 
+    (void)setlocale(LC_NUMERIC, "C");
+    (void)setlocale(LC_CTYPE, "C");
+
 #ifdef HAVE_LIBCURL
     curl_global_init(CURL_GLOBAL_ALL);
 #endif
@@ -27836,8 +27839,8 @@ int main(int argc, char *argv[], char *envp[]) {
             // DK7IN: inserted next line here for avoiding scanf
             // errors during init!
             //
-            (void)setlocale(LC_NUMERIC, "C");       // DK7IN: It's now ok
-            (void)setlocale(LC_CTYPE, "C");         // K4INT: Make sure strings work OK.
+//            (void)setlocale(LC_NUMERIC, "C");       // DK7IN: It's now ok
+//            (void)setlocale(LC_CTYPE, "C");         // K4INT: Make sure strings work OK.
 
 
             setup_visual_info(display, DefaultScreen(display));
@@ -27878,6 +27881,7 @@ int main(int argc, char *argv[], char *envp[]) {
             // reset language attribs for numeric, program needs
             // decimal in US for all data!
             (void)setlocale(LC_NUMERIC, "C");
+            (void)setlocale(LC_CTYPE, "C");
             // DK7IN: now scanf and printf work as wanted...
 
 
