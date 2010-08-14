@@ -1,5 +1,5 @@
 /*
- * $Id: tile_mgmnt.h,v 1.2 2010/07/31 03:12:34 jedunmire Exp $
+ * $Id: tile_mgmnt.h,v 1.3 2010/08/14 21:32:43 jedunmire Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2010  The Xastir Group
@@ -52,12 +52,12 @@ void tile2coord(unsigned long tilex, unsigned long tiley, int zoom, coord_t *NWc
 void calcTileArea(double lon_upper_left,double lat_upper_left,double lon_lower_right,double lat_lower_right,int zoom,tileArea_t *tiles);
 
 #ifdef HAVE_LIBCURL
-int getOneTile(CURL *session, char *baseURL, unsigned long x, unsigned long y, int zoom, char *baseDir);
+int getOneTile(CURL *session, char *baseURL, unsigned long x, unsigned long y, int zoom, char *baseDir, char *tileExt);
 #else
-int getOneTile(char *baseURL, unsigned long x, unsigned long y, int zoom, char *baseDir);
+int getOneTile(char *baseURL, unsigned long x, unsigned long y, int zoom, char *baseDir, char *tileExt);
 #endif // HAVE_LIBCURL
 
 void mkOSMmapDirs(char *baseDir, unsigned long startx, unsigned long endx, int zoom);
-int tilesMissing (unsigned long startx, unsigned long endx, unsigned long starty, unsigned long endy, int zoom, char *baseDir);
+int tilesMissing (unsigned long startx, unsigned long endx, unsigned long starty, unsigned long endy, int zoom, char *baseDir, char *tileExt);
 
 #endif // __TILE_MGMNT_H

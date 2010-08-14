@@ -1,5 +1,5 @@
 #
-# $Id: OSM_template,v 1.2 2010/07/27 08:40:19 we7u Exp $
+# $Id: OSM_template,v 1.3 2010/08/14 21:32:43 jedunmire Exp $
 #
 # THIS IS A TEMPLATE FILE
 #
@@ -25,6 +25,12 @@
 # The url for tiled maps defaults to http://tile.openstreetmap.org/. For
 # static maps it defaults to http://ojw.dev.openstreetmap.org/StaticMap/
 #URL tileURL
+
+# Tile extension defaults to png
+#TILE_EXT png
+
+#ZOOM_LEVEL_MIN 0
+#ZOOM_LEVEL_MAX 18
 
 # The tile cache can be changed from the default (~/.xastir/OSMtiles) by
 # setting the following variable. If path does not begin with a '/' then

@@ -1,5 +1,5 @@
 /*
- * $Id: tile_test.c,v 1.2 2010/07/31 03:12:34 jedunmire Exp $
+ * $Id: tile_test.c,v 1.3 2010/08/14 21:32:43 jedunmire Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2010  The Xastir Group
@@ -91,7 +91,7 @@ int main(void) {
             //"http://tiles.openpistemap.org/contours/", zoom, tilex, tiley);
 #ifdef HAVE_LIBCURL
             res = getOneTile(mySession, "http://tile.openstreetmap.org/mapnik",
-                             tilex, tiley, zoom, "/tmp/");
+                             tilex, tiley, zoom, "/tmp/", "png");
             if (res < 0) {
                fprintf(stderr, "Download error for %i/%li/%li.png\n",
                        zoom, tilex, tiley);
@@ -101,7 +101,7 @@ int main(void) {
 
 #else  // don't HAVE_LIBCURL
             getOneTile("http://tile.openstreetmap.org/mapnik",
-                        tilex, tiley, zoom, "/tmp/");
+                        tilex, tiley, zoom, "/tmp/", "png");
 #endif // HAVE_LIBCURL
         }
     }
