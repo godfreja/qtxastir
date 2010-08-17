@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.803 2010/08/10 08:07:45 we7u Exp $
+ * $Id: main.c,v 1.804 2010/08/17 17:26:17 gstueve Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27840,7 +27840,7 @@ int main(int argc, char *argv[], char *envp[]) {
             // errors during init!
             //
 //            (void)setlocale(LC_NUMERIC, "C");       // DK7IN: It's now ok
-//            (void)setlocale(LC_CTYPE, "C");         // K4INT: Make sure strings work OK.
+            (void)setlocale(LC_CTYPE, "C");         // K4INT: Make sure strings work OK.
 
 
             setup_visual_info(display, DefaultScreen(display));
