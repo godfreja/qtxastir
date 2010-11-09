@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.57 2010/09/08 18:13:26 jedunmire Exp $
+# $Id: Makefile.am,v 1.58 2010/11/09 01:48:13 tvrusso Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -72,10 +72,10 @@ doc_DATA=AUTHORS FAQ ChangeLog LICENSE README README.CVS README.CYGWIN \
 # documentation is FHS compliant.
 
 install-exec-hook:
-	-rm -rf ${pkgdatadir}/doc
+	-rm -rf $(DESTDIR)${pkgdatadir}/doc
 
 install-data-hook:
-	cd $(mapdir) && \
+	cd $(DESTDIR)$(mapdir) && \
 	rm -f CC_OpenStreetMap.png && \
 	$(LN_S) CC_OpenStreetMap_logo.png CC_OpenStreetMap.png
  
