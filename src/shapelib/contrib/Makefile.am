@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.11 2010/07/11 06:31:37 we7u Exp $
+# $Id: Makefile.am,v 1.12 2010/12/05 01:37:53 tvrusso Exp $
 # Copyright (C) 2004-2010  The Xastir Group
 
 EXTRA_DIST=Makefile_orig ShapeFileII.pas dbfcat.c dbfinfo.c makefile.vc \
@@ -11,14 +11,11 @@ noinst_LIBRARIES=libshape.a
 noinst_PROGRAMS=dbfcat \
         dbfinfo \
         shpcat \
-        shpcentrd \
-        shpdata \
         shpdxf \
         shpfix \
-        shpinfo \
-        shpproj \
-        shpwkb
+        shpinfo @CONTSHP@
 
+EXTRA_PROGRAMS = shpcentrd shpproj shpdata shpwkb
 libshape_a_SOURCES=../shpopen.c \
         ../shptree.c \
         ../dbfopen.c \
