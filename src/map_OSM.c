@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
  *
- * $Id: map_OSM.c,v 1.10 2010/09/24 02:24:27 jedunmire Exp $
+ * $Id: map_OSM.c,v 1.11 2010/12/20 23:43:14 jedunmire Exp $
  *
  * Copyright (C) 2010 The Xastir Group
  *
@@ -135,13 +135,6 @@
 #undef PACKAGE_VERSION
 #define PACKAGE_VERSION XASTIR_PACKAGE_VERSION
 #undef XASTIR_PACKAGE_VERSION
-#endif // HAVE_MAGICK
-
-// Must be last include file
-#include "leak_detection.h"
-
-#define xastirColorsMatch(p,q) (((p).red == (q).red) && ((p).blue == (q).blue) \
-        && ((p).green == (q).green))
 
 // This matte color was chosen emphirically to work well with the
 // contours from topOSM.
@@ -164,6 +157,14 @@
 #else
 #error "QuantumDepth != 16 or 8"
 #endif // QuantumDepth
+
+#endif // HAVE_MAGICK
+
+// Must be last include file
+#include "leak_detection.h"
+
+#define xastirColorsMatch(p,q) (((p).red == (q).red) && ((p).blue == (q).blue) \
+        && ((p).green == (q).green))
 
 // osm_scale_x - map Xastir scale_x value to an OSM binned value
 // 
