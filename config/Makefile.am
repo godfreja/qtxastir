@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.45 2010/08/04 11:12:18 we7u Exp $
+# $Id: Makefile.am,v 1.46 2011/02/26 06:06:01 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -35,6 +35,7 @@ EXTRA_DIST = \
     nwsc_ddmmyy.dbfawk \
     nwsc_ddmmyy_09.dbfawk \
     nwsc_ddmmyy_09b.dbfawk \
+    nwsc_ddmmyy_10.dbfawk \
     nwsmzddmmyy.dbfawk \
     nwsmzddmmyy_09.dbfawk \
     nwsmzoddmmyy.dbfawk \
@@ -45,8 +46,10 @@ EXTRA_DIST = \
     nwsz_ddmmyy.dbfawk \
     nwsz_ddmmyy_09.dbfawk \
     nwsz_ddmmyy_10.dbfawk \
+    nwsz_ddmmyy_10b.dbfawk \
     nwsz1ddmmyy.dbfawk \
     nwszoddmmyy.dbfawk \
+    nwshzddmmyy.dbfawk \
     OSM_Cloudmade_administrative.dbfawk \
     OSM_Cloudmade_highway.dbfawk \
     OSM_Cloudmade_natural.dbfawk \
