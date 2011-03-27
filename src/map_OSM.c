@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
  *
- * $Id: map_OSM.c,v 1.11 2010/12/20 23:43:14 jedunmire Exp $
+ * $Id: map_OSM.c,v 1.12 2011/03/27 03:07:22 jedunmire Exp $
  *
  * Copyright (C) 2010 The Xastir Group
  *
@@ -1092,7 +1092,7 @@ void draw_OSM_tiles (Widget w,
     tileCnt = 1;
     for (tilex = tiles.startx; tilex <= tiles.endx; tilex++) {
         for (tiley = tiles.starty; tiley <= tiles.endy; tiley++) {
-            if (numTiles > 0) {
+            if ((numTiles > 0) & (tileCnt <= numTiles)) {
                 xastir_snprintf(map_it, sizeof(map_it), langcode("BBARSTA051"),
                         tileCnt, numTiles);  // Downloading tile %ls of %ls
                 statusline(map_it,0);
