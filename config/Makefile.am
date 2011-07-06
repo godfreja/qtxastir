@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.47 2011/05/31 15:37:22 gstueve Exp $
+# $Id: Makefile.am,v 1.48 2011/07/06 07:45:07 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -74,6 +74,7 @@ EXTRA_DIST = \
     tl_2009_zcta5.dbfawk \
     tnc-startup.aea \
     tnc-startup.d700 \
+    tnc-startup.d72_d710 \
     tnc-startup.kam \
     tnc-startup.kpc2 \
     tnc-startup.kpc3 \
@@ -85,6 +86,7 @@ EXTRA_DIST = \
     tnc-startup.tnc2 \
     tnc-startup.tnc2-ui \
     tnc-stop.d700 \
+    tnc-stop.d72_d710 \
     tnc-stop.sys \
     tnc-stop.thd7 \
     tnc-stop.tnc2-ui \
