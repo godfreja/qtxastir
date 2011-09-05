@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 ###############################################################################
-# $Id: geopdf2gtiff.pl,v 1.3 2011/09/05 19:58:10 tvrusso Exp $
+# $Id: geopdf2gtiff.pl,v 1.4 2011/09/05 20:24:00 tvrusso Exp $
 #
 # Portions Copyright (C) 2004-2011  The Xastir Group
 #
@@ -16,8 +16,8 @@
 # This also depends on the -cutline and -crop_to_cutline features of 
 # gdalwarp, which are only present in versions of GDAL after 1.8.1.  
 # 
-# Last Edit:$Date: 2011/09/05 19:58:10 $
-# Revision:$Revision: 1.3 $
+# Last Edit:$Date: 2011/09/05 20:24:00 $
+# Revision:$Revision: 1.4 $
 # Last Edited By: $Author: tvrusso $
 ###############################################################################
 
@@ -210,8 +210,8 @@ $outputTif =~ s/pdf/tif/i;
 # We will warp from whatever the coordinate system is into EPSG:4326, the
 # coordinate system that requires the least work and involves the fewest
 # approximations from Xastir.
-$theGdalWarp="gdalwarp -cutline $inputPDF.vrt -crop_to_cutline -t_srs EPSG:4326  -co \"COMPRESS=PACKBITS\" $inputPDF $outputTif";
-#$theGdalWarp="gdalwarp -cutline $inputPDF.vrt -crop_to_cutline -t_srs EPSG:4326  $inputPDF $outputTif";
+#$theGdalWarp="gdalwarp -cutline $inputPDF.vrt -crop_to_cutline -t_srs EPSG:4326  -co \"COMPRESS=PACKBITS\" $inputPDF $outputTif";
+$theGdalWarp="gdalwarp -cutline $inputPDF.vrt -crop_to_cutline -t_srs EPSG:4326  $inputPDF $outputTif";
 
 system ($theGdalWarp) == 0 or die "System $theGdalWarp failed: $?";
 
@@ -220,10 +220,11 @@ if ($#bandinfo>0)
 {
     print "This is a multi-band raster, dithering...\n";
     system ("mv $outputTif $$.tif");
-    $theRGB2PCT="rgb2pct.py $$.tif $$-2.tif";
+#    $theRGB2PCT="rgb2pct.py $$.tif $$-2.tif";
+    $theRGB2PCT="rgb2pct.py $$.tif $outputTif";
     system ($theRGB2PCT) == 0 or die "Could not run rgb2pct: $?";
-    system("gdal_translate -co \"COMPRESS=PACKBITS\" $$-2.tif $outputTif") == 0 or die "Could not gdal_translate: $?";
-    system("rm  $$.tif $$-2.tif");
+#    system("gdal_translate -co \"COMPRESS=PACKBITS\" $$-2.tif $outputTif") == 0 or die "Could not gdal_translate: $?";
+    system("rm -f $$.tif $$-2.tif");
 }
 
 # now clean up our mess:
