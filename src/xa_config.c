@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.187 2010/08/10 09:11:25 we7u Exp $
+ * $Id: xa_config.c,v 1.188 2011/10/21 01:45:45 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -719,6 +719,14 @@ fprintf(stderr,"X:%d  y:%d\n", (int)x_return, (int)y_return);
                 name_temp);
             strncat (name, "RADIO_PORT", sizeof(name) - 1 - strlen(name));
             store_string (fout, name, devices[i].radio_port);
+
+            xastir_snprintf(name,
+                sizeof(name),
+                "%s",
+                name_temp);
+            strncat (name, "CONVERSE_CMD", sizeof(name) - 1 - strlen(name));
+            store_string (fout, name, devices[i].device_converse_string);
+
 
 #ifdef HAVE_DB
             
@@ -1797,6 +1805,18 @@ void load_data_or_default(void) {
             xastir_snprintf(devices[i].radio_port,
                 sizeof(devices[i].radio_port),
                 "0");
+
+        xastir_snprintf(name,
+            sizeof(name),
+            "%s",
+            name_temp);
+        strncat (name, "CONVERSE_CMD", sizeof(name) - 1 - strlen(name));
+        if (!get_string (name, devices[i].device_converse_string, sizeof(devices[i].device_converse_string))
+                || (strlen(devices[i].device_converse_string) == 0))
+            xastir_snprintf(devices[i].device_converse_string,
+                sizeof(devices[i].device_converse_string),
+                "k");
+
 
 #ifdef HAVE_DB        
 
