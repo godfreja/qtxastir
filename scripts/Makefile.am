@@ -1,9 +1,10 @@
-# $Id: Makefile.am,v 1.38 2011/09/05 17:29:51 tvrusso Exp $
+# $Id: Makefile.am,v 1.39 2012/02/05 00:10:35 tvrusso Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
 
-pkglib_SCRIPTS = \
+scriptsdir=${pkgdatadir}/scripts
+dist_scripts_DATA = \
     Coordinate.pm \
     coord-convert.pl \
     geopdf2gtiff.pl \
@@ -44,6 +45,4 @@ pkglib_SCRIPTS = \
     xastir-fixcfg.sh \
     xastir-migrate.sh \
     Xastir_tigerpoly.py
-
-EXTRA_DIST = $(pkglib_SCRIPTS)
 
