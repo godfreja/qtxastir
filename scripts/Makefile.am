@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.39 2012/02/05 00:10:35 tvrusso Exp $
+# $Id: Makefile.am,v 1.40 2012/03/02 20:26:50 we7u Exp $
 #
-# Copyright (C) 2000-2010  The Xastir Group
+# Copyright (C) 2000-2012  The Xastir Group
 #
 
 scriptsdir=${pkgdatadir}/scripts
@@ -8,6 +8,7 @@ dist_scripts_DATA = \
     Coordinate.pm \
     coord-convert.pl \
     geopdf2gtiff.pl \
+    get-BOMdata \
     get-fcc-rac.pl \
     get-gnis \
     get-pop \
