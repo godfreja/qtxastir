@@ -1,5 +1,5 @@
 /*
- * $Id: util.h,v 1.61 2010/08/10 08:22:53 we7u Exp $
+ * $Id: util.h,v 1.62 2012/03/05 18:47:50 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -135,6 +135,7 @@ extern char echo_digis[6][9+1];
 extern void upd_echo(char *path);
 
 extern char *to_upper(char *data);
+extern char *to_lower(char *data);
 extern int  is_num_chr(char ch);
 extern int  is_num_or_sp(char ch);
 extern int  is_xnum_or_dash(char *data, int max);
