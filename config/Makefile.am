@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.50 2012/03/02 20:26:50 we7u Exp $
+# $Id: Makefile.am,v 1.51 2012/05/14 20:38:09 tvrusso Exp $
 #
 # Copyright (C) 2000-2012  The Xastir Group
 #
@@ -43,9 +43,11 @@ EXTRA_DIST = \
     nwsmzoddmmyy.dbfawk \
     nwsozddmmyy.dbfawk \
     nwsozddmmyy_09.dbfawk \
+    nwsozddap12.dbfawk \
     nwsw_ddmmyy.dbfawk \
     nwsw_ddmmyy_09.dbfawk \
     nwsw_ddmmyy_10.dbfawk \
+    nwsw_ddjn12.dbfawk \
     nwsz_ddmmyy.dbfawk \
     nwsz_ddmmyy_09.dbfawk \
     nwsz_ddmmyy_10.dbfawk \

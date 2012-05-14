@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: testdbfawk.c,v 1.4 2010/07/11 23:31:40 we7u Exp $
+ * $Id: testdbfawk.c,v 1.5 2012/05/14 20:38:09 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 2003-2010  The Xastir Group
@@ -209,7 +209,7 @@ int main(int argc, char *argv[]) {
       if (sigs) {
 	si = dbfawk_find_sig(sigs,sig,dfile);
 	if (!si)
-	  die("No mathing dbfawk signature found");
+	  die("No matching dbfawk signature found");
 	rs = si->prog;
       }
       if (awk_compile_program(symtbl,rs) < 0) {
