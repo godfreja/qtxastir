@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_tif.c,v 1.45 2010/01/31 02:12:24 we7u Exp $
+ * $Id: map_tif.c,v 1.46 2012/05/15 15:29:36 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -93,7 +93,7 @@ extern int mag;
 
 // Needed for GTIFProj4FromLatLong() replacement below
 #ifdef HAVE_LIBGDAL
-#  include "projects.h"
+#  include "proj_api.h"
 #endif  // HAVE_LIBGDAL
 
 
@@ -378,7 +378,7 @@ int my_GTIFProj4FromLatLong( GTIFDefn * psDefn,
                              double *padfY ) {
 
     char    *pszProjection;
-    PJ      *psPJ;
+    projPJ      psPJ;
     int     i;
 
 // --------------------------------------------------------------------
