@@ -1,5 +1,5 @@
 /*
- * $Id: igate.c,v 1.63 2010/06/09 23:28:55 we7u Exp $
+ * $Id: igate.c,v 1.64 2012/07/05 18:53:11 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -1196,7 +1196,7 @@ int check_NWS_stations(char *call) {
             if (strncasecmp(call, NWS_station_data[i].call, length)==0) {
 
                 ok=1; // match found 
-                if (debug_level && 1024) {
+                if (debug_level & 1024) {
                     fprintf(stderr,"NWS-MATCH:(%s) (%s)\n",NWS_station_data[i].call,call);
                 }
             }
