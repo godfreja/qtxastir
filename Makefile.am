@@ -1,5 +1,5 @@
 
-# $Id: Makefile.am,v 1.58 2010/11/09 01:48:13 tvrusso Exp $
+# $Id: Makefile.am,v 1.59 2012/07/10 21:02:36 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -101,7 +101,7 @@ OSM_cloudmade_999.geo: OSM_template
 # Use tiles for these maps
 OSM_tiled_cycle.geo: OSM_template
 	sed -e '/THIS IS A TEMPLATE FILE/d' -e's/^#OSM_TILED_MAP/OSM_TILED_MAP/' \
-	    -e's!^#URL tileURL!URL http://andy.sandbox.cloudmade.com/tiles/cycle/!' \
+	    -e's!^#URL tileURL!URL http://tile.opencyclemap.org/cycle/!' \
 	    -e 's/-STYLE/-cycle/' \
 	    < $(top_srcdir)/OSM_template >$@
 
