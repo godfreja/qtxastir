@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.45 2011/10/21 01:45:45 we7u Exp $
+ * $Id: interface.h,v 1.46 2012/07/27 19:58:29 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -29,16 +29,6 @@
 #include <unistd.h>
 #include "util.h"
 #include "xastir.h"
-
-
-// User configurable text for taking a TNC into converse mode.
-// Uncomment only one of the below two lines.
-//
-// Works for most TNC's, including tnc2-ui (DEFAULT)
-//#define CONVERSE_MODE "k"
-//
-// Works for Kantronics KPC-2
-//#define CONVERSE_MODE "conv"
 
 
 #define MAX_DEVICE_NAME 128
