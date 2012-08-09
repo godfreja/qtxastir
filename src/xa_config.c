@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.188 2011/10/21 01:45:45 we7u Exp $
+ * $Id: xa_config.c,v 1.189 2012/08/09 02:19:19 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2211,7 +2211,7 @@ void load_data_or_default(void) {
     gps_time = (time_t) get_long ("GPS_TIME", 1l, 86400l, 60l);
 
     /* POSIT RATE */
-    POSIT_rate = (time_t) get_long ("POSIT_RATE", 1l, 86400l, 30*60l);
+    POSIT_rate = (time_t) get_long ("POSIT_RATE", 0l, 86400l, 30*60l);
 
     /* OBJECT RATE */
     OBJECT_rate = (time_t) get_long ("OBJECT_RATE", 1l, 86400l, 30*60l);
