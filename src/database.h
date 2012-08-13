@@ -1,5 +1,5 @@
 /*
- * $Id: database.h,v 1.54 2010/01/31 02:12:23 we7u Exp $
+ * $Id: database.h,v 1.55 2012/08/13 17:22:34 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -282,6 +282,11 @@ typedef struct {                //                      strlen
     char    wx_fuel_moisture[5];// in %                     2
     char    wx_type;
     char    wx_station[MAX_WXSTATION];
+    int     wx_compute_rain_rates;  //  Some stations provide rain rates
+                                  // directly, others require Xastir to
+                                  // compute from total rain.  Flag this,
+                                  // so we don't clobber useful info from
+                                  // a station.
 } WeatherRow;
 
 
