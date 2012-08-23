@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.805 2012/08/09 02:19:19 tvrusso Exp $
+ * $Id: main.c,v 1.806 2012/08/23 00:41:06 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -11693,27 +11693,28 @@ fprintf(stderr,"main, initializing connections");
 
                         switch (port_data[i].device_type) {
                             case DEVICE_SERIAL_TNC_AUX_GPS:
-
-                                // Tell TNC to send GPS data
+                                if (devices[i].gps_retrieve != 0) {
+                                    // Tell TNC to send GPS data
   
-                                // Device is correct type and is UP
-                                // (or ERROR).  Send character to
-                                // device (prefixed with CTRL-C so
-                                // that we exit CONV if necessary).
-                                //
-                                if (debug_level & 128) {
-                                    fprintf(stderr,"Retrieving GPS AUX port %d\n", i);
+                                    // Device is correct type and is UP
+                                    // (or ERROR).  Send character to
+                                    // device (prefixed with CTRL-C so
+                                    // that we exit CONV if necessary).
+                                    //
+                                    if (debug_level & 128) {
+                                        fprintf(stderr,"Retrieving GPS AUX port %d\n", i);
+                                    }
+                                    sprintf(tmp, "%c%c",
+                                            '\3',
+                                            devices[i].gps_retrieve);
+                                    
+                                    if (debug_level & 1) {
+                                        fprintf(stderr,"Using 0x%02x 0x%02x to retrieve GPS\n",
+                                                '\3',
+                                                devices[i].gps_retrieve);
+                                    }
+                                    port_write_string(i, tmp);
                                 }
-                                sprintf(tmp, "%c%c",
-                                    '\3',
-                                    devices[i].gps_retrieve);
-
-                                if (debug_level & 1) {
-                                    fprintf(stderr,"Using 0x%02x 0x%02x to retrieve GPS\n",
-                                        '\3',
-                                        devices[i].gps_retrieve);
-                                }
-                                port_write_string(i, tmp);
 
                                 // GPS strings are processed in
                                 // UpdateTime function via
