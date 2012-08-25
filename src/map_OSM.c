@@ -1,8 +1,8 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
  *
- * $Id: map_OSM.c,v 1.12 2011/03/27 03:07:22 jedunmire Exp $
+ * $Id: map_OSM.c,v 1.13 2012/08/25 16:38:29 tvrusso Exp $
  *
- * Copyright (C) 2010 The Xastir Group
+ * Copyright (C) 2010-2012 The Xastir Group
  *
  * This file was contributed by Jerry Dunmire, KA6HLD.
  *

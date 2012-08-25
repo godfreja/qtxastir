@@ -1,9 +1,9 @@
 /*
- * $Id: wx.c,v 1.78 2012/08/13 17:22:34 tvrusso Exp $
+ * $Id: wx.c,v 1.79 2012/08/25 16:38:29 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2010  The Xastir Group
+ * Copyright (C) 2000-2012  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -2979,7 +2979,7 @@ void wx_fill_data(int from, int type, unsigned char *data, DataRow *fill) {
               
               
               if (debug_level & 1)
-                fprintf(stdout,"Davis APRS DataLogger Decode $Revision: 1.78 $: wd-%s,ws-%s,wg-%s,t-%s,rh-%s,r24-%s,r00-%s,h-%s,ap-%s,station-%s\n",
+                fprintf(stdout,"Davis APRS DataLogger Decode $Revision: 1.79 $: wd-%s,ws-%s,wg-%s,t-%s,rh-%s,r24-%s,r00-%s,h-%s,ap-%s,station-%s\n",
                         
                         weather->wx_course,weather->wx_speed,weather->wx_gust,
                         weather->wx_temp, weather->wx_rain,

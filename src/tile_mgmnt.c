@@ -1,8 +1,8 @@
 /*
- * $Id: tile_mgmnt.c,v 1.4 2010/09/08 18:13:26 jedunmire Exp $
+ * $Id: tile_mgmnt.c,v 1.5 2012/08/25 16:38:29 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
- * Copyright (C) 2003-2010  The Xastir Group
+ * Copyright (C) 2003-2012  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
