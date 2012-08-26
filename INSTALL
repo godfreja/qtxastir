@@ -1,5 +1,5 @@
 
-$Id: INSTALL,v 1.106 2010/01/31 02:12:23 we7u Exp $
+$Id: INSTALL,v 1.107 2012/08/26 18:34:34 tvrusso Exp $
 
 
 General steps to configure/compile/install Xastir:
@@ -304,7 +304,8 @@ To use online maps or findu.com historical data, you'll need wget or
 To download GPS tracks/waypoints/routes from a Garmin GPS into Xastir,
 converting to Shapefile format maps as it runs, you'll need gpsmanshp and
 GPSMan.  GPSMan 6.0 and later has command-line support built-in so that
-Xastir can control it directly:
+Xastir can control it directly, but only GPSMan 6.1 and later are currently
+usable with Xastir:
     gpsmanshp:
         http://www.ncc.up.pt/gpsmanshp/
     GPSMan:
@@ -795,7 +796,7 @@ First Time Install:
 
      Install gpsmanshp:
 
-     tar xzvf gpsmanshp_1.0.2.tgz
+     tar xzvf gpsmanshp_1.2.2.tgz
      cd gpsmanshp
      make
      su -c 'make install'
