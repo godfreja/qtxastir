@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
-# $Id: acinclude.m4,v 1.85 2010/01/31 02:12:23 we7u Exp $
+# $Id: acinclude.m4,v 1.86 2012/08/26 18:11:09 tvrusso Exp $
 
 # test for devices.  Avoid the tests on Cygwin as they hang on some
 # WinXP boxes.
@@ -406,7 +406,7 @@ if test "${with_mysql+set}" = set; then
     fi
     AC_MSG_RESULT($mysql_has_spatial)
     # if mysql version < 4.1, mysql present but no spatial support 
-    if test "$mysql_has_spatial" == "yes"; then
+    if test "$mysql_has_spatial" = "yes"; then
        # mysql with spatial support
        use_mysql_spatial=yes
        use_spatial_db=yes
