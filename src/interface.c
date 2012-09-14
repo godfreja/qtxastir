@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.301 2012/08/25 16:38:29 tvrusso Exp $
+ * $Id: interface.c,v 1.302 2012/09/14 20:57:12 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8732,7 +8732,12 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
                         && !posit_tx_disable) {
                     port_write_string(port,header_txt);
                 }
-                /*sleep(1);*/
+                usleep(50000); // sleep 50 ms.  This is necessary for
+                               // KAM tncs, which will fail to go into
+                               // converse mode if there is no delay here.
+                               // This delay is small enough that few 
+                               // will notice it, so I'm (TVR) not going to
+                               // waste time making it user-configurable.
                 break;
 
             default: /* port has unknown device_type */

@@ -1,4 +1,4 @@
-# $Id: tnc-startup.kam,v 1.17 2010/01/31 02:12:23 we7u Exp $
+# $Id: tnc-startup.kam,v 1.18 2012/09/14 20:57:11 tvrusso Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -10,12 +10,14 @@
 #myalias WIDE1-1
 #
 INTF TERM
-txu on
+#One KAM user reports this command does not exist on his KAM
+#txu on
 xflow off
 MONITOR ON
 MSTAMP OFF
 HEADERLN OFF
-SCREENLN 0
+#One KAM user reports this command does not exist on his KAM
+#SCREENLN 0
 AUTOLF OFF
 LFADD OFF
 CD SOFT
