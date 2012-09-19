@@ -1,6 +1,6 @@
 /******************************************************************
  *
- * @(#)$Id: db2APRS.c,v 1.13 2012/09/08 22:07:50 tvrusso Exp $
+ * @(#)$Id: db2APRS.c,v 1.14 2012/09/19 14:56:28 tvrusso Exp $
  *
  * Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
  * Portions Copyright (C) 2004-2010 The Xastir Group
@@ -45,6 +45,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
+#include <sys/stat.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>

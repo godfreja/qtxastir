@@ -1,6 +1,6 @@
 /******************************************************************
  *
- * $Id: open2300db2APRS.c,v 1.9 2012/08/31 23:39:01 tvrusso Exp $
+ * $Id: open2300db2APRS.c,v 1.10 2012/09/19 14:56:29 tvrusso Exp $
  *
  * Copyright (C) 2005 Jim Chandler <jim@n0vh.org>
  * Portions Copyright (C) 2004-2010 The Xastir Group
@@ -45,6 +45,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
+#include <sys/stat.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
