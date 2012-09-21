@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
  *
- * $Id: map_OSM.c,v 1.13 2012/08/25 16:38:29 tvrusso Exp $
+ * $Id: map_OSM.c,v 1.14 2012/09/21 05:11:34 tvrusso Exp $
  *
  * Copyright (C) 2010-2012 The Xastir Group
  *
@@ -1240,6 +1240,8 @@ void draw_OSM_tiles (Widget w,
                         fprintf(stderr, "Removing %s\n", tmpString);
                         unlink(tmpString);
                     }
+                    // clear exception so next iteration doesn't fail
+                    GetExceptionInfo(&exception);
 
                     // replace the missing tile with a place holder
                     //(void)strcpy(tile_info->filename, "xc:red");
