@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.808 2012/08/26 18:28:26 tvrusso Exp $
+ * $Id: main.c,v 1.809 2012/09/22 01:32:49 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -9030,11 +9030,18 @@ fprintf(stderr,"Setting up widget's X/Y position at X:%d  Y:%d\n",
             "create_appshell Menu Popup",
             al,
             ac);
+#ifdef XASTIR_XORG_SERVER_175_BUG
+    // This hack is to deal with a bug that was introduced in Xorg server 
+    // version 1.7.5 and promptly fixed right after several distros adopted
+    // that version as their long-term supported version.  This server version
+    // was common in 2010, but should no longer be in the wild much.
+    
 #if XmVersion >= 2000
     XtVaSetValues(right_menu_popup, XmNpopupEnabled, XmPOPUP_DISABLED, NULL);
     XtUngrabButton(da, AnyButton, AnyModifier);
 #else
     XtVaSetValues(right_menu_popup, XmNpopupEnabled, False, NULL);
+#endif
 #endif
     //XtVaSetValues(right_menu_popup, XmNwhichButton, 3, NULL);
 

@@ -1,6 +1,6 @@
 # Process this file with autoconf to produce a configure script.
 
-# $Id: configure.ac,v 1.220 2012/05/06 16:09:07 tvrusso Exp $
+# $Id: configure.ac,v 1.221 2012/09/22 01:32:49 tvrusso Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 
@@ -78,8 +78,15 @@ AC_ARG_WITH(gpsman,[  --without-gpsman          Disable gpsman features.],use_gp
 
 AC_ARG_WITH(errorpopups,[  --with-errorpopups        Send error popups to stderr.],use_err_popups=$withval)
 
-AC_ARG_WITH(lsb, [  --with-lsb                Enable Linux Standard Base.],use_lsb=$withval)
+AC_ARG_WITH(lsb,[  --with-lsb                Enable Linux Standard Base.],use_lsb=$withval)
 
+AC_ARG_WITH([xorg_175_workaround], 
+            [AS_HELP_STRING([--with-xorg_175_workaround],[Employ workaround for broken Xorg 1.7.5 server])],
+            [],
+            [with_xorg_175_workaround=no])
+AS_IF([test "x$with_xorg_175_workaround" != xno],
+             [AC_DEFINE([XASTIR_XORG_SERVER_175_BUG], [1],
+                       [Define if you need to work with the broken Xorg server 1.7.5])])
 
 # Now that all the various "use_" variables are set, probe for binaries.
 XASTIR_DETECT_BINARIES
