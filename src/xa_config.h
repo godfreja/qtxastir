@@ -1,5 +1,5 @@
 /*
- * $Id: xa_config.h,v 1.12 2010/01/31 02:12:25 we7u Exp $
+ * $Id: xa_config.h,v 1.13 2012/09/23 16:19:22 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -27,7 +27,7 @@
 
 extern time_t next_time;
 
-char *get_user_base_dir(char *dir);
+char *get_user_base_dir(char *dir, char *dest, size_t dest_size);
 char *get_data_base_dir(char *dir);
 void save_data(void);
 void load_data_or_default(void);

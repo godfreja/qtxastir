@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: map_shp.c,v 1.143 2012/08/25 16:38:29 tvrusso Exp $
+ * $Id: map_shp.c,v 1.144 2012/09/23 16:19:22 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -343,7 +343,7 @@ void create_map_from_trail(char *call_sign) {
         double *x;
         double *y;
         double *z;
-
+        char temp_base_dir[MAX_VALUE];
 
         count = 0;
         ptr = p_station->oldest_trackpoint;
@@ -410,7 +410,7 @@ void create_map_from_trail(char *call_sign) {
         //
         xastir_snprintf(temp, sizeof(temp),
             "%s/",
-            get_user_base_dir("tracklogs"));
+            get_user_base_dir("tracklogs", temp_base_dir, sizeof(temp_base_dir)));
 
         // Create filename
         xastir_snprintf(temp2, sizeof(temp2),

@@ -1,5 +1,5 @@
 /*
- * $Id: track_gui.c,v 1.76 2012/08/25 16:38:29 tvrusso Exp $
+ * $Id: track_gui.c,v 1.77 2012/09/23 16:19:22 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -633,6 +633,9 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
     pthread_t download_trail_thread;
     static XtPointer download_client_data = NULL;
 
+    char tmp_base_dir[MAX_VALUE];
+
+    get_user_base_dir("tmp",tmp_base_dir, sizeof(tmp_base_dir));
 
     // If we're already fetching a trail, we shouldn't be calling
     // this callback function.  Get out.
@@ -662,7 +665,7 @@ void Download_trail_now(Widget w, XtPointer clientData, XtPointer callData) {
     xastir_snprintf(log_filename,
         sizeof(log_filename),
         "%s/map.log",
-        get_user_base_dir("tmp"));
+        tmp_base_dir);
 
     // Erase any previously existing local file by the same name.
     // This avoids the problem of having an old tracklog here and

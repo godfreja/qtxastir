@@ -1,5 +1,5 @@
 /*
- * $Id: messages.c,v 1.79 2012/08/25 16:38:29 tvrusso Exp $
+ * $Id: messages.c,v 1.80 2012/09/23 16:19:22 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -221,11 +221,15 @@ int group_active(char *from) {
     static struct stat current_group_stat;
     struct stat group_stat;
     static char altgroup[10];
+    char group_data_path[MAX_VALUE];
+
+    get_user_base_dir(group_data_file, group_data_path, 
+                      sizeof(group_data_path));
 
     (void)remove_trailing_spaces(from);
 
     // If we cycle to/from special group or file changes, rebuild group list.
-    if ((!stat( get_user_base_dir(group_data_file), &group_stat )
+    if ((!stat( group_data_path, &group_stat )
             && (current_group_stat.st_size != group_stat.st_size
                 || current_group_stat.st_mtime != group_stat.st_mtime
                 || current_group_stat.st_ctime != group_stat.st_ctime))) {
@@ -234,7 +238,7 @@ int group_active(char *from) {
 // as true.  Commenting it out of the conditional.  --we7u.
 //                || (altgroup && strcasecmp(altgroup, VERSIONFRM))) {
 
-        group_build_list( get_user_base_dir(group_data_file) );
+        group_build_list( group_data_path );
         current_group_stat = group_stat;
         xastir_snprintf(altgroup,sizeof(altgroup),"%s",VERSIONFRM);
     }
