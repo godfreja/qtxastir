@@ -1,6 +1,6 @@
 #!/usr/bin/perl -W
 #
-# $Id: get-fcc-rac.pl,v 1.9 2012/10/05 19:56:24 we7u Exp $
+# $Id: get-fcc-rac.pl,v 1.10 2012/10/11 18:25:47 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -43,13 +43,14 @@ chdir "/var/tmp";
 #
 
 $file  = "amateur.zip";
-$file2 = "amateur.rpt";
+#$file2 = "amateur.rpt";
+$file2 = "amateur.txt";
 
 
 print STDERR "*********************************\n";
 print STDERR "*** Fetching the RAC database ***\n";
 print STDERR "*********************************\n";
-`wget -c http://205.236.99.41/%7Eindicatif/download/$file`;
+#`wget -c http://205.236.99.41/%7Eindicatif/download/$file`;
 `wget -c http://apc-cap.ic.gc.ca/datafiles/$file`;
 
 
