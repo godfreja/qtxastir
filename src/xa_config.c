@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.191 2012/09/23 16:19:22 tvrusso Exp $
+ * $Id: xa_config.c,v 1.192 2012/10/22 23:40:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -964,6 +964,14 @@ fprintf(stderr,"X:%d  y:%d\n", (int)x_return, (int)y_return);
                 name_temp);
             strncat (name, "SETTIME", sizeof(name) - 1 - strlen(name));
             store_int (fout, name, devices[i].set_time);
+
+            xastir_snprintf(name,
+                sizeof(name),
+                "%s",
+                name_temp);
+            strncat (name, "TNCEXTRADELAY", sizeof(name) - 1 - strlen(name));
+            store_int (fout, name, devices[i].tnc_extra_delay);
+ 
         }
         /* TNC */
         store_int (fout, "TNC_LOG_DATA", log_tnc_data);
@@ -2088,19 +2096,26 @@ void load_data_or_default(void) {
         strncat (name, "ONSTARTUP", sizeof(name) - 1 - strlen(name));
         devices[i].connect_on_startup = get_int (name, 0,1,0);
 
-                xastir_snprintf(name,
-                    sizeof(name),
-                    "%s",
-                    name_temp);
-                strncat (name, "GPSRETR", sizeof(name) - 1 - strlen(name));
-                devices[i].gps_retrieve = get_int (name, 0,255,DEFAULT_GPS_RETR);
+        xastir_snprintf(name,
+            sizeof(name),
+            "%s",
+            name_temp);
+        strncat (name, "GPSRETR", sizeof(name) - 1 - strlen(name));
+        devices[i].gps_retrieve = get_int (name, 0,255,DEFAULT_GPS_RETR);
 
-                xastir_snprintf(name,
-                    sizeof(name),
-                    "%s",
-                    name_temp);
-                strncat (name, "SETTIME", sizeof(name) - 1 - strlen(name));
-                devices[i].set_time = get_int (name, 0,1,0);
+        xastir_snprintf(name,
+            sizeof(name),
+            "%s",
+            name_temp);
+        strncat (name, "SETTIME", sizeof(name) - 1 - strlen(name));
+        devices[i].set_time = get_int (name, 0,1,0);
+
+        xastir_snprintf(name,
+            sizeof(name),
+            "%s",
+            name_temp);
+        strncat (name, "TNCEXTRADELAY", sizeof(name) - 1 - strlen(name));
+        devices[i].tnc_extra_delay = get_int (name, 0,1,0);
     }
 
     /* TNC */

@@ -1,5 +1,5 @@
 /*
- * $Id: interface.h,v 1.46 2012/07/27 19:58:29 tvrusso Exp $
+ * $Id: interface.h,v 1.47 2012/10/22 23:40:09 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -164,6 +164,7 @@ typedef struct {
     int    reconnect;                             /* reconnect on net failure                */
     int    connect_on_startup;                    /* connect to this device on startup       */
     int    gps_retrieve;                          /* Character to cause SERIAL_TNC_AUX_GPS to spit out current GPS data */
+    int    tnc_extra_delay;                       /* Introduces fixed delay when talking to TNC in command-mode */
     int    set_time;                              /* Set System Time from GPS on this port   */
     char   txdelay[4];                            /* KISS parameter */
     char   persistence[4];                        /* KISS parameter */

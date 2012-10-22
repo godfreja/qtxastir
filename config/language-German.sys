@@ -1,4 +1,4 @@
-# $Id: language-German.sys,v 1.238 2012/08/23 00:41:06 tvrusso Exp $
+# $Id: language-German.sys,v 1.239 2012/10/22 23:40:09 we7u Exp $
 #
 # Copyright (C) 2000-2010  The Xastir Group
 #
@@ -923,6 +923,7 @@ UNIOP00034|min||
 UNIOP00035|hr||
 UNIOP00036|Tag||
 UNIOP00037|Send Control-E to get GPS data?||
+UNIOP00038|Add Delay||
 #
 # popUp "Stationsauswahl"
 STCHO00001|Stationsauswahl||
