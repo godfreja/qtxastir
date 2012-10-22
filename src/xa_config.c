@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xa_config.c,v 1.192 2012/10/22 23:40:09 we7u Exp $
+ * $Id: xa_config.c,v 1.193 2012/10/22 23:59:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -2115,7 +2115,7 @@ void load_data_or_default(void) {
             "%s",
             name_temp);
         strncat (name, "TNCEXTRADELAY", sizeof(name) - 1 - strlen(name));
-        devices[i].tnc_extra_delay = get_int (name, 0,1,0);
+        devices[i].tnc_extra_delay = get_int (name, 0,9999999,0);
     }
 
     /* TNC */

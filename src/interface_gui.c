@@ -1,5 +1,5 @@
 /*
- * $Id: interface_gui.c,v 1.126 2012/10/22 23:40:09 we7u Exp $
+ * $Id: interface_gui.c,v 1.127 2012/10/22 23:59:55 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -396,7 +396,7 @@ begin_critical_section(&devices_lock, "interface_gui.c:Config_TNC_change_data" )
         case DEVICE_SERIAL_TNC_HSP_GPS:
         case DEVICE_SERIAL_TNC_AUX_GPS:
             if (XmToggleButtonGetState(TNC_extra_delay))
-                devices[TNC_port].tnc_extra_delay=1;
+                devices[TNC_port].tnc_extra_delay=1000000;  // 1,000,000 us
             else
                 devices[TNC_port].tnc_extra_delay=0;
             break;
