@@ -1,5 +1,5 @@
 /*
- * $Id: interface.c,v 1.304 2012/10/22 23:59:55 we7u Exp $
+ * $Id: interface.c,v 1.305 2012/10/23 00:37:22 tvrusso Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -8733,16 +8733,10 @@ begin_critical_section(&devices_lock, "interface.c:output_my_aprs_data" );
                         && !posit_tx_disable) {
                     port_write_string(port,header_txt);
                 }
-/*
-                usleep(50000); // sleep 50 ms.  This is necessary for
-                               // KAM tncs, which will fail to go into
-                               // converse mode if there is no delay here.
-                               // This delay is small enough that few 
-                               // will notice it, so I'm (TVR) not going to
-                               // waste time making it user-configurable.
-*/
-                // Delay a bit if the user clicked on the "Add Delay" togglebutton
-                // in the port's interface properties dialog.  Useful for KAM TNC's.
+                // Delay a bit if the user clicked on the "Add Delay" 
+                // togglebutton in the port's interface properties dialog.  
+                // This is primarily needed for KAM TNCs, which will fail to 
+                // go into converse mode if there is no delay here.
                 if (devices[port].tnc_extra_delay != 0) {
                     usleep(devices[port].tnc_extra_delay);
                 }
