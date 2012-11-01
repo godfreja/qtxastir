@@ -1,6 +1,6 @@
-# $Id: tnc-startup.kam,v 1.18 2012/09/14 20:57:11 tvrusso Exp $
+# $Id: tnc-startup.kam,v 1.19 2012/11/01 18:57:19 we7u Exp $
 #
-# Copyright (C) 2000-2010  The Xastir Group
+# Copyright (C) 2000-2012  The Xastir Group
 #
 # This is the TNC Startup file for a Kantronics KAM TNC. 
 # lines that begin with a pound sign are comments.

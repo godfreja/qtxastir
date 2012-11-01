@@ -1,6 +1,6 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
  *
- * $Id: map_OSM.c,v 1.15 2012/09/23 16:19:22 tvrusso Exp $
+ * $Id: map_OSM.c,v 1.16 2012/11/01 18:57:19 we7u Exp $
  *
  * Copyright (C) 2010-2012 The Xastir Group
  *
@@ -24,7 +24,7 @@
  *
  * This file derived from map_tiger.c which has the following copyrights:
  *    Copyright (C) 1999,2000  Frank Giannandrea
- *    Copyright (C) 2000-2010  The Xastir Group
+ *    Copyright (C) 2000-2012  The Xastir Group
  */
 
 

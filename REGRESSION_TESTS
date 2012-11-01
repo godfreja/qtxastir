@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: REGRESSION_TESTS,v 1.23 2010/01/31 02:12:23 we7u Exp $
+# $Id: REGRESSION_TESTS,v 1.24 2012/11/01 18:57:18 we7u Exp $
 
 # Simple regression tests.  Run through various combinations of the
 # configure flags, create a lot file, then grep for "warning" or
@@ -8,7 +8,7 @@
 # run as a normal user on a system that has all of the optional
 # libraries installed and usable.
 #
-# Copyright (C)  2005-2010  The Xastir Group.
+# Copyright (C)  2005-2012  The Xastir Group.
 #
 # Licensed under the GPL license.  See the file "COPYING" for more
 # information.

@@ -1,6 +1,6 @@
-# $Id: nwsmzddmmyy_09.dbfawk,v 1.2 2010/01/31 02:12:23 we7u Exp $
+# $Id: nwsmzddmmyy_09.dbfawk,v 1.3 2012/11/01 18:57:19 we7u Exp $
 #
-# Copyright (C) 2003-2010  The Xastir Group
+# Copyright (C) 2003-2012  The Xastir Group
 #
 # This dbfawk file is used to map arbitrary dbf data that accompanies
 # a shapefile into Xastir canoncical values of:

@@ -1,6 +1,6 @@
 
-# $Id: Makefile.am,v 1.15 2010/07/11 06:31:37 we7u Exp $
-# Copyright (C) 2004-2010  The Xastir Group
+# $Id: Makefile.am,v 1.16 2012/11/01 18:57:19 we7u Exp $
+# Copyright (C) 2004-2012  The Xastir Group
 
 noinst_LIBRARIES=libshape.a
 

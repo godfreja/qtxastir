@@ -1,8 +1,8 @@
 //
-// $Id: defs.h,v 1.5 2010/01/31 02:12:23 we7u Exp $
+// $Id: defs.h,v 1.6 2012/11/01 18:57:18 we7u Exp $
 //
 // Copyright (C) 2005 Jim Chandler <jim@n0vh.org>
-// Portions Copyright (C) 2004-2010 The Xastir Group
+// Portions Copyright (C) 2004-2012 The Xastir Group
 //
 //
 // Dummy info here for now...

@@ -1,6 +1,6 @@
 
-# $Id: Makefile.am,v 1.12 2010/12/05 01:37:53 tvrusso Exp $
-# Copyright (C) 2004-2010  The Xastir Group
+# $Id: Makefile.am,v 1.13 2012/11/01 18:57:19 we7u Exp $
+# C2pyright (C) 2004-2012  The Xastir Group
 
 EXTRA_DIST=Makefile_orig ShapeFileII.pas dbfcat.c dbfinfo.c makefile.vc \
 	my_nan.h shpcat.c shpcentrd.c shpdata.c shpdxf.c shpfix.c \

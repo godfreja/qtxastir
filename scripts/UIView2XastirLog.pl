@@ -1,10 +1,10 @@
 #!/usr/bin/perl -W
 #
-# $Id: UIView2XastirLog.pl,v 1.2 2010/01/31 02:12:23 we7u Exp $
+# $Id: UIView2XastirLog.pl,v 1.3 2012/11/01 18:57:19 we7u Exp $
 #
 # Script to convert a UI-View log file to an Xastir log file.
 #
-# Copyright (C) 2009-2010  The Xastir Group
+# Copyright (C) 2009-2012  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

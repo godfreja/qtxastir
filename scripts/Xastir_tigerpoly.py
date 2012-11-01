@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 ###############################################################################
-# $Id: Xastir_tigerpoly.py,v 1.10 2010/01/31 02:12:23 we7u Exp $
+# $Id: Xastir_tigerpoly.py,v 1.11 2012/11/01 18:57:19 we7u Exp $
 #
-# Portions Copyright (C) 2004-2010  The Xastir Group
+# Portions Copyright (C) 2004-2012  The Xastir Group
 #
 # Modified version of GDAL/OGR "tigerpoly.py" script (as described below)
 # adapted to assemble information from more tables of the TIGER/Line data

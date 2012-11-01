@@ -1,6 +1,6 @@
-# $Id: OSM_Cloudmade_poi.dbfawk,v 1.1 2010/08/04 11:12:18 we7u Exp $
+# $Id: OSM_Cloudmade_poi.dbfawk,v 1.2 2012/11/01 18:57:18 we7u Exp $
 #
-# Copyright (C) 2003-2010  The Xastir Group
+# Copyright (C) 2003-2012  The Xastir Group
 #
 # This dbfawk file is used to map arbitrary dbf data that
 # accompanies a shapefile into Xastir canonical values of:

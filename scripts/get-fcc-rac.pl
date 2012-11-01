@@ -1,8 +1,8 @@
 #!/usr/bin/perl -W
 #
-# $Id: get-fcc-rac.pl,v 1.10 2012/10/11 18:25:47 we7u Exp $
+# $Id: get-fcc-rac.pl,v 1.11 2012/11/01 18:57:19 we7u Exp $
 #
-# Copyright (C) 2000-2010  The Xastir Group
+# Copyright (C) 2000-2012  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

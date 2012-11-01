@@ -1,6 +1,6 @@
-# $Id: Makefile.am,v 1.52 2010/09/08 18:13:26 jedunmire Exp $
+# $Id: Makefile.am,v 1.53 2012/11/01 18:57:19 we7u Exp $
 #
-# Copyright (C) 2000-2010  The Xastir Group
+# Copyright (C) 2000-2012  The Xastir Group
 #
 
 bin_PROGRAMS = xastir xastir_udp_client testdbfawk

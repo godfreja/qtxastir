@@ -1,9 +1,9 @@
 /*
- * $Id: interface.h,v 1.47 2012/10/22 23:40:09 we7u Exp $
+ * $Id: interface.h,v 1.48 2012/11/01 18:57:19 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
- * Copyright (C) 2000-2010  The Xastir Group
+ * Copyright (C) 2000-2012  The Xastir Group
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

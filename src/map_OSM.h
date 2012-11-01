@@ -1,7 +1,7 @@
 /*
- * $Id: map_OSM.h,v 1.5 2010/08/14 21:32:43 jedunmire Exp $
+ * $Id: map_OSM.h,v 1.6 2012/11/01 18:57:19 we7u Exp $
  *
- * Copyright (C) 2010 The Xastir Group
+ * Copyright (C) 2012 The Xastir Group
  *
  * This file was contributed by Jerry Dunmire, KA6HLD.
  *

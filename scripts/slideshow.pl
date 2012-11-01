@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $Id: slideshow.pl,v 1.2 2010/01/31 02:12:23 we7u Exp $
+# $Id: slideshow.pl,v 1.3 2012/11/01 18:57:19 we7u Exp $
 #
 # Script to create a slideshow from Xastir snapshot images.  Note
 # that this script is Unix/Linux-centric due to the use of the $HOME
@@ -8,7 +8,7 @@
 #
 # Written 20090415 by Curt Mills, WE7U
 #
-# Copyright (C) 2010  The Xastir Group
+# Copyright (C) 2012  The Xastir Group
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

@@ -1,8 +1,8 @@
 #
-# $Id: configure.ac,v 1.9 2012/08/31 23:39:00 tvrusso Exp $
+# $Id: configure.ac,v 1.10 2012/11/01 18:57:18 we7u Exp $
 #
 # Copyright (C) 2004 Bruce Bennett <bruts@adelphia.net>
-# Portions Copyright (C) 2004-2010  The Xastir Group
+# Portions Copyright (C) 2004-2012  The Xastir Group
 # (Modified for the Xastir project under GPL license)
 #
 #

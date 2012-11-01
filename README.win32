@@ -1,5 +1,5 @@
 
-$Id: README.win32,v 1.150 2010/01/31 02:12:23 we7u Exp $
+$Id: README.win32,v 1.151 2012/11/01 18:57:18 we7u Exp $
 
 ---------------------------------------------------------------------
 Note that there are other options to get Xastir running on Win32.
@@ -1353,5 +1353,5 @@ complained about not finding libproj:
 
 APRS(tm) is a Trademark of Bob Bruninga
 
-Copyright (C) 2003-2010 The Xastir Group
+Copyright (C) 2003-2012 The Xastir Group
 

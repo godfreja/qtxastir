@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# $Id: LSB-BUILD-ALL,v 1.16 2010/01/31 02:12:23 we7u Exp $
-# Copyright (C) 2006-2010  The Xastir Group
+# $Id: LSB-BUILD-ALL,v 1.17 2012/11/01 18:57:19 we7u Exp $
+# Copyright (C) 2006-2012  The Xastir Group
 
 # NOTE:
 # "Free Standards Group, FSG, Linux Standard Base, LSB, Free

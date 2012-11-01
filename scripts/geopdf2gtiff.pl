@@ -1,9 +1,9 @@
 #!/usr/bin/env perl
 
 ###############################################################################
-# $Id: geopdf2gtiff.pl,v 1.4 2011/09/05 20:24:00 tvrusso Exp $
+# $Id: geopdf2gtiff.pl,v 1.5 2012/11/01 18:57:19 we7u Exp $
 #
-# Portions Copyright (C) 2004-2011  The Xastir Group
+# Portions Copyright (C) 2004-2012  The Xastir Group
 #
 # Script to convert a GeoPDF file with included neatline into a collar-stripped
 # geotiff in EPSG:4326 projection (WGS84 equidistant cylindrical) in 8-bit
@@ -16,9 +16,9 @@
 # This also depends on the -cutline and -crop_to_cutline features of 
 # gdalwarp, which are only present in versions of GDAL after 1.8.1.  
 # 
-# Last Edit:$Date: 2011/09/05 20:24:00 $
-# Revision:$Revision: 1.4 $
-# Last Edited By: $Author: tvrusso $
+# Last Edit:$Date: 2012/11/01 18:57:19 $
+# Revision:$Revision: 1.5 $
+# Last Edited By: $Author: we7u $
 ###############################################################################
 
 use Getopt::Long;

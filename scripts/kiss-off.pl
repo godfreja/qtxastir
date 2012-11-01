@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
-# $Id: kiss-off.pl,v 1.2 2010/01/31 02:12:23 we7u Exp $
+# $Id: kiss-off.pl,v 1.3 2012/11/01 18:57:19 we7u Exp $
 
-# Copyright (C) 2004-2010  Curt Mills, WE7U
+# Copyright (C) 2004-2012  Curt Mills, WE7U
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
