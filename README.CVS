@@ -1,5 +1,5 @@
 
-$Id: README.CVS,v 1.27 2012/11/13 05:26:55 we7u Exp $
+$Id: README.CVS,v 1.28 2012/11/13 23:53:39 tvrusso Exp $
 
 
 CVS Instructions:
@@ -322,13 +322,13 @@ NOTE:  Use "B_" as a prefix on all of our branches and branch-tags so that we ca
         /home/<user>/src/xastir/branchname1/    # branchname1 development
         /home/<user>/src/xastir/branchname2/    # branchname2 development
 
-    Then perform these commands to check out the trunk into your new clean
+    Then perform these commands to check out the branch into your new clean
     directory:
 
         cd xastir/branchname
-        cvs co -r branchname xastir     # Fetch trunk/HEAD code & update to the branch
+        cvs co -r branchname xastir     # Fetch the branch code
 
-    After you do the "update" command, the "-r" option is sticky on all the
+    After you do the "co" command, the "-r" option is sticky on all the
     files in the tree, so any cvs commits there will commit to the new branch
     instead of the trunk.  Pay attention to your directory structure from that
     point on:  It's important to know whether you're making changes on a branch
@@ -386,7 +386,7 @@ NOTE:  Use "T_START_" as a prefix for this start tag of a new branch to make the
     TBD.
 
     A note from Tom regarding merges:  Use the "-kk" option on all merges, otherwise every
-    file that has "$Revision: 1.27 $" or "$Date: 2012/11/13 05:26:55 $" in it will get flagged as a chnage -- possibly
+    file that has "$Revision: 1.28 $" or "$Date: 2012/11/13 23:53:39 $" in it will get flagged as a chnage -- possibly
     even a conflict -- even if that's the only difference between branch and head.  "-kk"
     on a cvs update doesn't do substitution on those tags, and so only files with real
     changes will get updated.
