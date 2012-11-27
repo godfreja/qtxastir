@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.40 2012/03/02 20:26:50 we7u Exp $
+# $Id: Makefile.am,v 1.41 2012/11/27 04:41:23 tvrusso Exp $
 #
 # Copyright (C) 2000-2012  The Xastir Group
 #
@@ -47,3 +47,6 @@ dist_scripts_DATA = \
     xastir-migrate.sh \
     Xastir_tigerpoly.py
 
+install-data-hook:
+	cd $(DESTDIR)$(scriptsdir) && \
+	chmod a+x *.sh *.pl *.py get-* gpx2* *.bash
