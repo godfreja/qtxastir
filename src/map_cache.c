@@ -1,5 +1,5 @@
 /*
- * $Id: map_cache.c,v 1.35 2012/09/23 16:19:22 tvrusso Exp $
+ * $Id: map_cache.c,v 1.36 2013/01/18 17:17:25 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -216,7 +216,7 @@ int map_cache_put( char * map_cache_url, char * map_cache_file ){
         dbp->err(dbp, mc_ret, "%s", mc_database_filename);
         db_strerror(mc_ret); 
     }
-#elif	 (DB_VERSION_MAJOR==4 && DB_VERSION_MINOR>=1 )
+#else
 
     if ((mc_ret = dbp->open(dbp,
             NULL,mc_database_filename, NULL, DB_CREATE, DB_BTREE, 0664)) != 0) {
@@ -457,7 +457,7 @@ set_dangerous("map_cache_get:dbp->open 1");
     }
 clear_dangerous();
 
-#elif	 (DB_VERSION_MAJOR==4 && DB_VERSION_MINOR>=1 )
+#else
 
 set_dangerous("map_cache_get:dbp->open 2");
     if ((mc_ret = dbp->open(dbp,
@@ -699,7 +699,7 @@ int map_cache_del( char * map_cache_url ){
         // db_strerror(mc_ret);
         return(1);
     }
-#elif	 (DB_VERSION_MAJOR==4 && DB_VERSION_MINOR>=1 )
+#else
 	
     if ((mc_ret = dbp->open(dbp,
             NULL,mc_database_filename, NULL, DB_CREATE, DB_BTREE, 0664)) != 0) {
