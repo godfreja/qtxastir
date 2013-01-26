@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QtNetwork>
-
+#include "netinterface.h"
 
 namespace Ui {
     class MainWindow;
@@ -17,11 +17,9 @@ public:
 
 private slots:
     void connectToServer();
-    void updateList();
-    void connectionClosedByServer();
-    void error();
-    void nowConnected();
+    void newData(QString);
     void closeConnection();
+    void statusChanged(PacketInterface::Device_Status newState);
 
 protected:
     void changeEvent(QEvent *e);
@@ -30,6 +28,7 @@ private:
     Ui::MainWindow *ui;
 
     QTcpSocket tcpSocket;
+    NetInterface netInterface;
     QString packetDisplay;
     int total_lines;
 };

@@ -11,9 +11,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    packetinterface.cpp \
+    netinterface.cpp
 
 HEADERS  += \
-    xastir.h
+    xastir.h \
+    packetinterface.h \
+    netinterface.h
 
 FORMS    += mainwindow.ui
