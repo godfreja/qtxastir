@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QtNetwork>
-#include "netinterface.h"
+#include "packetinterface.h"
+#include "interfacemanager.h"
+#include "interfacecontroldialog.h"
 
 namespace Ui {
     class MainWindow;
@@ -15,20 +17,25 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+    void interfaceControlAction();
+
 private slots:
-    void connectToServer();
-    void newData(QString);
-    void closeConnection();
-    void statusChanged(PacketInterface::Device_Status newState);
+    void newInterface(PacketInterface*);
+    void newData(PacketInterface *, QString);
+    //void closeConnection();
+    //void statusChanged(PacketInterface::Device_Status newState);
+
 
 protected:
     void changeEvent(QEvent *e);
 
 private:
     Ui::MainWindow *ui;
+    InterfaceControlDialog *interfaceControlDialog;
 
     QTcpSocket tcpSocket;
-    NetInterface netInterface;
+    InterfaceManager interfaceManager;
     QString packetDisplay;
     int total_lines;
 };

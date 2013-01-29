@@ -22,51 +22,35 @@
  * Look at the README for more information on the program.
  */
 
-#ifndef NETINTERFACE_H
-#define NETINTERFACE_H
+#ifndef NETINTERFACEPROPERTIESDIALOG_H
+#define NETINTERFACEPROPERTIESDIALOG_H
 
-#include "packetinterface.h"
-#include <QtNetwork>
+#include <QDialog>
+#include "netinterface.h"
+#include "interfacemanager.h"
 
-class NetInterface : public PacketInterface
+namespace Ui {
+class NetInterfacePropertiesDialog;
+}
+
+class NetInterfacePropertiesDialog : public QDialog
 {
     Q_OBJECT
-
+    
 public:
-    NetInterface(int);
-    void start(void);
-    void stop(void);
-    virtual QString deviceName();
-    virtual QString deviceDescription();
+    explicit NetInterfacePropertiesDialog(InterfaceManager& manager, NetInterface *interface, bool isItNew, QWidget *parent = 0);
+    ~NetInterfacePropertiesDialog();
+    
+public slots:
+    void accept();
+    void reject();
 
-    QString getHostName(void);
-    void setHostName(QString);
-    QString getPortString(void);
-    void setPortString(QString);
-    QString getCallSign(void);
-    void setCallsign(QString);
-    QString getPasscode(void);
-    void setPasscode(QString newPasscode);
-    QString getFilter(void);
-    void setFilter(QString newFilter);
-
-
-protected:
-    QTcpSocket tcpSocket;
-    QString hostName;
-    QString portString;
-    QString callsign;  // Should this be in the base class??
-    QString passcode;
-    QString filter;
-
-private slots:
-    void connectToServer();
-    void connectionClosedByServer();
-    void error();
-    void nowConnected();
-    void closeConnection();
-    void incomingData();
+private:
+    Ui::NetInterfacePropertiesDialog *ui;
+    InterfaceManager& theManager;
+    NetInterface *theInterface;
+    bool newInterface;
 
 };
 
-#endif // NETINTERFACE_H
+#endif // NETINTERFACEPROPERTIESDIALOG_H

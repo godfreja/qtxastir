@@ -1,18 +1,19 @@
 #include "ui_mainwindow.h"
+#include "interfacecontroldialog.h"
 #include "xastir.h"
+#include <iostream>
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    ui->disconnectServerButton->setEnabled(false);
-
-    connect(ui->connectServerButton, SIGNAL(clicked()), this, SLOT(connectToServer()));
-    connect(ui->disconnectServerButton, SIGNAL(clicked()), this, SLOT(closeConnection()));
-    connect(&netInterface,SIGNAL(interfaceChangedState(PacketInterface::Device_Status)), this, SLOT(statusChanged(PacketInterface::Device_Status)));
-    connect(&netInterface,SIGNAL(packetReceived(QString)), this, SLOT(newData(QString)));
+    interfaceControlDialog = NULL;
+    connect(&interfaceManager, SIGNAL(interfaceAdded(PacketInterface*)), this, SLOT(newInterface(PacketInterface*)));
+ //   connect(&netInterface,SIGNAL(interfaceChangedState(PacketInterface::Device_Status)), this, SLOT(statusChanged(PacketInterface::Device_Status)));
+ //   connect(&netInterface,SIGNAL(packetReceived(PacketInterface *, QString)), this, SLOT(newData(PacketInterface *,QString)));
     total_lines = 0;
 }
 
@@ -33,46 +34,18 @@ void MainWindow::changeEvent(QEvent *e)
     }
 }
 
-void MainWindow::statusChanged(PacketInterface::Device_Status newState)
+void MainWindow::newInterface(PacketInterface *iface)
 {
-    if( newState == PacketInterface::DEVICE_UP)
-    {
-        ui->disconnectServerButton->setEnabled(true);
-        ui->connectServerButton->setEnabled(false);
-    }
-    else
-    {
-        ui->disconnectServerButton->setEnabled(false);
-        ui->connectServerButton->setEnabled(true);
-    }
+    connect(iface, SIGNAL(packetReceived(PacketInterface*,QString)), this, SLOT(newData(PacketInterface*,QString)));
 }
 
-void MainWindow::connectToServer ()
-{
-    QString host = ui->InternetHost->text();
-    QString portStr = ui->InternetPort->text();
-    netInterface.setHostName(ui->InternetHost->text());
-    netInterface.setPortString(ui->InternetPort->text());
-    netInterface.setCallsign(ui->Callsign->text().toUpper());
-    netInterface.setPasscode(ui->Passcode->text());
-    netInterface.setFilter(ui->Filter->text());
-    netInterface.start();
-
-#if 0
-    // Send a posit to the server
-    if (callsign.startsWith("WE7U")) {
-        tcpSocket.write( "WE7U>APX201:=/6<A5/VVOx   SCVSAR\r\n" );
-    }
-#endif
-}
-
-void MainWindow::newData (QString data)
+void MainWindow::newData (PacketInterface *device, QString data)
 {
     int max_lines = 15;
     QString tmp;
 
 
-    packetDisplay.append(data + "\n");
+    packetDisplay.append(device->deviceName() + "-> " + data + "\n");
 
     if (total_lines >= max_lines) {
         int ii = packetDisplay.indexOf("\n");
@@ -86,8 +59,12 @@ void MainWindow::newData (QString data)
     ui->incomingPackets->setText(packetDisplay);
 }
 
-void MainWindow::closeConnection ()
+void MainWindow::interfaceControlAction()
 {
-    netInterface.stop();
-}
+    if( interfaceControlDialog == NULL) {
+        interfaceControlDialog = new InterfaceControlDialog(interfaceManager, this);
+    }
+    interfaceControlDialog->show();
+    interfaceControlDialog->raise();
 
+}

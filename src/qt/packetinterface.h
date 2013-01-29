@@ -1,3 +1,28 @@
+/* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
+ * $Id: main.c,v 1.810 2012/09/23 16:19:22 tvrusso Exp $
+ *
+ * XASTIR, Amateur Station Tracking and Information Reporting
+ * Copyright (C) 1999,2000  Frank Giannandrea
+ * Copyright (C) 2000-2013  The Xastir Group
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ * Look at the README for more information on the program.
+ */
+
+
 #ifndef PACKETINTERFACE_H
 #define PACKETINTERFACE_H
 
@@ -26,17 +51,27 @@ public:
     bool transmitAllowed();
     Device_Status deviceStatus();
 
+    virtual QString deviceName() = 0;
+    virtual QString deviceDescription() = 0;
+
+    bool getActivateOnStartup() {return activateOnStartup;}
+    void setActivateOnStartup(bool newValue) { activateOnStartup = newValue; }
+    int getInterfaceNumber() { return interfaceNumber; }
+    void setInterfaceNumber(int newValue) { interfaceNumber = newValue; }
+    void setTransmitAllowed(bool newValue) { allowTransmit = newValue; }
 
 
 signals:
-    void packetReceived(QString data);
-    void interfaceChangedState(PacketInterface::Device_Status state);
+    void packetReceived(PacketInterface *device, QString data);
+    void interfaceChangedState(PacketInterface *iface, PacketInterface::Device_Status state);
 
 
 public slots:
     
 protected:
     bool allowTransmit;
+    bool activateOnStartup;
+    int interfaceNumber;
     Device_Status deviceState;
 };
 
