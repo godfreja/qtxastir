@@ -1,4 +1,4 @@
-# $Id: Makefile.am,v 1.51 2012/05/14 20:38:09 tvrusso Exp $
+# $Id: Makefile.am,v 1.52 2012/12/04 19:29:25 tvrusso Exp $
 #
 # Copyright (C) 2000-2012  The Xastir Group
 #
@@ -111,7 +111,7 @@ EXTRA_DIST = \
 config_DATA = ${EXTRA_DIST}
 
 install-exec-hook:
-	rm -f \$(configdir)/nwsfz_ddmmyy.dbfawk
+	-rm -f $(DESTDIR)$(configdir)/nwsfz_ddmmyy.dbfawk
 
 language-ElmerFudd.sys: language-English.sys
 	$(top_srcdir)/scripts/langElmerFudd.pl -split >$@ <$(srcdir)/language-English.sys
