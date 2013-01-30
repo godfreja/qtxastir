@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.1.2.2 2013/01/30 23:47:23 we7u Exp $
+ * $Id: interfacecontroldialog.h,v 1.1.2.1 2013/01/30 23:47:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,46 +22,39 @@
  * Look at the README for more information on the program.
  */
 
-#ifndef XASTIR_H
-#define XASTIR_H
+#ifndef INTERFACECONTROLDIALOG_H
+#define INTERFACECONTROLDIALOG_H
 
-#include <QMainWindow>
-#include <QtNetwork>
-#include "packetinterface.h"
+#include <QDialog>
 #include "interfacemanager.h"
-#include "interfacecontroldialog.h"
 
 namespace Ui {
-    class MainWindow;
+class InterfaceControlDialog;
 }
 
-class MainWindow : public QMainWindow {
+class InterfaceControlDialog : public QDialog
+{
     Q_OBJECT
+    
 public:
-    MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-
+    explicit InterfaceControlDialog(InterfaceManager& manager, QWidget *parent = 0 );
+    ~InterfaceControlDialog();
+    
 public slots:
-    void interfaceControlAction();
-
-private slots:
-    void newInterface(PacketInterface*);
-    void newData(PacketInterface *, QString);
-    //void closeConnection();
-    //void statusChanged(PacketInterface::Device_Status newState);
-
-
-protected:
-    void changeEvent(QEvent *e);
+    void addInterfaceAction();
+    void startAllAction();
+    void stopAllAction();
+    void startAction();
+    void stopAction();
+    void preferencesAction();
+    void selectedRowChanged(int row);
+    void managerAddedInterface(PacketInterface *newInterface);
+    void interfaceStatusChanged(PacketInterface *iface, PacketInterface::Device_Status state);
 
 private:
-    Ui::MainWindow *ui;
-    InterfaceControlDialog *interfaceControlDialog;
-
-    QTcpSocket tcpSocket;
-    InterfaceManager interfaceManager;
-    QString packetDisplay;
-    int total_lines;
+    Ui::InterfaceControlDialog *ui;
+    InterfaceManager& theManager;
+    void updateButtonsState();
 };
 
-#endif // XASTIR_H
+#endif // INTERFACECONTROLDIALOG_H

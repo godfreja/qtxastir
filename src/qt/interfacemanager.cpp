@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: xastir.h,v 1.1.2.2 2013/01/30 23:47:23 we7u Exp $
+ * $Id: interfacemanager.cpp,v 1.1.2.1 2013/01/30 23:47:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
@@ -22,46 +22,15 @@
  * Look at the README for more information on the program.
  */
 
-#ifndef XASTIR_H
-#define XASTIR_H
-
-#include <QMainWindow>
-#include <QtNetwork>
-#include "packetinterface.h"
 #include "interfacemanager.h"
-#include "interfacecontroldialog.h"
 
-namespace Ui {
-    class MainWindow;
+InterfaceManager::InterfaceManager(QObject *parent) :
+    QObject(parent)
+{
 }
 
-class MainWindow : public QMainWindow {
-    Q_OBJECT
-public:
-    MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-
-public slots:
-    void interfaceControlAction();
-
-private slots:
-    void newInterface(PacketInterface*);
-    void newData(PacketInterface *, QString);
-    //void closeConnection();
-    //void statusChanged(PacketInterface::Device_Status newState);
-
-
-protected:
-    void changeEvent(QEvent *e);
-
-private:
-    Ui::MainWindow *ui;
-    InterfaceControlDialog *interfaceControlDialog;
-
-    QTcpSocket tcpSocket;
-    InterfaceManager interfaceManager;
-    QString packetDisplay;
-    int total_lines;
-};
-
-#endif // XASTIR_H
+void InterfaceManager::addNewInterface(PacketInterface *iface)
+{
+    interfaces.append(iface);
+    interfaceAdded(iface);
+}
