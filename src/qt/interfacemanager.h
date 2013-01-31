@@ -39,7 +39,8 @@ public:
     PacketInterface* getInterface(int i) {return interfaces[i];}
     NetInterface* getNewNetInterface() { return new NetInterface(interfaces.count(), this); }
     void addNewInterface( PacketInterface *iface );
-
+    void saveInterfaces();
+    void restoreInterfaces();
 
 signals:
     void interfaceAdded(PacketInterface *newInterface);

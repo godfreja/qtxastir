@@ -33,6 +33,21 @@ PacketInterface::PacketInterface( int ifaceNumber, QObject *parent) :
     allowTransmit = false;
 }
 
+void PacketInterface::saveSettings(QSettings &settings)
+{
+    settings.setValue("interfaceClass", metaObject()->className());
+    settings.setValue("allowTransmit", allowTransmit);
+    settings.setValue("activateOnStartup", activateOnStartup);
+    saveSpecificSettings(settings);
+}
+
+void PacketInterface::restoreFromSettings(QSettings &settings)
+{
+    allowTransmit = settings.value("allowTransmit").toBool();
+    activateOnStartup = settings.value("activateOnStartup").toBool();
+    restoreSpecificSettings(settings);
+}
+
 bool PacketInterface::transmitAllowed(void)
 {
     return allowTransmit;

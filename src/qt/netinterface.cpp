@@ -115,6 +115,24 @@ void NetInterface::setFilter(QString newFilter)
     // XXX Need to update on server if we are connected
 }
 
+void NetInterface::saveSpecificSettings(QSettings &settings)
+{
+    settings.setValue("hostName", hostName);
+    settings.setValue("port", portString);
+    settings.setValue("callsign", callsign);
+    settings.setValue("passcode", passcode);
+    settings.setValue("filter", filter);
+}
+
+void NetInterface::restoreSpecificSettings(QSettings &settings)
+{
+    hostName = settings.value("hostName").toString();
+    portString = settings.value("port").toString();
+    callsign = settings.value("callsign").toString();
+    passcode = settings.value("passcode").toString();
+    filter = settings.value("filter").toString();
+}
+
 void NetInterface::connectToServer()
 {
     int port = portString.toInt();

@@ -52,6 +52,9 @@ public:
 
 
 protected:
+    virtual void saveSpecificSettings(QSettings& settings);
+    virtual void restoreSpecificSettings(QSettings& settings);
+
     QTcpSocket tcpSocket;
     QString hostName;
     QString portString;

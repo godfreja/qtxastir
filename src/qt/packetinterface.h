@@ -27,6 +27,7 @@
 #define PACKETINTERFACE_H
 
 #include <QObject>
+#include <QSettings>
 
 class PacketInterface : public QObject
 {
@@ -50,6 +51,30 @@ public:
     virtual void start() = 0;
     virtual void stop() = 0;
 
+    /*! \brief Save interface settings using QSettings
+     *
+     *     This will save this interfaces settings in a platform independant
+     *  manner using QSettings. It is assumed that the caller has created a
+     * settings group before calling as appropriate. (For example, each interface
+     * should be in a seperate group to avoid collision.)
+     *
+     * This function will call saveSpecificSettings, so any derived classes can
+     * put their class specific settings in an overriden version of saveSpecificSettings.)
+     */
+    void saveSettings(QSettings& settings);
+
+    /*! \brief Restore interface settings using QSettings
+     *
+     *     This will retreive interface settings in a platform independant
+     *  manner using QSettings. It is assumed that the caller has set a
+     * settings group before calling as appropriate. (For example, each interface
+     * should be in a seperate group to avoid collision.)
+     *
+     * This function will call restoreSpecificSettings, so any derived classes can
+     * handle their class specific settings in an overriden version of saveSpecificSettings.)
+     */
+    void restoreFromSettings(QSettings& settings);
+
     bool transmitAllowed();
     Device_Status deviceStatus();
 
@@ -71,6 +96,10 @@ signals:
 public slots:
     
 protected:
+    virtual void saveSpecificSettings(QSettings&) {}
+    virtual void restoreSpecificSettings(QSettings&) {}
+
+
     bool allowTransmit;
     bool activateOnStartup;
     int interfaceNumber;
