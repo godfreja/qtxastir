@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 4; indent-tabs-mode: nil -*-
- * $Id: main.c,v 1.810 2012/09/23 16:19:22 tvrusso Exp $
+ * $Id: netinterface.cpp,v 1.1.2.1 2013/01/30 23:47:23 we7u Exp $
  *
  * XASTIR, Amateur Station Tracking and Information Reporting
  * Copyright (C) 1999,2000  Frank Giannandrea
