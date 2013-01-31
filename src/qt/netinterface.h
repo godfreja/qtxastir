@@ -33,7 +33,7 @@ class NetInterface : public PacketInterface
     Q_OBJECT
 
 public:
-    NetInterface(int);
+    NetInterface(int iface = -1, QObject *parent = 0);
     void start(void);
     void stop(void);
     virtual QString deviceName();

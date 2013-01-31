@@ -24,18 +24,17 @@
 
 #include "netinterface.h"
 
-NetInterface::NetInterface(int ifaceNum)
+NetInterface::NetInterface(int ifaceNum, QObject *parent) : PacketInterface(ifaceNum, parent)
 {
     connect(&tcpSocket, SIGNAL(connected()), this, SLOT(nowConnected()));
     connect(&tcpSocket, SIGNAL(disconnected()), this, SLOT(connectionClosedByServer()));
     connect(&tcpSocket, SIGNAL(readyRead()), this, SLOT(incomingData()));
     connect(&tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(error()));
-    interfaceNumber = ifaceNum;
 }
 
 void NetInterface::start()
 {
-    if( deviceState == DEVICE_UP ) {
+    if( (deviceState == DEVICE_UP) || (deviceState == DEVICE_STARTING) ) {
         return;
     }
     connectToServer();
@@ -57,6 +56,7 @@ QString NetInterface::deviceDescription()
             tr(" Internet Server Connected to ") + hostName + tr( " and is ");
 
     if(deviceState == DEVICE_UP) text += tr("UP");
+    else if(deviceState == DEVICE_STARTING) text += tr("STARTING");
     else text += tr("DOWN");
 
     return text;
@@ -119,7 +119,8 @@ void NetInterface::connectToServer()
 {
     int port = portString.toInt();
     tcpSocket.connectToHost(hostName, port);
-
+    deviceState = DEVICE_STARTING;
+    interfaceChangedState(this, deviceState);
 }
 
 void NetInterface::connectionClosedByServer()
@@ -155,7 +156,7 @@ void NetInterface::nowConnected()
 
 void NetInterface::closeConnection()
 {
-    if(deviceState==DEVICE_UP) deviceState = DEVICE_DOWN;
+    if(deviceState!=DEVICE_ERROR) deviceState = DEVICE_DOWN;
     tcpSocket.close();
     interfaceChangedState(this, deviceState);
 }

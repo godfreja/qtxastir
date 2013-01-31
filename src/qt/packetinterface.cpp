@@ -25,8 +25,9 @@
 
 #include "packetinterface.h"
 
-PacketInterface::PacketInterface(QObject *parent) :
-    QObject(parent)
+PacketInterface::PacketInterface( int ifaceNumber, QObject *parent) :
+    QObject(parent), allowTransmit(false), activateOnStartup(false),
+    interfaceNumber(ifaceNumber), deviceState(DEVICE_DOWN)
 {
     deviceState = DEVICE_DOWN;
     allowTransmit = false;

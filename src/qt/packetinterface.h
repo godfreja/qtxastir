@@ -32,7 +32,8 @@ class PacketInterface : public QObject
 {
     Q_OBJECT
 public:
-    explicit PacketInterface(QObject *parent = 0);
+    explicit PacketInterface(int ifaceNumber = 0, QObject *parent = 0);
+
 public:
     enum Device_Active {
         DEVICE_NOT_IN_USE,
@@ -41,6 +42,7 @@ public:
 
     enum Device_Status {
         DEVICE_DOWN,
+        DEVICE_STARTING,
         DEVICE_UP,
         DEVICE_ERROR
     };
