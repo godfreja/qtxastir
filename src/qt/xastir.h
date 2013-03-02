@@ -30,6 +30,7 @@
 #include "packetinterface.h"
 #include "interfacemanager.h"
 #include "interfacecontroldialog.h"
+#include "stationconfigurationdialog.h"
 
 namespace Ui {
     class MainWindow;
@@ -43,6 +44,7 @@ public:
 
 public slots:
     void interfaceControlAction();
+    void stationSettingsAction();
 
 private slots:
     void newInterface(PacketInterface*);
@@ -57,6 +59,7 @@ protected:
 private:
     Ui::MainWindow *ui;
     InterfaceControlDialog *interfaceControlDialog;
+    StationConfigurationDialog *stationConfigurationDialog;
 
     QTcpSocket tcpSocket;
     InterfaceManager interfaceManager;

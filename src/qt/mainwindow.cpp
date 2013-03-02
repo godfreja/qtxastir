@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     interfaceControlDialog = NULL;
+    stationConfigurationDialog = NULL;
+
     connect(&interfaceManager, SIGNAL(interfaceAdded(PacketInterface*)), this, SLOT(newInterface(PacketInterface*)));
  //   connect(&netInterface,SIGNAL(interfaceChangedState(PacketInterface::Device_Status)), this, SLOT(statusChanged(PacketInterface::Device_Status)));
  //   connect(&netInterface,SIGNAL(packetReceived(PacketInterface *, QString)), this, SLOT(newData(PacketInterface *,QString)));
@@ -93,4 +95,15 @@ void MainWindow::interfaceControlAction()
     interfaceControlDialog->show();
     interfaceControlDialog->raise();
 
+}
+
+void MainWindow::stationSettingsAction()
+{
+    if( stationConfigurationDialog == NULL) {
+        stationConfigurationDialog = new StationConfigurationDialog(this);
+        qDebug("Created new station dialog");
+    }
+    stationConfigurationDialog->show();
+    stationConfigurationDialog->raise();
+    qDebug("Raising station dialog");
 }

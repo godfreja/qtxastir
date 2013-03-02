@@ -65,7 +65,6 @@ void InterfaceManager::restoreInterfaces()
     foreach(subgroup, settings.childGroups()) {
         settings.beginGroup(subgroup);
         deviceType = settings.value("interfaceClass").toString();
-        qDebug(deviceType.toAscii());
         if(deviceType == "NetInterface")
         {
             ptr = new NetInterface(i++, this);

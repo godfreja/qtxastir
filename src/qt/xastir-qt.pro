@@ -16,7 +16,9 @@ SOURCES += main.cpp\
     netinterface.cpp \
     interfacecontroldialog.cpp \
     netinterfacepropertiesdialog.cpp \
-    interfacemanager.cpp
+    interfacemanager.cpp \
+    stationconfigurationdialog.cpp \
+    stationsettings.cpp
 
 HEADERS  += \
     xastir.h \
@@ -24,8 +26,14 @@ HEADERS  += \
     netinterface.h \
     interfacecontroldialog.h \
     netinterfacepropertiesdialog.h \
-    interfacemanager.h
+    interfacemanager.h \
+    stationconfigurationdialog.h \
+    stationsettings.h
 
 FORMS    += mainwindow.ui \
     interfacecontroldialog.ui \
-    netinterfacepropertiesdialog.ui
+    netinterfacepropertiesdialog.ui \
+    stationconfigurationdialog.ui
+
+RESOURCES += \
+    resources.qrc
