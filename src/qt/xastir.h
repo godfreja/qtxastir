@@ -31,6 +31,7 @@
 #include "interfacemanager.h"
 #include "interfacecontroldialog.h"
 #include "stationconfigurationdialog.h"
+#include "stationsettings.h"
 
 namespace Ui {
     class MainWindow;
@@ -63,6 +64,7 @@ private:
 
     QTcpSocket tcpSocket;
     InterfaceManager interfaceManager;
+    StationSettings stationSettings;
     QString packetDisplay;
     int total_lines;
 };
